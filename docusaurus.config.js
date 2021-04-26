@@ -21,26 +21,24 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        { to: '/blog', label: 'Blog', position: 'left' },
-        {
           label: "Concepts",
-          to: "docs/concepts",
+          to: "docs/concepts/concepts",
           position: "right",
         },
         {
           label: "Guides",
-          to: "docs/guides",
+          to: "docs/guides/guides",
           position: "right",
         },
         {
           label: "References",
-          to: "docs/references",
+          to: "docs/references/references",
           position: "right",
+        },
+        {
+          href: 'https://github.com/solace-fi/solace-docs',
+          label: 'Whitepaper',
+          position: 'right',
         },
         {
           href: 'https://github.com/solace-fi/solace-docs',
