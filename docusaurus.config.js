@@ -20,29 +20,29 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
+        // {
+        //   label: "Concepts",
+        //   to: "docs/concepts/concepts",
+        //   position: "right",
+        // },
         {
-          label: "Concepts",
-          to: "docs/concepts/concepts",
+          label: "Contracts",
+          to: "docs/contracts/contracts",
           position: "right",
         },
         {
-          label: "Guides",
-          to: "docs/guides/guides",
+          label: "Website",
+          to: "https://www.solace.fi",
           position: "right",
         },
         {
-          label: "References",
-          to: "docs/references/references",
-          position: "right",
-        },
-        {
-          href: 'https://github.com/solace-fi/solace-docs',
           label: 'Whitepaper',
+          href: 'https://app.box.com/s/k75yg40rffq28at6wfhiebni5falo4uy',
           position: 'right',
         },
         {
-          href: 'https://github.com/solace-fi/solace-docs',
           label: 'GitHub',
+          href: 'https://github.com/solace-fi/core',
           position: 'right',
         },
       ],
