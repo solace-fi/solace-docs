@@ -14,17 +14,17 @@ module.exports = {
     //   additionalLanguages: ["solidity"],
     // },
     navbar: {
-      title: 'Solace Documentation',
+      title: 'Solace Docs',
       logo: {
         alt: 'Solace Logo',
         src: 'img/logo.svg',
       },
       items: [
-        // {
-        //   label: "Concepts",
-        //   to: "docs/concepts/concepts",
-        //   position: "right",
-        // },
+        {
+          label: "Front-end",
+          to: "docs/frontend/getting-started",
+          position: "right",
+        },
         {
           label: "Contracts",
           to: "docs/contracts/contracts",
