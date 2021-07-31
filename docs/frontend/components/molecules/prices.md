@@ -11,7 +11,7 @@ Info: Component to properly position prices.
 ### `PolicyModalInfo` (exported)
 
 Manager Dependencies:
-- **Wallet**: chainId
+- **Wallet**: `chainId`
 
 Hook Dependencies:
 - `usePairPrice()`

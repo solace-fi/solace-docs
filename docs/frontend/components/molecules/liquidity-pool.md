@@ -13,11 +13,11 @@ title: LiquidityPool
 
 Props Depenencies:
 
-- **LiquidityPoolProps**
+- `LiquidityPoolProps`
 
 Manager Dependencies:
-- **Wallet**: account, errors
-- **Contracts**: lpFarm
+- **Wallet**: `account` , `errors`
+- **Contracts**: `lpFarm`
 
 Hook Dependencies:
 - `useUserStakedValue()`

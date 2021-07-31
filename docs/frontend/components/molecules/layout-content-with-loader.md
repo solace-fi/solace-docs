@@ -7,6 +7,6 @@ title: LayoutContentWithLoader
 ### `LayoutContentWithLoader` (exported)
 
 Manager Dependencies:
-- **Wallet**: initialized
+- **Wallet**: `initialized`
 
 Info: Returns a component that displays a loader instead of its children if `initialized` is false

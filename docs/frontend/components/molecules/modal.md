@@ -7,13 +7,13 @@ title: Modal
 ### `Modal` (exported)
 
 Props Dependencies:
-- **ModalProps**
+- `ModalProps`
 
 Info: Returns a container for a modal, its header, the close button, and the content.
 
 ### `ModalCloseButton` (exported)
 
 Props Dependencies:
-- **ModalButtonProps**
+- `ModalButtonProps`
 
 Info: Returns an svg of the modal close button.

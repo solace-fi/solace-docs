@@ -13,10 +13,10 @@ title: RiskBackingCapitalPool
 
 Props Dependencies:
 
-- **RiskBackingCapitalPoolProps**
+- `RiskBackingCapitalPoolProps`
 
 Manager Dependencies:
-- **Wallet**: account, errors
+- **Wallet**: `account` , `errors`
 
 Hook Dependencies:
 - `useUserVaultDetails()`

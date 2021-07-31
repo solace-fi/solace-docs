@@ -16,15 +16,15 @@ title: MyPolicies
 
 Props Dependencies:
 
-- **MyPoliciesProps**
+- `MyPoliciesProps`
 
 Manager Dependencies:
-- **Wallet**: chainId
-- **CachedData**: userPolicyData
+- **Wallet**: `chainId`
+- **CachedData**: `userPolicyData`
 
 Local Functions:
-- **calculatePolicyExpirationDate (expirationBlock: string)**: Returns a policy's expiration date from its expiration block as a string.
+- `calculatePolicyExpirationDate (expirationBlock: string)` : Returns a policy's expiration date from its expiration block as a string.
 
-- **shouldWarnUser (policy: Policy)**: Return boolean of whether a user's policy will expire within 1 day.
+- `shouldWarnUser (policy: Policy)` : Return boolean of whether a user's policy will expire within 1 day.
 
 Info: Returns a table of policies for a user.

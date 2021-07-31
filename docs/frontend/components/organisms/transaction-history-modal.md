@@ -14,10 +14,10 @@ title: TransactionHistoryModal
 
 Props Dependencies:
 
-- **TransactionHistoryModalProps**
+- `TransactionHistoryModalProps`
 
 Local Functions:
 
-- **handleClose()**: Handle closing modal
+- `handleClose()` : Handle closing modal
 
 Info: Return modal displaying user's transaction history.

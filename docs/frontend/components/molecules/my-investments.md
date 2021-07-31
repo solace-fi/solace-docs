@@ -7,8 +7,8 @@ title: MyInvestments
 ### `MyInvestments` (exported)
 
 Manager Dependencies:
-- **Wallet**: account, chainId
-- **Contracts**: cpFarm, lpFarm
+- **Wallet**: `account` , `chainId`
+- **Contracts**: `cpFarm` , `lpFarm`
 
 Hook Dependencies:
 - `useUserPendingRewards()`

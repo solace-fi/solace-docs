@@ -11,9 +11,9 @@ title: TransactionHistory
 ### `TransactionHistory` (exported)
 
 Manager Dependencies:
-- **Wallet**: chainId
-- **CachedData**: localTransactions
-- **Contracts**: contractSources
+- **Wallet**: `chainId`
+- **CachedData**: `localTransactions`
+- **Contracts**: `contractSources`
 
 Hook Dependencies:
 - `useTransactionDetails`

@@ -24,13 +24,13 @@ Info: Grid component for Cancel Policy section.
 
 Props Dependencies:
 
-- **ManageModalProps**
+- `ManageModalProps`
 
 Manager Dependencies:
 
-- **Wallet**: errors
-- **CachedData**: addLocalTransactions, reload, gasPrices
-- **Contracts**: selectedProtocol
+- **Wallet**: `errors`
+- **CachedData**: `addLocalTransactions` , `reload` , `gasPrices`
+- **Contracts**: `selectedProtocol`
 
 Hook Dependencies:
 
@@ -42,18 +42,19 @@ Hook Dependencies:
 
 Contract Functions:
 
-- **selectedProtocol**: extendPolicy, cancelPolicy
+- `extendPolicy` : Calls the product contract to extend policy's time period.
+- `cancelPolicy` : Calls the product contract to cancel policy.
 
 Local Functions:
 
-- **initCoverage()**: Initialize coverage state on interface.
-- **handleCoverageChange(coverageLimit: string)**: Set coverage state on interface based on selected cover limit.
-- **handleInputCoverage(input: string)**: Set coverage state on interface based on input.
-- **filteredTime(input: string)**: Filter time input and set time state.
-- **handleClose()**: Reset time state and close modal.
+- `initCoverage()` : Initialize coverage state on interface.
+- `handleCoverageChange(coverageLimit: string)` : Set coverage state on interface based on selected cover limit.
+- `handleInputCoverage(input: string)` : Set coverage state on interface based on input.
+- `filteredTime(input: string)` : Filter time input and set time state.
+- `handleClose()` : Reset time state and close modal.
 
 Data Refresh:
 
-- **[isOpen, selectedPolicy, appraisal]**: Initialize coverage based on the selected user policy and the appraisal of the user's position.
+- [ `isOpen` , `selectedPolicy` , `appraisal` ]: Initialize coverage based on the selected user policy and the appraisal of the user's position.
 
 Info: Returns modal to make changes to a user's policy.

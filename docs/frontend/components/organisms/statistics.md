@@ -8,9 +8,9 @@ title: Statistics
 
 Manager Dependencies:
 
-- **Wallet**: account, errors, chainId, initialized
-- **Contracts**: master
-- **CachedData**: addLocalTransactions, reload, gasPrices, tokenPositionDataInitialized, latestBlock, version
+- **Wallet**: `account` , `errors` , `chainId` , `initialized`
+- **Contracts**: `master`
+- **CachedData**: `addLocalTransactions` , `reload` , `gasPrices` , `tokenPositionDataInitialized` , `latestBlock` , `version`
 
 Hook Dependencies:
 
@@ -22,10 +22,10 @@ Hook Dependencies:
 
 Contract Functions:
 
-- **master**: claimRewards
+- `claimRewards` : Calls master contract to claim pending rewards.
 
 Data Refresh:
 
-- **[allPolicies]**: Calculate total active cover amount and total active policies from fetched policies.
+- [ `allPolicies` ]: Calculate total active cover amount and total active policies from fetched policies.
 
 Info: Returns a `BoxRow` of two `Box` components, where one displays user data, and the other displays global data.

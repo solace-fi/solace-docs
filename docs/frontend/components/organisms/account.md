@@ -8,8 +8,8 @@ title: Account
 
 Manager Dependencies:
 
-- **Wallet**: isActive, chainId, account
-- **CachedData**: localTransactions
+- **Wallet**: `isActive` , `chainId` , `account`
+- **CachedData**: `localTransactions`
 
 Hook Dependencies:
 
@@ -17,7 +17,7 @@ Hook Dependencies:
 
 Local Functions:
 
-- **openModal()**: Show transaction history modal, disable scrolling
-- **closeModal()**: Hide transaction history modal, enable scrolling
+- `openModal()` : Show transaction history modal, disable scrolling
+- `closeModal()` : Hide transaction history modal, enable scrolling
 
 Info: Returns a component containing the user's ETH balance, address, and a button that opens the transaction history modal.

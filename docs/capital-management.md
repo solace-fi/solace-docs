@@ -52,10 +52,10 @@ Creates a new instance of `StrategyParams` and stores it in the `strategies` map
 ### withdrawalQueue
 The `Vault` manages a `withdrawalQueue` which is an array of `Strategy`s in the order in which we want to `withdraw` funds from in the event that a CP redeems their shares and we have insufficent funds in the `Vault`. The ordering should be least impactful (the Strategy whose core positions will be least impacted by having funds removed) first, with the next least impactful second, etc
 
-The withdrawalQueue is updated and managed via the following functions in `Vault`:
-- `addStrategyToQueue`: adds a Strategy to the end of the queue. NOTE: the `Strategy` must be added to the vault first using `addStrategy` before it can be added to the queue.
-- `removeStrategyFromQueue`: removes a Strategy from the queue (returns a new queue in the original order, just without a specified Strategy in it)
-- `setWithdrawalQueue`: governance can manually set the order of the withdrawal queue this way.
+The withdrawalQueue is updated and managed via the following functions in `Vault` :
+- `addStrategyToQueue` : adds a Strategy to the end of the queue. NOTE: the `Strategy` must be added to the vault first using `addStrategy` before it can be added to the queue.
+- `removeStrategyFromQueue` : removes a Strategy from the queue (returns a new queue in the original order, just without a specified Strategy in it)
+- `setWithdrawalQueue` : governance can manually set the order of the withdrawal queue this way.
 
 ### report()
 This function is called by a Strategy to report its `gains`, `losses`, and `debtPayment`. This is essentially information about what the Strategy has "free". The Vault then either takes back capital from the Strategy or allocates more capital to it. The most the Vault can take from Strategy here is the profits plus amount to pay back debt (`gain` + `debtPayment`). The most it can give is its remaining reserves.

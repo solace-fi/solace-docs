@@ -30,7 +30,7 @@ These are rather common props and styles shared in between Atoms.
 - **mb (number)**?: Sets margin-bottom in px.
 
 ### `GeneralElementProps` (exported)
-- **Extends**: `HeightAndWidthProps`, `PaddingProps`, `MarginProps`
+- **Extends**: `HeightAndWidthProps` , `PaddingProps` , `MarginProps`
 
 ## Styles
 
@@ -47,6 +47,6 @@ Sets padding.
 Sets margin.
 
 ### `GeneralElementCss` (exported)
-- **Extends**: `HeightAndWidthCss`, `PaddingCss`, `MarginCss`
+- **Extends**: `HeightAndWidthCss` , `PaddingCss` , `MarginCss`
 
 Sets height, width, padding,and margin.

@@ -16,13 +16,13 @@ title: ClaimModal
 
 Props Dependencies:
 
-- **ClaimModalProps**
+- `ClaimModalProps`
 
 Manager Dependencies:
 
-- **Wallet**: account, chainId, errors, library
-- **Contracts**: selectedProtocol, getProtocolByName
-- **CachedData**: tokenPositionDataInitialized, gasPrices, reload, addLocalTransactions
+- **Wallet**: `account` , `chainId` , `errors` , `library`
+- **Contracts**: `selectedProtocol` , `getProtocolByName`
+- **CachedData**: `tokenPositionDataInitialized` , `gasPrices` , `reload` , `addLocalTransactions`
 
 Hook Dependencies:
 
@@ -32,20 +32,20 @@ Hook Dependencies:
 
 Contract Functions:
 
-- **contractForAllowance**: approve
+- `approve` : Approve amount to be transferred.
 
-- **selectedProtocol**: submitClaim
+- `submitClaim` : Calls function from product contract to submit claim.
 
 Local Functions:
 
-- **getUserBalances()**: Get balances for user's positions
+- `getUserBalances()` : Get balances for user's positions
 
-- **handleClose()**: Handle closing modal
+- `handleClose()` : Handle closing modal
 
 Data Refresh:
 
-- **[isOpen, selectedPolicy, account, library, tokenPositionDataInitialized]**: get user balances, get contract for allowance, get spender address, get claim assessment
+- [ `isOpen` , `selectedPolicy` , `account` , `library` , `tokenPositionDataInitialized` ]: get user balances, get contract for allowance, get spender address, get claim assessment
 
-- **[latestBlock]**: get user balances
+- [ `latestBlock` ]: get user balances
 
 Info: Returns modal to submit claim for a user's policy.

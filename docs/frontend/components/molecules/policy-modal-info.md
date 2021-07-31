@@ -14,7 +14,7 @@ title: PolicyModalInfo
 
 Props Dependencies:
 
-- **PolicyModalInfoProps**
+- `PolicyModalInfoProps`
 
 Hook Dependencies:
 - `useAppraisePosition()`

@@ -19,7 +19,7 @@ title: Toast
 
 Props Dependencies:
 
-- **AppToastProps**
+- `AppToastProps`
 
 Info: Returns a toast with message about the app.
 
@@ -27,14 +27,14 @@ Info: Returns a toast with message about the app.
 
 Props Dependencies:
 
-- **NotificationToastProps**
+- `NotificationToastProps`
 
 Manager Dependencies:
 
-- **Wallet**: chainId
+- **Wallet**: `chainId`
 
 Local Functions: 
 
-- **getStateFromCondition (condition: TransactionCondition)**: Returns sentence fragment based on transaction condition.
+- `getStateFromCondition (condition: TransactionCondition)` : Returns sentence fragment based on transaction condition.
 
 Info: Returns a toast with message about a transaction.

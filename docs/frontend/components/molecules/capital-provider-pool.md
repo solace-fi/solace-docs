@@ -12,11 +12,11 @@ title: CapitalProviderPool
 ### `CapitalProviderPool` (exported)
 
 Props Dependencies:
-- **CapitalProviderPoolProps**
+- `CapitalProviderPoolProps`
 
 Manager Dependencies:
-- **Wallet**: account, errors
-- **Contracts**: cpFarm
+- **Wallet**: `account` , `errors`
+- **Contracts**: `cpFarm`
 
 Hook Dependencies:
 - `useUserStakedValue()`
