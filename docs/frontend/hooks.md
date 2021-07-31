@@ -1,5 +1,4 @@
 ---
-id: about
 title: Hooks Reference
 ---
 
@@ -8,35 +7,35 @@ title: Hooks Reference
 ### `useNativeTokenBalance`
 
 Manager Dependencies: 
-- **Wallet**: account, library, connect
-- **CachedData**: version
+- **Wallet**: `account` , `library` , `connect`
+- **CachedData**: `version`
 
 Calls getBalance() on the current user's account and returns the ETH balance as a string.
 
 ### `useScpBalance`
 
 Manager Dependencies: 
-- **Wallet**: account
-- **CachedData**: version, latestBlock
-- **Contracts**: vault
+- **Wallet**: `account`
+- **CachedData**: `version` , `latestBlock`
+- **Contracts**: `vault`
 
 Calls getBalance() on the current user's account and returns the SCP balance as a string.
 
 ### `useSolaceBalance`
 
 Manager Dependencies: 
-- **Wallet**: account
-- **CachedData**: version, latestBlock
-- **Contracts**: solace
+- **Wallet**: `account`
+- **CachedData**: `version` , `latestBlock`
+- **Contracts**: `solace`
 
 Calls getBalance() on the current user's account and returns the SOLACE balance as a string.
 
 ### `useLpBalances`
 
 Manager Dependencies:
-- **Wallet**: account
-- **CachedData**: version, latestBlock
-- **Contracts**: lpToken, lpFarm, lpAppraisor
+- **Wallet**: `account`
+- **CachedData**: `version` , `latestBlock`
+- **Contracts**: `lpToken` , `lpFarm` , `lpAppraisor`
 
 Return the ids and values of LP tokens in the user's wallet and from their share of the liquidity pool, as a pair value of arrays.
 
@@ -48,15 +47,15 @@ Parameters:
 - **claimant**: (string | undefined)
 
 Manager Dependencies:
-- **CachedData**: latestBlock
-- **Contracts**: claimsEscrow
+- **CachedData**: `latestBlock`
+- **Contracts**: `claimsEscrow`
 
 For each claim belonging to a user, return an object containing the time left until it can be withdrawn, the boolean indicating whether it can be withdrawn, and its amount. Afterwards, return all objects as an array.
 
 ### `useGetCooldownPeriod`
 
 Manager Dependencies:
-- **Contracts**: claimsEscrow
+- **Contracts**: `claimsEscrow`
 
 Return the current cooldown period as a string.
 
@@ -70,21 +69,21 @@ Parameters:
 - **hasSigner**: (boolean)
 
 Manager Dependencies:
-- **Wallet**: library, account
+- **Wallet**: `library` , `account`
 
 Creates and returns a contract based on its parameters, returns null if the hook fails to create a contract.
 
 ### `useGetProductContracts`
 
 Manager Dependencies:
-- **Wallet**: library, account, chainId
+- **Wallet**: `library` , `account` , `chainId`
 
 Initializes all product contracts using the addresses and contract ABIs based on the current chain. Returns contract instances as an array.
 
 ### `useContractArray`
 
 Manager Dependencies:
-- **Wallet**: chainId
+- **Wallet**: `chainId`
 
 For each contract in the current chain, return an object containing its address and ABI. Afterwards, return all objects as an array.
 
@@ -97,7 +96,7 @@ Parameters:
 - **account**: (string | undefined)
 
 Manager Dependencies:
-- **CachedData**: version
+- **CachedData**: `version`
 
 Returns the user's staked value for the farm passed into its parameters as a string.
 
@@ -107,18 +106,18 @@ Parameters:
 - **farm**: (Contract | null | undefined)
 
 Manager Dependencies:
-- **CachedData**: latestBlock
+- **CachedData**: `latestBlock`
 
 Returns the staked value for the farm passed into its parameters as a string.
 
 ### `useGetTotalValueLocked`
 
 Manager Dependencies:
-- **Contracts**: cpFarm, lpFarm
+- **Contracts**: `cpFarm` , `lpFarm`
 
 Hook Dependencies:
-- `usePoolStakedValue(cpFarm)`
-- `usePoolStakedValue(lpFarm)`
+- `usePoolStakedValue()`
+- `usePoolStakedValue()`
 
 Adds the staked value of the CP farm and the LP farm and returns the sum as a string.
 
@@ -127,8 +126,8 @@ Adds the staked value of the CP farm and the LP farm and returns the sum as a st
 ### `useFetchGasPrice`
 
 Manager Dependencies:
-- **Wallet**: chainId
-- **CachedData**: version, latestBlock
+- **Wallet**: `chainId`
+- **CachedData**: `version` , `latestBlock`
 
 Fetches gas prices via API from the chain explorer and returns an object containing the gas options, the boolean for loading gas prices, and the currently selected gas option.
 
@@ -140,7 +139,7 @@ Parameters:
 - **dataVersion**: (number)
 
 Manager Dependencies:
-- **Wallet**: library
+- **Wallet**: `library`
 
 Calls getBlockNumber() on the current Web3Provider to get latest block number and returns it as a number.
 
@@ -157,8 +156,8 @@ Parameters:
 - **product**?: (string)
 
 Manager Dependencies:
-- **Wallet**: library, chainId, isActive
-- **Contracts**: policyManager
+- **Wallet**: `library` , `chainId` , `isActive`
+- **Contracts**: `policyManager`
 
 If `policyHolder` is provided as input, all of the user's policies will be retrieved, else all policies regardless of ownership will be retrieved. Return an object containing a boolean for loading policies, the user policies, and all policies.
 
@@ -167,7 +166,7 @@ If `policyHolder` is provided as input, all of the user's policies will be retri
 ### `useGetTokens`
 
 Manager Dependencies:
-- **Wallet**: library, chainId
+- **Wallet**: `library` , `chainId`
 
 Once per chain, initialize the token data and position names of all products from that chain if not already.
 
@@ -179,7 +178,7 @@ Parameters:
 - **callback**: (function)
 - **delay**: (number | null)
 
-On an interval of milliseconds set by `delay`, call `callback` function.
+On an interval of milliseconds set by `delay` , call `callback` function.
 
 ## usePairPrice.ts
 
@@ -195,10 +194,10 @@ Parameters:
 - **policyId**: (number)
 
 Manager Dependencies:
-- **Contracts**: selectedProtocol
-- **CachedData**: userPolicyData
+- **Contracts**: `selectedProtocol`
+- **CachedData**: `userPolicyData`
 
-Finds the policy from `userPolicyData` whose policy id matches `policyId` and returns its price as a string.
+Finds the policy from fetched policies whose policy ID matches the input ID and returns its price as a string.
 
 ### `useAppraisePosition`
 
@@ -206,36 +205,36 @@ Parameters:
 - **policy**: (Policy | undefined)
 
 Manager Dependencies:
-- **wallet**: account
-- **Contracts**: getProtocolByName
+- **wallet**: `account`
+- **Contracts**: `getProtocolByName`
 
 Appraises the user's position for a product and returns the result as a BigNumber.
 
 ### `useGetMaxCoverPerUser`
 
 Manager Dependencies:
-- **Contracts**: selectedProtocol
+- **Contracts**: `selectedProtocol`
 
 Returns the max cover per user of a product contract as a string.
 
 ### `useGetCancelFee`
 
 Manager Dependencies:
-- **Contracts**: selectedProtocol
+- **Contracts**: `selectedProtocol`
 
 Returns the cancellation fee of a product contract as a string.
 
 ### `useGetYearlyCosts`
 
 Manager Dependencies:
-- **Contracts**: products, getProtoocolByName
+- **Contracts**: `products` , `getProtoocolByName`
 
 Gets the price from each product contract and returns the prices as string-to-string mapping, where the keys are the product names, and the values are the prices.
 
 ### `useGetYearlyCosts`
 
 Manager Dependencies:
-- **Contracts**: products, getProtoocolByName
+- **Contracts**: `products` , `getProtoocolByName`
 
 Gets the available coverage from each product contract and returns the coverages as string-to-string mapping, where the keys are the product names, and the values are the coverages.
 
@@ -247,8 +246,8 @@ Parameters:
 - **days**: (string)
 
 Manager Dependencies:
-- **Contracts**: selectedProtocol
-- **Wallet**: account
+- **Contracts**: `selectedProtocol`
+- **Wallet**: `account`
 
 Gets the quote from the product contract `selectedProtocol` and returns it as a string.
 
@@ -266,8 +265,8 @@ Parameters:
 - **farmId**: (number)
 
 Manager Dependencies:
-- **Contracts**: master
-- **CachedData**: latestBlock
+- **Contracts**: `master`
+- **CachedData**: `latestBlock`
 
 Returns an object containing the current allocation points, total allocation points, and solace per block from the master contract.
 
@@ -277,7 +276,7 @@ Parameters:
 - **farmId**: (number)
 
 Hook Dependencies:
-- `useMasterValues(farmId)`
+- `useMasterValues()`
 
 Calculate the amount of rewards using values from `useMasterValues` and return it as a string.
 
@@ -289,11 +288,11 @@ Parameters:
 - **account**: (string | undefined)
 
 Hook Dependencies:
-- `useMasterValues(farmId)`
-- `usePoolStakedValue(farm)`
-- `useUserStakedValue(farm, account)`
+- `useMasterValues()`
+- `usePoolStakedValue()`
+- `useUserStakedValue()`
 
-Calculate the user's amount of rewards using values from `useMasterValues`, `usePoolStakedValue(farm)`, and `useUserStakedValue(farm, account)`, then return it as a string.
+Calculate the user's amount of rewards using values from `useMasterValues` , `usePoolStakedValue` , and `useUserStakedValue` , then return it as a string.
 
 ### `useUserPendingRewards`
 
@@ -301,20 +300,20 @@ Parameters:
 - **farm**: (Contract | null | undefined)
 
 Manager Dependencies:
-- **Contracts**: master
-- **CachedData**: latestBlock
-- **Wallet**: account
+- **Contracts**: `master`
+- **CachedData**: `latestBlock`
+- **Wallet**: `account`
 
 Fetches the user's pending rewards for a farm and returns it as a string.
 
 ### `useTotalPendingRewards`
 
 Manager Dependencies:
-- **Contracts**: cpFarm, lpFarm
+- **Contracts**: `cpFarm` , `lpFarm`
 
 Hook Dependencies:
-- **useUserPendingRewards(cpFarm)**
-- **useUserPendingRewards(lpFarm)**
+- `useUserPendingRewards()`
+- `useUserPendingRewards()`
 
 Adds a user's pending rewards from all farms together and return the sum as a string.
 
@@ -327,8 +326,8 @@ Parameters:
 - **spender**: (string | null)
 
 Manager Dependencies:
-- **CachedData**: version
-- **Wallet**: account, library
+- **CachedData**: `version`
+- **Wallet**: `account` , `library`
 
 Returns the allowance from `tokenContract` for the user as a string.
 
@@ -337,20 +336,20 @@ Returns the allowance from `tokenContract` for the user as a string.
 ### `useFetchTxHistoryByAddress`
 
 Manager Dependencies:
-- **Contracts**: contractSources
-- **Wallet**: chainId, account
-- **CachedData**: deleteLocalTransactions, dataVersion
+- **Contracts**: `contractSources`
+- **Wallet**: `chainId` , `account`
+- **CachedData**: `deleteLocalTransactions` , `dataVersion`
 
 Fetches for the transaction history of a user from the explorer, while deleting local transactions whose hashes match those of the transactions fetched.
 
 ### `useTransactionDetails`
 
 Manager Dependencies:
-- **Contracts**: contractSources
-- **Wallet**: chainId, library
+- **Contracts**: `contractSources`
+- **Wallet**: `chainId` , `library`
 
 Hook Dependencies:
-- **useFetchTxHistoryByAddress()**
+- `useFetchTxHistoryByAddress()`
 
 Returns an object containing the transaction history of a user as well as an array of strings that describe the transaction details.
 
@@ -359,19 +358,19 @@ Returns an object containing the transaction history of a user as well as an arr
 ### `useCapitalPoolSize`
 
 Manager Dependencies:
-- **Contracts**: vault
-- **CachedData**: version, latestBlock
+- **Contracts**: `vault`
+- **CachedData**: `version` , `latestBlock`
 
 Returns the total assets of the vault as a string.
 
 ### `useUserVaultDetails`
 
 Manager Dependencies:
-- **Contracts**: vault, cpFarm
-- **Wallet**: library, account
+- **Contracts**: `vault` , `cpFarm`
+- **Wallet**: `library` , `account`
 
 Hook Dependencies:
-- **useScpBalance()**
+- `useScpBalance()`
 
 Returns an object of two strings, where the first is the sum of the user's balance of SCP tokens and user's staked value in the CP farm, and the second is the user's share of the CP farm.
 
