@@ -1,5 +1,4 @@
 ---
-id: about
 title: Hooks Reference
 ---
 
@@ -117,8 +116,8 @@ Manager Dependencies:
 - **Contracts**: cpFarm, lpFarm
 
 Hook Dependencies:
-- `usePoolStakedValue(cpFarm)`
-- `usePoolStakedValue(lpFarm)`
+- `usePoolStakedValue()`
+- `usePoolStakedValue()`
 
 Adds the staked value of the CP farm and the LP farm and returns the sum as a string.
 
@@ -277,7 +276,7 @@ Parameters:
 - **farmId**: (number)
 
 Hook Dependencies:
-- `useMasterValues(farmId)`
+- `useMasterValues()`
 
 Calculate the amount of rewards using values from `useMasterValues` and return it as a string.
 
@@ -289,9 +288,9 @@ Parameters:
 - **account**: (string | undefined)
 
 Hook Dependencies:
-- `useMasterValues(farmId)`
-- `usePoolStakedValue(farm)`
-- `useUserStakedValue(farm, account)`
+- `useMasterValues()`
+- `usePoolStakedValue()`
+- `useUserStakedValue()`
 
 Calculate the user's amount of rewards using values from `useMasterValues`, `usePoolStakedValue(farm)`, and `useUserStakedValue(farm, account)`, then return it as a string.
 
@@ -313,8 +312,8 @@ Manager Dependencies:
 - **Contracts**: cpFarm, lpFarm
 
 Hook Dependencies:
-- **useUserPendingRewards(cpFarm)**
-- **useUserPendingRewards(lpFarm)**
+- `useUserPendingRewards()`
+- `useUserPendingRewards()`
 
 Adds a user's pending rewards from all farms together and return the sum as a string.
 
@@ -350,7 +349,7 @@ Manager Dependencies:
 - **Wallet**: chainId, library
 
 Hook Dependencies:
-- **useFetchTxHistoryByAddress()**
+- `useFetchTxHistoryByAddress()`
 
 Returns an object containing the transaction history of a user as well as an array of strings that describe the transaction details.
 
@@ -371,7 +370,7 @@ Manager Dependencies:
 - **Wallet**: library, account
 
 Hook Dependencies:
-- **useScpBalance()**
+- `useScpBalance()`
 
 Returns an object of two strings, where the first is the sum of the user's balance of SCP tokens and user's staked value in the CP farm, and the second is the user's share of the CP farm.
 
