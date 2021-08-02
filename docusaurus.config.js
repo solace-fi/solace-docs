@@ -17,12 +17,12 @@ module.exports = {
       title: 'Solace Docs',
       logo: {
         alt: 'Solace Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
-          label: "Front-end",
-          to: "docs/frontend/getting-started",
+          label: "Website",
+          to: "https://www.solace.fi",
           position: "right",
         },
         {
@@ -31,8 +31,8 @@ module.exports = {
           position: "right",
         },
         {
-          label: "Website",
-          to: "https://www.solace.fi",
+          label: "Front-end",
+          to: "docs/frontend/getting-started",
           position: "right",
         },
         {

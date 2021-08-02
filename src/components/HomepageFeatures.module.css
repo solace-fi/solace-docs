@@ -7,7 +7,17 @@
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.feature {
+  padding: 24px;
+  margin: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  transition: all 200ms ease;
+  cursor: pointer;
+  box-shadow: 0 0 7px white;
 }

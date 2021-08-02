@@ -46,17 +46,12 @@ html[data-theme='dark'] {
   --ifm-color-primary: white;
   --ifm-color-primary-dark: #5a91ea;
 
-  --ifm-background-color: #191b1f;
-  --ifm-navbar-background-color: #191b1f;
+  --ifm-background-color: rgb(14, 27, 42);
+  --ifm-navbar-color: rgb(9, 18, 27);
   --ifm-global-shadow-md: 0 5px 40px rgba(255, 255, 255, 0.448);
 
   background-position: 0px -30vh;
   background-repeat: no-repeat;
-  background-image: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(33, 114, 229, 0.1) 0%,
-    rgba(33, 36, 41, 0) 100%
-  );
 
   /* any other colors you wish to overwrite */
 }
@@ -67,13 +62,20 @@ html[data-theme='light'] {
 
   background-position: 0px -30vh;
   background-repeat: no-repeat;
-  background-image: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(255, 0, 122, 0.1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
 
   /* any other colors you wish to overwrite */
+}
+
+html[data-theme='dark'] .hero {
+  background-image: linear-gradient(180deg, var(--ifm-background-color) 0%, rgba(0,0,0,.2) 33%, rgba(0,0,0,.2) 66%, var(--ifm-background-color) 100%), url("../../static/img/banner.png");
+}
+
+html[data-theme='light'] .hero {
+  background-image: linear-gradient(180deg, rgba(9, 10, 23, 0) 0%, var(--ifm-background-color) 100%), url("../../static/img/banner.png");
+}
+
+html[data-theme='dark'] .menu {
+  background-color: var(--ifm-navbar-color);
 }
 
 .html {
@@ -97,7 +99,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'PT Sans',Arial,sans-serif;
   font-weight: 500;
 }
 
@@ -123,12 +125,11 @@ h4 {
 }
 
 html[data-theme='dark'] .navbar {
-  /* background-color: none; */
+  background-color: var(--ifm-navbar-color);
   border-bottom: var(--ifm-toc-border-color) 1px solid;
 }
 
 html[data-theme='light'] .navbar {
-  /* background-color: none; */
   border-bottom: var(--ifm-toc-border-color) 1px solid;
 }
 
@@ -145,13 +146,13 @@ html[data-theme='light'] .navbar {
 }
 
 .navbar__title {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'PT Sans',Arial,sans-serif;
   color: var(--ifm-color-primary);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .navbar__link {
-  font-family: 'Archivo', sans-serif;
+  font-family: 'PT Sans',Arial,sans-serif;
   color: var(--ifm-color-primary);
   font-weight: 500;
 }
@@ -182,7 +183,7 @@ html[data-theme='dark'] .navbar__logo {
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
+  background-color: rgb(72, 80, 91);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
