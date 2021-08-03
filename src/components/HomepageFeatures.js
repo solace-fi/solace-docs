@@ -5,29 +5,20 @@ import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'What is Solace',
-    link: 'https://www.solace.fi',
+    title: 'User Docs',
+    link: 'docs/user-docs/intro',
     description: (
       <>
-        Learn about what the Solace Protocol is about.
+        Learn about the different roles as a user of the Solace protocol.
       </>
     ),
   },
   {
-    title: 'Smart contract overview',
-    link: 'docs/contracts/contracts',
+    title: 'Developer Docs',
+    link: 'docs/dev-docs/capital-management',
     description: (
       <>
-        Learn about the architecture of the Solace smart contracts.
-      </>
-    ),
-  },
-  {
-    title: 'Front End Development',
-    link: 'docs/frontend/getting-started',
-    description: (
-      <>
-        Learn about the user interface that gives the protocol its appearance.
+        Learn about the architecture of the Solace protocol and its development.
       </>
     ),
   },
@@ -35,11 +26,11 @@ const FeatureList = [
 
 function Feature({title, link, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--6')}>
       <Link to={link} style={{ textDecoration: 'none' }}>
       <div className={styles.feature}>
         <div className="text--center padding-horiz--md">
-          <h3>{title}</h3>
+          <h4 className={styles.feature__title}>{title}</h4>
           <p>{description}</p>
         </div>
       </div>

@@ -1489,6 +1489,16 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@iconify-icons/akar-icons@^1.1.17":
+  version "1.1.17"
+  resolved "https://registry.yarnpkg.com/@iconify-icons/akar-icons/-/akar-icons-1.1.17.tgz#f765416ec8429f7d9cb3f9d7bf7df81a5f2250cc"
+  integrity sha512-HfmMly/+CN8Phcjz+5nhCGeyYooIymfcLI1NM14yr6EmVkT8vrtLtJMxgTWWRr7RDcxFGMRoy26rNdVrfXw2uA==
+
+"@iconify/react@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-1.1.4.tgz#c778eddbaf196e55705d0bedff00d039dc1de8d3"
+  integrity sha512-oxq8IMOq8q3nKGiDHbQPC8FcFuBsKve68JWBo140d5LRnj0bv5TB/FE/y01ZSvEZ7PlI2HIrnb2qivPN8kTDgw==
+
 "@mdx-js/mdx@^1.6.21":
   version "1.6.22"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.22.tgz#8a723157bf90e78f17dc0f27995398e6c731f1ba"

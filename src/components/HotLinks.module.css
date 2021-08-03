@@ -1,0 +1,23 @@
+.links {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.link {
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border-color: rgb(182, 33, 255) rgb(33, 211, 252) rgb(33, 211, 252) rgb(182, 33, 255);
+    border-style: solid;
+    border-width: 1px;
+    transition: all 200ms ease;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    cursor: pointer;
+}
+
+.link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 -5px 7px rgb(182, 33, 255), 5px 0 7px rgb(33, 211, 252), 0 5px 7px rgb(33, 211, 252), -5px 0 7px rgb(182, 33, 255);
+  }

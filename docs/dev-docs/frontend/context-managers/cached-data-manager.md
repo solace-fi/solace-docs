@@ -4,13 +4,13 @@ CachedDataManager caches data that is internal or fetched from extrenal sources.
 
 ## How does it work?
 
-Since this manager has multiple roles, this section will be split into several parts.
+Unlike other managers, this manager has multiple roles, so this section will be split into several parts.
 
 ### Version and Reload
 
 CachedDataManager controls app-wide data refresh. This is made possible with parts of the app relying on `version` and `dataVersion`.
 
-`version` is a number that increments by 1 every time its respective function `reload` is called, regardless of where it was called from. By incrementing `version` , any part of the app that has `version` as a dependency, will refresh.
+`version` is a number that increments by 1 every time its respective function `reload` is called, regardless of where it was called from. By incrementing `version` , any part of the app that has it as a dependency, will refresh.
 
 `dataVersion` is similar to `version` , except its respective function `dataReload` is only called within the manager on an interval.
 
