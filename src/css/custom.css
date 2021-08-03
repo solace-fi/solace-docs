@@ -96,7 +96,7 @@ html[data-theme='dark'] .menu {
 }
 
 .container {
-  max-width: var(--ifm-interface-container-width);
+  max-width: var(--ifm-interface-container-width) !important;
 }
 
 p {
