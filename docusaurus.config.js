@@ -1,8 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Solace',
-  tagline: 'Documentation and Guides',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://docs.solace.fi',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
@@ -10,6 +9,9 @@ module.exports = {
   organizationName: 'Solace', // Usually your GitHub org/user name.
   projectName: 'Solace-docs', // Usually your repo name.
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark'
+    },
     // prism: {
     //   additionalLanguages: ["solidity"],
     // },
@@ -17,81 +19,96 @@ module.exports = {
       title: 'Solace Docs',
       logo: {
         alt: 'Solace Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
-          label: "Front-end",
-          to: "docs/frontend/getting-started",
-          position: "right",
-        },
-        {
-          label: "Contracts",
-          to: "docs/contracts/contracts",
-          position: "right",
-        },
-        {
           label: "Website",
           to: "https://www.solace.fi",
+          position: "left",
+        },
+        {
+          label: "App",
+          to: "https://rinkeby.solace.fi",
+          position: "left",
+        },
+        {
+          label: "User Docs",
+          to: "docs/user-docs/intro",
+          position: "right",
+        },
+        {
+          label: "Developer Docs",
+          to: "docs/dev-docs/intro",
           position: "right",
         },
         {
           label: 'Whitepaper',
-          href: 'https://app.box.com/s/k75yg40rffq28at6wfhiebni5falo4uy',
+          href: 'https://whitepaper.solace.fi/',
           position: 'right',
         },
         {
           label: 'GitHub',
-          href: 'https://github.com/solace-fi/core',
+          href: 'https://github.com/solace-fi',
           position: 'right',
-        },
+        }
       ],
     },
-    // footer: {
-    //   style: 'dark',
-    //   links: [
-    //     {
-    //       title: 'Docs',
-    //       items: [
-    //         {
-    //           label: 'Tutorial',
-    //           to: '/docs/intro',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: 'Community',
-    //       items: [
-    //         {
-    //           label: 'Stack Overflow',
-    //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-    //         },
-    //         {
-    //           label: 'Discord',
-    //           href: 'https://discordapp.com/invite/docusaurus',
-    //         },
-    //         {
-    //           label: 'Twitter',
-    //           href: 'https://twitter.com/docusaurus',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: 'More',
-    //       items: [
-    //         {
-    //           label: 'Blog',
-    //           to: '/blog',
-    //         },
-    //         {
-    //           label: 'GitHub',
-    //           href: 'https://github.com/facebook/docusaurus',
-    //         },
-    //       ],
-    //     },
-    //   ],
-    //   copyright: `unlicensed`,
-    // },
+    footer: {
+      links: [
+        {
+          title: 'Solace',
+          items: [
+            {
+              label: "Website",
+              to: "https://www.solace.fi",
+            },
+            {
+              label: "App",
+              to: "https://rinkeby.solace.fi",
+            },
+            {
+              label: 'Whitepaper',
+              href: 'https://whitepaper.solace.fi/',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/solace-fi',
+            }
+          ],
+        },
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: "User Docs",
+              to: "docs/user-docs/intro",
+            },
+            {
+              label: "Developer Docs",
+              to: "docs/dev-docs/intro",
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Linkedin',
+              to: 'https://www.linkedin.com/company/solace-labs/about/'
+            },
+            {
+              label: 'Twitter',
+              to: 'https://twitter.com/solacefi'
+            },
+            {
+              label: 'Discord',
+              to: 'https://discord.com/invite/7v8qsyepfu'
+            }
+          ],
+        },
+      ]
+    },
   },
   presets: [
     [

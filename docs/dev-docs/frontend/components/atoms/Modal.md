@@ -23,7 +23,7 @@
 
 ### `ModalBase` (exported)
 - **Props**: ModalProps
-= **Additional Styles**: FadeInAnimation
+- **Additional Styles**: FadeInAnimation
 - **Info**: Base modal component.
 
 ### `ModalCloseButton` (exported)

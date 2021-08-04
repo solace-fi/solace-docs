@@ -4,10 +4,23 @@
   display: flex;
   align-items: center;
   padding: 2rem 0;
-  width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.feature {
+  padding: 25px 10px 10px 10px;
+  margin: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 7px white;
+}
+
+.feature__title {
+  font-weight: 600;
 }
