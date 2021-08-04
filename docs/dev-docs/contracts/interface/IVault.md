@@ -1,19 +1,25 @@
-## `Vault`
-
-Capital Providers can deposit ETH to mint shares of the Vault (CP tokens)
+## `IVault`
 
 
 
 
-### `constructor(address _governance, address _registry, address _token)` (public)
 
 
+### `governance() → address` (external)
+
+Governance.
+
+
+
+### `newGovernance() → address` (external)
+
+Governance to take over.
 
 
 
 ### `setGovernance(address _governance)` (external)
 
-Allows governance to be transferred to a new governor.
+Transfers the governance role to a new governor.
 Can only be called by the current governor.
 
 
@@ -46,7 +52,7 @@ Can only be called by the current governor.
 
 
 
-### `deposit()` (public)
+### `deposit()` (external)
 
 Allows a user to deposit ETH into the Vault (becoming a Capital Provider)
 Shares of the Vault (CP tokens) are minted to caller
@@ -88,6 +94,12 @@ Can only be called by ClaimsEscrow.
 
 
 
+### `token() → contract IERC20` (external)
+
+
+
+
+
 ### `maxRedeemableShares(address user) → uint256` (external)
 
 Returns the maximum redeemable shares by the `user` such that Vault does not go under MCR
@@ -104,43 +116,52 @@ Returns the total quantity of all assets under control of this
 
 
 
-### `_totalAssets() → uint256` (internal)
+### `cooldownMin() → uint64` (external)
 
-Quantity of all assets under control of this Vault, including those loaned out to Strategies
-
-
-
-### `_shareValue(uint256 shares) → uint256` (internal)
-
-Determines the current value of `shares`
+The minimum amount of time a user must wait to withdraw funds.
 
 
 
+### `cooldownMax() → uint64` (external)
 
-### `_sharesForAmount(uint256 amount) → uint256` (internal)
-
-Determines how many shares `amount` of token would receive.
-
+The maximum amount of time a user must wait to withdraw funds.
 
 
 
-### `min(uint256 a, uint256 b) → uint256` (internal)
+### `cooldownStart(address _user) → uint64` (external)
+
+The timestamp that a depositor's cooldown started.
 
 
 
 
 
-### `receive()` (external)
-
-Fallback function to allow contract to receive ETH
-Mints CP tokens to caller if caller is not Vault or WETH
+### `DepositMade(address depositor, uint256 amount, uint256 shares)`
 
 
 
-### `fallback()` (external)
 
-Fallback function to allow contract to receive ETH
-Mints CP tokens to caller if caller is not Vault or WETH
+
+### `WithdrawalMade(address withdrawer, uint256 value)`
+
+
+
+
+
+### `FundsSent(uint256 value)`
+
+
+
+
+
+### `EmergencyShutdown(bool active)`
+
+
+
+
+
+### `GovernanceTransferred(address _newGovernance)`
+
 
 
 
