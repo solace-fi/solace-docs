@@ -1,21 +1,73 @@
-## `Registry`
+## `IRegistry`
 
 Tracks the contracts in the Solaverse.
 
 
 
 
-### `initialize(address _governance)` (public)
+### `governance() → address` (external)
 
-initialize function for the registry contract.
-Only called once in contract deployment to initialize governor and admin. 
+Governance.
+
+
+
+### `newGovernance() → address` (external)
+
+Governance to take over.
+
+
+
+### `master() → address` (external)
+
+Protocol contract address getters
+
+
+
+### `vault() → address` (external)
+
+
+
+
+
+### `treasury() → address` (external)
+
+
+
+
+
+### `solace() → address` (external)
+
+
+
+
+
+### `locker() → address` (external)
+
+
+
+
+
+### `claimsEscrow() → address` (external)
+
+
+
+
+
+### `policyManager() → address` (external)
+
+
+
+
+
+### `riskManager() → address` (external)
+
 
 
 
 
 ### `setGovernance(address _governance)` (external)
 
-Allows governance to be transferred to a new governor.
+Transfers the governance role to a new governor.
 Can only be called by the current governor.
 
 
@@ -39,14 +91,6 @@ Can only be called by the current governor.
 ### `setMaster(address _master)` (external)
 
 Sets the master contract.
-Can only be called by the current governor.
-
-
-
-
-### `setClaimsEscrow(address _claimsEscrow)` (external)
-
-Sets the Claims Escrow contract.
 Can only be called by the current governor.
 
 
@@ -76,6 +120,14 @@ Can only be called by the current governor.
 
 
 
+### `setClaimsEscrow(address _claimsEscrow)` (external)
+
+Sets the Claims Escrow contract.
+Can only be called by the current governor.
+
+
+
+
 ### `setPolicyManager(address _policyManager)` (external)
 
 Sets the PolicyManager contract.
@@ -92,9 +144,57 @@ Can only be called by the current governor.
 
 
 
-### `_authorizeUpgrade(address)` (internal)
 
-To authorize the admin to upgrade the contract.
+### `GovernanceTransferred(address _newGovernance)`
+
+
+
+
+
+### `SolaceSet(address _solace)`
+
+
+
+
+
+### `MasterSet(address _master)`
+
+
+
+
+
+### `VaultSet(address _vault)`
+
+
+
+
+
+### `TreasurySet(address _treasury)`
+
+
+
+
+
+### `LockerSet(address _locker)`
+
+
+
+
+
+### `ClaimsEscrowSet(address _claimsEscrow)`
+
+
+
+
+
+### `PolicyManagerSet(address _policyManager)`
+
+
+
+
+
+### `RiskManagerSet(address _riskManager)`
+
 
 
 

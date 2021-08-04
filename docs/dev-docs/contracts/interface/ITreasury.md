@@ -1,13 +1,6 @@
-## `Treasury`
+## `ITreasury`
 
-The war chest of Castle Solace.
-
-
-
-
-### `constructor(address _governance, address _swapRouter, address _weth, address _registry)` (public)
-
-Constructs the treasury contract.
+The interface of the war chest of Castle Solace.
 
 
 
@@ -24,9 +17,21 @@ Fallback function. Deposits eth.
 
 
 
+### `governance() → address` (external)
+
+Governance.
+
+
+
+### `newGovernance() → address` (external)
+
+Governance to take over.
+
+
+
 ### `setGovernance(address _governance)` (external)
 
-Allows governance to be transferred to a new governor.
+Transfers the governance role to a new governor.
 Can only be called by the current governor.
 
 
@@ -106,22 +111,39 @@ Can only be called by the current governor.
 
 
 
+### `unpaidRewards(address _user) → uint256` (external)
+
+The amount of eth that a user is owed if any.
+
+
+
+
 ### `withdraw()` (external)
 
 Pull any unpaid rewards.
 
 
 
-### `transferEth(address _user, uint256 _amount)` (internal)
 
-Transfers a user some eth.
-Also adds on their unpaid rewards, and stores new unpaid rewards.
+### `EthDeposited(uint256 _amount)`
 
 
 
 
-### `min(uint256 _a, uint256 _b) → uint256 _c` (internal)
 
+### `TokenDeposited(address _token, uint256 _amount)`
+
+
+
+
+
+### `FundsSpent(address _token, uint256 _amount, address _recipient)`
+
+
+
+
+
+### `GovernanceTransferred(address _newGovernance)`
 
 
 

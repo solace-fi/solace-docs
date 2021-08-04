@@ -5,7 +5,7 @@
 
 
 
-### `constructor(address _master, address _vault, address _rewardToken, uint256 _startBlock, uint256 _endBlock)` (public)
+### `constructor(address _governance, address _master, address _vault, contract SOLACE _solace, uint256 _startBlock, uint256 _endBlock, address _swapRouter, address _weth)` (public)
 
 Constructs the farm.
 
@@ -26,15 +26,24 @@ Fallback function. Deposits eth.
 
 ### `setGovernance(address _governance)` (external)
 
-Transfers the governance role to a new governor.
+Allows governance to be transferred to a new governor.
 Can only be called by the current governor.
 
+
+
+
+### `acceptGovernance()` (external)
+
+Accepts the governance role.
+Can only be called by the new governor.
 
 
 
 ### `setRewards(uint256 _blockReward)` (external)
 
 Sets the amount of reward token to distribute per block.
+Only affects future rewards.
+Can only be called by Master.
 
 
 
@@ -42,6 +51,7 @@ Sets the amount of reward token to distribute per block.
 ### `setEnd(uint256 _endBlock)` (external)
 
 Sets the farm's end block. Used to extend the duration.
+Can only be called by the current governor.
 
 
 
@@ -54,10 +64,25 @@ User will receive accumulated rewards if any.
 
 
 
+### `depositCpSigned(address _depositor, uint256 _amount, uint256 _deadline, uint8 v, bytes32 r, bytes32 s)` (external)
+
+Deposit some CP tokens using permit.
+User will receive accumulated rewards if any.
+
+
+
+
 ### `depositEth()` (external)
 
 Deposit some ETH.
 User will receive accumulated rewards if any.
+
+
+
+### `compoundRewards()` (external)
+
+Your money already makes you money. Now make your money make more money!
+Withdraws your SOLACE rewards, swaps it for WETH, then deposits that WETH onto the farm.
 
 
 
@@ -69,18 +94,16 @@ User will receive _amount of deposited tokens and accumulated rewards.
 
 
 
-### `withdrawEth(uint256 _amount, uint256 _maxLoss)` (external)
-
-Withdraw some Eth.
-`_amount` is denominated in CP tokens, which are converted to eth then returned to the user.
-User will receive _amount of deposited tokens converted to eth and accumulated rewards.
-
-
-
-
 ### `withdrawRewards()` (external)
 
 Withdraw your rewards without unstaking your tokens.
+
+
+
+### `withdrawRewardsForUser(address _user)` (external)
+
+Withdraw a users rewards without unstaking their tokens.
+Can only be called by Master.
 
 
 
@@ -110,7 +133,15 @@ Deposits some ether.
 
 
 
-### `_harvest()` (internal)
+### `_depositCp(address _depositor, uint256 _amount)` (internal)
+
+Deposit some CP tokens.
+User will receive accumulated rewards if any.
+
+
+
+
+### `_harvest(address _user)` (internal)
 
 Calculate and transfer a user's rewards.
 

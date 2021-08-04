@@ -5,7 +5,7 @@ This contract is the SOLACE token distributor.
 
 
 
-### `constructor(contract SOLACE _solace, uint256 _solacePerBlock)` (public)
+### `constructor(address _governance, contract SOLACE _solace, uint256 _solacePerBlock)` (public)
 
 Constructs the master contract.
 
@@ -14,9 +14,16 @@ Constructs the master contract.
 
 ### `setGovernance(address _governance)` (external)
 
-Transfers the governance role to a new governor.
+Allows governance to be transferred to a new governor.
 Can only be called by the current governor.
 
+
+
+
+### `acceptGovernance()` (external)
+
+Accepts the governance role.
+Can only be called by the new governor.
 
 
 
@@ -48,6 +55,12 @@ Optionally updates all farms.
 ### `massUpdateFarms()` (public)
 
 Updates all farms to be up to date to the current block.
+
+
+
+### `withdrawRewards()` (external)
+
+Withdraw your rewards from all farms.
 
 
 
