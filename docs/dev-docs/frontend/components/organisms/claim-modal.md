@@ -8,7 +8,7 @@ title: ClaimModal
 - **closeModal (function)**: Function to call when closing modal
 - **isOpen (boolean)**: Boolean to open modal
 - **latestBlock (number)**: The latest block number
-- **selectedPolicy (Policy | undefined)**: The currently selected product contract
+- **selectedPolicy (Policy | undefined)**: The currently selected policy
 
 ## Components
 

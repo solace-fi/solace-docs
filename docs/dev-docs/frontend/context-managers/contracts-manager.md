@@ -23,5 +23,6 @@ While the core contracts are initialized via `useGetContract` , the product cont
 #### `products` (Contract | null)
 #### `contractSources` (ContractSources[])
 #### `products` (SupportedProduct[])
+#### `selectedProtocol` (Contract | null)
 #### `getProtocolByName` (function)
 #### `setSelectedProtocolByName` (function)

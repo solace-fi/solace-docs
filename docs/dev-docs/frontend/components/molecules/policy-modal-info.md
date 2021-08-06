@@ -5,7 +5,7 @@ title: PolicyModalInfo
 ## Props
 
 ### `PolicyModalInfoProps`
-- **selectedPolicy (Policy | undefined)**: The currently selected product contract
+- **selectedPolicy (Policy | undefined)**: The currently selected policy
 - **latestBlock (number)**: The latest block number
 
 ## Components
