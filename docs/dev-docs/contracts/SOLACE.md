@@ -6,9 +6,10 @@ Solace tokens can be earned by depositing Capital Provider or Liquidity Provider
 
 
 
-### `constructor()` (public)
+### `constructor(address _governance)` (public)
 
 Constructs the Solace Token contract.
+
 
 
 
@@ -20,11 +21,18 @@ The caller must be a minter.
 
 
 
-### `setGovernance(address _governance)` (public)
+### `setGovernance(address _governance)` (external)
 
-Transfers the governance role to a new governor.
+Allows governance to be transferred to a new governor.
 Can only be called by the current governor.
 
+
+
+
+### `acceptGovernance()` (external)
+
+Accepts the governance role.
+Can only be called by the new governor.
 
 
 
@@ -40,6 +48,12 @@ Can only be called by the current governor.
 
 Removes a minter.
 Can only be called by the current governor.
+
+
+
+
+
+### `GovernanceTransferred(address _newGovernance)`
 
 
 

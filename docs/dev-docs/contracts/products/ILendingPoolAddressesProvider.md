@@ -1,0 +1,14 @@
+## `ILendingPoolAddressesProvider`
+
+
+
+
+
+
+### `getPriceOracle() → address` (external)
+
+
+
+
+
+

@@ -1,13 +1,6 @@
-## `ClaimsEscrow`
+## `IClaimsEscrow`
 
-
-
-
-
-
-### `constructor(address _governance, address _registry)` (public)
-
-Constructs the ClaimsEscrow contract.
+The interface for the Claims Escrow contract.
 
 
 
@@ -21,21 +14,6 @@ Receive function. Deposits eth.
 ### `fallback()` (external)
 
 Fallback function. Deposits eth.
-
-
-
-### `setGovernance(address _governance)` (external)
-
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
-
-
-
-
-### `acceptGovernance()` (external)
-
-Accepts the governance role.
-Can only be called by the new governor.
 
 
 
@@ -73,32 +51,59 @@ Can only be called by the current governor.
 
 
 
-### `setCooldownPeriod(uint256 period)` (external)
+### `cooldownPeriod() → uint256` (external)
 
 
 
 
 
-### `exists(uint256 claimID) → bool` (external)
+### `setCooldownPeriod(uint256 _period)` (external)
 
 
 
 
 
-### `isWithdrawable(uint256 claimID) → bool` (external)
+### `governance() → address` (external)
+
+Governance.
+
+
+
+### `newGovernance() → address` (external)
+
+Governance to take over.
+
+
+
+### `setGovernance(address _governance)` (external)
+
+Transfers the governance role to a new governor.
+Can only be called by the current governor.
+
+
+
+
+### `acceptGovernance()` (external)
+
+Accepts the governance role.
+Can only be called by the new governor.
+
+
+
+
+### `ClaimReceived(uint256 claimID, address claimant, uint256 amount)`
 
 
 
 
 
-### `timeLeft(uint256 claimID) → uint256` (external)
+### `ClaimWithdrawn(uint256 claimID, address claimant, uint256 amount)`
 
 
 
 
 
-### `listClaims(address claimant) → uint256[] claimIDs` (external)
-
+### `GovernanceTransferred(address _newGovernance)`
 
 
 

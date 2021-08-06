@@ -1,28 +1,49 @@
-## `UniswapLpFarm`
+## `SolaceEthLpFarm`
 
 
 
 
 
 
-### `constructor(address _master, address _stakeToken, address _rewardToken, uint256 _startBlock, uint256 _endBlock, address _pool)` (public)
+### `constructor(address _governance, address _master, address _lpToken, contract SOLACE _solace, uint256 _startBlock, uint256 _endBlock, address _pool, address _weth, address _appraisor)` (public)
 
 Constructs the farm.
 
 
 
 
+### `receive()` (external)
+
+
+
+
+
+### `fallback()` (external)
+
+
+
+
+
 ### `setGovernance(address _governance)` (external)
 
-Transfers the governance role to a new governor.
+Allows governance to be transferred to a new governor.
 Can only be called by the current governor.
 
+
+
+
+### `acceptGovernance()` (external)
+
+Accepts the governance role.
+Can only be called by the new governor.
 
 
 
 ### `setRewards(uint256 _blockReward)` (external)
 
 Sets the amount of reward token to distribute per block.
+Only affects future rewards.
+Can only be called by Master.
 
 
 
@@ -30,11 +51,20 @@ Sets the amount of reward token to distribute per block.
 ### `setEnd(uint256 _endBlock)` (external)
 
 Sets the farm's end block. Used to extend the duration.
+Can only be called by the current governor.
 
 
 
 
-### `deposit(uint256 _token)` (external)
+### `setAppraisor(address _appraisor)` (external)
+
+Sets the appraisal function.
+Can only be called by the current governor.
+
+
+
+
+### `deposit(uint256 _tokenId)` (external)
 
 Deposit a Uniswap LP token.
 User will receive accumulated Solace rewards if any.
@@ -42,10 +72,26 @@ User will receive accumulated Solace rewards if any.
 
 
 
-### `withdraw(uint256 _token)` (external)
+### `depositSigned(address _depositor, uint256 _tokenId, uint256 _deadline, uint8 v, bytes32 r, bytes32 s)` (external)
+
+Deposit a Uniswap LP token using permit.
+User will receive accumulated Solace rewards if any.
+
+
+
+
+### `mintAndDeposit(struct ISolaceEthLpFarm.MintAndDepositParams params) → uint256 tokenId` (external)
+
+Mint a new Uniswap LP token then deposit it.
+User will receive accumulated Solace rewards if any.
+
+
+
+
+### `withdraw(uint256 _tokenId)` (external)
 
 Withdraw a Uniswap LP token.
-User will receive _token and accumulated rewards.
+User will receive _tokenId and accumulated rewards.
 
 
 
@@ -53,6 +99,13 @@ User will receive _token and accumulated rewards.
 ### `withdrawRewards()` (external)
 
 Withdraw your rewards without unstaking your tokens.
+
+
+
+### `withdrawRewardsForUser(address _user)` (external)
+
+Withdraw a users rewards without unstaking their tokens.
+Can only be called by Master.
 
 
 
@@ -105,16 +158,16 @@ Token must exist and must exist in the correct pool.
 
 
 
-### `_appraise(uint128 _liquidity, int24 _tickLower, int24 _tickUpper) → uint256 _value` (internal)
-
-Appraise a Uniswap LP token.
-
-
-
-
-### `_harvest()` (internal)
+### `_harvest(address _user)` (internal)
 
 Calculate and transfer a user's rewards.
+
+
+
+### `_deposit(address _depositor, uint256 _tokenId)` (internal)
+
+Performs the internal accounting for a deposit.
+
 
 
 
