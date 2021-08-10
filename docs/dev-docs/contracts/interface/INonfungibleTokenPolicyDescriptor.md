@@ -1,11 +1,4 @@
-## `INonfungibleTokenPolicyDescriptor`
-
-
-
-
-
-
-### `tokenURI(contract IPolicyManager policyManager, uint256 policyID) → string` (external)
+Interface smart contract definition for `NonfungibleTokenPolicyDescriptor`. Please refer to [`NonfungibleTokenPolicyDescriptor`](../NonfungibleTokenPolicyDescriptor.md) documentation to learn more.
 
 
 
