@@ -1,13 +1,12 @@
-## `ICToken`
 
 
 
-
-
-
-### `mint(uint256 mintAmount)` (external)
-
-
+## Functions
+### mint
+```solidity
+  function mint(
+  ) external
+```
 
 
 

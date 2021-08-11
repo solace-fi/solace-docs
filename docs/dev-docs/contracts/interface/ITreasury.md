@@ -1,151 +1,255 @@
-## `ITreasury`
-
 The interface of the war chest of Castle Solace.
 
 
-
-
-### `receive()` (external)
-
+## Functions
+### receive
+```solidity
+  function receive(
+  ) external
+```
 Receive function. Deposits eth.
 
 
 
-### `fallback()` (external)
-
+### fallback
+```solidity
+  function fallback(
+  ) external
+```
 Fallback function. Deposits eth.
 
 
 
-### `governance() → address` (external)
-
+### governance
+```solidity
+  function governance(
+  ) external returns (address)
+```
 Governance.
 
 
 
-### `newGovernance() → address` (external)
-
+### newGovernance
+```solidity
+  function newGovernance(
+  ) external returns (address)
+```
 Governance to take over.
 
 
 
-### `setGovernance(address _governance)` (external)
-
+### setGovernance
+```solidity
+  function setGovernance(
+    address _governance
+  ) external
+```
 Transfers the governance role to a new governor.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_governance` | address | The new governor.
 
-
-### `acceptGovernance()` (external)
-
+### acceptGovernance
+```solidity
+  function acceptGovernance(
+  ) external
+```
 Accepts the governance role.
 Can only be called by the new governor.
 
 
 
-### `depositEth()` (external)
-
+### depositEth
+```solidity
+  function depositEth(
+  ) external
+```
 Deposits some ether.
 
 
 
-### `depositToken(address _token, uint256 _amount)` (external)
-
+### depositToken
+```solidity
+  function depositToken(
+    address _token,
+    uint256 _amount
+  ) external
+```
 Deposit some ERC20 token.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_token` | address | The address of the token to deposit.
+|`_amount` | uint256 | The amount of the token to deposit.
 
-
-### `spend(address _token, uint256 _amount, address _recipient)` (external)
-
+### spend
+```solidity
+  function spend(
+    address _token,
+    uint256 _amount,
+    address _recipient
+  ) external
+```
 Spends some tokens.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_token` | address | The address of the token to spend.
+|`_amount` | uint256 | The amount of the token to spend.
+|`_recipient` | address | The address of the token receiver.
 
-
-### `swap(bytes _path, uint256 _amountIn, uint256 _amountOutMinimum)` (external)
-
+### swap
+```solidity
+  function swap(
+    bytes _path,
+    uint256 _amountIn,
+    uint256 _amountOutMinimum
+  ) external
+```
 Manually swaps a token.
 Can only be called by the current governor.
-
 
 Swaps the entire balance in case some tokens were unknowingly received.
 Reverts if the swap was unsuccessful.
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_path` | bytes | The path of pools to take.
+|`_amountIn` | uint256 | The amount to swap.
+|`_amountOutMinimum` | uint256 | The minimum about to receive.
 
-### `setPremiumRecipients(address payable[] _recipients, uint32[] _weights)` (external)
-
+### setPremiumRecipients
+```solidity
+  function setPremiumRecipients(
+    address payable[] _recipients,
+    uint32[] _weights
+  ) external
+```
 Sets the premium recipients and their weights.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_recipients` | address payable[] | The premium recipients.
+|`_weights` | uint32[] | The recipient weights.
 
-
-### `routePremiums()` (external)
-
+### routePremiums
+```solidity
+  function routePremiums(
+  ) external
+```
 Routes the premiums to the recipients
 
 
 
-### `wrap(uint256 _amount)` (external)
-
+### wrap
+```solidity
+  function wrap(
+    uint256 _amount
+  ) external
+```
 Wraps some eth into weth.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_amount` | uint256 | The amount to wrap.
 
-
-### `unwrap(uint256 _amount)` (external)
-
+### unwrap
+```solidity
+  function unwrap(
+    uint256 _amount
+  ) external
+```
 Unwraps some weth into eth.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_amount` | uint256 | The amount to unwrap.
+
+### refund
+```solidity
+  function refund(
+  ) external
+```
 
 
-### `refund(address _user, uint256 _amount)` (external)
 
 
-
-
-
-### `unpaidRewards(address _user) → uint256` (external)
-
+### unpaidRefunds
+```solidity
+  function unpaidRefunds(
+    address _user
+  ) external returns (uint256)
+```
 The amount of eth that a user is owed if any.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_user` | address | The user.
 
-
-### `withdraw()` (external)
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`The`| address | amount.
+### withdraw
+```solidity
+  function withdraw(
+  ) external
+```
 Pull any unpaid rewards.
 
 
 
-
-### `EthDeposited(uint256 _amount)`
-
-
-
-
-
-### `TokenDeposited(address _token, uint256 _amount)`
+## Events
+### EthDeposited
+```solidity
+  event EthDeposited(
+  )
+```
 
 
 
+### TokenDeposited
+```solidity
+  event TokenDeposited(
+  )
+```
 
 
-### `FundsSpent(address _token, uint256 _amount, address _recipient)`
+
+### FundsSpent
+```solidity
+  event FundsSpent(
+  )
+```
 
 
 
-
-
-### `GovernanceTransferred(address _newGovernance)`
-
-
+### GovernanceTransferred
+```solidity
+  event GovernanceTransferred(
+  )
+```
 
 
 

@@ -1,13 +1,12 @@
-## `ILendingPoolAddressesProvider`
 
 
 
-
-
-
-### `getPriceOracle() → address` (external)
-
-
+## Functions
+### getPriceOracle
+```solidity
+  function getPriceOracle(
+  ) external returns (address)
+```
 
 
 

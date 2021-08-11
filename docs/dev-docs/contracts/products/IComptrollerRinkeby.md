@@ -1,13 +1,12 @@
-## `IComptrollerRinkeby`
 
 
 
-
-
-
-### `markets(address market) → bool isListed, uint256 collateralFactorMantissa` (external)
-
-
+## Functions
+### markets
+```solidity
+  function markets(
+  ) external returns (bool isListed, uint256 collateralFactorMantissa)
+```
 
 
 

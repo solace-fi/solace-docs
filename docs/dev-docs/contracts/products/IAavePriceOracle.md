@@ -1,13 +1,12 @@
-## `IAavePriceOracle`
 
 
 
-
-
-
-### `getAssetPrice(address asset) → uint256` (external)
-
-
+## Functions
+### getAssetPrice
+```solidity
+  function getAssetPrice(
+  ) external returns (uint256)
+```
 
 
 

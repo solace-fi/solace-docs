@@ -1,50 +1,82 @@
-## `LpAppraisor`
+
+
+
+## Functions
+### constructor
+```solidity
+  function constructor(
+  ) public
+```
 
 
 
 
-
-
-### `constructor(address _governance, address _lpToken, uint256 _curve_A, uint256 _curve_B)` (public)
-
-
-
-
-
-### `setGovernance(address _governance)` (external)
-
+### setGovernance
+```solidity
+  function setGovernance(
+    address _governance
+  ) external
+```
 Allows governance to be transferred to a new governor.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_governance` | address | The new governor.
 
-
-### `acceptGovernance()` (external)
-
+### acceptGovernance
+```solidity
+  function acceptGovernance(
+  ) external
+```
 Accepts the governance role.
 Can only be called by the new governor.
 
 
 
-### `setCurve(uint256 _curve_A, uint256 _curve_B)` (external)
-
+### setCurve
+```solidity
+  function setCurve(
+    uint256 _curve_A,
+    uint256 _curve_B
+  ) external
+```
 Modifies the appraisal curve, and with it the incentive structure.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_curve_A` | uint256 | The curve parameter A.
+|`_curve_B` | uint256 | The curve parameter B.
 
-
-### `appraise(uint256 _tokenId) → uint256 _value` (external)
-
+### appraise
+```solidity
+  function appraise(
+    uint256 _tokenId
+  ) external returns (uint256 _value)
+```
 Appraise a Uniswap LP Token.
 Token must exist and must exist in the correct pool.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_tokenId` | uint256 | The id of the token to appraise.
 
-
-
-### `GovernanceTransferred(address _newGovernance)`
-
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`_value`| uint256 | The token's value.
+## Events
+### GovernanceTransferred
+```solidity
+  event GovernanceTransferred(
+  )
+```
 
 
 

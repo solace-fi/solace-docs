@@ -29,8 +29,10 @@ This command generates static content into the `build` directory and can be serv
 Assuming this repo is at `./solace-docs` and the core repo is at `./core`
 
 ```console
+mkdir ./core/templates/
+cp ./solace-docs/contract.hbs ./core/templates/
 cd ./core
 npm i
-npx hardhat docgen
+npx solidity-docgen --solc-module solc-0.8 -t ./templates
 cp -r ./docs/. ../solace-docs/docs/dev-docs/contracts/
 ```

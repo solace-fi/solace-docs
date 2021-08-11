@@ -1,37 +1,48 @@
-## `ICToken`
+
+
+
+## Functions
+### balanceOf
+```solidity
+  function balanceOf(
+  ) external returns (uint256)
+```
 
 
 
 
-
-
-### `balanceOf(address owner) → uint256` (external)
-
-
-
-
-
-### `exchangeRateStored() → uint256` (external)
+### exchangeRateStored
+```solidity
+  function exchangeRateStored(
+  ) external returns (uint256)
+```
 
 
 
 
-
-### `symbol() → string` (external)
-
-
-
-
-
-### `underlying() → address` (external)
+### symbol
+```solidity
+  function symbol(
+  ) external returns (string)
+```
 
 
 
 
+### underlying
+```solidity
+  function underlying(
+  ) external returns (address)
+```
 
-### `redeem(uint256 redeemTokens) → uint256` (external)
 
 
+
+### redeem
+```solidity
+  function redeem(
+  ) external returns (uint256)
+```
 
 
 

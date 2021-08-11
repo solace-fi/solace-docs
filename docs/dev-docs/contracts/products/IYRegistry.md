@@ -1,13 +1,12 @@
-## `IYRegistry`
 
 
 
-
-
-
-### `getVaultInfo(address _vault) → address controller, address token, address strategy, bool isWrapped, bool isDelegated` (external)
-
-
+## Functions
+### getVaultInfo
+```solidity
+  function getVaultInfo(
+  ) external returns (address controller, address token, address strategy, bool isWrapped, bool isDelegated)
+```
 
 
 

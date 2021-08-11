@@ -1,200 +1,288 @@
-## `IProduct`
 
 
 
+## Functions
+### governance
+```solidity
+  function governance(
+  ) external returns (address)
+```
 
 
 
-### `governance() → address` (external)
 
+### newGovernance
+```solidity
+  function newGovernance(
+  ) external returns (address)
+```
 
 
 
 
-### `newGovernance() → address` (external)
+### price
+```solidity
+  function price(
+  ) external returns (uint24)
+```
 
 
 
 
+### minPeriod
+```solidity
+  function minPeriod(
+  ) external returns (uint40)
+```
 
-### `price() → uint24` (external)
 
 
 
+### maxPeriod
+```solidity
+  function maxPeriod(
+  ) external returns (uint40)
+```
 
 
-### `minPeriod() → uint64` (external)
 
 
+### maxCoverAmount
+```solidity
+  function maxCoverAmount(
+  ) external returns (uint256)
+```
 
 
 
-### `maxPeriod() → uint64` (external)
 
+### maxCoverPerUser
+```solidity
+  function maxCoverPerUser(
+  ) external returns (uint256)
+```
 
 
 
 
-### `maxCoverAmount() → uint256` (external)
+### maxCoverPerUserDivisor
+```solidity
+  function maxCoverPerUserDivisor(
+  ) external returns (uint32)
+```
 
 
 
 
+### coveredPlatform
+```solidity
+  function coveredPlatform(
+  ) external returns (address)
+```
 
-### `maxCoverPerUser() → uint256` (external)
 
 
 
+### productPolicyCount
+```solidity
+  function productPolicyCount(
+  ) external returns (uint256)
+```
 
 
-### `maxCoverPerUserDivisor() → uint32` (external)
 
 
+### activeCoverAmount
+```solidity
+  function activeCoverAmount(
+  ) external returns (uint256)
+```
 
 
 
-### `coveredPlatform() → address` (external)
 
+### setGovernance
+```solidity
+  function setGovernance(
+  ) external
+```
 
 
 
 
-### `productPolicyCount() → uint256` (external)
+### acceptGovernance
+```solidity
+  function acceptGovernance(
+  ) external
+```
 
 
 
 
+### setPrice
+```solidity
+  function setPrice(
+  ) external
+```
 
-### `activeCoverAmount() → uint256` (external)
 
 
 
+### setMinPeriod
+```solidity
+  function setMinPeriod(
+  ) external
+```
 
 
-### `setGovernance(address _governance)` (external)
 
 
+### setMaxPeriod
+```solidity
+  function setMaxPeriod(
+  ) external
+```
 
 
 
-### `acceptGovernance()` (external)
 
+### setCoveredPlatform
+```solidity
+  function setCoveredPlatform(
+  ) external
+```
 
 
 
 
-### `setPrice(uint24 _price)` (external)
+### setPolicyManager
+```solidity
+  function setPolicyManager(
+  ) external
+```
 
 
 
 
+### appraisePosition
+```solidity
+  function appraisePosition(
+  ) external returns (uint256 positionAmount)
+```
 
-### `setMinPeriod(uint64 _minPeriod)` (external)
 
 
 
+### name
+```solidity
+  function name(
+  ) external returns (string)
+```
 
 
-### `setMaxPeriod(uint64 _maxPeriod)` (external)
 
 
+### getQuote
+```solidity
+  function getQuote(
+  ) external returns (uint256)
+```
 
 
 
-### `setCoveredPlatform(address _coveredPlatform)` (external)
 
+### updateActiveCoverAmount
+```solidity
+  function updateActiveCoverAmount(
+  ) external
+```
 
 
 
 
-### `setPolicyManager(address _policyManager)` (external)
+### buyPolicy
+```solidity
+  function buyPolicy(
+  ) external returns (uint256 policyID)
+```
 
 
 
 
+### updateCoverAmount
+```solidity
+  function updateCoverAmount(
+  ) external
+```
 
-### `appraisePosition(address _policyholder, address _positionContract) → uint256 positionAmount` (external)
 
 
 
+### extendPolicy
+```solidity
+  function extendPolicy(
+  ) external
+```
 
 
-### `name() → string` (external)
 
 
+### cancelPolicy
+```solidity
+  function cancelPolicy(
+  ) external
+```
 
 
 
-### `getQuote(address _policyholder, address _positionContract, uint256 _coverAmount, uint64 _blocks) → uint256` (external)
 
+### updatePolicy
+```solidity
+  function updatePolicy(
+  ) external
+```
 
 
 
 
-### `updateActiveCoverAmount(int256 _coverDiff)` (external)
+## Events
+### PolicyCreated
+```solidity
+  event PolicyCreated(
+  )
+```
 
 
 
+### PolicyExtended
+```solidity
+  event PolicyExtended(
+  )
+```
 
 
-### `buyPolicy(address _policyholder, address _positionContract, uint256 _coverAmount, uint64 _blocks) → uint256 policyID` (external)
 
+### PolicyCanceled
+```solidity
+  event PolicyCanceled(
+  )
+```
 
 
 
+### PolicyUpdated
+```solidity
+  event PolicyUpdated(
+  )
+```
 
-### `updateCoverAmount(uint256 _policyID, uint256 _coverAmount)` (external)
 
 
-
-
-
-### `extendPolicy(uint256 _policyID, uint64 _blocks)` (external)
-
-
-
-
-
-### `cancelPolicy(uint256 _policyID)` (external)
-
-
-
-
-
-### `updatePolicy(uint256 _policyID, uint256 _coverAmount, uint64 _blocks)` (external)
-
-
-
-
-
-
-### `PolicyCreated(uint256 policyID)`
-
-
-
-
-
-### `PolicyExtended(uint256 policyID)`
-
-
-
-
-
-### `PolicyCanceled(uint256 policyID)`
-
-
-
-
-
-### `PolicyUpdated(uint256 policyID)`
-
-
-
-
-
-### `GovernanceTransferred(address _newGovernance)`
-
-
+### GovernanceTransferred
+```solidity
+  event GovernanceTransferred(
+  )
+```
 
 
 

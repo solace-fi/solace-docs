@@ -1,25 +1,30 @@
-## `MockRegistry`
-
 Mock registry for testing purposes
 
 
-
-
-### `getName() → string` (public)
-
-
-
-
-
-### `setName(string _name)` (public)
+## Functions
+### getName
+```solidity
+  function getName(
+  ) public returns (string)
+```
 
 
 
 
+### setName
+```solidity
+  function setName(
+  ) public
+```
 
-### `version() → string` (public)
 
 
+
+### version
+```solidity
+  function version(
+  ) public returns (string)
+```
 
 
 

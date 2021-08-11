@@ -1,31 +1,39 @@
-## `IAToken`
+
+
+
+## Functions
+### balanceOf
+```solidity
+  function balanceOf(
+  ) external returns (uint256)
+```
 
 
 
 
-
-
-### `balanceOf(address user) → uint256` (external)
-
-
-
-
-
-### `decimals() → uint8` (external)
+### decimals
+```solidity
+  function decimals(
+  ) external returns (uint8)
+```
 
 
 
 
-
-### `UNDERLYING_ASSET_ADDRESS() → address` (external)
-
-
-
-
-
-### `POOL() → address` (external)
+### UNDERLYING_ASSET_ADDRESS
+```solidity
+  function UNDERLYING_ASSET_ADDRESS(
+  ) external returns (address)
+```
 
 
+
+
+### POOL
+```solidity
+  function POOL(
+  ) external returns (address)
+```
 
 
 

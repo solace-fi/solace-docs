@@ -1,28 +1,33 @@
-## `Math`
-
-
 
 Standard math utilities missing in the Solidity language.
 min() and max() are borrowed from openzeppelin/contracts
 sqrt() is borrowed from stack overflow
 
 
-
-### `max(uint256 a, uint256 b) → uint256` (internal)
-
-
+## Functions
+### max
+```solidity
+  function max(
+  ) internal returns (uint256)
+```
 
 Returns the largest of two numbers.
 
-### `min(uint256 a, uint256 b) → uint256` (internal)
 
-
+### min
+```solidity
+  function min(
+  ) internal returns (uint256)
+```
 
 Returns the smallest of two numbers.
 
-### `sqrt(uint256 x) → uint256 y` (internal)
 
-
+### sqrt
+```solidity
+  function sqrt(
+  ) internal returns (uint256 y)
+```
 
 Returns the square root of a number.
 
