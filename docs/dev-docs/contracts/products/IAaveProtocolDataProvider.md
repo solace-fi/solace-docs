@@ -1,19 +1,21 @@
-## `IAaveProtocolDataProvider`
+
+
+
+## Functions
+### getReserveTokensAddresses
+```solidity
+  function getReserveTokensAddresses(
+  ) external returns (address aTokenAddress, address stableDebtTokenAddress, address variableDebtTokenAddress)
+```
 
 
 
 
-
-
-### `getReserveTokensAddresses(address asset) → address aTokenAddress, address stableDebtTokenAddress, address variableDebtTokenAddress` (external)
-
-
-
-
-
-### `ADDRESSES_PROVIDER() → address` (external)
-
-
+### ADDRESSES_PROVIDER
+```solidity
+  function ADDRESSES_PROVIDER(
+  ) external returns (address)
+```
 
 
 

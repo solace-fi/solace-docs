@@ -1,31 +1,39 @@
-## `IYVault`
+
+
+
+## Functions
+### token
+```solidity
+  function token(
+  ) external returns (address)
+```
 
 
 
 
-
-
-### `token() → address` (external)
-
-
-
-
-
-### `balanceOf(address user) → uint256` (external)
+### balanceOf
+```solidity
+  function balanceOf(
+  ) external returns (uint256)
+```
 
 
 
 
-
-### `getPricePerFullShare() → uint256` (external)
-
-
-
-
-
-### `deposit(uint256 amount)` (external)
+### getPricePerFullShare
+```solidity
+  function getPricePerFullShare(
+  ) external returns (uint256)
+```
 
 
+
+
+### deposit
+```solidity
+  function deposit(
+  ) external
+```
 
 
 

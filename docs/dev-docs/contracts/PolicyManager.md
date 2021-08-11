@@ -1,182 +1,329 @@
-## `PolicyManager`
-
 Creates new and modifies existing coverage policy ERC721 tokens
 
 
-
-
-### `constructor(address _governance)` (public)
-
+## Functions
+### constructor
+```solidity
+  function constructor(
+  ) public
+```
 Constructs the Policy Deployer ERC721 Token contract.
 
 
 
-### `setGovernance(address _governance)` (external)
-
+### setGovernance
+```solidity
+  function setGovernance(
+    address _governance
+  ) external
+```
 Allows governance to be transferred to a new governor.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_governance` | address | The new governor.
 
-
-### `acceptGovernance()` (external)
-
+### acceptGovernance
+```solidity
+  function acceptGovernance(
+  ) external
+```
 Accepts the governance role.
 Can only be called by the new governor.
 
 
 
-### `addProduct(address _product)` (external)
-
+### addProduct
+```solidity
+  function addProduct(
+    address _product
+  ) external
+```
 Adds a new product.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_product` | address | the new product
 
-
-### `removeProduct(address _product)` (external)
-
+### removeProduct
+```solidity
+  function removeProduct(
+    address _product
+  ) external
+```
 Removes a product.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_product` | address | the product to remove
 
-
-### `setTokenDescriptor(address _tokenDescriptor)` (external)
-
+### setTokenDescriptor
+```solidity
+  function setTokenDescriptor(
+    address _tokenDescriptor
+  ) external
+```
 Allows governance to set token descriptor.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_tokenDescriptor` | address | The new token descriptor address.
 
-
-### `productIsActive(address _product) → bool` (external)
-
+### productIsActive
+```solidity
+  function productIsActive(
+    address _product
+  ) external returns (bool)
+```
 Checks is an address is an active product.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_product` | address | The product to check.
 
-
-### `numProducts() → uint256` (external)
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`True`| address | if the product is active.
+### numProducts
+```solidity
+  function numProducts(
+  ) external returns (uint256)
+```
 Returns the number of products.
 
 
 
-
-### `getProduct(uint256 _productNum) → address` (external)
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`The`|  | number of products.
+### getProduct
+```solidity
+  function getProduct(
+    uint256 _productNum
+  ) external returns (address)
+```
 Returns the product at the given index.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_productNum` | uint256 | The index to query.
 
-
-### `getPolicyInfo(uint256 _policyID) → address policyholder, address product, address positionContract, uint256 coverAmount, uint64 expirationBlock, uint24 price` (external)
-
-
-
-
-
-### `getPolicyholder(uint256 _policyID) → address` (external)
-
-
-
-
-
-### `getPolicyProduct(uint256 _policyID) → address` (external)
-
-
-
-
-
-### `getPolicyPositionContract(uint256 _policyID) → address` (external)
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`The`| uint256 | address of the product.
+### getPolicyInfo
+```solidity
+  function getPolicyInfo(
+  ) external returns (address policyholder, address product, address positionContract, uint256 coverAmount, uint40 expirationBlock, uint24 price)
+```
 
 
 
 
-
-### `getPolicyExpirationBlock(uint256 _policyID) → uint64` (external)
-
-
-
-
-
-### `getPolicyCoverAmount(uint256 _policyID) → uint256` (external)
+### getPolicyholder
+```solidity
+  function getPolicyholder(
+  ) external returns (address)
+```
 
 
 
 
-
-### `getPolicyPrice(uint256 _policyID) → uint24` (external)
-
-
-
-
-
-### `listPolicies(address _policyholder) → uint256[] tokenIDs` (external)
+### getPolicyProduct
+```solidity
+  function getPolicyProduct(
+  ) external returns (address)
+```
 
 
 
 
-
-### `exists(uint256 _policyID) → bool` (external)
-
-
-
-
-
-### `policyIsActive(uint256 _policyID) → bool` (external)
+### getPolicyPositionContract
+```solidity
+  function getPolicyPositionContract(
+  ) external returns (address)
+```
 
 
 
 
+### getPolicyExpirationBlock
+```solidity
+  function getPolicyExpirationBlock(
+  ) external returns (uint40)
+```
 
-### `policyHasExpired(uint256 _policyID) → bool` (public)
+
+
+
+### getPolicyCoverAmount
+```solidity
+  function getPolicyCoverAmount(
+  ) external returns (uint256)
+```
 
 
 
 
+### getPolicyPrice
+```solidity
+  function getPolicyPrice(
+  ) external returns (uint24)
+```
 
-### `createPolicy(address _policyholder, address _positionContract, uint256 _coverAmount, uint64 _expirationBlock, uint24 _price) → uint256 policyID` (external)
 
+
+
+### listPolicies
+```solidity
+  function listPolicies(
+  ) external returns (uint256[] tokenIDs)
+```
+
+
+
+
+### exists
+```solidity
+  function exists(
+  ) external returns (bool)
+```
+
+
+
+
+### policyIsActive
+```solidity
+  function policyIsActive(
+  ) external returns (bool)
+```
+
+
+
+
+### policyHasExpired
+```solidity
+  function policyHasExpired(
+  ) public returns (bool)
+```
+
+
+
+
+### createPolicy
+```solidity
+  function createPolicy(
+    address _policyholder,
+    address _positionContract,
+    uint256 _expirationBlock,
+    uint40 _coverAmount,
+    uint24 _price
+  ) external returns (uint256 policyID)
+```
 Creates new ERC721 policy `tokenID` for `to`.
 The caller must be a product.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_policyholder` | address | receiver of new policy token
+|`_positionContract` | address | contract address where the position is covered
+|`_expirationBlock` | uint256 | policy expiration block number
+|`_coverAmount` | uint40 | policy coverage amount (in wei)
+|`_price` | uint24 | coverage price
 
-
-### `setPolicyInfo(uint256 _policyID, address _policyholder, address _positionContract, uint256 _coverAmount, uint64 _expirationBlock, uint24 _price)` (external)
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`policyID`| address | (aka tokenID)
+### setPolicyInfo
+```solidity
+  function setPolicyInfo(
+    uint256 _policyID,
+    address _policyholder,
+    address _positionContract,
+    uint256 _expirationBlock,
+    uint40 _coverAmount,
+    uint24 _price
+  ) external
+```
 Exposes setTokenURI function for products to modify policies
 The caller must be a product.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_policyID` | uint256 | aka tokenID
+|`_policyholder` | address | receiver of new policy token
+|`_positionContract` | address | contract address where the position is covered
+|`_expirationBlock` | uint256 | policy expiration block number
+|`_coverAmount` | uint40 | policy coverage amount (in wei)
+|`_price` | uint24 | coverage price
 
-
-### `burn(uint256 _policyID)` (external)
-
+### burn
+```solidity
+  function burn(
+    uint256 _policyID
+  ) external
+```
 Fuction for the product to burn expired or canceled policies
 The caller must be a product.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_policyID` | uint256 | policyID aka tokenID
+
+### _burn
+```solidity
+  function _burn(
+  ) internal
+```
 
 
-### `_burn(uint256 _policyID)` (internal)
 
 
-
-
-
-### `updateActivePolicies(uint256[] _policyIDs)` (external)
-
+### updateActivePolicies
+```solidity
+  function updateActivePolicies(
+    uint256[] _policyIDs
+  ) external
+```
 Burns expired policies.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_policyIDs` | uint256[] | list of expired policies
 
-
-### `tokenURI(uint256 tokenId) → string` (public)
-
-
+### tokenURI
+```solidity
+  function tokenURI(
+  ) public returns (string)
+```
 
 
 

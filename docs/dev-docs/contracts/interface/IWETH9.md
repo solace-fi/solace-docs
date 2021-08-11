@@ -1,110 +1,154 @@
-## `IWETH9`
+
+
+
+## Functions
+### name
+```solidity
+  function name(
+  ) external returns (string)
+```
 
 
 
 
-
-
-### `name() → string` (external)
-
-
-
-
-
-### `symbol() → string` (external)
+### symbol
+```solidity
+  function symbol(
+  ) external returns (string)
+```
 
 
 
 
-
-### `decimals() → uint8` (external)
-
-
-
-
-
-### `balanceOf(address src) → uint256` (external)
+### decimals
+```solidity
+  function decimals(
+  ) external returns (uint8)
+```
 
 
 
 
+### balanceOf
+```solidity
+  function balanceOf(
+  ) external returns (uint256)
+```
 
-### `allowance(address src, address guy) → uint256` (external)
+
+
+
+### allowance
+```solidity
+  function allowance(
+  ) external returns (uint256)
+```
 
 
 
 
-
-### `receive()` (external)
-
+### receive
+```solidity
+  function receive(
+  ) external
+```
 Receive function. Deposits eth.
 
 
 
-### `fallback()` (external)
-
+### fallback
+```solidity
+  function fallback(
+  ) external
+```
 Fallback function. Deposits eth.
 
 
 
-### `deposit()` (external)
+### deposit
+```solidity
+  function deposit(
+  ) external
+```
 
 
 
 
-
-### `withdraw(uint256 wad)` (external)
-
-
-
-
-
-### `totalSupply() → uint256` (external)
+### withdraw
+```solidity
+  function withdraw(
+  ) external
+```
 
 
 
 
-
-### `approve(address guy, uint256 wad) → bool` (external)
-
-
-
-
-
-### `transfer(address dst, uint256 wad) → bool` (external)
+### totalSupply
+```solidity
+  function totalSupply(
+  ) external returns (uint256)
+```
 
 
 
 
-
-### `transferFrom(address src, address dst, uint256 wad) → bool` (external)
-
-
-
-
-
-
-### `Approval(address src, address guy, uint256 wad)`
+### approve
+```solidity
+  function approve(
+  ) external returns (bool)
+```
 
 
 
 
-
-### `Transfer(address src, address dst, uint256 wad)`
-
-
-
-
-
-### `Deposit(address dst, uint256 wad)`
+### transfer
+```solidity
+  function transfer(
+  ) external returns (bool)
+```
 
 
 
 
+### transferFrom
+```solidity
+  function transferFrom(
+  ) external returns (bool)
+```
 
-### `Withdrawal(address src, uint256 wad)`
 
 
+
+## Events
+### Approval
+```solidity
+  event Approval(
+  )
+```
+
+
+
+### Transfer
+```solidity
+  event Transfer(
+  )
+```
+
+
+
+### Deposit
+```solidity
+  event Deposit(
+  )
+```
+
+
+
+### Withdrawal
+```solidity
+  event Withdrawal(
+  )
+```
 
 
 

@@ -1,37 +1,48 @@
-## `ICErc20`
+
+
+
+## Functions
+### mint
+```solidity
+  function mint(
+  ) external returns (uint256)
+```
 
 
 
 
-
-
-### `mint(uint256 mintAmount) → uint256` (external)
-
-
-
-
-
-### `borrow(uint256 borrowAmount) → uint256` (external)
+### borrow
+```solidity
+  function borrow(
+  ) external returns (uint256)
+```
 
 
 
 
-
-### `redeem(uint256 redeemTokens) → uint256` (external)
-
-
-
-
-
-### `exchangeRateStored() → uint256` (external)
+### redeem
+```solidity
+  function redeem(
+  ) external returns (uint256)
+```
 
 
 
 
+### exchangeRateStored
+```solidity
+  function exchangeRateStored(
+  ) external returns (uint256)
+```
 
-### `underlying() → address` (external)
 
 
+
+### underlying
+```solidity
+  function underlying(
+  ) external returns (address)
+```
 
 
 

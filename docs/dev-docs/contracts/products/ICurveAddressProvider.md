@@ -1,13 +1,12 @@
-## `ICurveAddressProvider`
 
 
 
-
-
-
-### `get_registry() → address` (external)
-
-
+## Functions
+### get_registry
+```solidity
+  function get_registry(
+  ) external returns (address)
+```
 
 
 

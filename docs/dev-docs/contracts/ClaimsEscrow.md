@@ -1,106 +1,222 @@
-## `ClaimsEscrow`
+The holder of claims. Policy holders can submit claims through their policy's product contract, in the process burning the policy and converting it to a claim. The policy holder will then need to wait for a cooldown period after which they can withdraw the payout.
 
 
-
-
-
-
-### `constructor(address _governance, address _registry)` (public)
-
+## Functions
+### constructor
+```solidity
+  function constructor(
+    address _governance,
+    address _registry
+  ) public
+```
 Constructs the ClaimsEscrow contract.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_governance` | address | Address of the governor.
+|`_registry` | address | Address of the registry.
 
-
-### `receive()` (external)
-
+### receive
+```solidity
+  function receive(
+  ) external
+```
 Receive function. Deposits eth.
 
 
 
-### `fallback()` (external)
-
+### fallback
+```solidity
+  function fallback(
+  ) external
+```
 Fallback function. Deposits eth.
 
 
 
-### `setGovernance(address _governance)` (external)
-
+### setGovernance
+```solidity
+  function setGovernance(
+    address _governance
+  ) external
+```
 Allows governance to be transferred to a new governor.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_governance` | address | The new governor.
 
-
-### `acceptGovernance()` (external)
-
+### acceptGovernance
+```solidity
+  function acceptGovernance(
+  ) external
+```
 Accepts the governance role.
 Can only be called by the new governor.
 
 
 
-### `receiveClaim(uint256 _policyID, address _claimant, uint256 _amount)` (external)
-
+### receiveClaim
+```solidity
+  function receiveClaim(
+    uint256 _policyID,
+    address _claimant,
+    uint256 _amount
+  ) external
+```
 Receives a claim.
 Only callable by active products.
 
-
 claimID = policyID
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_policyID` | uint256 | ID of policy to claim
+|`_claimant` | address | Address of the claimant
+|`_amount` | uint256 | Amount of ETH to claim
 
-### `withdrawClaimsPayout(uint256 claimID)` (external)
+### withdrawClaimsPayout
+```solidity
+  function withdrawClaimsPayout(
+    uint256 claimID
+  ) external
+```
+Allows claimants to withdraw their claims payout.
+Only callable by the claimant.
+Only callable after the cooldown period has elapsed (from the time the claim was approved and processed).
 
-Allows claimants to withdraw their claims payout
-Only callable by the claimant
-Only callable after the cooldown period has elapsed (from the time the claim was approved and processed)
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimID` | uint256 | The id of the claim to withdraw payout for.
 
-
-
-### `adjustClaim(uint256 claimID, uint256 value)` (external)
-
+### adjustClaim
+```solidity
+  function adjustClaim(
+    uint256 claimID,
+    uint256 value
+  ) external
+```
 Adjusts the value of a claim.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimID` | uint256 | The claim to adjust.
+|`value` | uint256 | The new payout of the claim.
 
-
-### `sweep(address token, uint256 amount, address dst)` (external)
-
+### sweep
+```solidity
+  function sweep(
+    address token,
+    uint256 amount,
+    address dst
+  ) external
+```
 Rescues misplaced tokens.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`token` | address | Token to pull.
+|`amount` | uint256 | Amount to pull.
+|`dst` | address | Destination for tokens.
+
+### setCooldownPeriod
+```solidity
+  function setCooldownPeriod(
+    uint256 _period
+  ) external
+```
+Set the cooldown duration.
+Can only be called by the current governor.
 
 
-### `setCooldownPeriod(uint256 period)` (external)
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_period` | uint256 | New cooldown duration in seconds
+
+### exists
+```solidity
+  function exists(
+    uint256 claimID
+  ) external returns (bool status)
+```
+Returns true if the claim exists.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimID` | uint256 | The id to check.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| uint256 | True if it exists, false if not.
+### isWithdrawable
+```solidity
+  function isWithdrawable(
+    uint256 claimID
+  ) external returns (bool status)
+```
+Returns true if the payout of the claim can be withdrawn.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimID` | uint256 | The id to check.
 
-### `exists(uint256 claimID) → bool` (external)
-
-
-
-
-
-### `isWithdrawable(uint256 claimID) → bool` (external)
-
-
-
-
-
-### `timeLeft(uint256 claimID) → uint256` (external)
-
-
-
-
-
-### `listClaims(address claimant) → uint256[] claimIDs` (external)
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| uint256 | True if it is withdrawable, false if not.
+### timeLeft
+```solidity
+  function timeLeft(
+    uint256 claimID
+  ) external returns (uint256 time)
+```
+The amount of time left until the payout is withdrawable.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimID` | uint256 | The id to check.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`time`| uint256 | The duration in seconds.
+### listClaims
+```solidity
+  function listClaims(
+    address claimant
+  ) external returns (uint256[] claimIDs)
+```
+List a user's claims.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimant` | address | User to check.
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`claimIDs`| address | List of claimIDs.

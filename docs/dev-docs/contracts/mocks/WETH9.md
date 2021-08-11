@@ -1,55 +1,75 @@
-## `WETH9`
 
 
 
-
-
-
-### `receive()` (external)
-
+## Functions
+### receive
+```solidity
+  function receive(
+  ) external
+```
 Receive function. Deposits eth.
 
 
 
-### `fallback()` (external)
-
+### fallback
+```solidity
+  function fallback(
+  ) external
+```
 Fallback function. Deposits eth.
 
 
 
-### `deposit()` (public)
+### deposit
+```solidity
+  function deposit(
+  ) public
+```
 
 
 
 
-
-### `withdraw(uint256 wad)` (public)
-
-
-
-
-
-### `totalSupply() → uint256` (public)
+### withdraw
+```solidity
+  function withdraw(
+  ) public
+```
 
 
 
 
-
-### `approve(address guy, uint256 wad) → bool` (public)
-
-
-
-
-
-### `transfer(address dst, uint256 wad) → bool` (public)
+### totalSupply
+```solidity
+  function totalSupply(
+  ) public returns (uint256)
+```
 
 
 
 
+### approve
+```solidity
+  function approve(
+  ) public returns (bool)
+```
 
-### `transferFrom(address src, address dst, uint256 wad) → bool` (public)
 
 
+
+### transfer
+```solidity
+  function transfer(
+  ) public returns (bool)
+```
+
+
+
+
+### transferFrom
+```solidity
+  function transferFrom(
+  ) public returns (bool)
+```
 
 
 

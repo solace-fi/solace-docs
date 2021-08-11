@@ -1,19 +1,21 @@
-## `ICurvePool`
+
+
+
+## Functions
+### coins
+```solidity
+  function coins(
+  ) external returns (address)
+```
 
 
 
 
-
-
-### `coins(uint256 arg0) → address` (external)
-
-
-
-
-
-### `calc_withdraw_one_coin(uint256 token_amount, int128 i) → uint256` (external)
-
-
+### calc_withdraw_one_coin
+```solidity
+  function calc_withdraw_one_coin(
+  ) external returns (uint256)
+```
 
 
 

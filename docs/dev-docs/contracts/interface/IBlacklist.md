@@ -1,13 +1,12 @@
-## `IBlacklist`
 
 
 
-
-
-
-### `isBlacklisted(address _account) → bool` (external)
-
-
+## Functions
+### isBlacklisted
+```solidity
+  function isBlacklisted(
+  ) external returns (bool)
+```
 
 
 

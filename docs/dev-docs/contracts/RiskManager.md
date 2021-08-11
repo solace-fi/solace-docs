@@ -1,51 +1,104 @@
-## `RiskManager`
 
 
 
-
-
-
-### `constructor(address _governance, address _registry)` (public)
-
+## Functions
+### constructor
+```solidity
+  function constructor(
+    address _governance,
+    address _registry
+  ) public
+```
 Constructs the risk manager contract.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_governance` | address | Address of the governor.
+|`_registry` | address | Address of registry.
 
-
-### `setGovernance(address _governance)` (external)
-
+### setGovernance
+```solidity
+  function setGovernance(
+    address _governance
+  ) external
+```
 Allows governance to be transferred to a new governor.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_governance` | address | The new governor.
 
-
-### `acceptGovernance()` (external)
-
+### acceptGovernance
+```solidity
+  function acceptGovernance(
+  ) external
+```
 Accepts the governance role.
 Can only be called by the new governor.
 
 
 
-### `setProductWeights(address[] _products, uint32[] _weights)` (external)
-
+### setProductWeights
+```solidity
+  function setProductWeights(
+    address[] _products,
+    uint32[] _weights
+  ) external
+```
 Sets the products and their weights.
 Can only be called by the current governor.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_products` | address[] | The products.
+|`_weights` | uint32[] | The product weights.
+
+### setPartialReservesFactor
+```solidity
+  function setPartialReservesFactor(
+    uint16 _factor
+  ) external
+```
+Sets the partial reserves factor.
+Can only be called by the current governor.
 
 
-### `maxCoverAmount(address _product) → uint256` (external)
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_factor` | uint16 | New partial reserves factor in BPS.
 
+### maxCoverAmount
+```solidity
+  function maxCoverAmount(
+    address _product
+  ) external returns (uint256)
+```
 The maximum amount of cover that a product can sell.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_product` | address | The product that wants to sell cover.
 
-
-### `minCapitalRequirement() → uint256` (external)
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`The`| address | max amount of cover in wei.
+### minCapitalRequirement
+```solidity
+  function minCapitalRequirement(
+  ) external returns (uint256)
+```
 The minimum amount of capital required to safely cover all policies.
-
 
 
 

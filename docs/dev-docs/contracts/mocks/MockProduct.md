@@ -1,18 +1,23 @@
-## `MockProduct`
-
 Mock product for testing purposes
 
 
+## Functions
+### constructor
+```solidity
+  function constructor(
+  ) public
+```
 
 
-### `constructor(address _governance, contract IPolicyManager _policyManager, contract IRegistry _registry, address _coveredPlatform, uint64 _minPeriod, uint64 _maxPeriod, uint24 _price, uint32 _maxCoverPerUserDivisor)` (public)
 
 
-
-
-
-### `appraisePosition(address _buyer, address _positionContract) → uint256 positionAmount` (public)
-
+### appraisePosition
+```solidity
+  function appraisePosition(
+    address _buyer,
+    address _positionContract
+  ) public returns (uint256 positionAmount)
+```
 @notice
  Provide the user's total position in the product's protocol.
  This total should be denominated in eth.
@@ -22,30 +27,49 @@ Mock product for testing purposes
  only be implemented in the inheriting product contracts
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_buyer` | address | buyer requiesting the coverage quote
+|`_positionContract` | address | address of the exact smart contract the buyer has their position in (e.g., for UniswapProduct this would be Pair's address)
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`positionAmount`| address | The user's total position in wei in the product's protocol.
+### setPositionValue
+```solidity
+  function setPositionValue(
+  ) external
+```
 
 
-### `setPositionValue(uint256 _value)` (external)
+
+
+### setPolicyExpiration
+```solidity
+  function setPolicyExpiration(
+  ) external
+```
 
 
 
 
-
-### `setPolicyExpiration(uint256 _policyID, uint64 _expirationBlock)` (external)
-
-
-
-
-
-### `_buyPolicy(address _policyholder, address _positionContract, uint256 _coverAmount, uint64 _blocks) → uint256 policyID` (external)
+### _buyPolicy
+```solidity
+  function _buyPolicy(
+  ) external returns (uint256 policyID)
+```
 
 
 
 
-
-### `name() → string` (public)
-
+### name
+```solidity
+  function name(
+  ) public returns (string)
+```
 Returns the name of the product.
-
 
 
 
