@@ -5,13 +5,19 @@ title: Toast
 ## Props
 
 ### `AppToastProps`
-- **message (string)**: Toast message
-- **icon (any)**: Icon to display on toast
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `message` | string | Toast message.
+| `icon` | any | Icon to display on toast.
 
 ### `NotificationToastProps`
-- **message (string)**: Toast message
-- **condition (TransactionCondition)**: Transaction condition
-- **icon (any)**: Icon to display on toast
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `message` | string | Toast message.
+| `condition` | TransactionCondition | Transaction condition.
+| `icon` | any | Icon to display on toast.
 
 ## Components
 
@@ -31,7 +37,9 @@ Props Dependencies:
 
 Manager Dependencies:
 
-- **Wallet**: `chainId`
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `chainId`
 
 Local Functions: 
 

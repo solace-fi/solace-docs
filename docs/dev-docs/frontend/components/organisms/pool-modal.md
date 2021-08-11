@@ -5,10 +5,13 @@ title: PoolModal
 ## Props
 
 ### `PoolModalProps`
-- **handleClose (function)**: Function to call when closing modal
-- **isOpen (boolean)**: Boolean to open modal
-- **modalTitle (string)**: String to set title of modal
-- **disableCloseButton (boolean)**: Boolean to disable modal close button
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `handleClose` | function | Function to call when closing modal.
+| `isOpen` | boolean | Boolean to open modal.
+| `modalTitle` | string | String to set title of modal.
+| `disableCloseButton` | boolean | Boolean to disable modal close button.
 
 ## Components
 
@@ -20,9 +23,12 @@ Props Dependencies:
 
 Manager Dependencies:
 
-- **Wallet**: `account` , `chainId` , `errors` , `library`
-- **Contracts**: `vault` , `cpFarm` , `lpFarm` , `lpToken`
-- **CachedData**: `addLocalTransactions` , `reload` , `gasPrices`
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account` , `chainId` , `errors` , `library`
+| CachedData | `addLocalTransactions` , `reload` , `gasPrices`
+| Contracts | `vault` , `cpFarm` , `lpFarm` , `lpToken`
+
 
 Hook Dependencies:
 

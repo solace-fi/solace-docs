@@ -5,10 +5,13 @@ title: ManageModal
 ## Props
 
 ### `ManageModalProps`
-- **closeModal (function)**: Function to call when closing modal
-- **isOpen (boolean)**: Boolean to open modal
-- **latestBlock (number)**: The latest block number
-- **selectedPolicy (Policy | undefined)**: The currently selected policy
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `closeModal` | function | Function to call when closing modal.
+| `isOpen` | boolean | Boolean to open modal.
+| `latestBlock` | number | The latest block number.
+| `selectedPolicy` | Policy \| undefined | The currently selected policy.
 
 ## Components
 
@@ -28,9 +31,11 @@ Props Dependencies:
 
 Manager Dependencies:
 
-- **Wallet**: `errors`
-- **CachedData**: `addLocalTransactions` , `reload` , `gasPrices`
-- **Contracts**: `selectedProtocol`
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `errors`
+| CachedData | `addLocalTransactions` , `reload` , `gasPrices`
+| Contracts | `selectedProtocol`
 
 Hook Dependencies:
 

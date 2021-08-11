@@ -6,6 +6,13 @@ The most simplest Manager with a foundational purpose for the app.
 
 ProviderManager listens to the `chainId` value from WalletManager and creates a new `JsonRpcProvider` object for that value everytime it changes. This object is assigned then to `ethProvider`.
 
-## Returned values
+Manager Dependencies:
 
-#### `ethProvider` (Provider)
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `chainId`
+
+#### Returned values:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`ethProvider` | Provider | Alchemy provider.

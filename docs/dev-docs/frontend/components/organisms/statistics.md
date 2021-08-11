@@ -8,9 +8,11 @@ title: Statistics
 
 Manager Dependencies:
 
-- **Wallet**: `account` , `errors` , `chainId` , `initialized`
-- **Contracts**: `master`
-- **CachedData**: `addLocalTransactions` , `reload` , `gasPrices` , `tokenPositionDataInitialized` , `latestBlock` , `version`
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account` , `errors` , `chainId` , `initialized`
+| CachedData | `addLocalTransactions` , `reload` , `gasPrices` , `tokenPositionDataInitialized` , `latestBlock` , `version`
+| Contracts | `master`
 
 Hook Dependencies:
 

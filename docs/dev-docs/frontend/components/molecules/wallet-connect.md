@@ -8,6 +8,8 @@ title: WalletConnectButton
 
 Manager Dependencies:
 
-- **Wallet**: `connect`
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `connect`
 
 Info: Returns a button that would connect the user via their wallet.

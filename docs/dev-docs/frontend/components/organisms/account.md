@@ -8,8 +8,10 @@ title: Account
 
 Manager Dependencies:
 
-- **Wallet**: `isActive` , `chainId` , `account`
-- **CachedData**: `localTransactions`
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `isActive` , `chainId` , `account`
+| CachedData | `localTransactions`
 
 Hook Dependencies:
 

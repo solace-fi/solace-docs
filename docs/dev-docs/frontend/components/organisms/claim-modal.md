@@ -5,10 +5,13 @@ title: ClaimModal
 ## Props
 
 ### `ClaimModalProps`
-- **closeModal (function)**: Function to call when closing modal
-- **isOpen (boolean)**: Boolean to open modal
-- **latestBlock (number)**: The latest block number
-- **selectedPolicy (Policy | undefined)**: The currently selected policy
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `closeModal` | function | Function to call when closing modal.
+| `isOpen` | boolean | Boolean to open modal.
+| `latestBlock` | number | The latest block number.
+| `selectedPolicy` | Policy \| undefined | The currently selected policy.
 
 ## Components
 
@@ -20,9 +23,12 @@ Props Dependencies:
 
 Manager Dependencies:
 
-- **Wallet**: `account` , `chainId` , `errors` , `library`
-- **Contracts**: `selectedProtocol` , `getProtocolByName`
-- **CachedData**: `tokenPositionDataInitialized` , `gasPrices` , `reload` , `addLocalTransactions`
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account` , `chainId` , `errors` , `library`
+| Contracts | `selectedProtocol` , `getProtocolByName`
+| CachedData | `tokenPositionDataInitialized` , `gasPrices` , `reload` , `addLocalTransactions`
+
 
 Hook Dependencies:
 

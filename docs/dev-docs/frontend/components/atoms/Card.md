@@ -2,11 +2,16 @@
 
 ### `CardProps`
 - **Extends**: ClickProps
-- **transparent (boolean)**?: Set transparency
-- **fade (boolean)**?: Set background-color to fade
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `transparent` (optional) | boolean | Set transparency.
+| `fade` (optional) | boolean | Set background-color to fade.
 
 ### `CardContainerProps`
-- **cardsPerRow (number)**?: Set cards per row in container
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `cardsPerRow` (optional) | number | Set cards per row in container.
 
 ## Styles
 

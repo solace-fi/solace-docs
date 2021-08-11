@@ -1,7 +1,10 @@
 ## Props
 
 ### `TopNavProps`
-- **isOpen (boolean)**?: Boolean to open top navbar
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `isOpen` (optional) | boolean | Boolean to open top navbar.
 
 ## Components
 

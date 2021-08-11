@@ -12,6 +12,13 @@ Transaction toasts would tell the user whether the transaction is pending, succe
 
 App toasts inform about system-wide occurrences, such as errors in connecting to the wallet or to the wrong network. Currently, these app toasts are being used within the Manager for errors from the WalletManager.
 
-## Returned values
+Manager Dependencies:
 
-#### `makeTxToast` (function)
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `chainId` , `account`, `errors`
+
+#### Returned values:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`makeTxToast` | function | Create transaction toast.

@@ -5,8 +5,11 @@ title: TransactionHistoryModal
 ## Props
 
 ### `TransactionHistoryModalProps`
-- **closeModal (function)**: Function to call when closing modal
-- **isOpen (boolean)**: Boolean to open modal
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `closeModal` | function | Function to call when closing modal.
+| `isOpen` | boolean | Boolean to open modal.
 
 ## Components
 
