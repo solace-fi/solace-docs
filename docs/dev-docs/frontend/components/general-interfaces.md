@@ -5,7 +5,7 @@ position: 0
 
 ## Introduction
 
-These are rather common props and styles shared in between Atoms.
+These are rather common props and styles shared across components.
 
 ## Props
 

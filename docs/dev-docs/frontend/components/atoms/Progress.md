@@ -4,7 +4,7 @@
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `step` (optional) | number | Indicates current step on form.
+| `step` | number | Indicates current step on form.
 
 ## Components
 

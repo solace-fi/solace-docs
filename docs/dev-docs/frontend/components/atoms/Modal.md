@@ -4,10 +4,10 @@
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `handleClose` (optional) | function | Function to call when closing modal.
-| `isOpen` (optional) | boolean | Boolean to open modal.
-| `modalTitle` (optional) | string | String to set title of modal.
-| `disableCloseButton` (optional) | boolean | Boolean to disable modal close button.
+| `handleClose` | function | Function to call when closing modal.
+| `isOpen` | boolean | Boolean to open modal.
+| `modalTitle` | string | String to set title of modal.
+| `disableCloseButton` | boolean | Boolean to disable modal close button.
 
 ### `ModalButtonProps` (exported)
 - **Extends**: ClickProps
