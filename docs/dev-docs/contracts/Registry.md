@@ -1,4 +1,5 @@
-Tracks the contracts in the Solaverse.
+The `Registry` is an  upgradeable proxy contract that tracks the contracts in the Solaverse. 
+It inherits from `UUPSUpgradeable` contract. Please refer  [**OpenZeppelin Docs**](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) to learn more about upgradeable proxies.
 
 
 ## Functions
@@ -8,8 +9,8 @@ Tracks the contracts in the Solaverse.
     address _governance
   ) public
 ```
-initialize function for the registry contract.
-Only called once in contract deployment to initialize governor and admin. 
+Initialize function for the registry contract.
+Only called once in contract deployment to initialize `governor` and `admin`. 
 
 
 #### Parameters:
@@ -23,8 +24,8 @@ Only called once in contract deployment to initialize governor and admin.
     address _governance
   ) external
 ```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
+Allows governance to be transferred to a new `governor`.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -38,7 +39,7 @@ Can only be called by the current governor.
   ) external
 ```
 Accepts the governance role.
-Can only be called by the new governor.
+Can only be called by the new `governor`.
 
 
 
@@ -48,14 +49,14 @@ Can only be called by the new governor.
     address _solace
   ) external
 ```
-Sets the solace token contract.
-Can only be called by the current governor.
+Sets the [`Solace Token`](./SOLACE.md) contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_solace` | address | The solace token address.
+|`_solace` | address | The `SOLACE` token address.
 
 ### setMaster
 ```solidity
@@ -63,14 +64,14 @@ Can only be called by the current governor.
     address _master
   ) external
 ```
-Sets the master contract.
-Can only be called by the current governor.
+Sets the [`Master`](./Master.md) contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_master` | address | The master contract address.
+|`_master` | address | The contract address of the `Master` contract.
 
 ### setClaimsEscrow
 ```solidity
@@ -78,14 +79,14 @@ Can only be called by the current governor.
     address _claimsEscrow
   ) external
 ```
-Sets the Claims Escrow contract.
-Can only be called by the current governor.
+Sets the [`Claims Escrow`](./ClaimsEscrow.md) contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_claimsEscrow` | address | The sClaims Escrow address.
+|`_claimsEscrow` | address | The contract address of the `ClaimsEscrow` contract.
 
 ### setVault
 ```solidity
@@ -93,14 +94,14 @@ Can only be called by the current governor.
     address _vault
   ) external
 ```
-Sets the vault contract.
-Can only be called by the current governor.
+Sets the [`Vault`](./Vault.md) contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_vault` | address | The vault contract address.
+|`_vault` | address | The contract address of the `Vault` contract.
 
 ### setTreasury
 ```solidity
@@ -108,14 +109,14 @@ Can only be called by the current governor.
     address _treasury
   ) external
 ```
-Sets the treasury contract.
-Can only be called by the current governor.
+Sets the [`Treasury`](./Treasury.md) contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_treasury` | address | The treasury contract address.
+|`_treasury` | address | The contract address of the `Treasury` contract.
 
 ### setLocker
 ```solidity
@@ -123,14 +124,14 @@ Can only be called by the current governor.
     address _locker
   ) external
 ```
-Sets the locker contract.
-Can only be called by the current governor.
+Sets the [`Locker`](./Locker.md) contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_locker` | address | The locker address.
+|`_locker` | address | The contract address of the `Locker` contract.
 
 ### setPolicyManager
 ```solidity
@@ -138,14 +139,14 @@ Can only be called by the current governor.
     address _policyManager
   ) external
 ```
-Sets the PolicyManager contract.
-Can only be called by the current governor.
+Sets the [`Policy Manager`](./PolicyManager.md) contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyManager` | address | The policy manager address.
+|`_policyManager` | address | The contract address of the `PolicyManager` contract.
 
 ### setRiskManager
 ```solidity
@@ -153,21 +154,22 @@ Can only be called by the current governor.
     address _riskManager
   ) external
 ```
-Sets the RiskManager contract.
-Can only be called by the current governor.
+Sets the [`Risk Manager`](./RiskManager.md) contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_riskManager` | address | The risk manager address.
+|`_riskManager` | address | The contract address of the `RiskManager` contract.
 
 ### _authorizeUpgrade
 ```solidity
   function _authorizeUpgrade(
   ) internal
 ```
-To authorize the admin to upgrade the contract.
+To authorize the `admin` to upgrade the `Registry` contract.
+It is called when upgrading the `Registry` contract to security check.
 
 
 

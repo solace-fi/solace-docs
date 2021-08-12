@@ -1,4 +1,4 @@
-The war chest of Castle Solace.
+The `Treasury` smart contract governs the finance related operations.
 
 
 ## Functions
@@ -27,7 +27,7 @@ Constructs the treasury contract.
   function receive(
   ) external
 ```
-Receive function. Deposits eth.
+Fallback function to allow contract to receive **ETH**.
 
 
 
@@ -36,7 +36,7 @@ Receive function. Deposits eth.
   function fallback(
   ) external
 ```
-Fallback function. Deposits eth.
+Fallback function to allow contract to receive **ETH**.
 
 
 
@@ -46,22 +46,22 @@ Fallback function. Deposits eth.
     address _governance
   ) external
 ```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
+Allows governance to be transferred to a new `governor`.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
+|`_governance` | address | The new `governor`.
 
 ### acceptGovernance
 ```solidity
   function acceptGovernance(
   ) external
 ```
-Accepts the governance role.
-Can only be called by the new governor.
+Accepts the `governance` role.
+Can only be called by the new `governor`.
 
 
 
@@ -70,7 +70,7 @@ Can only be called by the new governor.
   function depositEth(
   ) external
 ```
-Deposits some ether.
+Deposits **ETH**. The amount is given by `msg.value`.
 
 
 
@@ -81,7 +81,7 @@ Deposits some ether.
     uint256 _amount
   ) external
 ```
-Deposit some ERC20 token.
+Deposits `ERC20` token.
 
 
 #### Parameters:
@@ -98,8 +98,7 @@ Deposit some ERC20 token.
     address _recipient
   ) external
 ```
-Spends some tokens.
-Can only be called by the current governor.
+Spends `ERC20` token or `ETH`. Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -117,11 +116,9 @@ Can only be called by the current governor.
     uint256 _amountOutMinimum
   ) external
 ```
-Manually swaps a token.
-Can only be called by the current governor.
+Manually swaps a token. Can only be called by the current `governor`. 
+It swaps the entire balance in case some tokens were unknowingly received. Reverts if the swap was unsuccessful.
 
-Swaps the entire balance in case some tokens were unknowingly received.
-Reverts if the swap was unsuccessful.
 
 #### Parameters:
 | Name | Type | Description                                                          |
@@ -138,7 +135,7 @@ Reverts if the swap was unsuccessful.
   ) external
 ```
 Sets the premium recipients and their weights.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -152,7 +149,7 @@ Can only be called by the current governor.
   function routePremiums(
   ) external
 ```
-Routes the premiums to the recipients
+Routes the **premiums** to the `recipients`.
 
 
 
@@ -162,8 +159,8 @@ Routes the premiums to the recipients
     uint256 _amount
   ) external
 ```
-Wraps some eth into weth.
-Can only be called by the current governor.
+Wraps some **ETH** into **WETH**.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -177,8 +174,8 @@ Can only be called by the current governor.
     uint256 _amount
   ) external
 ```
-Unwraps some weth into eth.
-Can only be called by the current governor.
+Unwraps some **WETH** into **ETH**.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -189,18 +186,25 @@ Can only be called by the current governor.
 ### refund
 ```solidity
   function refund(
+    address _user,
+    uint256 _amount
   ) external
 ```
+The function refunds the given amount to the user. It is called by `products` in **Solace Protocol**.
 
 
-
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_user` | address | The user address to send refund amount.
+|`_amount` | uint256 | The amount to send the user.
 
 ### withdraw
 ```solidity
   function withdraw(
   ) external
 ```
-Pull any unpaid rewards.
+The function transfers the unpaid refunds to the user. It is called by `products` in **Solace Protocol**.
 
 
 
@@ -211,22 +215,33 @@ Pull any unpaid rewards.
     uint256 _amount
   ) internal
 ```
-Transfers a user some eth.
-Also adds on their unpaid rewards, and stores new unpaid rewards.
+The internal function transfers **ETH** to the user. It's called by **refund()** and **withdraw()** functions in the contract.
+Also adds on their unpaid refunds, and stores new unpaid refunds if necessary.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_user` | address | The user to pay.
-|`_amount` | uint256 | The amount to pay _before_ unpaid rewards.
+|`_amount` | uint256 | The amount to pay **before** unpaid funds.
 
 ### min
 ```solidity
   function min(
+    uint256 _a,
+    uint256 _b
   ) internal returns (uint256 _c)
 ```
+Internal function that returns the minimum value between two values.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_a` | uint256 |  The first value.
+|`_b` | uint256 |  The second value.
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`_c`| uint256 | The minimum value.
