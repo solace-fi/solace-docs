@@ -1,4 +1,4 @@
-Capital Providers can deposit ETH to mint shares of the Vault (CP tokens)
+The `Vault` smart contract enables that `Capital Providers` can deposit **ETH** to mint shares of the `Vault`(CP tokens).
 
 
 ## Functions
@@ -17,8 +17,8 @@ Capital Providers can deposit ETH to mint shares of the Vault (CP tokens)
     address _governance
   ) external
 ```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
+Allows `governance` to be transferred to a new `governor`.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -31,8 +31,8 @@ Can only be called by the current governor.
   function acceptGovernance(
   ) external
 ```
-Accepts the governance role.
-Can only be called by the new governor.
+Accepts the `governance` role.
+Can only be called by the new `governor`.
 
 
 
@@ -43,18 +43,18 @@ Can only be called by the new governor.
   ) external
 ```
 Activates or deactivates emergency shutdown.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 During Emergency Shutdown:
-1. No users may deposit into the Vault.
-2. Withdrawls can bypass cooldown.
-3. Only Governance may undo Emergency Shutdown.
+1. No users may deposit into the `Vault`.
+2. Withdraws can bypass cooldown.
+3. Only `governance` may undo Emergency Shutdown.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`active` | bool | If true, the Vault goes into Emergency Shutdown.
-If false, the Vault goes back into Normal Operation.
+|`active` | bool | If true, the `Vault` goes into Emergency Shutdown.
+If false, the `Vault` goes back into Normal Operation.
 
 ### setCooldownWindow
 ```solidity
@@ -63,8 +63,8 @@ If false, the Vault goes back into Normal Operation.
     uint40 _max
   ) external
 ```
-Sets the minimum and maximum amount of time a user must wait to withdraw funds.
-Can only be called by the current governor.
+Sets the `minimum` and `maximum` amount of time in seconds that a user must wait to withdraw funds.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -80,14 +80,14 @@ Can only be called by the current governor.
     bool _status
   ) external
 ```
-Adds or removes requesting rights.
-Can only be called by the current governor.
+Adds or removes requesting rights. The `requestor` can be user account or smart contract.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_dst` | address | The requestor.
+|`_dst` | address | The requestor address.
 |`_status` | bool | True to add or false to remove rights.
 
 ### depositEth
@@ -95,28 +95,28 @@ Can only be called by the current governor.
   function depositEth(
   ) public returns (uint256)
 ```
-Allows a user to deposit ETH into the Vault (becoming a Capital Provider)
-Shares of the Vault (CP tokens) are minted to caller
-Called when Vault receives ETH
-Deposits `_amount` `token`, issuing shares to `recipient`.
-Reverts if Vault is in Emergency Shutdown
+Allows a user to deposit **ETH** into the `Vault`(becoming a **Capital Provider**).
+Shares of the `Vault` (CP tokens) are minted to caller.
+It is called when `Vault` receives **ETH**.
+It issues the amount of token share respected to the deposit to the `recipient`.
+Reverts if `Vault` is in **Emergency Shutdown**
 
 
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Number`|  | of shares minted.
+|`tokens`|  | The number of shares minted.
 ### depositWeth
 ```solidity
   function depositWeth(
     uint256 _amount
   ) external returns (uint256)
 ```
-Allows a user to deposit WETH into the Vault (becoming a Capital Provider)
-Shares of the Vault (CP tokens) are minted to caller
-Deposits `_amount` `token`, issuing shares to `recipient`.
-Reverts if Vault is in Emergency Shutdown
+Allows a user to deposit **WETH** into the `Vault`(becoming a **Capital Provider**).
+Shares of the Vault (CP tokens) are minted to caller.
+It issues the amount of token share respected to the deposit to the `recipient`.
+Reverts if `Vault` is in Emergency Shutdown
 
 
 #### Parameters:
@@ -127,31 +127,31 @@ Reverts if Vault is in Emergency Shutdown
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Number`| uint256 | of shares minted.
+|`tokens`| uint256 | The number of shares minted.
 ### _deposit
 ```solidity
   function _deposit(
     uint256 _amount
   ) internal returns (uint256)
 ```
-Handles minting of tokens during deposit.
+Handles minting of tokens during deposit. It is called by **depositEth()** or **depositWeth()**.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_amount` | uint256 | Amount of ETH or WETH deposited.
+|`_amount` | uint256 | Amount of **ETH** or **WETH** deposited.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Number`| uint256 | of shares minted.
+|`tokens`| uint256 | The number of shares minted.
 ### startCooldown
 ```solidity
   function startCooldown(
   ) external
 ```
-Starts the cooldown.
+Starts the **cooldown** period for the user.
 
 
 
@@ -160,7 +160,7 @@ Starts the cooldown.
   function stopCooldown(
   ) external
 ```
-Stops the cooldown.
+Stops the **cooldown** period for the user.
 
 
 
@@ -170,38 +170,38 @@ Stops the cooldown.
     uint256 _shares
   ) external returns (uint256)
 ```
-Allows a user to redeem shares for ETH
-Burns CP tokens and transfers ETH to the CP
+Allows a user to redeem shares for **ETH**.
+Burns **CP**(Capital Provider) tokens and transfers **ETH** to the **Capital Provider**.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_shares` | uint256 | amount of shares to redeem
+|`_shares` | uint256 | amount of shares to redeem.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`value`| uint256 | in ETH that the shares where redeemed for
+|`value`| uint256 | The amount in **ETH** that the shares where redeemed for.
 ### withdrawWeth
 ```solidity
   function withdrawWeth(
     uint256 _shares
   ) external returns (uint256)
 ```
-Allows a user to redeem shares for WETH
-Burns CP tokens and transfers WETH to the CP
+Allows a user to redeem shares for **WETH**.
+Burns **CP**(Capital Provider) tokens and transfers **WETH** to the **Capital Provider**.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_shares` | uint256 | amount of shares to redeem
+|`_shares` | uint256 | amount of shares to redeem.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`value`| uint256 | in WETH that the shares where redeemed for
+|`value`| uint256 | The amount in **WETH** that the shares where redeemed for.
 ### _withdraw
 ```solidity
   function _withdraw(
@@ -214,116 +214,140 @@ Handles burning of tokens during withdraw.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_shares` | uint256 | amount of shares to redeem
+|`_shares` | uint256 | amount of shares to redeem.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`value`| uint256 | in ETH that the shares where redeemed for
+|`value`| uint256 | The amount in **ETH** that the shares where redeemed for.
 ### requestEth
 ```solidity
   function requestEth(
     uint256 _amount
   ) external returns (uint256)
 ```
-Sends ETH to other users or contracts.
-Can only be called by authorized requestors.
+Sends **ETH** to other users or contracts. The users or contracts should be authorized requestors.
+Can only be called by authorized `requestors`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_amount` | uint256 | Amount of ETH wanted.
+|`_amount` | uint256 | The amount of **ETH** wanted.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Amount`| uint256 | of ETH sent.
+|`amount`| uint256 | The amount of **ETH** sent.
 ### maxRedeemableShares
 ```solidity
   function maxRedeemableShares(
     address user
   ) external returns (uint256)
 ```
-Returns the maximum redeemable shares by the `user` such that Vault does not go under MCR
+Returns the maximum redeemable shares by the `user` such that `Vault` does not go under **MCR**(Minimum Capital Requirement).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address | Address of user to check
+|`user` | address | The adddress of user to check.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Max`| address | redeemable shares by the user
+|`balance`| address | The max redeemable shares by the user.
 ### totalAssets
 ```solidity
   function totalAssets(
   ) external returns (uint256)
 ```
 Returns the total quantity of all assets under control of this
-        Vault, including those loaned out to a Strategy as well as those currently
-        held in the Vault.
+        `Vault`, including those loaned out to a `Strategy` as well as those currently
+        held in the `Vault`.
 
 
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`|  | total assets under control of this vault.
+|`totalAssets`|  | The total assets under control of this vault.
 ### _totalAssets
 ```solidity
   function _totalAssets(
   ) internal returns (uint256)
 ```
-Quantity of all assets under control of this Vault, including those loaned out to Strategies
+Internal function that returns quantity of all assets under control of this `Vault`, including those loaned out to `Strategies`. 
+Called by **totalAssets()** function.
 
 
 
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`totalAssets`|  | The total assets under control of this vault.
 ### _shareValue
 ```solidity
   function _shareValue(
     uint256 shares
   ) internal returns (uint256)
 ```
-Determines the current value of `shares`
+Internal function that determines the current value of given shares.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`shares` | uint256 | amount of shares to calculate value for.
+|`shares` | uint256 | The amount of shares to calculate value for.
 
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`value`| uint256 | The amount of value for given shares.
 ### _sharesForAmount
 ```solidity
   function _sharesForAmount(
     uint256 amount
   ) internal returns (uint256)
 ```
-Determines how many shares `amount` of token would receive.
+Internal function that determines how many shares for given amount of token would receive.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | of tokens to calculate number of shares for
+|`amount` | uint256 | of tokens to calculate number of shares for.
 
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`shares`| uint256 | The amount of shares(tokens) for given amount.
 ### min
 ```solidity
   function min(
+    uint256 a,
+    uint256 b
   ) internal returns (uint256)
 ```
+Internal function that returns the minimum value between two values.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`a` | uint256 |  The first value.
+|`b` | uint256 |  The second value.
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`minValue`| uint256 | The minimum value.
 ### _beforeTokenTransfer
 ```solidity
   function _beforeTokenTransfer(
   ) internal
 ```
-
+Internal function that is called before token transfer in order to apply some security check.
 
 
 
@@ -332,8 +356,8 @@ Determines how many shares `amount` of token would receive.
   function receive(
   ) external
 ```
-Fallback function to allow contract to receive ETH
-Mints CP tokens to caller if caller is not Vault or WETH or Treasury
+Fallback function to allow contract to receive *ETH*.
+Mints **CP** tokens to `caller` if `caller` is not `Vault` or `WETH` or `Treasury`.
 
 
 
@@ -342,8 +366,8 @@ Mints CP tokens to caller if caller is not Vault or WETH or Treasury
   function fallback(
   ) external
 ```
-Fallback function to allow contract to receive ETH
-Mints CP tokens to caller if caller is not Vault or WETH or Treasury
+Fallback function to allow contract to receive **ETH**.
+Mints **CP** tokens to `caller` if `caller` is not `Vault` or `WETH` or `Treasury`.
 
 
 
