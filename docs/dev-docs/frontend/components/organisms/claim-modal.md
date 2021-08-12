@@ -28,13 +28,14 @@ Manager Dependencies:
 | Wallet | `account` , `chainId` , `errors` , `library`
 | Contracts | `selectedProtocol` , `getProtocolByName`
 | CachedData | `tokenPositionDataInitialized` , `gasPrices` , `reload` , `addLocalTransactions`
-
+| Network | `activeNetwork`, `findNetworkByChainId`
 
 Hook Dependencies:
 
 - `useGetCooldownPeriod()`
 - `useTokenAllowance(contractForAllowance, spenderAddress)`
 - `useToasts()`
+- `usewindowDimensions()`
 
 Contract Functions:
 

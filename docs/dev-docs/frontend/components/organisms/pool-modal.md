@@ -28,7 +28,7 @@ Manager Dependencies:
 | Wallet | `account` , `chainId` , `errors` , `library`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `vault` , `cpFarm` , `lpFarm` , `lpToken`
-
+| Network | `activeNetwork`
 
 Hook Dependencies:
 

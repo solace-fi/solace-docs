@@ -27,5 +27,6 @@ Manager Dependencies:
 Hook Dependencies:
 - `useUserVaultDetails()`
 - `useCapitalPoolSize()`
+- `useWindowDimensions()`
 
 Info: Returns a component containing a table containing the pool's information, as well as its title.

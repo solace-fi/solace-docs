@@ -139,3 +139,24 @@ type LocalTx = {
   unit: Unit
 }
 ```
+
+### `NetworkConfig` (exported)
+
+```
+type NetworkConfig = {
+  name: string
+  chainId: number
+  nativeCurrency: Unit
+  explorer: {
+    name: 'Etherscan' | 'Polygonscan'
+    key: string
+    url: string
+    apiUrl: string
+  }
+  config: {
+    keyContracts: any
+    productContracts: any
+  }
+  cache: any
+}
+```

@@ -12,4 +12,8 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `connect`
 
+Hook Dependencies:
+
+- `useWindowDimensions()`
+
 Info: Returns a button that would connect the user via their wallet.

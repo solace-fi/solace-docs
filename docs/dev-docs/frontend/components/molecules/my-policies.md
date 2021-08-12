@@ -24,8 +24,13 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `chainId`
+| Network | `activeNetwork`
 | CachedData | `userPolicyData`
+
+Hook Dependencies:
+
+- `useCachedData()`
+- `useWindowDimensions()`
 
 Local Functions:
 - `calculatePolicyExpirationDate (expirationBlock: string)` : Returns a policy's expiration date from its expiration block as a string.

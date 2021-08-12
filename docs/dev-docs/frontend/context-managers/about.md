@@ -11,8 +11,9 @@ It should be clarified that React Context Providers here are called "Managers" i
 
 ### Who are the Managers?
 
-Currently there are five Managers that the user interface relies on for global state: 
+Currently there are six Managers that the user interface relies on for global state: 
 - **ProviderManager**
+- **NetworkManager**
 - **WalletManager**
 - **ContractsManager**
 - **CachedDataManager**
@@ -21,14 +22,16 @@ Currently there are five Managers that the user interface relies on for global s
 Below is the current structure of the Managers, the order does not necessarily matter.
 
         <ProviderManager>             
-          <WalletManager>             
-            <ContractsManager>        
-              <CachedDataManager>     
-                <NotificationsManager>
-                  ...
-                </NotificationsManager>
-              </CachedDataManager>
-            </ContractsManager>
+          <WalletManager>
+            <NetworkManager>             
+              <ContractsManager>        
+                <CachedDataManager>     
+                  <NotificationsManager>
+                    ...
+                  </NotificationsManager>
+                </CachedDataManager>
+              </ContractsManager>
+            </NetworkManager>
           </WalletManager>
         </ProviderManager>
 

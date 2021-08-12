@@ -14,11 +14,10 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `chainId`
+| Network | `activeNetwork`
 
 Hook Dependencies:
 - `usePairPrice()`
-- `getNativeTokenUnit()`
 - `useCoingeckoPrice()`
 
 Info: Return a component containing prices.

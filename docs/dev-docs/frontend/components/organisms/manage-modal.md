@@ -44,6 +44,7 @@ Hook Dependencies:
 - `useGetPolicyPrice()`
 - `useAppraisePosition()`
 - `useGetQuote()`
+- `useWindowDimensions()`
 
 Contract Functions:
 

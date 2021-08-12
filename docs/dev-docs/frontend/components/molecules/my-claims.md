@@ -10,9 +10,10 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `errors` , `chainId`
+| Wallet | `account` , `errors`
 | Contracts | `claimsEscrow`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
+| Network | `activeNetwork`
 
 Hook Dependencies:
 - `useToasts()`

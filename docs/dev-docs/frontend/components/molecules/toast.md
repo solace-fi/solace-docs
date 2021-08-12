@@ -39,7 +39,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `chainId`
+| Network | `activeNetwork`
 
 Local Functions: 
 

@@ -14,11 +14,12 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `chainId`
+| Network | `activeNetwork`
 | CachedData | `localTransactions`
 | Contracts | `contractSources`
 
 Hook Dependencies:
-- `useTransactionDetails`
+- `useTransactionDetails()`
+- `useWindowDimensions()`
 
 Info: Returns a table containing a user's transaction history as well as their pending local transactions.

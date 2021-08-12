@@ -12,7 +12,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `chainId`
+| Network | `activeNetwork`
 
 Hook Dependencies:
 - `useContractArray()`

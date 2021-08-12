@@ -128,7 +128,8 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `library` , `account` , `chainId`
+| Wallet | `library` , `account`
+| Network | `activeNetwork`
 
 Initializes all product contracts using the addresses and contract ABIs based on the current chain. Returns contract instances as an array.
 
@@ -138,7 +139,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `chainId`
+| Network | `activeNetwork`
 
 For each contract in the current chain, return an object containing its address and ABI. Afterwards, return all objects as an array.
 
@@ -198,6 +199,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `chainId`
+| Network | `activeNetwork`
 | CachedData | `version` , `latestBlock`
 
 Fetches gas prices via API from the chain explorer and returns an object containing the gas options, the boolean for loading gas prices, and the currently selected gas option.
@@ -238,6 +240,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `library` , `chainId` , `isActive`
+| Network | `activeNetwork`, `findNetworkByChainId`
 | Contracts | `policyManager`
 
 If `policyHolder` is provided as input, all of the user's policies will be retrieved, else all policies regardless of ownership will be retrieved. Return an object containing a boolean for loading policies, the user policies, and all policies.
@@ -251,6 +254,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `library` , `chainId`
+| Network | `activeNetwork`, `findNetworkByChainId`
 
 Once per chain, initialize the token data and position names of all products from that chain if not already. Returns the state of initialization as a boolean.
 
@@ -269,6 +273,12 @@ On an interval of milliseconds set by `delay` , call `callback` function.
 ## usePairPrice.ts
 
 ### `usePairPrice`
+
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Network | `networks`
 
 Fetches pair data between SOLACE and ETH via the Uniswap SDK and returns the price as a string.
 
@@ -477,8 +487,9 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `contractSources`
-| Wallet | `chainId` , `account`
+| Wallet | `account`
 | CachedData | `deleteLocalTransactions` , `dataVersion`
+| Network | `activeNetwork`
 
 Fetches for the transaction history of a user from the explorer, while deleting local transactions whose hashes match those of the transactions fetched.
 
@@ -489,7 +500,8 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `contractSources`
-| Wallet | `chainId` , `library`
+| Wallet | `library`
+| Network | `activeNetwork`
 
 Hook Dependencies:
 - `useFetchTxHistoryByAddress()`

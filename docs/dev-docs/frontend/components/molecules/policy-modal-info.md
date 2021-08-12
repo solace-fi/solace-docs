@@ -21,5 +21,5 @@ Props Dependencies:
 
 Hook Dependencies:
 - `useAppraisePosition()`
-
+- `useWindowDimensions()`
 Info: Return a component containing a policy's information.

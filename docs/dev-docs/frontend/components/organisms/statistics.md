@@ -10,9 +10,10 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `errors` , `chainId` , `initialized`
+| Wallet | `account` , `errors` , `initialized`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices` , `tokenPositionDataInitialized` , `latestBlock` , `version`
 | Contracts | `master`
+| Network | `activeNetwork`
 
 Hook Dependencies:
 
@@ -21,6 +22,8 @@ Hook Dependencies:
 - `useTotalPendingRewards()`
 - `usePolicyGetter()`
 - `useGetTotalValueLocked()`
+- `useWindowDimensions()`
+- `useToasts()`
 
 Contract Functions:
 

@@ -31,5 +31,6 @@ Hook Dependencies:
 - `useUserRewardsPerDay()`
 - `useUserPendingRewards()`
 - `usePoolStakedValue()`
+- `useWindowDimensions()`
 
 Info: Returns a component containing a table containing the pool's information, as well as its title.

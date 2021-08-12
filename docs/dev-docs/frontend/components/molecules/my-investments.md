@@ -10,8 +10,9 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `chainId`
+| Wallet | `account`
 | Contracts | `cpFarm` , `lpFarm`
+| Network | `activeNetwork `
 
 Hook Dependencies:
 - `useUserPendingRewards()`
