@@ -1,15 +1,34 @@
-To be inherited by individual Product contracts.
+The abstract smart contract that is inherited by every concrete individual `Product` contracts.
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
+    address _governance,
+    contract IPolicyManager _policyManager,
+    contract IRegistry _registry,
+    address _coveredPlatform,
+    uint40 _minPeriod,
+    uint40 _maxPeriod,
+    uint24 _price,
+    uint32 _maxCoverPerUserDivisor
   ) internal
 ```
+The constructor. The every concrete `Product` contract provides constructor parameters.
 
 
-
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_governance` | address | The governor.
+|`_policyManager` | contract IPolicyManager | The IPolicyManager contract.
+|`_registry` | contract IRegistry | The IRegistry contract.
+|`_coveredPlatform` | address | A platform contract which locates contracts that are covered by this product.
+|`_minPeriod` | uint40 | The minimum policy period in blocks to purchase a **policy**.
+|`_maxPeriod` | uint40 | The maximum policy period in blocks to purchase a **policy**.
+|`_price` | uint24 | The cover price for the **Product**.
+|`_maxCoverPerUserDivisor` | uint32 | The max cover amount divisor for per user. (maxCover / divisor = maxCoverPerUser).
 
 ### setGovernance
 ```solidity
@@ -17,8 +36,8 @@ To be inherited by individual Product contracts.
     address _governance
   ) external
 ```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
+Allows governance to be transferred to a new `governor`.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -32,7 +51,7 @@ Can only be called by the current governor.
   ) external
 ```
 Accepts the governance role.
-Can only be called by the new governor.
+Can only be called by the new `governor`.
 
 
 
@@ -42,13 +61,13 @@ Can only be called by the new governor.
     uint24 _price
   ) external
 ```
-Sets the price for this product
+Sets the price for this product.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_price` | uint24 | cover price (in wei) per ether per block
+|`_price` | uint24 | Cover price (in wei) per ether per block.
 
 ### setMinPeriod
 ```solidity
@@ -56,13 +75,13 @@ Sets the price for this product
     uint40 _minPeriod
   ) external
 ```
-Sets the minimum number of blocks a policy can be purchased for
+Sets the minimum number of blocks a policy can be purchased for.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_minPeriod` | uint40 | minimum number of blocks
+|`_minPeriod` | uint40 | The minimum number of blocks.
 
 ### setMaxPeriod
 ```solidity
@@ -70,13 +89,13 @@ Sets the minimum number of blocks a policy can be purchased for
     uint40 _maxPeriod
   ) external
 ```
-Sets the maximum number of blocks a policy can be purchased for
+Sets the maximum number of blocks a policy can be purchased for.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_maxPeriod` | uint40 | maximum number of blocks
+|`_maxPeriod` | uint40 | The maximum number of blocks
 
 ### addSigner
 ```solidity
@@ -85,7 +104,7 @@ Sets the maximum number of blocks a policy can be purchased for
   ) external
 ```
 Adds a new signer that can authorize claims.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -100,7 +119,7 @@ Can only be called by the current governor.
   ) external
 ```
 Removes a signer.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -115,7 +134,7 @@ Can only be called by the current governor.
 ```
 Pauses or unpauses buying and extending policies.
 Cancelling policies and submitting claims are unaffected by pause.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 Used for security and to gracefully phase out old products.
 
@@ -127,9 +146,9 @@ Used for security and to gracefully phase out old products.
   ) public
 ```
 Changes the covered platform.
-Use this if the the protocol changes their registry but keeps the children contracts.
-A new version of the protocol will likely require a new Product.
-Can only be called by the current governor.
+This function is used if the the protocol changes their registry but keeps the children contracts.
+A new version of the protocol will likely require a new **Product**.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -144,7 +163,7 @@ Can only be called by the current governor.
   ) external
 ```
 Changes the policy manager.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -159,25 +178,20 @@ Can only be called by the current governor.
     address _positionContract
   ) public returns (uint256 positionAmount)
 ```
-@notice
- Provide the user's total position in the product's protocol.
- This total should be denominated in eth.
-@dev
- Every product will have a different mechanism to read and determine
- a user's total position in that product's protocol. This method will
- only be implemented in the inheriting product contracts
+This function will only be implemented in the inheriting product contracts. It provides the user's total position in the product's protocol. 
+This total should be denominated in **ETH**. Every product will have a different mechanism to read and determine a user's total position in that product's protocol. 
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyholder` | address | buyer requesting the coverage quote
-|`_positionContract` | address | address of the exact smart contract the buyer has their position in (e.g., for UniswapProduct this would be Pair's address)
+|`_policyholder` | address | The `buyer` requesting the coverage quote.
+|`_positionContract` | address | The address of the exact smart contract the `buyer` has their position in (e.g., for UniswapProduct this would be Pair's address).
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`positionAmount`| address | The user's total position in wei in the product's protocol.
+|`positionAmount`| address | The user's total position in **Wei** in the product's protocol.
 ### getQuote
 ```solidity
   function getQuote(
@@ -186,19 +200,19 @@ Can only be called by the current governor.
   ) external returns (uint256)
 ```
 @notice
- Provide a premium quote.
+ The function provides a premium quote.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_coverAmount` | address | Value to cover in ETH.
-|`_blocks` | address | Length for policy
+|`_coverAmount` | address | The value to cover in **ETH**.
+|`_blocks` | address | The length for policy.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`premium`| address | The quote for their policy in wei.
+|`premium`| address | The quote for their policy in **Wei**.
 ### updateActiveCoverAmount
 ```solidity
   function updateActiveCoverAmount(
@@ -211,7 +225,7 @@ Updates the product's book-keeping variables.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_coverDiff` | int256 | change in active cover amount
+|`_coverDiff` | int256 | The change in active cover amount.
 
 ### buyPolicy
 ```solidity
@@ -222,22 +236,21 @@ Updates the product's book-keeping variables.
     uint40 _positionContract
   ) external returns (uint256 policyID)
 ```
-@notice
- Purchase and deploy a policy on the behalf of the policyholder
+The function purchases and deploys a policy on the behalf of the policyholder. It returns the id of newly created policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_coverAmount` | address | Value to cover in ETH.
-|`_blocks` | address | length (in blocks) for policy
-|`_policyholder` | uint256 | who's liquidity is being covered by the policy
-|`_positionContract` | uint40 | contract address where the policyholder has a position to be covered
+|`_coverAmount` | address | The value to cover in **ETH**.
+|`_blocks` | address | The length (in blocks) for policy.
+|`_policyholder` | uint256 | Who's liquidity is being covered by the policy.
+|`_positionContract` | uint40 | The contract address where the policyholder has a position to be covered.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| address | The contract address of the policy
+|`policyID`| address | The policy id.
 ### updateCoverAmount
 ```solidity
   function updateCoverAmount(
@@ -245,15 +258,14 @@ Updates the product's book-keeping variables.
     uint256 _coverAmount
   ) external
 ```
-@notice
- Increase or decrease the cover amount for the policy
+The function is used to increase or decrease the cover amount for the policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | id number of the existing policy
-|`_coverAmount` | uint256 | Value to cover in ETH.
+|`_policyID` | uint256 | The id number of the existing policy
+|`_coverAmount` | uint256 | The value to cover in **ETH**.
 
 ### extendPolicy
 ```solidity
@@ -262,15 +274,14 @@ Updates the product's book-keeping variables.
     uint40 _blocks
   ) external
 ```
-@notice
- Extend a policy contract
+The function enables to extend a policy contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | id number of the existing policy
-|`_blocks` | uint40 | length of extension
+|`_policyID` | uint256 | The id number of the existing policy.
+|`_blocks` | uint40 | The length of extension.
 
 ### updatePolicy
 ```solidity
@@ -280,16 +291,15 @@ Updates the product's book-keeping variables.
     uint40 _newExtension
   ) external
 ```
-@notice
- Update an existing policy contract
+The function updates an existing policy contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | id number of the existing policy
-|`_newCoverAmount` | uint256 | new cover amount of position
-|`_newExtension` | uint40 | length of block extension
+|`_policyID` | uint256 | The id number of the existing policy.
+|`_newCoverAmount` | uint256 | The new cover amount of position.
+|`_newExtension` | uint40 | The length of block extension.
 
 ### cancelPolicy
 ```solidity
@@ -297,33 +307,40 @@ Updates the product's book-keeping variables.
     uint256 _policyID
   ) external
 ```
-@notice
- Cancel and destroy a policy.
+The function is used to cancel and destroy a policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | id number of the existing policy
+|`_policyID` | uint256 | The id number of the existing policy.
 
 ### maxCoverAmount
 ```solidity
   function maxCoverAmount(
   ) public returns (uint256)
 ```
+The function returns the max cover amount of the product.
 
 
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`maxCoverAmount`|  | The max cover amount.
 ### maxCoverPerUser
 ```solidity
   function maxCoverPerUser(
   ) external returns (uint256)
 ```
+The function returns the max cover amount per user for the product.
 
 
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`maxCoverAmountPerUser`|  | The max cover amount per user.
 ### add
 ```solidity
   function add(
@@ -331,7 +348,7 @@ Updates the product's book-keeping variables.
     int256 _b
   ) internal returns (uint256 _c)
 ```
-Adds two numbers.
+The function is used to add two numbers.
 
 
 #### Parameters:
@@ -347,12 +364,23 @@ Adds two numbers.
 ### min
 ```solidity
   function min(
+    uint256 a,
+    uint256 b
   ) internal returns (uint256)
 ```
+The function is used to return minimum number between two numbers..
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`a` | uint256 | The first number as a uint256.
+|`b` | uint256 | The second number as an int256.
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`c`| uint256 | The min as a uint256.
 ## Events
 ### SignerAdded
 ```solidity

@@ -1,4 +1,4 @@
-Mock registry for testing purposes
+Mock registry for the upgradeable `Registry` testing purposes.
 
 
 ## Functions

@@ -1,4 +1,5 @@
-The holder of claims. Policy holders can submit claims through their policy's product contract, in the process burning the policy and converting it to a claim. The policy holder will then need to wait for a cooldown period after which they can withdraw the payout.
+The holder of claims. Policy holders can submit claims through their policy's product contract, in the process burning the policy and converting it to a claim.
+The policy holder will then need to wait for a cooldown period after which they can withdraw the payout.
 
 
 ## Functions
@@ -9,21 +10,21 @@ The holder of claims. Policy holders can submit claims through their policy's pr
     address _registry
   ) public
 ```
-Constructs the ClaimsEscrow contract.
+The constructor. It constructs the ClaimsEscrow contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | Address of the governor.
-|`_registry` | address | Address of the registry.
+|`_governance` | address | The address of the governor.
+|`_registry` | address | The address of the registry.
 
 ### receive
 ```solidity
   function receive(
   ) external
 ```
-Receive function. Deposits eth.
+Fallback function to allow contract to receive **ETH**.
 
 
 
@@ -32,7 +33,7 @@ Receive function. Deposits eth.
   function fallback(
   ) external
 ```
-Fallback function. Deposits eth.
+Fallback function to allow contract to receive **ETH**.
 
 
 
@@ -43,7 +44,7 @@ Fallback function. Deposits eth.
   ) external
 ```
 Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -57,7 +58,7 @@ Can only be called by the current governor.
   ) external
 ```
 Accepts the governance role.
-Can only be called by the new governor.
+Can only be called by the new `governor`.
 
 
 
@@ -77,9 +78,9 @@ claimID = policyID
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | ID of policy to claim
-|`_claimant` | address | Address of the claimant
-|`_amount` | uint256 | Amount of ETH to claim
+|`_policyID` | uint256 | The id of policy to claim.
+|`_claimant` | address | The address of the claimant.
+|`_amount` | uint256 | The amount of **ETH** to claim.
 
 ### withdrawClaimsPayout
 ```solidity
@@ -88,7 +89,7 @@ claimID = policyID
   ) external
 ```
 Allows claimants to withdraw their claims payout.
-Only callable by the claimant.
+Only callable by the `claimant`.
 Only callable after the cooldown period has elapsed (from the time the claim was approved and processed).
 
 
@@ -105,7 +106,7 @@ Only callable after the cooldown period has elapsed (from the time the claim was
   ) external
 ```
 Adjusts the value of a claim.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
@@ -123,15 +124,15 @@ Can only be called by the current governor.
   ) external
 ```
 Rescues misplaced tokens.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`token` | address | Token to pull.
-|`amount` | uint256 | Amount to pull.
-|`dst` | address | Destination for tokens.
+|`token` | address | The token to pull.
+|`amount` | uint256 | The amount to pull.
+|`dst` | address | The destination for tokens.
 
 ### setCooldownPeriod
 ```solidity
@@ -140,13 +141,13 @@ Can only be called by the current governor.
   ) external
 ```
 Set the cooldown duration.
-Can only be called by the current governor.
+Can only be called by the current `governor`.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_period` | uint256 | New cooldown duration in seconds
+|`_period` | uint256 | The new cooldown duration in seconds.
 
 ### exists
 ```solidity

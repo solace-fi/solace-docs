@@ -14,7 +14,7 @@ Constructs the ExchangeQuoter contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_oneSplitView` | address | Address of the 1inch router.
+|`_oneSplitView` | address | The address of the 1inch router.
 
 ### tokenToEth
 ```solidity
@@ -23,7 +23,7 @@ Constructs the ExchangeQuoter contract.
     uint256 _amount
   ) public returns (uint256)
 ```
-Calculates the exchange rate for an _amount of _token to eth.
+Calculates the exchange rate for an `_amount` of `_token` to **ETH**.
 
 
 #### Parameters:
@@ -35,4 +35,4 @@ Calculates the exchange rate for an _amount of _token to eth.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | amount of eth received.
+|`amount`| address | The amount of **ETH** received.
