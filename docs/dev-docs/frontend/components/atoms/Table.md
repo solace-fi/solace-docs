@@ -2,9 +2,12 @@
 
 ### `TableProps`
 - **Extends**: GeneralTextProps, GeneralElementProps
-- **isHighlight (boolean)**?: Highlight the table in a different color
-- **canHover (boolean)**?: Enable table color change on hover
-- **headers (string[])**?: Array of strings to assign to table headers
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `isHighlight` (optional) | boolean | Highlight the table in a different color.
+| `canHover` (optional) | boolean | Enable table color change on hover.
+| `headers` (optional) | string[] | Array of strings to assign to table headers.
 
 ## Components
 

@@ -1,7 +1,10 @@
 ## Props
 
 ### `ProgressProps`
-- **step (number)**: Indicates current step on form.
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `step` | number | Indicates current step on form.
 
 ## Components
 

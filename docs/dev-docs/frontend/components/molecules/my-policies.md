@@ -6,9 +6,11 @@ title: MyPolicies
 
 ### `MyPoliciesProps`
 
-- **openClaimModal (any)**: Boolean to open Claim modal
-- **openManageModal (any)**: Boolean to manage Modal
-- **latestBlock (number)**: The latest block number
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `openClaimModal` | any | Function to open Claim modal.
+| `openManageModal` | any | Function to open Manage Modal.
+| `latestBlock` | number | The latest block number.
 
 ## Components
 
@@ -19,8 +21,16 @@ Props Dependencies:
 - `MyPoliciesProps`
 
 Manager Dependencies:
-- **Wallet**: `chainId`
-- **CachedData**: `userPolicyData`
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Network | `activeNetwork`
+| CachedData | `userPolicyData`
+
+Hook Dependencies:
+
+- `useCachedData()`
+- `useWindowDimensions()`
 
 Local Functions:
 - `calculatePolicyExpirationDate (expirationBlock: string)` : Returns a policy's expiration date from its expiration block as a string.

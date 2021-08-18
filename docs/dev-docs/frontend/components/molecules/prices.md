@@ -11,11 +11,13 @@ Info: Component to properly position prices.
 ### `PolicyModalInfo` (exported)
 
 Manager Dependencies:
-- **Wallet**: `chainId`
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Network | `activeNetwork`
 
 Hook Dependencies:
 - `usePairPrice()`
-- `getNativeTokenUnit()`
 - `useCoingeckoPrice()`
 
 Info: Return a component containing prices.

@@ -7,9 +7,13 @@ title: MyClaims
 ### `MyClaims` (exported)
 
 Manager Dependencies:
-- **Wallet**: `account` , `errors` , `chainId`
-- **Contracts**: `claimsEscrow`
-- **CachedData**: `addLocalTransactions` , `reload` , `gasPrices`
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account` , `errors`
+| Contracts | `claimsEscrow`
+| CachedData | `addLocalTransactions` , `reload` , `gasPrices`
+| Network | `activeNetwork`
 
 Hook Dependencies:
 - `useToasts()`
@@ -17,5 +21,6 @@ Hook Dependencies:
 
 Contract Functions: 
 - `withdrawPayout` : Calls ClaimsEscrow contract to withdraw payout.
+
 
 Info: Returns a card container of the user's claims in cards.

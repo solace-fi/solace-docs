@@ -5,7 +5,10 @@ title: CapitalProviderPool
 ## Props
 
 ### `CapitalProviderPoolProps`
-- **openModal (func: FunctionName, modalTitle: string)**: Set visibility of modal and modal title
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `openModal` | ( func: FunctionName, modalTitle: string ) => void | Set modal visibility, functionality, and title.
 
 ## Components
 
@@ -15,8 +18,11 @@ Props Dependencies:
 - `CapitalProviderPoolProps`
 
 Manager Dependencies:
-- **Wallet**: `account` , `errors`
-- **Contracts**: `cpFarm`
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account` , `errors`
+| Contracts | `cpFarm`
 
 Hook Dependencies:
 - `useUserStakedValue()`
@@ -24,5 +30,6 @@ Hook Dependencies:
 - `useUserRewardsPerDay()`
 - `useUserPendingRewards()`
 - `usePoolStakedValue()`
+- `useWindowDimensions()`
 
 Info: Returns a component containing a table containing the pool's information, as well as its title.

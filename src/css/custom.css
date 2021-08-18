@@ -95,10 +95,6 @@ html[data-theme='dark'] .menu {
   font-weight: 600;
 }
 
-.container {
-  max-width: var(--ifm-interface-container-width) !important;
-}
-
 p {
   line-height: 1.5rem;
 }

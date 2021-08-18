@@ -26,19 +26,39 @@ CachedDataManager contains a boolean that determines whether the token and posit
 
 After a transaction is sent, it takes time before it is validated. Because of this, that pending transaction wouldn't be found in the user's transaction history right away. So pending transactions are stored locally and are removed when the transactions with the same hashes are found.
 
+### Transaction history modal
+
+The manager can toggle the visibility of the transaction history modal. This approach is due to certain elements being destroyed as the user interface takes a different device screen width, to prevent the modal from being prematurely destroyed, it is moved here.
+
 ### Latest Block
 
 Some parts of the app should only update when the block number is actually different, rather than `version` or `dataVersion`. To get around this, the manager stores the latest block number.
 
-## Returned values
+Manager Dependencies:
 
-#### `localTransactions` (LocalTx[])
-#### `userPolicyData` ({ policiesLoading: boolean; userPolicies: Policy[] })
-#### `tokenPositionDataInitialized` (boolean)
-#### `version` (number)
-#### `dataVersion` (number)
-#### `gasPrices` (any)
-#### `latestBlock` (number)
-#### `addLocalTransactions` (function)
-#### `deleteLocalTransactions` (function)
-#### `reload` (function)
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account` , `chainId` , `disconnect`
+
+Hook Dependencies:
+- `useReload()`
+- `useFetchGasPrice()`
+- `useGetLatestBlockNumber()`
+- `useGetTokens()`
+- `usePolicyGetter()`
+
+#### Returned values:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`localTransactions` | LocalTx[] | Array of local transactions.
+|`userPolicyData` | { boolean, Policy[] } | Policy loading state and array of user policies.
+|`tokenPositionDataInitialized` | boolean | Token and position initialization state.
+|`openHistoryModal` | boolean | Display transaction history modal.
+|`version` | number | Value that is updated by user actions for controlled refresh.
+|`dataVersion` | number | Value that is updated on an interval for controlled refresh.
+|`gasPrices` | any | Returned gas prices from explorer.
+|`latestBlock` | number | Number of the latest fetched block.
+|`addLocalTransactions` | function | Add local transactions.
+|`deleteLocalTransactions` | function | Delete local transactions.
+|`openHistoryModal` | function | Function to display transaction history modal.
+|`reload` | function | Function to increment `version`.

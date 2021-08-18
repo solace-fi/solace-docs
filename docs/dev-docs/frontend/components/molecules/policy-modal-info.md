@@ -5,8 +5,11 @@ title: PolicyModalInfo
 ## Props
 
 ### `PolicyModalInfoProps`
-- **selectedPolicy (Policy | undefined)**: The currently selected policy
-- **latestBlock (number)**: The latest block number
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `selectedPolicy` | Policy \| undefined | The currently selected policy.
+| `latestBlock` | number | The latest block number.
 
 ## Components
 
@@ -18,5 +21,5 @@ Props Dependencies:
 
 Hook Dependencies:
 - `useAppraisePosition()`
-
+- `useWindowDimensions()`
 Info: Return a component containing a policy's information.

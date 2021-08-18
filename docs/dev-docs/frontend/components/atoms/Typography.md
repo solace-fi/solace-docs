@@ -1,28 +1,37 @@
 ## Props
 
 ### `TextFontProps` (exported)
-- **h1 (boolean)**?: Apply `Heading1` css
-- **h2 (boolean)**?: Apply `Heading2` css
-- **h3 (boolean)**?: Apply `Heading3` css
-- **t1 (boolean)**?: Apply `Text1` css
-- **t1 (boolean)**?: Apply `Text2` css
-- **t1 (boolean)**?: Apply `Text3` css
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `h1` (optional) | boolean | Apply `Heading1` css.
+| `h2` (optional) | boolean | Apply `Heading2` css.
+| `h3` (optional) | boolean | Apply `Heading3` css.
+| `t1` (optional) | boolean | Apply `Text1` css.
+| `t2` (optional) | boolean | Apply `Text2` css.
+| `t3` (optional) | boolean | Apply `Text3` css.
 
 ### `TextAlignProps` (exported)
-- **textAlignCenter (boolean)**?: Align text center
-- **textAlignLeft (boolean)**?: Align text left
-- **textAlignRight (boolean)**?: Align text right
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `textAlignCenter` (optional) | boolean | Align text center.
+| `textAlignLeft` (optional) | boolean | Align text left.
+| `textAlignRight` (optional) | boolean | Align text right.
 
 ### `TextStyledProps` (exported)
-- **nowrap (boolean)**?: Disable wrapped text
-- **outlined (boolean)**?: Outline text
-- **autoAlignVertical (boolean)**?: Set vertical margin of text to auto
-- **autoAlignHorizontal (boolean)**?: Set horizontal margin of text to auto
-- **autoAlign (boolean)**?: Align text vertically and horizontally, and fix height and line-height.
-- **bold (boolean)**?: Increased font weight
-- **green (boolean)**?: Apply green color to text
-- **error (boolean)**?: Apply error color to text
-- **warning (boolean)**?: Apply warning color to text
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `nowrap` (optional) | boolean | Disable wrapped text.
+| `outlined` (optional) | boolean | Outline text.
+| `autoAlignVertical` (optional) | boolean | Set vertical margin of text to auto.
+| `autoAlignHorizontal` (optional) | boolean | Set horizontal margin of text to auto.
+| `autoAlign` (optional) | boolean | Align text vertically and horizontally, and fix height and line-height.
+| `bold` (optional) | boolean | Increased font weight.
+| `green` (optional) | boolean | Apply green color to text.
+| `error` (optional) | boolean | Apply error color to text.
+| `warning` (optional) | boolean | Apply warning color to text.
 
 ### `GeneralTextProps` (exported)
 - **Extends**: TextFontProps, TextAlignProps, TextStyleProps

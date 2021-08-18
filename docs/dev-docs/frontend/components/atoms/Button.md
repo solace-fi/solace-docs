@@ -1,12 +1,16 @@
 ## Props
 
 ### `ButtonProps`
-- **secondary (boolean)**?: Set secondary color
-- **hidden (boolean)**?: Hide button
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `secondary` (optional) | boolean | Set secondary color.
+| `hidden` (optional) | boolean | Hide button.
 
-### `ClickProps` (exported)
-- **onClick (any)**?: Function to call on click
-- **disabled (boolean)**?: Disable button
+### `ClickProps`
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `onClick` (optional) | boolean | Function to call on click.
+| `disabled` (optional) | boolean | Disable button.
 
 ## Styles
 

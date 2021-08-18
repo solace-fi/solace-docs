@@ -1,17 +1,21 @@
 ## Props
 
 ### `BoxProps`
-- **purple (boolean)**?: Change background color to purple
-- **green (boolean)**?: Change background color to green
-- **navy (boolean)**?: Change background color to navy
-- **transparent (boolean)**?: Change background color to transparent
-- **outlined (boolean)**?: Give box outline
-- **glow (boolean)**?: Give box border glow
-- **shadow (boolean)**?: Give box shadow
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `purple` (optional) | boolean | Change background color to purple.
+| `green` (optional) | boolean | Change background color to green.
+| `navy` (optional) | boolean | Change background color to navy.
+| `transparent` (optional) | boolean | Change background color to transparent.
+| `outlined` (optional) | boolean | Give box outline.
+| `glow` (optional) | boolean | Give box border glow.
+| `shadow` (optional) | boolean | Give box shadow.
 
 ### `SmallBoxProps`
-- **error (boolean)**?: change border-color to error color
-- **collapse (boolean)**?: hide `SmallBox`
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `error` (optional) | boolean | Change border-color to error color.
+| `collapse` (optional) | boolean | Change visibility.
 
 ## Styles
 
