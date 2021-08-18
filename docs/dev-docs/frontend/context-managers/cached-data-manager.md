@@ -1,6 +1,6 @@
 # CachedDataManager
 
-CachedDataManager caches data that is internal or fetched from extrenal sources. If there would be more Managers in the future, they may help take some fields out of CachedDataManager.
+CachedDataManager caches data that is internal or fetched from external sources. If there would be more Managers in the future, they may help take some fields out of CachedDataManager.
 
 ## How does it work?
 
@@ -20,7 +20,7 @@ CachedDataManager keeps track of fetched gas prices for any part of the app to a
 
 ### Token and Position Data
 
-CachedDataManager contains a boolean that determines whether the token and position data of a chain have been initialized. This method is employed in order to properly call the initialization function once per chain.
+CachedDataManager oversees the initialization of token and position data, a very expensive functionality to execute. Combined with `useSessionStorage`, this method is employed to properly call the initialization function once per chain per browser tab, which lessens the resources spent on making network requests and prevents redundant calls. The initialized data is also propelled through this Manager, allowing app-wide access for components that need it.
 
 ### Local transactions
 
@@ -38,13 +38,15 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `chainId` , `disconnect`
+| Wallet | `account` , `disconnect`
+| Network | `chainId `
 
 Hook Dependencies:
+- `useLocalStorage()`
 - `useReload()`
 - `useFetchGasPrice()`
 - `useGetLatestBlockNumber()`
-- `useGetTokens()`
+- `useCacheTokens()`
 - `usePolicyGetter()`
 
 #### Returned values:
@@ -52,8 +54,8 @@ Hook Dependencies:
 | :--- | :--- | :------------------------------------------------------------------- |
 |`localTransactions` | LocalTx[] | Array of local transactions.
 |`userPolicyData` | { boolean, Policy[] } | Policy loading state and array of user policies.
-|`tokenPositionDataInitialized` | boolean | Token and position initialization state.
-|`openHistoryModal` | boolean | Display transaction history modal.
+|`tokenPositionData` | { boolean , NetworkCache[] } | Token and position initialization state, and the cached data itself.
+|`showHistoryModal` | boolean | Display transaction history modal.
 |`version` | number | Value that is updated by user actions for controlled refresh.
 |`dataVersion` | number | Value that is updated on an interval for controlled refresh.
 |`gasPrices` | any | Returned gas prices from explorer.

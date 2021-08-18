@@ -1,19 +1,19 @@
 ---
-title: WalletConnectButton
+title: TransactionHistoryButton
 ---
 
 ## Components
 
-### `WalletConnectButton` (exported)
+### `TransactionHistoryButton` (exported)
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `connect`
+| CachedData | `localTransactions` , `openHistoryModal `
 
 Hook Dependencies:
 
 - `useWindowDimensions()`
 
-Info: Returns a button that would connect the user via their wallet.
+Info: Returns a button that opens the transaction history modal.

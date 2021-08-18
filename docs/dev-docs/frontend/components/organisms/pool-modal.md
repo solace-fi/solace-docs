@@ -25,30 +25,32 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `chainId` , `errors` , `library`
+| Wallet | `account` , `errors` , `library`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `vault` , `cpFarm` , `lpFarm` , `lpToken`
-| Network | `activeNetwork`
+| Network | `activeNetwork` , `currencyDecimals` , `chainId`
+| Notifications | `makeTxToast`
 
 Hook Dependencies:
 
 - `useUserStakedValue()`
 - `useNativeTokenBalance()`
 - `useScpBalance()`
-- `useLpBalances()`
+- `useUserWalletLpBalance()`
+- `useDepositedLpBalance()`
 - `useTokenAllowance()`
-- `useToasts()`
+- `useCooldown()`
 
 Contract Functions:
 
 - `approve` : Calls vault contract to approve amount being transferred.
-- `deposit` : Calls vault contract to deposit ETH into Risk Backing Capital Pool.
-- `withdraw` : Calls vault contract to withdraw ETH from Risk Backing Capital Pool.
-- `depositEth` : Calls cpFarm contract to deposit and stake ETH into Capital Provider Pool.
-- `withdrawEth` : Calls cpFarm contract to withdraw ETH from Capital Provider Pool.
-- `depositCp` : Calls cpFarm contract to deposit SCP tokens into Capital Provider Pool.
-- `depositSigned` : Calls lpFarm contract to deposit LP tokens into Liquidity Provider Pool.
-- `withdraw` : Calls lpFarm contract to withdraw LP tokens from Liquidity Provider Pool.
+- `callDeposit` : Calls vault contract to deposit ETH into Risk Backing Capital Pool.
+- `callWithdrawEth` : Calls vault contract to withdraw ETH from the vault. User must wait for the cooldown to elapse.
+- `callDepositEth` : Calls cpFarm contract to deposit and stake ETH into Capital Provider Pool.
+- `callWithdrawCp` : Calls cpFarm contract to withdraw CP from Capital Provider Pool.
+- `callDepositCp` : Calls cpFarm contract to deposit SCP tokens into Capital Provider Pool.
+- `callDepositLp` : Calls lpFarm contract to deposit LP tokens into Liquidity Provider Pool.
+- `callWithdrawLp` : Calls lpFarm contract to withdraw LP tokens from Liquidity Provider Pool.
 
 
 Local Functions:
@@ -65,7 +67,7 @@ Local Functions:
 Data Refresh:
 
 - [ `gasPrices` ]: Set selected gas option if one doesn't exist already.
-- [ `handleSelectChange` ]: Calculate maximum amount of assets to be sent minus gas from selected gas option.
+- [ `maxSelected` , `handleSelectChange` ]: Calculate maximum amount of assets to be sent minus gas from selected gas option.
 - [ `isOpen` , `cpFarm?.address` , `vault` ]: Set contract for allowance, set spender, and set selected NFT.
 
 Additional Functional Components:

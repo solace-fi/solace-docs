@@ -14,7 +14,7 @@ type Policy = {
   productAddress: string
   productName: string
   positionContract: string
-  expirationBlock: string
+  expirationBlock: number
   coverAmount: string
   price: string
   status: PolicyState
@@ -146,7 +146,13 @@ type LocalTx = {
 type NetworkConfig = {
   name: string
   chainId: number
-  nativeCurrency: Unit
+  nativeCurrency: {
+    symbol: Unit
+    decimals: number
+  }
+  rpc: {
+    httpsUrl: string
+  }
   explorer: {
     name: 'Etherscan' | 'Polygonscan'
     key: string
@@ -154,9 +160,56 @@ type NetworkConfig = {
     apiUrl: string
   }
   config: {
-    keyContracts: any
+    keyContracts: KeyContracts
     productContracts: any
   }
   cache: any
+  metamaskChain?: MetamaskAddEthereumChain
+  walletConfig: any
+}
+```
+
+### `KeyContracts` (exported)
+
+```
+type KeyContracts = {
+  [key: string]: ContractSources
+}
+```
+
+### `MetamaskAddEthereumChain` (exported)
+
+```
+type MetamaskAddEthereumChain = {
+  chainId: string
+  chainName: string
+  nativeCurrency: {
+    name: string
+    symbol: string
+    decimals: number
+  }
+  rpcUrls: string[]
+  blockExplorerUrls: string[]
+}
+```
+
+### `MetamaskSwitchEthereumChain` (exported)
+
+```
+type MetamaskSwitchEthereumChain = {
+  chainId: string
+}
+```
+
+### `MetamaskWatchAsset` (exported)
+
+```
+type MetamaskWatchAsset = {
+  type: string
+  options: {
+    address: string
+    symbol: string
+    decimals: number
+  }
 }
 ```

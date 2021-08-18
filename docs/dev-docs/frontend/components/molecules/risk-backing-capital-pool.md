@@ -23,6 +23,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account` , `errors`
+| Network | `currencyDecimals`
 
 Hook Dependencies:
 - `useUserVaultDetails()`

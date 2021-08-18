@@ -24,6 +24,7 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account` , `errors`
 | Contracts | `lpFarm`
+| Network | `currencyDecimals`
 
 Hook Dependencies:
 - `useUserStakedValue()`

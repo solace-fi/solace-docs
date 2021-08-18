@@ -1,7 +1,7 @@
 ---
 id: about
 title: About Components
-position: 1
+sidebar_position: 1
 ---
 
 ## Introduction

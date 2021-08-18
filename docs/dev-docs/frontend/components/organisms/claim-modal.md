@@ -25,34 +25,27 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `chainId` , `errors` , `library`
-| Contracts | `selectedProtocol` , `getProtocolByName`
-| CachedData | `tokenPositionDataInitialized` , `gasPrices` , `reload` , `addLocalTransactions`
-| Network | `activeNetwork`, `findNetworkByChainId`
+| Wallet | `errors`
+| Contracts | `selectedProtocol`
+| CachedData | `tokenPositionData` , `gasPrices` , `reload` , `addLocalTransactions`
+| Network | `activeNetwork`, `currencyDecimals`
+| Notifications | `makeTxToast`
 
 Hook Dependencies:
 
 - `useGetCooldownPeriod()`
-- `useTokenAllowance(contractForAllowance, spenderAddress)`
-- `useToasts()`
 - `usewindowDimensions()`
 
 Contract Functions:
-
-- `approve` : Approve amount to be transferred.
 
 - `submitClaim` : Calls function from product contract to submit claim.
 
 Local Functions:
 
-- `getUserBalances()` : Get balances for user's positions
-
 - `handleClose()` : Handle closing modal
 
 Data Refresh:
 
-- [ `isOpen` , `selectedPolicy` , `account` , `library` , `tokenPositionDataInitialized` ]: get user balances, get contract for allowance, get spender address, get claim assessment
-
-- [ `latestBlock` ]: get user balances
+- [ `isOpen` , `selectedPolicy` , `activeNetwork` , `tokenPositionDataInitialized` ]: get claim assessment
 
 Info: Returns modal to submit claim for a user's policy.

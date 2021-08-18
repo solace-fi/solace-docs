@@ -13,10 +13,10 @@ Manager Dependencies:
 | Wallet | `account` , `errors`
 | Contracts | `claimsEscrow`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
-| Network | `activeNetwork`
+| Network | `activeNetwork` , `currencyDecimals`
+| Notifications | `makeTxToast`
 
 Hook Dependencies:
-- `useToasts()`
 - `useGetClaimsDetails()`
 
 Contract Functions: 

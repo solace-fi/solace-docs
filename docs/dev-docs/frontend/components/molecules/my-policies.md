@@ -24,7 +24,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Network | `activeNetwork`
+| Network | `activeNetwork` , `currencyDecimals`
 | CachedData | `userPolicyData`
 
 Hook Dependencies:

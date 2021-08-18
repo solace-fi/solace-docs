@@ -16,7 +16,8 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `chainId` , `account`, `errors`
+| Wallet | `account`, `errors`
+| Network | `chainId`
 
 #### Returned values:
 | Name | Type | Description                                                          |

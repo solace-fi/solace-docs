@@ -4,15 +4,16 @@ The Manager in charge of the user's wallet and wallet connector. One of the most
 
 ## How does it work?
 
-The manager borrows functionality from Web3React, by using it as a state machine to keep track of the current `chainId` , `account` , and `Web3Provider` , as well as using its `connect` and `disconnect` functions.
+The manager borrows functionality from Web3React, by using it as a state machine to keep track of the current `account` , and `Web3Provider` , as well as using its `connect` and `disconnect` functions.
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Provider | `ethProvider`
+| Network | `activeNetwork`
 
 Hook Dependencies:
+- `useSessionStorage()`
 - `useWeb3React()`
 
 #### Returned values:
@@ -22,9 +23,11 @@ Hook Dependencies:
 |`connecting` | boolean | Connecting status of wallet.
 |`isActive` | boolean | Running state of wallet.
 |`account` | string \| undefined | Account of user account.
-|`chainId` | string \| undefined | Current chain ID.
 |`library` | any | Provider of wallet.
-|`connector` | WalletConnector \| undefined | Current wallet provider.
+|`connector` | AbstractConnector \| undefined | Current wallet AbstractConnector.
+|`activeWalletConnector` | WalletConnector \| undefined | Current wallet provider.
 |`errors` | Error[] | Array of current errors.
+|`openWalletModal` | function | Opens wallet modal.
+|`changeWallet` | function | Set new selected provider before reloading.
 |`connect` | function | Connect to a wallet.
 |`disconnect` | function | Disconnect from a wallet.
