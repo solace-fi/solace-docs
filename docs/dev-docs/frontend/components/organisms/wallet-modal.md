@@ -1,31 +1,33 @@
 ---
-title: PolicyModalInfo
+title: WalletModal
 ---
 
 ## Props
 
-### `PolicyModalInfoProps`
+### `WalletModalProps`
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `selectedPolicy` | Policy \| undefined | The currently selected policy.
-| `latestBlock` | number | The latest block number.
+| `closeModal` | function | Function to call when closing modal.
+| `isOpen` | boolean | Boolean to open modal.
 
 ## Components
 
-### `PolicyModalInfo` (exported)
+### `WalletModal` (exported)
 
 Props Dependencies:
 
-- `PolicyModalInfoProps`
+- `WalletModalProps`
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Network | `activeNetwork` , `currencyDecimals`
+| Wallet | `changeWallet` , `disconnect` , `activeWalletConnector`
 
-Hook Dependencies:
-- `useAppraisePosition()`
-- `useWindowDimensions()`
-Info: Return a component containing a policy's information.
+Local Functions:
+
+- `handleClose()` : Handle closing modal
+- `connectWallet()` : Handle the wallet change
+
+Info: Returns wallet modal.

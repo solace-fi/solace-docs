@@ -3,6 +3,10 @@
 ### `StyledIconCss` (exported)
 - **Info**: Properly positions icons.
 
+### `StyledNetwork` (exported)
+- **Extends**: styled-icons/boxicons-regular/NetworkChart
+- **Info**: Styles Network icon.
+
 ### `StyledHistory` (exported)
 - **Extends**: styled-icons/boxicons-regular/History
 - **Info**: Styles History icon.

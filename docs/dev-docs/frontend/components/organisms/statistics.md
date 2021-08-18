@@ -11,9 +11,10 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account` , `errors` , `initialized`
-| CachedData | `addLocalTransactions` , `reload` , `gasPrices` , `tokenPositionDataInitialized` , `latestBlock` , `version`
+| CachedData | `addLocalTransactions` , `reload` , `gasPrices` , `tokenPositionData` , `latestBlock` , `version`
 | Contracts | `master`
-| Network | `activeNetwork`
+| Network | `activeNetwork` , `currencyDecimals`
+| Notifications | `makeTxToast`
 
 Hook Dependencies:
 
@@ -23,7 +24,6 @@ Hook Dependencies:
 - `usePolicyGetter()`
 - `useGetTotalValueLocked()`
 - `useWindowDimensions()`
-- `useToasts()`
 
 Contract Functions:
 

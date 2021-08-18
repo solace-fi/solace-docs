@@ -4,21 +4,32 @@ title: Account
 
 ## Components
 
+### `UserAccount` (exported)
+
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account`
+| Network | `activeNetwork`
+
+Hook Dependencies:
+
+- `useNativeTokenBalance()`
+
+Local Functions:
+
+Info: Returns a component containing the user's ETH balance, address.
+
 ### `Account` (exported)
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `isActive` , `chainId` , `account`
-| CachedData | `localTransactions`, `openHistoryModal`
-| Network | `activeNetwork`, `findNetworkByChainId`
-
-Hook Dependencies:
-
-- `useNativeTokenBalance()`
-- `useWindowDimensions()`
+| Wallet | `account`
+| CachedData | `localTransactions`
 
 Local Functions:
 
-Info: Returns a component containing the user's ETH balance, address, and a button that opens the transaction history modal.
+Info: Returns a component containing `UserAccount` , `NetworkConnectButton` , `WalletConnectButton` , and `TransactionHistoryButton` in that order.

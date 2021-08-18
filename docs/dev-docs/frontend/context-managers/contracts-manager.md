@@ -28,6 +28,8 @@ Hook Dependencies:
 |`solace` | Contract \| null | Solace contract.
 |`cpFarm` | Contract \| null | Capital Provider Farm contract.
 |`lpFarm` | Contract \| null | Liquidity Provider Farm contract.
+|`registry` | Contract \| null | Registry contract.
+|`lpToken` | Contract \| null | Liquidity Provider Token contract.
 |`weth` | Contract \| null | WETH contract.
 |`lpAppraisor` | Contract \| null | Liquidity Provider Appraisor contract.
 |`claimsEscrow` | Contract \| null | Claims Escrow contract.
