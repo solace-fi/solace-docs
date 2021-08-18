@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # NetworkManager
 
 NetworkManager keeps track of the network currently connected, as well as the network's settings and cached data.

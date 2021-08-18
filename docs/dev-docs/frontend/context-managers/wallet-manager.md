@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # WalletManager
 
 The Manager in charge of the user's wallet and wallet connector. One of the most important Managers.

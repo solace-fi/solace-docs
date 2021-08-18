@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # ProviderManager
 
 ProviderManager takes the role of intermediating the values between WalletManager and NetworkManager.

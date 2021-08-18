@@ -1,6 +1,7 @@
 ---
 id: about
 title: About Managers
+sidebar_position: 0
 ---
 
 ## Introduction

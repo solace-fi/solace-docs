@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # CachedDataManager
 
 CachedDataManager caches data that is internal or fetched from external sources. If there would be more Managers in the future, they may help take some fields out of CachedDataManager.

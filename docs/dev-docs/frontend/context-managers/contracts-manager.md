@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # ContractsManager
 
 The Manager in charge of making all smart contracts accessible throughout the app.

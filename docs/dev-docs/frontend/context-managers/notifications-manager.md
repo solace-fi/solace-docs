@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # NotificationsManager
 
 The Manager in charge to presenting notifications and toast messages on the interface.
