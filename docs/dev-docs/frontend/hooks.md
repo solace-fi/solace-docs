@@ -120,7 +120,6 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `library` , `account`
 | Network | `activeNetwork`
-| CachedData | `tokenPositionData`
 
 Initializes all product contracts using the addresses and contract ABIs based on the current chain. Returns contract instances as an array.
 

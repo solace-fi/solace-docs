@@ -25,13 +25,13 @@ Below is the current structure of the Managers, the order does not necessarily m
         <NetworkManager>                        
           <WalletManager>
             <ProviderManager>  
-              <CachedDataManager>     
-                <ContractsManager>        
+              <ContractsManager>  
+                <CachedDataManager>        
                   <NotificationsManager>
                     ...
                   </NotificationsManager>
-                </ContractsManager>
-              </CachedDataManager>
+                </CachedDataManager>
+              </ContractsManager>
             </ProviderManager>
           </WalletManager>
         </NetworkManager>
