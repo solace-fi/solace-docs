@@ -16,8 +16,8 @@ Currently there are six Managers that the user interface relies on for global st
 - **NetworkManager**
 - **WalletManager**
 - **ProviderManager**
-- **ContractsManager**
 - **CachedDataManager**
+- **ContractsManager**
 - **NotificationsManager**
 
 Below is the current structure of the Managers, the order does not necessarily matter.
@@ -25,13 +25,13 @@ Below is the current structure of the Managers, the order does not necessarily m
         <NetworkManager>                        
           <WalletManager>
             <ProviderManager>  
-              <ContractsManager>        
-                <CachedDataManager>     
+              <CachedDataManager>     
+                <ContractsManager>        
                   <NotificationsManager>
                     ...
                   </NotificationsManager>
-                </CachedDataManager>
-              </ContractsManager>
+                </ContractsManager>
+              </CachedDataManager>
             </ProviderManager>
           </WalletManager>
         </NetworkManager>
