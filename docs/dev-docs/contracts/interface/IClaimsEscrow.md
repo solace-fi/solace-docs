@@ -23,22 +23,22 @@ Fallback function. Deposits eth.
 ### receiveClaim
 ```solidity
   function receiveClaim(
-    uint256 _policyID,
-    address _claimant,
-    uint256 _amount
+    uint256 policyID,
+    address claimant,
+    uint256 amount
   ) external
 ```
 Receives a claim.
+The new claim will have the same ID that the policy had and will be withdrawable after a cooldown period.
 Only callable by active products.
 
-claimID = policyID
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | ID of policy to claim
-|`_claimant` | address | Address of the claimant
-|`_amount` | uint256 | Amount of ETH to claim
+|`policyID` | uint256 | ID of policy to claim.
+|`claimant` | address | Address of the claimant.
+|`amount` | uint256 | Amount of ETH to claim.
 
 ### withdrawClaimsPayout
 ```solidity
@@ -47,6 +47,7 @@ claimID = policyID
   ) external
 ```
 Allows claimants to withdraw their claims payout.
+Will attempt to withdraw the full amount then burn the claim if successful.
 Only callable by the claimant.
 Only callable after the cooldown period has elapsed (from the time the claim was approved and processed).
 
@@ -54,7 +55,7 @@ Only callable after the cooldown period has elapsed (from the time the claim was
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`claimID` | uint256 | The id of the claim to withdraw payout for.
+|`claimID` | uint256 | The ID of the claim to withdraw payout for.
 
 ### adjustClaim
 ```solidity
@@ -64,7 +65,7 @@ Only callable after the cooldown period has elapsed (from the time the claim was
   ) external
 ```
 Adjusts the value of a claim.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
@@ -82,7 +83,7 @@ Can only be called by the current governor.
   ) external
 ```
 Rescues misplaced tokens.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
@@ -92,6 +93,43 @@ Can only be called by the current governor.
 |`amount` | uint256 | Amount to pull.
 |`dst` | address | Destination for tokens.
 
+### claim
+```solidity
+  function claim(
+    uint256 claimID
+  ) external returns (struct IClaimsEscrow.Claim info)
+```
+Gets information about a claim.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimID` | uint256 | Claim to query.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`info`| uint256 | Claim info as struct.
+### getClaim
+```solidity
+  function getClaim(
+    uint256 claimID
+  ) external returns (uint256 amount, uint256 receivedAt)
+```
+Gets information about a claim.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimID` | uint256 | Claim to query.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`amount`| uint256 | Claim amount in ETH.
+|`receivedAt`|  | Time claim was received at.
 ### cooldownPeriod
 ```solidity
   function cooldownPeriod(
@@ -104,60 +142,17 @@ The duration of time in seconds the user must wait between submitting a claim an
 ### setCooldownPeriod
 ```solidity
   function setCooldownPeriod(
-    uint256 _period
+    uint256 period
   ) external
 ```
 Set the cooldown duration.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_period` | uint256 | New cooldown duration in seconds
-
-### governance
-```solidity
-  function governance(
-  ) external returns (address)
-```
-Governance.
-
-
-
-### newGovernance
-```solidity
-  function newGovernance(
-  ) external returns (address)
-```
-Governance to take over.
-
-
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Transfers the governance role to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
+|`period` | uint256 | New cooldown duration in seconds
 
 ### exists
 ```solidity
@@ -171,7 +166,7 @@ Returns true if the claim exists.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`claimID` | uint256 | The id to check.
+|`claimID` | uint256 | The ID to check.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -189,7 +184,7 @@ Returns true if the payout of the claim can be withdrawn.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`claimID` | uint256 | The id to check.
+|`claimID` | uint256 | The ID to check.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -207,7 +202,7 @@ The amount of time left until the payout is withdrawable.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`claimID` | uint256 | The id to check.
+|`claimID` | uint256 | The ID to check.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -237,7 +232,7 @@ List a user's claims.
   event ClaimReceived(
   )
 ```
-
+Emitted when a new claim is received.
 
 
 ### ClaimWithdrawn
@@ -245,14 +240,6 @@ List a user's claims.
   event ClaimWithdrawn(
   )
 ```
-
-
-
-### GovernanceTransferred
-```solidity
-  event GovernanceTransferred(
-  )
-```
-
+Emitted when a claim is paid out.
 
 

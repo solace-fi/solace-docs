@@ -2,6 +2,15 @@
 
 
 ## Functions
+### constructor
+```solidity
+  function constructor(
+  ) public
+```
+Constructs the WETH contract.
+
+
+
 ### receive
 ```solidity
   function receive(
@@ -23,7 +32,7 @@ Fallback function. Deposits eth.
 ### deposit
 ```solidity
   function deposit(
-  ) external
+  ) public
 ```
 Wraps Ether. WETH will be minted to the sender at 1 ETH : 1 WETH.
 
@@ -33,7 +42,7 @@ Wraps Ether. WETH will be minted to the sender at 1 ETH : 1 WETH.
 ```solidity
   function withdraw(
     uint256 wad
-  ) external
+  ) public
 ```
 Unwraps Ether. ETH will be returned to the sender at 1 ETH : 1 WETH.
 
@@ -42,21 +51,4 @@ Unwraps Ether. ETH will be returned to the sender at 1 ETH : 1 WETH.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`wad` | uint256 | Amount to unwrap.
-
-## Events
-### Deposit
-```solidity
-  event Deposit(
-  )
-```
-Emitted when ETH is wrapped.
-
-
-### Withdrawal
-```solidity
-  event Withdrawal(
-  )
-```
-Emitted when ETH is unwrapped.
-
 

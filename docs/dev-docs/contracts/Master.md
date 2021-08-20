@@ -1,13 +1,13 @@
-This contract is the SOLACE token distributor.
+The distributor of [**SOLACE** token](./SOLACE).
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address _governance,
-    contract SOLACE _solace,
-    uint256 _solacePerBlock
+    address governance_,
+    contract SOLACE solace_,
+    uint256 solacePerBlock_
   ) public
 ```
 Constructs the master contract.
@@ -16,78 +16,53 @@ Constructs the master contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | Address of the governor.
-|`_solace` | contract SOLACE | Address of the solace token.
-|`_solacePerBlock` | uint256 | Amount of solace to distribute per block.
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`solace_` | contract SOLACE | Address of the solace token.
+|`solacePerBlock_` | uint256 | Amount of solace to distribute per block.
 
 ### registerFarm
 ```solidity
   function registerFarm(
-    address _farmAddress,
-    uint256 _allocPoints
-  ) external returns (uint256 farmId)
+    address farmAddress,
+    uint256 allocPoints_
+  ) external returns (uint256 farmID)
 ```
 Registers a farm.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 Cannot register a farm more than once.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_farmAddress` | address | The farm's address.
-|`_allocPoints` | uint256 | How many points to allocate this farm.
+|`farmAddress` | address | The farm's address.
+|`allocPoints_` | uint256 | How many points to allocate this farm.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`farmId`| address | The farm id.
+|`farmID`| address | The farm ID.
 ### setAllocPoints
 ```solidity
   function setAllocPoints(
-    uint256 _farmId,
-    uint256 _allocPoints
+    uint256 farmID,
+    uint256 allocPoints_
   ) external
 ```
 Sets a farm's allocation points.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_farmId` | uint256 | The farm to set allocation points.
-|`_allocPoints` | uint256 | How many points to allocate this farm.
+|`farmID` | uint256 | The farm to set allocation points.
+|`allocPoints_` | uint256 | How many points to allocate this farm.
 
 ### setSolacePerBlock
 ```solidity
   function setSolacePerBlock(
-    uint256 _solacePerBlock
+    uint256 newSolacePerBlock
   ) external
 ```
 Sets the Solace reward distribution across all farms.
@@ -97,7 +72,7 @@ Optionally updates all farms.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_solacePerBlock` | uint256 | Amount of solace to distribute per block.
+|`newSolacePerBlock` | uint256 | Amount of solace to distribute per block.
 
 ### massUpdateFarms
 ```solidity
@@ -120,8 +95,8 @@ Withdraw your rewards from all farms.
 ### _setAllocPoints
 ```solidity
   function _setAllocPoints(
-    uint256 _farmId,
-    uint256 _allocPoints
+    uint256 farmID,
+    uint256 newAllocPoints
   ) internal
 ```
 Sets a farm's allocation points.
@@ -130,8 +105,8 @@ Sets a farm's allocation points.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_farmId` | uint256 | The farm to set allocation points.
-|`_allocPoints` | uint256 | How many points to allocate this farm.
+|`farmID` | uint256 | The farm to set allocation points.
+|`newAllocPoints` | uint256 | How many points to allocate this farm.
 
 ### _updateRewards
 ```solidity

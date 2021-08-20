@@ -5,54 +5,55 @@
 ### setAppraisor
 ```solidity
   function setAppraisor(
-    address _appraisor
+    address newAppraisor
   ) external
 ```
 Sets the appraisal function.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_appraisor` | address | The new appraisor.
+|`newAppraisor` | address | The new appraisor.
 
 ### deposit
 ```solidity
   function deposit(
-    uint256 _tokenId
+    uint256 tokenID
   ) external
 ```
-Deposit a token.
-User will receive accumulated rewards if any.
+Deposit a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
+User will receive accumulated [`SOLACE`](../SOLACE) rewards if any.
+User must `ERC721.approve()` or `ERC721.setApprovalForAll()` first.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokenId` | uint256 | The id of the token to deposit.
+|`tokenID` | uint256 | The ID of the token to deposit.
 
 ### depositSigned
 ```solidity
   function depositSigned(
-    address _depositor,
-    uint256 _tokenId,
-    uint256 _deadline,
+    address depositor,
+    uint256 tokenID,
+    uint256 deadline,
     uint8 v,
     bytes32 r,
     bytes32 s
   ) external
 ```
-Deposit a Uniswap LP token using permit.
-User will receive accumulated Solace rewards if any.
+Deposit a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) using permit.
+User will receive accumulated [`SOLACE`](../SOLACE) rewards if any.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_depositor` | address | The depositing user.
-|`_tokenId` | uint256 | The id of the token to deposit.
-|`_deadline` | uint256 | Time the transaction must go through before.
+|`depositor` | address | The depositing user.
+|`tokenID` | uint256 | The ID of the token to deposit.
+|`deadline` | uint256 | Time the transaction must go through before.
 |`v` | uint8 | secp256k1 signature
 |`r` | bytes32 | secp256k1 signature
 |`s` | bytes32 | secp256k1 signature
@@ -61,7 +62,7 @@ User will receive accumulated Solace rewards if any.
 ```solidity
   function mintAndDeposit(
     struct ISolaceEthLpFarm.MintAndDepositParams params
-  ) external returns (uint256 tokenId)
+  ) external returns (uint256 tokenID)
 ```
 Mint a new Uniswap LP token then deposit it.
 User will receive accumulated Solace rewards if any.
@@ -75,105 +76,106 @@ User will receive accumulated Solace rewards if any.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenId`| struct ISolaceEthLpFarm.MintAndDepositParams | The newly minted token id.
+|`tokenID`| struct ISolaceEthLpFarm.MintAndDepositParams | The newly minted token ID.
 ### withdraw
 ```solidity
   function withdraw(
-    uint256 _tokenId
+    uint256 tokenID
   ) external
 ```
-Withdraw a token.
-User will receive _tokenId and accumulated rewards.
+Withdraw a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
+User will receive `tokenID` and accumulated rewards.
+Can only withdraw tokens you deposited.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokenId` | uint256 | The id of the token to withdraw.
+|`tokenID` | uint256 | The ID of the token to withdraw.
 
 ### countDeposited
 ```solidity
   function countDeposited(
-    address _user
-  ) external returns (uint256)
+    address user
+  ) external returns (uint256 count)
 ```
-Returns the count of ERC721s that a user has deposited onto a farm.
+Returns the count of [**Uniswap LP tokens**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) that a user has deposited onto the farm.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user to check count for.
+|`user` | address | The user to check count for.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | count of deposited ERC721s.
+|`count`| address | The count of deposited Uniswap LP tokens.
 ### listDeposited
 ```solidity
   function listDeposited(
-    address _user
-  ) external returns (uint256[], uint256[])
+    address user
+  ) external returns (uint256[] tokenIDs, uint256[] tokenValues)
 ```
-Returns the list of ERC721s that a user has deposited onto a farm and their values.
+Returns the list of [**Uniswap LP tokens**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) that a user has deposited onto the farm and their values.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user to list ERC721s.
+|`user` | address | The user to list Uniswap LP tokens.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | list of deposited ERC721s.
-|`The`|  | values of the tokens.
+|`tokenIDs`| address | The list of deposited Uniswap LP tokens.
+|`tokenValues`|  | The values of the tokens.
 ### getDeposited
 ```solidity
   function getDeposited(
-    address _user,
-    uint256 _index
+    address user,
+    uint256 index
   ) external returns (uint256, uint256)
 ```
-Returns the id of an ERC721 that a user has deposited onto a farm and its value.
+Returns the ID of a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) that a user has deposited onto a farm and its value.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user to get token id for.
-|`_index` | uint256 | The farm-based index of the token.
+|`user` | address | The user to get token ID for.
+|`index` | uint256 | The farm-based index of the token.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | id of the deposited ERC721.
-|`The`| uint256 | value of the token.
+|`tokenID`| address | The ID of the deposited [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
+|`tokenValue`| uint256 | The value of the token.
 ### appraise
 ```solidity
   function appraise(
-    uint256 _tokenId
-  ) external returns (uint256 _value)
+    uint256 tokenID
+  ) external returns (uint256 tokenValue)
 ```
-Appraise a Uniswap LP Token.
+Appraise a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
 Token must exist and must exist in the correct pool.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokenId` | uint256 | The id of the token to appraise.
+|`tokenID` | uint256 | The ID of the token to appraise.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`_value`| uint256 | The token's value.
+|`tokenValue`| uint256 | The token's value.
 ### lpToken
 ```solidity
   function lpToken(
   ) external returns (contract IUniswapLpToken)
 ```
-
+[`Uniswap V3 LP Token`](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
 
 
 
@@ -182,7 +184,7 @@ Token must exist and must exist in the correct pool.
   function solace(
   ) external returns (contract SOLACE)
 ```
-
+Native [`SOLACE`](../SOLACE) Token.
 
 
 
@@ -191,7 +193,7 @@ Token must exist and must exist in the correct pool.
   function weth(
   ) external returns (contract IWETH9)
 ```
-
+WETH.
 
 
 
@@ -200,7 +202,7 @@ Token must exist and must exist in the correct pool.
   function lastRewardBlock(
   ) external returns (uint256)
 ```
-
+Last time rewards were distributed or farm was updated.
 
 
 
@@ -209,7 +211,7 @@ Token must exist and must exist in the correct pool.
   function accRewardPerShare(
   ) external returns (uint256)
 ```
-
+Accumulated rewards per share, times 1e12.
 
 
 
@@ -218,7 +220,7 @@ Token must exist and must exist in the correct pool.
   function valueStaked(
   ) external returns (uint256)
 ```
-
+Value of tokens staked by all farmers.
 
 
 

@@ -5,10 +5,10 @@ The `Treasury` smart contract governs the finance related operations.
 ### constructor
 ```solidity
   function constructor(
-    address _governance,
-    address _swapRouter,
-    address _weth,
-    address _registry
+    address governance_,
+    address swapRouter_,
+    address weth_,
+    address registry_
   ) public
 ```
 Constructs the treasury contract.
@@ -17,10 +17,10 @@ Constructs the treasury contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | Address of the governor.
-|`_swapRouter` | address | Address of uniswap router.
-|`_weth` | address | Address of wrapped ether.
-|`_registry` | address | Address of registry.
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`swapRouter_` | address | Address of uniswap router.
+|`weth_` | address | Address of wrapped ether.
+|`registry_` | address | Address of registry.
 
 ### receive
 ```solidity
@@ -40,109 +40,85 @@ Fallback function to allow contract to receive **ETH**.
 
 
 
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Allows governance to be transferred to a new `governor`.
-Can only be called by the current `governor`.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new `governor`.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the `governance` role.
-Can only be called by the new `governor`.
-
-
-
 ### depositEth
 ```solidity
   function depositEth(
   ) external
 ```
-Deposits **ETH**. The amount is given by `msg.value`.
+Deposits **ETH**.
 
 
 
 ### depositToken
 ```solidity
   function depositToken(
-    address _token,
-    uint256 _amount
+    address token,
+    uint256 amount
   ) external
 ```
-Deposits `ERC20` token.
+Deposits an **ERC20** token.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_token` | address | The address of the token to deposit.
-|`_amount` | uint256 | The amount of the token to deposit.
+|`token` | address | The address of the token to deposit.
+|`amount` | uint256 | The amount of the token to deposit.
 
 ### spend
 ```solidity
   function spend(
-    address _token,
-    uint256 _amount,
-    address _recipient
+    address token,
+    uint256 amount,
+    address recipient
   ) external
 ```
-Spends `ERC20` token or `ETH`. Can only be called by the current `governor`.
+Spends an **ERC20** token or **ETH**.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_token` | address | The address of the token to spend.
-|`_amount` | uint256 | The amount of the token to spend.
-|`_recipient` | address | The address of the token receiver.
+|`token` | address | The address of the token to spend.
+|`amount` | uint256 | The amount of the token to spend.
+|`recipient` | address | The address of the token receiver.
 
 ### swap
 ```solidity
   function swap(
-    bytes _path,
-    uint256 _amountIn,
-    uint256 _amountOutMinimum
+    bytes path,
+    uint256 amountIn,
+    uint256 amountOutMinimum
   ) external
 ```
-Manually swaps a token. Can only be called by the current `governor`. 
-It swaps the entire balance in case some tokens were unknowingly received. Reverts if the swap was unsuccessful.
+Manually swaps a token.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_path` | bytes | The path of pools to take.
-|`_amountIn` | uint256 | The amount to swap.
-|`_amountOutMinimum` | uint256 | The minimum about to receive.
+|`path` | bytes | The path of pools to take.
+|`amountIn` | uint256 | The amount to swap.
+|`amountOutMinimum` | uint256 | The minimum about to receive.
 
 ### setPremiumRecipients
 ```solidity
   function setPremiumRecipients(
-    address payable[] _recipients,
-    uint32[] _weights
+    address payable[] recipients,
+    uint32[] weights
   ) external
 ```
 Sets the premium recipients and their weights.
-Can only be called by the current `governor`.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_recipients` | address payable[] | The premium recipients.
-|`_weights` | uint32[] | The recipient weights.
+|`recipients` | address payable[] | The premium recipients, plus an implicit `address(this)` at the end.
+|`weights` | uint32[] | The recipient weights.
 
 ### routePremiums
 ```solidity
@@ -156,81 +132,84 @@ Routes the **premiums** to the `recipients`.
 ### wrap
 ```solidity
   function wrap(
-    uint256 _amount
+    uint256 amount
   ) external
 ```
 Wraps some **ETH** into **WETH**.
-Can only be called by the current `governor`.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_amount` | uint256 | The amount to wrap.
+|`amount` | uint256 | The amount to wrap.
 
 ### unwrap
 ```solidity
   function unwrap(
-    uint256 _amount
+    uint256 amount
   ) external
 ```
 Unwraps some **WETH** into **ETH**.
-Can only be called by the current `governor`.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_amount` | uint256 | The amount to unwrap.
+|`amount` | uint256 | The amount to unwrap.
 
 ### refund
 ```solidity
   function refund(
-    address _user,
-    uint256 _amount
+    address user,
+    uint256 amount
   ) external
 ```
-The function refunds the given amount to the user. It is called by `products` in **Solace Protocol**.
+Refunds some **ETH** to the user.
+Will attempt to send the entire `amount` to the `user`.
+If there is not enough available at the moment, it is recorded and can be pulled later via [`withdraw()`](#withdraw).
+Can only be called by active products.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user address to send refund amount.
-|`_amount` | uint256 | The amount to send the user.
+|`user` | address | The user address to send refund amount.
+|`amount` | uint256 | The amount to send the user.
 
 ### withdraw
 ```solidity
   function withdraw(
   ) external
 ```
-The function transfers the unpaid refunds to the user. It is called by `products` in **Solace Protocol**.
+Transfers the unpaid refunds to the user.
 
 
 
-### transferEth
+### _transferEth
 ```solidity
-  function transferEth(
-    address _user,
-    uint256 _amount
+  function _transferEth(
+    address user,
+    uint256 amount
   ) internal
 ```
-The internal function transfers **ETH** to the user. It's called by **refund()** and **withdraw()** functions in the contract.
+Transfers **ETH** to the user. It's called by [`refund()`](#refund) and [`withdraw()`](#withdraw) functions in the contract.
 Also adds on their unpaid refunds, and stores new unpaid refunds if necessary.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user to pay.
-|`_amount` | uint256 | The amount to pay **before** unpaid funds.
+|`user` | address | The user to pay.
+|`amount` | uint256 | The amount to pay _before_ unpaid funds.
 
 ### min
 ```solidity
   function min(
-    uint256 _a,
-    uint256 _b
-  ) internal returns (uint256 _c)
+    uint256 a,
+    uint256 b
+  ) internal returns (uint256 c)
 ```
 Internal function that returns the minimum value between two values.
 
@@ -238,10 +217,10 @@ Internal function that returns the minimum value between two values.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_a` | uint256 |  The first value.
-|`_b` | uint256 |  The second value.
+|`a` | uint256 | The first value.
+|`b` | uint256 | The second value.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`_c`| uint256 | The minimum value.
+|`c`| uint256 | The minimum value.

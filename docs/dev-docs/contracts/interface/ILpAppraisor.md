@@ -1,12 +1,21 @@
-
+Determines the relative value of a Uniswap V3 LP token. Used in [SolaceEthLpFarm](../SolaceEthLpFarm).
 
 
 ## Functions
+### lpToken
+```solidity
+  function lpToken(
+  ) external returns (contract IUniswapLpToken)
+```
+The address of the Uniswap V3 NFT.
+
+
+
 ### appraise
 ```solidity
   function appraise(
-    uint256 _tokenId
-  ) external returns (uint256 _value)
+    uint256 tokenID
+  ) external returns (uint256 value)
 ```
 Appraise a Uniswap LP Token.
 
@@ -14,9 +23,9 @@ Appraise a Uniswap LP Token.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokenId` | uint256 | The id of the token to appraise.
+|`tokenID` | uint256 | The ID of the token to appraise.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`_value`| uint256 | The token's value.
+|`value`| uint256 | The token's value.

@@ -1,0 +1,46 @@
+Many contracts contain functionality that should only be accessible to a privileged user. The most common access control pattern is OpenZeppelin's [`Ownable`](https://docs.openzeppelin.com/contracts/4.x/access-control#ownership-and-ownable). We instead use `Governable` with a few key differences:
+- Transferring the governance role is a two step process. The current governance must `setGovernance(newGovernance)` then the new governance must `acceptGovernance()`. This is to safeguard against accidentally setting ownership to the wrong address and locking yourself out of your contract.
+- `governance` is a constructor argument instead of `msg.sender`.
+
+
+## Functions
+### constructor
+```solidity
+  function constructor(
+    address governance_
+  ) public
+```
+Constructs the governable contract.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+
+### setGovernance
+```solidity
+  function setGovernance(
+    address newGovernance_
+  ) external
+```
+Initiates transfer of the governance role to a new governor.
+Transfer is not complete until the new governor accepts the role.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`newGovernance_` | address | The new governor.
+
+### acceptGovernance
+```solidity
+  function acceptGovernance(
+  ) external
+```
+Accepts the governance role.
+Can only be called by the new governor.
+
+
+

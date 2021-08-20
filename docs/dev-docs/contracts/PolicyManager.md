@@ -1,11 +1,15 @@
-The **Policy Manager** manages the creating new policies or modifying the existing policies. The policy is an [**ERC721**](https://docs.openzeppelin.com/contracts/2.x/erc721) token.
+The **PolicyManager** manages the creation of new policies and modification of existing policies.
+
+Most users will not interact with **PolicyManager** directly. To buy, modify, or cancel policies, users should use the respective [**product**](./products/BaseProduct) for the position they would like to cover. Use **PolicyManager** to view policies.
+
+Policies are [**ERC721s**](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#ERC721).
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address _governance
+    address governance_
   ) public
 ```
 The constructor. It constructs the Policy Deployer **ERC721 Token** contract.
@@ -14,83 +18,58 @@ The constructor. It constructs the Policy Deployer **ERC721 Token** contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The address of the governor.
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Allows governance to be transferred to a new governor.
-Can only be called by the current `governor`.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new `governor`.
-
-
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
 
 ### addProduct
 ```solidity
   function addProduct(
-    address _product
+    address product
   ) external
 ```
 Adds a new product. The new product must be implemented in **Solace Protocol**.
-Can only be called by the current `governor`.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_product` | address | the new product
+|`product` | address | the new product
 
 ### removeProduct
 ```solidity
   function removeProduct(
-    address _product
+    address product
   ) external
 ```
 Removes a product.
-Can only be called by the current `governor`.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_product` | address | the product to remove
+|`product` | address | the product to remove
 
-### setTokenDescriptor
+### setPolicyDescriptor
 ```solidity
-  function setTokenDescriptor(
-    address _tokenDescriptor
+  function setPolicyDescriptor(
+    address policyDescriptor_
   ) external
 ```
-Allows governance to set policy descriptor.
-Can only be called by the current `governor`.
+Set the token descriptor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokenDescriptor` | address | The new policy token descriptor address.
+|`policyDescriptor_` | address | The new token descriptor address.
 
 ### productIsActive
 ```solidity
   function productIsActive(
-    address _product
-  ) external returns (bool)
+    address product
+  ) external returns (bool status)
 ```
 Checks is an address is an active product.
 
@@ -98,16 +77,16 @@ Checks is an address is an active product.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_product` | address | The product to check.
+|`product` | address | The product to check.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`bool`| address | Returns true if the product is active.
+|`status`| address | Returns true if the product is active.
 ### numProducts
 ```solidity
   function numProducts(
-  ) external returns (uint256)
+  ) external returns (uint256 count)
 ```
 Returns the number of products.
 
@@ -116,12 +95,12 @@ Returns the number of products.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`value`|  | The number of products.
+|`count`|  | The number of products.
 ### getProduct
 ```solidity
   function getProduct(
-    uint256 _productNum
-  ) external returns (address)
+    uint256 productNum
+  ) external returns (address product)
 ```
 Returns the product at the given index.
 
@@ -129,31 +108,49 @@ Returns the product at the given index.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_productNum` | uint256 | The index to query.
+|`productNum` | uint256 | The index to query.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`productAddress`| uint256 | The address of the product.
-### getPolicyInfo
+|`product`| uint256 | The address of the product.
+### policyInfo
 ```solidity
-  function getPolicyInfo(
-    uint256 _policyID
-  ) external returns (address policyholder, address product, address positionContract, uint256 coverAmount, uint40 expirationBlock, uint24 price)
+  function policyInfo(
+    uint256 policyID
+  ) external returns (struct IPolicyManager.PolicyInfo info)
 ```
-The function returns the policy details.
+Information about a policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id to return info.
+|`policyID` | uint256 | The policy ID to return info.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`info`| uint256 | info in a struct.
+### getPolicyInfo
+```solidity
+  function getPolicyInfo(
+    uint256 policyID
+  ) external returns (address policyholder, address product, address positionContract, uint256 coverAmount, uint40 expirationBlock, uint24 price)
+```
+Information about a policy.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyID` | uint256 | The policy ID to return info.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`policyholder`| uint256 | The address of the policy holder.
-|`product`|  | The product of the policy. 
+|`product`|  | The product of the policy.
 |`positionContract`|  | The covered contract for the policy.
 |`coverAmount`|  | The amount covered for the policy.
 |`expirationBlock`|  | The expiration block of the policy.
@@ -161,16 +158,16 @@ The function returns the policy details.
 ### getPolicyholder
 ```solidity
   function getPolicyholder(
-    uint256 _policyID
-  ) external returns (address)
+    uint256 policyID
+  ) external returns (address policyholder)
 ```
-The function returns the policy holder of the policy.
+The holder of the policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -179,16 +176,16 @@ The function returns the policy holder of the policy.
 ### getPolicyProduct
 ```solidity
   function getPolicyProduct(
-    uint256 _policyID
-  ) external returns (address)
+    uint256 policyID
+  ) external returns (address product)
 ```
-The function returns the policy product of the policy.
+The product used to purchase the policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -197,16 +194,16 @@ The function returns the policy product of the policy.
 ### getPolicyPositionContract
 ```solidity
   function getPolicyPositionContract(
-    uint256 _policyID
-  ) external returns (address)
+    uint256 policyID
+  ) external returns (address positionContract)
 ```
-The function returns the position contract of the policy.
+The position contract the policy covers.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -215,16 +212,16 @@ The function returns the position contract of the policy.
 ### getPolicyExpirationBlock
 ```solidity
   function getPolicyExpirationBlock(
-    uint256 _policyID
-  ) external returns (uint40)
+    uint256 policyID
+  ) external returns (uint40 expirationBlock)
 ```
-The function returns the expiration block of the policy.
+The expiration block of the policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -233,16 +230,16 @@ The function returns the expiration block of the policy.
 ### getPolicyCoverAmount
 ```solidity
   function getPolicyCoverAmount(
-    uint256 _policyID
-  ) external returns (uint256)
+    uint256 policyID
+  ) external returns (uint256 coverAmount)
 ```
-The function returns the cover amount of the policy.
+The cover amount of the policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -251,16 +248,16 @@ The function returns the cover amount of the policy.
 ### getPolicyPrice
 ```solidity
   function getPolicyPrice(
-    uint256 _policyID
-  ) external returns (uint24)
+    uint256 policyID
+  ) external returns (uint24 price)
 ```
-The function returns the price of the policy.
+The cover price in wei per block per wei multiplied by 1e12.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -269,25 +266,25 @@ The function returns the price of the policy.
 ### listPolicies
 ```solidity
   function listPolicies(
-    address _policyholder
-  ) external returns (uint256[] tokenIDs)
+    address policyholder
+  ) external returns (uint256[] policyIDs)
 ```
-The function lists all policies for a given policy holder.
+Lists all policies for a given policy holder.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyholder` | address | The address of the policy holder.
+|`policyholder` | address | The address of the policy holder.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenIDs`| address | The list of token ids(policy ids) that the policy holder have.
+|`policyIDs`| address | The list of policy IDs that the policy holder has in any order.
 ### exists
 ```solidity
   function exists(
-    uint256 _policyID
+    uint256 policyID
   ) external returns (bool)
 ```
 These functions can be used to check a policys stage in the lifecycle.
@@ -310,7 +307,7 @@ Truth table:
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -319,7 +316,7 @@ Truth table:
 ### policyIsActive
 ```solidity
   function policyIsActive(
-    uint256 _policyID
+    uint256 policyID
   ) external returns (bool)
 ```
 The function checks whether a given policy is active.
@@ -328,7 +325,7 @@ The function checks whether a given policy is active.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -337,7 +334,7 @@ The function checks whether a given policy is active.
 ### policyHasExpired
 ```solidity
   function policyHasExpired(
-    uint256 _policyID
+    uint256 policyID
   ) public returns (bool)
 ```
 The function checks whether a given policy is expired.
@@ -346,7 +343,7 @@ The function checks whether a given policy is expired.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -355,11 +352,11 @@ The function checks whether a given policy is expired.
 ### createPolicy
 ```solidity
   function createPolicy(
-    address _policyholder,
-    address _positionContract,
-    uint256 _expirationBlock,
-    uint40 _coverAmount,
-    uint24 _price
+    address policyholder,
+    address positionContract,
+    uint256 expirationBlock,
+    uint40 coverAmount,
+    uint24 price
   ) external returns (uint256 policyID)
 ```
 The function creates new **ERC721** policy. The function is called by product contracts.
@@ -369,45 +366,45 @@ The caller must be a **product**.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyholder` | address | The receiver of new policy token.
-|`_positionContract` | address | The contract address where the position is covered.
-|`_expirationBlock` | uint256 | The policy expiration block number.
-|`_coverAmount` | uint40 | The policy coverage amount (in wei).
-|`_price` | uint24 | The coverage price
+|`policyholder` | address | The receiver of new policy token.
+|`positionContract` | address | The contract address where the position is covered.
+|`expirationBlock` | uint256 | The policy expiration block number.
+|`coverAmount` | uint40 | The policy coverage amount (in wei).
+|`price` | uint24 | The coverage price
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| address | The policy id(aka tokenID).
+|`policyID`| address | The policy ID(aka tokenID).
 ### setPolicyInfo
 ```solidity
   function setPolicyInfo(
-    uint256 _policyID,
-    address _policyholder,
-    address _positionContract,
-    uint256 _expirationBlock,
-    uint40 _coverAmount,
-    uint24 _price
+    uint256 policyID,
+    address policyholder,
+    address positionContract,
+    uint256 expirationBlock,
+    uint40 coverAmount,
+    uint24 price
   ) external
 ```
-Exposes setTokenURI function for products to modify policies.
+Allows for products to modify policies.
 The caller must be a **product**.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id (aka tokenID).
-|`_policyholder` | address | The receiver of new policy token.
-|`_positionContract` | address | The contract address where the position is covered.
-|`_expirationBlock` | uint256 | The policy expiration block number.
-|`_coverAmount` | uint40 | The policy coverage amount (in wei).
-|`_price` | uint24 | The coverage price.
+|`policyID` | uint256 | The policy ID (aka tokenID).
+|`policyholder` | address | The receiver of new policy token.
+|`positionContract` | address | The contract address where the position is covered.
+|`expirationBlock` | uint256 | The policy expiration block number.
+|`coverAmount` | uint40 | The policy coverage amount (in wei).
+|`price` | uint24 | The coverage price.
 
 ### burn
 ```solidity
   function burn(
-    uint256 _policyID
+    uint256 policyID
   ) external
 ```
 The fuction burns expired or canceled policies. It is called by product contracts.
@@ -417,12 +414,12 @@ The caller must be a product.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | policyID aka tokenID
+|`policyID` | uint256 | policyID aka tokenID
 
 ### _burn
 ```solidity
   function _burn(
-    uint256 _policyID
+    uint256 policyID
   ) internal
 ```
 Internal private function that is used in contract.
@@ -431,12 +428,12 @@ Internal private function that is used in contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyID` | uint256 | The policy id.
+|`policyID` | uint256 | The policy ID.
 
 ### updateActivePolicies
 ```solidity
   function updateActivePolicies(
-    uint256[] _policyIDs
+    uint256[] policyIDs
   ) external
 ```
 Burns expired policies.
@@ -445,12 +442,12 @@ Burns expired policies.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyIDs` | uint256[] | The list of expired policies.
+|`policyIDs` | uint256[] | The list of expired policies.
 
 ### tokenURI
 ```solidity
   function tokenURI(
-    uint256 tokenId
+    uint256 tokenID
   ) public returns (string)
 ```
 The function returns a human readable descriptor for the policy.
@@ -459,7 +456,7 @@ The function returns a human readable descriptor for the policy.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`tokenId` | uint256 | The token id(aka policy id).
+|`tokenID` | uint256 | The token ID(aka policy ID).
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
