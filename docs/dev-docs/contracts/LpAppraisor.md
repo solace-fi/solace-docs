@@ -1,62 +1,49 @@
-
+Determines the relative value of a Uniswap V3 LP token. Used in [SolaceEthLpFarm](./SolaceEthLpFarm).
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
+    address governance_,
+    address lpToken_,
+    uint256 curve_A_,
+    uint256 curve_B_
   ) public
 ```
-
-
-
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
+Constructs the LP Appraisor contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`lpToken_` | address | Address of the LP token.
+|`curve_A_` | uint256 | Appraisal curve value A.
+|`curve_B_` | uint256 | Appraisal curve value B.
 
 ### setCurve
 ```solidity
   function setCurve(
-    uint256 _curve_A,
-    uint256 _curve_B
+    uint256 curve_A_,
+    uint256 curve_B_
   ) external
 ```
 Modifies the appraisal curve, and with it the incentive structure.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_curve_A` | uint256 | The curve parameter A.
-|`_curve_B` | uint256 | The curve parameter B.
+|`curve_A_` | uint256 | The curve parameter A.
+|`curve_B_` | uint256 | The curve parameter B.
 
 ### appraise
 ```solidity
   function appraise(
-    uint256 _tokenId
-  ) external returns (uint256 _value)
+    uint256 tokenID
+  ) external returns (uint256 value)
 ```
 Appraise a Uniswap LP Token.
 Token must exist and must exist in the correct pool.
@@ -65,18 +52,9 @@ Token must exist and must exist in the correct pool.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokenId` | uint256 | The id of the token to appraise.
+|`tokenID` | uint256 | The ID of the token to appraise.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`_value`| uint256 | The token's value.
-## Events
-### GovernanceTransferred
-```solidity
-  event GovernanceTransferred(
-  )
-```
-
-
-
+|`value`| uint256 | The token's value.

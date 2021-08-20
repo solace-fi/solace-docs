@@ -1,4 +1,4 @@
-The **Aave(V2)** product that is users can buy policy for **Aave(V2)**. It is a concrete smart contract that inherits from abstract [`BaseProduct`](./BaseProduct.md).
+The **Aave(V2)** product that is users can buy policy for **Aave(V2)**. It is a concrete smart contract that inherits from abstract [`BaseProduct`](./BaseProduct).
 The contract also inherits from [`EIP712`](https://docs.openzeppelin.com/contracts/3.x/api/drafts#EIP712).
 
 
@@ -6,14 +6,14 @@ The contract also inherits from [`EIP712`](https://docs.openzeppelin.com/contrac
 ### constructor
 ```solidity
   function constructor(
-    address _governance,
-    contract IPolicyManager _policyManager,
-    contract IRegistry _registry,
-    address _dataProvider,
-    uint40 _minPeriod,
-    uint40 _maxPeriod,
-    uint24 _price,
-    uint32 _maxCoverPerUserDivisor
+    address governance_,
+    contract IPolicyManager policyManager_,
+    contract IRegistry registry_,
+    address dataProvider_,
+    uint40 minPeriod_,
+    uint40 maxPeriod_,
+    uint24 price_,
+    uint32 maxCoverPerUserDivisor_
   ) public
 ```
 The constructor.
@@ -22,31 +22,31 @@ The constructor.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The governor.
-|`_policyManager` | contract IPolicyManager | The IPolicyManager contract.
-|`_registry` | contract IRegistry | The IRegistry contract.
-|`_dataProvider` | address | Aave protocol data provider address.
-|`_minPeriod` | uint40 | The minimum policy period in blocks to purchase a **policy**.
-|`_maxPeriod` | uint40 | The maximum policy period in blocks to purchase a **policy**.
-|`_price` | uint24 | The cover price for the **Product**.
-|`_maxCoverPerUserDivisor` | uint32 | The max cover amount divisor for per user. (maxCover / divisor = maxCoverPerUser).
+|`governance_` | address | The governor.
+|`policyManager_` | contract IPolicyManager | The IPolicyManager contract.
+|`registry_` | contract IRegistry | The IRegistry contract.
+|`dataProvider_` | address | Aave protocol data provider address.
+|`minPeriod_` | uint40 | The minimum policy period in blocks to purchase a **policy**.
+|`maxPeriod_` | uint40 | The maximum policy period in blocks to purchase a **policy**.
+|`price_` | uint24 | The cover price for the **Product**.
+|`maxCoverPerUserDivisor_` | uint32 | The max cover amount divisor for per user. (maxCover / divisor = maxCoverPerUser).
 
 ### appraisePosition
 ```solidity
   function appraisePosition(
-    address _policyholder,
-    address _positionContract
+    address policyholder,
+    address positionContract
   ) public returns (uint256 positionAmount)
 ```
 It gives the user's total position in the product's protocol.
-The `_positionContract` must be a **aToken** (Please see https://etherscan.io/tokens/label/aave-v2 for more information).
+The `positionContract` must be a **aToken** (Please see https://etherscan.io/tokens/label/aave-v2 for more information).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyholder` | address | The `buyer` who is requesting the coverage quote.
-|`_positionContract` | address | The address of the exact smart contract the `buyer` has their position in (e.g., for UniswapProduct this would be Pair's address).
+|`policyholder` | address | The `buyer` who is requesting the coverage quote.
+|`positionContract` | address | The address of the exact smart contract the `buyer` has their position in (e.g., for UniswapProduct this would be Pair's address).
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -77,19 +77,19 @@ The policy is burn when the claim submission is successful and new claim is crea
 ### setCoveredPlatform
 ```solidity
   function setCoveredPlatform(
-    address _dataProvider
+    address dataProvider
   ) public
 ```
 Changes the covered platform.
 The function is used for if the the protocol changes their registry but keeps the children contracts.
 A new version of the protocol will likely require a new Product.
-Can only be called by the current `governor`.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_dataProvider` | address | The platform to cover.
+|`dataProvider` | address | The platform to cover.
 
 ### name
 ```solidity

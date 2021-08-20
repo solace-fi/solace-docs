@@ -1,22 +1,25 @@
-Circle's USDC has the ability to blacklist accounts. We need to circumvent the blacklist to test our products, and IBlacklist helps us do that.
+Exposes CREATE2 (EIP-1014) to deploy bytecode on deterministic addresses based on initialization code and salt.
+
 
 
 ## Functions
-### isBlacklisted
+### deploy
 ```solidity
-  function isBlacklisted(
-    address account
-  ) external returns (bool status)
+  function deploy(
+    bytes initCode,
+    bytes32 salt
+  ) external returns (address payable createdContract)
 ```
-Checks if account is blacklisted.
+Deploys `initCode` using `salt` for defining the deterministic address.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`account` | address | The address to check.
+|`initCode` | bytes | Initialization code.
+|`salt` | bytes32 | Arbitrary value to modify resulting address.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | True if the account is blacklisted.
+|`createdContract`| bytes | Created contract address.

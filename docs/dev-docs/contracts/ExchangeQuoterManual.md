@@ -1,11 +1,11 @@
-Calculates exchange rates for trades between ERC20 tokens.
+Calculates exchange rates for trades between ERC20 tokens and Ether. This version uses rates set by governance.
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address _governance
+    address governance_
   ) public
 ```
 Constructs the ExchangeQuoter contract.
@@ -14,76 +14,42 @@ Constructs the ExchangeQuoter contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | Address of the governor.
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
 
 ### setRates
 ```solidity
   function setRates(
-    address[] _tokens,
-    uint256[] _rates
+    address[] tokens,
+    uint256[] newRates
   ) external
 ```
 Sets the exchange rates.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokens` | address[] | The tokens to set.
-|`_rates` | uint256[] | The rates to set.
+|`tokens` | address[] | The tokens to set.
+|`newRates` | uint256[] | The rates to set.
 
 ### tokenToEth
 ```solidity
   function tokenToEth(
-    address _token,
-    uint256 _amount
-  ) external returns (uint256)
+    address token,
+    uint256 amount
+  ) external returns (uint256 amountOut)
 ```
-Calculates the exchange rate for an _amount of _token to eth.
+Calculates the exchange rate for an amount of token to eth.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_token` | address | The token to give.
-|`_amount` | uint256 | The amount to give.
+|`token` | address | The token to give.
+|`amount` | uint256 | The amount to give.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | amount of eth received.
-## Events
-### GovernanceTransferred
-```solidity
-  event GovernanceTransferred(
-  )
-```
-
-
-
+|`amountOut`| address | The amount of eth received.

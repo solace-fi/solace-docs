@@ -2,24 +2,6 @@ Tracks the contracts in the Solaverse.
 
 
 ## Functions
-### governance
-```solidity
-  function governance(
-  ) external returns (address)
-```
-Governance.
-
-
-
-### newGovernance
-```solidity
-  function newGovernance(
-  ) external returns (address)
-```
-Governance to take over.
-
-
-
 ### master
 ```solidity
   function master(
@@ -92,160 +74,127 @@ Protocol contract address getters
 
 
 
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Transfers the governance role to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
-
 ### setSolace
 ```solidity
   function setSolace(
-    address _solace
+    address solace_
   ) external
 ```
 Sets the solace token contract.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_solace` | address | The solace token address.
+|`solace_` | address | The solace token address.
 
 ### setMaster
 ```solidity
   function setMaster(
-    address _master
+    address master_
   ) external
 ```
 Sets the master contract.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_master` | address | The master contract address.
+|`master_` | address | The master contract address.
 
 ### setVault
 ```solidity
   function setVault(
-    address _vault
+    address vault_
   ) external
 ```
 Sets the vault contract.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_vault` | address | The vault contract address.
+|`vault_` | address | The vault contract address.
 
 ### setTreasury
 ```solidity
   function setTreasury(
-    address _treasury
+    address treasury_
   ) external
 ```
 Sets the treasury contract.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_treasury` | address | The treasury contract address.
+|`treasury_` | address | The treasury contract address.
 
 ### setLocker
 ```solidity
   function setLocker(
-    address _locker
+    address locker_
   ) external
 ```
 Sets the locker contract.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_locker` | address | The locker address.
+|`locker_` | address | The locker address.
 
 ### setClaimsEscrow
 ```solidity
   function setClaimsEscrow(
-    address _claimsEscrow
+    address claimsEscrow_
   ) external
 ```
 Sets the Claims Escrow contract.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_claimsEscrow` | address | The Claims Escrow address.
+|`claimsEscrow_` | address | The Claims Escrow address.
 
 ### setPolicyManager
 ```solidity
   function setPolicyManager(
-    address _policyManager
+    address policyManager_
   ) external
 ```
 Sets the PolicyManager contract.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_policyManager` | address | The PolicyManager address.
+|`policyManager_` | address | The PolicyManager address.
 
 ### setRiskManager
 ```solidity
   function setRiskManager(
-    address _riskManager
+    address riskManager_
   ) external
 ```
 Sets the RiskManager contract.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_riskManager` | address | The RiskManager address.
+|`riskManager_` | address | The RiskManager address.
 
 ## Events
-### GovernanceTransferred
-```solidity
-  event GovernanceTransferred(
-  )
-```
-
-
-
 ### SolaceSet
 ```solidity
   event SolaceSet(

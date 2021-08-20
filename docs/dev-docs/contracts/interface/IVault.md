@@ -2,49 +2,6 @@
 
 
 ## Functions
-### governance
-```solidity
-  function governance(
-  ) external returns (address)
-```
-Governance.
-
-
-
-### newGovernance
-```solidity
-  function newGovernance(
-  ) external returns (address)
-```
-Governance to take over.
-
-
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Transfers the governance role to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
-
 ### setEmergencyShutdown
 ```solidity
   function setEmergencyShutdown(
@@ -52,7 +9,7 @@ Can only be called by the new governor.
   ) external
 ```
 Activates or deactivates emergency shutdown.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 During Emergency Shutdown:
 1. No users may deposit into the Vault.
 2. Withdrawls can bypass cooldown.
@@ -68,75 +25,75 @@ If false, the Vault goes back into Normal Operation.
 ### setCooldownWindow
 ```solidity
   function setCooldownWindow(
-    uint40 _min,
-    uint40 _max
+    uint40 minTime,
+    uint40 maxTime
   ) external
 ```
 Sets the minimum and maximum amount of time a user must wait to withdraw funds.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_min` | uint40 | Minimum time in seconds.
-|`_max` | uint40 | Maximum time in seconds.
+|`minTime` | uint40 | Minimum time in seconds.
+|`maxTime` | uint40 | Maximum time in seconds.
 
 ### setRequestor
 ```solidity
   function setRequestor(
-    address _dst,
-    bool _status
+    address dst,
+    bool status
   ) external
 ```
 Adds or removes requesting rights.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_dst` | address | The requestor.
-|`_status` | bool | True to add or false to remove rights.
+|`dst` | address | The requestor.
+|`status` | bool | True to add or false to remove rights.
 
 ### depositEth
 ```solidity
   function depositEth(
-  ) external returns (uint256)
+  ) external returns (uint256 shares)
 ```
-Allows a user to deposit ETH into the Vault (becoming a Capital Provider)
-Shares of the Vault (CP tokens) are minted to caller
-Called when Vault receives ETH
-Deposits `_amount` `token`, issuing shares to `recipient`.
-Reverts if Vault is in Emergency Shutdown
+Allows a user to deposit **ETH** into the `Vault`(becoming a **Capital Provider**).
+Shares of the `Vault` (CP tokens) are minted to caller.
+It is called when `Vault` receives **ETH**.
+It issues the amount of token share respected to the deposit to the `recipient`.
+Reverts if `Vault` is in **Emergency Shutdown**
 
 
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Number`|  | of shares minted.
+|`shares`|  | The number of shares minted.
 ### depositWeth
 ```solidity
   function depositWeth(
-    uint256 _amount
+    uint256 amount
   ) external returns (uint256)
 ```
-Allows a user to deposit WETH into the Vault (becoming a Capital Provider)
-Shares of the Vault (CP tokens) are minted to caller
-Deposits `_amount` `token`, issuing shares to `recipient`.
-Reverts if Vault is in Emergency Shutdown
+Allows a user to deposit **WETH** into the `Vault`(becoming a **Capital Provider**).
+Shares of the Vault (CP tokens) are minted to caller.
+It issues the amount of token share respected to the deposit to the `recipient`.
+Reverts if `Vault` is in Emergency Shutdown
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_amount` | uint256 | Amount of weth to deposit.
+|`amount` | uint256 | Amount of weth to deposit.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Number`| uint256 | of shares minted.
+|`shares`| uint256 | The number of shares minted.
 ### startCooldown
 ```solidity
   function startCooldown(
@@ -158,7 +115,7 @@ Stops the cooldown.
 ### withdrawEth
 ```solidity
   function withdrawEth(
-    uint256 _shares
+    uint256 shares
   ) external returns (uint256)
 ```
 Allows a user to redeem shares for ETH
@@ -168,7 +125,7 @@ Burns CP tokens and transfers ETH to the CP
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_shares` | uint256 | amount of shares to redeem
+|`shares` | uint256 | amount of shares to redeem
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -177,7 +134,7 @@ Burns CP tokens and transfers ETH to the CP
 ### withdrawWeth
 ```solidity
   function withdrawWeth(
-    uint256 _shares
+    uint256 shares
   ) external returns (uint256)
 ```
 Allows a user to redeem shares for ETH
@@ -187,7 +144,7 @@ Burns CP tokens and transfers WETH to the CP
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_shares` | uint256 | amount of shares to redeem
+|`shares` | uint256 | amount of shares to redeem
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -196,7 +153,7 @@ Burns CP tokens and transfers WETH to the CP
 ### requestEth
 ```solidity
   function requestEth(
-    uint256 _amount
+    uint256 amount
   ) external returns (uint256)
 ```
 Sends ETH to other users or contracts.
@@ -206,18 +163,18 @@ Can only be called by authorized requestors.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_amount` | uint256 | Amount of ETH wanted.
+|`amount` | uint256 | Amount of ETH wanted.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`Amount`| uint256 | of ETH sent.
-### token
+### weth
 ```solidity
-  function token(
-  ) external returns (contract IERC20)
+  function weth(
+  ) external returns (contract IWETH9)
 ```
-
+WETH contract.
 
 
 
@@ -275,7 +232,7 @@ The maximum amount of time a user must wait to withdraw funds.
 ### cooldownStart
 ```solidity
   function cooldownStart(
-    address _user
+    address user
   ) external returns (uint40)
 ```
 The timestamp that a depositor's cooldown started.
@@ -284,12 +241,42 @@ The timestamp that a depositor's cooldown started.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The depositor.
+|`user` | address | The depositor.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`The`| address | timestamp in seconds.
+### canTransfer
+```solidity
+  function canTransfer(
+    address user
+  ) external returns (bool status)
+```
+Returns true if the user is allowed to receive or send vault shares.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`user` | address | User to query.
+return status True if can transfer.
+
+### canWithdraw
+```solidity
+  function canWithdraw(
+    address user
+  ) external returns (bool status)
+```
+Returns true if the user is allowed to withdraw vault shares.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`user` | address | User to query.
+return status True if can withdraw.
+
 ### isRequestor
 ```solidity
   function isRequestor(
@@ -327,14 +314,6 @@ Returns true if the destination is authorized to request ETH.
 ### EmergencyShutdown
 ```solidity
   event EmergencyShutdown(
-  )
-```
-
-
-
-### GovernanceTransferred
-```solidity
-  event GovernanceTransferred(
   )
 ```
 

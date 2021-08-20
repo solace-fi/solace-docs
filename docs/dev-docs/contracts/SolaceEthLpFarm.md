@@ -1,17 +1,17 @@
-
+A farm that allows for the staking of Uniswap V3 LP tokens in SOLACE-ETH pools.
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address _governance,
-    address _master,
-    address _lpToken,
-    contract SOLACE _solace,
-    uint256 _startBlock,
-    uint256 _endBlock,
-    address _pool
+    address governance_,
+    address master_,
+    address lpToken_,
+    contract SOLACE solace_,
+    uint256 startBlock_,
+    uint256 endBlock_,
+    address pool_
   ) public
 ```
 Constructs the farm.
@@ -20,13 +20,13 @@ Constructs the farm.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | Address of the governor.
-|`_master` | address | Address of the Master contract.
-|`_lpToken` | address | Address of the Uniswap NonFungiblePositionManager contract.
-|`_solace` | contract SOLACE | Address of the SOLACE token contract.
-|`_startBlock` | uint256 | When farming will begin.
-|`_endBlock` | uint256 | When farming will end.
-|`_pool` | address | Address of the UniswapV3Pool.
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`master_` | address | Address of the [`Master`](./Master) contract.
+|`lpToken_` | address | Address of the [**Uniswap NonFungiblePositionManager**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) contract.
+|`solace_` | contract SOLACE | Address of the [`SOLACE'](./SOLACE) token contract.
+|`startBlock_` | uint256 | When farming will begin.
+|`endBlock_` | uint256 | When farming will end.
+|`pool_` | address | Address of the UniswapV3Pool.
 
 ### receive
 ```solidity
@@ -46,113 +46,89 @@ Constructs the farm.
 
 
 
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
-
 ### setRewards
 ```solidity
   function setRewards(
-    uint256 _blockReward
+    uint256 newBlockReward
   ) external
 ```
-Sets the amount of reward token to distribute per block.
+Sets the amount of [`SOLACE`](./SOLACE) to distribute per block.
 Only affects future rewards.
-Can only be called by Master.
+Can only be called by [`Master`](./Master).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_blockReward` | uint256 | Amount to distribute per block.
+|`newBlockReward` | uint256 | Amount to distribute per block.
 
 ### setEnd
 ```solidity
   function setEnd(
-    uint256 _endBlock
+    uint256 newEndBlock
   ) external
 ```
 Sets the farm's end block. Used to extend the duration.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_endBlock` | uint256 | The new end block.
+|`newEndBlock` | uint256 | The new end block.
 
 ### setAppraisor
 ```solidity
   function setAppraisor(
-    address _appraisor
+    address newAppraisor
   ) external
 ```
 Sets the appraisal function.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_appraisor` | address | The new appraisor.
+|`newAppraisor` | address | The new appraisor.
 
 ### deposit
 ```solidity
   function deposit(
-    uint256 _tokenId
+    uint256 tokenID
   ) external
 ```
-Deposit a Uniswap LP token.
-User will receive accumulated Solace rewards if any.
+Deposit a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
+User will receive accumulated [`SOLACE`](./SOLACE) rewards if any.
+User must `ERC721.approve()` or `ERC721.setApprovalForAll()` first.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokenId` | uint256 | The id of the token to deposit.
+|`tokenID` | uint256 | The ID of the token to deposit.
 
 ### depositSigned
 ```solidity
   function depositSigned(
-    address _depositor,
-    uint256 _tokenId,
-    uint256 _deadline,
+    address depositor,
+    uint256 tokenID,
+    uint256 deadline,
     uint8 v,
     bytes32 r,
     bytes32 s
   ) external
 ```
-Deposit a Uniswap LP token using permit.
-User will receive accumulated Solace rewards if any.
+Deposit a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) using permit.
+User will receive accumulated [`SOLACE`](./SOLACE) rewards if any.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_depositor` | address | The depositing user.
-|`_tokenId` | uint256 | The id of the token to deposit.
-|`_deadline` | uint256 | Time the transaction must go through before.
+|`depositor` | address | The depositing user.
+|`tokenID` | uint256 | The ID of the token to deposit.
+|`deadline` | uint256 | Time the transaction must go through before.
 |`v` | uint8 | secp256k1 signature
 |`r` | bytes32 | secp256k1 signature
 |`s` | bytes32 | secp256k1 signature
@@ -161,10 +137,10 @@ User will receive accumulated Solace rewards if any.
 ```solidity
   function mintAndDeposit(
     struct ISolaceEthLpFarm.MintAndDepositParams params
-  ) external returns (uint256 tokenId)
+  ) external returns (uint256 tokenID)
 ```
-Mint a new Uniswap LP token then deposit it.
-User will receive accumulated Solace rewards if any.
+Mint a new [**Uniswap**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) LP token then deposit it.
+User will receive accumulated [`SOLACE`](./SOLACE) rewards if any.
 
 
 #### Parameters:
@@ -175,21 +151,22 @@ User will receive accumulated Solace rewards if any.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenId`| struct ISolaceEthLpFarm.MintAndDepositParams | The newly minted token id.
+|`tokenID`| struct ISolaceEthLpFarm.MintAndDepositParams | The newly minted token ID.
 ### withdraw
 ```solidity
   function withdraw(
-    uint256 _tokenId
+    uint256 tokenID
   ) external
 ```
-Withdraw a Uniswap LP token.
-User will receive _tokenId and accumulated rewards.
+Withdraw a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
+User will receive `tokenID` and accumulated rewards.
+Can only withdraw tokens you deposited.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_tokenId` | uint256 | The id of the token to withdraw.
+|`tokenID` | uint256 | The ID of the token to withdraw.
 
 ### withdrawRewards
 ```solidity
@@ -203,12 +180,17 @@ Withdraw your rewards without unstaking your tokens.
 ### withdrawRewardsForUser
 ```solidity
   function withdrawRewardsForUser(
+    address user
   ) external
 ```
 Withdraw a users rewards without unstaking their tokens.
-Can only be called by Master.
+Can only be called by ['Master`](./Master) or the user.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`user` | address | User to withdraw rewards for.
 
 ### updateFarm
 ```solidity
@@ -222,118 +204,118 @@ Updates farm information to be up to date to the current block.
 ### pendingRewards
 ```solidity
   function pendingRewards(
-    address _user
-  ) external returns (uint256)
+    address user
+  ) external returns (uint256 reward)
 ```
-Calculates the accumulated balance of reward token for specified user.
+Calculates the accumulated balance of [`SOLACE`](./SOLACE) for specified user.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user for whom unclaimed tokens will be shown.
+|`user` | address | The user for whom unclaimed tokens will be shown.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Total`| address | amount of withdrawable reward tokens.
+|`reward`| address | Total amount of withdrawable reward tokens.
 ### getMultiplier
 ```solidity
   function getMultiplier(
-    uint256 _from,
-    uint256 _to
-  ) public returns (uint256)
+    uint256 from,
+    uint256 to
+  ) public returns (uint256 multiplier)
 ```
-Calculates the reward multiplier over the given _from until _to block.
+Calculates the reward multiplier over the given `from` until `to` block.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_from` | uint256 | The start of the period to measure rewards for.
-|`_to` | uint256 | The end of the period to measure rewards for.
+|`from` | uint256 | The start of the period to measure rewards for.
+|`to` | uint256 | The end of the period to measure rewards for.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint256 | weighted multiplier for the given period.
+|`multiplier`| uint256 | The weighted multiplier for the given period.
 ### countDeposited
 ```solidity
   function countDeposited(
-    address _user
-  ) external returns (uint256)
+    address user
+  ) external returns (uint256 count)
 ```
-Returns the count of Uniswap LP tokens that a user has deposited onto a farm.
+Returns the count of [**Uniswap LP tokens**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) that a user has deposited onto the farm.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user to check count for.
+|`user` | address | The user to check count for.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | count of deposited Uniswap LP tokens.
+|`count`| address | The count of deposited Uniswap LP tokens.
 ### listDeposited
 ```solidity
   function listDeposited(
-    address _user
-  ) external returns (uint256[], uint256[])
+    address user
+  ) external returns (uint256[] tokenIDs, uint256[] tokenValues)
 ```
-Returns the list of Uniswap LP tokens that a user has deposited onto a farm and their values.
+Returns the list of [**Uniswap LP tokens**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) that a user has deposited onto the farm and their values.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user to list Uniswap LP tokens.
+|`user` | address | The user to list Uniswap LP tokens.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | list of deposited Uniswap LP tokens.
-|`The`|  | values of the tokens.
+|`tokenIDs`| address | The list of deposited Uniswap LP tokens.
+|`tokenValues`|  | The values of the tokens.
 ### getDeposited
 ```solidity
   function getDeposited(
-    address _user,
-    uint256 _index
-  ) external returns (uint256, uint256)
+    address user,
+    uint256 index
+  ) external returns (uint256 tokenID, uint256 tokenValue)
 ```
-Returns the id of a Uniswap LP that a user has deposited onto a farm and its value.
+Returns the ID of a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) that a user has deposited onto a farm and its value.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user to get token id for.
-|`_index` | uint256 | The farm-based index of the token.
+|`user` | address | The user to get token ID for.
+|`index` | uint256 | The farm-based index of the token.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | id of the deposited Uniswap LP token.
-|`The`| uint256 | value of the token.
+|`tokenID`| address | The ID of the deposited [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
+|`tokenValue`| uint256 | The value of the token.
 ### appraise
 ```solidity
   function appraise(
-    uint256 _token
-  ) external returns (uint256 _value)
+    uint256 tokenID
+  ) external returns (uint256 tokenValue)
 ```
-Appraise a Uniswap LP Token.
+Appraise a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
 Token must exist and must exist in the correct pool.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_token` | uint256 | The id of the token to appraise.
+|`tokenID` | uint256 | The ID of the token to appraise.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`_value`| uint256 | The token's value.
+|`tokenValue`| uint256 | The token's value.
 ### _harvest
 ```solidity
   function _harvest(
@@ -346,8 +328,8 @@ Calculate and transfer a user's rewards.
 ### _deposit
 ```solidity
   function _deposit(
-    address _depositor,
-    uint256 _tokenId
+    address depositor,
+    uint256 tokenID
   ) internal
 ```
 Performs the internal accounting for a deposit.
@@ -356,15 +338,15 @@ Performs the internal accounting for a deposit.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_depositor` | address | The depositing user.
-|`_tokenId` | uint256 | The id of the token to deposit.
+|`depositor` | address | The depositing user.
+|`tokenID` | uint256 | The ID of the token to deposit.
 
 ### _add
 ```solidity
   function _add(
-    uint256 _a,
-    int256 _b
-  ) internal returns (uint256 _c)
+    uint256 a,
+    int256 b
+  ) internal returns (uint256 c)
 ```
 Adds two numbers.
 
@@ -372,10 +354,10 @@ Adds two numbers.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_a` | uint256 | The first number as a uint256.
-|`_b` | int256 | The second number as an int256.
+|`a` | uint256 | The first number as a uint256.
+|`b` | int256 | The second number as an int256.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`_c`| uint256 | The sum as a uint256.
+|`c`| uint256 | The sum as a uint256.

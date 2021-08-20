@@ -1,31 +1,22 @@
-
+Rewards investors in [`SOLACE`](../SOLACE).
 
 
 ## Functions
-### governance
-```solidity
-  function governance(
-  ) external returns (address)
-```
-Governance.
-
-
-
-### newGovernance
-```solidity
-  function newGovernance(
-  ) external returns (address)
-```
-Governance to take over.
-
-
-
 ### master
 ```solidity
   function master(
   ) external returns (address)
 ```
-Master contract.
+[`Master`](../Master) contract.
+
+
+
+### solace
+```solidity
+  function solace(
+  ) external returns (contract SOLACE)
+```
+Native [`SOLACE`](../SOLACE) Token.
 
 
 
@@ -43,7 +34,7 @@ A unique enumerator that identifies the farm type.
   function blockReward(
   ) external returns (uint256)
 ```
-
+Amount of [`SOLACE`](../SOLACE) distributed per block.
 
 
 
@@ -52,7 +43,7 @@ A unique enumerator that identifies the farm type.
   function startBlock(
   ) external returns (uint256)
 ```
-
+When the farm will start.
 
 
 
@@ -61,64 +52,40 @@ A unique enumerator that identifies the farm type.
   function endBlock(
   ) external returns (uint256)
 ```
-
-
-
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Transfers the governance role to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
+When the farm will end.
 
 
 
 ### setRewards
 ```solidity
   function setRewards(
-    uint256 _blockReward
+    uint256 newBlockReward
   ) external
 ```
-Sets the amount of reward token to distribute per block.
-Can only be called by Master.
+Sets the amount of [`SOLACE`](../SOLACE) to distribute per block.
+Only affects future rewards.
+Can only be called by [`Master`](../Master).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_blockReward` | uint256 | Amount to distribute per block.
+|`newBlockReward` | uint256 | Amount to distribute per block.
 
 ### setEnd
 ```solidity
   function setEnd(
-    uint256 _endBlock
+    uint256 newEndBlock
   ) external
 ```
 Sets the farm's end block. Used to extend the duration.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_endBlock` | uint256 | The new end block.
+|`newEndBlock` | uint256 | The new end block.
 
 ### withdrawRewards
 ```solidity
@@ -132,31 +99,36 @@ Withdraw your rewards without unstaking your tokens.
 ### withdrawRewardsForUser
 ```solidity
   function withdrawRewardsForUser(
+    address user
   ) external
 ```
 Withdraw a users rewards without unstaking their tokens.
-Can only be called by Master.
-
-
-
-### pendingRewards
-```solidity
-  function pendingRewards(
-    address _user
-  ) external returns (uint256)
-```
-Calculates the accumulated balance of reward token for specified user.
+Can only be called by ['Master`](../Master) or the user.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | address | The user for whom unclaimed tokens will be shown.
+|`user` | address | User to withdraw rewards for.
+
+### pendingRewards
+```solidity
+  function pendingRewards(
+    address user
+  ) external returns (uint256 reward)
+```
+Calculates the accumulated balance of [`SOLACE`](../SOLACE) for specified user.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`user` | address | The user for whom unclaimed tokens will be shown.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Total`| address | amount of withdrawable reward tokens.
+|`reward`| address | Total amount of withdrawable SOLACE.
 ### updateFarm
 ```solidity
   function updateFarm(
@@ -169,29 +141,20 @@ Updates farm information to be up to date to the current block.
 ### getMultiplier
 ```solidity
   function getMultiplier(
-    uint256 _from,
-    uint256 _to
-  ) external returns (uint256)
+    uint256 from,
+    uint256 to
+  ) external returns (uint256 multiplier)
 ```
-Calculates the reward multiplier over the given _from until _to block.
+Calculates the reward multiplier over the given `from` until `to` block.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_from` | uint256 | The start of the period to measure rewards for.
-|`_to` | uint256 | The end of the period to measure rewards for.
+|`from` | uint256 | The start of the period to measure rewards for.
+|`to` | uint256 | The end of the period to measure rewards for.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| uint256 | weighted multiplier for the given period.
-## Events
-### GovernanceTransferred
-```solidity
-  event GovernanceTransferred(
-  )
-```
-
-
-
+|`multiplier`| uint256 | The weighted multiplier for the given period.

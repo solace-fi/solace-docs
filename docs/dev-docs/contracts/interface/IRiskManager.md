@@ -2,85 +2,42 @@
 
 
 ## Functions
-### governance
-```solidity
-  function governance(
-  ) external returns (address)
-```
-Governance.
-
-
-
-### newGovernance
-```solidity
-  function newGovernance(
-  ) external returns (address)
-```
-Governance to take over.
-
-
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Transfers the governance role to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
-
 ### setProductWeights
 ```solidity
   function setProductWeights(
-    address[] _products,
-    uint32[] _weights
+    address[] products_,
+    uint32[] weights_
   ) external
 ```
 Sets the products and their weights.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_products` | address[] | The products.
-|`_weights` | uint32[] | The product weights.
+|`products_` | address[] | The products.
+|`weights_` | uint32[] | The product weights.
 
 ### setPartialReservesFactor
 ```solidity
   function setPartialReservesFactor(
-    uint16 _factor
+    uint16 factor
   ) external
 ```
 Sets the partial reserves factor.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_factor` | uint16 | New partial reserves factor in BPS.
+|`factor` | uint16 | New partial reserves factor in BPS.
 
 ### maxCoverAmount
 ```solidity
   function maxCoverAmount(
-    address _product
+    address product
   ) external returns (uint256)
 ```
 The maximum amount of cover that a product can sell.
@@ -89,7 +46,7 @@ The maximum amount of cover that a product can sell.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_product` | address | The product that wants to sell cover.
+|`product` | address | The product that wants to sell cover.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -110,15 +67,6 @@ The minimum amount of capital required to safely cover all policies.
   ) external returns (uint16)
 ```
 Multiplier for minimum capital requirement in BPS.
-
-
-
-## Events
-### GovernanceTransferred
-```solidity
-  event GovernanceTransferred(
-  )
-```
 
 
 

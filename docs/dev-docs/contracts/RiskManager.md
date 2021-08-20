@@ -1,12 +1,14 @@
+Calculates the acceptable risk, sellable cover, and capital requirements of Solace products and capital pool.
 
+Governance can reallocate capital towards different products and change the partial reserves factor for leverage.
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address _governance,
-    address _registry
+    address governance_,
+    address registry_
   ) public
 ```
 Constructs the risk manager contract.
@@ -15,70 +17,45 @@ Constructs the risk manager contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | Address of the governor.
-|`_registry` | address | Address of registry.
-
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Allows governance to be transferred to a new governor.
-Can only be called by the current governor.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new governor.
-
-
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`registry_` | address | Address of registry.
 
 ### setProductWeights
 ```solidity
   function setProductWeights(
-    address[] _products,
-    uint32[] _weights
+    address[] products_,
+    uint32[] weights_
   ) external
 ```
 Sets the products and their weights.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_products` | address[] | The products.
-|`_weights` | uint32[] | The product weights.
+|`products_` | address[] | The products.
+|`weights_` | uint32[] | The product weights.
 
 ### setPartialReservesFactor
 ```solidity
   function setPartialReservesFactor(
-    uint16 _factor
+    uint16 factor
   ) external
 ```
 Sets the partial reserves factor.
-Can only be called by the current governor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_factor` | uint16 | New partial reserves factor in BPS.
+|`factor` | uint16 | New partial reserves factor in BPS.
 
 ### maxCoverAmount
 ```solidity
   function maxCoverAmount(
-    address _product
+    address product
   ) external returns (uint256)
 ```
 The maximum amount of cover that a product can sell.
@@ -87,7 +64,7 @@ The maximum amount of cover that a product can sell.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_product` | address | The product that wants to sell cover.
+|`product` | address | The product that wants to sell cover.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |

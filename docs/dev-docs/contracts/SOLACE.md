@@ -1,4 +1,4 @@
-**Solace** tokens can be earned by depositing **Capital Provider** or **Liquidity Provider** tokens to the [`Master`](./Master.md) contract.
+**Solace** tokens can be earned by depositing **Capital Provider** or **Liquidity Provider** tokens to the [`Master`](./Master) contract.
 **SOLACE** can also be locked for a preset time in the `Locker` contract to recieve `veSOLACE` tokens.
 
 
@@ -6,7 +6,7 @@
 ### constructor
 ```solidity
   function constructor(
-    address _governance
+    address governance_
   ) public
 ```
 Constructs the Solace Token contract.
@@ -15,7 +15,7 @@ Constructs the Solace Token contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The address of the governor.
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
 
 ### mint
 ```solidity
@@ -34,31 +34,6 @@ The caller must be a `minter`.
 |`account` | address | The receiver of new tokens.
 |`amount` | uint256 | The number of new tokens.
 
-### setGovernance
-```solidity
-  function setGovernance(
-    address _governance
-  ) external
-```
-Allows governance to be transferred to a new governor.
-Can only be called by the current `governor`.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`_governance` | address | The new governor.
-
-### acceptGovernance
-```solidity
-  function acceptGovernance(
-  ) external
-```
-Accepts the governance role.
-Can only be called by the new `governor`.
-
-
-
 ### addMinter
 ```solidity
   function addMinter(
@@ -66,7 +41,7 @@ Can only be called by the new `governor`.
   ) public
 ```
 Adds a new minter.
-Can only be called by the current `governor`.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
@@ -81,20 +56,11 @@ Can only be called by the current `governor`.
   ) public
 ```
 Removes a minter.
-Can only be called by the current `governor`.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_minter` | address | The minter to remove.
-
-## Events
-### GovernanceTransferred
-```solidity
-  event GovernanceTransferred(
-  )
-```
-Emitted when Governance is set
-
 

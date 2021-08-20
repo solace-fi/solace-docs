@@ -1,4 +1,14 @@
+Rewards [**Capital Providers**](/docs/user-docs/Capital%20Providers) in [`SOLACE`](../SOLACE) for providing capital in the [`Vault`](../Vault).
 
+Over the course of `startBlock` to `endBlock`, the farm distributes `blockReward` [`SOLACE`](../SOLACE) per block to all farmers split relative to the amount of [`SCP`](../Vault) they have deposited.
+
+Users can become [**Capital Providers**](/docs/user-docs/Capital%20Providers) by depositing `ETH` into the [`Vault`](../Vault), receiving [`SCP`](../Vault) in the process. [**Capital Providers**](/docs/user-docs/Capital%20Providers) can then deposit their [`SCP`](../Vault) via [`depositCp()`](#depositcp) or [`depositCpSigned()`](#depositcpsigned). Users can bypass the [`Vault`](../Vault) and stake their `ETH` via [`depositEth()`](#depositeth).
+
+Users can withdraw their rewards via [`withdrawRewards()`](#withdrawrewards) and compound their rewards via [`compoundRewards()`](#compoundrewards).
+
+Users can withdraw their [`SCP`](../Vault) via [`withdrawCp()`](#withdrawcp).
+
+Note that transferring in `ETH` will mint you shares, but transferring in `WETH` or [`SCP`](../Vault) will not. These must be deposited via functions in this contract. Misplaced funds cannot be rescued.
 
 
 ## Functions
@@ -7,7 +17,7 @@
   function receive(
   ) external
 ```
-Receive function. Deposits eth.
+Receive function. Deposits eth. User will receive accumulated rewards if any.
 
 
 
@@ -16,46 +26,47 @@ Receive function. Deposits eth.
   function fallback(
   ) external
 ```
-Fallback function. Deposits eth.
+Fallback function. Deposits eth. User will receive accumulated rewards if any.
 
 
 
 ### depositCp
 ```solidity
   function depositCp(
-    uint256 _amount
+    uint256 amount
   ) external
 ```
-Deposit some CP tokens.
+Deposit some [`CP tokens`](../Vault).
 User will receive accumulated rewards if any.
+User must `ERC20.approve()` first.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_amount` | uint256 | The deposit amount.
+|`amount` | uint256 | The deposit amount.
 
 ### depositCpSigned
 ```solidity
   function depositCpSigned(
-    address _depositor,
-    uint256 _amount,
-    uint256 _deadline,
+    address depositor,
+    uint256 amount,
+    uint256 deadline,
     uint8 v,
     bytes32 r,
     bytes32 s
   ) external
 ```
-Deposit some CP tokens using permit.
+Deposit some [`CP tokens`](../Vault) using `ERC2612.permit()`.
 User will receive accumulated rewards if any.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_depositor` | address | The depositing user.
-|`_amount` | uint256 | The deposit amount.
-|`_deadline` | uint256 | Time the transaction must go through before.
+|`depositor` | address | The depositing user.
+|`amount` | uint256 | The deposit amount.
+|`deadline` | uint256 | Time the transaction must go through before.
 |`v` | uint8 | secp256k1 signature
 |`r` | bytes32 | secp256k1 signature
 |`s` | bytes32 | secp256k1 signature
@@ -65,7 +76,7 @@ User will receive accumulated rewards if any.
   function depositEth(
   ) external
 ```
-Deposit some ETH.
+Deposit some `ETH`.
 User will receive accumulated rewards if any.
 
 
@@ -76,40 +87,32 @@ User will receive accumulated rewards if any.
   ) external
 ```
 Your money already makes you money. Now make your money make more money!
-Withdraws your SOLACE rewards, swaps it for WETH, then deposits that WETH onto the farm.
+Withdraws your [`SOLACE`](../SOLACE) rewards, swaps it for `WETH`, then deposits that `WETH` onto the farm.
 
 
 
 ### withdrawCp
 ```solidity
   function withdrawCp(
-    uint256 _amount
+    uint256 amount
   ) external
 ```
-Withdraw some CP tokens.
-User will receive _amount of deposited tokens and accumulated rewards.
+Withdraw some [`CP tokens`](../Vault).
+User will receive amount of deposited tokens and accumulated rewards.
+Can only withdraw as many tokens as you deposited.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_amount` | uint256 | The withdraw amount.
+|`amount` | uint256 | The withdraw amount.
 
 ### vault
 ```solidity
   function vault(
   ) external returns (contract IVault)
 ```
-
-
-
-
-### solace
-```solidity
-  function solace(
-  ) external returns (contract SOLACE)
-```
-
+Vault contract.
 
 
 
@@ -118,7 +121,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   function lastRewardBlock(
   ) external returns (uint256)
 ```
-
+Last time rewards were distributed or farm was updated.
 
 
 
@@ -127,7 +130,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   function accRewardPerShare(
   ) external returns (uint256)
 ```
-
+Accumulated rewards per share, times 1e12.
 
 
 
@@ -136,7 +139,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   function valueStaked(
   ) external returns (uint256)
 ```
-
+Value of tokens staked by all farmers.
 
 
 
@@ -146,7 +149,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   event CpDeposited(
   )
 ```
-
+Emitted when CP tokens are deposited onto the farm.
 
 
 ### EthDeposited
@@ -154,7 +157,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   event EthDeposited(
   )
 ```
-
+Emitted when ETH is deposited onto the farm.
 
 
 ### RewardsCompounded
@@ -162,7 +165,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   event RewardsCompounded(
   )
 ```
-
+Emitted when a user compounds their rewards.
 
 
 ### CpWithdrawn
@@ -170,7 +173,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   event CpWithdrawn(
   )
 ```
-
+Emitted when CP tokens are withdrawn from the farm.
 
 
 ### UserRewarded
@@ -178,7 +181,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   event UserRewarded(
   )
 ```
-
+Emitted when a user is rewarded.
 
 
 ### RewardsSet
@@ -186,7 +189,7 @@ User will receive _amount of deposited tokens and accumulated rewards.
   event RewardsSet(
   )
 ```
-
+Emitted when block reward is changed.
 
 
 ### FarmEndSet
@@ -194,6 +197,6 @@ User will receive _amount of deposited tokens and accumulated rewards.
   event FarmEndSet(
   )
 ```
-
+Emitted when the end block is changed.
 
 
