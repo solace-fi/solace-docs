@@ -1,5 +1,17 @@
 # Types
 
+### `NetworkCache` (exported)
+
+```
+type NetworkCache = {
+  name: string
+  chainId: number
+  supportedProducts: any
+  tokens: any
+  positions: any
+}
+```
+
 ### `ClaimDetails` (exported)
 
 ```
@@ -143,7 +155,7 @@ type LocalTx = {
 ### `NetworkConfig` (exported)
 
 ```
-type NetworkConfig = {
+export type NetworkConfig = {
   name: string
   chainId: number
   nativeCurrency: {
@@ -162,8 +174,17 @@ type NetworkConfig = {
   config: {
     keyContracts: KeyContracts
     productContracts: any
+    functions: {
+      getTokens: any
+      getBalances: any
+    }
   }
-  cache: any
+  cache: {
+    supportedProducts: any
+    productsRev: any
+    tokens: any
+    positions: any
+  }
   metamaskChain?: MetamaskAddEthereumChain
   walletConfig: any
 }

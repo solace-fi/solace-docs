@@ -20,7 +20,7 @@ Currently there are six Managers that the user interface relies on for global st
 - **ContractsManager**
 - **NotificationsManager**
 
-Below is the current structure of the Managers, the order does not necessarily matter.
+Below is the current structure of the Managers, the order matters so data flows down properly.
 
         <NetworkManager>                        
           <WalletManager>
