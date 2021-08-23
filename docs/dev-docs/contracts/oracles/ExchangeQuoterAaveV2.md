@@ -1,20 +1,20 @@
-Calculates exchange rates for trades between ERC20 tokens and Ether. This version uses the [1inch on-chain DeFi aggregation protocol](https://github.com/1inch/1inchProtocol).
+Calculates exchange rates for trades between ERC20 tokens and Ether. This version uses the Aave Price Oracle.
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address oneSplitView_
+    address dataProvider_
   ) public
 ```
-Constructs the ExchangeQuoter contract.
+Constructs the ExchangeQuoterAaveV2 contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`oneSplitView_` | address | The address of the 1inch router.
+|`dataProvider_` | address | Aave protocol data provider address.
 
 ### tokenToEth
 ```solidity

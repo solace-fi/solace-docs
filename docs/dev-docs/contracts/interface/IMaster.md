@@ -93,7 +93,7 @@ Cannot register a farm more than once.
 ```solidity
   function setAllocPoints(
     uint256 farmID,
-    uint256 allocPoints
+    uint256 allocPoints_
   ) external
 ```
 Sets a farm's allocation points.
@@ -104,12 +104,12 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`farmID` | uint256 | The farm to set allocation points.
-|`allocPoints` | uint256 | How many points to allocate this farm.
+|`allocPoints_` | uint256 | How many points to allocate this farm.
 
 ### setSolacePerBlock
 ```solidity
   function setSolacePerBlock(
-    uint256 solacePerBlock
+    uint256 solacePerBlock_
   ) external
 ```
 Sets the Solace reward distribution across all farms.
@@ -119,7 +119,7 @@ Optionally updates all farms.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`solacePerBlock` | uint256 | Amount of solace to distribute per block.
+|`solacePerBlock_` | uint256 | Amount of solace to distribute per block.
 
 ### massUpdateFarms
 ```solidity

@@ -1,4 +1,4 @@
-Rewards investors in [`SOLACE`](../SOLACE).
+Rewards investors in [**SOLACE**](../SOLACE).
 
 
 ## Functions
@@ -16,7 +16,7 @@ Rewards investors in [`SOLACE`](../SOLACE).
   function solace(
   ) external returns (contract SOLACE)
 ```
-Native [`SOLACE`](../SOLACE) Token.
+Native [**SOLACE**](../SOLACE) Token.
 
 
 
@@ -34,7 +34,7 @@ A unique enumerator that identifies the farm type.
   function blockReward(
   ) external returns (uint256)
 ```
-Amount of [`SOLACE`](../SOLACE) distributed per block.
+Amount of [**SOLACE**](../SOLACE) distributed per block.
 
 
 
@@ -59,10 +59,10 @@ When the farm will end.
 ### setRewards
 ```solidity
   function setRewards(
-    uint256 newBlockReward
+    uint256 blockReward_
   ) external
 ```
-Sets the amount of [`SOLACE`](../SOLACE) to distribute per block.
+Sets the amount of [**SOLACE**](../SOLACE) to distribute per block.
 Only affects future rewards.
 Can only be called by [`Master`](../Master).
 
@@ -70,12 +70,12 @@ Can only be called by [`Master`](../Master).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newBlockReward` | uint256 | Amount to distribute per block.
+|`blockReward_` | uint256 | Amount to distribute per block.
 
 ### setEnd
 ```solidity
   function setEnd(
-    uint256 newEndBlock
+    uint256 endBlock_
   ) external
 ```
 Sets the farm's end block. Used to extend the duration.
@@ -85,7 +85,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newEndBlock` | uint256 | The new end block.
+|`endBlock_` | uint256 | The new end block.
 
 ### withdrawRewards
 ```solidity
@@ -117,7 +117,7 @@ Can only be called by ['Master`](../Master) or the user.
     address user
   ) external returns (uint256 reward)
 ```
-Calculates the accumulated balance of [`SOLACE`](../SOLACE) for specified user.
+Calculates the accumulated balance of [**SOLACE**](../SOLACE) for specified user.
 
 
 #### Parameters:

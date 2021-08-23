@@ -1,14 +1,14 @@
-Rewards [**Capital Providers**](/docs/user-docs/Capital%20Providers) in [`SOLACE`](./SOLACE) for providing capital in the [`Vault`](./Vault).
+Rewards [**Capital Providers**](/docs/user-docs/Capital%20Providers) in [**SOLACE**](./SOLACE) for providing capital in the [`Vault`](./Vault).
 
-Over the course of `startBlock` to `endBlock`, the farm distributes `blockReward` [`SOLACE`](./SOLACE) per block to all farmers split relative to the amount of [`SCP`](./Vault) they have deposited.
+Over the course of `startBlock` to `endBlock`, the farm distributes `blockReward` [**SOLACE**](./SOLACE) per block to all farmers split relative to the amount of [**SCP**](./Vault) they have deposited.
 
-Users can become [**Capital Providers**](/docs/user-docs/Capital%20Providers) by depositing `ETH` into the [`Vault`](./Vault), receiving [`SCP`](./Vault) in the process. [**Capital Providers**](/docs/user-docs/Capital%20Providers) can then deposit their [`SCP`](./Vault) via [`depositCp()`](#depositcp) or [`depositCpSigned()`](#depositcpsigned). Users can bypass the [`Vault`](./Vault) and stake their `ETH` via [`depositEth()`](#depositeth).
+Users can become [**Capital Providers**](/docs/user-docs/Capital%20Providers) by depositing **ETH** into the [`Vault`](./Vault), receiving [**SCP**](./Vault) in the process. [**Capital Providers**](/docs/user-docs/Capital%20Providers) can then deposit their [**SCP**](./Vault) via [`depositCp()`](#depositcp) or [`depositCpSigned()`](#depositcpsigned). Alternatively users can bypass the [`Vault`](./Vault) and stake their **ETH** via [`depositEth()`](#depositeth).
 
 Users can withdraw their rewards via [`withdrawRewards()`](#withdrawrewards) and compound their rewards via [`compoundRewards()`](#compoundrewards).
 
-Users can withdraw their [`SCP`](./Vault) via [`withdrawCp()`](#withdrawcp).
+Users can withdraw their [**SCP**](./Vault) via [`withdrawCp()`](#withdrawcp).
 
-Note that transferring in `ETH` will mint you shares, but transferring in `WETH` or [`SCP`](./Vault) will not. These must be deposited via functions in this contract. Misplaced funds cannot be rescued.
+Note that transferring in **ETH** will mint you shares, but transferring in **WETH** or [**SCP**](./Vault) will not. These must be deposited via functions in this contract. Misplaced funds cannot be rescued.
 
 
 ## Functions
@@ -25,7 +25,7 @@ Note that transferring in `ETH` will mint you shares, but transferring in `WETH`
     address weth_
   ) public
 ```
-Constructs the farm.
+Constructs the CpFarm.
 
 
 #### Parameters:
@@ -34,11 +34,11 @@ Constructs the farm.
 |`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
 |`master_` | address | Address of the [`Master`](./Master) contract.
 |`vault_` | address | Address of the [`Vault`](./Vault) contract.
-|`solace_` | contract SOLACE | Address of the [`SOLACE`](./SOLACE) token contract.
+|`solace_` | contract SOLACE | Address of the [**SOLACE**](./SOLACE) token contract.
 |`startBlock_` | uint256 | When farming will begin.
 |`endBlock_` | uint256 | When farming will end.
-|`swapRouter_` | address | Address of [`Uniswap V3 SwapRouter'](https://docs.uniswap.org/protocol/reference/periphery/SwapRouter).
-|`weth_` | address | Address of `WETH`.
+|`swapRouter_` | address | Address of [`Uniswap V3 SwapRouter`](https://docs.uniswap.org/protocol/reference/periphery/SwapRouter).
+|`weth_` | address | Address of **WETH**.
 
 ### receive
 ```solidity
@@ -61,10 +61,10 @@ Fallback function. Deposits eth. User will receive accumulated rewards if any.
 ### setRewards
 ```solidity
   function setRewards(
-    uint256 newBlockReward
+    uint256 blockReward_
   ) external
 ```
-Sets the amount of [`SOLACE`](./SOLACE) to distribute per block.
+Sets the amount of [**SOLACE**](./SOLACE) to distribute per block.
 Only affects future rewards.
 Can only be called by [`Master`](./Master).
 
@@ -72,12 +72,12 @@ Can only be called by [`Master`](./Master).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newBlockReward` | uint256 | Amount to distribute per block.
+|`blockReward_` | uint256 | Amount to distribute per block.
 
 ### setEnd
 ```solidity
   function setEnd(
-    uint256 newEndBlock
+    uint256 endBlock_
   ) external
 ```
 Sets the farm's end block. Used to extend the duration.
@@ -87,7 +87,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newEndBlock` | uint256 | The new end block.
+|`endBlock_` | uint256 | The new end block.
 
 ### depositCp
 ```solidity
@@ -95,7 +95,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
     uint256 amount
   ) external
 ```
-Deposit some [`CP tokens`](./Vault).
+Deposit some [**CP tokens**](./Vault).
 User will receive accumulated rewards if any.
 User must `ERC20.approve()` first.
 
@@ -116,7 +116,7 @@ User must `ERC20.approve()` first.
     bytes32 s
   ) external
 ```
-Deposit some [`CP tokens`](./Vault) using `ERC2612.permit()`.
+Deposit some [**CP tokens**](./Vault) using `ERC2612.permit()`.
 User will receive accumulated rewards if any.
 
 
@@ -135,7 +135,7 @@ User will receive accumulated rewards if any.
   function depositEth(
   ) external
 ```
-Deposit some `ETH`.
+Deposit some **ETH**.
 User will receive accumulated rewards if any.
 
 
@@ -146,7 +146,7 @@ User will receive accumulated rewards if any.
   ) external
 ```
 Your money already makes you money. Now make your money make more money!
-Withdraws your [`SOLACE`](./SOLACE) rewards, swaps it for `WETH`, then deposits that `WETH` onto the farm.
+Withdraws your [**SOLACE**](./SOLACE) rewards, swaps it for **WETH**, then deposits that **WETH** onto the farm.
 
 
 
@@ -156,7 +156,7 @@ Withdraws your [`SOLACE`](./SOLACE) rewards, swaps it for `WETH`, then deposits 
     uint256 amount
   ) external
 ```
-Withdraw some [`CP tokens`](./Vault).
+Withdraw some [**CP tokens**](./Vault).
 User will receive amount of deposited tokens and accumulated rewards.
 Can only withdraw as many tokens as you deposited.
 
@@ -182,7 +182,7 @@ Withdraw your rewards without unstaking your tokens.
   ) external
 ```
 Withdraw a users rewards without unstaking their tokens.
-Can only be called by ['Master`](./Master) or the user.
+Can only be called by [`Master`](./Master) or the user.
 
 
 #### Parameters:
@@ -205,7 +205,7 @@ Updates farm information to be up to date to the current block.
     address user
   ) external returns (uint256 reward)
 ```
-Calculates the accumulated balance of [`SOLACE`](./SOLACE) for specified user.
+Calculates the accumulated balance of [**SOLACE**](./SOLACE) for specified user.
 
 
 #### Parameters:
@@ -253,7 +253,7 @@ Deposits some ether.
     uint256 amount
   ) internal
 ```
-Deposit some [`CP tokens`](./Vault).
+Deposit some [**CP tokens**](./Vault).
 User will receive accumulated rewards if any.
 
 
