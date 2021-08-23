@@ -1,4 +1,6 @@
-A farm that allows for the staking of Uniswap V3 LP tokens in SOLACE-ETH pools.
+Rewards [**Liquidity Providers**](/docs/user-docs/Liquidity%20Providers) in [**SOLACE**](./SOLACE) for providing liquidity in the [**SOLACE**](./SOLACE)-**ETH** [**Uniswap V3 Pool**](https://docs.uniswap.org/protocol/reference/core/UniswapV3Pool).
+
+Over the course of `startBlock` to `endBlock`, the farm distributes `blockReward` [**SOLACE**](./SOLACE) per block to all farmers split relative to the value of their deposited tokens.
 
 
 ## Functions
@@ -23,10 +25,10 @@ Constructs the farm.
 |`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
 |`master_` | address | Address of the [`Master`](./Master) contract.
 |`lpToken_` | address | Address of the [**Uniswap NonFungiblePositionManager**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) contract.
-|`solace_` | contract SOLACE | Address of the [`SOLACE'](./SOLACE) token contract.
+|`solace_` | contract SOLACE | Address of the [**SOLACE**](./SOLACE) token contract.
 |`startBlock_` | uint256 | When farming will begin.
 |`endBlock_` | uint256 | When farming will end.
-|`pool_` | address | Address of the UniswapV3Pool.
+|`pool_` | address | Address of the [**Uniswap V3 Pool**](https://docs.uniswap.org/protocol/reference/core/UniswapV3Pool).
 
 ### receive
 ```solidity
@@ -49,10 +51,10 @@ Constructs the farm.
 ### setRewards
 ```solidity
   function setRewards(
-    uint256 newBlockReward
+    uint256 blockReward_
   ) external
 ```
-Sets the amount of [`SOLACE`](./SOLACE) to distribute per block.
+Sets the amount of [**SOLACE**](./SOLACE) to distribute per block.
 Only affects future rewards.
 Can only be called by [`Master`](./Master).
 
@@ -60,12 +62,12 @@ Can only be called by [`Master`](./Master).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newBlockReward` | uint256 | Amount to distribute per block.
+|`blockReward_` | uint256 | Amount to distribute per block.
 
 ### setEnd
 ```solidity
   function setEnd(
-    uint256 newEndBlock
+    uint256 endBlock_
   ) external
 ```
 Sets the farm's end block. Used to extend the duration.
@@ -75,12 +77,12 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newEndBlock` | uint256 | The new end block.
+|`endBlock_` | uint256 | The new end block.
 
 ### setAppraisor
 ```solidity
   function setAppraisor(
-    address newAppraisor
+    address appraisor_
   ) external
 ```
 Sets the appraisal function.
@@ -90,16 +92,16 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newAppraisor` | address | The new appraisor.
+|`appraisor_` | address | The new appraisor.
 
-### deposit
+### depositLp
 ```solidity
-  function deposit(
+  function depositLp(
     uint256 tokenID
   ) external
 ```
 Deposit a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
-User will receive accumulated [`SOLACE`](./SOLACE) rewards if any.
+User will receive accumulated [**SOLACE**](./SOLACE) rewards if any.
 User must `ERC721.approve()` or `ERC721.setApprovalForAll()` first.
 
 
@@ -108,9 +110,9 @@ User must `ERC721.approve()` or `ERC721.setApprovalForAll()` first.
 | :--- | :--- | :------------------------------------------------------------------- |
 |`tokenID` | uint256 | The ID of the token to deposit.
 
-### depositSigned
+### depositLpSigned
 ```solidity
-  function depositSigned(
+  function depositLpSigned(
     address depositor,
     uint256 tokenID,
     uint256 deadline,
@@ -120,7 +122,7 @@ User must `ERC721.approve()` or `ERC721.setApprovalForAll()` first.
   ) external
 ```
 Deposit a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) using permit.
-User will receive accumulated [`SOLACE`](./SOLACE) rewards if any.
+User will receive accumulated [**SOLACE**](./SOLACE) rewards if any.
 
 
 #### Parameters:
@@ -139,8 +141,8 @@ User will receive accumulated [`SOLACE`](./SOLACE) rewards if any.
     struct ISolaceEthLpFarm.MintAndDepositParams params
   ) external returns (uint256 tokenID)
 ```
-Mint a new [**Uniswap**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) LP token then deposit it.
-User will receive accumulated [`SOLACE`](./SOLACE) rewards if any.
+Mint a new [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) then deposit it.
+User will receive accumulated [**SOLACE**](./SOLACE) rewards if any.
 
 
 #### Parameters:
@@ -152,9 +154,9 @@ User will receive accumulated [`SOLACE`](./SOLACE) rewards if any.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`tokenID`| struct ISolaceEthLpFarm.MintAndDepositParams | The newly minted token ID.
-### withdraw
+### withdrawLp
 ```solidity
-  function withdraw(
+  function withdrawLp(
     uint256 tokenID
   ) external
 ```
@@ -207,7 +209,7 @@ Updates farm information to be up to date to the current block.
     address user
   ) external returns (uint256 reward)
 ```
-Calculates the accumulated balance of [`SOLACE`](./SOLACE) for specified user.
+Calculates the accumulated balance of [**SOLACE**](./SOLACE) for specified user.
 
 
 #### Parameters:

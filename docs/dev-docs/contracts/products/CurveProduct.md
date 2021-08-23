@@ -8,7 +8,7 @@ The **Curve** product that is users can buy policy for **Curve**. It is a concre
     address governance_,
     contract IPolicyManager policyManager_,
     contract IRegistry registry_,
-    address coveredPlatform_,
+    address addressProvider_,
     uint40 minPeriod_,
     uint40 maxPeriod_,
     uint24 price_,
@@ -16,16 +16,16 @@ The **Curve** product that is users can buy policy for **Curve**. It is a concre
     address quoter_
   ) public
 ```
-The constructor.
+Constructs the CurveProduct.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The governor.
-|`policyManager_` | contract IPolicyManager | The IPolicyManager contract.
-|`registry_` | contract IRegistry | The IRegistry contract.
-|`coveredPlatform_` | address | A platform contract which locates contracts that are covered by this product.
+|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`policyManager_` | contract IPolicyManager | The [`PolicyManager`](../PolicyManager) contract.
+|`registry_` | contract IRegistry | The [`Registry`](../Registry) contract.
+|`addressProvider_` | address | The Curve Address Provider.
 |`minPeriod_` | uint40 | The minimum policy period in blocks to purchase a **policy**.
 |`maxPeriod_` | uint40 | The maximum policy period in blocks to purchase a **policy**.
 |`price_` | uint24 | The cover price for the **Product**.
@@ -39,28 +39,41 @@ The constructor.
     address positionContract
   ) public returns (uint256 positionAmount)
 ```
-It gives the user's total position in the product's protocol.
-The `positionContract` must be a **curve.fi pool** or **token**.
+Calculate the value of a user's position in **ETH**.
+The `positionContract` must be a [**curve.fi lp token**](https://curve.fi/pools).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | The `buyer` who is requesting the coverage quote (Please see https://curve.fi/pools).
-|`positionContract` | address | The address of the exact smart contract the `buyer` has their position in (e.g., for UniswapProduct this would be Pair's address).
+|`policyholder` | address | The owner of the position.
+|`positionContract` | address | The address of the **lp token**.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`positionAmount`| address | The user's total position in **Wei** in the product's protocol.
+|`positionAmount`| address | The value of the position.
+### addressProvider
+```solidity
+  function addressProvider(
+  ) external returns (address addressProvider_)
+```
+Curve's Address Provider.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`addressProvider_`|  | The address provider.
 ### setCoveredPlatform
 ```solidity
   function setCoveredPlatform(
-    address coveredPlatform_
+    address addressProvider_
   ) public
 ```
 Changes the covered platform.
-The function is used for if the the protocol changes their registry but keeps the children contracts.
+The function should be used if the the protocol changes their registry but keeps the children contracts.
 A new version of the protocol will likely require a new Product.
 Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
@@ -68,7 +81,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`coveredPlatform_` | address | The platform to cover.
+|`addressProvider_` | address | The new Address Provider.
 
 ### verifyPool
 ```solidity
@@ -89,16 +102,3 @@ Throws if not a valid pool or token.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`The`| address | token and the pool.
-### name
-```solidity
-  function name(
-  ) public returns (string)
-```
-Returns the name of the product.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Curve`|  | The name of the product.

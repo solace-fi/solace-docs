@@ -1,11 +1,13 @@
+Rewards [**Liquidity Providers**](/docs/user-docs/Liquidity%20Providers) in [**SOLACE**](./SOLACE) for providing liquidity in the [**SOLACE**](./SOLACE)-**ETH** [**Uniswap V3 Pool**](https://docs.uniswap.org/protocol/reference/core/UniswapV3Pool).
 
+Over the course of `startBlock` to `endBlock`, the farm distributes `blockReward` [**SOLACE**](./SOLACE) per block to all farmers split relative to the value of their deposited tokens.
 
 
 ## Functions
 ### setAppraisor
 ```solidity
   function setAppraisor(
-    address newAppraisor
+    address appraisor_
   ) external
 ```
 Sets the appraisal function.
@@ -15,16 +17,16 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newAppraisor` | address | The new appraisor.
+|`appraisor_` | address | The new appraisor.
 
-### deposit
+### depositLp
 ```solidity
-  function deposit(
+  function depositLp(
     uint256 tokenID
   ) external
 ```
 Deposit a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager).
-User will receive accumulated [`SOLACE`](../SOLACE) rewards if any.
+User will receive accumulated [**SOLACE**](../SOLACE) rewards if any.
 User must `ERC721.approve()` or `ERC721.setApprovalForAll()` first.
 
 
@@ -33,9 +35,9 @@ User must `ERC721.approve()` or `ERC721.setApprovalForAll()` first.
 | :--- | :--- | :------------------------------------------------------------------- |
 |`tokenID` | uint256 | The ID of the token to deposit.
 
-### depositSigned
+### depositLpSigned
 ```solidity
-  function depositSigned(
+  function depositLpSigned(
     address depositor,
     uint256 tokenID,
     uint256 deadline,
@@ -45,7 +47,7 @@ User must `ERC721.approve()` or `ERC721.setApprovalForAll()` first.
   ) external
 ```
 Deposit a [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) using permit.
-User will receive accumulated [`SOLACE`](../SOLACE) rewards if any.
+User will receive accumulated [**SOLACE**](../SOLACE) rewards if any.
 
 
 #### Parameters:
@@ -64,8 +66,8 @@ User will receive accumulated [`SOLACE`](../SOLACE) rewards if any.
     struct ISolaceEthLpFarm.MintAndDepositParams params
   ) external returns (uint256 tokenID)
 ```
-Mint a new Uniswap LP token then deposit it.
-User will receive accumulated Solace rewards if any.
+Mint a new [**Uniswap LP token**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) then deposit it.
+User will receive accumulated [**SOLACE**](./SOLACE) rewards if any.
 
 
 #### Parameters:
@@ -77,9 +79,9 @@ User will receive accumulated Solace rewards if any.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`tokenID`| struct ISolaceEthLpFarm.MintAndDepositParams | The newly minted token ID.
-### withdraw
+### withdrawLp
 ```solidity
-  function withdraw(
+  function withdrawLp(
     uint256 tokenID
   ) external
 ```
@@ -184,7 +186,7 @@ Token must exist and must exist in the correct pool.
   function solace(
   ) external returns (contract SOLACE)
 ```
-Native [`SOLACE`](../SOLACE) Token.
+Native [**SOLACE**](../SOLACE) Token.
 
 
 

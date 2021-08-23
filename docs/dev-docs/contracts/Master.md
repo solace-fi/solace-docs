@@ -62,7 +62,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 ### setSolacePerBlock
 ```solidity
   function setSolacePerBlock(
-    uint256 newSolacePerBlock
+    uint256 solacePerBlock_
   ) external
 ```
 Sets the Solace reward distribution across all farms.
@@ -72,7 +72,7 @@ Optionally updates all farms.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newSolacePerBlock` | uint256 | Amount of solace to distribute per block.
+|`solacePerBlock_` | uint256 | Amount of solace to distribute per block.
 
 ### massUpdateFarms
 ```solidity
@@ -96,7 +96,7 @@ Withdraw your rewards from all farms.
 ```solidity
   function _setAllocPoints(
     uint256 farmID,
-    uint256 newAllocPoints
+    uint256 allocPoints_
   ) internal
 ```
 Sets a farm's allocation points.
@@ -106,7 +106,7 @@ Sets a farm's allocation points.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`farmID` | uint256 | The farm to set allocation points.
-|`newAllocPoints` | uint256 | How many points to allocate this farm.
+|`allocPoints_` | uint256 | How many points to allocate this farm.
 
 ### _updateRewards
 ```solidity

@@ -105,16 +105,3 @@ The function purchases and deploys a policy on the behalf of the policyholder. I
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`policyID`| address | The policy ID.
-### name
-```solidity
-  function name(
-  ) public returns (string)
-```
-Returns the name of the product.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Mock`|  | The name of the product.

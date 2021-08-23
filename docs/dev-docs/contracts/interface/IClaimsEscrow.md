@@ -1,25 +1,15 @@
-The holder of claims. Policy holders can submit claims through their policy's product contract, in the process burning the policy and converting it to a claim. The policy holder will then need to wait for a cooldown period after which they can withdraw the payout.
+The payer of claims.
+
+[**Policyholders**](/docs/user-docs/Policy%20Holders) can submit claims through their policy's product contract, in the process burning the policy and converting it to a claim.
+
+The [**policyholder**](/docs/user-docs/Policy%20Holders) will then need to wait for a [`cooldownPeriod()`](#cooldownperiod) after which they can [`withdrawClaimsPayout()`](#withdrawclaimspayout).
+
+To pay the claims funds are taken from the [`Vault`](../Vault) and deducted from [**capital provider**](/docs/user-docs/Capital%20Providers) earnings.
+
+Claims are **ERC721**s and abbreviated as **SCT**.
 
 
 ## Functions
-### receive
-```solidity
-  function receive(
-  ) external
-```
-Receive function. Deposits eth.
-
-
-
-### fallback
-```solidity
-  function fallback(
-  ) external
-```
-Fallback function. Deposits eth.
-
-
-
 ### receiveClaim
 ```solidity
   function receiveClaim(
@@ -56,42 +46,6 @@ Only callable after the cooldown period has elapsed (from the time the claim was
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`claimID` | uint256 | The ID of the claim to withdraw payout for.
-
-### adjustClaim
-```solidity
-  function adjustClaim(
-    uint256 claimID,
-    uint256 value
-  ) external
-```
-Adjusts the value of a claim.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`claimID` | uint256 | The claim to adjust.
-|`value` | uint256 | The new payout of the claim.
-
-### sweep
-```solidity
-  function sweep(
-    address token,
-    uint256 amount,
-    address dst
-  ) external
-```
-Rescues misplaced tokens.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`token` | address | Token to pull.
-|`amount` | uint256 | Amount to pull.
-|`dst` | address | Destination for tokens.
 
 ### claim
 ```solidity
@@ -130,30 +84,6 @@ Gets information about a claim.
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`amount`| uint256 | Claim amount in ETH.
 |`receivedAt`|  | Time claim was received at.
-### cooldownPeriod
-```solidity
-  function cooldownPeriod(
-  ) external returns (uint256)
-```
-The duration of time in seconds the user must wait between submitting a claim and withdrawing the payout.
-
-
-
-### setCooldownPeriod
-```solidity
-  function setCooldownPeriod(
-    uint256 period
-  ) external
-```
-Set the cooldown duration.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`period` | uint256 | New cooldown duration in seconds
-
 ### exists
 ```solidity
   function exists(
@@ -226,6 +156,89 @@ List a user's claims.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`claimIDs`| address | List of claimIDs.
+### totalClaimsOutstanding
+```solidity
+  function totalClaimsOutstanding(
+  ) external returns (uint256)
+```
+Tracks how much **ETH** is required to payout all claims.
+
+
+
+### cooldownPeriod
+```solidity
+  function cooldownPeriod(
+  ) external returns (uint256)
+```
+The duration of time in seconds the user must wait between submitting a claim and withdrawing the payout.
+
+
+
+### adjustClaim
+```solidity
+  function adjustClaim(
+    uint256 claimID,
+    uint256 value
+  ) external
+```
+Adjusts the value of a claim.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`claimID` | uint256 | The claim to adjust.
+|`value` | uint256 | The new payout of the claim.
+
+### returnEth
+```solidity
+  function returnEth(
+    uint256 amount
+  ) external
+```
+Returns **ETH** to the [`Vault`](../Vault).
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`amount` | uint256 | Amount to pull.
+
+### setCooldownPeriod
+```solidity
+  function setCooldownPeriod(
+    uint256 cooldownPeriod_
+  ) external
+```
+Set the cooldown duration.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`cooldownPeriod_` | uint256 | New cooldown duration in seconds
+
+### receive
+```solidity
+  function receive(
+  ) external
+```
+Receive function. Deposits eth.
+
+
+
+### fallback
+```solidity
+  function fallback(
+  ) external
+```
+Fallback function. Deposits eth.
+
+
+
 ## Events
 ### ClaimReceived
 ```solidity

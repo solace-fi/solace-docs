@@ -1,4 +1,4 @@
-[Wrapped Ether](https://weth.io/) smart contract. Extends ERC20.
+[Wrapped Ether](https://weth.io/) smart contract. Extends **ERC20**.
 
 
 ## Functions
@@ -16,7 +16,7 @@ Constructs the WETH contract.
   function receive(
   ) external
 ```
-Receive function. Deposits eth.
+Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
 
 
@@ -25,7 +25,7 @@ Receive function. Deposits eth.
   function fallback(
   ) external
 ```
-Fallback function. Deposits eth.
+Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
 
 
@@ -34,7 +34,7 @@ Fallback function. Deposits eth.
   function deposit(
   ) public
 ```
-Wraps Ether. WETH will be minted to the sender at 1 ETH : 1 WETH.
+Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
 
 
@@ -44,7 +44,7 @@ Wraps Ether. WETH will be minted to the sender at 1 ETH : 1 WETH.
     uint256 wad
   ) public
 ```
-Unwraps Ether. ETH will be returned to the sender at 1 ETH : 1 WETH.
+Unwraps Ether. **ETH** will be returned to the sender at 1 **ETH** : 1 **WETH**.
 
 
 #### Parameters:

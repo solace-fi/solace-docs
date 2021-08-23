@@ -1,108 +1,142 @@
-Tracks the contracts in the Solaverse.
+Tracks the contracts of the Solaverse.
+
+[**Governance**](/docs/user-docs/Governance) can set the contract addresses and anyone can look them up.
+
+Note that `Registry` doesn't track all Solace contracts. Farms are tracked in [`Master`](../Master), Products are tracked in [`PolicyManager`](../PolicyManager), and the `Registry` is untracked.
 
 
 ## Functions
-### master
+### weth
 ```solidity
-  function master(
+  function weth(
   ) external returns (address)
 ```
-Protocol contract address getters
+Gets the [**WETH**](../WETH9) contract.
 
 
 
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`weth_`|  | The address of the [**WETH**](../WETH9) contract.
 ### vault
 ```solidity
   function vault(
   ) external returns (address)
 ```
+Gets the [`Vault`](../Vault) contract.
 
 
 
-
-### treasury
-```solidity
-  function treasury(
-  ) external returns (address)
-```
-
-
-
-
-### solace
-```solidity
-  function solace(
-  ) external returns (address)
-```
-
-
-
-
-### locker
-```solidity
-  function locker(
-  ) external returns (address)
-```
-
-
-
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`vault_`|  | The address of the [`Vault`](../Vault) contract.
 ### claimsEscrow
 ```solidity
   function claimsEscrow(
   ) external returns (address)
 ```
+Gets the [`ClaimsEscrow`](../ClaimsEscrow) contract.
 
 
 
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`claimsEscrow_`|  | The address of the [`ClaimsEscrow`](../ClaimsEscrow) contract.
+### treasury
+```solidity
+  function treasury(
+  ) external returns (address)
+```
+Gets the [`Treasury`](../Treasury) contract.
 
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`treasury_`|  | The address of the [`Treasury`](../Treasury) contract.
 ### policyManager
 ```solidity
   function policyManager(
   ) external returns (address)
 ```
+Gets the [`PolicyManager`](../PolicyManager) contract.
 
 
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`policyManager_`|  | The address of the [`PolicyManager`](../PolicyManager) contract.
 ### riskManager
 ```solidity
   function riskManager(
   ) external returns (address)
 ```
+Gets the [`RiskManager`](../RiskManager) contract.
 
 
 
-
-### setSolace
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`riskManager_`|  | The address of the [`RiskManager`](../RiskManager) contract.
+### solace
 ```solidity
-  function setSolace(
-    address solace_
+  function solace(
+  ) external returns (address)
+```
+Gets the [**SOLACE**](../SOLACE) contract.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`solace_`|  | The address of the [**SOLACE**](../SOLACE) contract.
+### master
+```solidity
+  function master(
+  ) external returns (address)
+```
+Gets the [`Master`](../Master) contract.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`master_`|  | The address of the [`Master`](../Master) contract.
+### locker
+```solidity
+  function locker(
+  ) external returns (address)
+```
+Gets the [`Locker`](../Locker) contract.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`locker_`|  | The address of the [`Locker`](../Locker) contract.
+### setWeth
+```solidity
+  function setWeth(
+    address weth_
   ) external
 ```
-Sets the solace token contract.
+Sets the [**WETH**](../WETH9) contract.
 Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`solace_` | address | The solace token address.
-
-### setMaster
-```solidity
-  function setMaster(
-    address master_
-  ) external
-```
-Sets the master contract.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`master_` | address | The master contract address.
+|`weth_` | address | The address of the [**WETH**](../WETH9) contract.
 
 ### setVault
 ```solidity
@@ -110,44 +144,14 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
     address vault_
   ) external
 ```
-Sets the vault contract.
+Sets the [`Vault`](../Vault) contract.
 Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`vault_` | address | The vault contract address.
-
-### setTreasury
-```solidity
-  function setTreasury(
-    address treasury_
-  ) external
-```
-Sets the treasury contract.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`treasury_` | address | The treasury contract address.
-
-### setLocker
-```solidity
-  function setLocker(
-    address locker_
-  ) external
-```
-Sets the locker contract.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`locker_` | address | The locker address.
+|`vault_` | address | The address of the [`Vault`](../Vault) contract.
 
 ### setClaimsEscrow
 ```solidity
@@ -155,14 +159,29 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
     address claimsEscrow_
   ) external
 ```
-Sets the Claims Escrow contract.
+Sets the [`Claims Escrow`](../ClaimsEscrow) contract.
 Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`claimsEscrow_` | address | The Claims Escrow address.
+|`claimsEscrow_` | address | The address of the [`Claims Escrow`](../ClaimsEscrow) contract.
+
+### setTreasury
+```solidity
+  function setTreasury(
+    address treasury_
+  ) external
+```
+Sets the [`Treasury`](../Treasury) contract.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`treasury_` | address | The address of the [`Treasury`](../Treasury) contract.
 
 ### setPolicyManager
 ```solidity
@@ -170,14 +189,14 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
     address policyManager_
   ) external
 ```
-Sets the PolicyManager contract.
+Sets the [`Policy Manager`](../PolicyManager) contract.
 Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyManager_` | address | The PolicyManager address.
+|`policyManager_` | address | The address of the [`Policy Manager`](../PolicyManager) contract.
 
 ### setRiskManager
 ```solidity
@@ -185,27 +204,64 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
     address riskManager_
   ) external
 ```
-Sets the RiskManager contract.
+Sets the [`Risk Manager`](../RiskManager) contract.
 Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`riskManager_` | address | The RiskManager address.
+|`riskManager_` | address | The address of the [`Risk Manager`](../RiskManager) contract.
+
+### setSolace
+```solidity
+  function setSolace(
+    address solace_
+  ) external
+```
+Sets the [**SOLACE**](../SOLACE) contract.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`solace_` | address | The address of the [**SOLACE**](../SOLACE) contract.
+
+### setMaster
+```solidity
+  function setMaster(
+    address master_
+  ) external
+```
+Sets the [`Master`](../Master) contract.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`master_` | address | The address of the [`Master`](../Master) contract.
+
+### setLocker
+```solidity
+  function setLocker(
+    address locker_
+  ) external
+```
+Sets the [`Locker`](../Locker) contract.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`locker_` | address | The address of the [`Locker`](../Locker) contract.
 
 ## Events
-### SolaceSet
+### WethSet
 ```solidity
-  event SolaceSet(
-  )
-```
-
-
-
-### MasterSet
-```solidity
-  event MasterSet(
+  event WethSet(
   )
 ```
 
@@ -219,25 +275,17 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 
 
 
-### TreasurySet
-```solidity
-  event TreasurySet(
-  )
-```
-
-
-
-### LockerSet
-```solidity
-  event LockerSet(
-  )
-```
-
-
-
 ### ClaimsEscrowSet
 ```solidity
   event ClaimsEscrowSet(
+  )
+```
+
+
+
+### TreasurySet
+```solidity
+  event TreasurySet(
   )
 ```
 
@@ -254,6 +302,30 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
 ### RiskManagerSet
 ```solidity
   event RiskManagerSet(
+  )
+```
+
+
+
+### SolaceSet
+```solidity
+  event SolaceSet(
+  )
+```
+
+
+
+### MasterSet
+```solidity
+  event MasterSet(
+  )
+```
+
+
+
+### LockerSet
+```solidity
+  event LockerSet(
   )
 ```
 

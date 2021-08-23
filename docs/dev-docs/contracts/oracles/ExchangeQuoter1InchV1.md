@@ -1,46 +1,29 @@
-Calculates exchange rates for trades between ERC20 tokens and Ether. This version uses rates set by governance.
+Calculates exchange rates for trades between ERC20 tokens and Ether. This version uses the [1inch on-chain DeFi aggregation protocol](https://github.com/1inch/1inchProtocol) that was used in [**Legacy 1Inch exchange**])https://legacy.1inch.exchange/).
 
 
 ## Functions
 ### constructor
 ```solidity
   function constructor(
-    address governance_
+    address oneSplitView_
   ) public
 ```
-Constructs the ExchangeQuoter contract.
+Constructs the ExchangeQuoter1InchV1 contract.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
-
-### setRates
-```solidity
-  function setRates(
-    address[] tokens,
-    uint256[] newRates
-  ) external
-```
-Sets the exchange rates.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`tokens` | address[] | The tokens to set.
-|`newRates` | uint256[] | The rates to set.
+|`oneSplitView_` | address | The address of the 1inch router.
 
 ### tokenToEth
 ```solidity
   function tokenToEth(
     address token,
     uint256 amount
-  ) external returns (uint256 amountOut)
+  ) public returns (uint256 amountOut)
 ```
-Calculates the exchange rate for an amount of token to eth.
+Calculates the exchange rate for an `amount` of `token` to **ETH**.
 
 
 #### Parameters:
@@ -52,4 +35,4 @@ Calculates the exchange rate for an amount of token to eth.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountOut`| address | The amount of eth received.
+|`amountOut`| address | The amount of **ETH** received.

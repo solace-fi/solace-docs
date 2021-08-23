@@ -6,109 +6,6 @@ Policies are [**ERC721s**](https://docs.openzeppelin.com/contracts/4.x/api/token
 
 
 ## Functions
-### addProduct
-```solidity
-  function addProduct(
-    address product
-  ) external
-```
-Adds a new product.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`product` | address | the new product
-
-### removeProduct
-```solidity
-  function removeProduct(
-    address product
-  ) external
-```
-Removes a product.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`product` | address | the product to remove
-
-### setPolicyDescriptor
-```solidity
-  function setPolicyDescriptor(
-    address policyDescriptor
-  ) external
-```
-Set the token descriptor.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`policyDescriptor` | address | The new token descriptor address.
-
-### policyDescriptor
-```solidity
-  function policyDescriptor(
-  ) external returns (address)
-```
-The address of the policy descriptor contract, which handles generating token URIs for policies.
-
-
-
-### productIsActive
-```solidity
-  function productIsActive(
-    address product
-  ) external returns (bool status)
-```
-Checks is an address is an active product.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`product` | address | The product to check.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | True if the product is active.
-### numProducts
-```solidity
-  function numProducts(
-  ) external returns (uint256 count)
-```
-Returns the number of products.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`count`|  | The number of products.
-### getProduct
-```solidity
-  function getProduct(
-    uint256 productNum
-  ) external returns (address product)
-```
-Returns the product at the given index.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`productNum` | uint256 | The index to query.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`product`| uint256 | The address of the product.
 ### policyInfo
 ```solidity
   function policyInfo(
@@ -279,7 +176,7 @@ Lists all policies for a given policy holder.
 ### exists
 ```solidity
   function exists(
-  ) external returns (bool)
+  ) external returns (bool status)
 ```
 
 
@@ -288,18 +185,54 @@ Lists all policies for a given policy holder.
 ### policyIsActive
 ```solidity
   function policyIsActive(
+    uint256 policyID
   ) external returns (bool)
 ```
+Checks if a policy is active.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyID` | uint256 | The policy ID.
 
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| uint256 | True if the policy is active.
 ### policyHasExpired
 ```solidity
   function policyHasExpired(
+    uint256 policyID
   ) external returns (bool)
 ```
+Checks whether a given policy is expired.
 
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyID` | uint256 | The policy ID.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| uint256 | True if the policy is expired.
+### totalPolicyCount
+```solidity
+  function totalPolicyCount(
+  ) external returns (uint256 count)
+```
+The total number of policies ever created.
+
+
+
+### policyDescriptor
+```solidity
+  function policyDescriptor(
+  ) external returns (address)
+```
+The address of the [`PolicyDescriptor`](./PolicyDescriptor) contract.
 
 
 
@@ -313,50 +246,126 @@ Lists all policies for a given policy holder.
     uint24 price
   ) external returns (uint256 policyID)
 ```
-Creates new ERC721 policy `tokenID` for `to`.
-The caller must be a product.
+Creates a new policy.
+Can only be called by **products**.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | receiver of new policy token
-|`positionContract` | address | contract address where the position is covered
-|`expirationBlock` | uint256 | policy expiration block number
-|`coverAmount` | uint40 | policy coverage amount (in wei)
-|`price` | uint24 | coverage price
+|`policyholder` | address | The receiver of new policy token.
+|`positionContract` | address | The contract address of the position.
+|`expirationBlock` | uint256 | The policy expiration block number.
+|`coverAmount` | uint40 | The policy coverage amount (in wei).
+|`price` | uint24 | The coverage price.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| address | (aka tokenID)
+|`policyID`| address | The policy ID.
 ### setPolicyInfo
 ```solidity
   function setPolicyInfo(
+    uint256 policyID,
+    address policyholder,
+    address positionContract,
+    uint256 expirationBlock,
+    uint40 coverAmount,
+    uint24 price
   ) external
 ```
+Modifies a policy.
+Can only be called by **products**.
 
 
-
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyID` | uint256 | The policy ID.
+|`policyholder` | address | The receiver of new policy token.
+|`positionContract` | address | The contract address where the position is covered.
+|`expirationBlock` | uint256 | The policy expiration block number.
+|`coverAmount` | uint40 | The policy coverage amount (in wei).
+|`price` | uint24 | The coverage price.
 
 ### burn
 ```solidity
   function burn(
+    uint256 policyID
   ) external
 ```
+Burns expired or cancelled policies.
+Can only be called by **products**.
 
 
-
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyID` | uint256 | The ID of the policy to burn.
 
 ### updateActivePolicies
 ```solidity
   function updateActivePolicies(
+    uint256[] policyIDs
   ) external
 ```
+Burns expired policies.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyIDs` | uint256[] | The list of expired policies.
+
+### productIsActive
+```solidity
+  function productIsActive(
+    address product
+  ) external returns (bool status)
+```
+Checks is an address is an active product.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`product` | address | The product to check.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| address | True if the product is active.
+### numProducts
+```solidity
+  function numProducts(
+  ) external returns (uint256 count)
+```
+Returns the number of products.
 
 
 
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`count`|  | The number of products.
+### getProduct
+```solidity
+  function getProduct(
+    uint256 productNum
+  ) external returns (address product)
+```
+Returns the product at the given index.
 
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`productNum` | uint256 | The index to query.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`product`| uint256 | The address of the product.
 ### activeCoverAmount
 ```solidity
   function activeCoverAmount(
@@ -366,29 +375,58 @@ The caller must be a product.
 
 
 
+### addProduct
+```solidity
+  function addProduct(
+    address product
+  ) external
+```
+Adds a new product.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`product` | address | the new product
+
+### removeProduct
+```solidity
+  function removeProduct(
+    address product
+  ) external
+```
+Removes a product.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`product` | address | the product to remove
+
+### setPolicyDescriptor
+```solidity
+  function setPolicyDescriptor(
+    address policyDescriptor
+  ) external
+```
+Set the token descriptor.
+Can only be called by the current [**governor**](/docs/user-docs/Governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyDescriptor` | address | The new token descriptor address.
+
 ## Events
-### ProductAdded
-```solidity
-  event ProductAdded(
-  )
-```
-
-
-
-### ProductRemoved
-```solidity
-  event ProductRemoved(
-  )
-```
-
-
-
 ### PolicyCreated
 ```solidity
   event PolicyCreated(
   )
 ```
-
+Emitted when a policy is created.
 
 
 ### PolicyBurned
@@ -396,6 +434,22 @@ The caller must be a product.
   event PolicyBurned(
   )
 ```
+Emitted when a policy is burned.
 
+
+### ProductAdded
+```solidity
+  event ProductAdded(
+  )
+```
+Emitted when a new product is added.
+
+
+### ProductRemoved
+```solidity
+  event ProductRemoved(
+  )
+```
+Emitted when a new product is removed.
 
 

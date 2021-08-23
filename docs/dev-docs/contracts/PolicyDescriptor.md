@@ -10,13 +10,13 @@ It is inspired from Uniswap V3 [`NonfungibleTokenPositionDescriptor`](https://do
     uint256 policyID
   ) external returns (string description)
 ```
-Produces the URI describing a particular policy `product` for a given `policy ID`.
+Describes a policy.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyManager` | contract IPolicyManager | The policy manager to retrieve policy info to produce URI descriptor.
+|`policyManager` | contract IPolicyManager | The policy manager to retrieve policy info to produce URI description.
 |`policyID` | uint256 | The ID of the policy for which to produce a description.
 
 #### Return Values:

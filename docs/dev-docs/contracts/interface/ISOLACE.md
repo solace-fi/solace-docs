@@ -3,20 +3,6 @@
 
 
 ## Functions
-### constructor
-```solidity
-  function constructor(
-    address governance_
-  ) public
-```
-Constructs the Solace Token contract.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
-
 ### isMinter
 ```solidity
   function isMinter(
