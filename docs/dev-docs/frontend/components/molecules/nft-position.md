@@ -8,7 +8,7 @@ title: NftPosition
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `src` | string => void | Source string used as src for img tag.
+| `tokenId` | BigNumber | ID for LP token
 
 ## Styled Components
 
@@ -17,6 +17,12 @@ title: NftPosition
 ## Components
 
 ### `NftPosition` (exported)
+
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Contracts | `lpToken`
 
 Props Dependencies:
 - `NftPositionProps`
