@@ -40,7 +40,6 @@
     0 2px 4px 0 rgba(0, 0, 0, 0.1);
 
   --ifm-global-spacing: 1.5rem;
-  /* --ifm-navbar-background-color: rgba(255, 0.2); */
 }
 
 html[data-theme='dark'] {
@@ -53,6 +52,7 @@ html[data-theme='dark'] {
 
   background-position: 0px -30vh;
   background-repeat: no-repeat;
+  --ifm-navbar-background-color: rgb(9, 18, 27);
 
   /* any other colors you wish to overwrite */
 }

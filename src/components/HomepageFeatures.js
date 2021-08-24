@@ -9,7 +9,7 @@ const FeatureList = [
     link: 'docs/user-docs/intro',
     description: (
       <>
-        Learn about the different roles as a user of the Solace protocol.
+        Get started on learning how to use the Solace Protocol.
       </>
     ),
   },
@@ -18,7 +18,7 @@ const FeatureList = [
     link: 'docs/dev-docs/capital-management',
     description: (
       <>
-        Learn about the architecture of the Solace protocol and its development.
+        Documentation for developers.
       </>
     ),
   },
