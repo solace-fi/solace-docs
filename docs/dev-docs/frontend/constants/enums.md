@@ -1,4 +1,6 @@
-# Enums
+---
+title: "Enums"
+---
 
 ### `TransactionCondition` (exported)
 
@@ -18,6 +20,7 @@ Error {
   NO_PROVIDER,
   UNKNOWN,
   NO_ACCESS,
+  WALLET_NETWORK_UNSYNC,
 }
 ```
 ### `FunctionName` (exported)

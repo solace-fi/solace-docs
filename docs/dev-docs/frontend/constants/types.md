@@ -1,4 +1,6 @@
-# Types
+---
+title: "Types"
+---
 
 ### `NetworkCache` (exported)
 

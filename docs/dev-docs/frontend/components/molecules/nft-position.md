@@ -10,10 +10,6 @@ title: NftPosition
 | :--- | :--- | :------------------------------------------------------------------- |
 | `tokenId` | BigNumber | ID for LP token
 
-## Styled Components
-
-### `ScaledContainer`
-
 ## Components
 
 ### `NftPosition` (exported)

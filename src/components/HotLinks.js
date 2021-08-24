@@ -23,14 +23,14 @@ const HotLinkList = [
 
 function HotLink({title, link}) {
     return (
-        <div className={styles.link}>
         <Link to={link} style={{ textDecoration: 'none' }}>
-            <div className="row">
-                <InlineIcon icon={githubFill} width={25} height={25} />
-                <h4 style={{margin: '0', marginLeft: '1rem'}}>{title}</h4>
+            <div className={styles.link}>
+                <div className="row">
+                    <InlineIcon icon={githubFill} width={25} height={25} />
+                    <h4 style={{margin: '0', marginLeft: '1rem'}}>{title}</h4>
+                </div>
             </div>
         </Link>
-        </div>
     )
 }
 

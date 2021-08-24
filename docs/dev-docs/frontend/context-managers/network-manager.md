@@ -8,6 +8,8 @@ NetworkManager keeps track of the network currently connected, as well as the ne
 
 ## How does it work?
 
+NetworkManager doesn't have any complex state or operations. It records what the active network is and makes that known throughout the app. While this makes the Manager simple by design, its function is prominent to the app.
+
 Hook Dependencies:
 - `useSessionStorage()`
 
