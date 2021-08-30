@@ -33,7 +33,7 @@ module.exports = {
           position: "left",
         },
         {
-          label: "User Docs",
+          label: "User Guides",
           to: "docs/user-docs/intro",
           position: "right",
         },
@@ -81,7 +81,7 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: "User Docs",
+              label: "User Guides",
               to: "docs/user-docs/intro",
             },
             {

@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'User Docs',
+    title: 'User Guides',
     link: 'docs/user-docs/intro',
     description: (
       <>
