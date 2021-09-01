@@ -1,7 +1,6 @@
 # Risk Assessment
 
-A robust risk assessment criterion will be leveraged to measure risk across the platform
-for Solace to support a return on investment and guaranteed coverage for policies.
+A robust risk assessment criterion will be leveraged to measure risk across the platform for Solace to support a return on investment and guaranteed coverage for policies.
 
 ## Main Components
 
