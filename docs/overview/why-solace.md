@@ -13,7 +13,7 @@ Solace is one of the decentralized multi-chain insurance protocols that exist to
 
 | Protocol | Risk Management | KYC | Considerations |
 | :--- |  :--- | :--- | :--- | :--- |
-| Solace | Does not rely on voting for assessing risk, instead it uses probabilistic models | No | Automatic claims assessment along with immediate validation and payout. Covers liquidity positions in different protocols. High capital efficiency
+| Solace | Does not rely on voting for assessing risk, instead it uses probabilistic models | No | Automatic claims assessment along with immediate validation and payout. Covers liquidity positions in different protocols. High capital efficiency.
 | Nexus Mutual | Community voting through staked tokens | Yes | Community voting improperly prices risk for protocols |
-| Cover | Prediction market solution, claims validated by committee | No | Market voting does not accurately capture the risk. Claims processed by committees are slow and could be biased. Low capital efficency. |
+| Cover | Prediction market solution, claims validated by committee | No | Market voting does not accurately capture the risk. Claims processed by committees are slow and could be biased. Low capital efficiency. |
 | Opyn | Financial derivative (options) solutions | No | Does not cover liquidity positions in protocols, only price action for an asset. Currently only available for UNI. |

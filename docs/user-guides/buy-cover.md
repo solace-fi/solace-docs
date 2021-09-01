@@ -6,9 +6,13 @@ sidebar_position: 2
 
 A guide to buying coverage.
 
-Before buying a policy, you will need to have deposited funds on another protocol for Solace to provide coverage for.
+To learn how to obtain payout after buying coverage, please refer to [**Make a Claim**](make-a-claim).
 
-After connecting your wallet, navigate to the **Buy Cover** page. There will be a 4-step form for you to navigate through.
+#### Step 0: Have existing liquidity positions with other protocols
+
+- ##### Before buying a policy, you will need to have deposited funds on another protocol for Solace to detect and provide coverage for.
+
+- ##### After connecting your wallet, navigate to the **Buy Cover** page. There will be a 4-step form for you to navigate through.
 
 #### Step 1: Choose the protocol that you would like to get covered
   
@@ -34,4 +38,5 @@ After connecting your wallet, navigate to the **Buy Cover** page. There will be 
 
 #### Step 5: Confirmation
 - ##### The page lets you know that your purchase has been confirmed.
-- ##### You may click **Go to Dashboard** button to navigate to your dashboard to see your policies, or the **Start New Quote** button to restart the form to buy another policy. 
+- ##### You may click **Go to Dashboard** button to navigate to your dashboard to see your policies, or the **Start New Quote** button to restart the form to buy another policy.
+- ##### Congratulations! From here on out, if you ever suffered financial loss while holding the appropriate policy, you may make a claim on that policy on the Dashboard.

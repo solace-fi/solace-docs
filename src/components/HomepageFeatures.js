@@ -3,13 +3,43 @@ import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
 import Link from '@docusaurus/Link';
 
-const FeatureList = [
+const HeroFeatureList = [
   {
-    title: 'How to Buy Coverage',
+    title: 'Buy Coverage',
     link: 'docs/user-guides/buy-cover',
     description: (
       <>
-        How to get started on buying coverage for your assets.
+        Learn how to buy coverage to protect your assets.
+      </>
+    ),
+  },
+  {
+    title: 'Earn Rewards',
+    link: 'docs/user-guides/earn-rewards',
+    description: (
+      <>
+        Learn how to contribute to Solace and earn rewards.
+      </>
+    ),
+  },
+]
+
+const FeatureList = [
+  {
+    title: 'Overview',
+    link: 'docs/overview/what-is-solace',
+    description: (
+      <>
+        What is Solace and its role in decentralized finance ecosystems?
+      </>
+    ),
+  },
+  {
+    title: 'Protocol',
+    link: 'docs/protocol/intro',
+    description: (
+      <>
+        Read about the protocol's design, components, and other features.
       </>
     ),
   },
@@ -33,9 +63,21 @@ const FeatureList = [
   },
 ];
 
+function HeroFeature({title, link, description}) {
+  return (
+      <Link to={link} style={{ textDecoration: 'none' }}>
+      <div className={styles.hero__feature}>
+        <div className="text--center padding-horiz--md">
+          <h3 className={styles.hero__feature__title}>{title}</h3>
+          <p>{description}</p>
+        </div>
+      </div>
+      </Link>
+  );
+}
+
 function Feature({title, link, description}) {
   return (
-    <div className={clsx('col col--4')}>
       <Link to={link} style={{ textDecoration: 'none' }}>
       <div className={styles.feature}>
         <div className="text--center padding-horiz--md">
@@ -44,20 +86,34 @@ function Feature({title, link, description}) {
         </div>
       </div>
       </Link>
-    </div>
   );
 }
 
 export default function HomepageFeatures() {
   return (
+    <>
+    <section className={styles.features}>
+    <div className="container">
+      <div className="row">
+        {HeroFeatureList.map((props, idx) => (
+          <div className={clsx('col col--6')}>
+            <HeroFeature key={idx} {...props} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+            {FeatureList.map((props, idx) => (
+              <div className={clsx('col col--3')}>
+                <Feature key={idx} {...props} />
+              </div>
+            ))}
         </div>
       </div>
     </section>
+    </>
   );
 }
