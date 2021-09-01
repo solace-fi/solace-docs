@@ -5,20 +5,29 @@ import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'User Guides',
-    link: 'docs/user-docs/intro',
+    title: 'How to Buy Coverage',
+    link: 'docs/user-guides/buy-cover',
     description: (
       <>
-        Get started on learning how to use the Solace Protocol.
+        How to get started on buying coverage for your assets.
+      </>
+    ),
+  },
+  {
+    title: 'User Guides',
+    link: 'docs/user-guides/intro',
+    description: (
+      <>
+        Dive deeper into the many other ways of using the Solace Protocol.
       </>
     ),
   },
   {
     title: 'Developer Docs',
-    link: 'docs/dev-docs/capital-management',
+    link: 'docs/dev-docs/intro',
     description: (
       <>
-        Documentation for developers.
+        Documentation about the protocol's codebase and smart contracts.
       </>
     ),
   },
@@ -26,7 +35,7 @@ const FeatureList = [
 
 function Feature({title, link, description}) {
   return (
-    <div className={clsx('col col--6')}>
+    <div className={clsx('col col--4')}>
       <Link to={link} style={{ textDecoration: 'none' }}>
       <div className={styles.feature}>
         <div className="text--center padding-horiz--md">

@@ -1,6 +1,10 @@
-# Submitting a Claim
+---
+sidebar_position: 3
+---
 
-A guide to submitting a claim for a policy.
+# Make a Claim
+
+A guide to making a claim for a policy.
 
 If you hold a policy for your position during a loss event, that is if an amount of your position is lost for whatever reason, you may submit a claim to get reimbursed the amount that you have lost, as long as it can be covered by your policy.
 

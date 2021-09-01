@@ -1,10 +1,10 @@
 The payer of claims.
 
-[**Policyholders**](/docs/user-docs/Policy%20Holders) can submit claims through their policy's product contract, in the process burning the policy and converting it to a claim.
+[**Policyholders**](/docs/protocol/policy-holder) can submit claims through their policy's product contract, in the process burning the policy and converting it to a claim.
 
-The [**policyholder**](/docs/user-docs/Policy%20Holders) will then need to wait for a [`cooldownPeriod()`](#cooldownperiod) after which they can [`withdrawClaimsPayout()`](#withdrawclaimspayout).
+The [**policyholder**](/docs/protocol/policy-holder) will then need to wait for a [`cooldownPeriod()`](#cooldownperiod) after which they can [`withdrawClaimsPayout()`](#withdrawclaimspayout).
 
-To pay the claims funds are taken from the [`Vault`](../Vault) and deducted from [**capital provider**](/docs/user-docs/Capital%20Providers) earnings.
+To pay the claims funds are taken from the [`Vault`](../Vault) and deducted from [**capital provider**](/docs/user-guides/capital-provider/cp-role-guide) earnings.
 
 Claims are **ERC721**s and abbreviated as **SCT**.
 
@@ -182,7 +182,7 @@ The duration of time in seconds the user must wait between submitting a claim an
   ) external
 ```
 Adjusts the value of a claim.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
@@ -198,7 +198,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
   ) external
 ```
 Returns **ETH** to the [`Vault`](../Vault).
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
@@ -213,7 +213,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
   ) external
 ```
 Set the cooldown duration.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

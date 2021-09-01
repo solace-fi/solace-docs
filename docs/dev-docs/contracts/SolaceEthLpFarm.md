@@ -1,4 +1,4 @@
-Rewards [**Liquidity Providers**](/docs/user-docs/Liquidity%20Providers) in [**SOLACE**](./SOLACE) for providing liquidity in the [**SOLACE**](./SOLACE)-**ETH** [**Uniswap V3 Pool**](https://docs.uniswap.org/protocol/reference/core/UniswapV3Pool).
+Rewards [**Liquidity Providers**](/docs/user-guides/liquidity-provider/lp-role-guide) in [**SOLACE**](./SOLACE) for providing liquidity in the [**SOLACE**](./SOLACE)-**ETH** [**Uniswap V3 Pool**](https://docs.uniswap.org/protocol/reference/core/UniswapV3Pool).
 
 Over the course of `startBlock` to `endBlock`, the farm distributes `blockReward` [**SOLACE**](./SOLACE) per block to all farmers split relative to the value of their deposited tokens.
 
@@ -22,7 +22,7 @@ Constructs the farm.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`governance_` | address | The address of the [governor](/docs/protocol/governance).
 |`master_` | address | Address of the [`Master`](./Master) contract.
 |`lpToken_` | address | Address of the [**Uniswap NonFungiblePositionManager**](https://docs.uniswap.org/protocol/reference/periphery/NonfungiblePositionManager) contract.
 |`solace_` | contract SOLACE | Address of the [**SOLACE**](./SOLACE) token contract.
@@ -71,7 +71,7 @@ Can only be called by [`Master`](./Master).
   ) external
 ```
 Sets the farm's end block. Used to extend the duration.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
@@ -86,7 +86,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
   ) external
 ```
 Sets the appraisal function.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

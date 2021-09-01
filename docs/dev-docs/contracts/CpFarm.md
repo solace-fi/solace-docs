@@ -1,8 +1,8 @@
-Rewards [**Capital Providers**](/docs/user-docs/Capital%20Providers) in [**SOLACE**](./SOLACE) for providing capital in the [`Vault`](./Vault).
+Rewards [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) in [**SOLACE**](./SOLACE) for providing capital in the [`Vault`](./Vault).
 
 Over the course of `startBlock` to `endBlock`, the farm distributes `blockReward` [**SOLACE**](./SOLACE) per block to all farmers split relative to the amount of [**SCP**](./Vault) they have deposited.
 
-Users can become [**Capital Providers**](/docs/user-docs/Capital%20Providers) by depositing **ETH** into the [`Vault`](./Vault), receiving [**SCP**](./Vault) in the process. [**Capital Providers**](/docs/user-docs/Capital%20Providers) can then deposit their [**SCP**](./Vault) via [`depositCp()`](#depositcp) or [`depositCpSigned()`](#depositcpsigned). Alternatively users can bypass the [`Vault`](./Vault) and stake their **ETH** via [`depositEth()`](#depositeth).
+Users can become [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) by depositing **ETH** into the [`Vault`](./Vault), receiving [**SCP**](./Vault) in the process. [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) can then deposit their [**SCP**](./Vault) via [`depositCp()`](#depositcp) or [`depositCpSigned()`](#depositcpsigned). Alternatively users can bypass the [`Vault`](./Vault) and stake their **ETH** via [`depositEth()`](#depositeth).
 
 Users can withdraw their rewards via [`withdrawRewards()`](#withdrawrewards) and compound their rewards via [`compoundRewards()`](#compoundrewards).
 
@@ -31,7 +31,7 @@ Constructs the CpFarm.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`governance_` | address | The address of the [governor](/docs/protocol/governance).
 |`master_` | address | Address of the [`Master`](./Master) contract.
 |`vault_` | address | Address of the [`Vault`](./Vault) contract.
 |`solace_` | contract SOLACE | Address of the [**SOLACE**](./SOLACE) token contract.
@@ -81,7 +81,7 @@ Can only be called by [`Master`](./Master).
   ) external
 ```
 Sets the farm's end block. Used to extend the duration.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

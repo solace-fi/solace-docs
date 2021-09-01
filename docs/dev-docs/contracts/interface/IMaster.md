@@ -75,7 +75,7 @@ Given a farm ID, how many points the farm was allocated.
   ) external returns (uint256 farmID)
 ```
 Registers a farm.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 Cannot register a farm more than once.
 
 
@@ -97,7 +97,7 @@ Cannot register a farm more than once.
   ) external
 ```
 Sets a farm's allocation points.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

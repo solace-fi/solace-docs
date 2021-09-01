@@ -1,10 +1,10 @@
 The risk-backing capital pool.
 
-[**Capital Providers**](/docs/user-docs/Capital%20Providers) can deposit **ETH** or **WETH** into the `Vault` to mint shares. Shares are represented as **CP tokens** aka **SCP** and extend `ERC20`. [**Capital Providers**](/docs/user-docs/Capital%20Providers) should use [`depositEth()`](#depositeth) or [`depositWeth()`](#depositweth), not regular **ETH** or **WETH** transfer.
+[**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) can deposit **ETH** or **WETH** into the `Vault` to mint shares. Shares are represented as **CP tokens** aka **SCP** and extend `ERC20`. [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) should use [`depositEth()`](#depositeth) or [`depositWeth()`](#depositweth), not regular **ETH** or **WETH** transfer.
 
-As [**Policyholders**](/docs/user-docs/Policy%20Holders) purchase coverage, premiums will flow into the capital pool and are split amongst the [**Capital Providers**](/docs/user-docs/Capital%20Providers). If a loss event occurs in an active policy, some funds will be used to payout the claim. These events will affect the price per share but not the number or distribution of shares.
+As [**Policyholders**](/docs/protocol/policy-holder) purchase coverage, premiums will flow into the capital pool and are split amongst the [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide). If a loss event occurs in an active policy, some funds will be used to payout the claim. These events will affect the price per share but not the number or distribution of shares.
 
-By minting shares of the `Vault`, [**Capital Providers**](/docs/user-docs/Capital%20Providers) willingly accept the risk that the whole or a part of their funds may be used payout claims. A malicious [**capital provider**](/docs/user-docs/Capital%20Providers) could detect a loss event and try to withdraw their funds before claims are paid out. To prevent this, the `Vault` uses a cooldown mechanic such that while the [**capital provider**](/docs/user-docs/Capital%20Providers) is not in cooldown mode (default) they can mint, send, and receive **SCP** but not withdraw **ETH**. To withdraw their **ETH**, the [**capital provider**](/docs/user-docs/Capital%20Providers) must [`startCooldown()`](#startcooldown), wait no less than [`cooldownMin()`](#cooldownmin) and no more than [`cooldownMax()`](#cooldownmax), then call [`withdrawEth()`](#withdraweth) or [`withdrawWeth()`](#withdrawweth). While in cooldown mode users cannot send or receive **SCP** and minting shares will take them out of cooldown.
+By minting shares of the `Vault`, [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) willingly accept the risk that the whole or a part of their funds may be used payout claims. A malicious [**capital provider**](/docs/user-guides/capital-provider/cp-role-guide) could detect a loss event and try to withdraw their funds before claims are paid out. To prevent this, the `Vault` uses a cooldown mechanic such that while the [**capital provider**](/docs/user-guides/capital-provider/cp-role-guide) is not in cooldown mode (default) they can mint, send, and receive **SCP** but not withdraw **ETH**. To withdraw their **ETH**, the [**capital provider**](/docs/user-guides/capital-provider/cp-role-guide) must [`startCooldown()`](#startcooldown), wait no less than [`cooldownMin()`](#cooldownmin) and no more than [`cooldownMax()`](#cooldownmax), then call [`withdrawEth()`](#withdraweth) or [`withdrawWeth()`](#withdrawweth). While in cooldown mode users cannot send or receive **SCP** and minting shares will take them out of cooldown.
 
 
 ## Functions
@@ -21,7 +21,7 @@ Constructs the Vault.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`governance_` | address | The address of the [governor](/docs/protocol/governance).
 |`registry_` | address | Address of the [`Registry`](./Registry) contract.
 
 ### depositEth
@@ -29,7 +29,7 @@ Constructs the Vault.
   function depositEth(
   ) public returns (uint256 shares)
 ```
-Allows a user to deposit **ETH** into the `Vault`(becoming a [**Capital Provider**](/docs/user-docs/Capital%20Providers)).
+Allows a user to deposit **ETH** into the `Vault`(becoming a [**Capital Provider**](/docs/user-guides/capital-provider/cp-role-guide)).
 Shares of the `Vault` (CP tokens) are minted to caller.
 It is called when `Vault` receives **ETH**.
 It issues the amount of token share respected to the deposit to the `recipient`.
@@ -47,7 +47,7 @@ Reverts if `Vault` is in **Emergency Shutdown**.
     uint256 amount
   ) external returns (uint256 shares)
 ```
-Allows a user to deposit **WETH** into the `Vault`(becoming a [**Capital Provider**](/docs/user-docs/Capital%20Providers)).
+Allows a user to deposit **WETH** into the `Vault`(becoming a [**Capital Provider**](/docs/user-guides/capital-provider/cp-role-guide)).
 Shares of the Vault (CP tokens) are minted to caller.
 It issues the amount of token share respected to the deposit to the `recipient`.
 Reverts if `Vault` is in **Emergency Shutdown**.
@@ -87,7 +87,7 @@ Stops the **cooldown** period for the user.
   ) external returns (uint256 value)
 ```
 Allows a user to redeem shares for **ETH**.
-Burns **SCP** and transfers **ETH** to the [**Capital Provider**](/docs/user-docs/Capital%20Providers).
+Burns **SCP** and transfers **ETH** to the [**Capital Provider**](/docs/user-guides/capital-provider/cp-role-guide).
 
 
 #### Parameters:
@@ -106,7 +106,7 @@ Burns **SCP** and transfers **ETH** to the [**Capital Provider**](/docs/user-doc
   ) external returns (uint256 value)
 ```
 Allows a user to redeem shares for **WETH**.
-Burns **SCP** tokens and transfers **WETH** to the [**Capital Provider**](/docs/user-docs/Capital%20Providers).
+Burns **SCP** tokens and transfers **WETH** to the [**Capital Provider**](/docs/user-guides/capital-provider/cp-role-guide).
 
 
 #### Parameters:
@@ -281,7 +281,7 @@ Returns true if the destination is authorized to request **ETH**.
   ) external
 ```
 Activates or deactivates emergency shutdown.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 During Emergency Shutdown:
 1. No users may deposit into the `Vault`.
 2. Withdraws can bypass cooldown.
@@ -302,7 +302,7 @@ If false, the `Vault` goes back into Normal Operation.
   ) external
 ```
 Sets the `minimum` and `maximum` amount of time in seconds that a user must wait to withdraw funds.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
@@ -319,7 +319,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
   ) external
 ```
 Adds or removes requesting rights. The `requestor` can be user account or smart contract.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

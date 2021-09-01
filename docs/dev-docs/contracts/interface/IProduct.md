@@ -366,7 +366,7 @@ Sets the max cover amount divisor per user (maxCover / divisor = maxCoverPerUser
 Changes the covered platform.
 This function is used if the the protocol changes their registry but keeps the children contracts.
 A new version of the protocol will likely require a new **Product**.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
@@ -381,7 +381,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
   ) external
 ```
 Changes the policy manager.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

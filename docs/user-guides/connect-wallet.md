@@ -1,4 +1,8 @@
-# Configuration
+---
+sidebar_position: 1
+---
+
+# Connect Wallet
 
 A guide to getting started with the Solace App.
 

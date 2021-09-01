@@ -22,7 +22,7 @@ Constructs the CompoundProduct.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`governance_` | address | The address of the [governor](/docs/protocol/governance).
 |`policyManager_` | contract IPolicyManager | The [`PolicyManager`](../PolicyManager) contract.
 |`registry_` | contract IRegistry | The [`Registry`](../Registry) contract.
 |`comptroller_` | address | The Compound Comptroller.
@@ -75,7 +75,7 @@ Compound's Comptroller.
 Changes the covered platform.
 The function should be used if the the protocol changes their registry but keeps the children contracts.
 A new version of the protocol will likely require a new Product.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

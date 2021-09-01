@@ -15,7 +15,7 @@ Constructs the Solace Token contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`governance_` | address | The address of the [governor](/docs/protocol/governance).
 
 ### isMinter
 ```solidity
@@ -59,7 +59,7 @@ Can only be called by authorized minters.
   ) external
 ```
 Adds a new minter.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
@@ -74,7 +74,7 @@ Can only be called by the current [**governor**](/docs/user-docs/Governance).
   ) external
 ```
 Removes a minter.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

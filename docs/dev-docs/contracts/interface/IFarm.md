@@ -79,7 +79,7 @@ Can only be called by [`Master`](../Master).
   ) external
 ```
 Sets the farm's end block. Used to extend the duration.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

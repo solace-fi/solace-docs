@@ -34,7 +34,7 @@ module.exports = {
         },
         {
           label: "User Guides",
-          to: "docs/user-docs/intro",
+          to: "docs/user-guides/intro",
           position: "right",
         },
         {
@@ -82,7 +82,7 @@ module.exports = {
           items: [
             {
               label: "User Guides",
-              to: "docs/user-docs/intro",
+              to: "docs/user-guides/intro",
             },
             {
               label: "Developer Docs",

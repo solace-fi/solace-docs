@@ -16,7 +16,7 @@ Constructs the master contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`governance_` | address | The address of the [governor](/docs/protocol/governance).
 |`solace_` | contract SOLACE | Address of the solace token.
 |`solacePerBlock_` | uint256 | Amount of solace to distribute per block.
 
@@ -28,7 +28,7 @@ Constructs the master contract.
   ) external returns (uint256 farmID)
 ```
 Registers a farm.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 Cannot register a farm more than once.
 
 
@@ -50,7 +50,7 @@ Cannot register a farm more than once.
   ) external
 ```
 Sets a farm's allocation points.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

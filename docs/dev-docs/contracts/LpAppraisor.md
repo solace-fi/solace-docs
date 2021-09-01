@@ -17,7 +17,7 @@ Constructs the LP Appraisor contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/user-docs/Governance).
+|`governance_` | address | The address of the [governor](/docs/protocol/governance).
 |`lpToken_` | address | Address of the LP token.
 |`curve_A_` | uint256 | Appraisal curve value A.
 |`curve_B_` | uint256 | Appraisal curve value B.
@@ -30,7 +30,7 @@ Constructs the LP Appraisor contract.
   ) external
 ```
 Modifies the appraisal curve, and with it the incentive structure.
-Can only be called by the current [**governor**](/docs/user-docs/Governance).
+Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:

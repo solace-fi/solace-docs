@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Buy Cover
 
 A guide to buying coverage.
