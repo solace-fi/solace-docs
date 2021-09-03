@@ -17,7 +17,7 @@ Manager Dependencies:
 | Network | `activeNetwork`
 
 Hook Dependencies:
-- `useSessionStorage()`
+- `useLocalStorage()`
 - `useWeb3React()`
 
 #### Returned values:

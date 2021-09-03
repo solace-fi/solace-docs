@@ -1,39 +1,35 @@
 ---
-title: WalletModal
+title: LedgerDerivationPathModal
 ---
 
 ## Props
 
-### `WalletModalProps`
+### `LedgerDerivationPathModalProps`
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `closeModal` | function | Function to call when closing modal.
 | `isOpen` | boolean | Boolean to open modal.
 
-### `ConnectWalletModalState `
-
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-| `showLedgerModal` | boolean | Flag to show ledger derivation path modal.
-
 ## Components
 
-### `WalletModal` (exported)
+### `LedgerDerivationPathModal` (exported)
 
 Props Dependencies:
 
-- `WalletModalProps`
+- `LedgerDerivationPathModalProps`
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `changeWallet` , `disconnect` , `activeWalletConnector`
+| Wallet | `connect`
+| Network | `activeNetwork`
 
 Local Functions:
 
 - `handleClose()` : Handle closing modal
-- `connectWallet()` : Handle the wallet change
+- `handleSelect()` : Handle path selection
+- `handleConnect()` : Set selected NFT and amount
 
-Info: Returns wallet modal.
+Info: Returns modal for the user to select a derivation path to connect their Ledger wallet with.

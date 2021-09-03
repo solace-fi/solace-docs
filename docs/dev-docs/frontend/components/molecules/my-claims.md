@@ -10,7 +10,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `errors`
+| Wallet | `account` , `errors` , `activeWalletConnector`
 | Contracts | `claimsEscrow`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Network | `activeNetwork` , `currencyDecimals`

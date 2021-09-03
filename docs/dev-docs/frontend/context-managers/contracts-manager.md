@@ -39,7 +39,7 @@ Hook Dependencies:
 |`claimsEscrow` | Contract \| null | Claims Escrow contract.
 |`policyManager` | Contract \| null | Policy Manager contract.
 |`contractSources` | ContractSources[] | Array of contract addresses and ABIs.
-|`products` | SupportedProduct[] | Array of product contracts.
-|`selectedProtocol` | Contract \| null | User selected product contract.
+|`products` | ProductContract[] | Array of product contracts.
+|`selectedProtocol` | Contract \| undefined | User selected product contract.
 |`getProtocolByName` | function | Get product contract by name.
 |`setSelectedProtocolByName` | function | Set `selectedProtocol` by name.

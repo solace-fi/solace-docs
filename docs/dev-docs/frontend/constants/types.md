@@ -8,7 +8,6 @@ title: "Types"
 type NetworkCache = {
   name: string
   chainId: number
-  supportedProducts: any
   tokens: any
   positions: any
 }
@@ -98,6 +97,7 @@ export type GasFeeListState = {
   options: GasFeeOption[]
   loading: boolean
   selected?: GasFeeOption
+  suggestedBaseFee?: number
 }
 ```
 ### `GasFeeOption` (exported)
@@ -117,6 +117,7 @@ GasPriceResult = {
   fast: number
   average: number
   safeLow: number
+  suggestedBaseFee?: number
 }
 ```
 ### `StringToStringMapping` (exported)
@@ -127,8 +128,22 @@ type StringToStringMapping = { [key: string]: string }
 ### `SupportedProduct` (exported)
 
 ```
-type SupportedProduct = { name: string; contract: Contract; signer: boolean }
+type SupportedProduct = {
+  name: ProductName
+  getTokens: (provider: any, activeNetwork: NetworkConfig) => Promise<Token[]>
+  getBalances: (user: string, provider: any, cache: NetworkCache, activeNetwork: NetworkConfig) => Promise<Token[]>
+}
 ```
+
+### `ProductContract` (exported)
+
+```
+type ProductContract = {
+  name: ProductName
+  contract?: Contract
+}
+```
+
 ### `ContractSources` (exported)
 
 ```
@@ -157,46 +172,42 @@ type LocalTx = {
 ### `NetworkConfig` (exported)
 
 ```
-export type NetworkConfig = {
+type NetworkConfig = {
   name: string
   chainId: number
+  isTestnet: boolean
+  supportedTxTypes: number[]
   nativeCurrency: {
     symbol: Unit
     decimals: number
   }
   rpc: {
     httpsUrl: string
+    pollingInterval: number
   }
   explorer: {
     name: 'Etherscan' | 'Polygonscan'
     key: string
     url: string
     apiUrl: string
+    excludedContractAddrs: string[]
   }
   config: {
-    keyContracts: KeyContracts
-    productContracts: any
-    functions: {
-      getTokens: any
-      getBalances: any
+    keyContracts: {
+      [key: string]: ContractSources
+    }
+    productContracts: {
+      [key: string]: ContractSources
+    }
+    productsRev: {
+      [key: string]: ProductName
     }
   }
   cache: {
-    supportedProducts: any
-    productsRev: any
-    tokens: any
-    positions: any
+    supportedProducts: SupportedProduct[]
   }
   metamaskChain?: MetamaskAddEthereumChain
   walletConfig: any
-}
-```
-
-### `KeyContracts` (exported)
-
-```
-type KeyContracts = {
-  [key: string]: ContractSources
 }
 ```
 

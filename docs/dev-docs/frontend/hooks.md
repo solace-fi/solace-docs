@@ -246,7 +246,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `library`
-| Network | `activeNetwork` , `chainId` , `networks` , `findNetworkByChainId`
+| Network | `activeNetwork` , `networks` , `findNetworkByChainId`
 
 Hook Dependencies:
 

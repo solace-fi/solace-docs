@@ -62,7 +62,7 @@ Hook Dependencies:
 |`showHistoryModal` | boolean | Display transaction history modal.
 |`version` | number | Value that is updated by user actions for controlled refresh.
 |`dataVersion` | number | Value that is updated on an interval for controlled refresh.
-|`gasPrices` | any | Returned gas prices from explorer.
+|`gasPrices` | GasFeeListState | Returned gas prices from explorer.
 |`latestBlock` | number | Number of the latest fetched block.
 |`addLocalTransactions` | function | Add local transactions.
 |`deleteLocalTransactions` | function | Delete local transactions.

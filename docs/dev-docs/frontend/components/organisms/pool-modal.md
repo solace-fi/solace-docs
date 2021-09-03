@@ -25,7 +25,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `errors` , `library`
+| Wallet | `account` , `errors` , `library` , `activeWalletConnector`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `vault` , `cpFarm` , `lpFarm` , `lpToken`
 | Network | `activeNetwork` , `currencyDecimals` , `chainId`
@@ -55,6 +55,8 @@ Contract Functions:
 
 Local Functions:
 
+- `handleToast(tx: any, localTx: LocalTx)`: Create toast on submitted transaction.
+- `handleContractCallError(functionName: string, err: any, txType: FunctionName)`: Contract error handling.
 - `isAppropriateAmount()` : Returns true if the user's amount for a transaction is valid.
 - `getAssetBalanceByFunc()` : Returns the available balance of an asset based on the type of transaction the user wants.
 - `getAssetTokensByFunc()` : Returns an array of information for each LP token from the user's wallet or in their stake in the farm.
@@ -62,7 +64,7 @@ Local Functions:
 - `handleSelectChange(option: GasFeeOption)` : Set selected gas option.
 - `handleCallbackFunc()` : Calls contract function based on selected transaction type by the user.
 - `handleClose()` : Handle closing modal
-- `handleNft` : Set selected NFT and amount. 
+- `handleNft()` : Set selected NFT and amount. 
 
 Data Refresh:
 

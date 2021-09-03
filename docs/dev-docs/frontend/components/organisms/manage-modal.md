@@ -25,7 +25,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `errors`
+| Wallet | `errors` , `activeWalletConnector`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `selectedProtocol`
 | Network | `activeNetwork` , `currencyDecimals`
@@ -47,6 +47,8 @@ Contract Functions:
 
 Local Functions:
 
+- `handleToast(tx: any, localTx: LocalTx)`: Create toast on submitted transaction.
+- `handleContractCallError(functionName: string, err: any, txType: FunctionName)`: Contract error handling.
 - `handleCoverageChange(coverAmount: string)` : Set coverage state on interface based on selected cover limit.
 - `handleInputCoverage(input: string)` : Set coverage state on interface based on input.
 - `filteredTime(input: string)` : Filter time input and set time state.
