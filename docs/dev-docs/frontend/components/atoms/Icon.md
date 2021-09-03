@@ -3,6 +3,14 @@
 ### `StyledIconCss` (exported)
 - **Info**: Properly positions icons.
 
+### `StyledInfo` (exported)
+- **Extends**: styled-icons/fluentui-system-regular/Info
+- **Info**: Styles Info icon.
+
+### `StyledLinkExternal` (exported)
+- **Extends**: styled-icons/boxicons-regular/LinkExternal
+- **Info**: Styles LinkExternal icon.
+
 ### `StyledNetwork` (exported)
 - **Extends**: styled-icons/boxicons-regular/NetworkChart
 - **Info**: Styles Network icon.

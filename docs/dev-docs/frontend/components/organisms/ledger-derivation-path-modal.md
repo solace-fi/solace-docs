@@ -24,7 +24,6 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `connect`
-| Network | `activeNetwork`
 
 Local Functions:
 
