@@ -7,6 +7,10 @@
 - **Extends**: styled-icons/fluentui-system-regular/Info
 - **Info**: Styles Info icon.
 
+### `StyledArrowDropDownCircle ` (exported)
+- **Extends**: styled-icons/material-sharp/ArrowDropDownCircle
+- **Info**: Styles ArrowDropDownCircle icon.
+
 ### `StyledLinkExternal` (exported)
 - **Extends**: styled-icons/boxicons-regular/LinkExternal
 - **Info**: Styles LinkExternal icon.
