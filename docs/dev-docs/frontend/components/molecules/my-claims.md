@@ -18,6 +18,7 @@ Manager Dependencies:
 
 Hook Dependencies:
 - `useGetClaimsDetails()`
+- `useWindowDimensions()`
 
 Contract Functions: 
 - `withdrawPayout` : Calls ClaimsEscrow contract to withdraw payout.
