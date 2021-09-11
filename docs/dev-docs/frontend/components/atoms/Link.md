@@ -7,4 +7,5 @@
 - **Info**: Stylized `a` tag.
 
 ### `StyledNavLink` (exported)
-- **Info**: Stylized link from react-router-dom.
+- **Extends**: Link from react-router-dom
+- **Info**: Stylized Link component.

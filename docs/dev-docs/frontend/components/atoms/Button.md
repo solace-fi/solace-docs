@@ -4,9 +4,16 @@
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `secondary` (optional) | boolean | Set secondary color.
+| `glow` (optional) | boolean | Set border glow.
 | `hidden` (optional) | boolean | Hide button.
 
-### `ClickProps`
+### `ButtonWrapperProps`
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `isRow` (optional) | boolean | Line children from left to right.
+| `isColumn` (optional) | boolean | Line children from top to bottom.
+
+### `ClickProps` (exported)
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `onClick` (optional) | boolean | Function to call on click.
@@ -16,7 +23,7 @@
 
 ### `ButtonBaseCss` (exported)
 - **Props**: GeneralElementProps, ButtonProps
-- **Additional Styles**: Text3Css
+- **Additional Styles**: Text4Css
 - **Info**: Base button style.
 
 ## Components
@@ -31,6 +38,6 @@
 - **Info**: Special button for Navbar.
 
 ### `ButtonWrapper` (exported)
-- **Props**: MarginProps
-- **Additional Styles**: MarginCss
+- **Props**: ButtonWrapperProps
+- **Additional Styles**: ButtonWrapperCss, MarginCss
 - **Info**: Wrapper for housing a group of buttons.

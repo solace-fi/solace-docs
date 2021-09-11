@@ -17,7 +17,7 @@ title: Toast
 | :--- | :--- | :------------------------------------------------------------------- |
 | `message` | string | Toast message.
 | `condition` | TransactionCondition | Transaction condition.
-| `icon` | any | Icon to display on toast.
+| `txHash` (optional) | string | Transaction hash.
 
 ## Components
 

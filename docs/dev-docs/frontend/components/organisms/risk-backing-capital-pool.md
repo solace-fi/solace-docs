@@ -22,7 +22,8 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `errors`
+| General | `errors`
+| Wallet | `account`
 | Network | `currencyDecimals`
 
 Hook Dependencies:

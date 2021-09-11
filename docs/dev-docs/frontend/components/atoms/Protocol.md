@@ -9,6 +9,6 @@
 - **Info**: Protocol Image component.
 
 ### `ProtocolTitle` (exported)
-- **Props**: TextFontProps
-- **Additional Styles**: TextFontCss
+- **Props**: GeneralTextProps
+- **Additional Styles**: GeneralTextCss
 - **Info**: Title for Protocol.

@@ -101,7 +101,7 @@ Return the current cooldown period as a string.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `sources` | ContractSources | The object containing the contract address and ABI.
+| `sources` | ContractSources \| undefined | The object containing the contract address and ABI.
 | `hasSigner` | boolean | Option to create signer for contract.
 
 Manager Dependencies:
@@ -179,7 +179,6 @@ Manager Dependencies:
 
 Hook Dependencies:
 - `usePoolStakedValue()`
-- `usePoolStakedValue()`
 
 Adds the staked value of the CP farm and the LP farm and returns the sum as a string.
 
@@ -222,7 +221,7 @@ Calls getBlockNumber() on the current Web3Provider to get latest block number an
 | :--- | :--- | :------------------------------------------------------------------- |
 | `getAll` | boolean | Option to get policies for all users or one user.
 | `latestBlock` | number | Number of the latest fetched block.
-| `dataInit` | boolean | State of the token data initialization.
+| `data` | { dataInitialized: boolean; storedTokenAndPositionData: NetworkCache[] } | Object containing the state of the token data initialization and the data itself.
 | `version` | number | Value that is updated by user actions for controlled refresh.
 | `policyHolder` (optional) | string | Address of the policy holder.
 | `product` (optional) | string | Address of the product contract.
@@ -266,7 +265,7 @@ Once per chain per session, initialize the token data and position names of all 
 
 On an interval of milliseconds set by `delay` , call `callback` function.
 
-## usePairPrice.ts
+## usePair.ts
 
 ### `usePairPrice`
 
@@ -307,8 +306,10 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| wallet | `account`
+| Network | `activeNetwork`
+| wallet | `account` , `library`
 | Contracts | `getProtocolByName`
+| CachedData | `latestBlock` , `tokenPositionData`
 
 Appraises the user's position for a product in a policy and returns the result as a BigNumber.
 
@@ -458,7 +459,6 @@ Manager Dependencies:
 | Network | `currencyDecimals`
 
 Hook Dependencies:
-- `useUserPendingRewards()`
 - `useUserPendingRewards()`
 
 Adds a user's pending rewards from all farms together and return the sum as a string.

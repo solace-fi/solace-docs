@@ -32,7 +32,7 @@
 - **Additional Styles**: FadeInAnimation
 - **Info**: Base modal component.
 
-### `ModalCloseButton` (exported)
+### `ModalClose` (exported)
 - **Props**: ModalButtonProps
 - **Info**: Component for modal close button.
 
@@ -40,9 +40,11 @@
 - **Info**: Component for modal header.
 
 ### `ModalRow` (export)
+- **Props**: GeneralElementProps
+- **Additional Styles**: GeneralElementCss
 - **Info**: Component for modal row.
 
 ### `ModalCell` (exported)
-- **Props**: GeneralTextProps
-- **Additional Styles**: GeneralTextCss
+- **Props**: GeneralTextProps, GeneralElementProps
+- **Additional Styles**: GeneralTextCss, GeneralElementCss
 - **Info**: Component for modal cell.

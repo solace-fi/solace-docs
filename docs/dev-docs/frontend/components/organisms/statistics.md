@@ -10,7 +10,8 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `errors` , `initialized` , `activeWalletConnector`
+| General | `errors`
+| Wallet | `account` , `initialized` , `activeWalletConnector`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices` , `tokenPositionData` , `latestBlock` , `version`
 | Contracts | `master`
 | Network | `activeNetwork` , `currencyDecimals`

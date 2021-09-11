@@ -12,6 +12,10 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | CachedData | `localTransactions` , `openHistoryModal `
 
+Props Dependencies:
+
+- `GeneralElementProps`
+
 Hook Dependencies:
 
 - `useWindowDimensions()`

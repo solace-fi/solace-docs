@@ -8,6 +8,7 @@ title: PolicyModalInfo
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
+| `appraisal` | BigNumber | The appraised amount of a position.
 | `selectedPolicy` | Policy \| undefined | The currently selected policy.
 | `latestBlock` | number | The latest block number.
 
@@ -26,6 +27,5 @@ Manager Dependencies:
 | Network | `activeNetwork` , `currencyDecimals`
 
 Hook Dependencies:
-- `useAppraisePosition()`
 - `useWindowDimensions()`
 Info: Return a component containing a policy's information.

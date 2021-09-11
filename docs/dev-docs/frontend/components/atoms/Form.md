@@ -6,10 +6,6 @@
 - **Info**: Flexed row for containing elements, and spacing them apart.
 
 ### `FormCol` (exported)
+- **Props**: GeneralElementProps, GeneralTextProps
+- **Additional Styles**: GeneralElementCss, GeneralTextCss
 - **Info**: Column that controls the style of its `Input` children.
-
-### `FormSelect` (exported)
-- **Info**: Stylized `Select` element.
-
-### `FormOption` (exported)
-- **Info**: Stylized `Option` element.

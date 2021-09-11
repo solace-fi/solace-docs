@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # WalletManager
@@ -30,7 +30,6 @@ Hook Dependencies:
 |`library` | any | Provider of wallet.
 |`connector` | AbstractConnector \| undefined | Current wallet AbstractConnector.
 |`activeWalletConnector` | WalletConnector \| undefined | Current wallet provider.
-|`errors` | Error[] | Array of current errors.
 |`openWalletModal` | function | Opens wallet modal.
 |`changeWallet` | function | Set new selected provider before reloading.
 |`connect` | function | Connect to a wallet.

@@ -12,6 +12,9 @@ title: NftPosition
 
 ## Components
 
+### `ScaledContainer`
+- **Info**: Hovering on this div element causes it and its children to scale up in size.
+
 ### `NftPosition` (exported)
 
 Manager Dependencies:

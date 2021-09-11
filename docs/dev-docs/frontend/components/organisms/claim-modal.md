@@ -25,16 +25,18 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `errors` , `activeWalletConnector`
+| General | `errors`
+| Wallet | `activeWalletConnector`
 | Contracts | `selectedProtocol`
-| CachedData | `tokenPositionData` , `gasPrices` , `reload` , `addLocalTransactions`
+| CachedData | `gasPrices` , `reload` , `addLocalTransactions`
 | Network | `activeNetwork`, `currencyDecimals`
 | Notifications | `makeTxToast`
 
 Hook Dependencies:
 
 - `useGetCooldownPeriod()`
-- `usewindowDimensions()`
+- `useWindowDimensions()`
+- `useAppraisePosition()`
 
 Contract Functions:
 
@@ -46,6 +48,6 @@ Local Functions:
 
 Data Refresh:
 
-- [ `isOpen` , `selectedPolicy` , `activeNetwork` , `tokenPositionDataInitialized` ]: get claim assessment
+- [ `isOpen` , `selectedPolicy` , `activeNetwork` ]: get claim assessment
 
 Info: Returns modal to submit claim for a user's policy.

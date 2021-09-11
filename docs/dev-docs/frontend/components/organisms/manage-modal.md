@@ -25,7 +25,8 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `errors` , `activeWalletConnector`
+| General | `errors`
+| Wallet | `activeWalletConnector`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `selectedProtocol`
 | Network | `activeNetwork` , `currencyDecimals`

@@ -6,9 +6,15 @@
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `transparent` (optional) | boolean | Set transparency.
-| `fade` (optional) | boolean | Set background-color to fade.
+| `canHover` (optional) | boolean | Change background-color on hover.
+| `fade` (optional) | boolean | Set background-color to a faded color.
+| `blue` (optional) | boolean | Set background-color to blue.
+| `purple` (optional) | boolean | Set background-color to purple.
+| `glow` (optional) | boolean | Set border to glow.
 
 ### `CardContainerProps`
+- **Extends**: GeneralElementProps
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `cardsPerRow` (optional) | number | Set cards per row in container.
@@ -23,12 +29,12 @@
 
 ### `CardContainer` (exported)
 - **Props**: CardContainerProps, GeneralTextProps
-- **Additional Styles**: GeneralTextCss
+- **Additional Styles**: GeneralTextCss, GeneralElementCss
 - **Info**: Container to hold cards.
 
 ### `Card` (exported)
 - **Props**: CardProps
-- **Additional Styles**: CardCss
+- **Additional Styles**: CardCss, GeneralElementCss
 - **Info**: Normal card component.
 
 ### `InvestmentCard` (exported)
@@ -50,3 +56,6 @@
 - **Props**: GeneralTextProps
 - **Additional Styles**: GeneralTextCss
 - **Info**: Card text with set margin-bottom.
+
+### `CardBlock` (exported)
+- **Info**: Simple div element.

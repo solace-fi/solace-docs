@@ -9,6 +9,12 @@
 | `canHover` (optional) | boolean | Enable table color change on hover.
 | `headers` (optional) | string[] | Array of strings to assign to table headers.
 
+### `TableHeadProps`
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `sticky` (optional) | boolean | Set table head to stick to its parent component, enabling the scrolling mechanism.
+
 ## Components
 
 ### `Table` (exported)
@@ -24,6 +30,7 @@
 - **Info**: Table Body Component
 
 ### `TableHead` (exported)
+- **Props**: TableHeadProps
 - **Info**: Table Head Component
 
 ### `TableHeader` (exported)

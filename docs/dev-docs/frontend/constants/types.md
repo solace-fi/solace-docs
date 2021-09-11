@@ -32,6 +32,7 @@ type Policy = {
   price: string
   status: PolicyState
   positionName: string
+  claimAssessment?: ClaimAssessment
 }
 ```
 ### `TokenInfo` (exported)
@@ -85,9 +86,6 @@ type ClaimAssessment = {
   deadline: string
   msgHash: string
   signature: string
-  tokenIn?: string
-  amountIn?: string
-  tokenOut?: string
 }
 ```
 ### `GasFeeListState` (exported)
@@ -131,7 +129,13 @@ type StringToStringMapping = { [key: string]: string }
 type SupportedProduct = {
   name: ProductName
   getTokens: (provider: any, activeNetwork: NetworkConfig) => Promise<Token[]>
-  getBalances: (user: string, provider: any, cache: NetworkCache, activeNetwork: NetworkConfig) => Promise<Token[]>
+  getBalances: (
+    user: string,
+    provider: any,
+    cache: NetworkCache,
+    activeNetwork: NetworkConfig,
+    tokens: Token[]
+  ) => Promise<Token[]>
 }
 ```
 
@@ -173,7 +177,7 @@ type LocalTx = {
 
 ```
 type NetworkConfig = {
-  name: string
+name: string
   chainId: number
   isTestnet: boolean
   supportedTxTypes: number[]
@@ -245,5 +249,23 @@ type MetamaskWatchAsset = {
     symbol: string
     decimals: number
   }
+}
+```
+
+### `ErrorData` (exported)
+
+```
+type MetamaskWatchAsset = {
+  type: Error
+  metadata: string
+}
+```
+
+### `SystemNoticeData` (exported)
+
+```
+type MetamaskWatchAsset = {
+  type: SystemNotice
+  metadata: string
 }
 ```

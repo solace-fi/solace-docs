@@ -30,7 +30,6 @@
 ## Components
 
 ### `BoxBase`
-- **Props**: GeneralElementProps, BoxProps
 - **Extends**: rebass/styled-components/Box
 
 ### `BoxRow` (exported)
