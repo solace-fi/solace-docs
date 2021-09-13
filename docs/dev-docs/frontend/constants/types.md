@@ -258,6 +258,7 @@ type MetamaskWatchAsset = {
 type MetamaskWatchAsset = {
   type: Error
   metadata: string
+  uniqueId: string
 }
 ```
 
@@ -267,5 +268,6 @@ type MetamaskWatchAsset = {
 type MetamaskWatchAsset = {
   type: SystemNotice
   metadata: string
+  uniqueId: string
 }
 ```
