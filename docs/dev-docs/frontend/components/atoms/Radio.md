@@ -13,6 +13,8 @@
 - **Info**: Component for stylizing the behavior of an option in a radio.
 
 ### `RadioGroup` (exported)
+- **Props**: GeneralElementProps
+- **Additional Styles**: GeneralElementCss
 - **Info**: Component for containing and grouping multiple radio options.
 
 ### `RadioLabel` (exported)

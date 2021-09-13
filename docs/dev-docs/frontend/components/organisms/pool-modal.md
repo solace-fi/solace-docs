@@ -25,7 +25,8 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `errors` , `library` , `activeWalletConnector`
+| General | `errors`
+| Wallet | `account`, `library` , `activeWalletConnector`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `vault` , `cpFarm` , `lpFarm` , `lpToken`
 | Network | `activeNetwork` , `currencyDecimals` , `chainId`
@@ -43,6 +44,8 @@ Hook Dependencies:
 
 Contract Functions:
 
+- `callStartCooldown` : Calls vault contract to start the cooldown.
+- `callStopCooldown` : Calls vault contract to stop the cooldown.
 - `approve` : Calls vault contract to approve amount being transferred.
 - `callDeposit` : Calls vault contract to deposit ETH into Risk Backing Capital Pool.
 - `callWithdrawEth` : Calls vault contract to withdraw ETH from the vault. User must wait for the cooldown to elapse.
@@ -70,7 +73,7 @@ Data Refresh:
 
 - [ `gasPrices` ]: Set selected gas option if one doesn't exist already.
 - [ `maxSelected` , `handleSelectChange` ]: Calculate maximum amount of assets to be sent minus gas from selected gas option.
-- [ `isOpen` , `cpFarm?.address` , `vault` ]: Set contract for allowance, set spender, and set selected NFT.
+- [ `isOpen` , `cpFarm?.address` , `vault`, `userLpTokenInfo` , `depositedLpTokenInfo` , `func` , `currencyDecimals` ]: Set contract for allowance, set spender, and set selected NFT.
 
 Additional Functional Components:
 

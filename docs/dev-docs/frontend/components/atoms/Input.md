@@ -13,3 +13,7 @@
 ### `Search` (exported)
 - **Additional Styles**: InputCss
 - **Info**: Stylized Input component as a search bar.
+
+### `StyledSlider` (exported)
+- **Extends**: Slider from @rebass/forms
+- **Info**: Stylized Slider component.

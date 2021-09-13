@@ -29,6 +29,7 @@ Local Functions:
 
 - `handleClose()` : Handle closing modal
 - `handleSelect()` : Handle path selection
+- `onSuccess()` : Handle on connection success
 - `handleConnect()` : Set selected NFT and amount
 
 Info: Returns modal for the user to select a derivation path to connect their Ledger wallet with.

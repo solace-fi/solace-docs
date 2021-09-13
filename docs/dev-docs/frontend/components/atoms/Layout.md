@@ -1,10 +1,13 @@
 ## Styles
 
+### `movingGradient`
+- **Info**: Keyframes for background gradient movement animation
+
 ### `CustomScrollbar` (exported)
 - **Info**: Custom scrollbar style
 
 ### `GlobalStyle` (exported)
-- **Additional Styles**: CustomScrollbar, GlobalFont
+- **Additional Styles**: CustomScrollbar, Text3Css
 - **Info**: Custom body style
 
 ## Components
@@ -35,6 +38,7 @@
 
 ### `HeroContainer` (exported)
 - **Props**: HeightAndWidthProps
+- **Extends**: FlexCol
 - **Info**: Component that serves the role of a banner. Used to capture user attention.
 
 ### `Footer` (exported)

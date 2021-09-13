@@ -14,13 +14,17 @@ title: Tooltip
 
 ## Components
 
+### `CustomTooltip`
+- **Extends**: ReactTooltip from react-tooltip
+- **Info**: Returns a stylized tooltip component
+
 ### `StyledTooltip` (exported)
 
-Props Depenencies:
+Props Dependencies:
 
 - `StyledTooltipProps`
 
 Hook Dependencies:
 - `useWindowDimensions()`
 
-Info: Returns a tooltip component containing the tip.
+Info: Returns a CustomTooltip component containing the tip.

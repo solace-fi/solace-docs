@@ -12,6 +12,10 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `isActive` , `openWalletModal`
 
+Props Dependencies:
+
+- `GeneralElementProps`
+
 Hook Dependencies:
 
 - `useWindowDimensions()`

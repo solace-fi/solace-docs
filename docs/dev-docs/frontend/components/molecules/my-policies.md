@@ -29,7 +29,6 @@ Manager Dependencies:
 
 Hook Dependencies:
 
-- `useCachedData()`
 - `useWindowDimensions()`
 
 Local Functions:

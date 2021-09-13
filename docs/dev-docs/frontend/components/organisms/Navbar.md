@@ -2,10 +2,21 @@
 title: Navbar
 ---
 
+## Props
+
+### `NavbarProps`
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `location` | any | Location object, fetched from react-router-dom.
 
 ## Components
 
 ### `SideNavbar` (exported)
+
+Props Dependencies:
+
+- `NavbarProps`
 
 Info: Returns component containing Solace Logo along with the navigation links as a side navbar.
 
@@ -14,6 +25,10 @@ Info: Returns component containing Solace Logo along with the navigation links a
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account`
+
+Props Dependencies:
+
+- `NavbarProps`
 
 Hook Dependencies:
 

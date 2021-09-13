@@ -16,11 +16,11 @@ TransactionCondition {
 
 ```
 Error {
-  UNSUPPORTED_NETWORK,
-  NO_PROVIDER,
-  UNKNOWN,
-  NO_ACCESS,
-  WALLET_NETWORK_UNSYNC,
+  UNSUPPORTED_NETWORK = 'UN',
+  NO_PROVIDER = 'NP',
+  UNKNOWN_WALLET_ERROR = 'UWE',
+  NO_ACCESS = 'NA',
+  WALLET_NETWORK_UNSYNC = 'WNU',
 }
 ```
 ### `FunctionName` (exported)
@@ -77,7 +77,7 @@ PolicyState {
   EXPIRED = 'Expired',
 }
 ```
-### `TransactionCondition` (exported)
+### `ProductName` (exported)
 
 ```
 ProductName {

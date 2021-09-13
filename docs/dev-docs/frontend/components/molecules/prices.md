@@ -8,7 +8,7 @@ title: Prices
 
 Info: Component to properly position prices.
 
-### `PolicyModalInfo` (exported)
+### `Prices` (exported)
 
 Manager Dependencies:
 

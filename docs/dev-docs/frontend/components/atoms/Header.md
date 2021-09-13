@@ -1,4 +1,7 @@
 ## Components
 
-### `Header` (exported)
-- **Info**: Component for styling headers.
+### `FlexEndHeader` (exported)
+- **Info**: Flexed header to space out elements.
+
+### `CenteredHeader` (exported)
+- **Info**: Header to center elements.
