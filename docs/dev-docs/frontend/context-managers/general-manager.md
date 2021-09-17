@@ -12,6 +12,7 @@ This manager includes the app theme (light or dark) as well as notifications and
 
 Hook Dependencies:
 - `useLocalStorage()`
+- `useWindowDimensions()`
 
 #### Returned values:
 | Name | Type | Description                                                          |
@@ -25,4 +26,4 @@ Hook Dependencies:
 |`removeNotices` | (noticesToRemove: SystemNotice[]) => void | Function to remove objects from `notices` array.
 |`addErrors` | (noticesToAdd: ErrorData[]) => void | Function to add objects to `errors` array.
 |`removeErrors` | (errorsToRemove: Error[]) => void | Function to remove objects to `errors` array.
-|`openModal` | () => void | Function to open the modal.
+|`openModal` | () => void | Function to open the `LinksModal` modal.

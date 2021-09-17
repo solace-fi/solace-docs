@@ -27,6 +27,10 @@
 - **Extends**: styled-icons/material-outlined/DarkMode
 - **Info**: Styles Moon icon.
 
+### `StyledDots` (exported)
+- **Extends**: styled-icons/boxicons-regular/DotsHorizontalRounded
+- **Info**: Styles Horizontal Dots icon.
+
 ### `StyledTheme` (exported)
 - **Extends**: styled-icons/fluentui-system-regular/DarkTheme
 - **Info**: Styles Theme icon.

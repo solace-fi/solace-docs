@@ -25,7 +25,14 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork` , `currencyDecimals`
+| Wallet | `account`
+| CachedData | `tokenPositionData`
+
+Local functions:
+- `closeModal()` : Handle closing the `AssetsModal` modal
+- `getTokens()` : Get policy's tokens for the `AssetsModal` modal
 
 Hook Dependencies:
 - `useWindowDimensions()`
+
 Info: Return a component containing a policy's information.
