@@ -12,7 +12,7 @@ Hook Dependencies:
 
 Info: Return a FlexEndHeader component containing `Prices` on the left side and `Account` on the right side.
 
-### `BottomAccount` (exported)
+### `Footer` (exported)
 
 Hook Dependencies:
 

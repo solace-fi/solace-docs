@@ -25,6 +25,7 @@ Info: Returns component containing Solace Logo along with the navigation links a
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account`
+| General | `openModal`
 
 Props Dependencies:
 

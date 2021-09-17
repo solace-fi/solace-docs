@@ -354,7 +354,6 @@ Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `coverAmount` | string \| null | Value between 100 and 10000, representing percentage.
-| `positionContract` | string \| null | Address of position contract.
 | `days` | string | Number of days to get quote for.
 
 Manager Dependencies:

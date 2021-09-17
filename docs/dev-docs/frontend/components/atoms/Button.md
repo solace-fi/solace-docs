@@ -1,11 +1,13 @@
 ## Props
 
-### `ButtonProps`
+### `ButtonProps` (exported)
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `secondary` (optional) | boolean | Set secondary color.
+| `inconspicuous` (optional) | boolean | Prevent button from drawing user's attention.
 | `glow` (optional) | boolean | Set border glow.
 | `hidden` (optional) | boolean | Hide button.
+| `noradius` (optional) | boolean | Remove rounded corners of button.
 
 ### `ButtonWrapperProps`
 | Name | Type | Description                                                          |

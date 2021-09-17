@@ -26,12 +26,12 @@ type Policy = {
   policyHolder: string
   productAddress: string
   productName: string
-  positionContract: string
+  positionDescription: string
+  positionNames: string[]
   expirationBlock: number
   coverAmount: string
   price: string
   status: PolicyState
-  positionName: string
   claimAssessment?: ClaimAssessment
 }
 ```

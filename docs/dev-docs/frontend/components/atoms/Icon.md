@@ -7,6 +7,30 @@
 - **Extends**: styled-icons/fluentui-system-regular/Info
 - **Info**: Styles Info icon.
 
+### `StyledDiscord` (exported)
+- **Extends**: styled-icons/simple-icons/Discord
+- **Info**: Styles Discord icon.
+
+### `StyledTwitter` (exported)
+- **Extends**: styled-icons/boxicons-logos/Twitter
+- **Info**: Styles Twitter icon.
+
+### `StyledGithub` (exported)
+- **Extends**: styled-icons/boxicons-logos/Github
+- **Info**: Styles Github icon.
+
+### `StyledSun` (exported)
+- **Extends**: styled-icons/evaicons-solid/Sun
+- **Info**: Styles Sun icon.
+
+### `StyledMoon` (exported)
+- **Extends**: styled-icons/material-outlined/DarkMode
+- **Info**: Styles Moon icon.
+
+### `StyledDots` (exported)
+- **Extends**: styled-icons/boxicons-regular/DotsHorizontalRounded
+- **Info**: Styles Horizontal Dots icon.
+
 ### `StyledTheme` (exported)
 - **Extends**: styled-icons/fluentui-system-regular/DarkTheme
 - **Info**: Styles Theme icon.
