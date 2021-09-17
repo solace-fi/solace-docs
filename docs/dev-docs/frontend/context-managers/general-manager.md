@@ -8,7 +8,7 @@ The GeneralManager keeps track of most things that should be prevalent throughou
 
 ## How does it work?
 
-This manager includes the app theme (light or dark) as well as notifications and errors garnered from the app, which will then be passed down to the NotificationsManager.
+This manager includes the app theme (light or dark) as well as notifications and errors garnered from the app, which will then be passed down to the NotificationsManager. It also holds the modal for community links that will be displayed if the user is on mobile.
 
 Hook Dependencies:
 - `useLocalStorage()`
@@ -25,3 +25,4 @@ Hook Dependencies:
 |`removeNotices` | (noticesToRemove: SystemNotice[]) => void | Function to remove objects from `notices` array.
 |`addErrors` | (noticesToAdd: ErrorData[]) => void | Function to add objects to `errors` array.
 |`removeErrors` | (errorsToRemove: Error[]) => void | Function to remove objects to `errors` array.
+|`openModal` | () => void | Function to open the modal.

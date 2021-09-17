@@ -41,7 +41,7 @@
 - **Extends**: FlexCol
 - **Info**: Component that serves the role of a banner. Used to capture user attention.
 
-### `Footer` (exported)
+### `FooterComponent` (exported)
 - **Info**: Component that creates and stylizes footer.
 
 ### `Content` (exported)
