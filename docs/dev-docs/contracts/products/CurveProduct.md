@@ -1,4 +1,4 @@
-The **Curve** product that is users can buy policy for **Curve**. It is a concrete smart contract that inherits from abstract [`BaseProduct`](./BaseProduct).
+The **CurveProduct** can be used to purchase coverage for **Curve** positions.
 
 
 ## Functions
@@ -10,10 +10,7 @@ The **Curve** product that is users can buy policy for **Curve**. It is a concre
     contract IRegistry registry_,
     address addressProvider_,
     uint40 minPeriod_,
-    uint40 maxPeriod_,
-    uint24 price_,
-    uint32 maxCoverPerUserDivisor_,
-    address quoter_
+    uint40 maxPeriod_
   ) public
 ```
 Constructs the CurveProduct.
@@ -28,31 +25,7 @@ Constructs the CurveProduct.
 |`addressProvider_` | address | The Curve Address Provider.
 |`minPeriod_` | uint40 | The minimum policy period in blocks to purchase a **policy**.
 |`maxPeriod_` | uint40 | The maximum policy period in blocks to purchase a **policy**.
-|`price_` | uint24 | The cover price for the **Product**.
-|`maxCoverPerUserDivisor_` | uint32 | The max cover amount divisor for per user. (maxCover / divisor = maxCoverPerUser).
-|`quoter_` | address | The exchange quoter address.
 
-### appraisePosition
-```solidity
-  function appraisePosition(
-    address policyholder,
-    address positionContract
-  ) public returns (uint256 positionAmount)
-```
-Calculate the value of a user's position in **ETH**.
-The `positionContract` must be a [**curve.fi lp token**](https://curve.fi/pools).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | The owner of the position.
-|`positionContract` | address | The address of the **lp token**.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`positionAmount`| address | The value of the position.
 ### addressProvider
 ```solidity
   function addressProvider(
@@ -66,6 +39,27 @@ Curve's Address Provider.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`addressProvider_`|  | The address provider.
+### isValidPositionDescription
+```solidity
+  function isValidPositionDescription(
+    bytes positionDescription
+  ) public returns (bool isValid)
+```
+Determines if the byte encoded description of a position(s) is valid.
+The description will only make sense in context of the product.
+
+This function should be overwritten in inheriting Product contracts.
+If invalid, return false if possible. Reverting is also acceptable.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`positionDescription` | bytes | The description to validate.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`isValid`| bytes | True if is valid.
 ### setCoveredPlatform
 ```solidity
   function setCoveredPlatform(
@@ -73,32 +67,13 @@ Curve's Address Provider.
   ) public
 ```
 Changes the covered platform.
-The function should be used if the the protocol changes their registry but keeps the children contracts.
-A new version of the protocol will likely require a new Product.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
+Use this if the the protocol changes their registry but keeps the children contracts.
+A new version of the protocol will likely require a new Product.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`addressProvider_` | address | The new Address Provider.
 
-### verifyPool
-```solidity
-  function verifyPool(
-    address poolOrToken
-  ) internal returns (contract IERC20, contract ICurvePool)
-```
-Given the address of either the pool or the token, returns the token and the pool.
-Throws if not a valid pool or token.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`poolOrToken` | address | Address of either the pool or lp token.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | token and the pool.

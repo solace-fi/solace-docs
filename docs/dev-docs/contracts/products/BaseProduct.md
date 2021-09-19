@@ -1,6 +1,6 @@
 The abstract smart contract that is inherited by every concrete individual **Product** contract.
 
-It is required to extend [`IProduct`](../interface/IProduct) and recommended to extend `BaseProduct`. `BaseProduct` extends [`IProduct`](../interface/IProduct) and takes care of the heavy lifting; new products simply need to set some variables in the constructor and implement [`appraisePosition()`](#appraiseposition). It has some helpful functionality not included in [`IProduct`](../interface/IProduct) including [`ExchangeQuoter` price oracles](../interface/IExchangeQuoter) and claim signers.
+It is required to extend [`IProduct`](../interface/IProduct) and recommended to extend `BaseProduct`. `BaseProduct` extends [`IProduct`](../interface/IProduct) and takes care of the heavy lifting; new products simply need to set some variables in the constructor. It has some helpful functionality not included in [`IProduct`](../interface/IProduct) including claim signers.
 
 
 ## Functions
@@ -13,9 +13,6 @@ It is required to extend [`IProduct`](../interface/IProduct) and recommended to 
     address coveredPlatform_,
     uint40 minPeriod_,
     uint40 maxPeriod_,
-    uint24 price_,
-    uint32 maxCoverPerUserDivisor_,
-    address quoter_,
     string domain_,
     string version_
   ) internal
@@ -32,9 +29,6 @@ Constructs the product. `BaseProduct` by itself is not deployable, only its subc
 |`coveredPlatform_` | address | A platform contract which locates contracts that are covered by this product.
 |`minPeriod_` | uint40 | The minimum policy period in blocks to purchase a **policy**.
 |`maxPeriod_` | uint40 | The maximum policy period in blocks to purchase a **policy**.
-|`price_` | uint24 | The cover price for the **Product**.
-|`maxCoverPerUserDivisor_` | uint32 | The max cover amount divisor for per user. (maxCover / divisor = maxCoverPerUser).
-|`quoter_` | address | The exchange quoter address.
 |`domain_` | string | The user readable name of the EIP712 signing domain.
 |`version_` | string | The current major version of the signing domain.
 
@@ -42,9 +36,9 @@ Constructs the product. `BaseProduct` by itself is not deployable, only its subc
 ```solidity
   function buyPolicy(
     address policyholder,
-    address positionContract,
     uint256 coverAmount,
-    uint40 blocks
+    uint40 blocks,
+    bytes positionDescription
   ) external returns (uint256 policyID)
 ```
 Purchases and mints a policy on the behalf of the policyholder.
@@ -54,10 +48,10 @@ User will need to pay **ETH**.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | Holder of the position to cover.
-|`positionContract` | address | The contract address where the policyholder has a position to be covered.
-|`coverAmount` | uint256 | The value to cover in **ETH**. Will only cover up to the appraised value.
+|`policyholder` | address | Holder of the position(s) to cover.
+|`coverAmount` | uint256 | The value to cover in **ETH**.
 |`blocks` | uint40 | The length (in blocks) for policy.
+|`positionDescription` | bytes | A byte encoded description of the position(s) to cover.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -79,7 +73,7 @@ Can only be called by the policyholder.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`policyID` | uint256 | The ID of the policy.
-|`coverAmount` | uint256 | The new value to cover in **ETH**. Will only cover up to the appraised value.
+|`coverAmount` | uint256 | The new value to cover in **ETH**.
 
 ### extendPolicy
 ```solidity
@@ -116,7 +110,7 @@ Can only be called by the policyholder.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`policyID` | uint256 | The ID of the policy.
-|`coverAmount` | uint256 | The new value to cover in **ETH**. Will only cover up to the appraised value.
+|`coverAmount` | uint256 | The new value to cover in **ETH**.
 |`extension` | uint40 | The length of extension in blocks.
 
 ### cancelPolicy
@@ -159,33 +153,9 @@ Can only be called by the policyholder.
 |`deadline` | uint256 | Transaction must execute before this timestamp.
 |`signature` | bytes | Signature from the signer.
 
-### appraisePosition
-```solidity
-  function appraisePosition(
-    address policyholder,
-    address positionContract
-  ) public returns (uint256 positionAmount)
-```
-Calculate the value of a user's position in **ETH**.
-Every product will have a different mechanism to determine a user's total position in that product's protocol.
-
-It should validate that the `positionContract` belongs to the protocol and revert if it doesn't.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | The owner of the position.
-|`positionContract` | address | The address of the smart contract the `policyholder` has their position in (e.g., for `UniswapV2Product` this would be the Pair's address).
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`positionAmount`| address | The value of the position.
 ### getQuote
 ```solidity
   function getQuote(
-    address policyholder,
-    address positionContract,
     uint256 coverAmount,
     uint40 blocks
   ) external returns (uint256 premium)
@@ -196,24 +166,13 @@ Calculate a premium quote for a policy.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | The holder of the position to cover.
-|`positionContract` | address | The address of the exact smart contract the policyholder has their position in (e.g., for UniswapProduct this would be Pair's address).
 |`coverAmount` | uint256 | The value to cover in **ETH**.
-|`blocks` | uint40 | The length for policy.
+|`blocks` | uint40 | The duration of the policy in blocks.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`premium`| address | The quote for their policy in **Wei**.
-### price
-```solidity
-  function price(
-  ) external returns (uint24)
-```
-Price in wei per 1e12 wei of coverage per block.
-
-
-
+|`premium`| uint256 | The quote for their policy in **ETH**.
 ### minPeriod
 ```solidity
   function minPeriod(
@@ -232,41 +191,6 @@ The maximum policy period in blocks.
 
 
 
-### maxCoverAmount
-```solidity
-  function maxCoverAmount(
-  ) public returns (uint256 maxCover)
-```
-The maximum sum of position values that can be covered by this product.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`maxCover`|  | The max cover amount.
-### maxCoverPerUser
-```solidity
-  function maxCoverPerUser(
-  ) external returns (uint256 maxCover)
-```
-The maximum cover amount for a single policy.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`maxCover`|  | The max cover amount per user.
-### maxCoverPerUserDivisor
-```solidity
-  function maxCoverPerUserDivisor(
-  ) external returns (uint32)
-```
-The max cover amount divisor for per user (maxCover / divisor = maxCoverPerUser).
-
-
-
 ### coveredPlatform
 ```solidity
   function coveredPlatform(
@@ -275,15 +199,6 @@ The max cover amount divisor for per user (maxCover / divisor = maxCoverPerUser)
 Covered platform.
 A platform contract which locates contracts that are covered by this product.
 (e.g., `UniswapProduct` will have `Factory` as `coveredPlatform` contract, because every `Pair` address can be located through `getPool()` function).
-
-
-
-### productPolicyCount
-```solidity
-  function productPolicyCount(
-  ) external returns (uint256)
-```
-The total policy count this product sold.
 
 
 
@@ -345,6 +260,27 @@ Returns true if the given account is authorized to sign claims.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`status`| address | True if is authorized signer.
+### isValidPositionDescription
+```solidity
+  function isValidPositionDescription(
+    bytes positionDescription
+  ) public returns (bool isValid)
+```
+Determines if the byte encoded description of a position(s) is valid.
+The description will only make sense in context of the product.
+
+This function should be overwritten in inheriting Product contracts.
+If invalid, return false if possible. Reverting is also acceptable.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`positionDescription` | bytes | The description to validate.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`isValid`| bytes | True if is valid.
 ### updateActiveCoverAmount
 ```solidity
   function updateActiveCoverAmount(
@@ -359,20 +295,6 @@ Can only be called by the [`PolicyManager`](../PolicyManager).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`coverDiff` | int256 | The change in active cover amount.
-
-### setPrice
-```solidity
-  function setPrice(
-    uint24 price_
-  ) external
-```
-Sets the price for this product.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`price_` | uint24 | Price in wei per 1e12 wei of coverage per block.
 
 ### setMinPeriod
 ```solidity
@@ -401,35 +323,6 @@ Sets the maximum number of blocks a policy can be purchased for.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`maxPeriod_` | uint40 | The maximum number of blocks
-
-### setMaxCoverPerUserDivisor
-```solidity
-  function setMaxCoverPerUserDivisor(
-    uint32 maxCoverPerUserDivisor_
-  ) external
-```
-Sets the max cover amount divisor per user (maxCover / divisor = maxCoverPerUser).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`maxCoverPerUserDivisor_` | uint32 | The new divisor.
-
-### setExchangeQuoter
-```solidity
-  function setExchangeQuoter(
-    address quoter_
-  ) external
-```
-Sets a new ExchangeQuoter.
-Can only be called by the current [**governor**](/docs/protocol/governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`quoter_` | address | The new quoter address.
 
 ### addSigner
 ```solidity
@@ -485,10 +378,10 @@ Used for security and to gracefully phase out old products.
   ) public
 ```
 Changes the covered platform.
-The function should be used if the the protocol changes their registry but keeps the children contracts.
-A new version of the protocol will likely require a new Product.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
+Use this if the the protocol changes their registry but keeps the children contracts.
+A new version of the protocol will likely require a new Product.
 
 #### Parameters:
 | Name | Type | Description                                                          |
@@ -517,7 +410,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
     int256 b
   ) internal returns (uint256 c)
 ```
-The function is used to add two numbers.
+Adds two numbers.
 
 
 #### Parameters:
@@ -530,26 +423,6 @@ The function is used to add two numbers.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`c`| uint256 | The sum as a uint256.
-### min
-```solidity
-  function min(
-    uint256 a,
-    uint256 b
-  ) internal returns (uint256)
-```
-The function is used to return minimum number between two numbers..
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`a` | uint256 | The first number as a uint256.
-|`b` | uint256 | The second number as an int256.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`c`| uint256 | The min as a uint256.
 ## Events
 ### SignerAdded
 ```solidity
@@ -565,13 +438,5 @@ Emitted when a claim signer is added.
   )
 ```
 Emitted when a claim signer is removed.
-
-
-### QuoterSet
-```solidity
-  event QuoterSet(
-  )
-```
-Emitted when the exchange quoter is set.
 
 

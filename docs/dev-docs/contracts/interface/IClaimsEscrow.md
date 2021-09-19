@@ -221,6 +221,40 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | :--- | :--- | :------------------------------------------------------------------- |
 |`cooldownPeriod_` | uint256 | New cooldown duration in seconds
 
+### transfer
+```solidity
+  function transfer(
+    address to,
+    uint256 tokenID
+  ) external
+```
+Transfers `tokenID` from `msg.sender` to `to`.
+
+This was excluded from the official `ERC721` standard in favor of `transferFrom(address from, address to, uint256 tokenID)`. We elect to include it.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`to` | address | The receipient of the token.
+|`tokenID` | uint256 | The token to transfer.
+
+### safeTransfer
+```solidity
+  function safeTransfer(
+    address to,
+    uint256 tokenID
+  ) external
+```
+Safely transfers `tokenID` from `msg.sender` to `to`.
+
+This was excluded from the official `ERC721` standard in favor of `safeTransferFrom(address from, address to, uint256 tokenID)`. We elect to include it.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`to` | address | The receipient of the token.
+|`tokenID` | uint256 | The token to transfer.
+
 ### receive
 ```solidity
   function receive(

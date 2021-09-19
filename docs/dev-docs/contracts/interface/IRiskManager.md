@@ -8,6 +8,29 @@ Solace can use leverage to sell more cover than the available capital. The amoun
 
 
 ## Functions
+### assessRisk
+```solidity
+  function assessRisk(
+    address product,
+    uint256 currentCover,
+    uint256 newCover
+  ) external returns (bool acceptable, uint24 price)
+```
+Given a request for coverage, determines if that risk is acceptable and if so at what price.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`product` | address | The product that wants to sell coverage.
+|`currentCover` | uint256 | If updating an existing policy's cover amount, the current cover amount, otherwise 0.
+|`newCover` | uint256 | The cover amount requested.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`acceptable`| address | True if risk of the new cover is acceptable, false otherwise.
+|`price`| uint256 | The price in wei per 1e12 wei of coverage per block.
 ### maxCover
 ```solidity
   function maxCover(
@@ -21,13 +44,49 @@ The maximum amount of cover that Solace as a whole can sell.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`cover`|  | The max amount of cover in wei.
-### maxCoverAmount
+### maxCoverPerProduct
 ```solidity
-  function maxCoverAmount(
+  function maxCoverPerProduct(
     address prod
   ) external returns (uint256 cover)
 ```
-The maximum amount of cover that a product can sell.
+The maximum amount of cover that a product can sell in total.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`prod` | address | The product that wants to sell cover.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`cover`| address | The max amount of cover in wei.
+### sellableCoverPerProduct
+```solidity
+  function sellableCoverPerProduct(
+    address prod
+  ) external returns (uint256 cover)
+```
+The amount of cover that a product can still sell.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`prod` | address | The product that wants to sell cover.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`cover`| address | The max amount of cover in wei.
+### maxCoverPerPolicy
+```solidity
+  function maxCoverPerPolicy(
+    address prod
+  ) external returns (uint256 cover)
+```
+The maximum amount of cover that a product can sell in a single policy.
 
 
 #### Parameters:
@@ -60,7 +119,7 @@ Return the number of registered products.
 ```
 Return the product at an index.
 
-Enumerable `[0, numProducts-1]`.
+Enumerable `[1, numProducts]`.
 
 #### Parameters:
 | Name | Type | Description                                                          |
@@ -71,24 +130,27 @@ Enumerable `[0, numProducts-1]`.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`prod`| uint256 | The product address.
-### weight
+### productRiskParams
 ```solidity
-  function weight(
+  function productRiskParams(
     address prod
-  ) external returns (uint32 mass)
+  ) external returns (uint32 weight, uint24 price, uint16 divisor)
 ```
-Returns the weight of a product.
+Returns a product's risk parameters.
+The product must be active.
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`prod` | address | Product to query.
+|`prod` | address | The product to get parameters for.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`mass`| address | The product's weight.
+|`weight`| address | The weighted allocation of this product vs other products.
+|`price`|  | The price in wei per 1e12 wei of coverage per block.
+|`divisor`|  | The max cover per policy divisor.
 ### weightSum
 ```solidity
   function weightSum(
@@ -132,27 +194,49 @@ Multiplier for minimum capital requirement.
 ```solidity
   function addProduct(
     address product_,
-    uint32 weight_
+    uint32 weight_,
+    uint24 price_,
+    uint16 divisor_
   ) external
 ```
-Adds a new product and sets its weight.
+Adds a product.
+If the product is already added, sets its parameters.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`product_` | address | Address of new product.
+|`product_` | address | Address of the product.
 |`weight_` | uint32 | The products weight.
+|`price_` | uint24 | The products price in wei per 1e12 wei of coverage per block.
+|`divisor_` | uint16 | The max cover per policy divisor.
 
-### setProductWeights
+### removeProduct
 ```solidity
-  function setProductWeights(
-    address[] products_,
-    uint32[] weights_
+  function removeProduct(
+    address product_
   ) external
 ```
-Sets the products and their weights.
+Removes a product.
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`product_` | address | Address of the product to remove.
+
+### setProductParams
+```solidity
+  function setProductParams(
+    address[] products_,
+    uint32[] weights_,
+    uint24[] prices_,
+    uint16[] divisors_
+  ) external
+```
+Sets the products and their parameters.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
@@ -161,6 +245,8 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | :--- | :--- | :------------------------------------------------------------------- |
 |`products_` | address[] | The products.
 |`weights_` | uint32[] | The product weights.
+|`prices_` | uint24[] | The product prices.
+|`divisors_` | uint16[] | The max cover per policy divisors.
 
 ### setPartialReservesFactor
 ```solidity
@@ -176,4 +262,14 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`partialReservesFactor_` | uint16 | New partial reserves factor in BPS.
+
+## Events
+### ProductParamsSet
+```solidity
+  event ProductParamsSet(
+  )
+```
+Emitted when a product's parameters are modified.
+Includes adding and removing products.
+
 
