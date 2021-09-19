@@ -3,6 +3,34 @@
 
 
 ## Functions
+### maxSupply
+```solidity
+  function maxSupply(
+  ) external returns (uint256 cap)
+```
+The total amount of **SOLACE** that can be minted.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`cap`|  | The supply cap.
+### setMaxSupply
+```solidity
+  function setMaxSupply(
+    uint256 maxSupply_
+  ) external
+```
+Changes the max supply of **SOLACE**.
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`maxSupply_` | uint256 | The new supply cap.
+
 ### isMinter
 ```solidity
   function isMinter(
@@ -28,7 +56,7 @@ Returns true if `account` is authorized to mint **SOLACE**.
     uint256 amount
   ) external
 ```
-The function creates new tokens and mints them to the receiver account.
+Mints new **SOLACE** to the receiver account.
 Can only be called by authorized minters.
 
 
@@ -67,4 +95,29 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`minter` | address | The minter to remove.
+
+## Events
+### MaxSupplySet
+```solidity
+  event MaxSupplySet(
+  )
+```
+Emitted when the max supply is changed.
+
+
+### MinterAdded
+```solidity
+  event MinterAdded(
+  )
+```
+Emitted when a minter is added.
+
+
+### MinterRemoved
+```solidity
+  event MinterRemoved(
+  )
+```
+Emitted when a minter is removed.
+
 

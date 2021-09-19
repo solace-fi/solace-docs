@@ -7,7 +7,7 @@
   function constructor(
   ) public
 ```
-Constructs the WETH contract.
+Constructs the **WETH** contract.
 
 
 

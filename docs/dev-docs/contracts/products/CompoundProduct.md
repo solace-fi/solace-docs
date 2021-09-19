@@ -1,4 +1,4 @@
-The **Compound** product that is users can buy policy for **Compound**. It is a concrete smart contract that inherits from abstract [`BaseProduct`](./BaseProduct).
+The **CompoundProduct** can be used to purchase coverage for **Compound** positions.
 
 
 ## Functions
@@ -10,10 +10,7 @@ The **Compound** product that is users can buy policy for **Compound**. It is a 
     contract IRegistry registry_,
     address comptroller_,
     uint40 minPeriod_,
-    uint40 maxPeriod_,
-    uint24 price_,
-    uint32 maxCoverPerUserDivisor_,
-    address quoter_
+    uint40 maxPeriod_
   ) public
 ```
 Constructs the CompoundProduct.
@@ -28,31 +25,7 @@ Constructs the CompoundProduct.
 |`comptroller_` | address | The Compound Comptroller.
 |`minPeriod_` | uint40 | The minimum policy period in blocks to purchase a **policy**.
 |`maxPeriod_` | uint40 | The maximum policy period in blocks to purchase a **policy**.
-|`price_` | uint24 | The cover price for the **Product**.
-|`maxCoverPerUserDivisor_` | uint32 | The max cover amount divisor for per user. (maxCover / divisor = maxCoverPerUser).
-|`quoter_` | address | The exchange quoter address.
 
-### appraisePosition
-```solidity
-  function appraisePosition(
-    address policyholder,
-    address positionContract
-  ) public returns (uint256 positionAmount)
-```
-Calculate the value of a user's position in **ETH**.
-The `positionContract` must be a [**cToken**](https://etherscan.io/accounts/label/compound).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | The owner of the position.
-|`positionContract` | address | The address of the **cToken**.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`positionAmount`| address | The value of the position.
 ### comptroller
 ```solidity
   function comptroller(
@@ -66,6 +39,27 @@ Compound's Comptroller.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`comptroller_`|  | The comptroller.
+### isValidPositionDescription
+```solidity
+  function isValidPositionDescription(
+    bytes positionDescription
+  ) public returns (bool isValid)
+```
+Determines if the byte encoded description of a position(s) is valid.
+The description will only make sense in context of the product.
+
+This function should be overwritten in inheriting Product contracts.
+If invalid, return false if possible. Reverting is also acceptable.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`positionDescription` | bytes | The description to validate.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`isValid`| bytes | True if is valid.
 ### setCoveredPlatform
 ```solidity
   function setCoveredPlatform(
@@ -73,33 +67,13 @@ Compound's Comptroller.
   ) public
 ```
 Changes the covered platform.
-The function should be used if the the protocol changes their registry but keeps the children contracts.
-A new version of the protocol will likely require a new Product.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
+Use this if the the protocol changes their registry but keeps the children contracts.
+A new version of the protocol will likely require a new Product.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`comptroller_` | address | The new Comptroller.
 
-### compareStrings
-```solidity
-  function compareStrings(
-    string a,
-    string b
-  ) internal returns (bool)
-```
-String equality.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`a` | string | The first string.
-|`b` | string | The second string.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`bool`| string | Returns True if both strings are equal.

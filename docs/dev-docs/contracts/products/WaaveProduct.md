@@ -1,6 +1,6 @@
-The **CompoundProduct** can be used to purchase coverage for **Compound** positions.
+The **WaaveProduct** can be used to purchase coverage for **Waave** positions.
 
-Note that **CompoundProductRinkeby** was created because the Comptroller implementation differs between Mainnet and Rinkeby. Use this version to cover positions on Rinkeby or [**CompoundProduct**](./CompoundProduct) to cover positions on Mainnet.
+Note that the Waave Protocol is exploitable by design. Use this product or the Waave Protocol at your own risk.
 
 
 ## Functions
@@ -10,12 +10,12 @@ Note that **CompoundProductRinkeby** was created because the Comptroller impleme
     address governance_,
     contract IPolicyManager policyManager_,
     contract IRegistry registry_,
-    address comptroller_,
+    address waRegistry_,
     uint40 minPeriod_,
     uint40 maxPeriod_
   ) public
 ```
-Constructs the CompoundRinkebyProduct.
+Constructs the WaaveProduct.
 
 
 #### Parameters:
@@ -24,23 +24,23 @@ Constructs the CompoundRinkebyProduct.
 |`governance_` | address | The address of the [governor](/docs/protocol/governance).
 |`policyManager_` | contract IPolicyManager | The [`PolicyManager`](../PolicyManager) contract.
 |`registry_` | contract IRegistry | The [`Registry`](../Registry) contract.
-|`comptroller_` | address | The Compound Comptroller.
+|`waRegistry_` | address | The Waave Registry.
 |`minPeriod_` | uint40 | The minimum policy period in blocks to purchase a **policy**.
 |`maxPeriod_` | uint40 | The maximum policy period in blocks to purchase a **policy**.
 
-### comptroller
+### waRegistry
 ```solidity
-  function comptroller(
-  ) external returns (address comptroller_)
+  function waRegistry(
+  ) external returns (address waRegistry_)
 ```
-Compound's Comptroller.
+Waave's Registry.
 
 
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`comptroller_`|  | The comptroller.
+|`waRegistry_`|  | The waRegistry.
 ### isValidPositionDescription
 ```solidity
   function isValidPositionDescription(
@@ -65,7 +65,7 @@ If invalid, return false if possible. Reverting is also acceptable.
 ### setCoveredPlatform
 ```solidity
   function setCoveredPlatform(
-    address comptroller_
+    address waRegistry_
   ) public
 ```
 Changes the covered platform.
@@ -77,5 +77,5 @@ A new version of the protocol will likely require a new Product.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`comptroller_` | address | The new Comptroller.
+|`waRegistry_` | address | The new waRegistry.
 

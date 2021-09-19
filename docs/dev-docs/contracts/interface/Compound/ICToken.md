@@ -63,3 +63,22 @@ Does not exist on CETH.
 
 
 
+### balanceOfUnderlying
+```solidity
+  function balanceOfUnderlying(
+    address owner
+  ) external returns (uint256 ubalance)
+```
+Get the underlying balance of the `owner`.
+
+This also accrues interest in a transaction.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`owner` | address | The address of the account to query.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`ubalance`| address | The amount of underlying owned by `owner`.
