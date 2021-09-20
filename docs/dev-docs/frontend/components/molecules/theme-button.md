@@ -16,4 +16,7 @@ Props Dependencies:
 - `GeneralElementProps`
 - `ButtonProps`
 
+Hook Dependencies:
+- `useWindowDimensions()`
+
 Info: Returns a button that changes the app theme.

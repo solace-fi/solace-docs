@@ -28,8 +28,8 @@ Manager Dependencies:
 | General | `errors`
 | Wallet | `activeWalletConnector`
 | Contracts | `selectedProtocol`
-| CachedData | `gasPrices` , `reload` , `addLocalTransactions`
-| Network | `activeNetwork`, `currencyDecimals`
+| CachedData | `gasPrices` , `reload` , `addLocalTransactions` , `userPolicyData`
+| Network | `activeNetwork`, `currencyDecimals` , `chainId`
 | Notifications | `makeTxToast`
 
 Hook Dependencies:
@@ -48,6 +48,6 @@ Local Functions:
 
 Data Refresh:
 
-- [ `isOpen` , `selectedPolicy` , `activeNetwork` ]: get claim assessment
+- [ `selectedPolicy` ]: get claim assessment
 
 Info: Returns modal to submit claim for a user's policy.

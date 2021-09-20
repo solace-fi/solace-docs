@@ -12,7 +12,6 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">Welcome to the {siteConfig.title} Docs</h1>
-        {/* <p className="hero__subtitle">{siteConfig.tagline}</p> */}
         <HomepageFeatures />
 
       </div>
@@ -25,7 +24,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} Docs`}
-      description="Description will go into a meta tag in <head />">
+      description="Documentation for users and developers on the Solace Decentralized Coverage Protocol">
       <HomepageHeader />
       <main>
         <HotLinks />

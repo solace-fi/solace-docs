@@ -4,10 +4,6 @@ title: TransactionHistory
 
 ## Components
 
-### `Scrollable`
-
-- **Additional Styles**: CustomScrollbar
-
 ### `TransactionHistory` (exported)
 
 Manager Dependencies:

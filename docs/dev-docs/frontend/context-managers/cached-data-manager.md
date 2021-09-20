@@ -57,7 +57,11 @@ Hook Dependencies:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`localTransactions` | LocalTx[] | Array of local transactions.
-|`userPolicyData` | { boolean, Policy[] } | Policy loading state and array of user policies.
+|`userPolicyData` | {
+    policiesLoading: boolean
+    userPolicies: Policy[]
+    setCanGetAssessments: (toggle: boolean) => void
+  } | Policy loading state, array of user policies, and toggle function to allow assessment retrieval.
 |`tokenPositionData` | { boolean , NetworkCache[] } | Token and position initialization state, and the cached data itself.
 |`showHistoryModal` | boolean | Display transaction history modal.
 |`version` | number | Value that is updated by user actions for controlled refresh.
