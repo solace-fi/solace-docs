@@ -1,3 +1,11 @@
+## Props
+
+### `ScrollableProps`
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `maxDesktopHeight` (optional) | boolean | Set max desktop height.
+| `maxMobileHeight` (optional) | boolean | Set max mobile height.
+
 ## Styles
 
 ### `movingGradient`
@@ -11,6 +19,10 @@
 - **Info**: Custom body style
 
 ## Components
+
+### `Scrollable`
+- **Props**: ScrollableProps
+- **Additional Styles**: CustomScrollbar
 
 ### `FlexRow` (exported)
 - **Props**: GeneralElementProps

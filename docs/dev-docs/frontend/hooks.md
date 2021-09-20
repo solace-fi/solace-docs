@@ -230,11 +230,11 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `library` , `isActive`
+| Wallet | `library`
 | Network | `activeNetwork`, `findNetworkByChainId`, `chainId`
 | Contracts | `policyManager`
 
-If `policyHolder` is provided as input, all of the user's policies will be retrieved, else all policies regardless of ownership will be retrieved. Return an object containing a boolean for loading policies, the user policies, and all policies.
+If `policyHolder` is provided as input, all of the user's policies will be retrieved, else all policies regardless of ownership will be retrieved. Return an object containing a boolean for loading policies, the user policies, all policies, and toggle function whether to allow claim assessment retrieval.
 
 ## useCacheTokens.ts
 
