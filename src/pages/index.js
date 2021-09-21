@@ -23,7 +23,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title} Docs`}
+      title={`Documentation`}
       description="Documentation for users and developers on the Solace Decentralized Coverage Protocol">
       <HomepageHeader />
       <main>

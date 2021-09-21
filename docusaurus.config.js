@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Solace',
+  title: 'Solace Decentralized Coverage Protocol',
   url: 'https://docs.solace.fi',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
