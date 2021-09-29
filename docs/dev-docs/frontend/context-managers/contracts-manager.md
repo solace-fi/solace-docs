@@ -38,6 +38,7 @@ Hook Dependencies:
 |`lpAppraisor` | Contract \| null | Liquidity Provider Appraisor contract.
 |`claimsEscrow` | Contract \| null | Claims Escrow contract.
 |`policyManager` | Contract \| null | Policy Manager contract.
+|`riskManager` | Contract \| null | Risk Manager contract.
 |`contractSources` | ContractSources[] | Array of contract addresses and ABIs.
 |`products` | ProductContract[] | Array of product contracts.
 |`selectedProtocol` | Contract \| undefined | User selected product contract.

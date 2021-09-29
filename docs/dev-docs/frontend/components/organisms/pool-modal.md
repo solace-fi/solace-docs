@@ -26,7 +26,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | General | `errors`
-| Wallet | `account`, `library` , `activeWalletConnector`
+| Wallet | `account`, `library`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `vault` , `cpFarm` , `lpFarm` , `lpToken`
 | Network | `activeNetwork` , `currencyDecimals` , `chainId`
@@ -41,6 +41,7 @@ Hook Dependencies:
 - `useDepositedLpBalance()`
 - `useTokenAllowance()`
 - `useCooldown()`
+- `useGasConfig()`
 
 Contract Functions:
 

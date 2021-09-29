@@ -25,12 +25,14 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork` , `currencyDecimals`
-| Wallet | `account`
+| Wallet | `account` , `library`
 | CachedData | `tokenPositionData`
 
 Local functions:
 - `closeModal()` : Handle closing the `AssetsModal` modal
-- `getTokens()` : Get policy's tokens for the `AssetsModal` modal
+- `getAssets()` : Get policy's assets for the `AssetsModal` modal
+- `handleFilterPositions()` : Return an array of `BasicData` objects depending on the position's `positionsType`.
+
 
 Hook Dependencies:
 - `useWindowDimensions()`

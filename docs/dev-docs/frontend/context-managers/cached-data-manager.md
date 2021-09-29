@@ -50,7 +50,7 @@ Hook Dependencies:
 - `useReload()`
 - `useFetchGasPrice()`
 - `useGetLatestBlockNumber()`
-- `useCacheTokens()`
+- `useCachePositions()`
 - `usePolicyGetter()`
 
 #### Returned values:

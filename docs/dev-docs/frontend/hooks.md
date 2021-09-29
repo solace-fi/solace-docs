@@ -10,7 +10,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `library` , `connect`
+| Wallet | `account` , `library`
 | CachedData | `version`
 | Network | `activeNetwork`
 
@@ -23,7 +23,6 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account`
-| CachedData | `version` , `latestBlock`
 | Contracts | `vault`
 | Network | `activeNetwork`
 
@@ -36,7 +35,6 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account`
-| CachedData | `version` , `latestBlock`
 | Contracts | `solace`
 | Network | `activeNetwork`
 
@@ -49,7 +47,6 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account`
-| CachedData | `version` , `latestBlock`
 | Contracts | `lpToken` , `lpFarm` , `lpAppraisor`
 
 Return the ids and values of LP tokens in the user's wallet as a pair value of arrays.
@@ -61,7 +58,6 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `account`
-| CachedData | `version` , `latestBlock`
 | Contracts | `lpToken` , `lpFarm` , `lpAppraisor`
 
 Return the ids and values of LP tokens in the user's share of the liquidity pool, as a pair value of arrays.
@@ -191,9 +187,20 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork` , `chainId`
-| CachedData | `version` , `latestBlock`
+| CachedData | `latestBlock`
 
 Fetches gas prices via API from the chain explorer and returns an object containing the gas options, the boolean for loading gas prices, and the currently selected gas option.
+
+### `useGasConfig`
+
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Network | `activeNetwork`
+| Wallet | `activeWalletConnector`
+
+Returns an object of configuration gas data based on the transaction type supported by the network and the wallet connector.
 
 ## useGetLatestBlockNumber.ts
 
@@ -212,7 +219,7 @@ Manager Dependencies:
 
 Calls getBlockNumber() on the current Web3Provider to get latest block number and returns it as a number.
 
-## useGetter.ts
+## usePolicyGetter.ts
 
 ### `usePolicyGetter`
 
@@ -221,8 +228,7 @@ Calls getBlockNumber() on the current Web3Provider to get latest block number an
 | :--- | :--- | :------------------------------------------------------------------- |
 | `getAll` | boolean | Option to get policies for all users or one user.
 | `latestBlock` | number | Number of the latest fetched block.
-| `data` | { dataInitialized: boolean; storedTokenAndPositionData: NetworkCache[] } | Object containing the state of the token data initialization and the data itself.
-| `version` | number | Value that is updated by user actions for controlled refresh.
+| `data` | { dataInitialized: boolean; storedPositionData: NetworkCache[] } | Object containing the state of the token data initialization and the data itself.
 | `policyHolder` (optional) | string | Address of the policy holder.
 | `product` (optional) | string | Address of the product contract.
 
@@ -236,9 +242,9 @@ Manager Dependencies:
 
 If `policyHolder` is provided as input, all of the user's policies will be retrieved, else all policies regardless of ownership will be retrieved. Return an object containing a boolean for loading policies, the user policies, all policies, and toggle function whether to allow claim assessment retrieval.
 
-## useCacheTokens.ts
+## useCachePositions.ts
 
-### `useCacheTokens`
+### `useCachePositions`
 
 Manager Dependencies:
 
@@ -313,16 +319,20 @@ Manager Dependencies:
 
 Appraises the user's position for a product in a policy and returns the result as a BigNumber.
 
-### `useGetMaxCoverPerUser`
+### `useGetMaxCoverPerPolicy`
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Contracts | `selectedProtocol`
+| Contracts | `selectedProtocol` , `riskManager`
 | Network | `currencyDecimals`
+| CachedData | `gasPrices`
 
-Returns the max cover per user of a product contract as a string.
+Hook Dependencies:
+- `useGasConfig()`
+
+Returns the max cover per policy for a product contract as a string.
 
 ### `useGetYearlyCosts`
 
@@ -330,8 +340,12 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Contracts | `products` , `getProtocolByName`
+| Contracts | `products` , `getProtocolByName` , `riskManager`
 | Network | `currencyDecimals`
+| CachedData | `gasPrices`
+
+Hook Dependencies:
+- `useGasConfig()`
 
 Gets the price from each product contract and returns the prices as string-to-string mapping, where the keys are the product names, and the values are the prices.
 
@@ -341,8 +355,12 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Contracts | `products` , `getProtocolByName`
+| Contracts | `products` , `getProtocolByName` , `riskManager`
 | Network | `currencyDecimals`
+| CachedData | `gasPrices`
+
+Hook Dependencies:
+- `useGasConfig()`
 
 Gets the available coverage from each product contract and returns the coverages as string-to-string mapping, where the keys are the product names, and the values are the coverages.
 
@@ -421,7 +439,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Network | `activeNetwork` , `currencyDecimals`
+| Network | `currencyDecimals`
 
 Hook Dependencies:
 - `useMasterValues()`
@@ -520,7 +538,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `vault`
-| CachedData | `version` , `latestBlock`
+| CachedData | `latestBlock`
 | Network | `currencyDecimals`
 
 Returns the total assets of the vault as a string.
@@ -532,9 +550,8 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `vault` , `cpFarm`
-| Wallet | `library` , `account`
-| Network | `activeNetwork` , `currencyDecimals`
-| CachedData | `version`
+| Wallet | `account`
+| Network | `currencyDecimals`
 
 Hook Dependencies:
 - `useScpBalance()`

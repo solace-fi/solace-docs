@@ -11,7 +11,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | General | `errors`
-| Wallet | `account` , `activeWalletConnector`
+| Wallet | `account`
 | Contracts | `claimsEscrow`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Network | `activeNetwork` , `currencyDecimals`
@@ -20,6 +20,7 @@ Manager Dependencies:
 Hook Dependencies:
 - `useGetClaimsDetails()`
 - `useWindowDimensions()`
+- `useGasConfig()`
 
 Contract Functions: 
 - `withdrawPayout` : Calls ClaimsEscrow contract to withdraw payout.
