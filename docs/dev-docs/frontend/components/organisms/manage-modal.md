@@ -26,7 +26,6 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | General | `errors`
-| Wallet | `activeWalletConnector`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `selectedProtocol`
 | Network | `activeNetwork` , `currencyDecimals`
@@ -37,7 +36,8 @@ Hook Dependencies:
 - `useGetPolicyPrice()`
 - `useAppraisePosition()`
 - `useWindowDimensions()`
-- `useGetMaxCoverPerUser()`
+- `useGetMaxCoverPerPolicy()`
+- `useGasConfig()`
 
 Contract Functions:
 

@@ -8,16 +8,62 @@ title: "Types"
 type NetworkCache = {
   name: string
   chainId: number
-  tokens: any
-  positions: any
+  positions: PositionsCache
+  positionNames: PositionNamesCache
+}
+```
+
+### `PositionsCache` (exported)
+
+```
+type PositionsCache = { [key: string]: PositionsCacheValue }
+```
+
+### `PositionNamesCache` (exported)
+
+```
+type PositionNamesCache = {
+  [key: string]: PositionNamesCacheValue
+}
+```
+
+### `PositionsCacheValue` (exported)
+
+```
+type PositionsCacheValue = { 
+  savedPositions: Position[] 
+  positionsInitialized: boolean
+}
+```
+
+### `PositionNamesCacheValue` (exported)
+
+```
+type PositionNamesCacheValue = { 
+  positionNames: { [key: string]: string }positionNamesInitialized: boolean
 }
 ```
 
 ### `ClaimDetails` (exported)
 
 ```
-type ClaimDetails = { id: string; cooldown: string; canWithdraw: boolean; amount: BigNumber }
+type ClaimDetails = { 
+  id: string
+  cooldown: string
+  canWithdraw: boolean
+  amount: BigNumber
+}
 ```
+
+### `BasicData` (exported)
+
+```
+type BasicData = {
+  address: string
+  name: string
+}
+```
+
 ### `Policy` (exported)
 
 ```
@@ -54,6 +100,16 @@ LpTokenInfo = {
   value: BigNumber
 }
 ```
+
+### `Position` (exported)
+
+```
+type Position = {
+  type: PositionsType
+  position: Token | LiquityPosition
+}
+```
+
 ### `Token` (exported)
 
 ```
@@ -77,6 +133,22 @@ type Token = {
   }
 }
 ```
+
+### `LiquityPosition` (exported)
+```
+type LiquityPosition = {
+  positionName: string
+  positionAddress: string
+  amount: BigNumber
+  associatedToken: {
+    address: string
+    name: string
+    symbol: string
+  }
+}
+```
+
+
 ### `ClaimAssessment` (exported)
 
 ```
@@ -118,6 +190,12 @@ GasPriceResult = {
   suggestedBaseFee?: number
 }
 ```
+
+### `PositionsType` (exported)
+```
+type PositionsType = 'erc20' | 'liquity' | 'other'
+```
+
 ### `StringToStringMapping` (exported)
 
 ```
@@ -128,15 +206,21 @@ type StringToStringMapping = { [key: string]: string }
 ```
 type SupportedProduct = {
   name: ProductName
+  positionsType: PositionsType
   productLink?: string
-  getTokens: (provider: any, activeNetwork: NetworkConfig) => Promise<Token[]>
-  getBalances: (
+  getAppraisals: (tokens: any[], chainId: number) => Promise<BigNumber[]>
+
+  getTokens?: (provider: any, activeNetwork: NetworkConfig) => Promise<Token[]>
+  
+  getBalances?: (
     user: string,
     provider: any,
     cache: NetworkCache,
     activeNetwork: NetworkConfig,
     tokens: Token[]
   ) => Promise<Token[]>
+
+  getPositions?: any
 }
 ```
 
