@@ -178,7 +178,7 @@ Hook Dependencies:
 
 Adds the staked value of the CP farm and the LP farm and returns the sum as a string.
 
-## useFetchGasPrice.ts
+## useGas.ts
 
 ### `useFetchGasPrice`
 
@@ -566,7 +566,7 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `vault`
 | Wallet | `account`
-| CachedData | `latestblock`
+| CachedData | `version`
 
 Returns an object of a boolean that indicates if the cooldown had been started, time waited, the minimum cooldown, the maximum cooldown, and a boolean that indicates if the assets can be withdrawn.
 
