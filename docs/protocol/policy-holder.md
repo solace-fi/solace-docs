@@ -1,3 +1,7 @@
+---
+sidebar_position: 7
+---
+
 # Policy Holders
 
 ![architecture](policy_holder_diagram.svg)

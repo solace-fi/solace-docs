@@ -22,30 +22,6 @@ Solace protocol is designed as a mechanism to protect users from inherent risks 
 - Solace only pays out financial loss and not the overall position covered by end customer
 - Reduces overall risk for Solace and enables platform to grow through smaller investments in newer protocols while balancing risk across its entire portfolio
 
-## System Components
-
-Solace is a system with many interconnected components, each fulfilling its role providing overall integrity to the protocol. Below are the major components of this protocol and their purpose:
-
-1. **Products**: a group of optimally-priced smart contract coverage products for platforms and protocols on Ethereum delivered for the end-user.
-
-2. **Risk Assessment & Pricing**: The central part of the protocol that assesses the risk of the platform and individual products and computes the premium prices.
-
-3. **Capital Pool**: Efficiently manages the pooled capital backing the risks by maintaining solvency while providing adequate investment returns for the risks taken. 
-
-4. **Governance Module**: Decentralized process that directs the protocol, defines incentives, develops new products, assesses risk, updates system components and provides coverage for the Solace protocol in case of an incident.
-
-5. **Claims Adjuster**: A module that manages the claims, evaluates financial losses carried, and makes pay-outs to the policyholders.
-
-To purchase the coverage, users will need to confirm that they have an insurable interest in a specific contract. Then in case of a valid claim, the financial loss carried by the policyholder will be automatically evaluated and paid out (within the coverage limit chosen by the user). As users buy coverage policies, they receive an ERC721 token as their policy contract. Each tokenized policy will provide the user with options to update the term of the policy, cancel the policy and get a pro-rated refund (minus a fee) and open a claim. All functionality available through the solace.fi web interface. Coverage policies denominated in Ether.
-
-Here is a step-by-step guide of what a standard process of buying coverage on Solace protocol looks like:
-
-1. Connect your wallet
-2. Choose a platform and the positions you want covered.
-3. Enter the number of days you would like to receive coverage for the position, and the coverage amount.
-4. Purchase the policy and submit the transaction
-5. Once the transaction has been successfully mined, you receive the policy.
-
 Products
 
 **Solace will provide coverage policies across following exploits types:**
