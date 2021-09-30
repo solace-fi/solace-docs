@@ -27,7 +27,7 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | General | `errors`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
-| Contracts | `selectedProtocol`
+| Contracts | `selectedProtocol` , `riskManager`
 | Network | `activeNetwork` , `currencyDecimals`
 | Notifications | `makeTxToast`
 

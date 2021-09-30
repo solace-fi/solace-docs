@@ -25,7 +25,7 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork` , `currencyDecimals`
-| Wallet | `account` , `library`
+| Wallet | `account`
 | CachedData | `tokenPositionData`
 
 Local functions:

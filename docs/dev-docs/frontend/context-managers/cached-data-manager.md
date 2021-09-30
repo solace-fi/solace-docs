@@ -48,7 +48,7 @@ Manager Dependencies:
 Hook Dependencies:
 - `useLocalStorage()`
 - `useReload()`
-- `useFetchGasPrice()`
+- `useGas()`
 - `useGetLatestBlockNumber()`
 - `useCachePositions()`
 - `usePolicyGetter()`
