@@ -1,27 +1,18 @@
-# Governance
+---
+sidebar_position: 6
+title: 'Governance'
+---
 
-Solace governance is a decentralized process that directs the protocol, defines incentives, develops new products, assesses risk, updates system components, and
-provides coverage for the protocol in case of an incident.
+## DAO-first capital formation
 
-## Vote-escrowed SOLACE token (veSOLACE)
+Pioneered by BarnBridge and Kain Warwick’s ideas, this crypto native approach offers a unique ability to run the project as a DAO from day 0 and quickly adjust to an ever-changing environment in DeFi. This setup entails that the project is financed and launched by a decentralized governance model. Splitting out the control gives every party an equitable vote as well as keeps us honest in front of each other and the community.
 
-Individuals who lock their SOLACE tokens will earn a stable return (flat-rate plus a portion of revenue from the premiums) in SOLACE tokens and gain voting rights after a delay in the form of a governing token representing voting power, Vote-escrowed SOLACE token (veSOLACE).
+## DAO structure
 
-The weight of an individual’s voting power will be determined not only by the lockup period - the longer the lockup period, the more veSOLACE will be received by the individual. Voters will also be able to delegate their votes to other individuals, however, veSOLACE tokens cannot be transferred.
+At the moment we have launched Solace LaunchDAO, that acts as a coordination vehicle to deliver us to Solace DAO. This LaunchDAO holds the funds, $SOLACE tokens, is controlled by the Launch DAO tokens and primarily votes on high-level protocol decisions of significant importance.. The funds are released in a drip fashion over time to finance the development and growth and ultimately ensure transition into a formal community-run DAO structure.
 
-The governance is performed utilizing a decentralized autonomous organization (DAO) structure which consists of two layers: the community stakeholders and the management.
+## Transition to Community-run DAO in the Future
 
-## Community Stakeholders
+The purpose of this LaunchDAO is to bootstrap the development and allow for rapid scaling of Solace’s platform. Eventually we are going to reach the point where the governance can be handed off to the community and Solace can be a self-sustaining protocol. With that in mind, our job is to push the project forward, build a community around it, and create a system that will inherit the rule.
 
-Community Stakeholders are holders of locked veSOLACE tokens. These stakeholders don't manage day-to-day operations of the Solace protocol but can vote on (and propose) all strategic decisions, including but not limited to adjusting tokenomics, incentives mechanisms, changes to the protocols architecture and/or design, and treasury expenditures on contributor grants, community initiatives, collaboration projects, and other programs. Initial governance parameters are as follows:
-- 0.1% of veSOLACE total supply (or delegated) to submit a proposal.
-- 33% of veSOLACE tokens are required to submit their vote to consider any
-proposal valid.
-- 51% of the voted vsSOLACE must vote ’yes’ to reach a quorum for any
-decision.
-- 14 day voting period.
-- 3-day timelock delay on execution.
-
-# Management
-
-The management is the stewardship of the SOLACE Protocol. Members of the management team are responsible for day-to-day operation of the protocol, writing proposals, rolling out updates and upgrades to the platform, and other upkeeping duties. The management team is also responsible for any emergency response (e.g., pausing the contracts functionality). This team initially consists of the core team members building out Solace protocol. Once the governance structure is completely rolled out, community stakeholders will nominate people and vote to add them as acting management team members to help the protocol grow and perform the necessary duties.
+Starting October, we plan to allocate resources to the development of Solace DAO, so you can expect the transition to happen around the end of this year.
