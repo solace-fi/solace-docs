@@ -44,7 +44,7 @@ module.exports = {
         },
         {
           label: "Protocol Design",
-          to: "docs/protocol-design/intro",
+          to: "docs/protocol/intro",
           position: "right",
         },
         {

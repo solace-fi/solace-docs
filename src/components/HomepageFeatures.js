@@ -36,7 +36,7 @@ const FeatureList = [
   },
   {
     title: 'Protocol Design',
-    link: 'docs/protocol-design/intro',
+    link: 'docs/protocol/intro',
     description: (
       <>
         Read about the protocol's design, components, and other features.
