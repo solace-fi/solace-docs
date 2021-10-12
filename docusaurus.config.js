@@ -33,12 +33,17 @@ module.exports = {
           position: "left",
         },
         {
-          label: "Overview",
-          to: "docs/overview/what-is-solace",
+          label: "What is Solace",
+          to: "docs/what-is-solace",
           position: "right",
         },
         {
-          label: "Protocol",
+          label: "Why Solace",
+          to: "docs/why-solace",
+          position: "right",
+        },
+        {
+          label: "Protocol Design",
           to: "docs/protocol/intro",
           position: "right",
         },

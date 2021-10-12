@@ -1,23 +1,17 @@
----
-sidebar_position: 3
----
-
 # Claims Assessment
 
-Solace removes centralization and bureaucracy that comes with claims assessment committees and human-operated processes by introducing an automatic parametric claims assessment process. This program evaluates the financial losses carried in an unfortunate shortfall event and, if the claim is valid, submits the pay-out right away.
+Claims assessment is one of the most important parts of any coverage tool. It has to provide transparency of processes, ease of use and guarantee that users receive a payout in the event of an accident. Solace has developed a parametric auto claims assessment system (aka PACLAS) to achieve that.
 
-## Automatic Claims Pipelining
+## How does the system work?
 
-Solace protocol utilizes a parametric automated claims assessment (PACLAS) system to streamline the claims validation and pay-out process. Once a claim has been opened, users will see the outcome right away, without delay for reviews by any claims assessment committee. This approach removes any centralization and bureaucracy in the claims evaluation process and levels the ground for all policyholders.
+The claims system tracks covered liquidity for every policy, determines financial losses, and signs proof that allows users to submit a claim transaction and receive a pay out. 
 
-For every block, PACLAS queries the policy for the number of yield bearing tokens and their respective value in ETH. When the user opens a claim, PACLAS scans over stored data points to determine exact financial loss in the event of an exploit.
+Currently the system runs in a centralized fashion on AWS supported by the core team, though the code is open-source. However, we plan to transition to a distributed computation framework in the near future to increase the security and transparency of the system. While right now this approach gives the core team control over the claims process, we want to make sure the community can comfortably rely on us and trust the integrity of the system, so we have decided that there will be no code change or updates without Solace Launch DAO approving it (for more info check Governance section) and notifications to the public/community. This will keep everyone honest and aware of how things develop and change as far as upgrades, thus you don’t have to worry about Solace core team introducing an update that’s not in the best interest of the user.
 
-Claim amounts are capped at the policy’s original cover limit (ETH) keeping Solace’s risk exposure constant across different positions and products.
+## What's the flow in case of an exploit?
 
-## Claims Contesting
+The user just needs to open the Solace app and open the claim. When the user opens a claim, PACLAS scans over stored data points to determine exact financial loss. Once a claim has been opened, Solace instantly validates that and makes payouts in a single transaction (within policy’s coverage limit), without delay for reviews by any claims assessment committee.  However, payout goes to Escrow first and stays there for one week (subject to be lowered later) as a cooldown period, which gives everyone a chance to double check that PACLAS operates smoothly and correctly. Important note is that once the payout is submitted to Escrow, underwriters no longer possess those funds, so, as a policyholder, you can relax knowing that your payout is there waiting for you.
 
-To ensure fair and democratic governance over the claims assessment, the automated decision can be contested by a policyholder on two levels. First, the contested claim is escalated to the evaluation by the management team (an escalation fee must be paid). Second, if the management’s decision is contested further, the user can escalate the claim to the community stakeholder level (another fee payment is required) whose decision is final. Below is the description of a claim lifecycle:
+## What's cool about it?
 
-1. A policyholder can submit a claim providing the incident information (e.g., timestamp, transaction hash, etc.), and specifying the amount of loss incurred.
-2. The claims adjuster will evaluate the validity and the financial loss, and, if determined valid, will submit the pay-out transaction into the transaction pipeline. To avoid any critical vulnerabilities or errors on behalf of the automated system, all pay-out transactions will first enter a cooldown period before being delivered to the policyholder. This measure helps to stress test the system and give room for the community to interfere in case of an error.
-3. Suppose the outcome is deemed unsatisfactory by the policyholder. In that case, they can contest and escalate the claim to the management (a fee must be paid), which will evaluate the claim’s validity and make its judgment within three weeks. A similar process is followed for the subsequent escalation stage with the community stakeholders.
+This approach removes centralization and bureaucracy that comes with claims assessment committees and human-operated processes and provides transparency and accessibility to users. Code runs all the processes, not people. And code is much more reliable than people. 
