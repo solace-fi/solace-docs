@@ -138,24 +138,6 @@ The amount of time left until the payout is withdrawable.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`time`| uint256 | The duration in seconds.
-### listClaims
-```solidity
-  function listClaims(
-    address claimant
-  ) external returns (uint256[] claimIDs)
-```
-List a user's claims.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`claimant` | address | User to check.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`claimIDs`| address | List of claimIDs.
 ### totalClaimsOutstanding
 ```solidity
   function totalClaimsOutstanding(
@@ -220,40 +202,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`cooldownPeriod_` | uint256 | New cooldown duration in seconds
-
-### transfer
-```solidity
-  function transfer(
-    address to,
-    uint256 tokenID
-  ) external
-```
-Transfers `tokenID` from `msg.sender` to `to`.
-
-This was excluded from the official `ERC721` standard in favor of `transferFrom(address from, address to, uint256 tokenID)`. We elect to include it.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | The receipient of the token.
-|`tokenID` | uint256 | The token to transfer.
-
-### safeTransfer
-```solidity
-  function safeTransfer(
-    address to,
-    uint256 tokenID
-  ) external
-```
-Safely transfers `tokenID` from `msg.sender` to `to`.
-
-This was excluded from the official `ERC721` standard in favor of `safeTransferFrom(address from, address to, uint256 tokenID)`. We elect to include it.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | The receipient of the token.
-|`tokenID` | uint256 | The token to transfer.
 
 ### receive
 ```solidity

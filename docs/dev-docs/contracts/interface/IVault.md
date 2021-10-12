@@ -17,7 +17,7 @@ Allows a user to deposit **ETH** into the `Vault`(becoming a **Capital Provider*
 Shares of the `Vault` (CP tokens) are minted to caller.
 It is called when `Vault` receives **ETH**.
 It issues the amount of token share respected to the deposit to the `recipient`.
-Reverts if `Vault` is in **Emergency Shutdown**
+Reverts if `Vault` is paused.
 
 
 
@@ -34,7 +34,7 @@ Reverts if `Vault` is in **Emergency Shutdown**
 Allows a user to deposit **WETH** into the `Vault`(becoming a **Capital Provider**).
 Shares of the Vault (CP tokens) are minted to caller.
 It issues the amount of token share respected to the deposit to the `recipient`.
-Reverts if `Vault` is in Emergency Shutdown
+Reverts if `Vault` is paused.
 
 
 #### Parameters:
@@ -212,12 +212,12 @@ Returns true if the user is allowed to withdraw vault shares.
 |`user` | address | User to query.
 return status True if can withdraw.
 
-### emergencyShutdown
+### paused
 ```solidity
-  function emergencyShutdown(
-  ) external returns (bool status)
+  function paused(
+  ) external returns (bool paused_)
 ```
-Returns true if the vault is in shutdown.
+Returns true if the vault is paused.
 
 
 
@@ -258,25 +258,29 @@ Returns true if the destination is authorized to request **ETH**.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`status`| address | True if requestor, false if not.
-### setEmergencyShutdown
+### pause
 ```solidity
-  function setEmergencyShutdown(
-    bool emergencyShutdown_
+  function pause(
   ) external
 ```
-Activates or deactivates emergency shutdown.
+Pauses deposits.
 Can only be called by the current [**governor**](/docs/protocol/governance).
-During Emergency Shutdown:
+While paused:
 1. No users may deposit into the Vault.
 2. Withdrawls can bypass cooldown.
-3. Only Governance may undo Emergency Shutdown.
+3. Only Governance may unpause.
 
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`emergencyShutdown_` | bool | If true, the Vault goes into Emergency Shutdown.
-If false, the Vault goes back into Normal Operation.
+
+### unpause
+```solidity
+  function unpause(
+  ) external
+```
+Unpauses deposits.
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
 
 ### setCooldownWindow
 ```solidity
@@ -295,22 +299,35 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 |`cooldownMin_` | uint40 | Minimum time in seconds.
 |`cooldownMax_` | uint40 | Maximum time in seconds.
 
-### setRequestor
+### addRequestor
 ```solidity
-  function setRequestor(
-    address dst,
-    bool status
+  function addRequestor(
+    address requestor
   ) external
 ```
-Adds or removes requesting rights.
+Adds requesting rights.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`dst` | address | The requestor.
-|`status` | bool | True to add or false to remove rights.
+|`requestor` | address | The requestor to grant rights.
+
+### removeRequestor
+```solidity
+  function removeRequestor(
+    address requestor
+  ) external
+```
+Removes requesting rights.
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`requestor` | address | The requestor to revoke rights.
 
 ### receive
 ```solidity
@@ -357,11 +374,43 @@ Emitted when a user withdraws funds.
 Emitted when funds are sent to a requestor.
 
 
-### EmergencyShutdown
+### Paused
 ```solidity
-  event EmergencyShutdown(
+  event Paused(
   )
 ```
-Emitted when emergency shutdown mode is toggled.
+Emitted when deposits are paused.
+
+
+### Unpaused
+```solidity
+  event Unpaused(
+  )
+```
+Emitted when deposits are unpaused.
+
+
+### CooldownWindowSet
+```solidity
+  event CooldownWindowSet(
+  )
+```
+Emitted when the cooldown window is set.
+
+
+### RequestorAdded
+```solidity
+  event RequestorAdded(
+  )
+```
+Emitted when a requestor is added.
+
+
+### RequestorRemoved
+```solidity
+  event RequestorRemoved(
+  )
+```
+Emitted when a requestor is removed.
 
 

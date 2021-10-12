@@ -114,6 +114,24 @@ The maximum amount of cover that a product can sell in a single policy.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`cover`| address | The max amount of cover in wei.
+### productIsActive
+```solidity
+  function productIsActive(
+    address prod
+  ) external returns (bool status)
+```
+Checks is an address is an active product.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`prod` | address | The product to check.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| address | Returns true if the product is active.
 ### numProducts
 ```solidity
   function numProducts(

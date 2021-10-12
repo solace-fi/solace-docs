@@ -1,7 +1,7 @@
 Enforces access control for important functions to [**governor**](/docs/protocol/governance).
 
 Many contracts contain functionality that should only be accessible to a privileged user. The most common access control pattern is [OpenZeppelin's `Ownable`](https://docs.openzeppelin.com/contracts/4.x/access-control#ownership-and-ownable). We instead use `Governable` with a few key differences:
-- Transferring the governance role is a two step process. The current governance must [`setGovernance(newGovernance_)`](#setgovernance) then the new governance must [`acceptGovernance()`](#acceptgovernance). This is to safeguard against accidentally setting ownership to the wrong address and locking yourself out of your contract.
+- Transferring the governance role is a two step process. The current governance must [`setGovernance(pendingGovernance_)`](#setgovernance) then the new governance must [`acceptGovernance()`](#acceptgovernance). This is to safeguard against accidentally setting ownership to the wrong address and locking yourself out of your contract.
 - `governance` is a constructor argument instead of `msg.sender`. This is especially useful when deploying contracts via a [`SingletonFactory`](./ISingletonFactory)
 
 
@@ -15,9 +15,9 @@ Address of the current governor.
 
 
 
-### newGovernance
+### pendingGovernance
 ```solidity
-  function newGovernance(
+  function pendingGovernance(
   ) external returns (address)
 ```
 Address of the governor to take over.
@@ -27,7 +27,7 @@ Address of the governor to take over.
 ### setGovernance
 ```solidity
   function setGovernance(
-    address newGovernance_
+    address pendingGovernance_
   ) external
 ```
 Initiates transfer of the governance role to a new governor.
@@ -38,7 +38,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newGovernance_` | address | The new governor.
+|`pendingGovernance_` | address | The new governor.
 
 ### acceptGovernance
 ```solidity
@@ -51,6 +51,14 @@ Can only be called by the new governor.
 
 
 ## Events
+### GovernancePending
+```solidity
+  event GovernancePending(
+  )
+```
+Emitted when pending Governance is set.
+
+
 ### GovernanceTransferred
 ```solidity
   event GovernanceTransferred(
