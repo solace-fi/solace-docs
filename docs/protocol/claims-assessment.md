@@ -1,3 +1,8 @@
+---
+sidebar_position: 5
+---
+
+
 # Claims Assessment
 
 Claims assessment is one of the most important parts of any coverage tool. It has to provide transparency of processes, ease of use and guarantee that users receive a payout in the event of an accident. Solace has developed a parametric auto claims assessment system (aka PACLAS) to achieve that.

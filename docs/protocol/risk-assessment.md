@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Risk Assessment
 
 Solace built an architecture that facilitates and incentivises intelligent risk assessment, in a distributed manner. Anyone can develop its own risk models, deploy it and release coverage products. Then underwriters (i.e., capital providers) can evaluate the model and decide to allocate coverage capacity through voting to it. The capital pool underwrites the risk across a variety of risk assessment models that manage coverage products. People are incentivised to develop such models through a fee they earn from policy sales. Please check the Become Risk Manager guide for more information.

@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+---
+
+
 # Coverage Products
 
 Coverage products are a suite of smart contracts managed by a risk assessment model that allow users to purchase coverage policies. Each product provides policies for a single protocol, across all of its smart contracts that hold value, so the pricing and capacity is set on a by-protocol basis. Though a new version of a protocol requires a new product (e.g., Uniswap V2 versus Uniswap V3).

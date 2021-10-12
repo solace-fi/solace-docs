@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Governance
 
 Please read this blog post that outlines the current governance structure in more detail https://link.medium.com/cQ8cWwY16jb
