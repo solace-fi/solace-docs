@@ -156,24 +156,6 @@ Only makes sense in context of the product.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`positionDescription`| uint256 | The description of the covered position(s).
-### listPolicies
-```solidity
-  function listPolicies(
-    address policyholder
-  ) external returns (uint256[] policyIDs)
-```
-Lists all policies for a given policy holder.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | The address of the policy holder.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyIDs`| address | The list of policy IDs that the policy holder has in any order.
 ### exists
 ```solidity
   function exists(
@@ -419,40 +401,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | :--- | :--- | :------------------------------------------------------------------- |
 |`policyDescriptor` | address | The new token descriptor address.
 
-### transfer
-```solidity
-  function transfer(
-    address to,
-    uint256 tokenID
-  ) external
-```
-Transfers `tokenID` from `msg.sender` to `to`.
-
-This was excluded from the official `ERC721` standard in favor of `transferFrom(address from, address to, uint256 tokenID)`. We elect to include it.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | The receipient of the token.
-|`tokenID` | uint256 | The token to transfer.
-
-### safeTransfer
-```solidity
-  function safeTransfer(
-    address to,
-    uint256 tokenID
-  ) external
-```
-Safely transfers `tokenID` from `msg.sender` to `to`.
-
-This was excluded from the official `ERC721` standard in favor of `safeTransferFrom(address from, address to, uint256 tokenID)`. We elect to include it.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | The receipient of the token.
-|`tokenID` | uint256 | The token to transfer.
-
 ## Events
 ### PolicyCreated
 ```solidity
@@ -476,6 +424,14 @@ Emitted when a policy is updated.
   )
 ```
 Emitted when a policy is burned.
+
+
+### PolicyDescriptorSet
+```solidity
+  event PolicyDescriptorSet(
+  )
+```
+Emitted when the policy descriptor is set.
 
 
 ### ProductAdded

@@ -323,3 +323,43 @@ Emitted when a policy is updated.
 Emitted when a claim is submitted.
 
 
+### MinPeriodSet
+```solidity
+  event MinPeriodSet(
+  )
+```
+Emitted when min period is set.
+
+
+### MaxPeriodSet
+```solidity
+  event MaxPeriodSet(
+  )
+```
+Emitted when max period is set.
+
+
+### PauseSet
+```solidity
+  event PauseSet(
+  )
+```
+Emitted when buying is paused or unpaused.
+
+
+### CoveredPlatformSet
+```solidity
+  event CoveredPlatformSet(
+  )
+```
+Emitted when covered platform is set.
+
+
+### PolicyManagerSet
+```solidity
+  event PolicyManagerSet(
+  )
+```
+Emitted when PolicyManager is set.
+
+

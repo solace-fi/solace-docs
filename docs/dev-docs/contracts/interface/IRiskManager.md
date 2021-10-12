@@ -98,6 +98,24 @@ The maximum amount of cover that a product can sell in a single policy.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`cover`| address | The max amount of cover in wei.
+### productIsActive
+```solidity
+  function productIsActive(
+    address prod
+  ) external returns (bool status)
+```
+Checks is an address is an active product.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`prod` | address | The product to check.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| address | True if the product is active.
 ### numProducts
 ```solidity
   function numProducts(
@@ -271,5 +289,13 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ```
 Emitted when a product's parameters are modified.
 Includes adding and removing products.
+
+
+### PartialReservesFactorSet
+```solidity
+  event PartialReservesFactorSet(
+  )
+```
+Emitted when partial reserve factor is set.
 
 
