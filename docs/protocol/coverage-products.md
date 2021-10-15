@@ -16,4 +16,4 @@ Coverage products are a suite of smart contracts managed by a risk assessment mo
 - Uniswap V2
 - Sushiswap
 
-More protocol products are in the works by both Solace core team and independent risk managers. Please stay updated for new releases through Twitter and Discord.
+More protocol products are in the works by both Solace core team and community risk managers. Please stay updated for new releases through Twitter and Discord.

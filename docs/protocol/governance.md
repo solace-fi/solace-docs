@@ -17,4 +17,5 @@ At the moment we have launched Solace LaunchDAO, which acts as a coordination ve
 ## Transition to Community-run DAO in the Future
 
 The purpose of this Launch DAO is to bootstrap the development and allow for rapid scaling of Solace’s platform. Eventually we are going to reach the point where the governance can be handed off to the community and Solace can be a self-sustaining protocol. With that in mind, our job is to push the project forward, build a community around it, and create a system that will inherit the rule.
+
 Starting October, we plan to allocate resources to the development of Solace DAO, so you can expect the transition to happen around the end of this year.
