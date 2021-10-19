@@ -28,11 +28,6 @@ module.exports = {
           position: "left",
         },
         {
-          label: "App",
-          to: "https://rinkeby.solace.fi",
-          position: "left",
-        },
-        {
           label: "What is Solace",
           to: "docs/what-is-solace",
           position: "right",
@@ -77,10 +72,6 @@ module.exports = {
             {
               label: "Website",
               to: "https://www.solace.fi",
-            },
-            {
-              label: "App",
-              to: "https://rinkeby.solace.fi",
             },
             {
               label: 'Whitepaper',
