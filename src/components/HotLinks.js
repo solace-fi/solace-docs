@@ -9,11 +9,11 @@ import githubFill from '@iconify-icons/akar-icons/github-fill';
 const HotLinkList = [
     {
         title: 'solace-fi/core',
-        link: 'https://github.com/solace-fi/core'
+        link: 'https://github.com/solace-fi/solace-core'
     },
     {
         title: 'solace-fi/client',
-        link: 'https://github.com/solace-fi/client'
+        link: 'https://github.com/solace-fi/solace-client'
     },
     {
         title: 'solace-fi/paclas',
