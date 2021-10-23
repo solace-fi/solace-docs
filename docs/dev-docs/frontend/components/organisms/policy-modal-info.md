@@ -10,7 +10,7 @@ title: PolicyModalInfo
 | :--- | :--- | :------------------------------------------------------------------- |
 | `appraisal` | BigNumber | The appraised amount of a position.
 | `selectedPolicy` | Policy \| undefined | The currently selected policy.
-| `latestBlock` | number | The latest block number.
+| `latestBlock` | Block \| undefined | The latest block.
 
 ## Components
 
@@ -26,7 +26,7 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork` , `currencyDecimals`
 | Wallet | `account`
-| CachedData | `tokenPositionData`
+| CachedData | `tokenPosData`
 
 Local functions:
 - `closeModal()` : Handle closing the `AssetsModal` modal

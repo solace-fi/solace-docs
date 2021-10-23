@@ -29,6 +29,10 @@ Props Dependencies:
 
 Info: Returns a toast with message about the app.
 
+### `AuditToast` (exported)
+
+Info: Returns a toast with message about the audits.
+
 ### `NotificationToast` (exported)
 
 Props Dependencies:

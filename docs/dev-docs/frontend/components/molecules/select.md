@@ -8,15 +8,9 @@ title: StyledSelect
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `value` | {
-    value: string
-    label: string
-  } | Chosen dropdown selection.
+| `value` | { value: string; label: string } | Chosen dropdown selection.
 | `onChange` | any | Function to call when the Select element is being interacted with.
-| `options` | {
-    value: string
-    label: string
-  } | Dropdown selection options.
+| `options` | { value: string; label: string } | Dropdown selection options.
 
 ## Components
 

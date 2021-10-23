@@ -10,26 +10,24 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account`
+| General | `appTheme`
 | Network | `activeNetwork`
+| Wallet | `account, name`
+| CachedData | `openAccountModal`
 
-Hook Dependencies:
+Info: Returns a button containing user avatar, address and the network. Opens the `AccountModal` component on click.
 
-- `useNativeTokenBalance()`
-
-Local Functions:
-
-Info: Returns a component containing the user's ETH balance, address.
-
-### `Account` (exported)
+### `MiniAccount` (exported)
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
+| General | `appTheme`
+| Network | `activeNetwork`
 | Wallet | `account`
-| CachedData | `localTransactions`
+| CachedData | `openAccountModal`
 
 Local Functions:
 
-Info: Returns a component containing `UserAccount` , `NetworkConnectButton` , `WalletConnectButton` , and `TransactionHistoryButton` in that order.
+Info: Returns a small button containing user avatar. Opens the `AccountModal` component on click.

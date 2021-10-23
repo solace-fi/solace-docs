@@ -1,10 +1,10 @@
 ---
-title: TokenPositionCard
+title: NftPositionCard
 ---
 
 ## Props
 
-### `TokenPositionCardProps`
+### `NftPositionCardProps`
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -18,7 +18,7 @@ title: TokenPositionCard
 
 ## Components
 
-### `TokenPositionCard` (exported)
+### `NftPositionCard` (exported)
 
 Manager Dependencies:
 
@@ -30,4 +30,4 @@ Hook Dependencies:
 
 - `useWindowDimensions()`
 
-Info: Returns a `PositionCard` object that displays the token's information.
+Info: Returns a `PositionCard` object that displays the NFT's information.

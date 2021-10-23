@@ -18,12 +18,11 @@ Hook Dependencies:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`appTheme` | 'light' \| 'dark' | Boolean to indicate light or dark mode.
-|`selectedTheme` | 'light' \| 'dark' \| undefined | Boolean indicating the user's choice of theme.
 |`toggleTheme` | function | Toggle theme.
 |`notices` | string[] | Stringified array of SystemNoticeData objects.
 |`errors` | string[] | Stringified array of ErrorData objects.
+|`haveErrors` | boolean | Is true if errors exist.
 |`addNotices` | (noticesToAdd: SystemNoticeData[]) => void | Function to add objects to `notices` array.
 |`removeNotices` | (noticesToRemove: SystemNotice[]) => void | Function to remove objects from `notices` array.
 |`addErrors` | (noticesToAdd: ErrorData[]) => void | Function to add objects to `errors` array.
 |`removeErrors` | (errorsToRemove: Error[]) => void | Function to remove objects to `errors` array.
-|`openModal` | () => void | Function to open the `LinksModal` modal.

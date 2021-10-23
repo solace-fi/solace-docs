@@ -6,36 +6,40 @@
 | `maxDesktopHeight` (optional) | boolean | Set max desktop height.
 | `maxMobileHeight` (optional) | boolean | Set max mobile height.
 
+### `LayoutProps`
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `location` (optional) | any | Location object from react-router.
+
 ## Styles
 
 ### `movingGradient`
 - **Info**: Keyframes for background gradient movement animation
 
-### `CustomScrollbar` (exported)
-- **Info**: Custom scrollbar style
-
 ### `GlobalStyle` (exported)
 - **Additional Styles**: CustomScrollbar, Text3Css
-- **Info**: Custom body style
+- **Info**: Custom global body style
 
 ## Components
 
 ### `Scrollable`
 - **Props**: ScrollableProps
-- **Additional Styles**: CustomScrollbar
+- **Info**: A component with a capped height that allows scrolling.
 
 ### `FlexRow` (exported)
 - **Props**: GeneralElementProps
 - **Additional Styles**: GeneralElementCss
-- **Info**: Simple flexed row component.
 
 ### `FlexCol` (exported)
 - **Props**: GeneralElementProps
 - **Additional Styles**: GeneralElementCss
-- **Info**: Simple flexed column component.
 
 ### `Layout` (exported)
 - **Info**: Flexed layout component that gives passing to entire app interface.
+
+### `HorizRule` (exported)
+- **Props**: LayoutProps
+- **Info**: styled hr element.
 
 ### `ContentContainer` (exported)
 - **Info**: Flexed layout component that properly positions content and maximizes width of entire app interface.
@@ -50,11 +54,12 @@
 
 ### `HeroContainer` (exported)
 - **Props**: HeightAndWidthProps
+- **Additional Styles**: HeightAndWidthCss
 - **Extends**: FlexCol
 - **Info**: Component that serves the role of a banner. Used to capture user attention.
 
-### `FooterComponent` (exported)
-- **Info**: Component that creates and stylizes footer.
+### `Footer` (exported)
+- **Info**: Fixed footer component.
 
 ### `Content` (exported)
 - **Info**: Component that creates vertical padding. Used for self-contained components sharing a page.

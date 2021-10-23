@@ -1,13 +1,30 @@
 ## Props
 
-### `ButtonProps` (exported)
+### `ClickProps` (exported)
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
+| `onClick` (optional) | boolean | Function to call on click.
+| `disabled` (optional) | boolean | Disable button.
+
+### `ButtonProps` (exported)
+
+- **Extends**: ClickProps
+
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `analogical` (optional) | boolean | Set color to match theme color.
+| `light` (optional) | boolean | Set light color.
+| `dark` (optional) | boolean | Set dark color.
 | `secondary` (optional) | boolean | Set secondary color.
-| `inconspicuous` (optional) | boolean | Prevent button from drawing user's attention.
+| `info` (optional) | boolean | Set info color.
+| `success` (optional) | boolean | Set success color.
+| `error` (optional) | boolean | Set error color.
+| `warning` (optional) | boolean | Set warning color.
 | `glow` (optional) | boolean | Set border glow.
 | `hidden` (optional) | boolean | Hide button.
 | `noradius` (optional) | boolean | Remove rounded corners of button.
+| `noborder` (optional) | boolean | Remove border of button.
+| `nohover` (optional) | boolean | Remove hover effect of button.
 
 ### `ButtonWrapperProps`
 | Name | Type | Description                                                          |
@@ -15,13 +32,11 @@
 | `isRow` (optional) | boolean | Line children from left to right.
 | `isColumn` (optional) | boolean | Line children from top to bottom.
 
-### `ClickProps` (exported)
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-| `onClick` (optional) | boolean | Function to call on click.
-| `disabled` (optional) | boolean | Disable button.
-
 ## Styles
+
+### `ButtonWrapperCss` (exported)
+- **Props**: ButtonWrapperProps
+- **Info**: Set flex-direction.
 
 ### `ButtonBaseCss` (exported)
 - **Props**: GeneralElementProps, ButtonProps
@@ -40,6 +55,6 @@
 - **Info**: Special button for Navbar.
 
 ### `ButtonWrapper` (exported)
-- **Props**: ButtonWrapperProps
+- **Props**: ButtonWrapperProps, MarginProps
 - **Additional Styles**: ButtonWrapperCss, MarginCss
 - **Info**: Wrapper for housing a group of buttons.

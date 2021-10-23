@@ -49,7 +49,7 @@ Hook Dependencies:
 - `useLocalStorage()`
 - `useReload()`
 - `useGas()`
-- `useGetLatestBlockNumber()`
+- `useGetLatestBlock()`
 - `useCachePositions()`
 - `usePolicyGetter()`
 
@@ -57,17 +57,13 @@ Hook Dependencies:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`localTransactions` | LocalTx[] | Array of local transactions.
-|`userPolicyData` | {
-    policiesLoading: boolean
-    userPolicies: Policy[]
-    setCanGetAssessments: (toggle: boolean) => void
-  } | Policy loading state, array of user policies, and toggle function to allow assessment retrieval.
-|`tokenPositionData` | { boolean , NetworkCache[] } | Token and position initialization state, and the cached data itself.
+|`userPolicyData` | { policiesLoading: boolean; userPolicies: Policy[]; setCanGetAssessments: (toggle: boolean) => void } | Policy loading state, array of user policies, and toggle function to allow assessment retrieval.
+|`tokenPosData` | { boolean , NetworkCache[] } | Token and position initialization state, and the cached data itself.
 |`showHistoryModal` | boolean | Display transaction history modal.
 |`version` | number | Value that is updated by user actions for controlled refresh.
 |`dataVersion` | number | Value that is updated on an interval for controlled refresh.
 |`gasPrices` | GasFeeListState | Returned gas prices from explorer.
-|`latestBlock` | number | Number of the latest fetched block.
+|`latestBlock` | Block \| undefined | Number of the latest fetched block.
 |`addLocalTransactions` | function | Add local transactions.
 |`deleteLocalTransactions` | function | Delete local transactions.
 |`openHistoryModal` | function | Function to display transaction history modal.

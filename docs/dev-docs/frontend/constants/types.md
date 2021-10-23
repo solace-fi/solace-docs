@@ -6,10 +6,9 @@ title: "Types"
 
 ```
 type NetworkCache = {
-  name: string
   chainId: number
-  positions: PositionsCache
-  positionNames: PositionNamesCache
+  positionsCache: PositionsCache
+  positionNamesCache: PositionNamesCache
 }
 ```
 
@@ -30,29 +29,23 @@ type PositionNamesCache = {
 ### `PositionsCacheValue` (exported)
 
 ```
-type PositionsCacheValue = { 
-  savedPositions: Position[] 
-  positionsInitialized: boolean
-}
+type PositionsCacheValue = { positions: Position[]; init: boolean }
 ```
 
 ### `PositionNamesCacheValue` (exported)
 
 ```
-type PositionNamesCacheValue = { 
-  positionNames: { [key: string]: string }positionNamesInitialized: boolean
+type PositionNamesCacheValue = {
+  positionNames: { [key: string]: string }
+  underlyingPositionNames: { [key: string]: string[] }
+  init: boolean
 }
 ```
 
 ### `ClaimDetails` (exported)
 
 ```
-type ClaimDetails = { 
-  id: string
-  cooldown: string
-  canWithdraw: boolean
-  amount: BigNumber
-}
+type ClaimDetails = { id: string; cooldown: string; canWithdraw: boolean; amount: BigNumber }
 ```
 
 ### `BasicData` (exported)
@@ -61,6 +54,17 @@ type ClaimDetails = {
 type BasicData = {
   address: string
   name: string
+}
+```
+
+### `Option` (exported)
+
+```
+type Option = {
+  id: BigNumber
+  rewardAmount: BigNumber
+  strikePrice: BigNumber
+  expiry: BigNumber
 }
 ```
 
@@ -74,6 +78,7 @@ type Policy = {
   productName: string
   positionDescription: string
   positionNames: string[]
+  underlyingPositionNames: string[]
   expirationBlock: number
   coverAmount: string
   price: string
@@ -105,8 +110,19 @@ LpTokenInfo = {
 
 ```
 type Position = {
-  type: PositionsType
+  type: PositionType
   position: Token | LiquityPosition
+}
+```
+
+### `TokenData` (exported)
+```
+type TokenData = {
+  address: string
+  name: string
+  symbol: string
+  decimals: number
+  balance: BigNumber
 }
 ```
 
@@ -114,23 +130,13 @@ type Position = {
 
 ```
 type Token = {
-  token: {
-    address: string
-    name: string
-    symbol: string
-    decimals: number
-    balance: BigNumber
-  }
-  underlying: {
-    address: string
-    name: string
-    symbol: string
-    decimals: number
-    balance: BigNumber
-  }
+  token: TokenData
+  underlying: TokenData[]
   eth: {
     balance: BigNumber
   }
+  tokenType: 'token' | 'nft'
+  metadata?: any
 }
 ```
 
@@ -183,19 +189,14 @@ type GasFeeOption = {
 ### `GasPriceResult` (exported)
 
 ```
-GasPriceResult = {
-  veryFast: number
+type GasPriceResult = {
   fast: number
-  average: number
-  safeLow: number
-  suggestedBaseFee?: number
+  proposed: number
+  safe: number
+  suggestBaseFee?: number
 }
 ```
 
-### `PositionsType` (exported)
-```
-type PositionsType = 'erc20' | 'liquity' | 'other'
-```
 
 ### `StringToStringMapping` (exported)
 
@@ -207,21 +208,21 @@ type StringToStringMapping = { [key: string]: string }
 ```
 type SupportedProduct = {
   name: ProductName
-  positionsType: PositionsType
+  positionsType: PositionType
   productLink?: string
-  getAppraisals: (tokens: any[], chainId: number) => Promise<BigNumber[]>
+  supportedSubProducts?: {
+    [key: number]: string[]
+  }
 
-  getTokens?: (provider: any, activeNetwork: NetworkConfig) => Promise<Token[]>
-  
-  getBalances?: (
-    user: string,
-    provider: any,
-    cache: NetworkCache,
-    activeNetwork: NetworkConfig,
-    tokens: Token[]
-  ) => Promise<Token[]>
-
-  getPositions?: any
+  getTokens?: {
+    [key: number]: (provider: any, activeNetwork: NetworkConfig, metadata?: any) => Promise<Token[]>
+  }
+  getBalances?: {
+    [key: number]: (user: string, provider: any, activeNetwork: NetworkConfig, tokens: Token[]) => Promise<Token[]>
+  }
+  getPositions?: {
+    [key: number]: any
+  }
 }
 ```
 
@@ -263,7 +264,7 @@ type LocalTx = {
 
 ```
 type NetworkConfig = {
-name: string
+  name: string
   chainId: number
   isTestnet: boolean
   supportedTxTypes: number[]

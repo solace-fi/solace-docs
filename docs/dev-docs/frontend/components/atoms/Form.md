@@ -8,4 +8,4 @@
 ### `FormCol` (exported)
 - **Props**: GeneralElementProps, GeneralTextProps
 - **Additional Styles**: GeneralElementCss, GeneralTextCss
-- **Info**: Column that controls the style of its `Input` children.
+- **Info**: Column that controls the style of its `Input` children, where the first child has padding-right.

@@ -6,11 +6,11 @@
 ## Components
 
 ### `RadioElement` (exported)
-- **Info**: Component for stylizing the appearance of an option in a radio.
+- **Info**: Styled component containing displayed info of a radio option.
 
 ### `RadioInput` (exported)
 - **Additional Styles**: RadioInputCss, RadioElement
-- **Info**: Component for stylizing the behavior of an option in a radio.
+- **Info**: Styled behavior of a radio option.
 
 ### `RadioGroup` (exported)
 - **Props**: GeneralElementProps
@@ -24,7 +24,7 @@
 - **Info**: Component for containing a circular radio option.
 
 ### `RadioCircleFigure` (exported)
-- **Info**: Component for stylizing the appearance of a circular radio option.
+- **Info**: Circular radio option appearance.
 
 ### `RadioCircleInput` (exported)
 - **Additional Styles**: RadioInputCss, RadioCircleFigure

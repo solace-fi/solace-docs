@@ -1,9 +1,12 @@
 ## Props
 
 ### `DeFiAssetsProps`
+- **Extends**: HeightAndWidthProps, MarginProps
+
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `borderless` (optional) | boolean | Remove stylized border if true.
+| `noborder` (optional) | boolean | Remove stylized border if true.
+| `secured` (optional) | boolean | Give special border if true.
 
 ## Components
 
@@ -11,24 +14,20 @@
 - **Info**: Flexed component to properly positions or protocols.
 
 ### `DeFiAssetImage` (exported)
-- **Props**: HeightAndWidthProps, MarginProps, DeFiAssetProps
-- **Additional Styles**: HeightAndWidthCss, MarginCss
-- **Info**: Protocol Image component.
+- **Props**: DeFiAssetProps
+- **Additional Styles**: HeightAndWidthCss, MarginCss, SecureCircleCss
 
 ### `ProtocolTitle` (exported)
 - **Props**: GeneralTextProps
 - **Additional Styles**: GeneralTextCss
-- **Info**: Title for Protocol.
 
 ### `PositionCardName` (exported)
 - **Props**: GeneralTextProps
 - **Additional Styles**: GeneralTextCss
-- **Info**: Text component for position name.
 
 ### `PositionCardText` (exported)
 - **Props**: GeneralTextProps
 - **Additional Styles**: GeneralTextCss
-- **Info**: Text component for position properties.
 
 ### `PositionCardButton` (exported)
-- **Info**: Button for `PositionCard`.
+- **Info**: Div element for `PositionCard`.

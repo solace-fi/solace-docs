@@ -18,6 +18,18 @@ title: Tooltip
 - **Extends**: ReactTooltip from react-tooltip
 - **Info**: Returns a stylized tooltip component
 
+### `StyledNavTooltip` (exported)
+
+Props Dependencies:
+
+- `StyledTooltipProps`
+
+Hook Dependencies:
+- `useWindowDimensions()`
+- `useLocation()`
+
+Info: Returns a CustomTooltip component containing the tip. tip is placed to the right, ideal for navbar elements.
+
 ### `StyledTooltip` (exported)
 
 Props Dependencies:

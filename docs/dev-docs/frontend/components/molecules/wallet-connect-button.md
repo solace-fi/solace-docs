@@ -15,9 +15,6 @@ Manager Dependencies:
 Props Dependencies:
 
 - `GeneralElementProps`
-
-Hook Dependencies:
-
-- `useWindowDimensions()`
+- `ButtonProps`
 
 Info: Returns a button that opens the wallet modal.

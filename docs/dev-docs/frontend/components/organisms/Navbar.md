@@ -2,21 +2,20 @@
 title: Navbar
 ---
 
-## Props
-
-### `NavbarProps`
-
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-| `location` | any | Location object, fetched from react-router-dom.
-
 ## Components
 
 ### `SideNavbar` (exported)
 
-Props Dependencies:
+Manager Dependencies:
 
-- `NavbarProps`
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| General | `appTheme`
+
+Hook Dependencies:
+
+- `useLocation()`
+- `useWindowDimensions()`
 
 Info: Returns component containing Solace Logo along with the navigation links as a side navbar.
 
@@ -24,8 +23,7 @@ Info: Returns component containing Solace Logo along with the navigation links a
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account`
-| General | `openModal`
+| Notifications | `toastSettings` , `makeAppToast`
 
 Props Dependencies:
 
@@ -33,6 +31,6 @@ Props Dependencies:
 
 Hook Dependencies:
 
-- `useWindowDimension()`
+- `useLocation()`
 
-Info: Returns component containing Solace Logo along with the navigation links, `NetworkConnectButton`, `WalletConnectButton` , and `TransactionHistoryButton`, as a top navbar.
+Info: Returns component containing Solace Logo along with the navigation links as a top navbar.

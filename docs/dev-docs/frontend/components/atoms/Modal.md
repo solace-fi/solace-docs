@@ -8,6 +8,7 @@
 | `isOpen` | boolean | Boolean to open modal.
 | `modalTitle` | string | String to set title of modal.
 | `disableCloseButton` | boolean | Boolean to disable modal close button.
+| `zIndex` (optional) | number | Set the component's z-index.
 
 ### `ModalButtonProps` (exported)
 - **Extends**: ClickProps
@@ -25,7 +26,6 @@
 
 ### `ModalContainer` (exported)
 - **Props**: ModalProps
-- **Info**: Component containing modal.
 
 ### `ModalBase` (exported)
 - **Props**: ModalProps
@@ -37,14 +37,13 @@
 - **Info**: Component for modal close button.
 
 ### `ModalHeader` (export)
-- **Info**: Component for modal header.
+- **Info**: Component for modal title.
 
 ### `ModalRow` (export)
 - **Props**: GeneralElementProps
 - **Additional Styles**: GeneralElementCss
-- **Info**: Component for modal row.
+- **Info**: Component for modal row to hold `ModalCell` components.
 
 ### `ModalCell` (exported)
 - **Props**: GeneralTextProps, GeneralElementProps
 - **Additional Styles**: GeneralTextCss, GeneralElementCss
-- **Info**: Component for modal cell.

@@ -1,6 +1,8 @@
 ## Components
 
 ### `FlexedToastMessage` (exported)
+- **Props**: GeneralTextProps
+- **Additional Styles**: GeneralTextCss
 - **Info**: Flexed toast message component.
 
 ### `ToastWrapper` (exported)
@@ -8,4 +10,3 @@
 
 ### `StylizedToastContainer` (exported)
 - **Extends**: ToastContainer from react-toastify
-- **Info**: Toast container component with an adjusted margin property.

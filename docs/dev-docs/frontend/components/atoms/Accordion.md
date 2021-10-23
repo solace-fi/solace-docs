@@ -9,5 +9,4 @@
 ## Components
 
 ### `Accordion` (exported)
-- **Additional Styles**: CustomScrollbar
 - **Info**: Collapsible, scrollable accordion component.

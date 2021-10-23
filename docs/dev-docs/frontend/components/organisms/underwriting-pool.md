@@ -1,10 +1,10 @@
 ---
-title: RiskBackingCapitalPool
+title: UnderwritingPool
 ---
 
 ## Props
 
-### `RiskBackingCapitalPoolProps`
+### `UnderwritingPoolProps`
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -12,17 +12,17 @@ title: RiskBackingCapitalPool
 
 ## Components
 
-### `RiskBackingCapitalPool` (exported)
+### `UnderwritingPool` (exported)
 
 Props Dependencies:
 
-- `RiskBackingCapitalPoolProps`
+- `UnderwritingPoolProps`
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `errors`
+| General | `haveErrors`
 | Wallet | `account`
 | Network | `currencyDecimals`
 

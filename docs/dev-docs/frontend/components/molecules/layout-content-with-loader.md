@@ -12,4 +12,8 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `initialized`
 
+Hook Dependencies:
+
+- `useLocation()`
+
 Info: Returns a component that displays a loader instead of its children if `initialized` is false

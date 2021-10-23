@@ -13,6 +13,12 @@ Info: Returns a container for a modal, its header, the close button, and the con
 
 ### `ModalCloseButton` (exported)
 
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| General | `appTheme`
+
 Props Dependencies:
 - `ModalButtonProps`
 

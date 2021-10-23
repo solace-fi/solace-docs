@@ -10,9 +10,9 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `errors`
+| General | `haveErrors`
 | Wallet | `account` , `initialized`
-| CachedData | `addLocalTransactions` , `reload` , `gasPrices` , `tokenPositionData` , `latestBlock`
+| CachedData | `addLocalTransactions` , `reload` , `gasPrices` , `tokenPosData` , `latestBlock`
 | Contracts | `master`
 | Network | `activeNetwork` , `currencyDecimals`
 | Notifications | `makeTxToast`
@@ -30,9 +30,5 @@ Hook Dependencies:
 Contract Functions:
 
 - `claimRewards` : Calls master contract to claim pending rewards.
-
-Data Refresh:
-
-- [ `allPolicies` ]: Calculate total active cover amount and total active policies from fetched policies.
 
 Info: Returns a `BoxRow` of two `Box` components, where one displays user data, and the other displays global data.

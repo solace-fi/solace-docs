@@ -1,16 +1,17 @@
 ## Props
 
 ### `CardProps`
-- **Extends**: ClickProps
+- **Extends**: ClickProps, GeneralElementProps
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `transparent` (optional) | boolean | Set transparency.
 | `canHover` (optional) | boolean | Change background-color on hover.
 | `fade` (optional) | boolean | Set background-color to a faded color.
-| `blue` (optional) | boolean | Set background-color to blue.
-| `purple` (optional) | boolean | Set background-color to purple.
+| `color1` (optional) | boolean | Set background-color to color1.
+| `color2` (optional) | boolean | Set background-color to color2.
 | `glow` (optional) | boolean | Set border to glow.
+| `isHighlight` (optional) | boolean | Set highlight background-color.
 
 ### `CardContainerProps`
 - **Extends**: GeneralElementProps
@@ -45,7 +46,7 @@
 ### `PositionCard` (exported)
 - **Props**: CardProps
 - **Additional Styles**: CardCss
-- **Info**: Card component for holding position info.
+- **Info**: Card component for holding position info and changes color on hover.
 
 ### `CardHeader` (exported)
 - **Props**: GeneralTextProps
@@ -55,7 +56,6 @@
 ### `CardTitle` (exported)
 - **Props**: GeneralTextProps
 - **Additional Styles**: GeneralTextCss
-- **Info**: Card text with set margin-bottom.
 
 ### `CardBlock` (exported)
 - **Info**: Simple div element.

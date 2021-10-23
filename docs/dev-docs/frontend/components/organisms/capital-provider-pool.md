@@ -21,7 +21,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `errors`
+| General | `haveErrors`
 | Wallet | `account`
 | Contracts | `cpFarm`
 

@@ -1,68 +1,79 @@
 ## Styles
 
 ### `StyledIconCss` (exported)
-- **Info**: Properly positions icons.
-
-### `StyledInfo` (exported)
-- **Extends**: styled-icons/fluentui-system-regular/Info
-- **Info**: Styles Info icon.
-
-### `StyledDiscord` (exported)
-- **Extends**: styled-icons/simple-icons/Discord
-- **Info**: Styles Discord icon.
-
-### `StyledTwitter` (exported)
-- **Extends**: styled-icons/boxicons-logos/Twitter
-- **Info**: Styles Twitter icon.
-
-### `StyledGithub` (exported)
-- **Extends**: styled-icons/boxicons-logos/Github
-- **Info**: Styles Github icon.
-
-### `StyledSun` (exported)
-- **Extends**: styled-icons/evaicons-solid/Sun
-- **Info**: Styles Sun icon.
-
-### `StyledMoon` (exported)
-- **Extends**: styled-icons/material-outlined/DarkMode
-- **Info**: Styles Moon icon.
-
-### `StyledDots` (exported)
-- **Extends**: styled-icons/boxicons-regular/DotsHorizontalRounded
-- **Info**: Styles Horizontal Dots icon.
-
-### `StyledTheme` (exported)
-- **Extends**: styled-icons/fluentui-system-regular/DarkTheme
-- **Info**: Styles Theme icon.
-
-### `StyledArrowDropDownCircle ` (exported)
-- **Extends**: styled-icons/material-sharp/ArrowDropDownCircle
-- **Info**: Styles ArrowDropDownCircle icon.
-
-### `StyledLinkExternal` (exported)
-- **Extends**: styled-icons/boxicons-regular/LinkExternal
-- **Info**: Styles LinkExternal icon.
-
-### `StyledNetworkChart` (exported)
-- **Extends**: styled-icons/boxicons-regular/NetworkChart
-- **Info**: Styles Network icon.
-
-### `StyledHistory` (exported)
-- **Extends**: styled-icons/boxicons-regular/History
-- **Info**: Styles History icon.
+- **Info**: Properly positions icon.
 
 ### `StyledWallet` (exported)
 - **Extends**: styled-icons/boxicons-solid/Wallet
-- **Info**: Styles Wallet icon.
+
+### `StyledNetworkChart` (exported)
+- **Extends**: styled-icons/boxicons-regular/NetworkChart
+
+### `StyledDots` (exported)
+- **Extends**: styled-icons/boxicons-regular/DotsHorizontalRounded
+
+### `StyledInfo` (exported)
+- **Extends**: styled-icons/fluentui-system-regular/Info
+
+### `StyledDashboard` (exported)
+- **Extends**: styled-icons/material/Dashboard
+
+### `StyledFileShield` (exported)
+- **Extends**: styled-icons/remix-fill/FileShield
+
+### `StyledCoinStack` (exported)
+- **Extends**: styled-icons/boxicons-solid/CoinStack
+
+### `StyledCommunity` (exported)
+- **Extends**: styled-icons/fluentui-system-filled/PeopleCommunity
+
+### `StyledDiscord` (exported)
+- **Extends**: styled-icons/simple-icons/Discord
+
+### `StyledTwitter` (exported)
+- **Extends**: styled-icons/boxicons-logos/Twitter
+
+### `StyledGithub` (exported)
+- **Extends**: styled-icons/boxicons-logos/Github
+
+### `StyledMedium` (exported)
+- **Extends**: styled-icons/boxicons-logos/Medium
+
+### `StyledDocuments` (exported)
+- **Extends**: styled-icons/ionicons-sharp/Documents
+
+### `StyledDocumentText` (exported)
+- **Extends**: styled-icons/typicons/DocumentText
+
+### `StyledWork` (exported)
+- **Extends**: styled-icons/material/Work
+
+### `StyledSun` (exported)
+- **Extends**: styled-icons/evaicons-solid/Sun
+
+### `StyledMoon` (exported)
+- **Extends**: styled-icons/material-outlined/DarkMode
+
+### `StyledTheme` (exported)
+- **Extends**: styled-icons/fluentui-system-regular/DarkTheme
+
+### `StyledArrowDropDown` (exported)
+- **Extends**: styled-icons/remix-line/ArrowDropDown
+
+### `StyledCopy` (exported)
+- **Extends**: styled-icons/boxicons-regular/Copy
+
+### `StyledLinkExternal` (exported)
+- **Extends**: styled-icons/boxicons-regular/LinkExternal
+
+### `StyledLockFile` (exported)
+- **Extends**: styled-icons/bootstrap/FileEarmarkLock2Fill
 
 ### `StyledMenu` (exported)
 - **Extends**: styled-icons/boxicons-regular/Menu
-- **Info**: Styles Menu icon.
 
 ### `StyledCheckmark` (exported)
 - **Extends**: styled-icons/evaicons-solid/Checkmark
-- **Info**: Styles Checkmark icon.
 
 ### `StyledWarning` (exported)
 - **Extends**: styled-icons/fluentui-system-regular/Warning
-- **Info**: Styles Warning icon.

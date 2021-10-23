@@ -7,13 +7,12 @@
 
 ### `Input` (exported)
 - **Props**: HeightAndWidthProps, GeneralTextProps
-- **Additional Styles**: InputCss, Text3Css, GeneralTextCss, HeightAndWidthCss
-- **Info**: Stylized Input component.
+- **Additional Styles**: InputCss, Text4Css, GeneralTextCss, GeneralElementCss
+- **Info**: Input box for text.
 
 ### `Search` (exported)
 - **Additional Styles**: InputCss
-- **Info**: Stylized Input component as a search bar.
+- **Info**: Search bar.
 
 ### `StyledSlider` (exported)
 - **Extends**: Slider from @rebass/forms
-- **Info**: Stylized Slider component.
