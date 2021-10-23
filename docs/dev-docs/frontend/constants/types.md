@@ -352,7 +352,7 @@ type MetamaskWatchAsset = {
 ### `SystemNoticeData` (exported)
 
 ```
-type MetamaskWatchAsset = {
+type SystemNoticeData = {
   type: SystemNotice
   metadata: string
   uniqueId: string

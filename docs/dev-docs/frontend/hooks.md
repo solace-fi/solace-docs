@@ -97,7 +97,7 @@ Return the current cooldown period as a string.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `sources` | ContractSources \| undefined | The object containing the contract address and ABI.
+| `sources` | [**ContractSources**](/docs/dev-docs/frontend/constants/types#contractsources-exported) \| undefined | The object containing the contract address and ABI.
 | `hasSigner` | boolean | Option to create signer for contract.
 
 Manager Dependencies:
@@ -238,7 +238,7 @@ Calls getBlock() on the current Web3Provider via event listener to return latest
 | :--- | :--- | :------------------------------------------------------------------- |
 | `getAll` | boolean | Option to get policies for all users or one user.
 | `latestBlock` | Block \| undefined | Latest fetched block.
-| `data` | { dataInitialized: boolean; storedPosData: NetworkCache[] } | Object containing the state of the token data initialization and the data itself.
+| `data` | { dataInitialized: boolean; storedPosData: [**NetworkCache**](/docs/dev-docs/frontend/constants/types#networkcache-exported)[] } | Object containing the state of the token data initialization and the data itself.
 | `policyHolder` (optional) | string | Address of the policy holder.
 | `product` (optional) | string | Address of the product contract.
 
@@ -334,7 +334,7 @@ Finds the policy from fetched policies whose policy ID matches the input ID and 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `policy` | Policy \| undefined | Policy object.
+| `policy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | Policy object.
 
 Manager Dependencies:
 
@@ -590,4 +590,4 @@ Returns an object of a boolean that indicates if the cooldown had been started, 
 
 ### `useWindowDimensions`
 
-Keeps track of the window's inner width and inner height. Returns them as properties of an object.
+Keeps track of the window's inner width and inner height. Returns [**WindowDimensions**](/docs/dev-docs/frontend/constants/types#windowdimensions-exported) object.

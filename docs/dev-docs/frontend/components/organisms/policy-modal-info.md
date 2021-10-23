@@ -9,7 +9,7 @@ title: PolicyModalInfo
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `appraisal` | BigNumber | The appraised amount of a position.
-| `selectedPolicy` | Policy \| undefined | The currently selected policy.
+| `selectedPolicy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | The currently selected policy.
 | `latestBlock` | Block \| undefined | The latest block.
 
 ## Components
@@ -31,7 +31,7 @@ Manager Dependencies:
 Local functions:
 - `closeModal()` : Handle closing the `AssetsModal` modal
 - `getAssets()` : Get policy's assets for the `AssetsModal` modal
-- `handleFilterPositions()` : Return an array of `BasicData` objects depending on the position's `positionsType`.
+- `handleFilterPositions()` : Return an array of [**BasicData**](/docs/dev-docs/frontend/constants/types#basicdata-exported) objects depending on the position's `positionsType`.
 
 
 Hook Dependencies:

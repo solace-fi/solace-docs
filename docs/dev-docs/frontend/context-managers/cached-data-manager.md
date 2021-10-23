@@ -12,11 +12,7 @@ Unlike other managers, this manager has multiple roles, so this section will be 
 
 ### Version and Reload
 
-CachedDataManager controls app-wide data refresh. This is made possible with parts of the app relying on `version` and `dataVersion`.
-
-`version` is a number that increments by 1 every time its respective function `reload` is called, regardless of where it was called from. By incrementing `version` , any part of the app that has it as a dependency, will refresh.
-
-`dataVersion` is similar to `version` , except its respective function `dataReload` is only called within the manager on an interval.
+CachedDataManager controls app-wide data refresh. This is because the app listens to changes in `latestBlock`, which changes on every new block.
 
 ### Gas Prices
 
@@ -30,9 +26,9 @@ CachedDataManager oversees the initialization of token and position data, a very
 
 After a transaction is sent, it takes time before it is validated. Because of this, that pending transaction wouldn't be found in the user's transaction history right away. So pending transactions are stored locally and are removed when the transactions with the same hashes are found.
 
-### Transaction history modal
+### Account details modal
 
-The manager can toggle the visibility of the transaction history modal. This approach is due to certain elements being destroyed as the user interface takes a different device screen width, to prevent the modal from being prematurely destroyed, it is moved here.
+The manager can toggle the visibility of the account details modal. This approach in grant this manager the control is to prevent the modal from being prematurely destroyed as the user interface takes a different device screen width.
 
 ### Latest Block
 
@@ -42,13 +38,14 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
+| General | `addNotices` , `removeNotices`
 | Wallet | `account` , `disconnect`
-| Network | `chainId `
+| Network | `chainId`
 
 Hook Dependencies:
 - `useLocalStorage()`
 - `useReload()`
-- `useGas()`
+- `useFetchGasPrice()`
 - `useGetLatestBlock()`
 - `useCachePositions()`
 - `usePolicyGetter()`
@@ -56,15 +53,13 @@ Hook Dependencies:
 #### Returned values:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`localTransactions` | LocalTx[] | Array of local transactions.
-|`userPolicyData` | { policiesLoading: boolean; userPolicies: Policy[]; setCanGetAssessments: (toggle: boolean) => void } | Policy loading state, array of user policies, and toggle function to allow assessment retrieval.
-|`tokenPosData` | { boolean , NetworkCache[] } | Token and position initialization state, and the cached data itself.
-|`showHistoryModal` | boolean | Display transaction history modal.
+|`localTransactions` | [**LocalTx**](/docs/dev-docs/frontend/constants/types#localtx-exported)[] | Array of local transactions.
+|`userPolicyData` | { boolean; [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported)[]; setCanGetAssessments: (toggle: boolean) => void } | Policy loading state, array of user policies, and toggle function to allow assessment retrieval.
+|`tokenPosData` | { boolean , [**NetworkCache**](/docs/dev-docs/frontend/constants/types#networkcache-exported)[] } | Token and position initialization state, and the cached data itself.
+|`showAccountModal` | boolean | Display account details modal.
 |`version` | number | Value that is updated by user actions for controlled refresh.
-|`dataVersion` | number | Value that is updated on an interval for controlled refresh.
-|`gasPrices` | GasFeeListState | Returned gas prices from explorer.
+|`gasPrices` | [**GasFeeListState**](/docs/dev-docs/frontend/constants/types#gasfeeliststate-exported) | Returned gas prices from explorer.
 |`latestBlock` | Block \| undefined | Number of the latest fetched block.
 |`addLocalTransactions` | function | Add local transactions.
 |`deleteLocalTransactions` | function | Delete local transactions.
-|`openHistoryModal` | function | Function to display transaction history modal.
 |`reload` | function | Function to increment `version`.

@@ -16,7 +16,7 @@ title: Toast
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `message` | string | Toast message.
-| `condition` | TransactionCondition | Transaction condition.
+| `condition` | [TransactionCondition](/docs/dev-docs/frontend/constants/enums#transactioncondition-exported) | Transaction condition.
 | `txHash` (optional) | string | Transaction hash.
 
 ## Components
@@ -47,6 +47,6 @@ Manager Dependencies:
 
 Local Functions: 
 
-- `getStateFromCondition (condition: TransactionCondition)` : Returns sentence fragment based on transaction condition.
+- `getStateFromCondition (condition: TransactionCondition)` : Returns sentence fragment based on [**TransactionCondition**](/docs/dev-docs/frontend/constants/enums#transactioncondition-exported).
 
 Info: Returns a toast with message about a transaction.

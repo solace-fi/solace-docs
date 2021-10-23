@@ -11,7 +11,7 @@ title: ManageModal
 | `closeModal` | function | Function to call when closing modal.
 | `isOpen` | boolean | Boolean to open modal.
 | `latestBlock` | Block \| undefined | The latest block.
-| `selectedPolicy` | Policy \| undefined | The currently selected policy.
+| `selectedPolicy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | The currently selected policy.
 
 ## Components
 
@@ -48,7 +48,7 @@ Contract Functions:
 
 Local Functions:
 
-- `handleToast(tx: any, localTx: LocalTx)`: Create toast on submitted transaction.
+- `handleToast(tx: any, localTx: [**LocalTx**](/docs/dev-docs/frontend/constants/types#localtx-exported))`: Create toast on submitted transaction.
 - `handleContractCallError(functionName: string, err: any, txType: FunctionName)`: Contract error handling.
 - `handleCoverageChange(coverAmount: string)` : Set coverage state on interface based on selected cover limit.
 - `handleInputCoverage(input: string)` : Set coverage state on interface based on input.

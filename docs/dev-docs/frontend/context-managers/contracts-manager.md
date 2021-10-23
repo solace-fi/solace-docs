@@ -26,7 +26,8 @@ Hook Dependencies:
 #### Returned values:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`master` | Contract \| null | Master contract.
+|`farmController` | Contract \| null | Farm Controller contract.
+|`optionsFarming` | Contract \| null | Options Farming contract.
 |`vault` | Contract \| null | Vault contract.
 |`treasury` | Contract \| null | Treasury contract.
 |`solace` | Contract \| null | Solace contract.
@@ -39,8 +40,8 @@ Hook Dependencies:
 |`claimsEscrow` | Contract \| null | Claims Escrow contract.
 |`policyManager` | Contract \| null | Policy Manager contract.
 |`riskManager` | Contract \| null | Risk Manager contract.
-|`contractSources` | ContractSources[] | Array of contract addresses and ABIs.
-|`products` | ProductContract[] | Array of product contracts.
+|`contractSources` | [**ContractSources**](/docs/dev-docs/frontend/constants/types#contractsources-exported)[] | Array of contract addresses and ABIs.
+|`products` | [**ProductContract**](/docs/dev-docs/frontend/constants/types#productcontract-exported)[] | Array of product contracts.
 |`selectedProtocol` | Contract \| undefined | User selected product contract.
 |`getProtocolByName` | function | Get product contract by name.
 |`setSelectedProtocolByName` | function | Set `selectedProtocol` by name.

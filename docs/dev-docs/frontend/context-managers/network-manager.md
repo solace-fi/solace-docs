@@ -16,10 +16,10 @@ Hook Dependencies:
 #### Returned values:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`activeNetwork` | NetworkConfig | Current network to be connected to.
+|`activeNetwork` | [**NetworkConfig**](/docs/dev-docs/frontend/constants/types#networkconfig-exported) | Current network to be connected to.
 |`chainId` | number | Chain ID of current network.
 |`currencyDecimals` | number | Number of decimals of current network's native currency.
-|`networks` | NetworkConfig[] | Array of network configurations.
-|`findNetworkByChainId` | (chainId: number \| undefined) => NetworkConfig \| undefined | Find the network using chainId, return undefined if not found.
-|`findNetworkByName` | (networkName: string) => NetworkConfig \| undefined | Find the network using name, return undefined if not found.
-|`changeNetwork` | (chainId: number \| undefined) => NetworkConfig \| undefined | Change network to that which uses the input chainId.
+|`networks` | [**NetworkConfig**](/docs/dev-docs/frontend/constants/types#networkconfig-exported)[] | Array of network configurations.
+|`findNetworkByChainId` | (chainId: number \| undefined) => [**NetworkConfig**](/docs/dev-docs/frontend/constants/types#networkconfig-exported) \| undefined | Find the network using chainId, return undefined if not found.
+|`findNetworkByName` | (networkName: string) => [**NetworkConfig**](/docs/dev-docs/frontend/constants/types#networkconfig-exported) \| undefined | Find the network using name, return undefined if not found.
+|`changeNetwork` | (chainId: number \| undefined) => [**NetworkConfig**](/docs/dev-docs/frontend/constants/types#networkconfig-exported) \| undefined | Change network to that which uses the input chainId.

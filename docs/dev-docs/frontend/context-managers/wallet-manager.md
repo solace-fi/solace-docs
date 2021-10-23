@@ -27,6 +27,7 @@ Hook Dependencies:
 |`connecting` | boolean | Connecting status of wallet.
 |`isActive` | boolean | Running state of wallet.
 |`account` | string \| undefined | Account of user account.
+|`name` | string \| undefined | ENS name of user account.
 |`library` | any | Provider of wallet.
 |`connector` | AbstractConnector \| undefined | Current wallet AbstractConnector.
 |`activeWalletConnector` | WalletConnector \| undefined | Current wallet provider.

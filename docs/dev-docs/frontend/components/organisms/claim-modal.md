@@ -11,7 +11,7 @@ title: ClaimModal
 | `closeModal` | function | Function to call when closing modal.
 | `isOpen` | boolean | Boolean to open modal.
 | `latestBlock` | Block \| undefined | The latest block.
-| `selectedPolicy` | Policy \| undefined | The currently selected policy.
+| `selectedPolicy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | The currently selected policy.
 
 ## Components
 

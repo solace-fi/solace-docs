@@ -10,7 +10,7 @@ title: AssetsModal
 | :--- | :--- | :------------------------------------------------------------------- |
 | `isOpen` | boolean | Boolean to indicate whether the modal is open or not.
 | `closeModal` | () => void | Function to close the modal.
-| `assets` | BasicData[] | List of assets to be displayed.
+| `assets` | [**BasicData**](/docs/dev-docs/frontend/constants/types#basicdata-exported)[] | List of assets to be displayed.
 | `modalTitle` | () => void | String for the modal title.
 
 ## Components
