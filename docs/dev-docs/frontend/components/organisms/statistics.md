@@ -31,4 +31,4 @@ Contract Functions:
 
 - `claimRewards` : Calls master contract to claim pending rewards.
 
-Info: Returns a `BoxRow` of two `Box` components, where one displays user data, and the other displays global data.
+Info: Returns a [**BoxRow**](/docs/dev-docs/frontend/components/atoms/Box#boxrow-exported) of two [**Box**](/docs/dev-docs/frontend/components/atoms/Box#box-exported) components, where one displays user data, and the other displays global data.

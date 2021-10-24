@@ -8,9 +8,9 @@ title: PolicyModalInfo
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `appraisal` | BigNumber | The appraised amount of a position.
+| `appraisal` | [**BigNumber**](https://docs.ethers.io/v5/api/utils/bignumber/) | The appraised amount of a position.
 | `selectedPolicy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | The currently selected policy.
-| `latestBlock` | Block \| undefined | The latest block.
+| `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | The latest block.
 
 ## Components
 

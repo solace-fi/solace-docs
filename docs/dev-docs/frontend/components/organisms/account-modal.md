@@ -19,7 +19,7 @@ title: AccountModal
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork`
 | Contracts | `contractSources`
-| Wallet | `account, name, activeWalletConnector`
+| Wallet | `account` , `name` , `activeWalletConnector`
 | CachedData | `localTransactions`
 
 Props Dependencies:

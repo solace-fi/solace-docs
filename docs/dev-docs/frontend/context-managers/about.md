@@ -13,13 +13,13 @@ It should be clarified that React Context Providers here are called "Managers" i
 ### Who are the Managers?
 
 Currently there are seven Managers that the user interface relies on for global state: 
-- **GeneralManager**
-- **NetworkManager**
-- **WalletManager**
-- **ProviderManager**
-- **CachedDataManager**
-- **ContractsManager**
-- **NotificationsManager**
+- [**GeneralManager**](/docs/dev-docs/frontend/context-managers/general-manager)
+- [**NetworkManager**](/docs/dev-docs/frontend/context-managers/network-manager)
+- [**WalletManager**](/docs/dev-docs/frontend/context-managers/wallet-manager)
+- [**ProviderManager**](/docs/dev-docs/frontend/context-managers/provider-manager)
+- [**CachedDataManager**](/docs/dev-docs/frontend/context-managers/cached-data-manager)
+- [**ContractsManager**](/docs/dev-docs/frontend/context-managers/contracts-manager)
+- [**NotificationsManager**](/docs/dev-docs/frontend/context-managers/notifications-manager)
 
 Below is the current structure of the Managers, the order matters so data flows down properly.
 

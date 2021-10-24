@@ -39,7 +39,7 @@ These are rather common props and styles shared across components.
 | `mt` (optional) | number | Sets margin-bottom in px.
 
 ### `GeneralElementProps` (exported)
-- **Extends**: `HeightAndWidthProps` , `PaddingProps` , `MarginProps`
+- **Extends**: `HeightAndWidthCss` , `PaddingProps` , `MarginProps`
 
 ## Styles
 

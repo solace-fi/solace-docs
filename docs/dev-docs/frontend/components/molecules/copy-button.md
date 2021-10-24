@@ -16,6 +16,6 @@ title: CopyButton
 
 Props Dependencies:
 
-- `CopyProps`
+- [**CopyProps**](/docs/dev-docs/frontend/components/molecules/copy-button#copyprops)
 
 Info: Returns a button that copies a string on click.

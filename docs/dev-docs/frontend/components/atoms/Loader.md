@@ -12,6 +12,6 @@
 ## Components
 
 ### `Loader` (exported)
-- **Props**: LoaderProps, HeightAndWidthProps
-- **Additional Styles**: rotate
+- **Props**: [**LoaderProps**](/docs/dev-docs/frontend/components/atoms/Loader#loaderprops), [**HeightAndWidthProps**](/docs/dev-docs/frontend/components/general-interfaces#heightandwidthprops-exported)
+- **Additional Styles**: [**rotate**](/docs/dev-docs/frontend/components/atoms/Loader#rotate)
 - **Info**: Stylized Loading Icon

@@ -22,33 +22,33 @@
 ## Styles
 
 ### `BoxCss`
-- **Props**: GeneralElementProps, BoxProps
-- **Additional Styles**: GeneralElementCss
-- **Info**: Sets styles defined by `BoxProps` and `GeneralElementProps`.
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported), [**BoxProps**](/docs/dev-docs/frontend/components/atoms/Box#boxprops)
+- **Additional Styles**: [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
+- **Info**: Sets box style.
 
 ## Components
 
 ### `BoxBase`
-- **Extends**: rebass/styled-components/Box
+- **Extends**: [**rebass/styled-components/Box**](https://rebassjs.org/box)
 
 ### `BoxRow` (exported)
 - **Extends**: BoxBase
-- **Info**: Hold `Box` elements in a row.
+- **Info**: Hold [**Box**](/docs/dev-docs/frontend/components/atoms/Box#box-exported) elements in a row.
 
 ### `Box` (exported)
 - **Extends**: BoxRow
-- **Props**: GeneralElementProps, BoxProps
-- **Additional Styles**: BoxCss
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported), [**BoxProps**](/docs/dev-docs/frontend/components/atoms/Box#boxprops)
+- **Additional Styles**: [**BoxCss**](/docs/dev-docs/frontend/components/atoms/Box#boxcss)
 - **Info**: Responsive box component.
 
 ### `SmallBox` (exported)
-- **Props**: GeneralElementProps, BoxProps, SmallBoxProps
-- **Additional Styles**: BoxCss
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported), [**BoxProps**](/docs/dev-docs/frontend/components/atoms/Box#boxprops), [**SmallBoxProps**](/docs/dev-docs/frontend/components/atoms/Box#smallboxprops)
+- **Additional Styles**: [**BoxCss**](/docs/dev-docs/frontend/components/atoms/Box#boxcss)
 - **Info**: Responsive collapsible component for notifying purposes.
 
 ### `BoxItem` (exported)
-- **Info**: Responsive component within a `Box` .
+- **Info**: Responsive component within a [**Box**](/docs/dev-docs/frontend/components/atoms/Box#box-exported) .
 
 ### `BoxItemTitle` (exported)
-- **Props**: GeneralElementProps
-- **Additional Styles**: GeneralTextCss
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported)

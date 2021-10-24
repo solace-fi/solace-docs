@@ -30,4 +30,4 @@ Hook Dependencies:
 
 - `useWindowDimensions()`
 
-Info: Returns a `PositionCard` object that displays the NFT's information.
+Info: Returns a [**PositionCard**](/docs/dev-docs/frontend/components/atoms/Card#positioncard-exported) object that displays the NFT's information.

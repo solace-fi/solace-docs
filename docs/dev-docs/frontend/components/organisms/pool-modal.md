@@ -59,7 +59,7 @@ Contract Functions:
 
 Local Functions:
 
-- `handleToast(tx: any, localTx: [**LocalTx**](/docs/dev-docs/frontend/constants/types#localtx-exported))`: Create toast on submitted transaction.
+- `handleToast(tx: any, localTx: LocalTx)`: Create toast on submitted transaction.
 - `handleContractCallError(functionName: string, err: any, txType: FunctionName)`: Contract error handling.
 - `isAppropriateAmount()` : Returns true if the user's amount for a transaction is valid.
 - `getAssetBalanceByFunc()` : Returns the available balance of an asset based on the type of transaction the user wants.

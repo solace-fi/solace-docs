@@ -14,14 +14,14 @@
 ## Components
 
 ### `TopNav` (exported)
-- **Props**: TopNavProps
+- **Props**: [**TopNavProps**](/docs/dev-docs/frontend/components/atoms/Navbar#topnavprops)
 - **Info**: Top navbar component.
 
 ### `SidebarText` (exported)
 - **Info**: Side navbar text component.
 
 ### `SidebarItem` (exported)
-- **Extends**: Navlink from react-router-dom
+- **Extends**: [**Navlink**](https://reactrouter.com/web/api/NavLink)
 - **Info**: Side navbar link component.
 
 ### `ItemText` (exported)

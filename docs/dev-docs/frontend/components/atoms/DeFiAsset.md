@@ -1,7 +1,7 @@
 ## Props
 
-### `DeFiAssetsProps`
-- **Extends**: HeightAndWidthProps, MarginProps
+### `DeFiAssetProps`
+- **Extends**: [**HeightAndWidthProps**](/docs/dev-docs/frontend/components/general-interfaces#heightandwidthprops-exported), [**MarginProps**](/docs/dev-docs/frontend/components/general-interfaces#marginprops-exported)
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -14,20 +14,20 @@
 - **Info**: Flexed component to properly positions or protocols.
 
 ### `DeFiAssetImage` (exported)
-- **Props**: DeFiAssetProps
-- **Additional Styles**: HeightAndWidthCss, MarginCss, SecureCircleCss
+- **Props**: [**DeFiAssetProps**](/docs/dev-docs/frontend/components/atoms/DeFiAsset#defiassetprops)
+- **Additional Styles**: [**HeightAndWidthCss**](/docs/dev-docs/frontend/components/general-interfaces#heightandwidthcss-exported), [**MarginCss**](/docs/dev-docs/frontend/components/general-interfaces#margincss-exported), [**SecureCircleCss**](/docs/dev-docs/frontend/components/atoms/User#securecirclecss-exported)
 
 ### `ProtocolTitle` (exported)
-- **Props**: GeneralTextProps
-- **Additional Styles**: GeneralTextCss
+- **Props**: [**GeneralTextProps**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextprops-exported)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported)
 
 ### `PositionCardName` (exported)
-- **Props**: GeneralTextProps
-- **Additional Styles**: GeneralTextCss
+- **Props**: [**GeneralTextProps**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextprops-exported)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported)
 
 ### `PositionCardText` (exported)
-- **Props**: GeneralTextProps
-- **Additional Styles**: GeneralTextCss
+- **Props**: [**GeneralTextProps**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextprops-exported)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported)
 
 ### `PositionCardButton` (exported)
-- **Info**: Div element for `PositionCard`.
+- **Info**: Button wrapping div element for [**PositionCard**](/docs/dev-docs/frontend/components/atoms/Card#positioncard-exported).

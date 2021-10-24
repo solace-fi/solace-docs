@@ -59,7 +59,7 @@ Hook Dependencies:
 |`showAccountModal` | boolean | Display account details modal.
 |`version` | number | Value that is updated by user actions for controlled refresh.
 |`gasPrices` | [**GasFeeListState**](/docs/dev-docs/frontend/constants/types#gasfeeliststate-exported) | Returned gas prices from explorer.
-|`latestBlock` | Block \| undefined | Number of the latest fetched block.
+|`latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | Number of the latest fetched block.
 |`addLocalTransactions` | function | Add local transactions.
 |`deleteLocalTransactions` | function | Delete local transactions.
 |`reload` | function | Function to increment `version`.

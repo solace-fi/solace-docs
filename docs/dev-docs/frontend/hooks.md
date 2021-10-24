@@ -151,7 +151,7 @@ Adds string to copy clipboard.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `farm` | Contract \| null \| undefined | Farm contract object.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
 | `account` | string \| undefined | Address of user account.
 
 Manager Dependencies:
@@ -168,7 +168,7 @@ Returns the user's staked value for a farm as a string.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `farm` | Contract \| null \| undefined | Farm contract object.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
 
 Manager Dependencies:
 
@@ -237,7 +237,7 @@ Calls getBlock() on the current Web3Provider via event listener to return latest
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `getAll` | boolean | Option to get policies for all users or one user.
-| `latestBlock` | Block \| undefined | Latest fetched block.
+| `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | Latest fetched block.
 | `data` | { dataInitialized: boolean; storedPosData: [**NetworkCache**](/docs/dev-docs/frontend/constants/types#networkcache-exported)[] } | Object containing the state of the token data initialization and the data itself.
 | `policyHolder` (optional) | string | Address of the policy holder.
 | `product` (optional) | string | Address of the product contract.
@@ -345,7 +345,7 @@ Manager Dependencies:
 | Contracts | `getProtocolByName`
 | CachedData | `latestBlock` , `tokenPosData`
 
-Appraises the user's position for a product in a policy and returns the result as a BigNumber.
+Appraises the user's position for a product in a policy and returns the result as a [**BigNumber**](https://docs.ethers.io/v5/api/utils/bignumber/).
 
 ### `useGetMaxCoverPerPolicy`
 
@@ -448,7 +448,7 @@ Calculate the amount of rewards using values from `useFarmControllerValues` and 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `farmId` | number | ID of the farm.
-| `farm` | Contract \| null \| undefined | Farm contract object.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
 | `account` | string \| undefined | Address of user account.
 
 Manager Dependencies:
@@ -469,7 +469,7 @@ Calculate the user's amount of rewards using values from `useFarmControllerValue
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `farm` | Contract \| null \| undefined | Farm contract object.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
 
 Manager Dependencies:
 
@@ -503,7 +503,7 @@ Adds a user's pending rewards from all farms together and return the sum as a st
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `tokenContract` | Contract \| null | Token contract object.
+| `tokenContract` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null | Token contract object.
 | `spender` | string \| null | Address of spender.
 
 Manager Dependencies:

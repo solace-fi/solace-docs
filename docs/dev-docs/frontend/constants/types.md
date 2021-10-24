@@ -1,6 +1,8 @@
 ---
-title: "Types"
+title: "Types and Interfaces"
 ---
+
+## Types
 
 ### `NetworkCache` (exported)
 
@@ -356,5 +358,21 @@ type SystemNoticeData = {
   type: SystemNotice
   metadata: string
   uniqueId: string
+}
+```
+
+## Interfaces
+
+### `WalletConnector` (exported)
+```
+interface WalletConnector {
+  name: string
+  id: string
+  logo: string
+  supportedTxTypes: number[]
+  getConnector(network: NetworkConfig, args?: Record<string, any>): AbstractConnector
+  onConnect?(connector: AbstractConnector, args?: Record<string, any>): void
+  onDisconnect?(connector?: AbstractConnector): void
+  onError(error: Error): Error | undefined
 }
 ```

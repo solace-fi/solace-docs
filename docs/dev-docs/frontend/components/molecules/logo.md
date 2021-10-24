@@ -8,8 +8,7 @@ title: Logo
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `location` | any | Location object, fetched from react-router-dom.
-
+| `location` | any | [**Location**] (https://reactrouter.com/web/api/location)
 ## Components
 
 ### `Logo` (exported)

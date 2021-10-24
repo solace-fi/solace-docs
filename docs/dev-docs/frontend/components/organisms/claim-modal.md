@@ -10,7 +10,7 @@ title: ClaimModal
 | :--- | :--- | :------------------------------------------------------------------- |
 | `closeModal` | function | Function to call when closing modal.
 | `isOpen` | boolean | Boolean to open modal.
-| `latestBlock` | Block \| undefined | The latest block.
+| `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | The latest block.
 | `selectedPolicy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | The currently selected policy.
 
 ## Components
