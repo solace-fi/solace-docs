@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Why Solace?
 
-Why Solace? Well that's easy. It's because we offer a number of advantages over the competition that results in a better experience, better coverage, lower rates, is more efficient and yields higher returns. 
+Why Solace? It's because we offer a number of advantages over our peers that results in a better experience, better coverage, lower rates, is more efficient and yields higher returns. 
 
 Because we focus first on providing coverage as opposed to prioritizing raising capital and farming, this allows us to deliver the best user experience and value possible while ensuring that coverage and protecting user’s funds. 
 
@@ -14,8 +14,8 @@ At the core of who we are and what we do is our community. Solace is a user-orie
 
 To achieve this Solace focuses on 3 major points: 
 
-**- Auto Claims Processing**: We know that, as a user, you want to file a claim and get paid in a hassle-free fashion. Solace let's you file a claim and get paid in a single transaction, because we value your time and funds.
+**- Auto Claims Processing**: We know that, as a user, you want to file a claim and get paid in a hassle-free fashion. Solace lets you file a claim and get paid in a single transaction, because we value your time and funds.
 
 **- Intelligent Risk Assessment**: As a protocol, Solace manages the risk and liability exposures in the most accurate way possible. Risk management doesn't rely on human voting or market bias, but quantitative (statistics, probability, etc.) and qualitative (e.g., audits) measures.
 
-**- High Capital Efficiency**: We want you to get covered in the most secure way possible, without breaking a bank. Solace pools the risk across all of its products, which ultimately translates to affordable premiums for the user and greater returns for the underwriter.f
+**- High Capital Efficiency**: We want you to get covered in the most secure way possible, without breaking a bank. Solace pools the risk across all of its products, which ultimately translates to affordable premiums for the user and greater returns for the underwriter.
