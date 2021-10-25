@@ -16,7 +16,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Network | `activeNetwork` , `activeNetwork` , `findNetworkByChainId` , `findNetworkByName` , `changeNetwork`
+| Network | `activeNetwork` , `findNetworkByChainId` , `findNetworkByName` , `changeNetwork`
 | Wallet | `connector`
 
 #### Returned values:

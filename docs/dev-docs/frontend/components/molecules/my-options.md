@@ -1,29 +1,29 @@
 ---
-title: MyClaims
+title: MyOptions
 ---
 
 ## Components
 
-### `MyClaims` (exported)
+### `MyOptions` (exported)
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | General | `haveErrors`
-| Wallet | `account`
-| Contracts | `claimsEscrow`
-| CachedData | `addLocalTransactions` , `reload` , `gasPrices`
+| Wallet | `account` , `library`
+| Contracts | `optionsFarming`
 | Network | `activeNetwork` , `currencyDecimals`
+| CachedData | `addLocalTransactions` , `reload` , `gasPrices` , `latestBlock`
 | Notifications | `makeTxToast`
 
 Hook Dependencies:
-- `useGetClaimsDetails()`
+
 - `useWindowDimensions()`
 - `useGasConfig()`
+- `useOptionsDetails()`
 
-Contract Functions: 
-- `withdrawPayout` : Calls ClaimsEscrow contract to withdraw payout.
+Contract Functions:
+- `exerciseOption (_optionId: string)` : Exercises an option given an id.
 
-
-Info: Returns a card container of the user's claims in cards.
+Info: returns component displaying options.

@@ -4,14 +4,10 @@
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `h1` (optional) | boolean | Apply `Heading1` css.
-| `h2` (optional) | boolean | Apply `Heading2` css.
-| `h3` (optional) | boolean | Apply `Heading3` css.
-| `h4` (optional) | boolean | Apply `Heading4` css.
-| `t1` (optional) | boolean | Apply `Text1` css.
-| `t2` (optional) | boolean | Apply `Text2` css.
-| `t3` (optional) | boolean | Apply `Text3` css.
-| `t4` (optional) | boolean | Apply `Text4` css.
+| `t1` (optional) | boolean | Apply style from [**Text1Css**](/docs/dev-docs/frontend/components/atoms/Typography#text1css-exported).
+| `t2` (optional) | boolean | Apply style from [**Text2Css**](/docs/dev-docs/frontend/components/atoms/Typography#text2css-exported).
+| `t3` (optional) | boolean | Apply style from [**Text3Css**](/docs/dev-docs/frontend/components/atoms/Typography#text3css-exported).
+| `t4` (optional) | boolean | Apply style from [**Text4Css**](/docs/dev-docs/frontend/components/atoms/Typography#text4css-exported).
 
 ### `TextAlignProps` (exported)
 
@@ -21,25 +17,28 @@
 | `textAlignLeft` (optional) | boolean | Align text left.
 | `textAlignRight` (optional) | boolean | Align text right.
 
-### `TextStyledProps` (exported)
+### `TextStyleProps` (exported)
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `nowrap` (optional) | boolean | Disable wrapped text.
+| `mont` (optional) | boolean | Apply Montserrat font style.
+| `lineHeight` (optional) | number | Set line height of text.
+| `analogical` (optional) | boolean | Set text color to blend with background theme.
+| `light` (optional) | boolean | Set text color to light.
+| `dark` (optional) | boolean | Set text color to dark.
 | `outlined` (optional) | boolean | Outline text.
 | `autoAlignVertical` (optional) | boolean | Set vertical margin of text to auto.
 | `autoAlignHorizontal` (optional) | boolean | Set horizontal margin of text to auto.
 | `autoAlign` (optional) | boolean | Align text vertically and horizontally, and fix height and line-height.
 | `bold` (optional) | boolean | Increased font weight.
-| `green` (optional) | boolean | Apply green color to text.
+| `info` (optional) | boolean | Apply info color to text.
+| `success` (optional) | boolean | Apply success color to text.
 | `error` (optional) | boolean | Apply error color to text.
 | `warning` (optional) | boolean | Apply warning color to text.
-| `high_em` (optional) | boolean | Apply high emphasis level of color to text.
-| `med_em` (optional) | boolean | Apply medium emphasis level of color to text.
-| `low_em` (optional) | boolean | Apply low emphasis level of color to text.
 
 ### `GeneralTextProps` (exported)
-- **Extends**: TextFontProps, TextAlignProps, TextStyleProps
+- **Extends**: [**TextFontProps**](/docs/dev-docs/frontend/components/atoms/Typography#textfontprops-exported), [**TextAlignProps**](/docs/dev-docs/frontend/components/atoms/Typography#textalignprops-exported), [**TextStyleProps**](/docs/dev-docs/frontend/components/atoms/Typography#textstyleprops-exported)
 
 ## Styles
 
@@ -54,25 +53,6 @@
 
 ### `Font4`
 - **Info**: Custom smallest font size. 14px (12px on mobile)
-
-### `HeadingCss`
-- **Info**: Custom style increasing font weight.
-
-### `Heading1Css`
-- **Additional Styles**: HeadingCss, Font1
-- **Info**: Custom style with heading and large font size.
-
-### `Heading2Css`
-- **Additional Styles**: HeadingCss, Font2
-- **Info**: Custom style with heading and medium font size.
-
-### `Heading3Css`
-- **Additional Styles**: HeadingCss, Font3
-- **Info**: Custom style with heading and small font size.
-
-### `Heading4Css`
-- **Additional Styles**: HeadingCss, Font4
-- **Info**: Custom style with heading and smallest font size.
 
 ### `AlignCenterCss`
 - **Info**: Align text center.
@@ -93,100 +73,60 @@
 - **Info**: Set horizontal margin of text to auto.
 
 ### `AlignAutoCss`
-- **Additional Styles**: AlignHeightCss, AlignVerticalCss, AlignHorizontalCss
+- **Additional Styles**: [**AlignHeightCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignheightcss), [**AlignVerticalCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignverticalcss), [**AlignHorizontalCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignhorizontalcss)
 - **Info**: Align text vertically and horizontally, and fix height and line-height.
 
 ### `TextOutlineCss`
-- **Additional Styles**: AlignHeightCss
+- **Additional Styles**: [**AlignHeightCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignheightcss)
 - **Info**: Create outline for text.
 
 ### `NoWrapCss`
 - **Info**: Disable wrapped text.
 
 ### `Text1Css` (exported)
-- **Additional Styles**: Font1
+- **Additional Styles**: [**Font1**](/docs/dev-docs/frontend/components/atoms/Typography#font1)
 - **Info**: Custom style with large heading.
 
 ### `Text2Css` (exported)
-- **Additional Styles**: Font2
+- **Additional Styles**: [**Font2**](/docs/dev-docs/frontend/components/atoms/Typography#font2)
 - **Info**: Custom style with medium font size.
 
 ### `Text3Css` (exported)
-- **Additional Styles**: Font3
+- **Additional Styles**: [**Font3**](/docs/dev-docs/frontend/components/atoms/Typography#font3)
 - **Info**: Custom style with small font size.
 
 ### `Text4Css` (exported)
-- **Additional Styles**: Font4
+- **Additional Styles**: [**Font4**](/docs/dev-docs/frontend/components/atoms/Typography#font4)
 - **Info**: Custom style with smallest font size.
 
 ### `TextFontCss` (exported)
-- **Props**: TextFontProps
-- **Additional Styles**: Heading1Css, Heading2Css, Heading3Css, Heading4Css, Text1Css, Text2Css, Text3Css, Text4Css
+- **Props**: [**TextFontProps**](/docs/dev-docs/frontend/components/atoms/Typography#textfontprops-exported)
+- **Additional Styles**: [**Text1Css**](/docs/dev-docs/frontend/components/atoms/Typography#text1css-exported), [**Text2Css**](/docs/dev-docs/frontend/components/atoms/Typography#text2css-exported), [**Text3Css**](/docs/dev-docs/frontend/components/atoms/Typography#text3css-exported), [**Text4Css**](/docs/dev-docs/frontend/components/atoms/Typography#text4css-exported)
 - **Info**: Determine font size and heading of text.
 
 ### `TextAlignCss` (exported)
-- **Props**: TextAlignProps
-- **Additional Styles**: AlignCenterCss, AlignLeftCss, AlignRightCss
+- **Props**: [**TextAlignProps**](/docs/dev-docs/frontend/components/atoms/Typography#textalignprops-exported)
+- **Additional Styles**: [**AlignCenterCss**](/docs/dev-docs/frontend/components/atoms/Typography#aligncentercss), [**AlignLeftCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignleftcss), [**AlignRightCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignrightcss)
 - **Info**: Determine text alignment.
 
 ### `TextStyleCss` (exported)
-- **Props**: TextStyleProps
-- **Additional Styles**: NowrapCss, TextOutlineCss, AlignAutoCss, AlignVerticalCss, AlignHorizontalCss
+- **Props**: [**TextStyleProps**](/docs/dev-docs/frontend/components/atoms/Typography#textstyleprops-exported)
+- **Additional Styles**: [**NowrapCss**](/docs/dev-docs/frontend/components/atoms/Typography#nowrapcss), [**TextOutlineCss**](/docs/dev-docs/frontend/components/atoms/Typography#textoutlinecss), [**AlignAutoCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignautocss), [**AlignVerticalCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignverticalcss), [**AlignHorizontalCss**](/docs/dev-docs/frontend/components/atoms/Typography#alignhorizontalcss)
 - **Info**: Determine text style.
 
 ### `GeneralTextCss` (exported)
-- **Props**: GeneralTextProps
-- **Additional Styles**: TextFontCss, TextAlignCss, TextStyleCss
+- **Props**: [**GeneralTextProps**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextprops-exported)
+- **Additional Styles**: [**TextFontCss**](/docs/dev-docs/frontend/components/atoms/Typography#textfontcss-exported), [**TextAlignCss**](/docs/dev-docs/frontend/components/atoms/Typography#textaligncss-exported), [**TextStyleCss**](/docs/dev-docs/frontend/components/atoms/Typography#textstylecss-exported)
 - **Info**: Determine alignment, style, font size, and heading of text.
 
 ## Components
 
 ### `Text` (exported)
-- **Props**: GeneralTextProps
-- **Additional Styles**: GeneralTextCss
-- **Info**: Normal text component.
+- **Props**: [**GeneralTextProps**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextprops-exported)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported)
+- **Info**: Div element to contain text.
 
 ### `TextSpan` (exported)
-- **Props**: GeneralTextProps, GeneralElementProps
-- **Additional Styles**: GeneralTextCss, GeneralElementCss
-- **Info**: Normal text span component.
-
-### `Text1` (exported)
-- **Props**: TextAlignProps, TextStyleProps
-- **Additional Styles**: TextAlignCss, TextStyleCss, Text1Css
-- **Info**: Normal text component with large font size with no heading.
-
-### `Text2` (exported)
-- **Props**: TextAlignProps, TextStyleProps
-- **Additional Styles**: TextAlignCss, TextStyleCss, Text2Css
-- **Info**: Normal text span component with medium font size with no heading.
-
-### `Text3` (exported)
-- **Props**: TextAlignProps, TextStyleProps
-- **Additional Styles**: TextAlignCss, TextStyleCss, Text3Css
-- **Info**: Normal text span component with small font size with no heading.
-
-### `Text4` (exported)
-- **Props**: TextAlignProps, TextStyleProps
-- **Additional Styles**: TextAlignCss, TextStyleCss, Text4Css
-- **Info**: Normal text span component with smallest font size with no heading.
-
-### `Heading1` (exported)
-- **Props**: TextAlignProps, TextStyleProps
-- **Additional Styles**: TextAlignCss, TextStyleCss, Heading1Css
-- **Info**: Normal text span component with large font size with heading.
-
-### `Heading2` (exported)
-- **Props**: TextAlignProps, TextStyleProps
-- **Additional Styles**: TextAlignCss, TextStyleCss, Heading2Css
-- **Info**: Normal text span component with medium font size with heading.
-
-### `Heading3` (exported)
-- **Props**: TextAlignProps, TextStyleProps
-- **Additional Styles**: TextAlignCss, TextStyleCss, Heading3Css
-- **Info**: Normal text span component with small font size with heading.
-
-### `Heading4` (exported)
-- **Props**: TextAlignProps, TextStyleProps
-- **Additional Styles**: TextAlignCss, TextStyleCss, Heading4Css
-- **Info**: Normal text span component with smallest font size with heading.
+- **Props**: [**GeneralTextProps**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextprops-exported), [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported), [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
+- **Info**: Span element to contain text.

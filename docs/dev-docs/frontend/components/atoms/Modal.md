@@ -8,9 +8,10 @@
 | `isOpen` | boolean | Boolean to open modal.
 | `modalTitle` | string | String to set title of modal.
 | `disableCloseButton` | boolean | Boolean to disable modal close button.
+| `zIndex` (optional) | number | Set the component's z-index.
 
 ### `ModalButtonProps` (exported)
-- **Extends**: ClickProps
+- **Extends**: [**ClickProps**](/docs/dev-docs/frontend/components/atoms/Button#clickprops-exported)
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -24,27 +25,25 @@
 ## Components
 
 ### `ModalContainer` (exported)
-- **Props**: ModalProps
-- **Info**: Component containing modal.
+- **Props**: [**ModalProps**](/docs/dev-docs/frontend/components/atoms/Modal#modalprops-exported)
 
 ### `ModalBase` (exported)
-- **Props**: ModalProps
-- **Additional Styles**: FadeInAnimation
+- **Props**: [**ModalProps**](/docs/dev-docs/frontend/components/atoms/Modal#modalprops-exported)
+- **Additional Styles**: [**FadeInAnimation**](/docs/dev-docs/frontend/components/atoms/Modal#fadeinanimation)
 - **Info**: Base modal component.
 
 ### `ModalClose` (exported)
-- **Props**: ModalButtonProps
+- **Props**: [**ModalButtonProps**](/docs/dev-docs/frontend/components/atoms/Modal#modalbuttonprops-exported)
 - **Info**: Component for modal close button.
 
-### `ModalHeader` (export)
-- **Info**: Component for modal header.
+### `ModalHeader` (exported)
+- **Info**: Component for modal title.
 
-### `ModalRow` (export)
-- **Props**: GeneralElementProps
-- **Additional Styles**: GeneralElementCss
-- **Info**: Component for modal row.
+### `ModalRow` (exported)
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Additional Styles**: [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
+- **Info**: Component for modal row to hold [**ModalCell**](/docs/dev-docs/frontend/components/atoms/Modal#modalcell-exported) components.
 
 ### `ModalCell` (exported)
-- **Props**: GeneralTextProps, GeneralElementProps
-- **Additional Styles**: GeneralTextCss, GeneralElementCss
-- **Info**: Component for modal cell.
+- **Props**: [**GeneralTextProps**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextprops-exported), [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported), [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)

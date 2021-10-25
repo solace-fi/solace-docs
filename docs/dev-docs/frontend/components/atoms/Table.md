@@ -1,7 +1,7 @@
 ## Props
 
 ### `TableProps`
-- **Extends**: GeneralTextProps, GeneralElementProps
+- **Extends**: [**GeneralTextProps**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextprops-exported), [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -18,32 +18,27 @@
 ## Components
 
 ### `Table` (exported)
-- **Props**: TableProps
-- **Additional Styles**: GeneralTextCss, GeneralElementCss
-- **Info**: Table Component
+- **Props**: [**TableProps**](/docs/dev-docs/frontend/components/atoms/Table#tableprops)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported), [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
 
 ### `TableRow` (exported)
-- **Props**: TableProps
-- **Info**: Table Row Component
+- **Props**: [**TableProps**](/docs/dev-docs/frontend/components/atoms/Table#tableprops)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported)
 
 ### `TableBody` (exported)
-- **Info**: Table Body Component
+- **Info**: Table Body
 
 ### `TableHead` (exported)
-- **Props**: TableHeadProps
-- **Info**: Table Head Component
+- **Props**: [**TableHeadProps**](/docs/dev-docs/frontend/components/atoms/Table#tableheadprops)
 
 ### `TableHeader` (exported)
-- **Props**: TableProps
-- **Additional Styles**: GeneralTextCss, GeneralElementCss
-- **Info**: Table Header Component
-
-### `TableData` (exported)
-- **Props**: TableProps
-- **Additional Styles**: GeneralTextCss, GeneralElementCss
-- **Info**: Table Data Component
+- **Props**: [**TableProps**](/docs/dev-docs/frontend/components/atoms/Table#tableprops)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported), [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
 
 ### `TableDataGroup` (exported)
-- **Props**: TableProps
-- **Additional Styles**: GeneralTextCss, GeneralElementCss
-- **Info**: Table Data Group Component
+- **Props**: [**TableProps**](/docs/dev-docs/frontend/components/atoms/Table#tableprops)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported), [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
+
+### `TableData` (exported)
+- **Props**: [**TableProps**](/docs/dev-docs/frontend/components/atoms/Table#tableprops)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported), [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)

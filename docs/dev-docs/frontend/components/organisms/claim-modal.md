@@ -10,8 +10,8 @@ title: ClaimModal
 | :--- | :--- | :------------------------------------------------------------------- |
 | `closeModal` | function | Function to call when closing modal.
 | `isOpen` | boolean | Boolean to open modal.
-| `latestBlock` | number | The latest block number.
-| `selectedPolicy` | Policy \| undefined | The currently selected policy.
+| `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | The latest block.
+| `selectedPolicy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | The currently selected policy.
 
 ## Components
 
@@ -25,7 +25,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `errors`
+| General | `haveErrors`
 | Contracts | `selectedProtocol`
 | CachedData | `gasPrices` , `reload` , `addLocalTransactions` , `userPolicyData`
 | Network | `activeNetwork`, `currencyDecimals` , `chainId`
@@ -35,7 +35,7 @@ Hook Dependencies:
 
 - `useGetCooldownPeriod()`
 - `useWindowDimensions()`
-- `useAppraisePosition()`
+- `useAppraisePolicyPosition()`
 - `useGasConfig()`
 
 Contract Functions:
@@ -45,9 +45,5 @@ Contract Functions:
 Local Functions:
 
 - `handleClose()` : Handle closing modal
-
-Data Refresh:
-
-- [ `selectedPolicy` ]: get claim assessment
 
 Info: Returns modal to submit claim for a user's policy.

@@ -27,9 +27,10 @@ Hook Dependencies:
 |`connecting` | boolean | Connecting status of wallet.
 |`isActive` | boolean | Running state of wallet.
 |`account` | string \| undefined | Account of user account.
+|`name` | string \| undefined | ENS name of user account.
 |`library` | any | Provider of wallet.
-|`connector` | AbstractConnector \| undefined | Current wallet AbstractConnector.
-|`activeWalletConnector` | WalletConnector \| undefined | Current wallet provider.
+|`connector` | [**AbstractConnector**](https://github.com/NoahZinsmeister/web3-react/blob/d0b038c748a42ec85641a307e6c588546d86afc2/packages/abstract-connector/src/index.ts) \| undefined | Current wallet AbstractConnector.
+|`activeWalletConnector` | [**WalletConnector**](/docs/dev-docs/frontend/constants/types#walletconnector-exported) \| undefined | Current wallet provider.
 |`openWalletModal` | function | Opens wallet modal.
 |`changeWallet` | function | Set new selected provider before reloading.
 |`connect` | function | Connect to a wallet.

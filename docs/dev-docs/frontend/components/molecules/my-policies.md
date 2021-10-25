@@ -10,7 +10,7 @@ title: MyPolicies
 | :--- | :--- | :------------------------------------------------------------------- |
 | `openClaimModal` | any | Function to open Claim modal.
 | `openManageModal` | any | Function to open Manage Modal.
-| `latestBlock` | number | The latest block number.
+| `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | The latest block.
 
 ## Components
 

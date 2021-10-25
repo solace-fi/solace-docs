@@ -20,10 +20,12 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Wallet | `account`, `errors`
-| Network | `chainId`
+| General | `notices` , `errors`
+| Wallet | `account`
 
 #### Returned values:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`makeTxToast` | function | Create transaction toast.
+|`makeAppToast` | function | Create app system toast.
+|`toastSettings` | { txSuccess, txError, appNotice, appError } | Different toast appearances used for `makeTxToast` and `makeApptoast` calls.

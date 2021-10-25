@@ -9,12 +9,12 @@
 ## Components
 
 ### `StepsContainer` (exported)
-- **Extends**: FlexCol
-- **Props**: ProgressProps
-- **Info**: Container component for step form. Creates styles for `Step` and `StepProgressBar`.
+- **Extends**: [**FlexCol**](/docs/dev-docs/frontend/components/atoms/Layout#flexcol-exported)
+- **Props**: [**ProgressProps**](/docs/dev-docs/frontend/components/atoms/Progress#progressprops)
+- **Info**: Container component for step form. Creates styles for [**Step**](/docs/dev-docs/frontend/components/atoms/Progress#step-exported) and [**StepProgressBar**](/docs/dev-docs/frontend/components/atoms/Progress#stepprogressbar-exported).
 
 ### `StepsWrapper` (exported)
-- **Info**: Component to hold steps as named sections on step progress bar.
+- **Info**: Component to hold [**Step**](/docs/dev-docs/frontend/components/atoms/Progress#step-exported) components as named sections on step progress bar.
 
 ### `Step` (exported)
 - **Info**: Component that serves as a named section on step progress bar.

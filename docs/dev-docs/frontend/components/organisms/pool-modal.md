@@ -8,10 +8,10 @@ title: PoolModal
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `handleClose` | function | Function to call when closing modal.
+| `func` | [**FunctionName**](/docs/dev-docs/frontend/constants/enums#functionname-exported) | Function name representing a function call.
 | `isOpen` | boolean | Boolean to open modal.
 | `modalTitle` | string | String to set title of modal.
-| `disableCloseButton` | boolean | Boolean to disable modal close button.
+| `closeModal` | function | Function to close modal.
 
 ## Components
 
@@ -25,7 +25,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `errors`
+| General | `haveErrors` , `appTheme`
 | Wallet | `account`, `library`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `vault` , `cpFarm` , `lpFarm` , `lpToken`
@@ -69,12 +69,6 @@ Local Functions:
 - `handleCallbackFunc()` : Calls contract function based on selected transaction type by the user.
 - `handleClose()` : Handle closing modal
 - `handleNft()` : Set selected NFT and amount. 
-
-Data Refresh:
-
-- [ `gasPrices` ]: Set selected gas option if one doesn't exist already.
-- [ `maxSelected` , `handleSelectChange` ]: Calculate maximum amount of assets to be sent minus gas from selected gas option.
-- [ `isOpen` , `cpFarm?.address` , `vault`, `userLpTokenInfo` , `depositedLpTokenInfo` , `func` , `currencyDecimals` ]: Set contract for allowance, set spender, and set selected NFT.
 
 Additional Functional Components:
 

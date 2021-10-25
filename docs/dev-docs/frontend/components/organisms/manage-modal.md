@@ -10,8 +10,8 @@ title: ManageModal
 | :--- | :--- | :------------------------------------------------------------------- |
 | `closeModal` | function | Function to call when closing modal.
 | `isOpen` | boolean | Boolean to open modal.
-| `latestBlock` | number | The latest block number.
-| `selectedPolicy` | Policy \| undefined | The currently selected policy.
+| `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | The latest block.
+| `selectedPolicy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | The currently selected policy.
 
 ## Components
 
@@ -25,7 +25,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `errors`
+| General | `haveErrors`
 | CachedData | `addLocalTransactions` , `reload` , `gasPrices`
 | Contracts | `selectedProtocol` , `riskManager`
 | Network | `activeNetwork` , `currencyDecimals`
@@ -34,7 +34,7 @@ Manager Dependencies:
 Hook Dependencies:
 
 - `useGetPolicyPrice()`
-- `useAppraisePosition()`
+- `useAppraisePolicyPosition()`
 - `useWindowDimensions()`
 - `useGetMaxCoverPerPolicy()`
 - `useGasConfig()`
@@ -55,9 +55,7 @@ Local Functions:
 - `filteredTime(input: string)` : Filter time input and set time state.
 - `handleClose()` : Reset time state and close modal.
 - `handleFunc()` : Calls appropriate policy function based on what values are changed by the user.
-
-Data Refresh:
-
-- [ `isOpen` , `selectedPolicy` , `currentCoverAmount` , `appraisal` ]: Initialize coverage based on the selected user policy, the current covered amount, and the appraisal of the user's position.
+- `setMaxCover()` : Set coverage state equal to the max coverage per policy.
+- `setPositionCover()` : Set coverage state equal to user's position amount.
 
 Info: Returns modal to make changes to a user's policy.

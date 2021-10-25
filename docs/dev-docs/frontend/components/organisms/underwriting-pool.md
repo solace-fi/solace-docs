@@ -1,28 +1,28 @@
 ---
-title: RiskBackingCapitalPool
+title: UnderwritingPool
 ---
 
 ## Props
 
-### `RiskBackingCapitalPoolProps`
+### `UnderwritingPoolProps`
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `openModal` | ( func: FunctionName, modalTitle: string ) => void | Set modal visibility, functionality, and title.
+| `openModal` | ( func: [**FunctionName**](/docs/dev-docs/frontend/constants/enums#functionname-exported), modalTitle: string ) => void | Set modal visibility, functionality, and title.
 
 ## Components
 
-### `RiskBackingCapitalPool` (exported)
+### `UnderwritingPool` (exported)
 
 Props Dependencies:
 
-- `RiskBackingCapitalPoolProps`
+- `UnderwritingPoolProps`
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `errors`
+| General | `haveErrors`
 | Wallet | `account`
 | Network | `currencyDecimals`
 

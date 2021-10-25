@@ -1,24 +1,26 @@
 ---
-title: LinksModal
+title: AssetsModal
 ---
 
 ## Props
 
-### `LinksModalProps`
+### `AssetsModalProps`
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `isOpen` | boolean | Boolean to indicate whether the modal is open or not.
 | `closeModal` | () => void | Function to close the modal.
+| `assets` | [**BasicData**](/docs/dev-docs/frontend/constants/types#basicdata-exported)[] | List of assets to be displayed.
+| `modalTitle` | () => void | String for the modal title.
 
 ## Components
 
-### `LinksModal` (exported)
+### `AssetsModal` (exported)
 
 Props Dependencies:
-- `LinksModalProps`
+- `AssetsModalProps`
 
 Local functions:
 - `handleClose()` : Returns a function that closes the modal.
 
-Info: Returns the modal containing community links.
+Info: Returns the modal containing the assets passed in.

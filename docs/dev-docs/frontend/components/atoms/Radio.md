@@ -6,15 +6,15 @@
 ## Components
 
 ### `RadioElement` (exported)
-- **Info**: Component for stylizing the appearance of an option in a radio.
+- **Info**: Styled component containing displayed info of a radio option.
 
 ### `RadioInput` (exported)
-- **Additional Styles**: RadioInputCss, RadioElement
-- **Info**: Component for stylizing the behavior of an option in a radio.
+- **Additional Styles**: [**RadioInputCss**](/docs/dev-docs/frontend/components/atoms/Radio#radioinputcss), [**RadioElement**](/docs/dev-docs/frontend/components/atoms/Radio#radioelement-exported)
+- **Info**: Styled behavior of a radio option.
 
 ### `RadioGroup` (exported)
-- **Props**: GeneralElementProps
-- **Additional Styles**: GeneralElementCss
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Additional Styles**: [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
 - **Info**: Component for containing and grouping multiple radio options.
 
 ### `RadioLabel` (exported)
@@ -24,8 +24,8 @@
 - **Info**: Component for containing a circular radio option.
 
 ### `RadioCircleFigure` (exported)
-- **Info**: Component for stylizing the appearance of a circular radio option.
+- **Info**: Circular radio option appearance.
 
 ### `RadioCircleInput` (exported)
-- **Additional Styles**: RadioInputCss, RadioCircleFigure
+- **Additional Styles**: [**RadioInputCss**](/docs/dev-docs/frontend/components/atoms/Radio#radioinputcss), [**RadioCircleFigure**](/docs/dev-docs/frontend/components/atoms/Radio#radiocirclefigure-exported)
 - **Info**: Component for stylizing the behavior of a circular radio option.

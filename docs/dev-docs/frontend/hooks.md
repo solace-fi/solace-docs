@@ -97,7 +97,7 @@ Return the current cooldown period as a string.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `sources` | ContractSources \| undefined | The object containing the contract address and ABI.
+| `sources` | [**ContractSources**](/docs/dev-docs/frontend/constants/types#contractsources-exported) \| undefined | The object containing the contract address and ABI.
 | `hasSigner` | boolean | Option to create signer for contract.
 
 Manager Dependencies:
@@ -129,6 +129,21 @@ Manager Dependencies:
 
 For each contract in the current chain, return an object containing its address and ABI. Afterwards, return all objects as an array.
 
+
+
+
+
+## useCopyClipboard.ts
+
+### `useCopyClipboard`
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `toCopy` | string | string to copy.
+
+Adds string to copy clipboard.
+
 ## useFarm.ts
 
 ### `useUserStakedValue`
@@ -136,7 +151,7 @@ For each contract in the current chain, return an object containing its address 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `farm` | Contract \| null \| undefined | Farm contract object.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
 | `account` | string \| undefined | Address of user account.
 
 Manager Dependencies:
@@ -153,7 +168,7 @@ Returns the user's staked value for a farm as a string.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `farm` | Contract \| null \| undefined | Farm contract object.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
 
 Manager Dependencies:
 
@@ -202,14 +217,9 @@ Manager Dependencies:
 
 Returns an object of configuration gas data based on the transaction type supported by the network and the wallet connector.
 
-## useGetLatestBlockNumber.ts
+## useGetLatestBlock.ts
 
-### `useGetLatestBlockNumber`
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-| `dataVersion` | number | Value that is updated on an interval for controlled refresh.
+### `useGetLatestBlock`
 
 Manager Dependencies:
 
@@ -217,7 +227,7 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Wallet | `library`
 
-Calls getBlockNumber() on the current Web3Provider to get latest block number and returns it as a number.
+Calls getBlock() on the current Web3Provider via event listener to return latest block.
 
 ## usePolicyGetter.ts
 
@@ -227,8 +237,8 @@ Calls getBlockNumber() on the current Web3Provider to get latest block number an
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `getAll` | boolean | Option to get policies for all users or one user.
-| `latestBlock` | number | Number of the latest fetched block.
-| `data` | { dataInitialized: boolean; storedPositionData: NetworkCache[] } | Object containing the state of the token data initialization and the data itself.
+| `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | Latest fetched block.
+| `data` | { dataInitialized: boolean; storedPosData: [**NetworkCache**](/docs/dev-docs/frontend/constants/types#networkcache-exported)[] } | Object containing the state of the token data initialization and the data itself.
 | `policyHolder` (optional) | string | Address of the policy holder.
 | `product` (optional) | string | Address of the product contract.
 
@@ -240,7 +250,7 @@ Manager Dependencies:
 | Network | `activeNetwork`, `findNetworkByChainId`, `chainId`
 | Contracts | `policyManager`
 
-If `policyHolder` is provided as input, all of the user's policies will be retrieved, else all policies regardless of ownership will be retrieved. Return an object containing a boolean for loading policies, the user policies, all policies, and toggle function whether to allow claim assessment retrieval.
+If `policyHolder` is provided as input, all of the user's policies will be retrieved, else all policies regardless of ownership will be retrieved. Returns an object containing a boolean for loading policies, the user policies, all policies, and toggle function whether to allow claim assessment retrieval.
 
 ## useCachePositions.ts
 
@@ -283,6 +293,24 @@ Manager Dependencies:
 
 Fetches pair data between SOLACE and ETH via the Uniswap SDK and returns the price as a string.
 
+## useOptionsFarming
+
+### `useOptionsDetails`
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `optionHolder` | string \| undefined | User address.
+
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Contracts | `optionsFarming`
+| CachedData | `latestBlock`
+
+Returns list of token options the user owns.
+
 ## usePolicy.ts
 
 ### `useGetPolicyPrice`
@@ -301,12 +329,12 @@ Manager Dependencies:
 
 Finds the policy from fetched policies whose policy ID matches the input ID and returns its price as a string.
 
-### `useAppraisePosition`
+### `useAppraisePolicyPosition`
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `policy` | Policy \| undefined | Policy object.
+| `policy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | Policy object.
 
 Manager Dependencies:
 
@@ -315,9 +343,9 @@ Manager Dependencies:
 | Network | `activeNetwork`
 | wallet | `account` , `library`
 | Contracts | `getProtocolByName`
-| CachedData | `latestBlock` , `tokenPositionData`
+| CachedData | `latestBlock` , `tokenPosData`
 
-Appraises the user's position for a product in a policy and returns the result as a BigNumber.
+Appraises the user's position for a product in a policy and returns the result as a [**BigNumber**](https://docs.ethers.io/v5/api/utils/bignumber/).
 
 ### `useGetMaxCoverPerPolicy`
 
@@ -327,10 +355,6 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `selectedProtocol` , `riskManager`
 | Network | `currencyDecimals`
-| CachedData | `gasPrices`
-
-Hook Dependencies:
-- `useGasConfig()`
 
 Returns the max cover per policy for a product contract as a string.
 
@@ -342,10 +366,6 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `products` , `getProtocolByName` , `riskManager`
 | Network | `currencyDecimals`
-| CachedData | `gasPrices`
-
-Hook Dependencies:
-- `useGasConfig()`
 
 Gets the price from each product contract and returns the prices as string-to-string mapping, where the keys are the product names, and the values are the prices.
 
@@ -357,10 +377,6 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `products` , `getProtocolByName` , `riskManager`
 | Network | `currencyDecimals`
-| CachedData | `gasPrices`
-
-Hook Dependencies:
-- `useGasConfig()`
 
 Gets the available coverage from each product contract and returns the coverages as string-to-string mapping, where the keys are the product names, and the values are the coverages.
 
@@ -392,7 +408,7 @@ Returns an array containing a number value and the function to increment it by 1
 
 ## useRewards.ts
 
-### `useMasterValues`
+### `useFarmControllerValues`
 
 #### Parameters:
 | Name | Type | Description                                                          |
@@ -403,10 +419,10 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Contracts | `master`
+| Contracts | `farmController`
 | CachedData | `latestBlock`
 
-Returns an object containing the current allocation points, total allocation points, and solace per block from the master contract.
+Returns an object containing the current allocation points, total allocation points, and solace per block from the farmController contract.
 
 ### `useRewardsPerDay`
 
@@ -422,9 +438,9 @@ Manager Dependencies:
 | Network | `currencyDecimals`
 
 Hook Dependencies:
-- `useMasterValues()`
+- `useFarmControllerValues()`
 
-Calculate the amount of rewards using values from `useMasterValues` and return it as a string.
+Calculate the amount of rewards using values from `useFarmControllerValues` and return it as a string.
 
 ### `useUserRewardsPerDay`
 
@@ -432,7 +448,7 @@ Calculate the amount of rewards using values from `useMasterValues` and return i
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `farmId` | number | ID of the farm.
-| `farm` | Contract \| null \| undefined | Farm contract object.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
 | `account` | string \| undefined | Address of user account.
 
 Manager Dependencies:
@@ -442,24 +458,24 @@ Manager Dependencies:
 | Network | `currencyDecimals`
 
 Hook Dependencies:
-- `useMasterValues()`
+- `useFarmControllerValues()`
 - `usePoolStakedValue()`
 - `useUserStakedValue()`
 
-Calculate the user's amount of rewards using values from `useMasterValues` , `usePoolStakedValue` , and `useUserStakedValue` , then return it as a string.
+Calculate the user's amount of rewards using values from `useFarmControllerValues` , `usePoolStakedValue` , and `useUserStakedValue` , then return it as a string.
 
 ### `useUserPendingRewards`
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `farm` | Contract \| null \| undefined | Farm contract object.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| Contracts | `master`
+| Contracts | `farmController`
 | CachedData | `latestBlock`
 | Wallet | `account`
 | Network | `currencyDecimals`
@@ -487,7 +503,7 @@ Adds a user's pending rewards from all farms together and return the sum as a st
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `tokenContract` | Contract \| null | Token contract object.
+| `tokenContract` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null | Token contract object.
 | `spender` | string \| null | Address of spender.
 
 Manager Dependencies:
@@ -497,7 +513,7 @@ Manager Dependencies:
 | CachedData | `version`
 | Wallet | `account` , `library`
 
-Returns the allowance from `tokenContract` for the user as a string.
+Returns the allowance from the token contract for the user as a string.
 
 ## useTransactionHistory.ts
 
@@ -509,10 +525,10 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `contractSources`
 | Wallet | `account`
-| CachedData | `deleteLocalTransactions` , `dataVersion`
+| CachedData | `deleteLocalTransactions` , `latestBlock`
 | Network | `activeNetwork`
 
-Fetches for the transaction history of a user from the explorer, while deleting local transactions whose hashes match those of the transactions fetched.
+Fetches the transaction history of a user from the explorer, while deleting local transactions whose hashes match those of the transactions fetched.
 
 ### `useTransactionDetails`
 
@@ -574,4 +590,4 @@ Returns an object of a boolean that indicates if the cooldown had been started, 
 
 ### `useWindowDimensions`
 
-Keeps track of the window's inner width and inner height. Returns them as properties of an object.
+Keeps track of the window's inner width and inner height. Returns [**WindowDimensions**](/docs/dev-docs/frontend/constants/types#windowdimensions-exported) object.

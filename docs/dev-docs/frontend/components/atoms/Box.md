@@ -3,9 +3,10 @@
 ### `BoxProps`
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `purple` (optional) | boolean | Change background color to purple.
-| `green` (optional) | boolean | Change background color to green.
-| `navy` (optional) | boolean | Change background color to navy.
+| `color1` (optional) | boolean | Change background color to color1.
+| `color2` (optional) | boolean | Change background color to color2.
+| `success` (optional) | boolean | Change background color to success color.
+| `info` (optional) | boolean | Change background color to info color.
 | `transparent` (optional) | boolean | Change background color to transparent.
 | `outlined` (optional) | boolean | Give box outline.
 | `glow` (optional) | boolean | Give box border glow.
@@ -16,41 +17,38 @@
 | :--- | :--- | :------------------------------------------------------------------- |
 | `error` (optional) | boolean | Change border-color to error color.
 | `collapse` (optional) | boolean | Change visibility.
+| `canHover` (optional) | boolean | Allow hover.
 
 ## Styles
 
-### `BoxOutline`
-- **Info**: Sets border-style to solid, white, and 1px width.
-
 ### `BoxCss`
-- **Props**: GeneralElementProps, BoxProps
-- **Additional Styles**: GeneralElementCss, BoxOutline
-- **Info**: Sets styles defined by `BoxProps` and `GeneralElementProps`.
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported), [**BoxProps**](/docs/dev-docs/frontend/components/atoms/Box#boxprops)
+- **Additional Styles**: [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
+- **Info**: Sets box style.
 
 ## Components
 
 ### `BoxBase`
-- **Extends**: rebass/styled-components/Box
+- **Extends**: [**rebass/styled-components/Box**](https://rebassjs.org/box)
 
 ### `BoxRow` (exported)
 - **Extends**: BoxBase
-- **Info**: Hold `Box` elements in a row.
+- **Info**: Hold [**Box**](/docs/dev-docs/frontend/components/atoms/Box#box-exported) elements in a row.
 
 ### `Box` (exported)
 - **Extends**: BoxRow
-- **Props**: GeneralElementProps, BoxProps
-- **Additional Styles**: BoxCss
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported), [**BoxProps**](/docs/dev-docs/frontend/components/atoms/Box#boxprops)
+- **Additional Styles**: [**BoxCss**](/docs/dev-docs/frontend/components/atoms/Box#boxcss)
 - **Info**: Responsive box component.
 
+### `SmallBox` (exported)
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported), [**BoxProps**](/docs/dev-docs/frontend/components/atoms/Box#boxprops), [**SmallBoxProps**](/docs/dev-docs/frontend/components/atoms/Box#smallboxprops)
+- **Additional Styles**: [**BoxCss**](/docs/dev-docs/frontend/components/atoms/Box#boxcss)
+- **Info**: Responsive collapsible component for notifying purposes.
+
 ### `BoxItem` (exported)
-- **Info**: Responsive component that can hold `BoxItemTitle`.
+- **Info**: Responsive component within a [**Box**](/docs/dev-docs/frontend/components/atoms/Box#box-exported) .
 
 ### `BoxItemTitle` (exported)
-- **Props**: GeneralElementProps
-- **Additional Styles**: GeneralTextCss
-- **Info**: Text with a set margin-bottom.
-
-### `SmallBox` (exported)
-- **Props**: GeneralElementProps, BoxProps, SmallBoxProps
-- **Additional Styles**: BoxCss
-- **Info**: Responsive collapsible component. Smaller version of `Box`.
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Additional Styles**: [**GeneralTextCss**](/docs/dev-docs/frontend/components/atoms/Typography#generaltextcss-exported)

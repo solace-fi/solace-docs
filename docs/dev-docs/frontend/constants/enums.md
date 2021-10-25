@@ -23,6 +23,15 @@ Error {
   WALLET_NETWORK_UNSYNC = 'WNU',
 }
 ```
+
+### `SystemNotice` (exported)
+```
+SystemNotice {
+  LOSS_EVENT_DETECTED = 'LED',
+  AUDIT_NOTICE = 'AN',
+}
+```
+
 ### `FunctionName` (exported)
 
 ```
@@ -45,6 +54,9 @@ FunctionName {
   MULTI_CALL = 'Multicall',
   START_COOLDOWN = 'StartCooldown',
   STOP_COOLDOWN = 'StopCooldown',
+
+  EXERCISE_OPTION = 'ExerciseOption',
+  FARM_OPTION_MULTI = 'FarmOptionMulti',
 }
 ```
 ### `ExplorerscanApi` (exported)
@@ -81,9 +93,24 @@ PolicyState {
 
 ```
 ProductName {
-  COMPOUND = 'Compound',
   AAVE = 'Aave',
-  WAAVE = 'Waave',
+  COMPOUND = 'Compound',
+  CURVE = 'Curve',
   LIQUITY = 'Liquity',
+  SUSHISWAP = 'Sushiswap',
+  UNISWAP_V2 = 'UniswapV2',
+  UNISWAP_V3 = 'UniswapV3',
+  WAAVE = 'Waave',
+  YEARN = 'Yearn',
+}
+```
+
+### `PositionType` (exported)
+
+```
+PositionType {
+  TOKEN = 'token',
+  LQTY = 'liquity',
+  OTHER = 'other',
 }
 ```

@@ -8,7 +8,7 @@ title: NftPosition
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `tokenId` | BigNumber | ID for LP token
+| `tokenId` | [**BigNumber**](https://docs.ethers.io/v5/api/utils/bignumber/) | ID for LP token
 
 ## Components
 

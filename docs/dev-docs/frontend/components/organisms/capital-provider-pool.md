@@ -8,7 +8,7 @@ title: CapitalProviderPool
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `openModal` | ( func: FunctionName, modalTitle: string ) => void | Set modal visibility, functionality, and title.
+| `openModal` | ( func: [**FunctionName**](/docs/dev-docs/frontend/constants/enums#functionname-exported), modalTitle: string ) => void | Set modal visibility, functionality, and title.
 
 ## Components
 
@@ -21,7 +21,7 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `errors`
+| General | `haveErrors`
 | Wallet | `account`
 | Contracts | `cpFarm`
 

@@ -10,13 +10,10 @@ Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| General | `selectedTheme` , `toggleTheme`
+| General | `appTheme` , `toggleTheme`
 
 Props Dependencies:
 - `GeneralElementProps`
 - `ButtonProps`
-
-Hook Dependencies:
-- `useWindowDimensions()`
 
 Info: Returns a button that changes the app theme.

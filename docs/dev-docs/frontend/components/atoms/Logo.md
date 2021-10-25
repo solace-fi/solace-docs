@@ -1,6 +1,6 @@
 ## Styles
 
 ### `LogoBase` (exported)
-- **Props**: GeneralElementProps
-- **Additional Styles**: GeneralElementCss
-- **Info**: Stylized `a` tag for the logo.
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Additional Styles**: [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
+- **Info**: Stylized `div` tag for the logo.
