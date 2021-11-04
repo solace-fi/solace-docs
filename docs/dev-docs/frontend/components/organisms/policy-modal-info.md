@@ -18,7 +18,7 @@ title: PolicyModalInfo
 
 Props Dependencies:
 
-- `PolicyModalInfoProps`
+- **PolicyModalInfoProps**
 
 Manager Dependencies:
 

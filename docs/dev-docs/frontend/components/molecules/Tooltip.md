@@ -22,7 +22,7 @@ title: Tooltip
 
 Props Dependencies:
 
-- `StyledTooltipProps`
+- **StyledTooltipProps**
 
 Hook Dependencies:
 - `useWindowDimensions()`
@@ -34,7 +34,7 @@ Info: Returns a CustomTooltip component containing the tip. tip is placed to the
 
 Props Dependencies:
 
-- `StyledTooltipProps`
+- **StyledTooltipProps**
 
 Hook Dependencies:
 - `useWindowDimensions()`

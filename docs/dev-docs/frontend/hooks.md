@@ -25,6 +25,7 @@ Manager Dependencies:
 | Wallet | `account`
 | Contracts | `vault`
 | Network | `activeNetwork`
+| CachedData | `version`
 
 Calls getBalance() on the current user's account and returns the SCP balance as a string.
 
@@ -62,21 +63,41 @@ Manager Dependencies:
 
 Return the ids and values of LP tokens in the user's share of the liquidity pool, as a pair value of arrays.
 
-## useClaimsEscrow.ts
-
-### `useGetClaimsDetails`
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-| `claimant` | string \| undefined | Address of user account.
+### `useUserWalletPolicies`
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
-| CachedData | `latestBlock`
+| Wallet | `account` , `library`
+| Contracts | `policyManager` , `sptFarm`
+| CachedData | `userPolicyData`
+
+Return the ids and values of SPT tokens in the user's wallet as a pair value of arrays.
+
+### `useDepositedPolicies`
+
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account` , `library`
+| Contracts | `policyManager` , `sptFarm`
+| CachedData | `userPolicyData`
+
+Return the ids and values of SPT tokens in the user's share of the liquidity pool, as a pair value of arrays.
+
+## useClaimsEscrow.ts
+
+### `useGetClaimsDetails`
+
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Wallet | `account`
 | Contracts | `claimsEscrow`
+| CachedData | `latestBlock`
 
 For each claim belonging to a user, return an object containing the time left until it can be withdrawn, the boolean indicating whether it can be withdrawn, and its amount. Afterwards, return all objects as an array.
 
@@ -151,8 +172,7 @@ Adds string to copy clipboard.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
-| `account` | string \| undefined | Address of user account.
+| `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object
 
 Manager Dependencies:
 
@@ -160,6 +180,7 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | CachedData | `version`
 | Network | `currencyDecimals`
+| Wallet | `account`
 
 Returns the user's staked value for a farm as a string.
 
@@ -206,7 +227,7 @@ Manager Dependencies:
 
 Fetches gas prices via API from the chain explorer and returns an object containing the gas options, the boolean for loading gas prices, and the currently selected gas option.
 
-### `useGasConfig`
+### `useGetFunctionGas`
 
 Manager Dependencies:
 
@@ -214,8 +235,9 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork`
 | Wallet | `activeWalletConnector`
+| CachedData | `gasPrices`
 
-Returns an object of configuration gas data based on the transaction type supported by the network and the wallet connector.
+Returns 3 gas functions as an object. One function returns the product gas limit, one returns gas data fields based on a selected gas option, and one returns the default gas data field automatically.
 
 ## useGetLatestBlock.ts
 
@@ -297,19 +319,15 @@ Fetches pair data between SOLACE and ETH via the Uniswap SDK and returns the pri
 
 ### `useOptionsDetails`
 
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-| `optionHolder` | string \| undefined | User address.
-
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `optionsFarming`
 | CachedData | `latestBlock`
+| Wallet | `account` , `library`
 
-Returns list of token options the user owns.
+Returns an object containing a list of token options the user owns, the latest block's timestamp, and the function to exercise option.
 
 ## usePolicy.ts
 
@@ -449,7 +467,6 @@ Calculate the amount of rewards using values from `useFarmControllerValues` and 
 | :--- | :--- | :------------------------------------------------------------------- |
 | `farmId` | number | ID of the farm.
 | `farm` | [**Contract**](https://docs.ethers.io/v5/api/contract/contract/#Contract) \| null \| undefined | Farm contract object.
-| `account` | string \| undefined | Address of user account.
 
 Manager Dependencies:
 
@@ -582,12 +599,42 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Contracts | `vault`
 | Wallet | `account`
-| CachedData | `version`
+| CachedData | `version` , `latestBlock`
 
 Returns an object of a boolean that indicates if the cooldown had been started, time waited, the minimum cooldown, the maximum cooldown, and a boolean that indicates if the assets can be withdrawn.
+
+### `useVault`
+
+Manager Dependencies:
+
+| Manager | Values                                                          |
+| :--- | :------------------------------------------------------------------- |
+| Contracts | `vault`
+| Wallet | `account`
+| CachedData | `version`
+
+Returns an object containing a boolean for whether the use can transfer assets with the cp pool, the depositEth function from Vault, the withdrawEth function from Vault, and the Vault contract.
 
 ## useWindowDimensions.ts
 
 ### `useWindowDimensions`
 
 Keeps track of the window's inner width and inner height. Returns [**WindowDimensions**](/docs/dev-docs/frontend/constants/types#windowdimensions-exported) object.
+
+## useCpFarm.ts
+
+### `useCpFarm`
+
+Returns an object of 3 functions belonging to the cp pool contract: depositEth(), depositCp(), and withdrawCp().
+
+## useLpFarm.ts
+
+### `useLpFarm`
+
+Returns an object of 2 functions belonging to the lp pool contract: depositLp(), and withdrawLp().
+
+## useSptFarm.ts
+
+### `useSptFarm`
+
+Returns an object of 4 functions belonging to the Spt pool contract: depositPolicy(), depositPolicyMulti(), withdrawPolicy(), and withdrawPolicyMulti().

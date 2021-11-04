@@ -25,10 +25,6 @@ Info: Returns component containing Solace Logo along with the navigation links a
 | :--- | :------------------------------------------------------------------- |
 | Notifications | `toastSettings` , `makeAppToast`
 
-Props Dependencies:
-
-- `NavbarProps`
-
 Hook Dependencies:
 
 - `useLocation()`

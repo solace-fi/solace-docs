@@ -55,6 +55,6 @@
 - **Info**: Special button for Navbar.
 
 ### `ButtonWrapper` (exported)
-- **Props**: [**ButtonWrapperProps**](/docs/dev-docs/frontend/components/atoms/Button#buttonwrapperprops), [**MarginProps**](/docs/dev-docs/frontend/components/general-interfaces#marginprops-exported)
-- **Additional Styles**: [**ButtonWrapperCss**](/docs/dev-docs/frontend/components/atoms/Button#buttonwrappercss-exported), [**MarginCss**](/docs/dev-docs/frontend/components/general-interfaces#margincss-exported)
+- **Props**: [**ButtonWrapperProps**](/docs/dev-docs/frontend/components/atoms/Button#buttonwrapperprops), [**PaddingProps**](/docs/dev-docs/frontend/components/general-interfaces#paddingprops-exported)
+- **Additional Styles**: [**ButtonWrapperCss**](/docs/dev-docs/frontend/components/atoms/Button#buttonwrappercss-exported), [**PaddingCss**](/docs/dev-docs/frontend/components/general-interfaces#paddingcss-exported)
 - **Info**: Wrapper for housing a group of buttons.

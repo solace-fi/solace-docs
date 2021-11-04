@@ -23,7 +23,7 @@ title: WalletModal
 
 Props Dependencies:
 
-- `WalletModalProps`
+- **WalletModalProps**
 
 Manager Dependencies:
 

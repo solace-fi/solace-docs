@@ -36,6 +36,7 @@
 | `success` (optional) | boolean | Apply success color to text.
 | `error` (optional) | boolean | Apply error color to text.
 | `warning` (optional) | boolean | Apply warning color to text.
+| `fade` (optional) | boolean | Apply fade effect to text.
 
 ### `GeneralTextProps` (exported)
 - **Extends**: [**TextFontProps**](/docs/dev-docs/frontend/components/atoms/Typography#textfontprops-exported), [**TextAlignProps**](/docs/dev-docs/frontend/components/atoms/Typography#textalignprops-exported), [**TextStyleProps**](/docs/dev-docs/frontend/components/atoms/Typography#textstyleprops-exported)

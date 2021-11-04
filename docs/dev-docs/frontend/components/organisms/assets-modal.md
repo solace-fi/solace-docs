@@ -18,7 +18,7 @@ title: AssetsModal
 ### `AssetsModal` (exported)
 
 Props Dependencies:
-- `AssetsModalProps`
+- **AssetsModalProps**
 
 Local functions:
 - `handleClose()` : Returns a function that closes the modal.

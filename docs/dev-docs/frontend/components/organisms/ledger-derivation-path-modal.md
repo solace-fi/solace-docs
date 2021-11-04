@@ -17,7 +17,7 @@ title: LedgerDerivationPathModal
 
 Props Dependencies:
 
-- `LedgerDerivationPathModalProps`
+- **LedgerDerivationPathModalProps**
 
 Manager Dependencies:
 

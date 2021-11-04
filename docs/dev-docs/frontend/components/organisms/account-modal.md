@@ -23,7 +23,7 @@ title: AccountModal
 | CachedData | `localTransactions`
 
 Props Dependencies:
-- `AccountModalProps`
+- **AccountModalProps**
 
 Hook Dependencies:
 - `useWindowDimensions()`
