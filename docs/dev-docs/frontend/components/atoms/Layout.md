@@ -38,7 +38,8 @@
 - **Info**: Flexed layout component that gives passing to entire app interface.
 
 ### `HorizRule` (exported)
-- **Props**: [**LayoutProps**](/docs/dev-docs/frontend/components/atoms/Layout#layoutprops)
+- **Props**: [**LayoutProps**](/docs/dev-docs/frontend/components/atoms/Layout#layoutprops), [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Additional Styles**: [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported
 - **Info**: styled hr element.
 
 ### `ContentContainer` (exported)

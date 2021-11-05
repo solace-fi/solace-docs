@@ -20,7 +20,7 @@ Manager Dependencies:
 Hook Dependencies:
 
 - `useWindowDimensions()`
-- `useGasConfig()`
+- `useGetFunctionGas()`
 - `useOptionsDetails()`
 
 Contract Functions:

@@ -39,6 +39,9 @@
 ### `ModalHeader` (exported)
 - **Info**: Component for modal title.
 
+### `ModalFooter` (exported)
+- **Info**: Component for modal bottom.
+
 ### `ModalRow` (exported)
 - **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
 - **Additional Styles**: [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)

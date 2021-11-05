@@ -23,6 +23,6 @@ Manager Dependencies:
 | General | `appTheme`
 
 Props Dependencies:
-- `StyledSelectProps`
+- **StyledSelectProps**
 
 Info: Returns a stylized select component.

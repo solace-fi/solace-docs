@@ -8,7 +8,7 @@ title: UnderwritingPool
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| `openModal` | ( func: [**FunctionName**](/docs/dev-docs/frontend/constants/enums#functionname-exported), modalTitle: string ) => void | Set modal visibility, functionality, and title.
+| `openModal` | ( func: [**FunctionName**](/docs/dev-docs/frontend/constants/enums#functionname-exported), modalTitle: string, farmName: string ) => void | Set modal visibility, functionality, and title.
 
 ## Components
 
@@ -16,7 +16,7 @@ title: UnderwritingPool
 
 Props Dependencies:
 
-- `UnderwritingPoolProps`
+- **UnderwritingPoolProps**
 
 Manager Dependencies:
 
@@ -24,7 +24,6 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | General | `haveErrors`
 | Wallet | `account`
-| Network | `currencyDecimals`
 
 Hook Dependencies:
 - `useUserVaultDetails()`

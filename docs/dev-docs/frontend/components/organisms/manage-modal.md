@@ -12,6 +12,7 @@ title: ManageModal
 | `isOpen` | boolean | Boolean to open modal.
 | `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | The latest block.
 | `selectedPolicy` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported) \| undefined | The currently selected policy.
+| isPolicyStaked | boolean | Indicate whether this policy is staked.
 
 ## Components
 
@@ -19,14 +20,14 @@ title: ManageModal
 
 Props Dependencies:
 
-- `ManageModalProps`
+- **ManageModalProps**
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | General | `haveErrors`
-| CachedData | `addLocalTransactions` , `reload` , `gasPrices`
+| CachedData | `addLocalTransactions` , `reload`
 | Contracts | `selectedProtocol` , `riskManager`
 | Network | `activeNetwork` , `currencyDecimals`
 | Notifications | `makeTxToast`
@@ -37,7 +38,8 @@ Hook Dependencies:
 - `useAppraisePolicyPosition()`
 - `useWindowDimensions()`
 - `useGetMaxCoverPerPolicy()`
-- `useGasConfig()`
+- `useGetFunctionGas()`
+- `useSptFarm()`
 
 Contract Functions:
 
@@ -45,6 +47,7 @@ Contract Functions:
 - `updateCoverAmount` : Calls the product contract to update policy cover amount.
 - `extendPolicy` : Calls the product contract to extend policy's time period.
 - `cancelPolicy` : Calls the product contract to cancel policy.
+- `callWithdrawPolicy` : Calls the spt farm contract to withdraw policy.
 
 Local Functions:
 

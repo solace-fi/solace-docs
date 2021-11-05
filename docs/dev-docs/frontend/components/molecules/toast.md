@@ -25,7 +25,7 @@ title: Toast
 
 Props Dependencies:
 
-- `AppToastProps`
+- **AppToastProps**
 
 Info: Returns a toast with message about the app.
 
@@ -37,7 +37,7 @@ Info: Returns a toast with message about the audits.
 
 Props Dependencies:
 
-- `NotificationToastProps`
+- **NotificationToastProps**
 
 Manager Dependencies:
 

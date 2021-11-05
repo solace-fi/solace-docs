@@ -11,6 +11,9 @@ title: MyPolicies
 | `openClaimModal` | any | Function to open Claim modal.
 | `openManageModal` | any | Function to open Manage Modal.
 | `latestBlock` | [**Block**](https://docs.ethers.io/v5/api/providers/types/#providers-Block) \| undefined | The latest block.
+| `depositedPolicyIds` | number[] | Array of policy IDs as numbers.
+| `isOpen` | boolean | Indicate if policies accordion should open.
+| `setOpen` | any | Function to set `isOpen`
 
 ## Components
 
@@ -18,22 +21,31 @@ title: MyPolicies
 
 Props Dependencies:
 
-- `MyPoliciesProps`
+- **MyPoliciesProps**
 
 Manager Dependencies:
 
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork` , `currencyDecimals`
-| CachedData | `userPolicyData`
+| CachedData | `userPolicyData` , `addLocalTransactions` , `reload`
+| Notifications | `makeTxToast`
 
 Hook Dependencies:
 
 - `useWindowDimensions()`
+- `useSptFarm()`
+- `useGetFunctionGas()`
+
+Contract Functions:
+- `callDepositPolicy(policyId: number)` : Deposits a policy based on ID.
+- `callWithdrawPolicy(policyId: number)` : Withdraws a policy based on ID.
+- `callDepositPolicyMulti()` : Deposits multiple policies.
+- `callWithdrawPolicyMulti()` : Withdraws multiple policies.
 
 Local Functions:
-- `calculatePolicyExpirationDate (expirationBlock: string)` : Returns a policy's expiration date from its expiration block as a string.
+- `handleToast (tx: any, localTx: LocalTx | null)` : Creates toast after successful contract call.
 
-- `shouldWarnUser (policy: Policy)` : Return boolean of whether a user's policy will expire within 1 day.
+- `handleContractCallError (functionName: string, err: any, txType: FunctionName)` : Creates toast after failed contract call.
 
 Info: Returns a table of policies for a user.

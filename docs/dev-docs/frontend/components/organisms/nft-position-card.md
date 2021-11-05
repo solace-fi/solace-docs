@@ -14,7 +14,6 @@ title: NftPositionCard
 | `userPolicies` | [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported)[] | The list of Policy objects.
 | `openManageModal` | (policy: [**Policy**](/docs/dev-docs/frontend/constants/types#policy-exported)) => Promise | Function to open the ManageModal, used in conjunction with `userPolicies` .
 | `handleSelect` | (position: [**Position**](/docs/dev-docs/frontend/constants/types#position-exported)) => Promise | Function to select or deselect a token position.
-| `userHasActiveProductPosition` | (product: string, position: string) => boolean | Function to check if user has this token position active in a policy already.
 
 ## Components
 

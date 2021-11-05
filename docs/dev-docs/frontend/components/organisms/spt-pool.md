@@ -1,10 +1,10 @@
 ---
-title: CapitalProviderPool
+title: SptPool
 ---
 
 ## Props
 
-### `CapitalProviderPoolProps`
+### `SptPoolProps`
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -12,10 +12,11 @@ title: CapitalProviderPool
 
 ## Components
 
-### `CapitalProviderPool` (exported)
+### `SptPool` (exported)
 
-Props Dependencies:
-- **CapitalProviderPoolProps**
+Props Depenencies:
+
+- **SptPoolProps**
 
 Manager Dependencies:
 
@@ -23,7 +24,8 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | General | `haveErrors`
 | Wallet | `account`
-| Contracts | `cpFarm`
+| Contracts | `sptFarm`
+| Network | `currencyDecimals`
 
 Hook Dependencies:
 - `useUserStakedValue()`

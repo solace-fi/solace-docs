@@ -8,6 +8,7 @@
 | `isHighlight` (optional) | boolean | Highlight the table in a different color.
 | `canHover` (optional) | boolean | Enable table color change on hover.
 | `headers` (optional) | string[] | Array of strings to assign to table headers.
+| `fade` (optional) | boolean | Enable faded effect.
 
 ### `TableHeadProps`
 

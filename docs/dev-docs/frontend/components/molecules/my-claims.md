@@ -13,14 +13,14 @@ Manager Dependencies:
 | General | `haveErrors`
 | Wallet | `account`
 | Contracts | `claimsEscrow`
-| CachedData | `addLocalTransactions` , `reload` , `gasPrices`
+| CachedData | `addLocalTransactions` , `reload`
 | Network | `activeNetwork` , `currencyDecimals`
 | Notifications | `makeTxToast`
 
 Hook Dependencies:
 - `useGetClaimsDetails()`
 - `useWindowDimensions()`
-- `useGasConfig()`
+- `useGetFunctionGas()`
 
 Contract Functions: 
 - `withdrawPayout` : Calls ClaimsEscrow contract to withdraw payout.

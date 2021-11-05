@@ -1,10 +1,10 @@
 ---
-title: TokenPositionCard
+title: LiquityPositionCard
 ---
 
 ## Props
 
-### `TokenPositionCardProps`
+### `LiquityPositionCardProps`
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
@@ -17,7 +17,7 @@ title: TokenPositionCard
 
 ## Components
 
-### `TokenPositionCard` (exported)
+### `LiquityPositionCard` (exported)
 
 Manager Dependencies:
 

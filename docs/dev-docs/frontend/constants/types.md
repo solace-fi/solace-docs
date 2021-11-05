@@ -99,13 +99,34 @@ type TokenInfo = {
   balance: BigNumber
 }
 ```
-### `LpTokenInfo` (exported)
+### `NftTokenInfo` (exported)
 
 ```
-LpTokenInfo = {
+type NftTokenInfo = {
   id: BigNumber
   value: BigNumber
 }
+```
+
+### `GasConfiguration` (exported)
+
+```
+type GasConfiguration =
+  | {
+      maxFeePerGas?: undefined
+      type?: undefined
+      gasPrice?: undefined
+    }
+  | {
+      maxFeePerGas: number
+      type: number
+      gasPrice?: undefined
+    }
+  | {
+      gasPrice: number
+      maxFeePerGas?: undefined
+      type?: undefined
+    }
 ```
 
 ### `Position` (exported)
@@ -212,10 +233,14 @@ type SupportedProduct = {
   name: ProductName
   positionsType: PositionType
   productLink?: string
+    gasLimits?: {
+    [key: number]: {
+      [key: string]: number
+    }
+  }
   supportedSubProducts?: {
     [key: number]: string[]
   }
-
   getTokens?: {
     [key: number]: (provider: any, activeNetwork: NetworkConfig, metadata?: any) => Promise<Token[]>
   }

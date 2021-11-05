@@ -24,7 +24,7 @@ Manager Dependencies:
 | Contracts | `lpToken`
 
 Props Dependencies:
-- `NftPositionProps`
+- **NftPositionProps**
 
 Hook Dependencies:
 - `useWindowDimensions()`
