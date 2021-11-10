@@ -46,13 +46,13 @@ html[data-theme='dark'] {
   --ifm-color-primary: white;
   --ifm-color-primary-dark: #5a91ea;
 
-  --ifm-background-color: rgb(14, 27, 42);
-  --ifm-navbar-color: rgb(9, 18, 27);
+  --ifm-navbar-background-color: rgb(40, 40, 40);
+  --ifm-navbar-color: rgb(40, 40, 40);
+  --ifm-background-color: rgb(46, 46, 46);
   --ifm-global-shadow-md: 0 5px 40px rgba(255, 255, 255, 0.448);
 
   background-position: 0px -30vh;
   background-repeat: no-repeat;
-  --ifm-navbar-background-color: rgb(9, 18, 27);
 
   /* any other colors you wish to overwrite */
 }
@@ -68,11 +68,33 @@ html[data-theme='light'] {
 }
 
 html[data-theme='dark'] .hero {
-  background-image: linear-gradient(180deg, var(--ifm-background-color) 0%, rgba(0,0,0,.2) 33%, rgba(0,0,0,.2) 66%, var(--ifm-background-color) 100%), url("../../static/img/banner.png");
+  background: radial-gradient(ellipse 120% 150% at 60% 0,
+      rgba(212,120,216,1) 10%,
+      rgba(212,120,216,0) 50%),
+  radial-gradient(ellipse 50% 150% at 40% 100%,
+      rgba(243,211,126,1) 20%,
+      rgba(243,211,126,0) 80%),
+  radial-gradient(ellipse 50% 200% at 100% 50%,
+      rgba(95,93,249,1) 10%,
+      rgba(95,93,249,0) 90%),
+  radial-gradient(ellipse 100% 200% at 0 100%,
+      rgba(240,77,66,1) 10%,
+      rgba(240,77,66,0) 100%);
 }
 
 html[data-theme='light'] .hero {
-  background-image: linear-gradient(180deg, rgba(9, 10, 23, 0) 85%, var(--ifm-background-color) 100%), url("../../static/img/banner.png");
+  background: radial-gradient(ellipse 120% 150% at 60% 0,
+      rgba(212,120,216,1) 10%,
+      rgba(212,120,216,0) 50%),
+  radial-gradient(ellipse 50% 150% at 40% 100%,
+      rgba(243,211,126,1) 20%,
+      rgba(243,211,126,0) 80%),
+  radial-gradient(ellipse 50% 200% at 100% 50%,
+      rgba(95,93,249,1) 10%,
+      rgba(95,93,249,0) 90%),
+  radial-gradient(ellipse 100% 200% at 0 100%,
+      rgba(240,77,66,1) 10%,
+      rgba(240,77,66,0) 100%);
 }
 
 html[data-theme='dark'] .menu {
@@ -172,11 +194,6 @@ html[data-theme='light'] .navbar {
 .menu__link {
   font-size: 16px;
   font-weight: 500;
-}
-
-html[data-theme='dark'] .navbar__logo {
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(337deg)
-    brightness(112%) contrast(104%);
 }
 
 .navbar__title::after {

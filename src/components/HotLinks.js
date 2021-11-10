@@ -23,14 +23,14 @@ const HotLinkList = [
 
 function HotLink({title, link}) {
     return (
-        <Link to={link} style={{ textDecoration: 'none' }}>
-            <div className={styles.link}>
+        <button className={styles.link}>
+            <Link to={link} style={{ textDecoration: 'none' }}>
                 <div className="row">
                     <InlineIcon icon={githubFill} width={25} height={25} />
                     <h4 style={{margin: '0', marginLeft: '1rem'}}>{title}</h4>
                 </div>
-            </div>
-        </Link>
+            </Link>
+        </button>
     )
 }
 
@@ -39,14 +39,10 @@ export default function HotLinks () {
         <section className={styles.links}>
             <div className="container">
             <h3>Developer Links</h3>
-            <p>The Solace codebase</p>
+            <p>The Solace codebase consists of multiple open source modules.</p>
             <div className={clsx('col col--6')}>
-                {HotLinkList.map((props, idx) => (
-                    <>
-                        <HotLink key={idx} {...props} />
-                    </>
-                ))}
-                </div>
+                {HotLinkList.map((props, idx) => <HotLink key={idx} {...props} />)}
+            </div>
             </div>
         </section>
     )
