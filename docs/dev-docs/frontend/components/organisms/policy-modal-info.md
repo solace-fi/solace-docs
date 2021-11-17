@@ -26,7 +26,6 @@ Manager Dependencies:
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork` , `currencyDecimals`
 | Wallet | `account`
-| CachedData | `tokenPosData`
 
 Local functions:
 - `closeModal()` : Handle closing the `AssetsModal` modal

@@ -25,7 +25,6 @@ Hook Dependencies:
 - `usePoolModal()`
 - `useVault()`
 - `useCpFarm()`
-- `useGetFunctionGas()`
 
 Contract Functions:
 

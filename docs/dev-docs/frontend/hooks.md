@@ -63,29 +63,6 @@ Manager Dependencies:
 
 Return the ids and values of LP tokens in the user's share of the liquidity pool, as a pair value of arrays.
 
-### `useUserWalletPolicies`
-
-Manager Dependencies:
-
-| Manager | Values                                                          |
-| :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `library`
-| Contracts | `policyManager` , `sptFarm`
-| CachedData | `userPolicyData`
-
-Return the ids and values of SPT tokens in the user's wallet as a pair value of arrays.
-
-### `useDepositedPolicies`
-
-Manager Dependencies:
-
-| Manager | Values                                                          |
-| :--- | :------------------------------------------------------------------- |
-| Wallet | `account` , `library`
-| Contracts | `policyManager` , `sptFarm`
-| CachedData | `userPolicyData`
-
-Return the ids and values of SPT tokens in the user's share of the liquidity pool, as a pair value of arrays.
 
 ## useClaimsEscrow.ts
 
@@ -632,9 +609,3 @@ Returns an object of 3 functions belonging to the cp pool contract: depositEth()
 ### `useLpFarm`
 
 Returns an object of 2 functions belonging to the lp pool contract: depositLp(), and withdrawLp().
-
-## useSptFarm.ts
-
-### `useSptFarm`
-
-Returns an object of 4 functions belonging to the Spt pool contract: depositPolicy(), depositPolicyMulti(), withdrawPolicy(), and withdrawPolicyMulti().

@@ -14,6 +14,6 @@
 ## Components
 
 ### `UserImage` (exported)
-- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported)
+- **Props**: [**GeneralElementProps**](/docs/dev-docs/frontend/components/general-interfaces#generalelementprops-exported) , **UserImageProps**
 - **Additional Styles**: [**GeneralElementCss**](/docs/dev-docs/frontend/components/general-interfaces#generalelementcss-exported)
 - **Info**: Sets width and height of user image
