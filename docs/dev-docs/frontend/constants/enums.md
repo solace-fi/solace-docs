@@ -54,10 +54,6 @@ FunctionName {
   MULTI_CALL = 'Multicall',
   START_COOLDOWN = 'StartCooldown',
   STOP_COOLDOWN = 'StopCooldown',
-  DEPOSIT_POLICY_SIGNED = 'DepositPolicySigned',
-  DEPOSIT_POLICY_SIGNED_MULTI = 'DepositPolicySignedMulti',
-  WITHDRAW_POLICY = 'WithdrawPolicy',
-  WITHDRAW_POLICY_MULTI = 'WithdrawPolicyMulti',
 
   EXERCISE_OPTION = 'ExerciseOption',
   FARM_OPTION_MULTI = 'FarmOptionMulti',

@@ -28,24 +28,10 @@ Manager Dependencies:
 | Manager | Values                                                          |
 | :--- | :------------------------------------------------------------------- |
 | Network | `activeNetwork` , `currencyDecimals`
-| CachedData | `userPolicyData` , `addLocalTransactions` , `reload`
-| Notifications | `makeTxToast`
+| CachedData | `userPolicyData`
 
 Hook Dependencies:
 
 - `useWindowDimensions()`
-- `useSptFarm()`
-- `useGetFunctionGas()`
-
-Contract Functions:
-- `callDepositPolicy(policyId: number)` : Deposits a policy based on ID.
-- `callWithdrawPolicy(policyId: number)` : Withdraws a policy based on ID.
-- `callDepositPolicyMulti()` : Deposits multiple policies.
-- `callWithdrawPolicyMulti()` : Withdraws multiple policies.
-
-Local Functions:
-- `handleToast (tx: any, localTx: LocalTx | null)` : Creates toast after successful contract call.
-
-- `handleContractCallError (functionName: string, err: any, txType: FunctionName)` : Creates toast after failed contract call.
 
 Info: Returns a table of policies for a user.

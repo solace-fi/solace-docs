@@ -37,7 +37,6 @@ Hook Dependencies:
 - `useWindowDimensions()`
 - `useAppraisePolicyPosition()`
 - `useGetFunctionGas()`
-- `useSptFarm()`
 
 Contract Functions:
 

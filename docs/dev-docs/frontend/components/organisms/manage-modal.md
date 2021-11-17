@@ -39,7 +39,6 @@ Hook Dependencies:
 - `useWindowDimensions()`
 - `useGetMaxCoverPerPolicy()`
 - `useGetFunctionGas()`
-- `useSptFarm()`
 
 Contract Functions:
 
@@ -47,7 +46,6 @@ Contract Functions:
 - `updateCoverAmount` : Calls the product contract to update policy cover amount.
 - `extendPolicy` : Calls the product contract to extend policy's time period.
 - `cancelPolicy` : Calls the product contract to cancel policy.
-- `callWithdrawPolicy` : Calls the spt farm contract to withdraw policy.
 
 Local Functions:
 

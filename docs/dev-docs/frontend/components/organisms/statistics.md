@@ -13,7 +13,7 @@ Manager Dependencies:
 | General | `haveErrors`
 | Wallet | `account` , `initialized`
 | CachedData | `addLocalTransactions` , `reload` , `tokenPosData` , `latestBlock`
-| Contracts | `master`
+| Contracts | `farmController`
 | Network | `activeNetwork` , `currencyDecimals`
 | Notifications | `makeTxToast`
 
@@ -29,6 +29,6 @@ Hook Dependencies:
 
 Contract Functions:
 
-- `claimRewards` : Calls master contract to claim pending rewards.
+- `claimRewards` : Calls farm controller contract to claim pending rewards.
 
 Info: Returns a [**BoxRow**](/docs/dev-docs/frontend/components/atoms/Box#boxrow-exported) of two [**Box**](/docs/dev-docs/frontend/components/atoms/Box#box-exported) components, where one displays user data, and the other displays global data.

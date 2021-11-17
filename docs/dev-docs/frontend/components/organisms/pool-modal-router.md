@@ -21,28 +21,28 @@ title: PoolModalRouter
 | `isOpen` | boolean | Boolean to open modal.
 | `modalTitle` | string | String to set title of modal.
 | `closeModal` | function | Function to close modal.
-| farmName | string | farm's name for lookup purposes.
+| `farmName` | string | farm's name for lookup purposes.
 
 ### `Erc20InputPanelProps` (exported)
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| unit | [**Unit**](/docs/dev-docs/frontend/constants/enums#unit-exported) | Unit to display on panel.
-| availableBalance | string | The maximum balance of the asset for this panel.
-| amount | string | The input amount for this asset to be used.
-| handleInputChange | function | Function to change amount state based on input.
-| setMax | function | Function to call a passed in setMax function.
+| `unit` | [**Unit**](/docs/dev-docs/frontend/constants/enums#unit-exported) | Unit to display on panel.
+| `availableBalance` | string | The maximum balance of the asset for this panel.
+| `amount` | string | The input amount for this asset to be used.
+| `handleInputChange` | function | Function to change amount state based on input.
+| `setMax` | function | Function to call a passed in setMax function.
 
 ### `Erc721InputPanelProps` (exported)
 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-| unit | [**Unit**](/docs/dev-docs/frontend/constants/enums#unit-exported) | Unit to display on panel.
-| assetTokens | NftTokenInfo[] | Array of NftTokenInfo objects.
-| availableBalance | string | The maximum balance of the asset for this panel.
-| nftSelection | { value: string; label: string } | The selected nft data field.
-| handleNft | function | Function to change nftSelection.
-| nftId | BigNumber | Current nft ID to change.
+| `unit` | [**Unit**](/docs/dev-docs/frontend/constants/enums#unit-exported) | Unit to display on panel.
+| `assetTokens` | NftTokenInfo[] | Array of NftTokenInfo objects.
+| `availableBalance` | string | The maximum balance of the asset for this panel.
+| `nftSelection` | { value: string; label: string } | The selected nft data field.
+| `handleNft` | function | Function to change nftSelection.
+| `nftId` | BigNumber | Current nft ID to change.
 
 ## Components
 

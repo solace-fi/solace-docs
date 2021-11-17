@@ -31,7 +31,7 @@ type PositionNamesCache = {
 ### `PositionsCacheValue` (exported)
 
 ```
-type PositionsCacheValue = { positions: Position[]; init: boolean }
+type PositionsCacheValue = { positions: Position[] }
 ```
 
 ### `PositionNamesCacheValue` (exported)
@@ -40,7 +40,6 @@ type PositionsCacheValue = { positions: Position[]; init: boolean }
 type PositionNamesCacheValue = {
   positionNames: { [key: string]: string }
   underlyingPositionNames: { [key: string]: string[] }
-  init: boolean
 }
 ```
 
@@ -79,6 +78,7 @@ type Policy = {
   productAddress: string
   productName: string
   positionDescription: string
+  positionAddrs: string[]
   positionNames: string[]
   underlyingPositionNames: string[]
   expirationBlock: number
@@ -226,6 +226,7 @@ type GasPriceResult = {
 ```
 type StringToStringMapping = { [key: string]: string }
 ```
+
 ### `SupportedProduct` (exported)
 
 ```
@@ -283,7 +284,6 @@ type LocalTx = {
   type: string
   value: string
   status: TransactionCondition
-  unit: Unit
 }
 ```
 

@@ -3,6 +3,9 @@
 ### `StyledIconCss` (exported)
 - **Info**: Properly positions icon.
 
+### `StyledHistory` (exported)
+- **Extends**: styled-icons/boxicons-regular/History
+
 ### `StyledWallet` (exported)
 - **Extends**: styled-icons/boxicons-solid/Wallet
 
