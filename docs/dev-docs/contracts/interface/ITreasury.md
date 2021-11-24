@@ -163,25 +163,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 |`amount` | uint256 | The amount of the token to spend.
 |`recipient` | address | The address of the token receiver.
 
-### swap
-```solidity
-  function swap(
-    bytes path,
-    uint256 amountIn,
-    uint256 amountOutMinimum
-  ) external
-```
-Manually swaps a token.
-Can only be called by the current [**governor**](/docs/protocol/governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`path` | bytes | The path of pools to take.
-|`amountIn` | uint256 | The amount to swap.
-|`amountOutMinimum` | uint256 | The minimum about to receive.
-
 ### wrap
 ```solidity
   function wrap(
@@ -245,5 +226,21 @@ Emitted when a token is spent.
   )
 ```
 Emitted when premium recipients are set.
+
+
+### PremiumsRouted
+```solidity
+  event PremiumsRouted(
+  )
+```
+Emitted when premiums are routed.
+
+
+### EthRefunded
+```solidity
+  event EthRefunded(
+  )
+```
+Emitted when ETH is refunded to a user.
 
 

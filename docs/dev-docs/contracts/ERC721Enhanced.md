@@ -155,3 +155,21 @@ This function is more useful off chain than on chain.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`tokenIDs`| address | The list of token IDs.
+### exists
+```solidity
+  function exists(
+    uint256 tokenID
+  ) external returns (bool status)
+```
+Determines if a token exists or not.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`tokenID` | uint256 | The ID of the token to query.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| uint256 | True if the token exists, false if it doesn't.

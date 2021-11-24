@@ -2,21 +2,12 @@ Rewards investors in [**SOLACE**](../SOLACE).
 
 
 ## Functions
-### master
+### farmController
 ```solidity
-  function master(
+  function farmController(
   ) external returns (address)
 ```
-[`Master`](../Master) contract.
-
-
-
-### solace
-```solidity
-  function solace(
-  ) external returns (contract SOLACE)
-```
-Native [**SOLACE**](../SOLACE) Token.
+[`IFarmController`](../FarmController) contract.
 
 
 
@@ -29,87 +20,32 @@ A unique enumerator that identifies the farm type.
 
 
 
-### blockReward
+### rewardPerSecond
 ```solidity
-  function blockReward(
+  function rewardPerSecond(
   ) external returns (uint256)
 ```
-Amount of [**SOLACE**](../SOLACE) distributed per block.
+Amount of rewards distributed per second.
 
 
 
-### startBlock
+### startTime
 ```solidity
-  function startBlock(
+  function startTime(
   ) external returns (uint256)
 ```
 When the farm will start.
 
 
 
-### endBlock
+### endTime
 ```solidity
-  function endBlock(
+  function endTime(
   ) external returns (uint256)
 ```
 When the farm will end.
 
 
-
-### setRewards
-```solidity
-  function setRewards(
-    uint256 blockReward_
-  ) external
-```
-Sets the amount of [**SOLACE**](../SOLACE) to distribute per block.
-Only affects future rewards.
-Can only be called by [`Master`](../Master).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`blockReward_` | uint256 | Amount to distribute per block.
-
-### setEnd
-```solidity
-  function setEnd(
-    uint256 endBlock_
-  ) external
-```
-Sets the farm's end block. Used to extend the duration.
-Can only be called by the current [**governor**](/docs/protocol/governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`endBlock_` | uint256 | The new end block.
-
-### withdrawRewards
-```solidity
-  function withdrawRewards(
-  ) external
-```
-Withdraw your rewards without unstaking your tokens.
-
-
-
-### withdrawRewardsForUser
-```solidity
-  function withdrawRewardsForUser(
-    address user
-  ) external
-```
-Withdraw a users rewards without unstaking their tokens.
-Can only be called by ['Master`](../Master) or the user.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`user` | address | User to withdraw rewards for.
 
 ### pendingRewards
 ```solidity
@@ -117,7 +53,7 @@ Can only be called by ['Master`](../Master) or the user.
     address user
   ) external returns (uint256 reward)
 ```
-Calculates the accumulated balance of [**SOLACE**](../SOLACE) for specified user.
+Calculates the accumulated rewards for specified user.
 
 
 #### Parameters:
@@ -128,24 +64,15 @@ Calculates the accumulated balance of [**SOLACE**](../SOLACE) for specified user
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`reward`| address | Total amount of withdrawable SOLACE.
-### updateFarm
+|`reward`| address | Total amount of withdrawable rewards.
+### getRewardAmountDistributed
 ```solidity
-  function updateFarm(
-  ) external
-```
-Updates farm information to be up to date to the current block.
-
-
-
-### getMultiplier
-```solidity
-  function getMultiplier(
+  function getRewardAmountDistributed(
     uint256 from,
     uint256 to
-  ) external returns (uint256 multiplier)
+  ) external returns (uint256 amount)
 ```
-Calculates the reward multiplier over the given `from` until `to` block.
+Calculates the reward amount distributed between two timestamps.
 
 
 #### Parameters:
@@ -157,4 +84,76 @@ Calculates the reward multiplier over the given `from` until `to` block.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`multiplier`| uint256 | The weighted multiplier for the given period.
+|`amount`| uint256 | The reward amount distributed in the given period.
+### withdrawRewards
+```solidity
+  function withdrawRewards(
+  ) external returns (uint256 optionID)
+```
+Converts the senders unpaid rewards into an [`Option`](../OptionsFarming).
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`optionID`|  | The ID of the newly minted [`Option`](../OptionsFarming).
+### withdrawRewardsForUser
+```solidity
+  function withdrawRewardsForUser(
+    address user
+  ) external returns (uint256 rewardAmount)
+```
+Withdraw a users rewards without unstaking their tokens.
+Can only be called by [`FarmController`](../FarmController).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`user` | address | User to withdraw rewards for.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`rewardAmount`| address | The amount of rewards the user earned on this farm.
+### updateFarm
+```solidity
+  function updateFarm(
+  ) external
+```
+Updates farm information to be up to date to the current time.
+
+
+
+### setRewards
+```solidity
+  function setRewards(
+    uint256 rewardPerSecond_
+  ) external
+```
+Sets the amount of rewards to distribute per second.
+Only affects future rewards.
+Can only be called by [`FarmController`](../FarmController).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`rewardPerSecond_` | uint256 | Amount to distribute per second.
+
+### setEnd
+```solidity
+  function setEnd(
+    uint256 endTime_
+  ) external
+```
+Sets the farm's end time. Used to extend the duration.
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`endTime_` | uint256 | The new end time.
+

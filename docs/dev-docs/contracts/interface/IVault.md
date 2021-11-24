@@ -225,7 +225,7 @@ Returns true if the vault is paused.
 ```solidity
   function requestEth(
     uint256 amount
-  ) external returns (uint256)
+  ) external
 ```
 Sends **ETH** to other users or contracts.
 Can only be called by authorized requestors.
@@ -236,10 +236,6 @@ Can only be called by authorized requestors.
 | :--- | :--- | :------------------------------------------------------------------- |
 |`amount` | uint256 | Amount of **ETH** wanted.
 
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`Amount`| uint256 | of **ETH** sent.
 ### isRequestor
 ```solidity
   function isRequestor(
@@ -388,6 +384,22 @@ Emitted when deposits are paused.
   )
 ```
 Emitted when deposits are unpaused.
+
+
+### CooldownStarted
+```solidity
+  event CooldownStarted(
+  )
+```
+Emitted when a user enters cooldown mode.
+
+
+### CooldownStopped
+```solidity
+  event CooldownStopped(
+  )
+```
+Emitted when a user leaves cooldown mode.
 
 
 ### CooldownWindowSet

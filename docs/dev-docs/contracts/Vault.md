@@ -241,7 +241,7 @@ Returns true if the vault is paused.
 ```solidity
   function requestEth(
     uint256 amount
-  ) external returns (uint256)
+  ) external
 ```
 Sends **ETH** to other users or contracts. The users or contracts should be authorized requestors.
 Can only be called by authorized `requestors`.
@@ -252,10 +252,6 @@ Can only be called by authorized `requestors`.
 | :--- | :--- | :------------------------------------------------------------------- |
 |`amount` | uint256 | The amount of **ETH** wanted.
 
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| uint256 | The amount of **ETH** sent.
 ### isRequestor
 ```solidity
   function isRequestor(
@@ -370,7 +366,7 @@ Called by [`depositEth()`](#depositeth) and [`depositWeth()`](#depositweth).
     uint256 shares
   ) internal returns (uint256)
 ```
-Handles burning of tokens during withdraw.
+Handles burning of shares during withdraw.
 Called by [`withdrawEth()`](#withdraweth) and [`withdrawWeth()`](#withdrawweth).
 
 
@@ -388,7 +384,7 @@ Called by [`withdrawEth()`](#withdraweth) and [`withdrawWeth()`](#withdrawweth).
   function _totalAssets(
   ) internal returns (uint256)
 ```
-Internal function that returns quantity of all assets under control of this `Vault`, including those loaned out to `Strategies`.
+Internal function that returns quantity of all assets under control of this `Vault`.
 Called by **totalAssets()** function.
 
 
@@ -433,26 +429,6 @@ Internal function that determines how many shares for given amount of token woul
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`shares`| uint256 | The amount of shares(tokens) for given amount.
-### min
-```solidity
-  function min(
-    uint256 a,
-    uint256 b
-  ) internal returns (uint256)
-```
-Internal function that returns the minimum value between two values.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`a` | uint256 |  The first value.
-|`b` | uint256 |  The second value.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`minValue`| uint256 | The minimum value.
 ### _beforeTokenTransfer
 ```solidity
   function _beforeTokenTransfer(

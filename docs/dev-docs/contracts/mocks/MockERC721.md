@@ -49,3 +49,21 @@ Count of all tokens created.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`count`|  | Count.
+### doThing
+```solidity
+  function doThing(
+    uint256 tokenID
+  ) external returns (uint256 res)
+```
+Do a thing to a token.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`tokenID` | uint256 | The ID of the token to do stuff to.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`res`| uint256 | The result.

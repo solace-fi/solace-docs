@@ -287,7 +287,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
   event ProductParamsSet(
   )
 ```
-Emitted when a product's parameters are modified.
+Emitted when a product's risk parameters are set.
 Includes adding and removing products.
 
 
@@ -296,6 +296,6 @@ Includes adding and removing products.
   event PartialReservesFactorSet(
   )
 ```
-Emitted when partial reserve factor is set.
+Emitted when the partial reserves factor is set.
 
 

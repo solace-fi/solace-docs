@@ -12,7 +12,6 @@ If a [**policyholder**](/docs/protocol/policy-holder) updates or cancels a polic
 ```solidity
   function constructor(
     address governance_,
-    address swapRouter_,
     address registry_
   ) public
 ```
@@ -23,7 +22,6 @@ Constructs the Treasury contract.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`governance_` | address | The address of the [governor](/docs/protocol/governance).
-|`swapRouter_` | address | Address of uniswap router.
 |`registry_` | address | Address of registry.
 
 ### routePremiums
@@ -198,25 +196,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 |`amount` | uint256 | The amount of the token to spend.
 |`recipient` | address | The address of the token receiver.
 
-### swap
-```solidity
-  function swap(
-    bytes path,
-    uint256 amountIn,
-    uint256 amountOutMinimum
-  ) external
-```
-Manually swaps a token.
-Can only be called by the current [**governor**](/docs/protocol/governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`path` | bytes | The path of pools to take.
-|`amountIn` | uint256 | The amount to swap.
-|`amountOutMinimum` | uint256 | The minimum about to receive.
-
 ### wrap
 ```solidity
   function wrap(
@@ -247,26 +226,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | :--- | :--- | :------------------------------------------------------------------- |
 |`amount` | uint256 | The amount to unwrap.
 
-### min
-```solidity
-  function min(
-    uint256 a,
-    uint256 b
-  ) internal returns (uint256 c)
-```
-Internal function that returns the minimum value between two values.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`a` | uint256 | The first value.
-|`b` | uint256 | The second value.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`c`| uint256 | The minimum value.
 ### receive
 ```solidity
   function receive(
