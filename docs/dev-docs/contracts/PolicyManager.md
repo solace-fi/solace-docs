@@ -170,24 +170,6 @@ Only makes sense in context of the product.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`positionDescription`| uint256 | The description of the covered position(s).
-### exists
-```solidity
-  function exists(
-    uint256 policyID
-  ) external returns (bool status)
-```
-Checks if a policy exists.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`policyID` | uint256 | The policy ID.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| uint256 | True if the policy exists.
 ### policyIsActive
 ```solidity
   function policyIsActive(
@@ -264,8 +246,8 @@ Describes the policy.
 ```solidity
   function createPolicy(
     address policyholder,
-    uint256 expirationBlock,
-    uint40 coverAmount,
+    uint256 coverAmount,
+    uint40 expirationBlock,
     uint24 price,
     bytes positionDescription
   ) external returns (uint256 policyID)
@@ -278,8 +260,8 @@ Can only be called by **products**.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`policyholder` | address | The receiver of new policy token.
-|`expirationBlock` | uint256 | The policy expiration block number.
-|`coverAmount` | uint40 | The policy coverage amount (in wei).
+|`coverAmount` | uint256 | The policy coverage amount (in wei).
+|`expirationBlock` | uint40 | The policy expiration block number.
 |`price` | uint24 | The coverage price.
 |`positionDescription` | bytes | The byte encoded description of the covered position(s).
 
@@ -291,8 +273,8 @@ Can only be called by **products**.
 ```solidity
   function setPolicyInfo(
     uint256 policyID,
-    uint256 expirationBlock,
-    uint40 coverAmount,
+    uint256 coverAmount,
+    uint40 expirationBlock,
     uint24 price,
     bytes positionDescription
   ) external
@@ -305,8 +287,8 @@ Can only be called by **products**.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`policyID` | uint256 | The policy ID.
-|`expirationBlock` | uint256 | The policy expiration block number.
-|`coverAmount` | uint40 | The policy coverage amount (in wei).
+|`coverAmount` | uint256 | The policy coverage amount (in wei).
+|`expirationBlock` | uint40 | The policy expiration block number.
 |`price` | uint24 | The coverage price.
 |`positionDescription` | bytes | The byte encoded description of the covered position(s).
 

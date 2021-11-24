@@ -229,7 +229,7 @@ Returns the name of the product.
   function paused(
   ) external returns (bool)
 ```
-Cannot buy new policies while paused. (Default is False)
+Returns whether or not product is currently in paused state.
 
 
 

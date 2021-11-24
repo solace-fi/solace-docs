@@ -157,20 +157,6 @@ The current amount covered (in wei).
 
 
 
-### name
-```solidity
-  function name(
-  ) external returns (string productName)
-```
-Returns the name of the product.
-Must be implemented by child contracts.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`productName`|  | The name of the product.
 ### paused
 ```solidity
   function paused(

@@ -2,14 +2,14 @@ Tracks the contracts of the Solaverse.
 
 [**Governance**](/docs/protocol/governance) can set the contract addresses and anyone can look them up.
 
-Note that `Registry` doesn't track all Solace contracts. Farms are tracked in [`Master`](../Master), Products are tracked in [`PolicyManager`](../PolicyManager), and the `Registry` is untracked.
+Note that `Registry` doesn't track all Solace contracts. FarmController is tracked in [`OptionsFarming`](../OptionsFarming), farms are tracked in FarmController, Products are tracked in [`PolicyManager`](../PolicyManager), and the `Registry` is untracked.
 
 
 ## Functions
 ### weth
 ```solidity
   function weth(
-  ) external returns (address)
+  ) external returns (address weth_)
 ```
 Gets the [**WETH**](../WETH9) contract.
 
@@ -22,7 +22,7 @@ Gets the [**WETH**](../WETH9) contract.
 ### vault
 ```solidity
   function vault(
-  ) external returns (address)
+  ) external returns (address vault_)
 ```
 Gets the [`Vault`](../Vault) contract.
 
@@ -35,7 +35,7 @@ Gets the [`Vault`](../Vault) contract.
 ### claimsEscrow
 ```solidity
   function claimsEscrow(
-  ) external returns (address)
+  ) external returns (address claimsEscrow_)
 ```
 Gets the [`ClaimsEscrow`](../ClaimsEscrow) contract.
 
@@ -48,7 +48,7 @@ Gets the [`ClaimsEscrow`](../ClaimsEscrow) contract.
 ### treasury
 ```solidity
   function treasury(
-  ) external returns (address)
+  ) external returns (address treasury_)
 ```
 Gets the [`Treasury`](../Treasury) contract.
 
@@ -61,7 +61,7 @@ Gets the [`Treasury`](../Treasury) contract.
 ### policyManager
 ```solidity
   function policyManager(
-  ) external returns (address)
+  ) external returns (address policyManager_)
 ```
 Gets the [`PolicyManager`](../PolicyManager) contract.
 
@@ -74,7 +74,7 @@ Gets the [`PolicyManager`](../PolicyManager) contract.
 ### riskManager
 ```solidity
   function riskManager(
-  ) external returns (address)
+  ) external returns (address riskManager_)
 ```
 Gets the [`RiskManager`](../RiskManager) contract.
 
@@ -87,7 +87,7 @@ Gets the [`RiskManager`](../RiskManager) contract.
 ### solace
 ```solidity
   function solace(
-  ) external returns (address)
+  ) external returns (address solace_)
 ```
 Gets the [**SOLACE**](../SOLACE) contract.
 
@@ -97,23 +97,36 @@ Gets the [**SOLACE**](../SOLACE) contract.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`solace_`|  | The address of the [**SOLACE**](../SOLACE) contract.
-### master
+### optionsFarming
 ```solidity
-  function master(
-  ) external returns (address)
+  function optionsFarming(
+  ) external returns (address optionsFarming_)
 ```
-Gets the [`Master`](../Master) contract.
+Gets the [`OptionsFarming`](../OptionsFarming) contract.
 
 
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`master_`|  | The address of the [`Master`](../Master) contract.
+|`optionsFarming_`|  | The address of the [`OptionsFarming`](../OptionsFarming) contract.
+### farmController
+```solidity
+  function farmController(
+  ) external returns (address farmController_)
+```
+Gets the [`FarmController`](../FarmController) contract.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`farmController_`|  | The address of the [`FarmController`](../FarmController) contract.
 ### locker
 ```solidity
   function locker(
-  ) external returns (address)
+  ) external returns (address locker_)
 ```
 Gets the [`Locker`](../Locker) contract.
 
@@ -228,20 +241,35 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | :--- | :--- | :------------------------------------------------------------------- |
 |`solace_` | address | The address of the [**SOLACE**](../SOLACE) contract.
 
-### setMaster
+### setOptionsFarming
 ```solidity
-  function setMaster(
-    address master_
+  function setOptionsFarming(
+    address optionsFarming_
   ) external
 ```
-Sets the [`Master`](../Master) contract.
+Sets the [`OptionsFarming`](../OptionsFarming) contract.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`master_` | address | The address of the [`Master`](../Master) contract.
+|`optionsFarming_` | address | The address of the [`OptionsFarming`](../OptionsFarming) contract.
+
+### setFarmController
+```solidity
+  function setFarmController(
+    address farmController_
+  ) external
+```
+Sets the [`FarmController`](../FarmController) contract.
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`farmController_` | address | The address of the [`FarmController`](../FarmController) contract.
 
 ### setLocker
 ```solidity
@@ -256,6 +284,39 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
+|`locker_` | address | The address of the [`Locker`](../Locker) contract.
+
+### setMultiple
+```solidity
+  function setMultiple(
+    address weth_,
+    address vault_,
+    address claimsEscrow_,
+    address treasury_,
+    address policyManager_,
+    address riskManager_,
+    address solace_,
+    address optionsFarming_,
+    address farmController_,
+    address locker_
+  ) external
+```
+Sets multiple contracts in one call.
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`weth_` | address | The address of the [**WETH**](../WETH9) contract.
+|`vault_` | address | The address of the [`Vault`](../Vault) contract.
+|`claimsEscrow_` | address | The address of the [`Claims Escrow`](../ClaimsEscrow) contract.
+|`treasury_` | address | The address of the [`Treasury`](../Treasury) contract.
+|`policyManager_` | address | The address of the [`Policy Manager`](../PolicyManager) contract.
+|`riskManager_` | address | The address of the [`Risk Manager`](../RiskManager) contract.
+|`solace_` | address | The address of the [**SOLACE**](../SOLACE) contract.
+|`optionsFarming_` | address | The address of the [`OptionsFarming`](./OptionsFarming) contract.
+|`farmController_` | address | The address of the [`FarmController`](./FarmController) contract.
 |`locker_` | address | The address of the [`Locker`](../Locker) contract.
 
 ## Events
@@ -315,9 +376,17 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
 
-### MasterSet
+### OptionsFarmingSet
 ```solidity
-  event MasterSet(
+  event OptionsFarmingSet(
+  )
+```
+
+
+
+### FarmControllerSet
+```solidity
+  event FarmControllerSet(
   )
 ```
 

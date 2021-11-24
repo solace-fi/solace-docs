@@ -26,15 +26,18 @@ This command generates static content into the `build` directory and can be serv
 
 ## Contract Docgen
 
-Assuming this repo is at `./solace-docs` and the core repo is at `./core`
+Assuming this repo is at `./solace-docs` and the core repo is at `./solace-core`
 
 ```console
-mkdir ./core/templates/
-cp ./solace-docs/contract.hbs ./core/templates/
-cd ./core
+mkdir ./solace-core/templates/
+cp ./solace-docs/contract.hbs ./solace-core/templates/
+cd ./solace-core
 npm i
 rm -rf docs
 npx solidity-docgen --solc-module solc-0.8 -t ./templates
 rm -rf ../solace-docs/docs/dev-docs/contracts/
 cp -r ./docs/. ../solace-docs/docs/dev-docs/contracts/
+cd ../solace-docs
+yarn build
+yarn start
 ```

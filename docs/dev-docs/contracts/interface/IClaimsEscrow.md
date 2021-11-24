@@ -84,24 +84,6 @@ Gets information about a claim.
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`amount`| uint256 | Claim amount in ETH.
 |`receivedAt`|  | Time claim was received at.
-### exists
-```solidity
-  function exists(
-    uint256 claimID
-  ) external returns (bool status)
-```
-Returns true if the claim exists.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`claimID` | uint256 | The ID to check.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| uint256 | True if it exists, false if not.
 ### isWithdrawable
 ```solidity
   function isWithdrawable(
@@ -236,5 +218,29 @@ Emitted when a new claim is received.
   )
 ```
 Emitted when a claim is paid out.
+
+
+### ClaimAdjusted
+```solidity
+  event ClaimAdjusted(
+  )
+```
+Emitted when a claim is adjusted.
+
+
+### EthReturned
+```solidity
+  event EthReturned(
+  )
+```
+Emitted when ETH is returned to the Vault.
+
+
+### CooldownPeriodSet
+```solidity
+  event CooldownPeriodSet(
+  )
+```
+Emitted when the cooldown period is set.
 
 

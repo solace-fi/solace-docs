@@ -1,10 +1,10 @@
-Rewards [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) in [**SOLACE**](../SOLACE) for providing capital in the [`Vault`](../Vault).
+Rewards [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) in [**Options**](../OptionFarming) for providing capital in the [`Vault`](../Vault).
 
-Over the course of `startBlock` to `endBlock`, the farm distributes `blockReward` [**SOLACE**](../SOLACE) per block to all farmers split relative to the amount of [**SCP**](../Vault) they have deposited.
+Over the course of `startTime` to `endTime`, the farm distributes `rewardPerSecond` [**Options**](../OptionFarming) to all farmers split relative to the amount of [**SCP**](../Vault) they have deposited.
 
 Users can become [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) by depositing **ETH** into the [`Vault`](../Vault), receiving [**SCP**](../Vault) in the process. [**Capital Providers**](/docs/user-guides/capital-provider/cp-role-guide) can then deposit their [**SCP**](../Vault) via [`depositCp()`](#depositcp) or [`depositCpSigned()`](#depositcpsigned). Alternatively users can bypass the [`Vault`](../Vault) and stake their **ETH** via [`depositEth()`](#depositeth).
 
-Users can withdraw their rewards via [`withdrawRewards()`](#withdrawrewards) and compound their rewards via [`compoundRewards()`](#compoundrewards).
+Users can withdraw their rewards via [`withdrawRewards()`](#withdrawrewards).
 
 Users can withdraw their [**SCP**](../Vault) via [`withdrawCp()`](#withdrawcp).
 
@@ -12,21 +12,57 @@ Note that transferring in **ETH** will mint you shares, but transferring in **WE
 
 
 ## Functions
-### receive
+### vault
 ```solidity
-  function receive(
-  ) external
+  function vault(
+  ) external returns (address vault_)
 ```
-Receive function. Deposits eth. User will receive accumulated rewards if any.
+Vault contract.
 
 
 
-### fallback
+### weth
 ```solidity
-  function fallback(
-  ) external
+  function weth(
+  ) external returns (address weth_)
 ```
-Fallback function. Deposits eth. User will receive accumulated rewards if any.
+WETH contract.
+
+
+
+### lastRewardTime
+```solidity
+  function lastRewardTime(
+  ) external returns (uint256 timestamp)
+```
+Last time rewards were distributed or farm was updated.
+
+
+
+### accRewardPerShare
+```solidity
+  function accRewardPerShare(
+  ) external returns (uint256 acc)
+```
+Accumulated rewards per share, times 1e12.
+
+
+
+### userStaked
+```solidity
+  function userStaked(
+  ) external returns (uint256 amount)
+```
+The amount of [**SCP**](../Vault) tokens a user deposited.
+
+
+
+### valueStaked
+```solidity
+  function valueStaked(
+  ) external returns (uint256 amount)
+```
+Value of tokens staked by all farmers.
 
 
 
@@ -37,7 +73,6 @@ Fallback function. Deposits eth. User will receive accumulated rewards if any.
   ) external
 ```
 Deposit some [**CP tokens**](../Vault).
-User will receive accumulated rewards if any.
 User must `ERC20.approve()` first.
 
 
@@ -58,7 +93,6 @@ User must `ERC20.approve()` first.
   ) external
 ```
 Deposit some [**CP tokens**](../Vault) using `ERC2612.permit()`.
-User will receive accumulated rewards if any.
 
 
 #### Parameters:
@@ -77,19 +111,22 @@ User will receive accumulated rewards if any.
   ) external
 ```
 Deposit some **ETH**.
-User will receive accumulated rewards if any.
 
 
 
-### compoundRewards
+### depositWeth
 ```solidity
-  function compoundRewards(
+  function depositWeth(
+    uint256 amount
   ) external
 ```
-Your money already makes you money. Now make your money make more money!
-Withdraws your [**SOLACE**](../SOLACE) rewards, swaps it for **WETH**, then deposits that **WETH** onto the farm.
+Deposit some **WETH**.
 
 
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`amount` | uint256 | The amount of **WETH** to deposit.
 
 ### withdrawCp
 ```solidity
@@ -107,39 +144,21 @@ Can only withdraw as many tokens as you deposited.
 | :--- | :--- | :------------------------------------------------------------------- |
 |`amount` | uint256 | The withdraw amount.
 
-### vault
+### receive
 ```solidity
-  function vault(
-  ) external returns (contract IVault)
+  function receive(
+  ) external
 ```
-Vault contract.
+Receive function. Deposits eth.
 
 
 
-### lastRewardBlock
+### fallback
 ```solidity
-  function lastRewardBlock(
-  ) external returns (uint256)
+  function fallback(
+  ) external
 ```
-Last time rewards were distributed or farm was updated.
-
-
-
-### accRewardPerShare
-```solidity
-  function accRewardPerShare(
-  ) external returns (uint256)
-```
-Accumulated rewards per share, times 1e12.
-
-
-
-### valueStaked
-```solidity
-  function valueStaked(
-  ) external returns (uint256)
-```
-Value of tokens staked by all farmers.
+Fallback function. Deposits eth.
 
 
 
@@ -160,14 +179,6 @@ Emitted when CP tokens are deposited onto the farm.
 Emitted when ETH is deposited onto the farm.
 
 
-### RewardsCompounded
-```solidity
-  event RewardsCompounded(
-  )
-```
-Emitted when a user compounds their rewards.
-
-
 ### CpWithdrawn
 ```solidity
   event CpWithdrawn(
@@ -176,20 +187,12 @@ Emitted when a user compounds their rewards.
 Emitted when CP tokens are withdrawn from the farm.
 
 
-### UserRewarded
-```solidity
-  event UserRewarded(
-  )
-```
-Emitted when a user is rewarded.
-
-
 ### RewardsSet
 ```solidity
   event RewardsSet(
   )
 ```
-Emitted when block reward is changed.
+Emitted when rewardPerSecond is changed.
 
 
 ### FarmEndSet
@@ -197,6 +200,6 @@ Emitted when block reward is changed.
   event FarmEndSet(
   )
 ```
-Emitted when the end block is changed.
+Emitted when the end time is changed.
 
 
