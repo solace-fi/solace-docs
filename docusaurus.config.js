@@ -19,7 +19,7 @@ module.exports = {
       title: 'Solace Docs',
       logo: {
         alt: 'Solace Logo',
-        src: 'img/logo.png',
+        src: 'img/solace-circle-small-color.svg',
       },
       items: [
         {
@@ -110,6 +110,10 @@ module.exports = {
             {
               label: 'Discord',
               to: 'https://discord.com/invite/7v8qsyepfu'
+            },
+            {
+              label: 'Medium',
+              to: 'https://medium.com/solace-fi'
             }
           ],
         },

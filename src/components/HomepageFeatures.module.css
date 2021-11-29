@@ -7,20 +7,20 @@
 }
 
 .hero__feature {
-  padding: 25px 10px 10px 10px;
+  padding: 15px 50px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 55px;
+  background: linear-gradient(145.04deg, #F3D37E 0%, #F04D42 100%);
   color: white;
-  background-color: rgba(0, 187, 40, 0.7);
-  box-shadow: 0 0 7px white;
   transition: all 200ms ease;
   cursor: pointer;
   font-size: 1.25rem;
+  box-shadow: 0 0 2px white;
 }
 
 .hero__feature:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 17px white;
+  transform: scale(1.05);
+  box-shadow: 0 0 7px white;
 }
 
 .hero__feature__title {
@@ -30,11 +30,12 @@
 .feature {
   padding: 25px 10px 10px 10px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   color: white;
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145.04deg, #D478D8 0%, #5F5DF9 100%);
   transition: all 200ms ease;
   cursor: pointer;
+  box-shadow: 0 0 2px white;
 }
 
 .feature:hover {

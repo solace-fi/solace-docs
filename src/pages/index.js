@@ -13,7 +13,6 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">Welcome to the {siteConfig.title} Docs</h1>
         <HomepageFeatures />
-
       </div>
     </header>
   );
