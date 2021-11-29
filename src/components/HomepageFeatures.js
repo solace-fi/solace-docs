@@ -14,11 +14,11 @@ const HeroFeatureList = [
     ),
   },
   {
-    title: 'Earn Rewards',
-    link: 'docs/user-guides/earn-rewards',
+    title: '$SOLACE',
+    link: 'docs/user-guides/buy-token',
     description: (
       <>
-        Learn how to contribute to Solace and earn rewards.
+        Learn about the Solace token and its uses.
       </>
     ),
   },
