@@ -9,16 +9,16 @@ const HeroFeatureList = [
     link: 'docs/user-guides/buy-cover',
     description: (
       <>
-        Learn how to buy coverage to protect your assets.
+        Learn how to buy coverage for your assets.
       </>
     ),
   },
   {
-    title: '$SOLACE',
+    title: 'Stake and Bond',
     link: 'docs/user-guides/buy-token',
     description: (
       <>
-        Learn about the Solace token and its uses.
+        Learn how to buy Solace token at a discount.
       </>
     ),
   },
