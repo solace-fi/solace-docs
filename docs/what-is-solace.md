@@ -4,16 +4,19 @@ sidebar_position: 0
 
 # What is Solace?
 
-The idea behind Solace was envisioned because of the need to make the DeFi space more safe, secure and trusted. With that goal in mind, our protocol was built to enable millions of users to onboard,  de-risk DeFi and become a viable alternative to TradFi. Our coverage policies can protect liquidity providers, Defi protocols or DAOs to mitigate loss from hacks, bugs and exploits. However, Solace is not about insurance or coverage products. Solace, first and foremost, is a community behind the protocol aiming at providing safety and confidence in a way that is accessible, simple, and transparent to everyone across the world.
+Blockchain is a revolutionary technology that has a great chance to change the world. The digital asset space is a fast paced environment and there is uncertainty associated with using these new applications. Like most revolutions, it can be messy and risky to navigate.
 
+Solace is building a community around making this space safe, secure and trusted so that we can onboard and de-risk DeFi and other crypto applications while opening the space to millions of users. We recently launched a coverage policy protocol that enables protection for liquidity providers, Defi protocols or DAOs to mitigate loss from hacks, bugs and exploits. Our purpose is to transform DeFi by delivering intelligent and empowering tools for a safe, secure and trusted industry. 
 
 ## How to interact with Solace:
 
-Despite how powerful the Solace protocol is, getting coverage is an easy and simple experience. 
+Despite the powerful impact, getting coverage with the Solace protocol is an easy and simple experience.
 
 **- Buy Coverage**: Invest in DeFi, get coverage, and sleep well while your money is working for you.
 
-**- Underwrite the Risk**: Provide your ETH to the Underwriting Pool and generate returns on your capital.
+**- Bond Assets**: Buy $SOLACE through bonding at a discount, while Solace users receive assets for the underwriting activity they participate in.
+
+**- Stake $SOLACE**: Buy $SOLACE through bonding or on the open market and stake it to earn yield from protocol revenue and to unlock governance rights.
 
 **- Become a Risk Manager**: Develop risk assessment models and earn a fee as people buy coverage.
 
