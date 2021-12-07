@@ -53,11 +53,6 @@ module.exports = {
           position: "right",
         },
         {
-          label: 'Whitepaper',
-          href: 'https://whitepaper.solace.fi/',
-          position: 'right',
-        },
-        {
           label: 'GitHub',
           href: 'https://github.com/solace-fi',
           position: 'right',
@@ -72,10 +67,6 @@ module.exports = {
             {
               label: "Website",
               to: "https://www.solace.fi",
-            },
-            {
-              label: 'Whitepaper',
-              href: 'https://whitepaper.solace.fi/',
             },
             {
               label: 'GitHub',
