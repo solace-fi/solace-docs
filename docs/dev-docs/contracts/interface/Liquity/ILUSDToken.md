@@ -7,7 +7,7 @@
   function totalSupply(
   ) external returns (uint256)
 ```
-Function returns totoal LQTY token supply.
+Function returns total LQTY token supply.
 
 
 

@@ -21,4 +21,4 @@ Mints token for the user.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | If successfull returns true, otherwise false.
+|`status`| address | If successful returns true, otherwise false.

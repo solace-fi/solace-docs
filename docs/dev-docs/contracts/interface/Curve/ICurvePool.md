@@ -38,7 +38,7 @@ Adds liquidity to pool.
     int128 i
   ) external returns (uint256 amount)
 ```
-Calculates the witdraw amount for given `amount` and `coin`.
+Calculates the withdraw amount for given `amount` and `coin`.
 The given coin index must be valid for the pool.
 
 
