@@ -32,4 +32,4 @@ function returns total staked lqty token amount.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`total`|  | The amount of staked lqyt token amount.
+|`total`|  | The amount of staked lqty token amount.

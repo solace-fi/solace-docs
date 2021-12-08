@@ -88,7 +88,7 @@ Returns the user's trove stake amount.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_borrower` | address | the user address.* 
+|`_borrower` | address | the user address.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |

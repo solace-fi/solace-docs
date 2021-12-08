@@ -181,7 +181,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ### setFees
 ```solidity
   function setFees(
-    uint256 stakeFee,
+    uint256 bondFee,
     uint256 daoFee
   ) external
 ```
@@ -191,7 +191,7 @@ Sets the bond fees.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`stakeFee` | uint256 | The fraction of **SOLACE** that will be sent to stakers measured in BPS.
+|`bondFee` | uint256 | The fraction of **SOLACE** that will be sent to stakers measured in BPS.
 |`daoFee` | uint256 | The fraction of `principal` that will be sent to the dao measured in BPS.
 
 ### setAddresses
