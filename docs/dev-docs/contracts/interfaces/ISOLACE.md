@@ -2,27 +2,13 @@ The native governance token of the Solace Coverage Protocol.
 
 
 ## Functions
-### constructor
-```solidity
-  function constructor(
-    address governance_
-  ) public
-```
-Constructs the Solace Token contract.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
-
 ### isMinter
 ```solidity
   function isMinter(
     address account
   ) external returns (bool status)
 ```
-Returns true if `account` is authorized to mint [**SOLACE**](./SOLACE).
+Returns true if `account` is authorized to mint [**SOLACE**](../SOLACE).
 
 
 #### Parameters:
@@ -41,7 +27,7 @@ Returns true if `account` is authorized to mint [**SOLACE**](./SOLACE).
     uint256 amount
   ) external
 ```
-Mints new [**SOLACE**](./SOLACE) to the receiver account.
+Mints new [**SOLACE**](../SOLACE) to the receiver account.
 Can only be called by authorized minters.
 
 
@@ -57,7 +43,7 @@ Can only be called by authorized minters.
     uint256 amount
   ) external
 ```
-Burns [**SOLACE**](./SOLACE) from msg.sender.
+Burns [**SOLACE**](../SOLACE) from msg.sender.
 
 
 #### Parameters:
@@ -94,4 +80,21 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`minter` | address | The minter to remove.
+
+## Events
+### MinterAdded
+```solidity
+  event MinterAdded(
+  )
+```
+Emitted when a minter is added.
+
+
+### MinterRemoved
+```solidity
+  event MinterRemoved(
+  )
+```
+Emitted when a minter is removed.
+
 
