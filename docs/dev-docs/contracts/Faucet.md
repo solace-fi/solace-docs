@@ -1,4 +1,4 @@
-Drips **SOLACE**.
+Drips [**SOLACE**](./SOLACE).
 
 
 ## Functions
@@ -14,14 +14,14 @@ Constructs the faucet.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`solace_` | address | Address of the **SOLACE** contract.
+|`solace_` | address | Address of the [**SOLACE**](./SOLACE) contract.
 
 ### drip
 ```solidity
   function drip(
   ) external
 ```
-Drips **SOLACE** to msg.sender.
+Drips [**SOLACE**](./SOLACE) to msg.sender.
 
 
 
