@@ -109,36 +109,6 @@ The domain separator used in the encoding of the signature for `permit`, as defi
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`seperator`|  | The domain seperator for `permit`.
-### listTokens
-```solidity
-  function listTokens(
-  ) external returns (uint256[] tokenIDs)
-```
-Lists all tokens.
-Order not specified.
-
-This function is more useful off chain than on chain.
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenIDs`|  | The list of token IDs.
-### listTokensOfOwner
-```solidity
-  function listTokensOfOwner(
-  ) external returns (uint256[] tokenIDs)
-```
-Lists the tokens owned by `owner`.
-Order not specified.
-
-This function is more useful off chain than on chain.
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenIDs`| address | The list of token IDs.
 ### exists
 ```solidity
   function exists(
@@ -157,3 +127,12 @@ Determines if a token exists or not.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`status`| uint256 | True if the token exists, false if it doesn't.
+## Events
+### BaseURISet
+```solidity
+  event BaseURISet(
+  )
+```
+Emitted when the base URI is set.
+
+
