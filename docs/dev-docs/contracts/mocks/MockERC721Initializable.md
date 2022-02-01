@@ -36,6 +36,20 @@ Mints a new token.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`tokenID`| address | The ID of the new token.
+### burn
+```solidity
+  function burn(
+    uint256 tokenID
+  ) external
+```
+Burns a token.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`tokenID` | uint256 | The token to burn.
+
 ### tokenCount
 ```solidity
   function tokenCount(
@@ -49,9 +63,9 @@ Count of all tokens created.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`count`|  | Count.
-### doThing
+### doThing1
 ```solidity
-  function doThing(
+  function doThing1(
     uint256 tokenID
   ) external returns (uint256 res)
 ```
@@ -67,3 +81,81 @@ Do a thing to a token.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`res`| uint256 | The result.
+### doThing2
+```solidity
+  function doThing2(
+    uint256 tokenID
+  ) external returns (uint256 res)
+```
+Do a thing to a token.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`tokenID` | uint256 | The ID of the token to do stuff to.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`res`| uint256 | The result.
+### doThing3
+```solidity
+  function doThing3(
+    uint256 tokenID
+  ) external returns (uint256 res)
+```
+Do a thing to a token.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`tokenID` | uint256 | The ID of the token to do stuff to.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`res`| uint256 | The result.
+### getBaseURI
+```solidity
+  function getBaseURI(
+  ) external returns (string)
+```
+Get the base URI.
+
+
+
+### setBaseURI
+```solidity
+  function setBaseURI(
+    string baseURI_
+  ) external
+```
+Sets the base URI for computing `tokenURI`.
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`baseURI_` | string | The new base URI.
+
+### _afterTokenTransfer
+```solidity
+  function _afterTokenTransfer(
+    address from,
+    address to,
+    uint256 tokenID
+  ) internal
+```
+Hook that is called after any token transfer. This includes minting and burning.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`from` | address | The user that sends the token, or zero if minting.
+|`to` | address | The zero that receives the token, or zero if burning.
+|`tokenID` | uint256 | The ID of the token being transferred.
+
