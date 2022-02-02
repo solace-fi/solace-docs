@@ -9,6 +9,13 @@
 | USDT                         | [`0xb9D6BB8D150a566Eb93d097b9b65dc9b7455Dd67`](https://explorer.testnet.aurora.dev/address/0xb9D6BB8D150a566Eb93d097b9b65dc9b7455Dd67) |
 | FRAX                         | [`0x5405059004A74d191a07badC3e32501ac8A39788`](https://explorer.testnet.aurora.dev/address/0x5405059004A74d191a07badC3e32501ac8A39788) |
 
+### Bridge
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| bSOLACE                      | [`0x38373AEF7C0ebaF67530A46e49981e77c68A829F`](https://explorer.testnet.aurora.dev/address/0x38373AEF7C0ebaF67530A46e49981e77c68A829F) |
+| Bridge Wrapper               | [`0x501ACeed7aae8875aC8bb881e6849979f91Ea160`](https://explorer.testnet.aurora.dev/address/0x501ACeed7aae8875aC8bb881e6849979f91Ea160) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |
