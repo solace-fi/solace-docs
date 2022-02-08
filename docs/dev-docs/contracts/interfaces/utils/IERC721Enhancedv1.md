@@ -1,31 +1,15 @@
 An extension of `ERC721`.
 
-The base is OpenZeppelin's `ERC721Enumerable` which also includes the `Metadata` extension. This extension includes simpler transfers, gasless approvals, and changeable URIs.
+The base is OpenZeppelin's `ERC721Enumerable` which also includes the `Metadata` extension. This extension includes simpler transfers, gasless approvals, and better enumeration.
 
 
 ## Functions
-### constructor
-```solidity
-  function constructor(
-    string name_,
-    string symbol_
-  ) internal
-```
-Constructs the `ERC721Enhancedv1` contract.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`name_` | string | The name of the token.
-|`symbol_` | string | The symbol of the token.
-
 ### transfer
 ```solidity
   function transfer(
     address to,
     uint256 tokenID
-  ) public
+  ) external
 ```
 Transfers `tokenID` from `msg.sender` to `to`.
 
@@ -42,7 +26,7 @@ This was excluded from the official `ERC721` standard in favor of `transferFrom(
   function safeTransfer(
     address to,
     uint256 tokenID
-  ) public
+  ) external
 ```
 Safely transfers `tokenID` from `msg.sender` to `to`.
 
@@ -115,7 +99,7 @@ The permit typehash used in the `permit` signature.
 ### DOMAIN_SEPARATOR
 ```solidity
   function DOMAIN_SEPARATOR(
-  ) public returns (bytes32 seperator)
+  ) external returns (bytes32 seperator)
 ```
 The domain separator used in the encoding of the signature for `permit`, as defined by `EIP712`.
 
@@ -128,7 +112,7 @@ The domain separator used in the encoding of the signature for `permit`, as defi
 ### listTokens
 ```solidity
   function listTokens(
-  ) public returns (uint256[] tokenIDs)
+  ) external returns (uint256[] tokenIDs)
 ```
 Lists all tokens.
 Order not specified.
@@ -143,7 +127,7 @@ This function is more useful off chain than on chain.
 ### listTokensOfOwner
 ```solidity
   function listTokensOfOwner(
-  ) public returns (uint256[] tokenIDs)
+  ) external returns (uint256[] tokenIDs)
 ```
 Lists the tokens owned by `owner`.
 Order not specified.
@@ -173,104 +157,3 @@ Determines if a token exists or not.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`status`| uint256 | True if the token exists, false if it doesn't.
-### tokenURI
-```solidity
-  function tokenURI(
-  ) public returns (string)
-```
-Returns the Uniform Resource Identifier (URI) for `tokenID` token.
-
-
-
-### _baseURI
-```solidity
-  function _baseURI(
-  ) internal returns (string baseURI_)
-```
-Base URI for computing `tokenURI`. If set, the resulting URI for each
-token will be the concatenation of the `baseURI` and the `tokenID`. Empty
-by default, can be overriden in child contracts.
-
-
-
-### _setBaseURI
-```solidity
-  function _setBaseURI(
-    string baseURI_
-  ) internal
-```
-Sets the base URI for computing `tokenURI`.
-
-Remember to add access control to inheriting contracts.
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`baseURI_` | string | The new base URI.
-
-### _mint
-```solidity
-  function _mint(
-    address to,
-    uint256 tokenID
-  ) internal
-```
-Mints `tokenID` and transfers it to `to`.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | The receiver of the token.
-|`tokenID` | uint256 | The ID of the token to mint.
-
-### _burn
-```solidity
-  function _burn(
-    uint256 tokenID
-  ) internal
-```
-Destroys `tokenID`.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`tokenID` | uint256 | The ID of the token to burn.
-
-### _transfer
-```solidity
-  function _transfer(
-    address from,
-    address to,
-    uint256 tokenID
-  ) internal
-```
-Transfers `tokenID` from `from` to `to`.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`from` | address | The account to transfer the token from.
-|`to` | address | The account to transfer the token to.
-|`tokenID` | uint256 | The ID of the token to transfer.
-
-### _afterTokenTransfer
-```solidity
-  function _afterTokenTransfer(
-    address from,
-    address to,
-    uint256 tokenID
-  ) internal
-```
-Hook that is called after any token transfer. This includes minting and burning.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`from` | address | The user that sends the token, or zero if minting.
-|`to` | address | The zero that receives the token, or zero if burning.
-|`tokenID` | uint256 | The ID of the token being transferred.
-

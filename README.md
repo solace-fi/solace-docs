@@ -38,6 +38,7 @@ npx solidity-docgen --solc-module solc-0.8 -t ./templates
 rm -rf ../solace-docs/docs/dev-docs/contracts/
 cp -r ./docs/. ../solace-docs/docs/dev-docs/contracts/
 cd ../solace-docs
+yarn install
 yarn build
 yarn start
 ```

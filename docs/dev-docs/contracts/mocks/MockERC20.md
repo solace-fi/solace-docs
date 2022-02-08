@@ -20,12 +20,12 @@ Constructs the Mock Token contract.
 |`symbol` | string | The symbol of the token.
 |`supply` | uint256 | The amount of supply for the token.
 
-### mint
+### mintToken
 ```solidity
-  function mint(
+  function mintToken(
   ) external
 ```
-Mints 1000 new tokens to msg.sender
+
 
 
 

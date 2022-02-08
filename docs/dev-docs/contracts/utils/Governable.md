@@ -24,7 +24,7 @@ Constructs the governable contract.
 ### governance
 ```solidity
   function governance(
-  ) external returns (address)
+  ) public returns (address)
 ```
 Address of the current governor.
 
