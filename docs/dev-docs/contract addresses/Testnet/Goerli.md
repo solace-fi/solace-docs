@@ -2,6 +2,7 @@
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
+| SOLACE                       | [`0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40`](https://goerli.etherscan.io/address/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) |
 | DAI                          | [`0x6a49238e4d0fA003BA07fbd5ec8B6b045f980574`](https://goerli.etherscan.io/address/0x6a49238e4d0fA003BA07fbd5ec8B6b045f980574) |
 | WETH                         | [`0x714ECD380a9700086eadAc03297027bAf4686276`](https://goerli.etherscan.io/address/0x714ECD380a9700086eadAc03297027bAf4686276) |
 | USDC                         | [`0x995714E92a094Ea9b50e9F23934C36F86136A46c`](https://goerli.etherscan.io/address/0x995714E92a094Ea9b50e9F23934C36F86136A46c) |

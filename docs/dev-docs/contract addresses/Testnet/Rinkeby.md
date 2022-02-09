@@ -2,6 +2,7 @@
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
+| SOLACE                       | [`0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40`](https://rinkeby.etherscan.io/address/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) |
 | DAI                          | [`0xE28bEf39f41c63B66cFD97BFfDB6Defc915B3C88`](https://rinkeby.etherscan.io/address/0xE28bEf39f41c63B66cFD97BFfDB6Defc915B3C88) |
 | WETH                         | [`0xc778417E063141139Fce010982780140Aa0cD5Ab`](https://rinkeby.etherscan.io/address/0xc778417E063141139Fce010982780140Aa0cD5Ab) |
 | USDC                         | [`0x6D6DC3A8f02a1fEc0B9575e8dDE4135929Bd6e21`](https://rinkeby.etherscan.io/address/0x6D6DC3A8f02a1fEc0B9575e8dDE4135929Bd6e21) |

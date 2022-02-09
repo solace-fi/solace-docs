@@ -2,6 +2,7 @@
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
+| SOLACE                       | [`0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40`](https://kovan.etherscan.io/address/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) |
 | BondDepository               | [`0x501ACe2f00EC599D4FDeA408680e192f88D94D0D`](https://kovan.etherscan.io/address/0x501ACe2f00EC599D4FDeA408680e192f88D94D0D) |
 | DAI Bond Teller              | [`0x501ACe677634Fd09A876E88126076933b686967a`](https://kovan.etherscan.io/address/0x501ACe677634Fd09A876E88126076933b686967a) |
 | ETH Bond Teller              | [`0x501ACe95141F3eB59970dD64af0405f6056FB5d8`](https://kovan.etherscan.io/address/0x501ACe95141F3eB59970dD64af0405f6056FB5d8) |

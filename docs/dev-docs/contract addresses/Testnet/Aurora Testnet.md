@@ -2,6 +2,7 @@
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
+| SOLACE                       | [`0x501ACE0C6DeA16206bb2D120484a257B9F393891`](https://explorer.testnet.aurora.dev/address/0x501ACE0C6DeA16206bb2D120484a257B9F393891) |
 | DAI                          | [`0x87Eba7597721C156240Ae7d8aE26e269118AFdca`](https://explorer.testnet.aurora.dev/address/0x87Eba7597721C156240Ae7d8aE26e269118AFdca) |
 | WETH                         | [`0xfBc3957C8448824D6b7928f160331ec595D0dC0E`](https://explorer.testnet.aurora.dev/address/0xfBc3957C8448824D6b7928f160331ec595D0dC0E) |
 | USDC                         | [`0xd0062b097a077F1c9DC97aE082a7FE58a0Be03a8`](https://explorer.testnet.aurora.dev/address/0xd0062b097a077F1c9DC97aE082a7FE58a0Be03a8) |
