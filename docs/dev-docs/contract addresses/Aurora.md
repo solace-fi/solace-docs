@@ -2,6 +2,8 @@
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
+| SOLACE                       | [`0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40`](https://explorer.mainnet.aurora.dev/address/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) |
+| SOLACE-WNEAR TLP             | [`0xdDAdf88b007B95fEb42DDbd110034C9a8e9746F2`](https://explorer.mainnet.aurora.dev/address/0xdDAdf88b007B95fEb42DDbd110034C9a8e9746F2) |
 | DAI                          | [`0xe3520349F477A5F6EB06107066048508498A291b`](https://explorer.mainnet.aurora.dev/address/0xe3520349F477A5F6EB06107066048508498A291b) |
 | WETH                         | [`0xC9BdeEd33CD01541e1eeD10f90519d2C06Fe3feB`](https://explorer.mainnet.aurora.dev/address/0xC9BdeEd33CD01541e1eeD10f90519d2C06Fe3feB) |
 | USDC                         | [`0xB12BFcA5A55806AaF64E99521918A4bf0fC40802`](https://explorer.mainnet.aurora.dev/address/0xB12BFcA5A55806AaF64E99521918A4bf0fC40802) |
@@ -15,6 +17,15 @@
 |------------------------------|----------------------------------------------|
 | bSOLACE                      | [`0x1BDA7007C9e3Bc33267E883864137aF8eb53CC2D`](https://explorer.mainnet.aurora.dev/address/0x1BDA7007C9e3Bc33267E883864137aF8eb53CC2D) |
 | Bridge Wrapper               | [`0x501ACE45014539C5574055794d8a82A3d31fcb54`](https://explorer.mainnet.aurora.dev/address/0x501ACE45014539C5574055794d8a82A3d31fcb54) |
+
+### Multisigs
+
+| Contract Name                | Address                                      | Links |
+|------------------------------|----------------------------------------------|-------|
+| Core                         | [`0x21afD3bCDa49c125a72ef123Af86d3133b6565Be`](https://explorer.mainnet.aurora.dev/address/0x21afD3bCDa49c125a72ef123Af86d3133b6565Be) | https://gnosis-safe.io/app/aurora:0x21afD3bCDa49c125a72ef123Af86d3133b6565Be |
+| Contract Governance          | [`0x432Eb1f2730662AD1A9791Ed34CB2DBDf7001555`](https://explorer.mainnet.aurora.dev/address/0x432Eb1f2730662AD1A9791Ed34CB2DBDf7001555) | https://gnosis-safe.io/app/aurora:0x432Eb1f2730662AD1A9791Ed34CB2DBDf7001555 |
+| Underwriting Pool            | [`0x4A6B0f90597e7429Ce8400fC0E2745Add343df78`](https://explorer.mainnet.aurora.dev/address/0x4A6B0f90597e7429Ce8400fC0E2745Add343df78) | https://gnosis-safe.io/app/aurora:0x4A6B0f90597e7429Ce8400fC0E2745Add343df78 |
+| Premium Pool                 | [`0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb`](https://explorer.mainnet.aurora.dev/address/0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb) | https://gnosis-safe.io/app/aurora:0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb |
 
 ### V1.2.1
 
