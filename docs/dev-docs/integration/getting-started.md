@@ -176,6 +176,12 @@ You can calculate policy price by the following formulas:
 
 NOTE: it is an estimation assuming that the user will not move his funds between DeFi protocols. As policyholders move in and out of DeFi positions and as position balances rise and fall, Solace will accordingly change risk rate and price of insurance will change over time. Solace protocol keeps track of policyholder positions during the life of a policy.
 
+<div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
+
+<img src="/img/quoteandsell-2.png" alt="img2" width="300px" />
+
+</div>
+
 NOTE: Displaying portfolio balances and price quotes is not mandatory. You could just sell policies. It’s your decision how to educate the users as to the expected cost.
 
 ## Purchase Policy
@@ -183,10 +189,23 @@ A component for purchasing a policy will need to ask the user for two parameters
 
 1 - Coverage limit. Here the user should specify how much of the portfolio they want to insure. This, for example, can be implemented  with a slider.
 
-![Example banner](../../../static/img/quoteandsell-3.png)
+
+<div style={{"display":"flex", "margin-bottom":"20px" ,"justify-content":"center", "align-items":"center", "justify-content":"center" }} >
+
+<img src="/img/quoteandsell-3.png" alt="img3" width="300px" />
+
+</div>
+
+
 
 2 -Set policy balance. Here the user should specify how much premium to prepay for the policy. Based on the user’s portfolio’s risk rate you can calculate on frontend an approximate policy duration. The basic implementation looks like this:
-![Example banner](../../../static/img/quoteandsell-4.png)
+
+
+<div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
+
+<img src="/img/quoteandsell-4.png" alt="img4" width="500px" />
+
+</div>
 If the user already has a policy, the Effective balance will be greater than zero as represented on the screenshot above.
 
 NOTE: at the moment policy can only be bought for DAI, other stables will be supported in Q3 2022. 
