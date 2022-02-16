@@ -9,7 +9,7 @@
 | WBTC                         | [`0x952349F445Ee8A2D546E1E8c963f3004A87e5f93`](https://explorer.testnet.aurora.dev/address/0x952349F445Ee8A2D546E1E8c963f3004A87e5f93) |
 | USDT                         | [`0xb9D6BB8D150a566Eb93d097b9b65dc9b7455Dd67`](https://explorer.testnet.aurora.dev/address/0xb9D6BB8D150a566Eb93d097b9b65dc9b7455Dd67) |
 | FRAX                         | [`0x5405059004A74d191a07badC3e32501ac8A39788`](https://explorer.testnet.aurora.dev/address/0x5405059004A74d191a07badC3e32501ac8A39788) |
-| NEAR                         | [`0x80dAF9794A2b6f0A6B1E58c6Ae99803c028c00f8`](https://explorer.testnet.aurora.dev/address/0x80dAF9794A2b6f0A6B1E58c6Ae99803c028c00f8) |
+| WNEAR                        | [`0x80dAF9794A2b6f0A6B1E58c6Ae99803c028c00f8`](https://explorer.testnet.aurora.dev/address/0x80dAF9794A2b6f0A6B1E58c6Ae99803c028c00f8) |
 | AURORA                       | [`0x034c971902b0B2EF37abd249c1A5DEc5Dc5bE14B`](https://explorer.testnet.aurora.dev/address/0x034c971902b0B2EF37abd249c1A5DEc5Dc5bE14B) |
 
 ### Bridge
@@ -30,7 +30,7 @@
 | WBTC Bond Teller             | [`0x501Ace54C7a2Cf564ae37538053902550a859D39`](https://explorer.testnet.aurora.dev/address/0x501Ace54C7a2Cf564ae37538053902550a859D39) |
 | USDT Bond Teller             | [`0x501aCEa6ff6dcE05D108D616cE886AF74f00EAAa`](https://explorer.testnet.aurora.dev/address/0x501aCEa6ff6dcE05D108D616cE886AF74f00EAAa) |
 | FRAX Bond Teller             | [`0x501acE87fF4E7A1498320ABB674a4960A87792E4`](https://explorer.testnet.aurora.dev/address/0x501acE87fF4E7A1498320ABB674a4960A87792E4) |
-| NEAR Bond Teller             | [`0x501AcE9D730dcf60d6bbD1FDDca9c1b69CAF0A61`](https://explorer.testnet.aurora.dev/address/0x501AcE9D730dcf60d6bbD1FDDca9c1b69CAF0A61) |
+| WNEAR Bond Teller            | [`0x501AcE9D730dcf60d6bbD1FDDca9c1b69CAF0A61`](https://explorer.testnet.aurora.dev/address/0x501AcE9D730dcf60d6bbD1FDDca9c1b69CAF0A61) |
 | AURORA Bond Teller           | [`0x501ACef4fDF8C0597aA40b5Cb82035FFe5Ad3552`](https://explorer.testnet.aurora.dev/address/0x501ACef4fDF8C0597aA40b5Cb82035FFe5Ad3552) |
 
 ### V1.2.0

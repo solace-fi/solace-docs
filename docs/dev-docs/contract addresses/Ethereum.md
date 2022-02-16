@@ -21,6 +21,15 @@
 | Underwriting Pool            | [`0x5efC0d9ee3223229Ce3b53e441016efC5BA83435`](https://etherscan.io/address/0x5efC0d9ee3223229Ce3b53e441016efC5BA83435) | https://gnosis-safe.io/app/eth:0x5efC0d9ee3223229Ce3b53e441016efC5BA83435 |
 | Premium Pool                 | [`0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d`](https://etherscan.io/address/0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d) | https://gnosis-safe.io/app/eth:0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d |
 
+### V1.3.0
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| Registry                     | [`0x501ACe0f576fc4ef9C0380AA46A578eA96b85776`](https://etherscan.io/address/0x501ACe0f576fc4ef9C0380AA46A578eA96b85776) |
+| RiskManager                  | [`0x501AcEf9020632a71CB25CFa9F554252eB51732b`](https://etherscan.io/address/0x501AcEf9020632a71CB25CFa9F554252eB51732b) |
+| CoverageDataProvider         | [`0x501ACE6C5fFf4d42EaC02357B6DD9b756E337355`](https://etherscan.io/address/0x501ACE6C5fFf4d42EaC02357B6DD9b756E337355) |
+| SolaceCoverProduct           | [`0x501ACEbe29eabc346779BcB5Fd62Eaf6Bfb5320E`](https://etherscan.io/address/0x501ACEbe29eabc346779BcB5Fd62Eaf6Bfb5320E) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |

@@ -379,7 +379,53 @@ A policyholder can only use a referral code once. Afterwards a policyholder is i
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`isReferralCodeUsed_`| address | True if the policyholder has previoulsy used a valid referral code, false if not
+|`isReferralCodeUsed_`| address | True if the policyholder has previously used a valid referral code, false if not
+### isReferralCodeValid
+```solidity
+  function isReferralCodeValid(
+    bytes referralCode
+  ) external returns (bool)
+```
+Returns true if valid referral code, false otherwise.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`referralCode` | bytes | The referral code.
+
+### getReferrerFromReferralCode
+```solidity
+  function getReferrerFromReferralCode(
+    bytes referralCode
+  ) external returns (address referrer)
+```
+Get referrer from referral code, returns 0 address if invalid referral code.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`referralCode` | bytes | The referral code.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`referrer`| bytes | The referrer address, returns 0 address if invalid referral code.
+### minRequiredAccountBalance
+```solidity
+  function minRequiredAccountBalance(
+    uint256 coverLimit
+  ) external returns (uint256 minRequiredAccountBalance_)
+```
+Calculate minimum required account balance for a given cover limit. Equals the maximum chargeable fee for one epoch.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`coverLimit` | uint256 | Cover limit.
+
 ### setRegistry
 ```solidity
   function setRegistry(
@@ -500,6 +546,20 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`isReferralOn_` | bool | Desired state of referral campaign.
+
+### setBaseURI
+```solidity
+  function setBaseURI(
+    string baseURI_
+  ) external
+```
+Sets the base URI for computing `tokenURI`.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`baseURI_` | string | The new base URI.
 
 ### setRewardPoints
 ```solidity
@@ -699,19 +759,11 @@ Emitted when referralReward is set.
 Emitted when referral rewards are earned;
 
 
-### StablecoinAdded
+### BaseURISet
 ```solidity
-  event StablecoinAdded(
+  event BaseURISet(
   )
 ```
-Emitted when stablecoin is added to accepted stablecoin list
-
-
-### StablecoinRemoved
-```solidity
-  event StablecoinRemoved(
-  )
-```
-Emitted when stablecoin is removed from accepted stablecoin list
+Emitted when baseURI is set
 
 

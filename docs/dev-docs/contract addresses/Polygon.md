@@ -15,7 +15,8 @@
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
-
+| bSOLACE                      | [`0x2857686536f58dd835DbF43C9f549676296Ef336`](https://polygonscan.com/address/0x2857686536f58dd835DbF43C9f549676296Ef336) |
+| Bridge Wrapper               | [`0x501acE01AB2A6Cf9eCb54071038Dea19D2Aa5Ee3`](https://polygonscan.com/address/0x501acE01AB2A6Cf9eCb54071038Dea19D2Aa5Ee3) |
 
 ### Multisigs
 
