@@ -1,4 +1,4 @@
-A Solace insurance product that allows users to insure all of their DeFi positions against smart contract risk through a single policy. 
+A Solace insurance product that allows users to insure all of their DeFi positions against smart contract risk through a single policy.
 
 Policies can be **purchased** via [`activatePolicy()`](#activatepolicy). Policies are represented as ERC721s, which once minted, cannot then be transferred or burned. Users can change the cover limit of their policy through [`updateCoverLimit()`](#updatecoverlimit).
 
@@ -10,7 +10,7 @@ Users can **cancel** their policy via [`deactivatePolicy()`](#deactivatepolicy).
 
 Before the cooldown timer starts or passes, the user cannot withdraw their entire account balance. A minimum required account balance (to cover one epoch's fee) will be left in the user's account. After the cooldown has passed, a user will be able to withdraw their entire account balance.
 
-Users can enter a **referral code** with [`activatePolicy()`](#activatePolicy) or [`updateCoverLimit()`](#updatecoverlimit). A valid referral code will earn reward points to both the referrer and the referee. When the user's account is charged, reward points will be deducted before deposited funds. 
+Users can enter a **referral code** with [`activatePolicy()`](#activatePolicy) or [`updateCoverLimit()`](#updatecoverlimit). A valid referral code will earn reward points to both the referrer and the referee. When the user's account is charged, reward points will be deducted before deposited funds.
 Each account can only enter a valid referral code once, however there are no restrictions on how many times a referral code can be used for new accounts.
 
 
@@ -99,7 +99,7 @@ Deposits funds into the `policyholder` account.
 ```
 Withdraw funds from user's account.
 
-If cooldown has passed, the user will withdraw their entire account balance. 
+If cooldown has passed, the user will withdraw their entire account balance.
 
 If cooldown has not started, or has not passed, the user will not be able to withdraw their entire account. A minimum required account balance (one epoch's fee) will be left in the user's account.
 
@@ -344,7 +344,7 @@ Gets cover limit for a given policy ID.
 Gets the cooldown period.
 
 Cooldown timer is started by the user calling deactivatePolicy().
-Before the cooldown has started or has passed, withdrawing funds will leave a minimim required account balance in the user's account. 
+Before the cooldown has started or has passed, withdrawing funds will leave a minimim required account balance in the user's account.
 Only after the cooldown has passed, is a user able to withdraw their entire account balance.
 
 
@@ -411,7 +411,67 @@ A policyholder can only use a referral code once. A policyholder is then ineligi
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`isReferralCodeUsed_`| address | True if the policyholder has previoulsy used a valid referral code, false if not
+|`isReferralCodeUsed_`| address | True if the policyholder has previously used a valid referral code, false if not
+### isReferralCodeValid
+```solidity
+  function isReferralCodeValid(
+    bytes referralCode
+  ) external returns (bool)
+```
+Returns true if valid referral code, false otherwise.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`referralCode` | bytes | The referral code.
+
+### getReferrerFromReferralCode
+```solidity
+  function getReferrerFromReferralCode(
+    bytes referralCode
+  ) external returns (address referrer)
+```
+Get referrer from referral code, returns 0 address if invalid referral code.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`referralCode` | bytes | The referral code.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`referrer`| bytes | The referrer address, returns 0 address if invalid referral code.
+### minRequiredAccountBalance
+```solidity
+  function minRequiredAccountBalance(
+    uint256 coverLimit
+  ) external returns (uint256 minRequiredAccountBalance_)
+```
+Calculate minimum required account balance for a given cover limit. Equals the maximum chargeable fee for one epoch.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`coverLimit` | uint256 | Cover limit.
+
+### tokenURI
+```solidity
+  function tokenURI(
+    uint256 policyID
+  ) public returns (string tokenURI_)
+```
+Returns the Uniform Resource Identifier (URI) for `policyID`.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyID` | uint256 | The policy ID.
+
 ### setRegistry
 ```solidity
   function setRegistry(
@@ -532,6 +592,20 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`isReferralOn_` | bool | True if referral rewards active, false if not.
+
+### setBaseURI
+```solidity
+  function setBaseURI(
+    string baseURI_
+  ) external
+```
+Sets the base URI for computing `tokenURI`.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`baseURI_` | string | The new base URI.
 
 ### setRewardPoints
 ```solidity

@@ -10,7 +10,7 @@
 | WBTC                         | [`0xf4eb217ba2454613b15dbdea6e5f22276410e89e`](https://explorer.mainnet.aurora.dev/address/0xf4eb217ba2454613b15dbdea6e5f22276410e89e) |
 | USDT                         | [`0x4988a896b1227218e4A686fdE5EabdcAbd91571f`](https://explorer.mainnet.aurora.dev/address/0x4988a896b1227218e4A686fdE5EabdcAbd91571f) |
 | FRAX                         | [`0xDA2585430fEf327aD8ee44Af8F1f989a2A91A3d2`](https://explorer.mainnet.aurora.dev/address/0xDA2585430fEf327aD8ee44Af8F1f989a2A91A3d2) |
-| NEAR                         | [`0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d`](https://explorer.mainnet.aurora.dev/address/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d) |
+| WNEAR                        | [`0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d`](https://explorer.mainnet.aurora.dev/address/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d) |
 | AURORA                       | [`0x8BEc47865aDe3B172A928df8f990Bc7f2A3b9f79`](https://explorer.mainnet.aurora.dev/address/0x8BEc47865aDe3B172A928df8f990Bc7f2A3b9f79) |
 
 ### Bridge
@@ -40,7 +40,7 @@
 | WBTC Bond Teller             | [`0x501aCEF0d0c73BD103337e6E9Fd49d58c426dC27`](https://explorer.mainnet.aurora.dev/address/0x501aCEF0d0c73BD103337e6E9Fd49d58c426dC27) |
 | USDT Bond Teller             | [`0x501ACe5CeEc693Df03198755ee80d4CE0b5c55fE`](https://explorer.mainnet.aurora.dev/address/0x501ACe5CeEc693Df03198755ee80d4CE0b5c55fE) |
 | FRAX Bond Teller             | [`0x501aCef4F8397413C33B13cB39670aD2f17BfE62`](https://explorer.mainnet.aurora.dev/address/0x501aCef4F8397413C33B13cB39670aD2f17BfE62) |
-| NEAR Bond Teller             | [`0x501aCe71a83CBE03B1467a6ffEaeB58645d844b4`](https://explorer.mainnet.aurora.dev/address/0x501aCe71a83CBE03B1467a6ffEaeB58645d844b4) |
+| WNEAR Bond Teller            | [`0x501aCe71a83CBE03B1467a6ffEaeB58645d844b4`](https://explorer.mainnet.aurora.dev/address/0x501aCe71a83CBE03B1467a6ffEaeB58645d844b4) |
 | AURORA Bond Teller           | [`0x501Ace35f0B7Fad91C199824B8Fe555ee9037AA3`](https://explorer.mainnet.aurora.dev/address/0x501Ace35f0B7Fad91C199824B8Fe555ee9037AA3) |
 
 ### V1.2.0
