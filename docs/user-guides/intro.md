@@ -2,9 +2,7 @@
 sidebar_position: 0
 ---
 
-# About User Guides
-
-Hello there! If this is your first time hearing about the Solace Protocol, please visit the website for a proper overview.
+# Table of Contents
 
 #### [Buy Coverage](buy-cover)
 #### [Buy Token](buy-token)

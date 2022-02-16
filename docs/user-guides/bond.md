@@ -6,19 +6,17 @@ sidebar_position: 3
 
 To buy $SOLACE through bonding you should follow the next steps:
 
-**1.** Open https://solace.fi/ and go to 'Bonds'
-**2.** Choose the asset you want to bond and click on button 'Bond'
-**3.** Sign an approval that Solace can use your tokens for bonding
-**4.** Enter the amount of tokens you want to bond and click 'Bond'. 
+1. Open [Solace](https://solace.fi/) and go to the <b>Bonds</b> page.
+2. Choose the asset you want to bond and click on the <b>Bond</b> button.
+3. Sign an approval that Solace can use your tokens for bonding.
+4. Enter the amount of tokens you want to bond and click <b>Bond</b>. 
 
-You can also choose to autostake your SOLACE after vesting to receive xSOLACE and earn rewards from Protocol’s activities and token distribution.
+You can choose to immediately autostake your $SOLACE to and earn rewards from $SOLACE token distribution.
 
-The price begins at $0.10/SOLACE, increases by $0.01/SOLACE for every 50,000 SOLACE bonded, and decreases over time until a new bond is purchased.
+If you do not auto-stake into a lock and want to redeem your $SOLACE bond, follow these steps:
 
-To redeem your SOLACE tokens, follow these steps:
+1. Open [Solace](https://solace.fi/) and go to <b>Bonds</b>.
+2. Choose the asset you have bonded and click oon the <b>Bond</b> button.
+3. Choose 'Redeem', enter the amount of tokens and click <b>Claim</b>.
 
-**1.** Open https://solace.fi/ and go to 'Bonds'.
-**2.** Choose the asset you have bonded and click on button 'Bond'.
-**3.** Choose 'Redeem', enter the amount of tokens and click 'Claim'.
-
-Remember, that bonds will be vested over five days, so you can redeem tokens only after vesting period.
+Remember, that bonds will be linearly unlocked and vested over seven days.

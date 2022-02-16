@@ -34,7 +34,7 @@ module.exports = {
         },
         {
           label: "Why Solace",
-          to: "docs/why-solace",
+          to: "docs/overview/why-solace",
           position: "right",
         },
         {
@@ -50,6 +50,11 @@ module.exports = {
         {
           label: "Developer Docs",
           to: "docs/dev-docs/intro",
+          position: "right",
+        },
+        {
+          label: "FAQ",
+          to: "docs/overview/faq/solace-the-basics",
           position: "right",
         },
         {

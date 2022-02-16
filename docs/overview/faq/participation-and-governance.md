@@ -1,8 +1,13 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # Participation and Governance
+
+### How do I unlock voting power with my $SOLACE?
+If you stake your $SOLACE, each token is worth one vote. You can increase your voting power up to 4x by locking your $SOLACE tokens. 
+
+Voting occurs via the [Solace Snapshot](https://snapshot.org/#/solacefi.eth).
 
 ### Can I get involved and participate in $SOLACE?
 Absolutely. The team is always looking for excited and committed community members to contribute to the protocol. Reach out to the team on Discord to learn more about available opportunities.
