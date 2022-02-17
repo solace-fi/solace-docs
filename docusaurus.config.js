@@ -29,7 +29,7 @@ module.exports = {
         },
         {
           label: "Welcome",
-          to: "docs/welcom-to-solace-docs.",
+          to: "docs/welcome-to-solace-docs",
           position: "right",
         },
         {
@@ -39,7 +39,7 @@ module.exports = {
         },
         {
           label: "FAQ",
-          to: "docs/overview/faq/solace-the-basics",
+          to: "docs/overview/faq/solace-the-fundamentals",
           position: "right",
         },
         {

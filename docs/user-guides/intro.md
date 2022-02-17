@@ -8,6 +8,5 @@ sidebar_position: 0
 #### [Buy Token](buy-token)
 #### [How to Bond](bond)
 #### [How to Stake](stake)
-#### [Open Claim](open-claim)
 #### [For Projects & DAOS](projects-and-daos)
 #### [Become a Risk Manager](risk-manager)
