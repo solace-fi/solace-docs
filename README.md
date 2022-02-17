@@ -42,3 +42,11 @@ yarn install
 yarn build
 yarn start
 ```
+
+## Upload to AWS
+
+yarn build
+aws s3 rm s3://docs.solace.fi --include "*" --recursive
+aws s3 cp --recursive --cache-control="max-age=86400" build/ s3://docs.solace.fi/
+aws cloudfront create-invalidation --distribution-id E1SZHK4V1QCT0G --paths "/*"
+# wait a minute for invalidation to process
