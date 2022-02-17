@@ -28,18 +28,18 @@ module.exports = {
           position: "left",
         },
         {
-          label: "What is Solace",
-          to: "docs/what-is-solace",
+          label: "Welcome",
+          to: "docs/welcom-to-solace-docs.",
           position: "right",
         },
         {
-          label: "Why Solace",
-          to: "docs/overview/why-solace",
+          label: "Overview",
+          to: "docs/overview/start-here",
           position: "right",
         },
         {
-          label: "Protocol Design",
-          to: "docs/protocol/intro",
+          label: "FAQ",
+          to: "docs/overview/faq/solace-the-basics",
           position: "right",
         },
         {
@@ -48,13 +48,13 @@ module.exports = {
           position: "right",
         },
         {
-          label: "Developer Docs",
-          to: "docs/dev-docs/intro",
+          label: "Protocol Design",
+          to: "docs/protocol/intro",
           position: "right",
         },
         {
-          label: "FAQ",
-          to: "docs/overview/faq/solace-the-basics",
+          label: "Developer Docs",
+          to: "docs/dev-docs/intro",
           position: "right",
         },
         {
