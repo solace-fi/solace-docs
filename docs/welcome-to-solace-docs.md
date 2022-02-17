@@ -6,7 +6,7 @@ sidebar_position: 0
 
 This documentation provides everything you need to know about Solace.
 ***
-## [FAQ](faq/solace-the-basics.md)
+## [FAQ](overview/faq/solace-the-fundamentals.md)
 This section compiles the most commonly asked questions.
 ***
 ## [User Guides](user-guides/intro.md)
