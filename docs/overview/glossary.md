@@ -51,6 +51,7 @@ sidebar_position: 2
 **Capital Stickiness:** It means that capital doesn’t change/doesn’t move regularly, like capitals of underwriting pools.
 
 **Trojan fake token (Covered by Solace):** When an entity makes a smart contract "think" one token is another one.
-Solace Underwriting Pool: Multi-collateral capital pool, owned by Protocol, underwrites the risk across multiple risk assessment models. This pool is leveraged to back the risk of sold coverage policies and compensate losses for policyholders (within coverage limit).
+
+**Solace Underwriting Pool:** Multi-collateral capital pool, owned by Protocol, underwrites the risk across multiple risk assessment models. This pool is leveraged to back the risk of sold coverage policies and compensate losses for policyholders (within coverage limit).
 
 **Vesting:** Vesting is the process to give an entity the right to claim an asset after a period of time or some milestones are reached.
