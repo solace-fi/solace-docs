@@ -27,10 +27,12 @@ sidebar_position: 2
 **Liquidity provider:** A liquidity provider provides funds to the liquidity pool. They earn a portion of the fees from transactions using the pool.
 
 **Minting vulnerability (Covered by Solace):** Minting vulnerabilities are bug/vulnerabilities in a smart contract that enables an entity to mint(create) a large number of tokens. This usually results in the price of the token minted crashing down. 
-Price Arbitrage: A process where a user buys an asset on an exchange and sells it on another at a higher price for gains at the same time.
+
+**Price Arbitrage:** A process where a user buys an asset on an exchange and sells it on another at a higher price for gains at the same time.
 
 **Solace Protocol:** The program behind Solace that aims to allow anybody to underwrite, create and buy cover permissionlessly.
-Proxy Manipulation (Covered by Solace): Exploits linked to proxy contracts. Some vectors of exploit include a proxy impersonating another proxy and faulty proxy contracts.
+
+**Proxy Manipulation (Covered by Solace):** Exploits linked to proxy contracts. Some vectors of exploit include a proxy impersonating another proxy and faulty proxy contracts.
 
 **Proxy Contracts:** A proxy contract calls to new contracts as a way to upgrade an existing smart contract. In other words, a mechanism that helps integrate updates to smart contracts.
 
