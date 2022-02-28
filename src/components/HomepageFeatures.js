@@ -27,7 +27,7 @@ const HeroFeatureList = [
 const FeatureList = [
   {
     title: 'What is Solace',
-    link: 'docs/what-is-solace',
+    link: 'docs/overview/faq/solace-the-fundamentals',
     description: (
       <>
         What is Solace and its role in decentralized finance ecosystems?
