@@ -10,8 +10,6 @@ title: Getting Started
 
 The Solace SDK exists to make it easy for developers to integrate Solace Total Wallet Coverage into external protocols and custom scripts. It is designed to run in Javascript environments (browsers, frontend, Node.js).
 
-<br/>
-
 ---
 
 ## Install module

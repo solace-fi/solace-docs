@@ -4,7 +4,7 @@ id: helper-methods
 title: Helper Methods
 ---
 
-Using the Fetcher object to make read-only calls to fetch data from the blockchain is relatively straightforward (hopefully!). More tricky is using the Policyholder object to send transactions to the blockchain. There are a number of additional considerations:
+Using the Fetcher object to make read-only calls to fetch data from the blockchain is relatively straightforward (hopefully!). More tricky is using the Policyholder object to send transactions to the blockchain. There are a number of additional considerations, such as:
 
 
 1. How do we use a custom RPC endpoint? (e.g. if we want to use our [Alchemy](https://www.alchemy.com/) API key)?
@@ -14,13 +14,15 @@ Using the Fetcher object to make read-only calls to fetch data from the blockcha
 
 <br/>
 
-We've designed the SDK to abstract away these concerns, especially for the common use-case of integration into a frontend which uses Metamask. For developers who desire more granular control over blockchain operations, we have bundled helper methods in a `solaceUtils` object.
+We have designed the SDK to abstract away these concerns, especially for the common use-case of integrating into a frontend which uses Metamask. For developers who desire more granular control over blockchain operations, we have bundled helper methods the `solaceUtils` object.
 
 <br/>
 
-### getProvider
+---
 
-Gets a Provider object
+### **getProvider**
+
+Gets a [Provider](https://docs.ethers.io/v5/api/providers/) object
 
 ```js
 import { solaceUtils } from "@solace-fi/sdk"
@@ -41,9 +43,9 @@ let provider = await getProvider(url)
 
 <br/>
 
-### getSigner
+### **getSigner**
 
-Gets a Signer object
+Gets a [Signer](https://docs.ethers.io/v5/api/signer/) object
 
 ```js
 import { solaceUtils } from "@solace-fi/sdk"
@@ -102,7 +104,7 @@ type OptionalSignerArgs = {
 
 <br/>
 
-### getGasPrice
+### **getGasPrice**
 
 Gets current gas price
 
@@ -127,9 +129,9 @@ const gasPrice = await getGasPrice(provider)
 
 <br/>
 
-### getGasSettings
+### **getGasSettings**
 
-Gets gas configuration object to use in sending blockchain transactions
+Gets gas configuration object to use as optional last parameter in sending blockchain transactions
 
 ```js
 import { solaceUtils } from "@solace-fi/sdk"

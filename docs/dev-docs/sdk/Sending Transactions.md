@@ -12,17 +12,19 @@ We will need to send a transaction to the blockchain to do the following:
 
 To facilitate this, the SDK provides a Policyholder class. The Policyholder constructor requires two parameters:
 
-**1. The chainID to connect to **
+1. The **chainID** to connect to
 
-*- Currently Ethereum mainnet - ChainID = 1 - and Rinkeby Testnet - ChainID = 4 - are supported*
+> Currently Ethereum mainnet - ChainID = 1 - and Rinkeby Testnet - ChainID = 4 - are supported
 
-**2. A [Signer](https://docs.ethers.io/v5/api/signer/) object**
+2. A **[Signer](https://docs.ethers.io/v5/api/signer/)** object
 
-*- A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because transactions need to be signed by a private key to be included in the blockchain. The [Signer](https://docs.ethers.io/v5/api/signer/) object also a convenient way to connect to the blockchain.*
+> A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because transactions need to be signed by a private key to be included in the blockchain. The [Signer](https://docs.ethers.io/v5/api/signer/) object also a convenient way to connect to the blockchain.
 
-*- We have also provided a [`getSigner`](#getSigner) helper method to make it easier to create a valid [Signer](https://docs.ethers.io/v5/api/signer/) object*
+> We have also provided a [`getSigner`](./Helper%20Methods.md/#getsigner) helper method to make it easier to create a valid [Signer](https://docs.ethers.io/v5/api/signer/) object
 
+<br/>
 
+---
 
 ## **Basic Examples**
 
@@ -35,7 +37,7 @@ const { getSigner } = solaceUtils
 // Read section on Helper Methods on how to customise RPC endpoint and other network settings
 const signer = await getSigner()
 
-// Create new Policyholder-class object that is connected to Rinkeby testnet and Metamask
+// Create new Policyholder instance that is connected to Rinkeby testnet and Metamask
 const policyholder = new Policyholder(4, signer)
 
 // Makes call to activatePolicy() function on SolaceCoverProduct.sol with provided parameters
@@ -66,12 +68,17 @@ let tx = await policyholder.activatePolicy(
     <REFERRAL_CODE>
 )
 ```
+<br/>
+
+---
 
 ## **Policyholder Methods**
 
-*Note that only the activatePolicy and deposit methods can be performed for an arbitrary address. The remaining methods will only be performed for the address that signed the transaction*
+> Only the activatePolicy and deposit methods can be performed for an arbitrary address. The remaining methods will only be performed for the address that signed the transaction
 
-### activatePolicy
+<br/>
+
+### **activatePolicy**
 
 Activates (or purchases) a policy for a given address
 
@@ -104,7 +111,7 @@ let tx = await policyholder.activatePolicy(
 |`policyholder` | string | The address of the intended policyholder.
 |`coverLimit` | BigNumber | The maximum value to cover in **USD**.
 |`amount` | BigNumber | The deposit amount in **USD** to fund the policyholder's account.
-|`referralCode` | BytesLike | The referral code.
+|`referralCode` | [`BytesLike`](https://docs.ethers.io/v5/api/utils/bytes/#BytesLike) | The referral code.
 |`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
 
 #### Returns
@@ -114,19 +121,19 @@ let tx = await policyholder.activatePolicy(
 
 #### Troubleshooting
 
-**This transaction will fail if the transaction sender has not approved the SolaceCoverProduct.sol smart contract to move DAI from their wallet. This is a common and non-obvious error when calling this method outside of the official frontend.**
+This transaction will fail if the transaction sender has not approved the SolaceCoverProduct.sol smart contract to move DAI from their wallet. This is a common and non-obvious error when calling this method outside of the official frontend.
 
 The contract addresses used are:
 
 | | ETH mainnet | Rinkeby |
 | :------ | :------ | :------ |
-| **SolaceCoverProduct** | `0x501ACEbe29eabc346779BcB5Fd62Eaf6Bfb5320E` | `0x501AcE125346445b04A7c414C55a3d18d51Bf547` |
-| **DAI** | `0x6B175474E89094C44Da98b954EedeAC495271d0F` | <sup>1</sup>`0x8ad3aA5d5ff084307d28C8f514D7a193B2Bfe725` |
+| **SolaceCoverProduct** | [`0x501ACEbe29eabc346779BcB5Fd62Eaf6Bfb5320E`](https://etherscan.io/address/0x501ACEbe29eabc346779BcB5Fd62Eaf6Bfb5320E) | [`0x501AcE125346445b04A7c414C55a3d18d51Bf547`](https://rinkeby.etherscan.io/address/0x501AcE125346445b04A7c414C55a3d18d51Bf547) |
+| **DAI** | [`0x6B175474E89094C44Da98b954EedeAC495271d0F`](https://etherscan.io/address/0x6B175474E89094C44Da98b954EedeAC495271d0F) | <sup>1</sup>[`0x8ad3aA5d5ff084307d28C8f514D7a193B2Bfe725`](https://rinkeby.etherscan.io/address/0x8ad3aA5d5ff084307d28C8f514D7a193B2Bfe725) |
 *<sup>1</sup>There are several variants of DAI on Rinkeby testnet. This particular one was chosen because it features minting from Etherscan interface for easy testing*
 
 <br/>
 
-### updateCoverLimit
+### **updateCoverLimit**
 
 Modifies the cover limit for a policyholder. This function can also be used to enter a referral code (if a valid referral code has not already been provided for the policyholder).
 
@@ -144,9 +151,9 @@ let tx = await policyholder.updateCoverLimit(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`newCoverLimit` | BigNumber | The new cover limit
-|`referralCode` | BytesLike | The referral code.
-|`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
+|`newCoverLimit` | `BigNumber` | The new cover limit
+|`referralCode` | [`BytesLike`](https://docs.ethers.io/v5/api/utils/bytes/#BytesLike) | The referral code.
+|`gasConfig?` | [`GasConfiguration`](./Helper%20Methods.md#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
 
@@ -154,7 +161,7 @@ let tx = await policyholder.updateCoverLimit(
 
 <br/>
 
-### deposit
+### **deposit**
 
 Makes a deposit into the a selected account
 
@@ -172,9 +179,9 @@ let tx = await policyholder.deposit(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | BigNumber | Selected policyholder address.
-|`amount` | BytesLike | The amount to deposit.
-|`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
+|`policyholder` | `string` | Selected policyholder address.
+|`amount` | `BigNumber` | The amount to deposit.
+|`gasConfig?` | [`GasConfiguration`](./Helper%20Methods.md#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
 
@@ -182,7 +189,7 @@ let tx = await policyholder.deposit(
 
 <br/>
 
-### withdraw
+### **withdraw**
 
 Makes a withdrawal from the account of the transaction signer.
 
@@ -201,7 +208,7 @@ let tx = await policyholder.withdraw()
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
+|`gasConfig?` | [`GasConfiguration`](./Helper%20Methods.md#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
 
@@ -209,7 +216,7 @@ let tx = await policyholder.withdraw()
 
 <br/>
 
-### deactivatePolicy
+### **deactivatePolicy**
 
 Deactivate the policy of the transaction signer. This will set a user's cover limit to 0, and begin the cooldown timer for the policyholder.
 
@@ -221,8 +228,16 @@ let tx = await policyholder.deactivatePolicy()
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
+|`gasConfig?` | [`GasConfiguration`](./Helper%20Methods.md#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
 
 `Promise`<`TransactionResponse`\>
+
+<br/>
+
+---
+
+## ** More information**
+
+[Click here](../contracts/products/SolaceCoverProduct.md) for more information on smart contract mechanisms

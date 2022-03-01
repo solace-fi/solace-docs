@@ -6,9 +6,9 @@ urlcolor: blue
 linkcolor: blue
 ---
 
-To obtain blockchain state data such as the number of policies purchased, or total cover purchased, we will need to create a Fetcher-class object.
+To obtain blockchain state data such as the number of policies purchased, or total cover purchased, we will need to create a Fetcher instance.
 
-The Fetcher constructor requires a single parameter - the chainID to connect to. Currently Ethereum mainnet (ChainID = 1) and Rinkeby Testnet (ChainID = 4) are supported.
+The Fetcher constructor requires a single parameter - the **chainID** to connect to. Currently Ethereum mainnet (ChainID = 1) and Rinkeby Testnet (ChainID = 4) are supported.
 
 
 ## **Basic Example**
@@ -24,13 +24,18 @@ const fetcher = new Fetcher(1)
 // for example if top-level await is not an option
 console.log(await fetcher.activeCoverLimit())
 ```
-<br/>
+
+---
 
 ## **Fetcher Methods**
 
-Note that we use the [BigNumber](https://docs.ethers.io/v5/api/utils/bignumber/) type for mathematical safety. Also note that financial amounts are denominated in USD to 18 decimal places (to have 1:1 correlation with DAI).
+> We use the [BigNumber](https://docs.ethers.io/v5/api/utils/bignumber/) type for mathematical safety. 
 
-### activeCoverLimit
+> Financial amounts are denominated in USD to 18 decimal places (to have 1:1 correlation with DAI).
+
+<br/>
+
+### **activeCoverLimit**
 
 Gets the total active cover that has been sold
 
@@ -47,7 +52,9 @@ N/A
 
 `Promise`<`BigNumber`\>
 
-### availableCoverCapacity
+<br/>
+
+### **availableCoverCapacity**
 
 Gets the amount of available remaining capacity for new cover
 
@@ -64,7 +71,9 @@ N/A
 
 `Promise`<`BigNumber`\>
 
-### maxCover
+<br/>
+
+### **maxCover**
 
 Gets the maximum amount of cover that can be sold
 
@@ -81,7 +90,9 @@ N/A
 
 `Promise`<`BigNumber`\>
 
-### policyCount
+<br/>
+
+### **policyCount**
 
 Gets the total number of policies that have been purchased (includes inactive policies)
 
@@ -98,7 +109,9 @@ N/A
 
 `Promise`<`BigNumber`\>
 
-### accountBalanceOf
+<br/>
+
+### **accountBalanceOf**
 
 Gets the account balance for a policyholder
 
@@ -118,8 +131,9 @@ console.log(await fetcher.accountBalanceOf(policyholder)) // BigNumber { _hex: '
 
 `Promise`<`BigNumber`\>
 
+<br/>
 
-### coverLimitOf
+### **coverLimitOf**
 
 Gets the cover limit for a given policy ID
 
@@ -138,7 +152,9 @@ console.log(await fetcher.coverLimitOf(1)) // BigNumber { _hex: '0x01b4fde083e52
 
 `Promise`<`BigNumber`\>
 
-### minRequiredAccountBalance
+<br/>
+
+### **minRequiredAccountBalance**
 
 Gets minimum required account balance for a given cover limit. Is equivalent to the maximum chargeable fee for one epoch.
 
@@ -153,13 +169,15 @@ console.log(await minRequiredAccountBalance(coverLimit)) // BigNumber { _hex: '0
 
 | Name | Type |
 | :------ | :------ |
-| `coverLimit` | `BN` |
+| `coverLimit` | `BigNumber` |
 
 #### Returns
 
 `Promise`<`BigNumber`\>
 
-### policyStatus
+<br/>
+
+### **policyStatus**
 
 For a given policy ID, returns:
 - True if policy is active
@@ -180,7 +198,9 @@ console.log(await fetcher.policyStatus(1)) // true
 
 `Promise`<`boolean`\>
 
-### policyOf
+<br/>
+
+### **policyOf**
 
 Gets the policy ID for a policyholder
 
@@ -200,7 +220,9 @@ console.log(await fetcher.policyOf(policyholder)) // BigNumber { _hex: '0x01', _
 
 `Promise`<`BigNumber`\>
 
-### rewardPointsOf
+<br/>
+
+### **rewardPointsOf**
 
 Gets the reward points balance for a policyholder
 
@@ -220,7 +242,9 @@ console.log(await fetcher.rewardPointsOf(policyholder)) // BigNumber { _hex: '0x
 
 `Promise`<`BigNumber`\>
 
-### isReferralCodeUsed
+<br/>
+
+### **isReferralCodeUsed**
 
 For a given policyholder, returns:
 - True if the policyholder has previously used a valid referral code
@@ -242,7 +266,9 @@ console.log(await fetcher.isReferralCodeUsed(policyholder)) // false
 
 `Promise`<`boolean`\>
 
-### getReferrerFromReferralCode
+<br/>
+
+### **getReferrerFromReferralCode**
 
 For a given referral code, returns the corresponding referrer address.
 If the referral code is invalid, will return the zero address (0x0000000000000000000000000000000000000000).
@@ -263,7 +289,9 @@ console.log(await fetcher.getReferrerFromReferralCode(REFERRAL_CODE)) // 0x1e35c
 
 `Promise`<`string`\>
 
-### isReferralCodeValid
+<br/>
+
+### **isReferralCodeValid**
 
 For a given referral code, returns: 
 - True if a valid referral code is provided
@@ -285,7 +313,9 @@ console.log(await fetcher.isReferralCodeValid(REFERRAL_CODE)) // true
 
 `Promise`<`boolean`\>
 
-### getSolaceRiskBalances
+<br/>
+
+### **getSolaceRiskBalances**
 
 Gets DeFi protocol balances (in ETH and USD) for a given address
 
@@ -333,9 +363,11 @@ console.log(await fetcher.getSolaceRiskBalances(policyholder))
 
 `Promise`<`SolaceRiskBalance[] | undefined | unknown` >
 
-### getSolaceRiskScores
+<br/>
 
-Gets total active cover that has been sold
+### **getSolaceRiskScores**
+
+Gets risk scores for a portfolio
 
 ```js
 // ...setup fetcher object for Ethereum mainnet
@@ -424,9 +456,11 @@ console.log(await fetcher.getSolaceRiskScores(policyholder, riskBalances))
 `Promise`<`SolaceRiskScore | undefined` >
 <br/>
 
+---
+
 ## **Using a Custom Provider**
 
-The provider is needed to connect to (and make read-only calls) to the blockchain.
+A provider is needed to connect to (and make read-only calls) to the blockchain.
 
 
 By default, the Fetcher object will use the [Default Provider](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider) provided by ethers.js. Frequent use of the default provider will result in the following warning message:
@@ -445,7 +479,9 @@ request rate/limit and enable other perks, such as metrics and advanced APIs.
 For more details: https://docs.ethers.io/api-keys/
 ``` 
 
-To avoid this, the Fetcher constructor has an optional parameter to provide a custom provider. We have also provided a [`getProvider`](#getProvider) helper method to make it easier to create a custom provider.
+To avoid this, the Fetcher constructor has an optional parameter to provide a custom provider. We have also provided a [`getProvider`](./Helper%20Methods.md#getprovider) helper method to make it easier to create a custom provider.
+
+<br/>
 
 ### Use custom RPC URL
 
@@ -459,3 +495,11 @@ const provider = getProvider(url)
 // Create new Fetcher-class object connected to Ethereum mainnet and custom RPC endpoint
 const fetcher = new Fetcher(1, provider)
 ```
+
+<br/>
+
+---
+
+## ** More information**
+
+[Click here](../contracts/products/SolaceCoverProduct.md) for more information on smart contract mechanisms
