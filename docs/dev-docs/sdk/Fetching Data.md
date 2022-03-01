@@ -28,7 +28,7 @@ console.log(await fetcher.activeCoverLimit())
 
 ## **Fetcher Methods**
 
-Note that we use the [BigNumber](https://docs.ethers.io/v5/api/utils/bignumber/) type for mathematical safety. Also note that financial amounts are expressed in USD to 18 decimal places.
+Note that we use the [BigNumber](https://docs.ethers.io/v5/api/utils/bignumber/) type for mathematical safety. Also note that financial amounts are denominated in USD to 18 decimal places (to have 1:1 correlation with DAI).
 
 ### activeCoverLimit
 
