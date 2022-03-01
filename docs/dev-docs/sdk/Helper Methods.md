@@ -14,7 +14,7 @@ Using the Fetcher object to make read-only calls to fetch data from the blockcha
 
 <br/>
 
-We have designed the SDK to abstract away these concerns, especially for the common use-case of integrating into a frontend which uses Metamask. For developers who desire more granular control over blockchain operations, we have bundled helper methods the `solaceUtils` object.
+We have designed the SDK to abstract away these concerns, especially for the common use-case of integrating into a frontend which uses Metamask. For developers who desire more granular control over blockchain operations, we have bundled helper methods in the `solaceUtils` object.
 
 <br/>
 
