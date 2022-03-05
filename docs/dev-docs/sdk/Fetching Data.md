@@ -29,7 +29,7 @@ console.log(await fetcher.activeCoverLimit())
 
 ## **Fetcher Methods**
 
-> We use the [BigNumber](https://docs.ethers.io/v5/api/utils/bignumber/) type for mathematical safety. 
+> We use the [BigNumber](https://docs.ethers.io/v5/api/utils/bignumber/) type for mathematical safety.
 
 > Financial amounts are denominated in USD to 18 decimal places (to have 1:1 correlation with DAI).
 
@@ -293,7 +293,7 @@ console.log(await fetcher.getReferrerFromReferralCode(REFERRAL_CODE)) // 0x1e35c
 
 ### **isReferralCodeValid**
 
-For a given referral code, returns: 
+For a given referral code, returns:
 - True if a valid referral code is provided
 - False otherwise
 
@@ -322,7 +322,7 @@ Gets DeFi protocol balances (in ETH and USD) for a given address
 ```js
 // ...setup fetcher object for Ethereum mainnet
 const policyholder = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
-console.log(await fetcher.getSolaceRiskBalances(policyholder)) 
+console.log(await fetcher.getSolaceRiskBalances(policyholder))
 /**
     [
       {
@@ -477,9 +477,9 @@ signing up for your own API keys to improve performance, increase your
 request rate/limit and enable other perks, such as metrics and advanced APIs.
 
 For more details: https://docs.ethers.io/api-keys/
-``` 
+```
 
-To avoid this, the Fetcher constructor has an optional parameter to provide a custom provider. We have also provided a [`getProvider`](./Helper%20Methods.md#getprovider) helper method to make it easier to create a custom provider.
+To avoid this, the Fetcher constructor has an optional parameter to provide a custom provider. We have also provided a [`getProvider`](./helper-methods#getprovider) helper method to make it easier to create a custom provider.
 
 <br/>
 
@@ -502,4 +502,4 @@ const fetcher = new Fetcher(1, provider)
 
 ## ** More information**
 
-[Click here](../contracts/products/SolaceCoverProduct.md) for more information on smart contract mechanisms
+[Click here](../Contracts/products/SolaceCoverProduct.md) for more information on smart contract mechanisms
