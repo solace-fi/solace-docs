@@ -4,7 +4,7 @@ Policies can be **purchased** via [`activatePolicy()`](#activatepolicy). Policie
 
 The policy will remain active until i.) the user cancels their policy or ii.) the user's account runs out of funds. The policy will be billed like a subscription, every epoch a fee will be charged from the user's account.
 
-Users can **deposit funds** into their account via [`deposit()`](#deposit). Currently the contract only accepts deposits in **DAI**. Note that both [`activatePolicy()`](#activatepolicy) and [`deposit()`](#deposit) enables a user to perform these actions (activate a policy, make a deposit) on behalf of another user.
+Users can **deposit funds** into their account via [`deposit()`](#deposit). Currently the contract only accepts deposits in **FRAX**. Note that both [`activatePolicy()`](#activatepolicy) and [`deposit()`](#deposit) enables a user to perform these actions (activate a policy, make a deposit) on behalf of another user.
 
 Users can **cancel** their policy via [`deactivatePolicy()`](#deactivatepolicy). This will start a cooldown timer. Users can **withdraw funds** from their account via [`withdraw()`](#withdraw).
 
@@ -191,6 +191,24 @@ Get the reward points that a policyholder has in **USD** to 18 decimal places.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`rewardPoints_`| address | The reward points for the policyholder.
+### premiumsPaidOf
+```solidity
+  function premiumsPaidOf(
+    address policyholder_
+  ) public returns (uint256 premiumsPaid_)
+```
+Get the total premium that a policyholder has in **USD** to 18 decimal places (does not include premium paid through reward points)
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyholder_` | address | The policyholder address.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`premiumsPaid_`| address | The total premium paid for the policyholder.
 ### policyOf
 ```solidity
   function policyOf(
@@ -384,6 +402,19 @@ Gets the current reward amount in USD for a valid referral code.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`referralReward_`|  | The referral reward
+### referralThreshold
+```solidity
+  function referralThreshold(
+  ) external returns (uint256 referralThreshold_)
+```
+Gets the threshold premium amount in USD that an account needs to have paid, for the account to be able to apply a referral code
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`referralThreshold_`|  | The referral threshold
 ### isReferralOn
 ```solidity
   function isReferralOn(
@@ -577,6 +608,21 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`referralReward_` | uint256 | Desired referralReward.
+
+### setReferralThreshold
+```solidity
+  function setReferralThreshold(
+    uint256 referralThreshhold_
+  ) external
+```
+set _referralThreshhold
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`referralThreshhold_` | uint256 | Desired referralThreshhold.
 
 ### setIsReferralOn
 ```solidity

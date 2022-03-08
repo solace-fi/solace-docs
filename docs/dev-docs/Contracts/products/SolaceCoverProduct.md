@@ -1,7 +1,40 @@
+A Solace insurance product that allows users to insure all of their DeFi positions against smart contract risk through a single policy.
 
+Policies can be **purchased** via [`activatePolicy()`](#activatepolicy). Policies are represented as ERC721s, which once minted, cannot then be transferred or burned. Users can change the cover limit of their policy through [`updateCoverLimit()`](#updatecoverlimit).
+
+The policy will remain active until i.) the user cancels their policy or ii.) the user's account runs out of funds. The policy will be billed like a subscription, every epoch a fee will be charged from the user's account.
+
+Users can **deposit funds** into their account via [`deposit()`](#deposit). Currently the contract only accepts deposits in **DAI**. Note that both [`activatePolicy()`](#activatepolicy) and [`deposit()`](#deposit) enables a user to perform these actions (activate a policy, make a deposit) on behalf of another user.
+
+Users can **cancel** their policy via [`deactivatePolicy()`](#deactivatepolicy). This will start a cooldown timer. Users can **withdraw funds** from their account via [`withdraw()`](#withdraw).
+
+Before the cooldown timer starts or passes, the user cannot withdraw their entire account balance. A minimum required account balance (to cover one epoch's fee) will be left in the user's account. After the cooldown has passed, a user will be able to withdraw their entire account balance.
+
+Users can enter a **referral code** with [`activatePolicy()`](#activatePolicy) or [`updateCoverLimit()`](#updatecoverlimit). A valid referral code will earn reward points to both the referrer and the referee. When the user's account is charged, reward points will be deducted before deposited funds.
+Each account can only enter a valid referral code once, however there are no restrictions on how many times a referral code can be used for new accounts.
 
 
 ## Functions
+### constructor
+```solidity
+  function constructor(
+    address governance_,
+    address registry_,
+    string domain_,
+    string version_
+  ) public
+```
+Constructs `Solace Cover Product`.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`governance_` | address | The address of the governor.
+|`registry_` | address | The [`Registry`](./Registry) contract address.
+|`domain_` | string | The user readable name of the EIP712 signing domain.
+|`version_` | string | The current major version of the signing domain.
+
 ### activatePolicy
 ```solidity
   function activatePolicy(
@@ -34,7 +67,6 @@ Activates policy for `policyholder_`
   ) external
 ```
 Updates the cover limit of a user's policy.
-
 This will reset the cooldown.
 
 
@@ -51,7 +83,7 @@ This will reset the cooldown.
     uint256 amount
   ) external
 ```
-Deposits funds into `policyholder`'s account.
+Deposits funds into the `policyholder` account.
 
 
 #### Parameters:
@@ -67,9 +99,9 @@ Deposits funds into `policyholder`'s account.
 ```
 Withdraw funds from user's account.
 
-If cooldown has passed, the user will withdraw their entire account balance. 
-If cooldown has not started, or has not passed, the user will not be able to withdraw their entire account. 
-If cooldown has not passed, [`withdraw()`](#withdraw) will leave a minimum required account balance (one epoch's fee) in the user's account.
+If cooldown has passed, the user will withdraw their entire account balance.
+
+If cooldown has not started, or has not passed, the user will not be able to withdraw their entire account. A minimum required account balance (one epoch's fee) will be left in the user's account.
 
 
 
@@ -80,7 +112,7 @@ If cooldown has not passed, [`withdraw()`](#withdraw) will leave a minimum requi
 ```
 Deactivate a user's policy.
 
-This will set a user's cover limit to 0, and begin the cooldown timer. Read comments for [`withdraw()`](#withdraw) for cooldown mechanic details.
+This will set a user's cover limit to 0, and begin the cooldown timer. Read comments for [`cooldownPeriod()`](#cooldownperiod) for more information on the cooldown mechanic.
 
 
 
@@ -88,7 +120,7 @@ This will set a user's cover limit to 0, and begin the cooldown timer. Read comm
 ```solidity
   function accountBalanceOf(
     address policyholder
-  ) external returns (uint256 balance)
+  ) public returns (uint256 balance)
 ```
 Returns the policyholder's account account balance in **USD**.
 
@@ -105,7 +137,7 @@ Returns the policyholder's account account balance in **USD**.
 ### maxCover
 ```solidity
   function maxCover(
-  ) external returns (uint256 cover)
+  ) public returns (uint256 cover)
 ```
 The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 
@@ -118,7 +150,7 @@ The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 ### activeCoverLimit
 ```solidity
   function activeCoverLimit(
-  ) external returns (uint256 amount)
+  ) public returns (uint256 amount)
 ```
 Returns the active cover limit in **USD** to 18 decimal places. In other words, the total cover that has been sold at the current time.
 
@@ -131,7 +163,7 @@ Returns the active cover limit in **USD** to 18 decimal places. In other words, 
 ### availableCoverCapacity
 ```solidity
   function availableCoverCapacity(
-  ) external returns (uint256 availableCoverCapacity_)
+  ) public returns (uint256 availableCoverCapacity_)
 ```
 Determine the available remaining capacity for new cover.
 
@@ -145,7 +177,7 @@ Determine the available remaining capacity for new cover.
 ```solidity
   function rewardPointsOf(
     address policyholder_
-  ) external returns (uint256 rewardPoints_)
+  ) public returns (uint256 rewardPoints_)
 ```
 Get the reward points that a policyholder has in **USD** to 18 decimal places.
 
@@ -159,11 +191,29 @@ Get the reward points that a policyholder has in **USD** to 18 decimal places.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`rewardPoints_`| address | The reward points for the policyholder.
+### premiumsPaidOf
+```solidity
+  function premiumsPaidOf(
+    address policyholder_
+  ) public returns (uint256 premiumsPaid_)
+```
+Get the total premium that a policyholder has in **USD** to 18 decimal places (does not include premium paid through reward points)
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyholder_` | address | The policyholder address.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`premiumsPaid_`| address | The total premium paid for the policyholder.
 ### policyOf
 ```solidity
   function policyOf(
     address policyholder_
-  ) external returns (uint256 policyID)
+  ) public returns (uint256 policyID)
 ```
 Gets the policyholder's policy ID.
 
@@ -181,7 +231,7 @@ Gets the policyholder's policy ID.
 ```solidity
   function policyStatus(
     uint256 policyID_
-  ) external returns (bool status)
+  ) public returns (bool status)
 ```
 Returns true if the policy is active, false if inactive
 
@@ -200,7 +250,7 @@ Returns true if the policy is active, false if inactive
   function registry(
   ) external returns (address registry_)
 ```
-Returns  [`Registry`](./Registry) contract address.
+Returns [`Registry`](./Registry) contract address.
 
 
 
@@ -237,7 +287,7 @@ Returns true if the product is paused, false if not.
 ### policyCount
 ```solidity
   function policyCount(
-  ) external returns (uint256 count)
+  ) public returns (uint256 count)
 ```
 Gets the policy count (amount of policies that have been purchased, includes inactive policies).
 
@@ -250,9 +300,9 @@ Gets the policy count (amount of policies that have been purchased, includes ina
 ### maxRateNum
 ```solidity
   function maxRateNum(
-  ) external returns (uint256 maxRateNum_)
+  ) public returns (uint256 maxRateNum_)
 ```
-Returns the max rate numerator.
+Gets the max rate numerator.
 
 
 
@@ -263,9 +313,9 @@ Returns the max rate numerator.
 ### maxRateDenom
 ```solidity
   function maxRateDenom(
-  ) external returns (uint256 maxRateDenom_)
+  ) public returns (uint256 maxRateDenom_)
 ```
-Returns the max rate denominator.
+Gets the max rate denominator.
 
 
 
@@ -276,7 +326,7 @@ Returns the max rate denominator.
 ### chargeCycle
 ```solidity
   function chargeCycle(
-  ) external returns (uint256 chargeCycle_)
+  ) public returns (uint256 chargeCycle_)
 ```
 Gets the charge cycle duration.
 
@@ -290,7 +340,7 @@ Gets the charge cycle duration.
 ```solidity
   function coverLimitOf(
     uint256 policyID_
-  ) external returns (uint256 amount)
+  ) public returns (uint256 amount)
 ```
 Gets cover limit for a given policy ID.
 
@@ -312,7 +362,7 @@ Gets cover limit for a given policy ID.
 Gets the cooldown period.
 
 Cooldown timer is started by the user calling deactivatePolicy().
-Before the cooldown has started or has passed, withdrawing funds will leave a minimim required account balance in the user's account. 
+Before the cooldown has started or has passed, withdrawing funds will leave a minimim required account balance in the user's account.
 Only after the cooldown has passed, is a user able to withdraw their entire account balance.
 
 
@@ -344,7 +394,7 @@ The Unix timestamp that a policyholder's cooldown started. If cooldown has not s
   function referralReward(
   ) external returns (uint256 referralReward_)
 ```
-Gets the referral reward
+Gets the current reward amount in USD for a valid referral code.
 
 
 
@@ -352,6 +402,19 @@ Gets the referral reward
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`referralReward_`|  | The referral reward
+### referralThreshold
+```solidity
+  function referralThreshold(
+  ) external returns (uint256 referralThreshold_)
+```
+Gets the threshold premium amount in USD that an account needs to have paid, for the account to be able to apply a referral code
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`referralThreshold_`|  | The referral threshold
 ### isReferralOn
 ```solidity
   function isReferralOn(
@@ -372,7 +435,7 @@ Returns true if referral rewards are active, false if not.
 ```
 True if a policyholder has previously used a valid referral code, false if not
 
-A policyholder can only use a referral code once. Afterwards a policyholder is ineligible to receive further rewards from additional referral codes.
+A policyholder can only use a referral code once. A policyholder is then ineligible to receive further rewards from additional referral codes.
 
 
 
@@ -426,6 +489,20 @@ Calculate minimum required account balance for a given cover limit. Equals the m
 | :--- | :--- | :------------------------------------------------------------------- |
 |`coverLimit` | uint256 | Cover limit.
 
+### tokenURI
+```solidity
+  function tokenURI(
+    uint256 policyID
+  ) public returns (string tokenURI_)
+```
+Returns the Uniform Resource Identifier (URI) for `policyID`.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyID` | uint256 | The policy ID.
+
 ### setRegistry
 ```solidity
   function setRegistry(
@@ -463,7 +540,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
     uint256 cooldownPeriod_
   ) external
 ```
-Sets the cooldown period. Read comments for [`cooldownPeriod()`](#cooldownPeriod) for more information on the cooldown mechanic.
+Sets the cooldown period. Read comments for [`cooldownPeriod()`](#cooldownperiod) for more information on the cooldown mechanic.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
@@ -532,6 +609,21 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | :--- | :--- | :------------------------------------------------------------------- |
 |`referralReward_` | uint256 | Desired referralReward.
 
+### setReferralThreshold
+```solidity
+  function setReferralThreshold(
+    uint256 referralThreshhold_
+  ) external
+```
+set _referralThreshhold
+Can only be called by the current [**governor**](/docs/protocol/governance).
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`referralThreshhold_` | uint256 | Desired referralThreshhold.
+
 ### setIsReferralOn
 ```solidity
   function setIsReferralOn(
@@ -545,7 +637,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`isReferralOn_` | bool | Desired state of referral campaign.
+|`isReferralOn_` | bool | True if referral rewards active, false if not.
 
 ### setBaseURI
 ```solidity
@@ -568,9 +660,7 @@ Sets the base URI for computing `tokenURI`.
     uint256 rewardPoints_
   ) external
 ```
-Enables cover promotion admin to set reward points for a selected address.
-
-Can only be called by the **Cover Promotion Admin** role.
+Set reward points for a selected address. Can only be called by the **Cover Promotion Admin** role.
 
 
 #### Parameters:
@@ -586,9 +676,8 @@ Can only be called by the **Cover Promotion Admin** role.
     uint256[] premiums
   ) external
 ```
-Charge premiums for each policy holder.
+Charge premiums for each policy holder. Can only be called by the **Premium Collector** role.
 
-Can only be called by the **Premium Collector** role.
 
 Cheaper to load variables directly from calldata, rather than adding an additional operation of copying to memory.
 
@@ -598,172 +687,222 @@ Cheaper to load variables directly from calldata, rather than adding an addition
 |`holders` | address[] | Array of addresses of the policyholders to charge.
 |`premiums` | uint256[] | Array of premium amounts (in **USD** to 18 decimal places) to charge each policyholder.
 
-## Events
-### PolicyCreated
+### _canPurchaseNewCover
 ```solidity
-  event PolicyCreated(
-  )
+  function _canPurchaseNewCover(
+    uint256 existingTotalCover_,
+    uint256 newTotalCover_
+  ) internal returns (bool acceptable)
 ```
-Emitted when a new Policy is created.
+Returns true if there is sufficient capacity to update a policy's cover limit, false if not.
 
 
-### PolicyUpdated
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`existingTotalCover_` | uint256 | The current cover limit, 0 if policy has not previously been activated.
+|`newTotalCover_` | uint256 |  The new cover limit requested.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`acceptable`| uint256 | True there is sufficient capacity for the requested new cover limit, false otherwise.
+### _deposit
 ```solidity
-  event PolicyUpdated(
-  )
+  function _deposit(
+    address from,
+    address policyholder,
+    uint256 amount
+  ) internal
 ```
-Emitted when a Policy is updated.
+Deposits funds into the policyholder's account balance.
 
 
-### PolicyDeactivated
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`from` | address | The address which is funding the deposit.
+|`policyholder` | address | The policyholder address.
+|`amount` | uint256 | The deposit amount in **USD** to 18 decimal places.
+
+### _withdraw
 ```solidity
-  event PolicyDeactivated(
-  )
+  function _withdraw(
+    address policyholder,
+    uint256 amount
+  ) internal
 ```
-Emitted when a Policy is deactivated.
+Withdraw funds from policyholder's account to the policyholder.
 
 
-### RegistrySet
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyholder` | address | The policyholder address.
+|`amount` | uint256 | The amount to withdraw in **USD** to 18 decimal places.
+
+### _deactivatePolicy
 ```solidity
-  event RegistrySet(
-  )
+  function _deactivatePolicy(
+    address policyholder
+  ) internal
 ```
-Emitted when Registry address is updated.
+Deactivate the policy.
 
 
-### PauseSet
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyholder` | address | The policyholder address.
+
+### _updateActiveCoverLimit
 ```solidity
-  event PauseSet(
-  )
+  function _updateActiveCoverLimit(
+    uint256 currentCoverLimit,
+    uint256 newCoverLimit
+  ) internal
 ```
-Emitted when pause is set.
+Updates the Risk Manager on the current total cover limit purchased by policyholders.
 
 
-### CooldownStarted
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`currentCoverLimit` | uint256 | The current policyholder cover limit (0 if activating policy).
+|`newCoverLimit` | uint256 | The new policyholder cover limit.
+
+### _minRequiredAccountBalance
 ```solidity
-  event CooldownStarted(
-  )
+  function _minRequiredAccountBalance(
+    uint256 coverLimit
+  ) internal returns (uint256 minRequiredAccountBalance)
 ```
-Emitted when a user enters cooldown mode.
+Calculate minimum required account balance for a given cover limit. Equals the maximum chargeable fee for one epoch.
 
 
-### CooldownStopped
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`coverLimit` | uint256 | Cover limit.
+
+### _beforeTokenTransfer
 ```solidity
-  event CooldownStopped(
-  )
+  function _beforeTokenTransfer(
+    address from,
+    address to,
+    uint256 tokenId
+  ) internal
 ```
-Emitted when a user leaves cooldown mode.
+Override _beforeTokenTransfer hook from ERC721 standard to ensure policies are non-transferable, and only one can be minted per user.
 
+This hook is called on mint, transfer and burn.
 
-### CooldownPeriodSet
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`from` | address | sending address.
+|`to` | address | receiving address.
+|`tokenId` | uint256 | tokenId.
+
+### _startCooldown
 ```solidity
-  event CooldownPeriodSet(
-  )
+  function _startCooldown(
+    address policyholder
+  ) internal
 ```
-Emitted when the cooldown period is set.
+Starts the cooldown period for the policyholder.
 
 
-### DepositMade
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyholder` | address | Policyholder address.
+
+### _exitCooldown
 ```solidity
-  event DepositMade(
-  )
+  function _exitCooldown(
+    address policyholder
+  ) internal
 ```
-Emitted when a deposit is made.
+Exits the cooldown period for a policyholder.
 
 
-### WithdrawMade
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyholder` | address | Policyholder address.
+
+### _hasCooldownPassed
 ```solidity
-  event WithdrawMade(
-  )
+  function _hasCooldownPassed(
+    address policyholder
+  ) internal returns (bool)
 ```
-Emitted when a withdraw is made.
+Return true if cooldown has passed for a policyholder, false if cooldown has not started or has not passed.
 
 
-### PremiumCharged
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyholder` | address | Policyholder address.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`True`| address | if cooldown has passed, false if cooldown has not started or has not passed.
+### _processReferralCode
 ```solidity
-  event PremiumCharged(
-  )
+  function _processReferralCode(
+    address policyholder_,
+    bytes referralCode_
+  ) internal
 ```
-Emitted when premium is charged.
+Internal function to process a referral code
 
 
-### PremiumPartiallyCharged
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyholder_` | address | Policyholder address.
+|`referralCode_` | bytes | Referral code.
+
+### _isEmptyReferralCode
 ```solidity
-  event PremiumPartiallyCharged(
-  )
+  function _isEmptyReferralCode(
+    bytes referralCode_
+  ) internal returns (bool)
 ```
-Emitted when premium is partially charged.
+Internal helper function to determine if referralCode_ is an empty bytes value
 
 
-### PolicyManagerUpdated
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`referralCode_` | bytes | Referral code.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`True`| bytes | if empty referral code, false if not.
+### _getEIP712Hash
 ```solidity
-  event PolicyManagerUpdated(
-  )
+  function _getEIP712Hash(
+  ) internal returns (bytes32)
 ```
-Emitted when policy manager cover amount for soteria is updated.
+Internal helper function to get EIP712-compliant hash for referral code verification.
 
 
-### MaxRateNumSet
+
+### _getAsset
 ```solidity
-  event MaxRateNumSet(
-  )
+  function _getAsset(
+  ) internal returns (contract IERC20 asset)
 ```
-Emitted when maxRateNum is set.
+Returns the underlying principal asset for `Solace Cover Product`.
 
 
-### MaxRateDenomSet
-```solidity
-  event MaxRateDenomSet(
-  )
-```
-Emitted when maxRateDenom is set.
 
-
-### ChargeCycleSet
-```solidity
-  event ChargeCycleSet(
-  )
-```
-Emitted when chargeCycle is set.
-
-
-### RewardPointsSet
-```solidity
-  event RewardPointsSet(
-  )
-```
-Emitted when reward points are set.
-
-
-### IsReferralOnSet
-```solidity
-  event IsReferralOnSet(
-  )
-```
-Emitted when isReferralOn is set
-
-
-### ReferralRewardSet
-```solidity
-  event ReferralRewardSet(
-  )
-```
-Emitted when referralReward is set.
-
-
-### ReferralRewardsEarned
-```solidity
-  event ReferralRewardsEarned(
-  )
-```
-Emitted when referral rewards are earned;
-
-
-### BaseURISet
-```solidity
-  event BaseURISet(
-  )
-```
-Emitted when baseURI is set
-
-
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`asset`|  | The underlying asset.

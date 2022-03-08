@@ -35,8 +35,8 @@ cd ./solace-core
 npm i
 rm -rf docs
 npx solidity-docgen --solc-module solc-0.8 -t ./templates
-rm -rf ../solace-docs/docs/dev-docs/contracts/
-cp -r ./docs/. ../solace-docs/docs/dev-docs/contracts/
+rm -rf ../solace-docs/docs/dev-docs/Contracts/
+cp -r ./docs/. ../solace-docs/docs/dev-docs/Contracts/
 cd ../solace-docs
 yarn install
 yarn build

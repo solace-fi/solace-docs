@@ -20,7 +20,7 @@ To facilitate this, the SDK provides a Policyholder class. The Policyholder cons
 
 > A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because transactions need to be signed by a private key to be included in the blockchain. The [Signer](https://docs.ethers.io/v5/api/signer/) object also a convenient way to connect to the blockchain.
 
-> We have also provided a [`getSigner`](./Helper%20Methods.md/#getsigner) helper method to make it easier to create a valid [Signer](https://docs.ethers.io/v5/api/signer/) object
+> We have also provided a [`getSigner`](./helper-methods/#getsigner) helper method to make it easier to create a valid [Signer](https://docs.ethers.io/v5/api/signer/) object
 
 <br/>
 
@@ -43,9 +43,9 @@ const policyholder = new Policyholder(4, signer)
 // Makes call to activatePolicy() function on SolaceCoverProduct.sol with provided parameters
 // Read documentation on how to customize gas settings for the transaction
 let tx = await policyholder.activatePolicy(
-    <POLICYHOLDER_ADDRESS>, 
-    <COVER_LIMIT>, 
-    <DEPOSIT_AMOUNT>, 
+    <POLICYHOLDER_ADDRESS>,
+    <COVER_LIMIT>,
+    <DEPOSIT_AMOUNT>,
     <REFERRAL_CODE>
 )
 ```
@@ -62,9 +62,9 @@ const signer = new Wallet(<PRIVATE_KEY>, provider)
 const policyholder = new Policyholder(4, signer)
 
 let tx = await policyholder.activatePolicy(
-    <POLICYHOLDER_ADDRESS>, 
-    <COVER_LIMIT>, 
-    <DEPOSIT_AMOUNT>, 
+    <POLICYHOLDER_ADDRESS>,
+    <COVER_LIMIT>,
+    <DEPOSIT_AMOUNT>,
     <REFERRAL_CODE>
 )
 ```
@@ -143,7 +143,7 @@ const NEW_COVER_LIMIT = BigNumber.from("200000000000000000000") // 200 USD
 const REFERRAL_CODE = "0x5406a8636b0cb38db066f2c87ea88d2d882d3407a5fdbba95cd70df2e43817a75643fa22feaf4b550f153d13c3f2eaa68626194291646b0fc1a06d6ca8c371001b"
 
 let tx = await policyholder.updateCoverLimit(
-    NEW_COVER_LIMIT, 
+    NEW_COVER_LIMIT,
     REFERRAL_CODE
 )
 ```
@@ -153,7 +153,7 @@ let tx = await policyholder.updateCoverLimit(
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newCoverLimit` | `BigNumber` | The new cover limit
 |`referralCode` | [`BytesLike`](https://docs.ethers.io/v5/api/utils/bytes/#BytesLike) | The referral code.
-|`gasConfig?` | [`GasConfiguration`](./Helper%20Methods.md#getgassettings) | (Optional) Gas configuration settings.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
 
@@ -171,7 +171,7 @@ const POLICYHOLDER_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 USD
 
 let tx = await policyholder.deposit(
-    POLICYHOLDER_ADDRESS, 
+    POLICYHOLDER_ADDRESS,
     DEPOSIT_AMOUNT
 )
 ```
@@ -181,7 +181,7 @@ let tx = await policyholder.deposit(
 | :--- | :--- | :------------------------------------------------------------------- |
 |`policyholder` | `string` | Selected policyholder address.
 |`amount` | `BigNumber` | The amount to deposit.
-|`gasConfig?` | [`GasConfiguration`](./Helper%20Methods.md#getgassettings) | (Optional) Gas configuration settings.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
 
@@ -194,8 +194,8 @@ let tx = await policyholder.deposit(
 Makes a withdrawal from the account of the transaction signer.
 
 Note the following:
-- If cooldown has passed, the user will withdraw their entire account balance. 
-- If cooldown has not started, or has not passed, the user will not be able to withdraw their entire account. 
+- If cooldown has passed, the user will withdraw their entire account balance.
+- If cooldown has not started, or has not passed, the user will not be able to withdraw their entire account.
 - A minimum required account balance (one epoch's fee) will be left in the user's account.
 
 <br/>
@@ -208,7 +208,7 @@ let tx = await policyholder.withdraw()
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`gasConfig?` | [`GasConfiguration`](./Helper%20Methods.md#getgassettings) | (Optional) Gas configuration settings.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
 
@@ -228,7 +228,7 @@ let tx = await policyholder.deactivatePolicy()
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`gasConfig?` | [`GasConfiguration`](./Helper%20Methods.md#getgassettings) | (Optional) Gas configuration settings.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
 
@@ -240,4 +240,4 @@ let tx = await policyholder.deactivatePolicy()
 
 ## ** More information**
 
-[Click here](../contracts/products/SolaceCoverProduct.md) for more information on smart contract mechanisms
+[Click here](../Contracts/products/SolaceCoverProduct.md) for more information on smart contract mechanisms

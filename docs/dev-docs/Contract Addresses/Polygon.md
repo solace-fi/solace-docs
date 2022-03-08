@@ -10,6 +10,7 @@
 | WBTC                         | [`0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6`](https://polygonscan.com/address/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6) |
 | USDT                         | [`0xc2132D05D31c914a87C6611C10748AEb04B58e8F`](https://polygonscan.com/address/0xc2132D05D31c914a87C6611C10748AEb04B58e8F) |
 | FRAX                         | [`0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89`](https://polygonscan.com/address/0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89) |
+| SOLACE-FRAX G-UNI            | [`0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A`](https://polygonscan.com/address/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A) |
 
 ### Bridge
 
@@ -27,6 +28,20 @@
 | Underwriting Pool            | [`0xd1108a800363C262774B990e9DF75a4287d5c075`](https://polygonscan.com/address/0xd1108a800363C262774B990e9DF75a4287d5c075) | https://gnosis-safe.io/app/matic:0xd1108a800363C262774B990e9DF75a4287d5c075 |
 | Premium Pool                 | [`0x37cd57c6C7243455aC66631cE37Bb7F977C71442`](https://polygonscan.com/address/0x37cd57c6C7243455aC66631cE37Bb7F977C71442) | https://gnosis-safe.io/app/matic:0x37cd57c6C7243455aC66631cE37Bb7F977C71442 |
 
+
+### V1.3.1
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SolaceCoverProductV2         | [`0x501AcEC83d440c00644cA5C48d059e1840852a64`](https://polygonscan.com/address/0x501AcEC83d440c00644cA5C48d059e1840852a64) |
+
+### V1.3.0
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| RegistryV2                   | [`0x501ACe0f576fc4ef9C0380AA46A578eA96b85776`](https://polygonscan.com/address/0x501ACe0f576fc4ef9C0380AA46A578eA96b85776) |
+| RiskManagerV2                | [`0x501AcEf9020632a71CB25CFa9F554252eB51732b`](https://polygonscan.com/address/0x501AcEf9020632a71CB25CFa9F554252eB51732b) |
+| CoverageDataProvider         | [`0x501ACE6C5fFf4d42EaC02357B6DD9b756E337355`](https://polygonscan.com/address/0x501ACE6C5fFf4d42EaC02357B6DD9b756E337355) |
 
 ### V1.2.1
 
