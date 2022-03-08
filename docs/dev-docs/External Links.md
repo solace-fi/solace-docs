@@ -15,6 +15,25 @@ https://app.sushi.com/add/0x501ace9c35e60f03a2af4d484f49f9b1efde9f40/0xA0b86991c
 #### Remove
 https://app.sushi.com/remove/0x501ace9c35e60f03a2af4d484f49f9b1efde9f40/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
 
+## Uniswap
+#### Analytics
+https://info.uniswap.org/#/polygon/tokens/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40
+#### Swap
+https://app.uniswap.org/#/swap?chain=polygon&inputCurrency=0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40
+#### Add
+https://app.uniswap.org/#/add/0x501ace9c35e60f03a2af4d484f49f9b1efde9f40/0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89?chain=polygon
+
+## G-UNI
+#### Analytics
+https://www.sorbet.finance/#/pools/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A
+#### Add
+https://www.sorbet.finance/#/pools/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A/add
+#### Remove
+https://www.sorbet.finance/#/pools/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A/remove
+
+## GYSR
+https://app.gysr.io/manage/0xf54f26ec9657664c098d4a6879d52cc8bdeccc50
+
 ## TriSolaris
 #### Swap
 https://www.trisolaris.io/#/swap?inputCurrency=0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40
