@@ -28,6 +28,20 @@
 | Premium Pool                 | [`0x37cd57c6C7243455aC66631cE37Bb7F977C71442`](https://polygonscan.com/address/0x37cd57c6C7243455aC66631cE37Bb7F977C71442) | https://gnosis-safe.io/app/matic:0x37cd57c6C7243455aC66631cE37Bb7F977C71442 |
 
 
+### V1.3.1
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SolaceCoverProductV2         | [`0x501AcEC83d440c00644cA5C48d059e1840852a64`](https://polygonscan.com/address/0x501AcEC83d440c00644cA5C48d059e1840852a64) |
+
+### V1.3.0
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| RegistryV2                   | [`0x501ACe0f576fc4ef9C0380AA46A578eA96b85776`](https://polygonscan.com/address/0x501ACe0f576fc4ef9C0380AA46A578eA96b85776) |
+| RiskManagerV2                | [`0x501AcEf9020632a71CB25CFa9F554252eB51732b`](https://polygonscan.com/address/0x501AcEf9020632a71CB25CFa9F554252eB51732b) |
+| CoverageDataProvider         | [`0x501ACE6C5fFf4d42EaC02357B6DD9b756E337355`](https://polygonscan.com/address/0x501ACE6C5fFf4d42EaC02357B6DD9b756E337355) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |
