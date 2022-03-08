@@ -10,6 +10,7 @@
 | WBTC                         | [`0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6`](https://polygonscan.com/address/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6) |
 | USDT                         | [`0xc2132D05D31c914a87C6611C10748AEb04B58e8F`](https://polygonscan.com/address/0xc2132D05D31c914a87C6611C10748AEb04B58e8F) |
 | FRAX                         | [`0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89`](https://polygonscan.com/address/0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89) |
+| SOLACE-FRAX G-UNI            | [`0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A`](https://polygonscan.com/address/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A) |
 
 ### Bridge
 
