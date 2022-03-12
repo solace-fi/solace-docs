@@ -162,7 +162,7 @@ Gets minimum required account balance for a given cover limit. Is equivalent to 
 import { Fetcher, BigNumber } from "@solace-fi/sdk"
 const fetcher = new Fetcher(1)
 const coverLimit = BigNumber.from("1000000000000000000") //1 USD
-console.log(await minRequiredAccountBalance(coverLimit)) // BigNumber { _hex: '0x06d03c85a6c462', _isBigNumber: true }
+console.log(await fetcher.minRequiredAccountBalance(coverLimit)) // BigNumber { _hex: '0x06d03c85a6c462', _isBigNumber: true }
 ```
 
 #### Parameters
