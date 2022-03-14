@@ -243,6 +243,23 @@ let tx = await policyholder.deactivatePolicy()
 
 ---
 
+## **Error catching**
+
+Attempting a transaction when it will revert on-chain will lead to a browser console e.g. `(error={"code":-32603,"message":"execution reverted: policy already activated","data":{"originalError":…`
+
+To catch this and avoid your code terminating prematurely when it makes failed blockchain calls, you can wrap your code in a [try-catch block](https://www.w3schools.com/js/js_errors.asp).
+
+```js
+// ...setup policyholder object
+try {
+    let tx = await policyholder.deactivatePolicy()
+} catch {
+    // Code to run in case of error
+}
+```
+
+---
+
 ## ** More information**
 
 [Click here](../Contracts/products/SolaceCoverProduct.md) for more information on smart contract mechanisms

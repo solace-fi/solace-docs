@@ -4,11 +4,9 @@ id: staking
 title: Staking
 ---
 
-The SDK provides a **Staker** class to interact with SOLACE staking. **Staker** methods are wrappers around [`xsLocker.sol`](../Contracts/staking/xsLocker) and [`StakingRewards.sol`](../Contracts/staking/StakingRewards) functions.
+The SDK provides a **Staker** class to interact with SOLACE staking. **Staker** methods are wrappers around [`xsLocker.sol`](../Contracts/staking/xsLocker) and [`StakingRewards.sol`](../Contracts/staking/StakingRewards) functions, which are the smart contracts providing SOLACE staking functionality.
 
 The same syntax for creating the [`PolicyHolder`](./sending-transactions) object will apply for the Staker object.
-
-<br/>
 
 ---
 
@@ -196,7 +194,7 @@ console.log(await staker.pendingRewardsOfLock(1)) // BigNumber { _hex: '0x3abf3a
 
 ---
 
-## **Staker Blockchain-Mutator Methods**
+## **Staker Mutator Methods**
 
 <br/>
 
@@ -490,7 +488,7 @@ let tx = await staker.harvestLock(
 
 ### **harvestLocks**
 
-Updates specified locks, and sends pending rewards to the locks' owner
+Updates specified locks, and sends pending rewards to the locks' owners
 
 ```js
 // ...setup staker object
@@ -515,7 +513,7 @@ let tx = await staker.harvestLock(
 
 ### **compoundLock**
 
-Deposits pending rewards for a lock, into the lock. Effectively compounds the lock's balance with pending rewards.
+Deposits pending rewards for a lock, back into the lock. Effectively compounds the lock's balance with pending rewards.
 
 Can only be called by the owner of the lock.
 
@@ -542,7 +540,7 @@ let tx = await staker.compoundLock(
 
 ### **compoundLocks**
 
-Deposits pending rewards for multiple specified locks, into the locks. Effectively compounds the locks' balance with pending rewards.
+Deposits pending rewards for multiple specified locks, back into the locks. Effectively compounds the locks' balance with pending rewards.
 
 Can only be called by the owner of the locks.
 
