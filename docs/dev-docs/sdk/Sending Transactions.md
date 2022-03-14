@@ -14,7 +14,12 @@ To facilitate this, the SDK provides a Policyholder class. The Policyholder cons
 
 1. The **chainID** to connect to
 
-> Currently Ethereum mainnet - ChainID = 1 - and Rinkeby Testnet - ChainID = 4 - are supported
+> Current supported chains are:
+> - Ethereum mainnet (ChainID = 1)
+> - Rinkeby Testnet (ChainID = 4)
+> - MATIC (ChainID = 137)
+> - Mumbai testnet (ChainID = 80001)
+
 
 2. A **[Signer](https://docs.ethers.io/v5/api/signer/)** object
 
