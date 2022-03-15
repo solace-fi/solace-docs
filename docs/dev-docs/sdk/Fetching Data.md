@@ -119,7 +119,7 @@ N/A
 
 ### **accountBalanceOf**
 
-Gets the account balance for a policyholder
+Gets the account balance (total USD deposited) for a policyholder
 
 ```js
 // ...setup fetcher object for Ethereum mainnet
