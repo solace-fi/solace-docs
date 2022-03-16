@@ -19,11 +19,15 @@ The Bonder constructor requires three parameters:
 > - Aurora Mainnet (ChainID = 1313161554)
 > - Aurora Testnet (ChainID = 1313161556)
 
+<br/>
+
 2. A **[Signer](https://docs.ethers.io/v5/api/signer/)** object
 
 > A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because transactions need to be signed by a private key to be included in the blockchain. The [Signer](https://docs.ethers.io/v5/api/signer/) object also a convenient way to connect to the blockchain.
 
 > We have also provided a [`getSigner`](./helper-methods/#getsigner) helper method to make it easier to create a valid [Signer](https://docs.ethers.io/v5/api/signer/) object
+
+<br/>
 
 3. A string describing the **token** used for bond purchases
 
