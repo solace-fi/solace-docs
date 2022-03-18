@@ -14,7 +14,12 @@ To facilitate this, the SDK provides a Policyholder class. The Policyholder cons
 
 1. The **chainID** to connect to
 
-> Currently Ethereum mainnet - ChainID = 1 - and Rinkeby Testnet - ChainID = 4 - are supported
+> Current supported chains are:
+> - Ethereum mainnet (ChainID = 1)
+> - Rinkeby Testnet (ChainID = 4)
+> - MATIC (ChainID = 137)
+> - Mumbai testnet (ChainID = 80001)
+
 
 2. A **[Signer](https://docs.ethers.io/v5/api/signer/)** object
 
@@ -235,6 +240,23 @@ let tx = await policyholder.deactivatePolicy()
 `Promise`<`TransactionResponse`\>
 
 <br/>
+
+---
+
+## **Error catching**
+
+Attempting a transaction when it will revert on-chain will lead to a browser console e.g. `(error={"code":-32603,"message":"execution reverted: policy already activated","data":{"originalError":…`
+
+To catch this and avoid your code terminating prematurely when it makes failed blockchain calls, you can wrap your code in a [try-catch block](https://www.w3schools.com/js/js_errors.asp).
+
+```js
+// ...setup policyholder object
+try {
+    let tx = await policyholder.deactivatePolicy()
+} catch {
+    // Code to run in case of error
+}
+```
 
 ---
 

@@ -8,7 +8,13 @@ linkcolor: blue
 
 To obtain blockchain state data such as the number of policies purchased, or total cover purchased, we will need to create a Fetcher instance.
 
-The Fetcher constructor requires a single parameter - the **chainID** to connect to. Currently Ethereum mainnet (ChainID = 1) and Rinkeby Testnet (ChainID = 4) are supported.
+The Fetcher constructor requires a single parameter - the **chainID** to connect to. 
+
+> Current supported chains are:
+> - Ethereum mainnet (ChainID = 1)
+> - Rinkeby Testnet (ChainID = 4)
+> - MATIC (ChainID = 137)
+> - Mumbai testnet (ChainID = 80001)
 
 
 ## **Basic Example**
@@ -113,7 +119,7 @@ N/A
 
 ### **accountBalanceOf**
 
-Gets the account balance for a policyholder
+Gets the account balance (total USD deposited) for a policyholder
 
 ```js
 // ...setup fetcher object for Ethereum mainnet
@@ -200,6 +206,27 @@ console.log(await fetcher.policyStatus(1)) // true
 
 <br/>
 
+### **getPolicyChainInfo**
+
+Returns array of chainIDs that the policy has been purchased for
+
+```js
+// ...setup fetcher object for Ethereum mainnet
+console.log(await fetcher.getPolicyChainInfo(1)) // [ BigNumber { _hex: '0x89', _isBigNumber: true } ]
+```
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `policyID` | `number` |
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+<br/>
+
 ### **policyOf**
 
 Gets the policy ID for a policyholder
@@ -230,6 +257,50 @@ Gets the reward points balance for a policyholder
 // ...setup fetcher object for Ethereum mainnet
 const policyholder = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
 console.log(await fetcher.rewardPointsOf(policyholder)) // BigNumber { _hex: '0x056bc75e2d63100000', _isBigNumber: true }
+```
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `policyholder` | `string` |
+
+#### Returns
+
+`Promise`<`BigNumber`\>
+
+<br/>
+
+### **premiumsPaidOf**
+
+Gets the total historical premiums paid for a policyholder
+
+```js
+// ...setup fetcher object for Ethereum mainnet
+const policyholder = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
+console.log(await fetcher.premiumsPaidOf(policyholder)) // BigNumber { _hex: '0x056bc75e2d63100000', _isBigNumber: true }
+```
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `policyholder` | `string` |
+
+#### Returns
+
+`Promise`<`BigNumber`\>
+
+<br/>
+
+### **cooldownStart**
+
+Gets the cooldown start time for a policyholder. If cooldown has not been started, will return 0.
+
+```js
+// ...setup fetcher object for Ethereum mainnet
+const policyholder = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
+console.log(await fetcher.cooldownStart(policyholder)) // BigNumber { _hex: '0x056bc75e2d63100000', _isBigNumber: true }
 ```
 
 #### Parameters
@@ -317,7 +388,7 @@ console.log(await fetcher.isReferralCodeValid(REFERRAL_CODE)) // true
 
 ### **getSolaceRiskBalances**
 
-Gets DeFi protocol balances (in ETH and USD) for a given address
+Gets DeFi protocol balances (in USD) for a given address
 
 ```js
 // ...setup fetcher object for Ethereum mainnet
@@ -329,25 +400,21 @@ console.log(await fetcher.getSolaceRiskBalances(policyholder))
         appId: 'compound',
         network: 'ethereum',
         balanceUSD: 17.988592754286348,
-        balanceETH: 0.0063733338518864495
       },
       {
         appId: 'convex',
         network: 'ethereum',
         balanceUSD: 487.5960813173196,
-        balanceETH: 0.1727546258651258
       },
       {
         appId: 'sushiswap',
         network: 'ethereum',
         balanceUSD: 0.9045516676078682,
-        balanceETH: 0.0003204814207921779
       },
       {
         appId: 'yearn',
         network: 'ethereum',
         balanceUSD: 4859.636427714279,
-        balanceETH: 1.7217625511718742
       }
     ]
  */
@@ -358,6 +425,58 @@ console.log(await fetcher.getSolaceRiskBalances(policyholder))
 | Name | Type |
 | :------ | :------ |
 | `policyholder` | `string` |
+
+#### Returns
+
+`Promise`<`SolaceRiskBalance[] | undefined | unknown` >
+
+<br/>
+
+### **getSolaceRiskBalances_MultiChain**
+
+Gets DeFi protocol balances (in USD) for a given address, for selected chainIDs
+
+```js
+// ...setup fetcher object for Ethereum mainnet
+const policyholder = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
+console.log(await fetcher.getSolaceRiskBalances_MultiChain(policyholder, [1, 137]))
+/**
+    [
+      {
+        appId: 'compound',
+        network: 'ethereum',
+        balanceUSD: 14.320399484664346
+      },
+      {
+        appId: 'convex',
+        network: 'ethereum',
+        balanceUSD: 411.67909240375553
+      },
+      {
+        appId: 'sushiswap',
+        network: 'ethereum',
+        balanceUSD: 0.7564851743982469
+      },
+      {
+        appId: 'yearn',
+        network: 'ethereum',
+        balanceUSD: 3679.572983612748
+      },
+      {
+        appId: 'sushiswap',
+        network: 'polygon',
+        balanceUSD: 7.831668609378035
+      }
+    ]
+ */
+```
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `policyholder` | `string` |
+| `chains` | `number[]` |
 
 #### Returns
 
@@ -385,7 +504,6 @@ console.log(await fetcher.getSolaceRiskScores(policyholder, riskBalances))
           appId: 'compound',
           network: 'ethereum',
           balanceUSD: 18.0134824638,
-          balanceETH: 0.0063746736,
           category: 'lending',
           tier: 1,
           rol: 0.02, // Annual risk premium as % of portfolio
@@ -398,7 +516,6 @@ console.log(await fetcher.getSolaceRiskScores(policyholder, riskBalances))
           appId: 'convex',
           network: 'ethereum',
           balanceUSD: 487.5367313982,
-          balanceETH: 0.1725311875,
           category: 'yield-aggregator',
           tier: 1,
           rol: 0.02,
@@ -411,7 +528,6 @@ console.log(await fetcher.getSolaceRiskScores(policyholder, riskBalances))
           appId: 'sushiswap',
           network: 'ethereum',
           balanceUSD: 0.9045516676,
-          balanceETH: 0.0003201059,
           category: 'liquidity-pool',
           tier: 1,
           rol: 0.02,
@@ -424,7 +540,6 @@ console.log(await fetcher.getSolaceRiskScores(policyholder, riskBalances))
           appId: 'yearn',
           network: 'ethereum',
           balanceUSD: 4859.6364277143,
-          balanceETH: 1.719744974,
           category: 'yield-aggregator',
           tier: 1,
           rol: 0.02,
@@ -454,6 +569,74 @@ console.log(await fetcher.getSolaceRiskScores(policyholder, riskBalances))
 #### Returns
 
 `Promise`<`SolaceRiskScore | undefined` >
+<br/>
+
+### **getSolaceRiskSeries**
+
+Gets Solace risk series data
+
+```js
+// ...setup fetcher object for Ethereum mainnet
+console.log(await fetcher.getSolaceRiskSeries())
+/**
+    {
+      metadata: {
+        seriesName: 'Series 1.5',
+        version: '0.0.1',
+        dateCreated: '2022-03-10',
+        provenance: 'ipfs://cid0000001'
+      },
+      function: {
+        name: 'getScores',
+        description: 'rating engine for soteria',
+        provenance: 'ipfs://cid0000001'
+      },
+      data: {
+        protocolMap: [
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object], [Object], [Object],
+          [Object], [Object], [Object], [Object],
+          ... 83 more items
+        ],
+        corrValue: [
+          [Object], [Object],
+          [Object], [Object],
+          [Object], [Object],
+          [Object]
+        ],
+        correlCat: [
+          [Object], [Object],
+          [Object], [Object],
+          [Object], [Object],
+          [Object]
+        ],
+        rateCard: [ [Object], [Object], [Object], [Object] ]
+      }
+    }
+ * /
+```
+
+#### Parameters
+
+N/A
+
+#### Returns
+
+`Promise`<`SolaceRiskSeries | undefined | unknown` >
 <br/>
 
 ---
