@@ -54,6 +54,7 @@ Note that not all tokens are supported for all chainIDs. To see a full list of s
 ### Obtaining bond price for BondTellerMatic on Matic Mainnet
 ```js
 import { solaceUtils, Bonder } from "@solace-fi/sdk"
+const { getSigner } = solaceUtils
 const signer = await getSigner()
 const bonder = new Bonder(137, signer, "matic")
 const bondPrice = await bonder.bondPrice()
