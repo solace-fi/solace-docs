@@ -15,6 +15,7 @@ The same syntax for creating the [`PolicyHolder`](./sending-transactions) object
 ### Obtaining information on a staked position on Matic
 ```js
 import { solaceUtils, Staker } from "@solace-fi/sdk"
+const { getSigner } = solaceUtils
 const signer = await getSigner()
 const staker = new Staker(137, signer)
 const stakingInfo = await staker.locks(1)
