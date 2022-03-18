@@ -2,22 +2,21 @@
 sidebar_position: 0
 ---
 
-# Introduction
+# Overview
 
-Solace is a system with many interconnected components, each fulfilling its role providing overall integrity to the protocol. Below are the major components of this protocol and their purpose:
+In the following sections, we will describe all elements of Solace's architecture:
 
-**1. Bonds:** Mechanism in Olympus Pro style, that allows users to buy  $SOLACE with discount  through bonding variety of assets so Protocol could own its underwriting capital and liquidity.
+#### 1. [Core MultiSig](core-multisig)
+#### 2. [LaunchDAO](launch-dao)
+#### 3. [Underwriting pool](underwriting-pool)
+#### 4. [Premium Pool](premium-pool)
+#### 5. [Bonding Infrastructure](bonding-infrastructure)
+#### 6. [Staking Contract](staking-contract)
+#### 7. [Data Pipeline Process](data-pipeline)
+#### 8. [Ranking Protocols](ranking-protocols)
+#### 9. [Rating Engine](rating-engine)
+#### 10. [Protocol Submission Process](protocol-submissions)
+#### 11. [Risk Assessment Infrastructure](risk-assessment-infra)
 
-**2. Staking:** Mechanism for users to get revenue from Protocol’s activities, token distribution and to unlock the governance rights.
 
-**3. Underwriting Pool:** Multi-collateral capital pool, owned by Protocol, underwrites the risk across multiple risk assessment models. This pool is leveraged to back the risk of sold coverage policies and compensate losses for policyholders (within coverage limit).
-
-**4. Risk Assessment:** A combination of risk assessment models distribute coverage capacity (granted by the underwriting pool) across their respective products.
-
-**5. Coverage Products:** A suite of smart contracts managed by risk assessment models that allow users to purchase coverage.
-
-**6. Coverage Policies:** NFT (ERC-721) tokens that represent underwriters’ obligation to pay out financial losses carried by the policyholders in the event of a technical failure or exploit.
-
-**7. Claims Assessment:** A parametric auto claims assessment system (aka PACLAS) monitors coverage policies, determines financial losses, and signs proof that allows users to submit a claim transaction and receive a pay out.
-
-**8. Governance:** Solace Launch DAO (later community-run Solace DAO) directs the protocol, defines incentives, and updates system components through a decentralized operational model.
+Our risk management team is building scalable pipelines that can become increasingly decentralized as the community grows. For the Solace Wallet coverage the main task was to aggregate enough data to be able to come up with predictive variables for the likelihood of exploits. The goal is to allow the community to contribute to this data aggregation as well as come up with their own analysis and judgements, ultimately increasing the awareness and data availability in the whole DeFi space. Governance will play a key role here and all submits will be reviewed by the governance members through voting.

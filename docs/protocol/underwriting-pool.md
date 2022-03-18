@@ -1,31 +1,36 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Underwriting Pool
+# The Underwriting Pool
 
-Solace is acquiring Protocol's own underwriting capital (Protocol Owned Liquidity model) to increase capital loyalty and to take the underwriting risk away from individual users.
+In order to pay out claims, SOLACE utilizes a pool from which it will take money from if a covered protocol is hacked. This pool is funded through Solace bonds from users who want to provide their assets in return for yield from staking.
 
-Users can purchase $SOLACE bonds for a variety of assets and Solace sends received assets to the underwriting pool that backs risks across all products. $SOLACE will also be used as an underwriting asset and for paying out claims. Solace Protocol owns this pool, and in a loss event payouts will be made from this pool.
+During the beginning of the protocol, users provided their assets to the Solace's first uderwriting pool from September to November 2021 and received $SOLACE rewards over this period. Such an approach has two drawbacks:
 
-How it works:
+1. For users: In this case, users share the risks. Since payments are made from the Underwriting pool, the volume of the pool can decrease. This leads to a loss of users' funds.
+2. For Solace: If users are able to remove assets from the Underwriting pool whenever they want, it leads to dynamic changing of the underwriting pool size. Hence, it was impossible to guarantee the availability of the necessary amount of funds in the pool to pay all obligations.
 
-- All funds accumulate in a multi-collateral Underwriting Pool owned by Solace. This pool fulfills any potential claims and covers financial losses. Now users are able to choose what asset to get as a payout.
+Therefore, the Solace core team moved to the bonding mechanics to give users $SOLACE at a discount.
 
-- The revenue from the underwriting activity flows mostly to staked $SOLACE (a small fee will go to risk strategists, risk managers, and the DAO treasury in the future as we scale up the architecture).
+## Motives using bonding mechanics
 
-**These mechanisms open up some attractive opportunities and features for DeFi space:**
+### What is the main motivation for a person to send his assets into the Underwriting pool? 
 
-- Users and funds can participate in underwriting activity with no risks of financial loss in case of insured events, and still earning yield from premiums and bonds sales and $SOLACE distribution.
+In normal market activities, bonds give $SOLACE to users at a discount.
 
-- Anyone who wants to contribute to DeFi insurance can withdraw funds at any time with no influence on coverage capacity.
+### What conditions are desirable for Solace?
+Users should keep their funds as long as possible in the protocol, and bonding allows Solace to ensure these requirements to a certain degree. 
 
-- Solace Protocol doesn’t lose attraction in the eyes of capital providers after insured events.
+### How does it work?
+The user sends one of the allowed assets to the protocol through the Solace interface. In order to do so, the user needs to choose a crypto asset (it is DAI, ETH, USDC, SCP, WBTC, USDT) and confirm transactions that transfer crypto assets from the user’s address to Solace Underwiring Pool. In return, the user will receive SOLACE tokens with a 20 % discount. 
 
-- Owning the exact amount of the underwriting capital it needs to meet the demand helps to achieve higher capital efficiency.
+<b>NOTE:</b> The protocol takes 5% of all bonds to the DAO multisig to contribute to paying contributers and the core teams.
 
-- Available variety of assets for bonding open up the underwriting market for many users.
+## Underwriting Pool on Ethereum
 
-- Users can choose in which token they want to receive a payout.
+<div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
 
-- **To contribute to DeFi safety you literally just need to buy/bond $SOLACE and stake it. Easy for everyone, helpful for everybody.**
+<img src="/img/UWP.png" alt="Underwriting Pool" width="600px" />
+
+</div>
