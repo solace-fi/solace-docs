@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 ---
+import ReactPlayer from 'react-player'
 
 # Buy Wallet Coverage
-
+---
 You will need DAI to purchase wallet cover. Once you have DAI, follow these steps:
 
 1. First, open solace.fi and connect your wallet that has the tokens you want to protect.
@@ -13,3 +14,6 @@ You will need DAI to purchase wallet cover. Once you have DAI, follow these step
     2. Highest position value + 20%
     3. Manual input value
 5. Go to the Policy Balance section and deposit a balance of DAI. Confirm the transaction deposit the DAI and create the policy.
+
+Follow the Step by Step Instructions here:
+<ReactPlayer playing controls url='https://www.youtube.com/watch?v=meb8JXP8iYA' />

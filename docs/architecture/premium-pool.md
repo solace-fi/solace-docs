@@ -1,9 +1,9 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 # Premium Pool
-
+---
 The premium pool is a multisig controlled by members of the Solace core team that accumulates users' crypto assets from buying insurance Wallet Coverage. 
 
 It is important to note that deposits into Solace Wallet Coverage don’t directly go to the Premium pool. All users’ deposits into Solace Wallet Coverage are held by the Wallet Coverage contract until the Solace team charges premiums which sends them to the Premium pool.

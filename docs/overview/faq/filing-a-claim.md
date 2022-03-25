@@ -2,10 +2,12 @@
 sidebar_position: 6
 ---
 
-# Filing a Claim
+# No Claim Filing
 
-### How do I file a claim?
-Fortunately, you will not have to do that. As long as you have the wallet connected to Solace, the protocol will be able to read your wallet activity and detect the loss event.
+---
+
+### How does Solace pay for loss events without a claims process?
+Solace detects loss events in policyholder's wallets. As long as a policyholder has active coverage on their wallet that experienced a loss event, Solace will pay out claims within one week.
 
 ### When is loss of funds determined for a claim?
-Solace will utilize a parametric auto claims assessment system (PACLAS), which monitors coverage policies, determines financial losses, and signs proof that allows users to submit a claim transaction and receive a pay out. 
+Solace will utilize a parametric auto claims assessment system (PACLAS), which monitors coverage policies, determines financial losses, and signs proof that allows users to receive a pay out within one week. 

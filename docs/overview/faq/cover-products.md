@@ -4,35 +4,13 @@ sidebar_position: 1
 
 # Cover Products
 
-### What cover products does Solace offer?
-Currently, we support smart contract cover only. More coverage capabilities are in the works by both Solace core team and community risk managers. Please stay updated for new releases through Twitter and Discord.
+---
 
-Each product provides policies for a single protocol, across all of its smart contracts that hold value, so the pricing and capacity is set on a by-protocol basis. Though a new version of a protocol requires a new product (e.g., Uniswap V2 versus Uniswap V3).
+### What does Solace Wallet Coverage cover for?
+Solace Wallet Coverage insures against smart contract exploits and hacks. Please read the <u>Terms & Conditions</u> for the full disclosure of what constitutes a covered event.
 
-### What protocols are covered?
-Any protocol with smart contracts that are older than 3 months are covered by Solace's wallet coverage. Protocols that are younger than 3 months that want to get covered with Solace need to submit a form to Solace.
+Below is the list of covered loss events. 
 
-Whenever a wallet is analyzed for an unknown or new contract, Solace stores that protocol in a queue for the Risk Management team to input into a risk category. In order for the process to be expedited, protocols should submit a form to Solace.
-
-### How is wallet coverage priced?
-Pricing is based on the protocols your wallet has positions in and the size of each position. Solace analyzes each protocol's risk level using the Risk Rating Engine. By aggregating the risk levels of each position, Solace can determine the fees it would cost to cover over all positions.
-
-There are currently four risk levels we categorize protocols on. The higher the risk, the higher the fee is for that position. 
-
-| Risk Level | Percentage Fee | Tier Rank | Description |
-|------------|----------------|-----------|-------------|
-| 1 | 2% | S | Safe |
-| 2 | 2.5% | A | Mostly Safe |
-| - | - | B | - |
-| 3 | 8% | C | Risky |
-| - | - | D | - |
-| - | - | E | - |
-| 0 | 20% | F | Unknown |
-
-As the ensemble of risk engines increases as Solace's adoption increases, we hope to create more granular levels to follow the S-F tier system. 
-
-### What loss events does Solace cover?
-Below is a brief list of possible covered events. Please read Terms & Conditions for the full disclosure of what constitutes a covered event and refer to Claims Assessment and Open a Claim to learn more about the claims process and the mechanics behind it.
 Solace will provide coverage policies across following exploits types:
 - Minting vulnerability
 - Flash loan attack
@@ -47,15 +25,22 @@ Solace coverage does not provide for:
 - Phishing attacks
 - Front-end attacks
 
-Solace only pays out financial loss (within coverage limit) and not the overall position covered by the end customer.
+Solace pays out financial loss at the current market value of the position at the time of the loss event within a user's coverage limit.
+
+### What protocols are covered?
+Currently, Solace's protocol capabalities is capped on the list of protocols that exist in Zapper's API, which is what Solace's Rating Engine utilizes to get protocol information and a wallet's protocol positions. Check out the latest list of covered protocols [<u>here</u>](https://risk-data.solace.fi/series).
+
+---
 
 ### How are payouts given to users?
-Solace is building the Parametric Automated Claims Assessment System (PACLAS), which when complete, will pay users within one week of a loss event detection. No need to file a claim. PACLAS will do it for you.
-
-### How does Solace accumulate funds to cover all policies?
-Solace has the Underwriting Pool, which is a pool of funds that holds several assets (ETH, WBTC, Stables, SOLACE) used to pay out claims. The pool is primarily funded through bonds. Users can buy bonds with their assets in exchange for $SOLACE (https://solace.fi/bond). With the bond, users can either vest the token over the 7 day period, or they can autostake 
+Solace is building the Parametric Automated Claims Assessment System (PACLAS), which when complete, will pay users within one week of a loss event detection. No need to file a claim.
 
 ### Can claim redemptions ever outweigh the size of the Underwriting Pool?
 Currently, no. There is a safety mechanism designed to check how much ETH is available in the protocol’s reserves when you buy cover. If the amount of cover nears the reserve’s capacity, the protocol will not sell policies.
 
-This can potentially change as Solace scales.  As the reserve increases in size, there is a greater availability to oversell policies and leverage the reserve given that the probability of all positions getting exploited is very low.
+This can change as Solace scales.  As the  increases in size, there is a greater availability to oversell policies and leverage the reserve given that the probability of all positions getting exploited is very low.
+
+### How does Solace accumulate funds to cover all policies?
+Solace has the Underwriting Pool (UWP), which is a pool of funds that holds several assets (ETH, WBTC, Stables, SOLACE) used sell policies against, utilize in yield generation strategies, and borrow against to pay out claims. 
+
+Learn more about the UWP [<u>here</u>](/docs/protocol/underwriting-pool.md).

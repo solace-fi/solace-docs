@@ -1,9 +1,9 @@
 ---
-sidebar_position: 7
+sidebar_position: 5
 ---
 
 # Data Pipeline
-
+---
 The two main data sources necessary for the rating process are:
 1. Transactional data:
     - Historical exploits data at the time of exploit

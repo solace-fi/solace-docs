@@ -35,7 +35,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Protocol Design',
+    title: 'Protocol Architecture',
     link: 'docs/protocol/intro',
     description: (
       <>

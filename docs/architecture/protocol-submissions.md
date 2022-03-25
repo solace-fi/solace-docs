@@ -1,9 +1,9 @@
 ---
-sidebar_position: 10
+sidebar_position: 8
 ---
 
 # Submission Requests
-
+---
 ## Submitting data to the pipeline
 
 In order to submit data or expert judgement to the pipeline, users can fill a protocol submission form and provide information necessary for governance to evaluate the request. If the request is accepted, the data or judgement will be added to the pipeline, and the submitter will receive a reward in the form of $SOLACE. 

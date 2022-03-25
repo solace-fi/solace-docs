@@ -48,8 +48,8 @@ module.exports = {
           position: "right",
         },
         {
-          label: "Protocol Design",
-          to: "docs/protocol/intro",
+          label: "Architecture",
+          to: "docs/architecture/intro",
           position: "right",
         },
         {

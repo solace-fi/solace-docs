@@ -1,10 +1,15 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
+import ReactPlayer from 'react-player'
 
 # How to Stake
+---
 This section will review how to do each function of the Solace staking mechanism.
 
+Watch the step-by-step instructions here:
+<ReactPlayer playing controls url='https://youtu.be/RUn4QFZilTU' />
+---
 ## How To Stake $SOLACE
 
 1. Open [Solace](https://solace.fi/) and go to the <b>Stake</b> page.

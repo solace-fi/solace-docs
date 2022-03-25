@@ -3,7 +3,7 @@ sidebar_position: 6
 ---
 
 # For Projects & DAOs
+---
+Solace is currently building Solace Native, crypto's first systemic solution to native insurance for protocols, DAOs, and treasuries to insure their assets and community members. 
 
-If you want to get coverage for protocol or DAO on Solace, feel free to let us know via our [**Discord**](https://discord.gg/JkPQSWCX). 
-
-When we receive the information, we will take a close look and together we decide what to do next.
+If your protocol, DAO, or treasury wants to get involved with the upcoming native coverage product, reach out to the Growth team on the Solace [**Discord**](https://discord.gg/JkPQSWCX) and mention your interest to join the first Solace Native cohort.

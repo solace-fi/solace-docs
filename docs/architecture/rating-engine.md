@@ -1,15 +1,15 @@
 ---
-sidebar_position: 9
+sidebar_position: 7
 ---
 
 # Rating Engine
-
+---
 Version 1 of the Rating Engine was designed especially for the Solace Wallet Coverage. The two main pillars of the engine are
 
 1. [<u>Get Balances</u>](https://github.com/solace-fi/solace-risk-api/tree/main/api/balances)
 2. [<u>Get Scores</u>](https://github.com/solace-fi/solace-risk-api/tree/main/api/scores)
 
-## Get Balances: Aggregates position from an address
+### Get Balances: Aggregates Position from an Address
 
 To be able to assess the premium, Solace first needs to fetch the positions in the users wallet. That is achieved through the balances method, which utilizes [<u>Zapper´s API</u>](https://api.zapper.fi/api/static/index.html#/) and only requires two parameters:
 
@@ -17,7 +17,7 @@ To be able to assess the premium, Solace first needs to fetch the positions in t
 2. List of chain IDs (The balances in USD are aggregated for each protocol in the account across different chains)
 
 
-## Get Scores: Calculates the premium for the portfolio in each account
+### Get Scores: Calculates the Premium for the Portfolio in Each Account
 
 The rating engine requires only two parameters and four lookup tables to evaluate the total premium. The two parameters are:
 
@@ -26,8 +26,8 @@ The rating engine requires only two parameters and four lookup tables to evaluat
 
 For each position, the unique ID of the protocol and its position size in USD is required.
 
-### Lookup tables
-
+## Lookup Tables
+---
 There are currently four lookup tables needed to calculate the premium for the portfolio of positions:
 
 1. <b>Rate Table:</b> Contains rate values for each risk tier. Risk rate online(RROL) covers expected loss and risk load covers unexpected loss and finally rate on line(ROL) wich is the rate after being adjusted for unexpected loss.
@@ -40,7 +40,7 @@ There are currently four lookup tables needed to calculate the premium for the p
 
 Together, these lookup tables form the main components of the [<u>rating series</u>](https://risk-data.solace.fi/series).
 
-### Discount over stacked cover
+### Wallet Cover over Stacked Cover
 
 By aggregating risk loads by category instead of by each protocol,  Solace is able to diversify the risk load so that the total premium for the whole account ends up being cheaper than buying cover for each position in the portfolio. The discount varies depending on the structure of the portfolio, but a discount anywhere between 10 and 20% can be expected for an account with multiple positions.
 

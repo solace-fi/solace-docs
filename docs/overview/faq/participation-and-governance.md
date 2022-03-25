@@ -3,7 +3,7 @@ sidebar_position: 9
 ---
 
 # Participation and Governance
-
+---
 ### How do I unlock voting power with my $SOLACE?
 If you stake your $SOLACE, each token is worth one vote. You can increase your voting power up to 4x by locking your $SOLACE tokens. 
 

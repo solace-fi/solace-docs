@@ -1,9 +1,10 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
+import ReactPlayer from 'react-player'
 
 # How To Bond
-
+---
 To buy $SOLACE through bonding you should follow the next steps:
 
 1. Open [Solace](https://solace.fi/) and go to the <b>Bonds</b> page.
@@ -20,3 +21,7 @@ If you do not auto-stake into a lock and want to redeem your $SOLACE bond, follo
 3. Choose 'Redeem', enter the amount of tokens and click <b>Claim</b>.
 
 Remember, that bonds will be linearly unlocked and vested over seven days.
+
+Follow the step-by-step instructions here:
+
+<ReactPlayer playing controls url='https://youtu.be/RUn4QFZilTU' />

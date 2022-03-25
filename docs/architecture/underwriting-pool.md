@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # The Underwriting Pool
-
+---
 In order to pay out claims, SOLACE utilizes a pool from which it will take money from if a covered protocol is hacked. This pool is funded through Solace bonds from users who want to provide their assets in return for yield from staking.
 
 During the beginning of the protocol, users provided their assets to the Solace's first uderwriting pool from September to November 2021 and received $SOLACE rewards over this period. Such an approach has two drawbacks:
@@ -13,8 +13,8 @@ During the beginning of the protocol, users provided their assets to the Solace'
 
 Therefore, the Solace core team moved to the bonding mechanics to give users $SOLACE at a discount.
 
-## Motives using bonding mechanics
-
+## Understanding Bond Mechanics
+---
 ### What is the main motivation for a person to send his assets into the Underwriting pool? 
 
 In normal market activities, bonds give $SOLACE to users at a discount.

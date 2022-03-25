@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Glossary
-
+---
 **APR (Annual Percentage Rate):** The APR is the annual rate a borrower must pay each year, It represents the yearly cost of a loan. The APR is calculated with a simple interest rate and does not take into account compounding. 
 
 **APY (Annual Percentage Yield):** The APY is the annual rate of return of a deposit, taking into account compounding interest. (Example: a $1000 deposit compounded annually with a 6% APY  would return $1000 * (1.06) the first year and ($1000 * (1.06)) * 1.06 the second year, etc.) 

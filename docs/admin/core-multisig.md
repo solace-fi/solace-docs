@@ -3,6 +3,7 @@ sidebar_position: 1
 ---
 
 # Core Multisig
+---
 The [Core Multisig](https://gnosis-safe.io/app/eth:0xc47911f768c6fE3a9fe076B95e93a33Ed45B7B34/balances) is controlled by some of the earlier members of the core team using a 3 of 9 signature scheme. 
 
 <div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
