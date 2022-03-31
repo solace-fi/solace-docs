@@ -58,7 +58,7 @@ Activates policy for `policyholder_`
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| address | The ID of the newly minted policy.
+|`policyID`| uint256 | The ID of the newly minted policy.
 ### updateCoverLimit
 ```solidity
   function updateCoverLimit(
@@ -133,7 +133,7 @@ Returns the policyholder's account account balance in **USD**.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`balance`| address | The policyholder's account balance in **USD**.
+|`balance`| uint256 | The policyholder's account balance in **USD**.
 ### maxCover
 ```solidity
   function maxCover(
@@ -146,7 +146,7 @@ The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`|  | The max amount of cover.
+|`cover`| uint256 | The max amount of cover.
 ### activeCoverLimit
 ```solidity
   function activeCoverLimit(
@@ -159,7 +159,7 @@ Returns the active cover limit in **USD** to 18 decimal places. In other words, 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`|  | The active cover limit.
+|`amount`| uint256 | The active cover limit.
 ### availableCoverCapacity
 ```solidity
   function availableCoverCapacity(
@@ -172,7 +172,7 @@ Determine the available remaining capacity for new cover.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`availableCoverCapacity_`|  | The amount of available remaining capacity for new cover.
+|`availableCoverCapacity_`| uint256 | The amount of available remaining capacity for new cover.
 ### rewardPointsOf
 ```solidity
   function rewardPointsOf(
@@ -190,7 +190,7 @@ Get the reward points that a policyholder has in **USD** to 18 decimal places.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`rewardPoints_`| address | The reward points for the policyholder.
+|`rewardPoints_`| uint256 | The reward points for the policyholder.
 ### premiumsPaidOf
 ```solidity
   function premiumsPaidOf(
@@ -208,7 +208,7 @@ Get the total premium that a policyholder has in **USD** to 18 decimal places (d
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`premiumsPaid_`| address | The total premium paid for the policyholder.
+|`premiumsPaid_`| uint256 | The total premium paid for the policyholder.
 ### policyOf
 ```solidity
   function policyOf(
@@ -226,7 +226,7 @@ Gets the policyholder's policy ID.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| address | The policy ID.
+|`policyID`| uint256 | The policy ID.
 ### policyStatus
 ```solidity
   function policyStatus(
@@ -244,7 +244,7 @@ Returns true if the policy is active, false if inactive
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| uint256 | True if policy is active. False otherwise.
+|`status`| bool | True if policy is active. False otherwise.
 ### registry
 ```solidity
   function registry(
@@ -257,7 +257,7 @@ Returns [`Registry`](./Registry) contract address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`registry_`|  | The `Registry` address.
+|`registry_`| address | The `Registry` address.
 ### riskManager
 ```solidity
   function riskManager(
@@ -270,7 +270,7 @@ Returns [`RiskManager`](./RiskManager) contract address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`riskManager_`|  | The `RiskManager` address.
+|`riskManager_`| address | The `RiskManager` address.
 ### paused
 ```solidity
   function paused(
@@ -283,7 +283,7 @@ Returns true if the product is paused, false if not.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`|  | True if product is paused.
+|`status`| bool | True if product is paused.
 ### policyCount
 ```solidity
   function policyCount(
@@ -296,7 +296,7 @@ Gets the policy count (amount of policies that have been purchased, includes ina
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`count`|  | The policy count.
+|`count`| uint256 | The policy count.
 ### maxRateNum
 ```solidity
   function maxRateNum(
@@ -309,7 +309,7 @@ Gets the max rate numerator.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`maxRateNum_`|  | the max rate numerator.
+|`maxRateNum_`| uint256 | the max rate numerator.
 ### maxRateDenom
 ```solidity
   function maxRateDenom(
@@ -322,7 +322,7 @@ Gets the max rate denominator.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`maxRateDenom_`|  | the max rate denominator.
+|`maxRateDenom_`| uint256 | the max rate denominator.
 ### chargeCycle
 ```solidity
   function chargeCycle(
@@ -335,7 +335,7 @@ Gets the charge cycle duration.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`chargeCycle_`|  | the charge cycle duration in seconds.
+|`chargeCycle_`| uint256 | the charge cycle duration in seconds.
 ### coverLimitOf
 ```solidity
   function coverLimitOf(
@@ -370,7 +370,7 @@ Only after the cooldown has passed, is a user able to withdraw their entire acco
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cooldownPeriod_`|  | The cooldown period in seconds.
+|`cooldownPeriod_`| uint256 | The cooldown period in seconds.
 ### cooldownStart
 ```solidity
   function cooldownStart(
@@ -388,7 +388,7 @@ The Unix timestamp that a policyholder's cooldown started. If cooldown has not s
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cooldownStart_`| address | The cooldown period start expressed as Unix timestamp
+|`cooldownStart_`| uint256 | The cooldown period start expressed as Unix timestamp
 ### referralReward
 ```solidity
   function referralReward(
@@ -401,7 +401,7 @@ Gets the current reward amount in USD for a valid referral code.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`referralReward_`|  | The referral reward
+|`referralReward_`| uint256 | The referral reward
 ### referralThreshold
 ```solidity
   function referralThreshold(
@@ -414,7 +414,7 @@ Gets the threshold premium amount in USD that an account needs to have paid, for
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`referralThreshold_`|  | The referral threshold
+|`referralThreshold_`| uint256 | The referral threshold
 ### isReferralOn
 ```solidity
   function isReferralOn(
@@ -427,7 +427,7 @@ Returns true if referral rewards are active, false if not.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`isReferralOn_`|  | True if referral rewards are active, false if not.
+|`isReferralOn_`| bool | True if referral rewards are active, false if not.
 ### isReferralCodeUsed
 ```solidity
   function isReferralCodeUsed(
@@ -442,7 +442,7 @@ A policyholder can only use a referral code once. A policyholder is then ineligi
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`isReferralCodeUsed_`| address | True if the policyholder has previously used a valid referral code, false if not
+|`isReferralCodeUsed_`| bool | True if the policyholder has previously used a valid referral code, false if not
 ### isReferralCodeValid
 ```solidity
   function isReferralCodeValid(
@@ -474,7 +474,7 @@ Get referrer from referral code, returns 0 address if invalid referral code.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`referrer`| bytes | The referrer address, returns 0 address if invalid referral code.
+|`referrer`| address | The referrer address, returns 0 address if invalid referral code.
 ### minRequiredAccountBalance
 ```solidity
   function minRequiredAccountBalance(
@@ -706,7 +706,7 @@ Returns true if there is sufficient capacity to update a policy's cover limit, f
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`acceptable`| uint256 | True there is sufficient capacity for the requested new cover limit, false otherwise.
+|`acceptable`| bool | True there is sufficient capacity for the requested new cover limit, false otherwise.
 ### _deposit
 ```solidity
   function _deposit(
@@ -849,7 +849,7 @@ Return true if cooldown has passed for a policyholder, false if cooldown has not
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| address | if cooldown has passed, false if cooldown has not started or has not passed.
+|`True`| bool | if cooldown has passed, false if cooldown has not started or has not passed.
 ### _processReferralCode
 ```solidity
   function _processReferralCode(
@@ -883,7 +883,7 @@ Internal helper function to determine if referralCode_ is an empty bytes value
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`True`| bytes | if empty referral code, false if not.
+|`True`| bool | if empty referral code, false if not.
 ### _getEIP712Hash
 ```solidity
   function _getEIP712Hash(
@@ -905,4 +905,4 @@ Returns the underlying principal asset for `Solace Cover Product`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`asset`|  | The underlying asset.
+|`asset`| contract IERC20 | The underlying asset.

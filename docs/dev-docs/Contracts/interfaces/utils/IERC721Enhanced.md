@@ -95,7 +95,7 @@ The permit typehash used in the `permit` signature.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`typehash`|  | The typehash for the `permit`.
+|`typehash`| bytes32 | The typehash for the `permit`.
 ### DOMAIN_SEPARATOR
 ```solidity
   function DOMAIN_SEPARATOR(
@@ -108,37 +108,7 @@ The domain separator used in the encoding of the signature for `permit`, as defi
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`seperator`|  | The domain seperator for `permit`.
-### listTokens
-```solidity
-  function listTokens(
-  ) external returns (uint256[] tokenIDs)
-```
-Lists all tokens.
-Order not specified.
-
-This function is more useful off chain than on chain.
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenIDs`|  | The list of token IDs.
-### listTokensOfOwner
-```solidity
-  function listTokensOfOwner(
-  ) external returns (uint256[] tokenIDs)
-```
-Lists the tokens owned by `owner`.
-Order not specified.
-
-This function is more useful off chain than on chain.
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenIDs`| address | The list of token IDs.
+|`seperator`| bytes32 | The domain seperator for `permit`.
 ### exists
 ```solidity
   function exists(
@@ -156,7 +126,7 @@ Determines if a token exists or not.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| uint256 | True if the token exists, false if it doesn't.
+|`status`| bool | True if the token exists, false if it doesn't.
 ## Events
 ### BaseURISet
 ```solidity

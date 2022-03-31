@@ -26,7 +26,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`index`| address | The index of the risk strategy.
+|`index`| uint256 | The index of the risk strategy.
 ### setWeightAllocation
 ```solidity
   function setWeightAllocation(
@@ -127,7 +127,7 @@ Checks is an address is an active strategy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | True if the strategy is active.
+|`status`| bool | True if the strategy is active.
 ### strategyAt
 ```solidity
   function strategyAt(
@@ -146,7 +146,7 @@ Enumerable `[1, numStrategies]`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`strategy`| uint256 | The product address.
+|`strategy`| address | The product address.
 ### numStrategies
 ```solidity
   function numStrategies(
@@ -159,7 +159,7 @@ Returns the number of registered strategies..
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`count`|  | The number of strategies.
+|`count`| uint256 | The number of strategies.
 ### strategyInfo
 ```solidity
   function strategyInfo(
@@ -177,10 +177,10 @@ Returns the risk strategy information.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`id`| address | The id of the risk strategy.
-|`weight`|  | The risk strategy weight allocation.
-|`status`|  | The status of risk strategy.
-|`timestamp`|  | The added time of the risk strategy.
+|`id`| uint256 | The id of the risk strategy.
+|`weight`| uint32 | The risk strategy weight allocation.
+|`status`| enum IRiskManager.StrategyStatus | The status of risk strategy.
+|`timestamp`| uint256 | The added time of the risk strategy.
 
 ### weightPerStrategy
 ```solidity
@@ -199,7 +199,7 @@ Returns the allocated weight for the risk strategy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`weight`| address | The risk strategy weight allocation.
+|`weight`| uint32 | The risk strategy weight allocation.
 ### maxCoverPerStrategy
 ```solidity
   function maxCoverPerStrategy(
@@ -212,7 +212,7 @@ The maximum amount of cover for given strategy can sell.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`| address | The max amount of cover in wei.
+|`cover`| uint256 | The max amount of cover in wei.
 ### activeCoverLimit
 ```solidity
   function activeCoverLimit(
@@ -225,7 +225,7 @@ Returns the current amount covered (in wei).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`|  | The covered amount (in wei).
+|`amount`| uint256 | The covered amount (in wei).
 ### activeCoverLimitPerStrategy
 ```solidity
   function activeCoverLimitPerStrategy(
@@ -243,7 +243,7 @@ Returns the current amount covered (in wei).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| address | The covered amount (in wei).
+|`amount`| uint256 | The covered amount (in wei).
 ### maxCover
 ```solidity
   function maxCover(
@@ -256,7 +256,7 @@ The maximum amount of cover that Solace as a whole can sell.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`|  | The max amount of cover in wei.
+|`cover`| uint256 | The max amount of cover in wei.
 ### weightSum
 ```solidity
   function weightSum(
@@ -269,7 +269,7 @@ Returns the sum of allocation weights for all strategies.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`sum`|  | WeightSum.
+|`sum`| uint32 | WeightSum.
 ### minCapitalRequirement
 ```solidity
   function minCapitalRequirement(
@@ -282,7 +282,7 @@ The minimum amount of capital required to safely cover all policies.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`mcr`|  | The minimum capital requirement.
+|`mcr`| uint256 | The minimum capital requirement.
 ### minCapitalRequirementPerStrategy
 ```solidity
   function minCapitalRequirementPerStrategy(
@@ -300,7 +300,7 @@ The minimum amount of capital required to safely cover all policies.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`mcr`| address | The minimum capital requirement.
+|`mcr`| uint256 | The minimum capital requirement.
 ### partialReservesFactor
 ```solidity
   function partialReservesFactor(
@@ -313,7 +313,7 @@ Multiplier for minimum capital requirement.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`factor`|  | Partial reserves factor in BPS.
+|`factor`| uint16 | Partial reserves factor in BPS.
 ### setPartialReservesFactor
 ```solidity
   function setPartialReservesFactor(

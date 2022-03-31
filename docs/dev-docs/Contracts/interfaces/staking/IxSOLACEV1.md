@@ -98,7 +98,7 @@ Shares of the pool (xSOLACE) are minted to msg.sender.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountXSolace`| address | The amount of **xSOLACE** minted.
+|`amountXSolace`| uint256 | The amount of **xSOLACE** minted.
 ### unstake
 ```solidity
   function unstake(

@@ -43,7 +43,7 @@ Calculates the amount of token in needed for an amount of [**SOLACE**](./../SOLA
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountIn`| address | The amount of `tokenIn` needed.
+|`amountIn`| uint256 | The amount of `tokenIn` needed.
 ### calculateAmountOut
 ```solidity
   function calculateAmountOut(
@@ -63,7 +63,7 @@ Calculates the amount of [**SOLACE**](./../SOLACE) out for an amount of token in
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountOut`| address | The amount of [**SOLACE**](./../SOLACE) out.
+|`amountOut`| uint256 | The amount of [**SOLACE**](./../SOLACE) out.
 ### purchaseableXSolace
 ```solidity
   function purchaseableXSolace(
@@ -82,7 +82,7 @@ Does not include the amount they've already redeemed.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| address | The amount of [**xSOLACEV1**](./xSOLACEV1).
+|`amount`| uint256 | The amount of [**xSOLACEV1**](./xSOLACEV1).
 ### purchaseableSolace
 ```solidity
   function purchaseableSolace(
@@ -101,7 +101,7 @@ Does not include the amount they've already redeemed.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| address | The amount of [**SOLACE**](./../SOLACE).
+|`amount`| uint256 | The amount of [**SOLACE**](./../SOLACE).
 ### redeem
 ```solidity
   function redeem(
@@ -165,7 +165,7 @@ Redeems a farmers rewards.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`actualAmountIn`| address | The amount of tokens used.
+|`actualAmountIn`| uint256 | The amount of tokens used.
 ### setReceiver
 ```solidity
   function setReceiver(

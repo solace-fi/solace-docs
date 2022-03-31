@@ -43,7 +43,7 @@ Calculates the amount of token in needed for an amount of [**xSOLACE**](./xSOLAC
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountIn`| address | The amount of `tokenIn` needed.
+|`amountIn`| uint256 | The amount of `tokenIn` needed.
 ### calculateAmountOut
 ```solidity
   function calculateAmountOut(
@@ -63,7 +63,7 @@ Calculates the amount of [**xSOLACE**](./xSOLACE) out for an amount of token in.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountOut`| address | The amount of [**xSOLACE**](./xSOLACE) out.
+|`amountOut`| uint256 | The amount of [**xSOLACE**](./xSOLACE) out.
 ### purchaseableVestedXSolace
 ```solidity
   function purchaseableVestedXSolace(
@@ -82,7 +82,7 @@ Does not include the amount they've already redeemed.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| address | The amount of vested [**xSOLACE**](./xSOLACE).
+|`amount`| uint256 | The amount of vested [**xSOLACE**](./xSOLACE).
 ### redeem
 ```solidity
   function redeem(
@@ -146,7 +146,7 @@ Redeems a farmers rewards.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`actualAmountIn`| address | The amount of tokens used.
+|`actualAmountIn`| uint256 | The amount of tokens used.
 ### supportTokens
 ```solidity
   function supportTokens(

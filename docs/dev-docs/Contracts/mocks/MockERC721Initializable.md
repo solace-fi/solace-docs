@@ -35,7 +35,7 @@ Mints a new token.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenID`| address | The ID of the new token.
+|`tokenID`| uint256 | The ID of the new token.
 ### burn
 ```solidity
   function burn(
@@ -62,7 +62,7 @@ Count of all tokens created.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`count`|  | Count.
+|`count`| uint256 | Count.
 ### doThing1
 ```solidity
   function doThing1(

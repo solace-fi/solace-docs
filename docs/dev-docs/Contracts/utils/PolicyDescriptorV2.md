@@ -36,7 +36,7 @@ Describes a policy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`description`| contract IPolicyManager | The URI of the ERC721-compliant metadata.
+|`description`| string | The URI of the ERC721-compliant metadata.
 ### baseURI
 ```solidity
   function baseURI(
@@ -49,7 +49,7 @@ Returns the base of the URI descriptor.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`base`|  | The base URI of the ERC721-compliant metadata.
+|`base`| string | The base URI of the ERC721-compliant metadata.
 ### setBaseURI
 ```solidity
   function setBaseURI(

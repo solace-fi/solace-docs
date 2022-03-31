@@ -37,7 +37,7 @@ Information about a policy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`info`| uint256 | info in a struct.
+|`info`| struct IPolicyManager.PolicyInfo | info in a struct.
 ### getPolicyInfo
 ```solidity
   function getPolicyInfo(
@@ -55,13 +55,13 @@ Information about a policy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyholder`| uint256 | The address of the policy holder.
-|`product`|  | The product of the policy.
-|`coverLimit`|  | The amount covered for the policy.
-|`expirationBlock`|  | The expiration block of the policy.
-|`price`|  | The price of the policy.
-|`positionDescription`|  | The description of the covered position(s).
-|`riskStrategy`|  | The risk strategy of the covered product.
+|`policyholder`| address | The address of the policy holder.
+|`product`| address | The product of the policy.
+|`coverLimit`| uint256 | The amount covered for the policy.
+|`expirationBlock`| uint40 | The expiration block of the policy.
+|`price`| uint24 | The price of the policy.
+|`positionDescription`| bytes | The description of the covered position(s).
+|`riskStrategy`| address | The risk strategy of the covered product.
 ### getPolicyholder
 ```solidity
   function getPolicyholder(
@@ -79,7 +79,7 @@ The holder of the policy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyholder`| uint256 | The address of the policy holder.
+|`policyholder`| address | The address of the policy holder.
 ### getPolicyProduct
 ```solidity
   function getPolicyProduct(
@@ -97,7 +97,7 @@ The product used to purchase the policy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`product`| uint256 | The product of the policy.
+|`product`| address | The product of the policy.
 ### getPolicyExpirationBlock
 ```solidity
   function getPolicyExpirationBlock(
@@ -115,7 +115,7 @@ The expiration block of the policy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`expirationBlock`| uint256 | The expiration block of the policy.
+|`expirationBlock`| uint40 | The expiration block of the policy.
 ### getPolicyCoverLimit
 ```solidity
   function getPolicyCoverLimit(
@@ -151,7 +151,7 @@ The cover price in wei per block per wei multiplied by 1e12.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`price`| uint256 | The price of the policy.
+|`price`| uint24 | The price of the policy.
 ### getPositionDescription
 ```solidity
   function getPositionDescription(
@@ -170,7 +170,7 @@ Only makes sense in context of the product.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`positionDescription`| uint256 | The description of the covered position(s).
+|`positionDescription`| bytes | The description of the covered position(s).
 ### getPolicyRiskStrategy
 ```solidity
   function getPolicyRiskStrategy(
@@ -188,7 +188,7 @@ Returns the risk strategy of the product in policy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`strategy`| uint256 | The risk strategy address.
+|`strategy`| address | The risk strategy address.
 ### policyIsActive
 ```solidity
   function policyIsActive(
@@ -206,7 +206,7 @@ Checks if a policy is active.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| uint256 | True if the policy is active.
+|`status`| bool | True if the policy is active.
 ### policyHasExpired
 ```solidity
   function policyHasExpired(
@@ -224,7 +224,7 @@ Checks whether a given policy is expired.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| uint256 | True if the policy is expired.
+|`status`| bool | True if the policy is expired.
 ### totalPolicyCount
 ```solidity
   function totalPolicyCount(
@@ -260,7 +260,7 @@ Describes the policy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`description`| uint256 | The human readable description of the policy.
+|`description`| string | The human readable description of the policy.
 ### registry
 ```solidity
   function registry(
@@ -273,7 +273,7 @@ Returns [`Registry`](./Registry) contract address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`registry_`|  | The `Registry` address.
+|`registry_`| address | The `Registry` address.
 ### createPolicy
 ```solidity
   function createPolicy(
@@ -302,7 +302,7 @@ Can only be called by **products**.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| address | The policy ID.
+|`policyID`| uint256 | The policy ID.
 ### setPolicyInfo
 ```solidity
   function setPolicyInfo(
@@ -409,7 +409,7 @@ Checks is an address is an active product.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | Returns true if the product is active.
+|`status`| bool | Returns true if the product is active.
 ### numProducts
 ```solidity
   function numProducts(
@@ -422,7 +422,7 @@ Returns the number of products.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`count`|  | The number of products.
+|`count`| uint256 | The number of products.
 ### getProduct
 ```solidity
   function getProduct(
@@ -440,7 +440,7 @@ Returns the product at the given index.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`product`| uint256 | The address of the product.
+|`product`| address | The address of the product.
 ### addProduct
 ```solidity
   function addProduct(

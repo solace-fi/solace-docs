@@ -49,7 +49,7 @@ Assumes 1 [**SOLACE**](./../../SOLACE) payout.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`price_`|  | The price of the bond measured in `principal`.
+|`price_`| uint256 | The price of the bond measured in `principal`.
 ### calculateAmountOut
 ```solidity
   function calculateAmountOut(
@@ -113,7 +113,7 @@ Principal will be transferred from `msg.sender` using `allowance`.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`payout`| uint256 | The amount of [**SOLACE**](./../../SOLACE) in the bond.
-|`tokenID`| address | The ID of the newly created bond or lock.
+|`tokenID`| uint256 | The ID of the newly created bond or lock.
 ### depositWmatic
 ```solidity
   function depositWmatic(

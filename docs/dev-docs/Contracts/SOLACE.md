@@ -33,7 +33,7 @@ Returns true if `account` is authorized to mint [**SOLACE**](./SOLACE).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | True if `account` can mint, false otherwise.
+|`status`| bool | True if `account` can mint, false otherwise.
 ### mint
 ```solidity
   function mint(

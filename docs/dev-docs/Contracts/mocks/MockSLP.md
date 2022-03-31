@@ -32,7 +32,7 @@ Returns the first pair token.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`token`|  | The address of the first pair token.
+|`token`| address | The address of the first pair token.
 ### token1
 ```solidity
   function token1(
@@ -45,7 +45,7 @@ Returns the second pair token.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`token`|  | The address of the second pair token.
+|`token`| address | The address of the second pair token.
 ### getReserves
 ```solidity
   function getReserves(

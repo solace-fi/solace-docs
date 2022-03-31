@@ -27,4 +27,4 @@ Receive a flash loan.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | keccak256 hash of "ERC3156FlashBorrower.onFlashLoan"
+|`The`| bytes32 | keccak256 hash of "ERC3156FlashBorrower.onFlashLoan"

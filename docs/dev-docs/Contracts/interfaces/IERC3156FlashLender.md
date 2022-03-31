@@ -19,7 +19,7 @@ The amount of currency available to be lended.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | amount of `token` that can be borrowed.
+|`The`| uint256 | amount of `token` that can be borrowed.
 ### flashFee
 ```solidity
   function flashFee(
@@ -39,7 +39,7 @@ The fee to be charged for a given loan.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`The`| address | amount of `token` to be charged for the loan, on top of the returned principal.
+|`The`| uint256 | amount of `token` to be charged for the loan, on top of the returned principal.
 ### flashLoan
 ```solidity
   function flashLoan(

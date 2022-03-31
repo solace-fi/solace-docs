@@ -55,7 +55,7 @@ User will need to pay **USD**.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| address | The ID of newly created policy.
+|`policyID`| uint256 | The ID of newly created policy.
 ### updateCoverLimit
 ```solidity
   function updateCoverLimit(
@@ -186,7 +186,7 @@ Returns the minimum policy period in blocks.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`period`|  | The minimum period value.
+|`period`| uint40 | The minimum period value.
 ### maxPeriod
 ```solidity
   function maxPeriod(
@@ -199,7 +199,7 @@ Returns the maximum policy period in blocks.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`period`|  | The maxiumum period value.
+|`period`| uint40 | The maxiumum period value.
 ### activeCoverLimit
 ```solidity
   function activeCoverLimit(
@@ -212,7 +212,7 @@ Returns the current amount covered (in wei).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`|  | The current amount.
+|`amount`| uint256 | The current amount.
 ### activeCoverLimitPerStrategy
 ```solidity
   function activeCoverLimitPerStrategy(
@@ -230,7 +230,7 @@ Returns the current amount covered (in wei) per risk strategy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| address | The current amount.
+|`amount`| uint256 | The current amount.
 ### paused
 ```solidity
   function paused(
@@ -243,7 +243,7 @@ Returns whether or not product is currently in paused state.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`|  | True if product is paused.
+|`status`| bool | True if product is paused.
 ### policyManager
 ```solidity
   function policyManager(
@@ -256,7 +256,7 @@ Returns the address of the [`PolicyManager`](../PolicyManager).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policymanager`|  | The policy manager address.
+|`policymanager`| address | The policy manager address.
 ### registry
 ```solidity
   function registry(
@@ -269,7 +269,7 @@ Returns the address of the [`Registry`](../Registry).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`registry_`|  | The registry address.
+|`registry_`| address | The registry address.
 ### isAuthorizedSigner
 ```solidity
   function isAuthorizedSigner(
@@ -287,7 +287,7 @@ Returns true if the given account is authorized to sign claims.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | True if is authorized signer.
+|`status`| bool | True if is authorized signer.
 ### updateActiveCoverLimit
 ```solidity
   function updateActiveCoverLimit(
@@ -416,7 +416,7 @@ Returns the underlying principal asset for `Solace Cover Product`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`asset`|  | The underlying asset.
+|`asset`| contract IERC20 | The underlying asset.
 ### _deposit
 ```solidity
   function _deposit(

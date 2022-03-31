@@ -8,7 +8,8 @@
     address policyholder_,
     uint256 coverLimit_,
     uint256 amount_,
-    bytes referralCode_
+    bytes referralCode_,
+    uint256[] chains_
   ) external returns (uint256 policyID)
 ```
 Activates policy for `policyholder_`
@@ -21,6 +22,7 @@ Activates policy for `policyholder_`
 |`coverLimit_` | uint256 | The maximum value to cover in **USD**.
 |`amount_` | uint256 | The deposit amount in **USD** to fund the policyholder's account.
 |`referralCode_` | bytes | The referral code.
+|`chains_` | uint256[] | The chain ids.
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -43,6 +45,20 @@ This will reset the cooldown.
 | :--- | :--- | :------------------------------------------------------------------- |
 |`newCoverLimit_` | uint256 | The new maximum value to cover in **USD**.
 |`referralCode_` | bytes | The referral code.
+
+### updatePolicyChainInfo
+```solidity
+  function updatePolicyChainInfo(
+    uint256[] policyChains
+  ) external
+```
+Updates policy chain info.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyChains` | uint256[] | The requested policy chains to update.
 
 ### deposit
 ```solidity
@@ -67,8 +83,8 @@ Deposits funds into `policyholder`'s account.
 ```
 Withdraw funds from user's account.
 
-If cooldown has passed, the user will withdraw their entire account balance. 
-If cooldown has not started, or has not passed, the user will not be able to withdraw their entire account. 
+If cooldown has passed, the user will withdraw their entire account balance.
+If cooldown has not started, or has not passed, the user will not be able to withdraw their entire account.
 If cooldown has not passed, [`withdraw()`](#withdraw) will leave a minimum required account balance (one epoch's fee) in the user's account.
 
 
@@ -265,12 +281,12 @@ Gets the policy count (amount of policies that have been purchased, includes ina
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`count`| uint256 | The policy count.
-### maxRateNum
+### maxRate
 ```solidity
-  function maxRateNum(
-  ) external returns (uint256 maxRateNum_)
+  function maxRate(
+  ) external returns (uint256 maxRateNum_, uint256 maxRateDenom_)
 ```
-Returns the max rate numerator.
+Returns the max rate.
 
 
 
@@ -278,18 +294,6 @@ Returns the max rate numerator.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`maxRateNum_`| uint256 | the max rate numerator.
-### maxRateDenom
-```solidity
-  function maxRateDenom(
-  ) external returns (uint256 maxRateDenom_)
-```
-Returns the max rate denominator.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`maxRateDenom_`| uint256 | the max rate denominator.
 ### chargeCycle
 ```solidity
@@ -330,7 +334,7 @@ Gets cover limit for a given policy ID.
 Gets the cooldown period.
 
 Cooldown timer is started by the user calling deactivatePolicy().
-Before the cooldown has started or has passed, withdrawing funds will leave a minimim required account balance in the user's account. 
+Before the cooldown has started or has passed, withdrawing funds will leave a minimim required account balance in the user's account.
 Only after the cooldown has passed, is a user able to withdraw their entire account balance.
 
 
@@ -457,6 +461,68 @@ Calculate minimum required account balance for a given cover limit. Equals the m
 | :--- | :--- | :------------------------------------------------------------------- |
 |`coverLimit` | uint256 | Cover limit.
 
+### isSupportedChain
+```solidity
+  function isSupportedChain(
+  ) external returns (bool status)
+```
+Returns true if given chain id supported.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| bool | True if chain is supported otherwise false.
+### numSupportedChains
+```solidity
+  function numSupportedChains(
+  ) external returns (uint256 count)
+```
+Returns the number of chains.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`count`| uint256 | The number of chains.
+### getChain
+```solidity
+  function getChain(
+    uint256 chainIndex
+  ) external returns (uint256 chainId)
+```
+Returns the chain at the given index.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`chainIndex` | uint256 | The index to query.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`chainId`| uint256 | The address of the chain.
+### getPolicyChainInfo
+```solidity
+  function getPolicyChainInfo(
+    uint256 policyID
+  ) external returns (uint256[] policyChains)
+```
+Returns the policy chain info.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`policyID` | uint256 | The policy id to get chain info.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`policyChains`| uint256[] | The list of policy chain values.
 ### setRegistry
 ```solidity
   function setRegistry(
@@ -503,13 +569,14 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | :--- | :--- | :------------------------------------------------------------------- |
 |`cooldownPeriod_` | uint256 | Cooldown period in seconds.
 
-### setMaxRateNum
+### setMaxRate
 ```solidity
-  function setMaxRateNum(
-    uint256 maxRateNum_
+  function setMaxRate(
+    uint256 maxRateNum_,
+    uint256 maxRateDenom_
   ) external
 ```
-set _maxRateNum.
+set _maxRate.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
@@ -517,20 +584,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`maxRateNum_` | uint256 | Desired maxRateNum.
-
-### setMaxRateDenom
-```solidity
-  function setMaxRateDenom(
-    uint256 maxRateDenom_
-  ) external
-```
-set _maxRateDenom.
-Can only be called by the current [**governor**](/docs/protocol/governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
 |`maxRateDenom_` | uint256 | Desired maxRateDenom.
 
 ### setChargeCycle
@@ -606,6 +659,48 @@ Sets the base URI for computing `tokenURI`.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`baseURI_` | string | The new base URI.
+
+### addSupportedChains
+```solidity
+  function addSupportedChains(
+    uint256[] chains
+  ) external
+```
+Adds supported chains to cover positions.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`chains` | uint256[] | The supported array of chains.
+
+### removeSupportedChain
+```solidity
+  function removeSupportedChain(
+    uint256 chainId
+  ) external
+```
+Removes chain from the supported chain list.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`chainId` | uint256 | The chain id to remove.
+
+### setAsset
+```solidity
+  function setAsset(
+    string assetName
+  ) external
+```
+Sets the asset name.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`assetName` | string | The asset name to set.
 
 ### setRewardPoints
 ```solidity
@@ -749,20 +844,12 @@ Emitted when premium is partially charged.
 Emitted when policy manager cover amount for soteria is updated.
 
 
-### MaxRateNumSet
+### MaxRateSet
 ```solidity
-  event MaxRateNumSet(
+  event MaxRateSet(
   )
 ```
-Emitted when maxRateNum is set.
-
-
-### MaxRateDenomSet
-```solidity
-  event MaxRateDenomSet(
-  )
-```
-Emitted when maxRateDenom is set.
+Emitted when maxRate is set.
 
 
 ### ChargeCycleSet
@@ -819,5 +906,29 @@ Emitted when referral rewards are earned;
   )
 ```
 Emitted when baseURI is set
+
+
+### SupportedChainSet
+```solidity
+  event SupportedChainSet(
+  )
+```
+Emitted when supported chain is set.
+
+
+### SupportedChainRemoved
+```solidity
+  event SupportedChainRemoved(
+  )
+```
+Emitted when supported chain is removed.
+
+
+### AssetSet
+```solidity
+  event AssetSet(
+  )
+```
+Emiited when asset is set.
 
 

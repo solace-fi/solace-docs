@@ -74,7 +74,7 @@ Iterable [1,length].
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`key`| uint256 | The key at that index.
+|`key`| string | The key at that index.
 ### set
 ```solidity
   function set(

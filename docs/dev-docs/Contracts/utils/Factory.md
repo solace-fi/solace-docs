@@ -78,7 +78,7 @@ concatenate elements to form EIP1167 minimal proxy initialization code
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`bytes`| address | memory initialization code
+|`bytes`| bytes | memory initialization code
 ### _deploy
 ```solidity
   function _deploy(
@@ -96,7 +96,7 @@ deploy contract code using "CREATE" opcode
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| bytes | address of deployed contract
+|`deployment`| address | address of deployed contract
 ### _deploy
 ```solidity
   function _deploy(
@@ -117,7 +117,7 @@ reverts if deployment is not successful (likely because salt has already been us
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| bytes | address of deployed contract
+|`deployment`| address | address of deployed contract
 ### calculateDeploymentAddress
 ```solidity
   function calculateDeploymentAddress(
@@ -137,7 +137,7 @@ calculate the _deployMetamorphicContract deployment address for a given salt
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| bytes32 | address
+|`deployment`| address | address
 ## Events
 ### ContractDeployed
 ```solidity

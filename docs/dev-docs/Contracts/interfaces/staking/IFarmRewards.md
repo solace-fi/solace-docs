@@ -95,7 +95,7 @@ Calculates the amount of token in needed for an amount of [**xSOLACE**](./../../
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountIn`| address | The amount of `tokenIn` needed.
+|`amountIn`| uint256 | The amount of `tokenIn` needed.
 ### calculateAmountOut
 ```solidity
   function calculateAmountOut(
@@ -115,7 +115,7 @@ Calculates the amount of [**xSOLACE**](./../../staking/xSOLACEV1) out for an amo
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountOut`| address | The amount of [**xSOLACE**](./../../staking/xSOLACEV1) out.
+|`amountOut`| uint256 | The amount of [**xSOLACE**](./../../staking/xSOLACEV1) out.
 ### purchaseableVestedXSolace
 ```solidity
   function purchaseableVestedXSolace(
@@ -134,7 +134,7 @@ Does not include the amount they've already redeemed.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| address | The amount of vested [**xSOLACE**](./../../staking/xSOLACEV1).
+|`amount`| uint256 | The amount of vested [**xSOLACE**](./../../staking/xSOLACEV1).
 ### redeem
 ```solidity
   function redeem(

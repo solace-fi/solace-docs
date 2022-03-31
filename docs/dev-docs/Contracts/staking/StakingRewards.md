@@ -203,7 +203,7 @@ Updates and returns a lock's rewards.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`transferAmount`| uint256 | The amount of [**SOLACE**](./../SOLACE) to transfer to the receiver.
-|`receiver`|  | The user to receive the [**SOLACE**](./../SOLACE).
+|`receiver`| address | The user to receive the [**SOLACE**](./../SOLACE).
 ### _fetchLockInfo
 ```solidity
   function _fetchLockInfo(
@@ -221,9 +221,9 @@ Fetches up to date information about a lock.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`exists`| uint256 | True if the lock exists.
-|`owner`|  | The owner of the lock or the zero address if it doesn't exist.
-|`lock`|  | The lock itself.
+|`exists`| bool | True if the lock exists.
+|`owner`| address | The owner of the lock or the zero address if it doesn't exist.
+|`lock`| struct Lock | The lock itself.
 ### _calculateLockValue
 ```solidity
   function _calculateLockValue(

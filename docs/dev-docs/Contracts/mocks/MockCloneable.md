@@ -21,7 +21,7 @@ Creates a new `MockCloneable`. The new instance will be a minimal proxy to this 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`newInstance`| string | The address of the new instance.
+|`newInstance`| address | The address of the new instance.
 ### clone2
 ```solidity
   function clone2(
@@ -43,7 +43,7 @@ Creates a new `MockCloneable`. The new instance will be a minimal proxy to this 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`newInstance`| string | The address of the new instance.
+|`newInstance`| address | The address of the new instance.
 ### initialize
 ```solidity
   function initialize(

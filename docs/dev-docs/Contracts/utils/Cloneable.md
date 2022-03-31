@@ -19,7 +19,7 @@ calculate the deployment address for a given target and salt
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| bytes32 | address
+|`deployment`| address | address
 ### _calculateDeploymentAddress
 ```solidity
   function _calculateDeploymentAddress(
@@ -39,7 +39,7 @@ calculate the _deployMetamorphicContract deployment address for a given salt
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| bytes32 | address
+|`deployment`| address | address
 ### _deployMinimalProxy
 ```solidity
   function _deployMinimalProxy(
@@ -53,7 +53,7 @@ reverts if deployment is not successful
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`minimalProxy`|  | address of deployed proxy
+|`minimalProxy`| address | address of deployed proxy
 ### _deployMinimalProxy
 ```solidity
   function _deployMinimalProxy(
@@ -72,7 +72,7 @@ reverts if deployment is not successful (likely because salt has already been us
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`minimalProxy`| bytes32 | address of deployed proxy
+|`minimalProxy`| address | address of deployed proxy
 ### _generateMinimalProxyInitCode
 ```solidity
   function _generateMinimalProxyInitCode(
@@ -85,7 +85,7 @@ concatenate elements to form EIP1167 minimal proxy initialization code
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`bytes`|  | memory initialization code
+|`bytes`| bytes | memory initialization code
 ### _deploy
 ```solidity
   function _deploy(
@@ -103,7 +103,7 @@ deploy contract code using "CREATE" opcode
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| bytes | address of deployed contract
+|`deployment`| address | address of deployed contract
 ### _deploy
 ```solidity
   function _deploy(
@@ -124,4 +124,4 @@ reverts if deployment is not successful (likely because salt has already been us
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| bytes | address of deployed contract
+|`deployment`| address | address of deployed contract

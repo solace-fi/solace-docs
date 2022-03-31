@@ -52,8 +52,8 @@ and also product is not in the strategy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`acceptable`| address | True if risk of the new cover is acceptable, false otherwise.
-|`price`| uint256 | The price in wei per 1e12 wei of coverage per block.
+|`acceptable`| bool | True if risk of the new cover is acceptable, false otherwise.
+|`price`| uint24 | The price in wei per 1e12 wei of coverage per block.
 ### maxCover
 ```solidity
   function maxCover(
@@ -66,7 +66,7 @@ The maximum amount of cover that `Risk Strategy` as a whole can sell.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`|  | The max amount of cover in `wei`
+|`cover`| uint256 | The max amount of cover in `wei`
 ### maxCoverPerProduct
 ```solidity
   function maxCoverPerProduct(
@@ -84,7 +84,7 @@ The maximum amount of cover in `Risk Strategy` that a product can sell in total.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`| address | The max amount of cover in `wei`
+|`cover`| uint256 | The max amount of cover in `wei`
 ### sellableCoverPerProduct
 ```solidity
   function sellableCoverPerProduct(
@@ -102,7 +102,7 @@ The amount of cover in `Risk Strategy` that a product can still sell.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`| address | The max amount of cover in `wei`.
+|`cover`| uint256 | The max amount of cover in `wei`.
 ### maxCoverPerPolicy
 ```solidity
   function maxCoverPerPolicy(
@@ -120,7 +120,7 @@ The maximum amount of cover in `Risk Strategy` that a product can sell in a sing
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`| address | The max amount of cover in `wei`.
+|`cover`| uint256 | The max amount of cover in `wei`.
 ### productIsActive
 ```solidity
   function productIsActive(
@@ -138,7 +138,7 @@ Checks if product is an active product in `Risk Strategy`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status_`| address | True if the product is active.
+|`status_`| bool | True if the product is active.
 ### numProducts
 ```solidity
   function numProducts(
@@ -151,7 +151,7 @@ Returns the number of registered products in `Risk Strategy`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`count`|  | The number of products.
+|`count`| uint256 | The number of products.
 ### product
 ```solidity
   function product(
@@ -170,7 +170,7 @@ Enumerable `[1, numProducts]`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`prod`| uint256 | The product address.
+|`prod`| address | The product address.
 ### productRiskParams
 ```solidity
   function productRiskParams(
@@ -188,9 +188,9 @@ Returns given product's risk paramaters. The product must be active.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`weight`| address | The weighted allocation of this product.
-|`price`|  | The price in `wei` per `1e12 wei` of coverage per block.
-|`divisor`|  | The max cover per policy divisor.
+|`weight`| uint32 | The weighted allocation of this product.
+|`price`| uint24 | The price in `wei` per `1e12 wei` of coverage per block.
+|`divisor`| uint16 | The max cover per policy divisor.
 ### weightSum
 ```solidity
   function weightSum(
@@ -203,7 +203,7 @@ Returns the sum of weights in `Risk Strategy`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`sum`|  | The weight sum.
+|`sum`| uint32 | The weight sum.
 ### weightAllocation
 ```solidity
   function weightAllocation(
@@ -216,7 +216,7 @@ Returns risk allocation weight in `Risk Strategy`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`weightAllocation_`|  | The weight allocation.
+|`weightAllocation_`| uint32 | The weight allocation.
 ### strategist
 ```solidity
   function strategist(
@@ -229,7 +229,7 @@ Returns the strategist address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`strategist_`|  | The address of the risk strategy owner.
+|`strategist_`| address | The address of the risk strategy owner.
 ### status
 ```solidity
   function status(
@@ -242,7 +242,7 @@ Returns the status of the risk strategy.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status_`|  | True if strategy is active.
+|`status_`| bool | True if strategy is active.
 ### riskManager
 ```solidity
   function riskManager(
@@ -255,7 +255,7 @@ Returns the risk manager address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`riskManager_`|  | The address of the risk strategy owner.
+|`riskManager_`| address | The address of the risk strategy owner.
 ### addProduct
 ```solidity
   function addProduct(

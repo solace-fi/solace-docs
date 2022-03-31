@@ -60,7 +60,7 @@ The maximum amount of cover in `USD` that Solace as a whole can sell.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`|  | The max amount of cover in `USD`.
+|`cover`| uint256 | The max amount of cover in `USD`.
 ### balanceOf
 ```solidity
   function balanceOf(
@@ -78,7 +78,7 @@ Returns the balance of the underwriting pool in `USD`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| string | The balance of the underwriting pool in `USD`.
+|`amount`| uint256 | The balance of the underwriting pool in `USD`.
 ### poolOf
 ```solidity
   function poolOf(
@@ -96,7 +96,7 @@ Returns underwriting pool name for given index.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`uwpName`| uint256 | The underwriting pool name.
+|`uwpName`| string | The underwriting pool name.
 ### getUwpUpdater
 ```solidity
   function getUwpUpdater(
@@ -109,7 +109,7 @@ Returns the underwriting pool bot updater address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`uwpUpdater`|  | The bot address.
+|`uwpUpdater`| address | The bot address.
 ### setUwpUpdater
 ```solidity
   function setUwpUpdater(

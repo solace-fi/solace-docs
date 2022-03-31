@@ -31,7 +31,7 @@ Creates a new `BondTellerERC20`. The new teller will be a minimal proxy to this 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`teller`| string | The address of the new teller.
+|`teller`| address | The address of the new teller.
 ### initialize
 ```solidity
   function initialize(
@@ -75,7 +75,7 @@ Assumes 1 [**SOLACE**](./../SOLACE) payout.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`price_`|  | The price of the bond measured in `principal`.
+|`price_`| uint256 | The price of the bond measured in `principal`.
 ### calculateAmountOut
 ```solidity
   function calculateAmountOut(
@@ -217,7 +217,7 @@ Create a bond by depositing `amount` of `principal`.
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 |`payout`| uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond.
 |`tokenID`| uint256 | The ID of the newly created bond or lock.
-|`protocolFee`| address | Amount of principal paid to dao
+|`protocolFee`| uint256 | Amount of principal paid to dao
 ### _calculateTotalPayout
 ```solidity
   function _calculateTotalPayout(

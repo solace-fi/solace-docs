@@ -43,7 +43,7 @@ Returns the user's **xSOLACE** balance.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`balance`| address | The user's balance.
+|`balance`| uint256 | The user's balance.
 ### balanceOfLock
 ```solidity
   function balanceOfLock(
@@ -74,7 +74,7 @@ Returns the total supply of **xSOLACE**.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`supply`|  | The total supply.
+|`supply`| uint256 | The total supply.
 ### name
 ```solidity
   function name(
@@ -131,7 +131,7 @@ This version reverts because **xSOLACE** is non-transferrable.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`success`| address | False.
+|`success`| bool | False.
 ### transferFrom
 ```solidity
   function transferFrom(
@@ -152,7 +152,7 @@ This version reverts because **xSOLACE** is non-transferrable.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`success`| address | False.
+|`success`| bool | False.
 ### approve
 ```solidity
   function approve(
@@ -173,4 +173,4 @@ This version reverts because **xSOLACE** is non-transferrable.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`success`| address | False.
+|`success`| bool | False.

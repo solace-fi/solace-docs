@@ -53,4 +53,4 @@ User will need to pay **USD**.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| address | The ID of newly created policy.
+|`policyID`| uint256 | The ID of newly created policy.

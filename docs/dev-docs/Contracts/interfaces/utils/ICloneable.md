@@ -19,7 +19,7 @@ calculate the deployment address for a given target and salt
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| bytes32 | address
+|`deployment`| address | address
 ## Events
 ### ContractDeployed
 ```solidity

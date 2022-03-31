@@ -32,7 +32,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`teller`| string | The address of the new teller.
+|`teller`| address | The address of the new teller.
 ### initialize
 ```solidity
   function initialize(
@@ -76,7 +76,7 @@ Assumes 1 [**SOLACE**](./../../SOLACE) payout.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`price_`|  | The price of the bond measured in `principal`.
+|`price_`| uint256 | The price of the bond measured in `principal`.
 ### calculateAmountOut
 ```solidity
   function calculateAmountOut(

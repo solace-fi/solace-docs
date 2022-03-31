@@ -22,7 +22,7 @@ Deploys `initcode` using `salt` for defining the deterministic address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`createdContract`| bytes | Created contract address.
+|`createdContract`| address payable | Created contract address.
 ### deployMultiple
 ```solidity
   function deployMultiple(
@@ -42,7 +42,7 @@ Deploys `initcodes` using `salts` for defining the deterministic address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`createdContracts`| bytes[] | Created contract addresses.
+|`createdContracts`| address payable[] | Created contract addresses.
 ### _deploy
 ```solidity
   function _deploy(
@@ -62,4 +62,4 @@ Deploys `initcode` using `salt` for defining the deterministic address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`createdContract`| bytes | Created contract address.
+|`createdContract`| address payable | Created contract address.

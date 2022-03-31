@@ -11,7 +11,7 @@ The base is OpenZeppelin's `ERC721Enumerable` which also includes the `Metadata`
     string symbol_
   ) internal
 ```
-Constructs the `ERC721Enhancedv1` contract.
+Constructs the `ERC721Enhanced` contract.
 
 
 #### Parameters:
@@ -111,7 +111,7 @@ The permit typehash used in the `permit` signature.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`typehash`|  | The typehash for the `permit`.
+|`typehash`| bytes32 | The typehash for the `permit`.
 ### DOMAIN_SEPARATOR
 ```solidity
   function DOMAIN_SEPARATOR(
@@ -124,55 +124,7 @@ The domain separator used in the encoding of the signature for `permit`, as defi
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`seperator`|  | The domain seperator for `permit`.
-### listTokens
-```solidity
-  function listTokens(
-  ) public returns (uint256[] tokenIDs)
-```
-Lists all tokens.
-Order not specified.
-
-This function is more useful off chain than on chain.
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenIDs`|  | The list of token IDs.
-### listTokensOfOwner
-```solidity
-  function listTokensOfOwner(
-  ) public returns (uint256[] tokenIDs)
-```
-Lists the tokens owned by `owner`.
-Order not specified.
-
-This function is more useful off chain than on chain.
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`tokenIDs`| address | The list of token IDs.
-### exists
-```solidity
-  function exists(
-    uint256 tokenID
-  ) external returns (bool status)
-```
-Determines if a token exists or not.
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
-|`tokenID` | uint256 | The ID of the token to query.
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| uint256 | True if the token exists, false if it doesn't.
+|`seperator`| bytes32 | The domain seperator for `permit`.
 ### tokenURI
 ```solidity
   function tokenURI(
@@ -274,3 +226,21 @@ Hook that is called after any token transfer. This includes minting and burning.
 |`to` | address | The zero that receives the token, or zero if burning.
 |`tokenID` | uint256 | The ID of the token being transferred.
 
+### exists
+```solidity
+  function exists(
+    uint256 tokenID
+  ) external returns (bool status)
+```
+Determines if a token exists or not.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`tokenID` | uint256 | The ID of the token to query.
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+|`status`| bool | True if the token exists, false if it doesn't.

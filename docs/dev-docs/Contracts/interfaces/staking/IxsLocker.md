@@ -56,7 +56,7 @@ Information about a lock.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`lock_`| uint256 | Information about the lock.
+|`lock_`| struct Lock | Information about the lock.
 ### isLocked
 ```solidity
   function isLocked(
@@ -74,7 +74,7 @@ Determines if the lock is locked.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`locked`| uint256 | True if the lock is locked, false if unlocked.
+|`locked`| bool | True if the lock is locked, false if unlocked.
 ### timeLeft
 ```solidity
   function timeLeft(
@@ -110,7 +110,7 @@ Returns the amount of [**SOLACE**](./../../SOLACE) the user has staked.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`balance`| address | The user's balance.
+|`balance`| uint256 | The user's balance.
 ### getXsLockListeners
 ```solidity
   function getXsLockListeners(
@@ -123,7 +123,7 @@ The list of contracts that are listening to lock updates.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`listeners_`|  | The list as an array.
+|`listeners_`| address[] | The list as an array.
 ### createLock
 ```solidity
   function createLock(
@@ -147,7 +147,7 @@ use end=0 to initialize as unlocked.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`xsLockID`| address | The ID of the newly created lock.
+|`xsLockID`| uint256 | The ID of the newly created lock.
 ### createLockSigned
 ```solidity
   function createLockSigned(

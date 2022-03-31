@@ -22,4 +22,4 @@ Deploys `initCode` using `salt` for defining the deterministic address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`createdContract`| bytes | Created contract address.
+|`createdContract`| address payable | Created contract address.
