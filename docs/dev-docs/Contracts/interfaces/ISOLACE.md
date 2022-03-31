@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/ISOLACE.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 The native governance token of the Solace Coverage Protocol.
 
 

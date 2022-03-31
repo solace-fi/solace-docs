@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/mocks/MockERC20Decimals.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 An alternative Mock ERC-20 with changeable decimals.
 
 

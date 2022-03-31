@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/staking/IFarmRewardsV2.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Rewards farmers with [**SOLACE**](./../../SOLACE).
 
 [FarmRewards V1](./../../staking/FarmRewards) rewarded CpFarmers in [**xSOLACEV1**](./../../staking/xSOLACEV1) linearly vested until May 2022. [**xSOLACEV1**](./../../staking/xSOLACEV1) was deprecated for [**xsLocker**](./../../staking/xsLocker) and will stop receiving rebases. FarmRewards V2 attachs on top of [FarmRewards V1](./../../staking/FarmRewards) and allows farmers to early withdraw their [**xSOLACEV1**](./../../staking/xSOLACEV1) and deposit it into a lock, as long as that lock ends after May 2022. This will give them staking rewards and voting power.

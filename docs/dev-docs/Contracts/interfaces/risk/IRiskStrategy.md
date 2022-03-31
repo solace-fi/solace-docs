@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/risk/IRiskStrategy.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 The interface of `RiskStragety` smart contract that is created by [`RiskStrategyFactor`](./RiskStrategyFactory).
 The `RiskStrategy` defines the product risk params for coverage products.
 

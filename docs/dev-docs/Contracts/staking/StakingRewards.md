@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/staking/StakingRewards.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Rewards users for staking in [`xsLocker`](./xsLocker).
 
 Deposits and withdrawls are made to [`xsLocker`](./xsLocker) and rewards come from `StakingRewards`. All three are paid in [**SOLACE**](./../SOLACE). `StakingRewards` will be registered as an [`xsListener`](./../interfaces/staking/IxsListener). Any time a lock is updated [`registerLockEvent()`](#registerlockevent) will be called and the staking information of that lock will be updated.

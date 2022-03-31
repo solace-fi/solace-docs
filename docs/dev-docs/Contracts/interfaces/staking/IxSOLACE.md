@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/staking/IxSOLACE.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 The vote token of the Solace DAO.
 
 **xSOLACE** is the vote token of the Solace DAO. It masquerades as an ERC20 but cannot be transferred, minted, or burned, and thus has no economic value outside of voting.

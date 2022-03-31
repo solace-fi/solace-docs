@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/utils/IPolicyDescriptorV2.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Produces a string containing the data URI for a JSON metadata string of a policy.
 It is inspired from Uniswap V3 [`NonfungibleTokenPositionDescriptor`](https://docs.uniswap.org/protocol/reference/periphery/NonfungibleTokenPositionDescriptor).
 

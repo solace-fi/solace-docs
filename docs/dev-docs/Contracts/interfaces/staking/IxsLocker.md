@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/staking/IxsLocker.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Stake your [**SOLACE**](./../../SOLACE) to receive voting rights, [**SOLACE**](./../../SOLACE) rewards, and more.
 
 Locks are ERC721s and can be viewed with [`locks()`](#locks). Each lock has an `amount` of [**SOLACE**](./../../SOLACE) and an `end` timestamp and cannot be transferred or withdrawn from before it unlocks. Locks have a maximum duration of four years.

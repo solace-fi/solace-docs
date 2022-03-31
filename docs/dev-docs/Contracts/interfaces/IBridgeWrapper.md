@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/IBridgeWrapper.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Facilitates cross chain apps by wrapping and unwrapping bridged tokens.
 
 Users will start by bridging [**SOLACE**](./../SOLACE) from mainnet to altnets. The bridge operates the token contract on the altnet, referred to as **Bridged SOLACE** or **bSOLACE**. This contract must be used to 1:1 convert **bSOLACE** to [**SOLACE**](./../SOLACE) before it can be used.

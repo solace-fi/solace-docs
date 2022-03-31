@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/utils/IRegistry.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Tracks the contracts of the Solaverse.
 
 [**Governance**](/docs/protocol/governance) can set the contract addresses and anyone can look them up.

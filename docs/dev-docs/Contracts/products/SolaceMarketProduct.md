@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/products/SolaceMarketProduct.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 The abstract smart contract that is inherited by every concrete individual **Product** contract.
 
 It is required to extend [`IProduct`](../interface/IProduct) and recommended to extend `BaseProduct`. `BaseProduct` extends [`IProduct`](../interface/IProduct) and takes care of the heavy lifting; new products simply need to set some variables in the constructor. It has some helpful functionality not included in [`IProduct`](../interface/IProduct) including claim signers.

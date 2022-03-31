@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/bonds/BondTellerErc20.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 A bond teller that accepts an ERC20 as payment.
 
 Bond tellers allow users to buy bonds. Payments are made in `principal` which is sent to the underwriting pool and used to back risk. Users will receive [**SOLACE**](./../SOLACE) but it must be bonded or staked. If bonded, the [**SOLACE**](./../SOLACE) will be vested linearly and redeemed over time. If staked, the [**SOLACE**](./../SOLACE) only be withdrawable after the lock expires but will give the user extra [**SOLACE**](./../SOLACE) rewards and voting rights.

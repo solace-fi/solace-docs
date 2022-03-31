@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/utils/ERC721Enhanced.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 An extension of `ERC721`.
 
 The base is OpenZeppelin's `ERC721Enumerable` which also includes the `Metadata` extension. This extension includes simpler transfers, gasless approvals, and changeable URIs.

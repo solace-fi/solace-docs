@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/mocks/MockFaultyReceiver.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 A contract that throws if sent ETH.
 
 

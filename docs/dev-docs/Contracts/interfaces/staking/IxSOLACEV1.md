@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/staking/IxSOLACEV1.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 V1 of the [**SOLACE**](./../../SOLACE) staking contract.
 
 Users can stake their [**SOLACE**](./../../SOLACE) and receive **xSOLACE**. **xSOLACE** is designed to be a safe up-only contract that allows users to enter or leave at any time. The value of **xSOLACE** relative to [**SOLACE**](./../../SOLACE) will increase when [**SOLACE**](./../../SOLACE) is sent to this contract, namely from premiums from coverage polices.

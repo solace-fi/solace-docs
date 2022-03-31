@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/staking/IxsListener.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 A standard interface for notifying a contract about an action in another contract.
 
 

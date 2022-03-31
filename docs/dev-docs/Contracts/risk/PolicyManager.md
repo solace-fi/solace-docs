@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/risk/PolicyManager.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 The **PolicyManager** manages the creation of new policies and modification of existing policies.
 
 Most users will not interact with **PolicyManager** directly. To buy, modify, or cancel policies, users should use the respective [**product**](./products/CoverageProduct) for the position they would like to cover. Use **PolicyManager** to view policies.

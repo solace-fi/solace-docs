@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/utils/IDeployer.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Exposes `CREATE2` (EIP-1014) to deploy bytecode on deterministic addresses based on initialization code and salt.
 
 

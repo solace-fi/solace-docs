@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/WETH9.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 [Wrapped Ether](https://weth.io/) smart contract. Extends **ERC20**.
 
 

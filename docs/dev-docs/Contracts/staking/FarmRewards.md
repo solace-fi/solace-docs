@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/staking/FarmRewards.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Rewards farmers with [**SOLACE**](./../SOLACE).
 
 Rewards were accumulated by farmers for participating in farms. Rewards will be unlocked linearly over six months and can be redeemed for [**SOLACE**](./../SOLACE) by paying $0.03/[**SOLACE**](./../SOLACE).

@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/risk/IRiskStrategyFactory.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 The interface of **RiskStrategyFactory** that manages the creation of new strategies.
 
 

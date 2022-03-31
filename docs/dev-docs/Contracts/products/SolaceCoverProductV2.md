@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/products/SolaceCoverProductV2.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 A Solace insurance product that allows users to insure all of their DeFi positions against smart contract risk through a single policy.
 
 Policies can be **purchased** via [`activatePolicy()`](#activatepolicy). Policies are represented as ERC721s, which once minted, cannot then be transferred or burned. Users can change the cover limit of their policy through [`updateCoverLimit()`](#updatecoverlimit).

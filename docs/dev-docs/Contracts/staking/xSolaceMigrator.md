@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/staking/xSolaceMigrator.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Helps migrate from [**xSOLACEV1**](./xSOLACEV1) to [**xsLocker**](./xsLocker).
 
 
