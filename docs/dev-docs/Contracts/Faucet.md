@@ -16,7 +16,7 @@ Constructs the faucet.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`solace_` | address | Address of the [**SOLACE**](./SOLACE) contract.
+| `solace_` | address | Address of the [**SOLACE**](./SOLACE) contract. |
 
 ### drip
 ```solidity
@@ -24,6 +24,7 @@ Constructs the faucet.
   ) external
 ```
 Drips [**SOLACE**](./SOLACE) to msg.sender.
+
 
 
 

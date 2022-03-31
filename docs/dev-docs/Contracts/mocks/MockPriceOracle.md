@@ -13,3 +13,4 @@ Returns asset price. It's called by `CoverageDataProvider` contract in tests.
 
 
 
+

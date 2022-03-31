@@ -17,8 +17,8 @@ Constructs the BondDepository contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
-|`solace_` | address | Address of [**SOLACE**](./../SOLACE).
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
+| `solace_` | address | Address of [**SOLACE**](./../SOLACE). |
 
 ### addTeller
 ```solidity
@@ -33,7 +33,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`teller` | address | The teller to add.
+| `teller` | address | The teller to add. |
 
 ### removeTeller
 ```solidity
@@ -48,7 +48,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`teller` | address | The teller to remove.
+| `teller` | address | The teller to remove. |
 
 ### pullSolace
 ```solidity
@@ -63,5 +63,6 @@ Can only be called by tellers.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to send.
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to send. |
+
 

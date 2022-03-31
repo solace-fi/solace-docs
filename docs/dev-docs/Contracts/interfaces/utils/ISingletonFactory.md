@@ -18,10 +18,11 @@ Deploys `initCode` using `salt` for defining the deterministic address.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`initCode` | bytes | Initialization code.
-|`salt` | bytes32 | Arbitrary value to modify resulting address.
+| `initCode` | bytes | Initialization code. |
+| `salt` | bytes32 | Arbitrary value to modify resulting address. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`createdContract`| address payable | Created contract address.
+| `createdContract` | address payable | Created contract address. |
+

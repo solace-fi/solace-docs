@@ -43,7 +43,8 @@ Unwraps Matic. **MATIC** will be returned to the sender at 1 **MATIC** : 1 **WMA
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`wad` | uint256 | Amount to unwrap.
+| `wad` | uint256 | Amount to unwrap. |
+
 
 ## Events
 ### Deposit

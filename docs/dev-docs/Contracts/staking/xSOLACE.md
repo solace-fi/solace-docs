@@ -26,7 +26,7 @@ Constructs the **xSOLACE** contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLocker_` | address | The [**xsLocker**](./xsLocker) contract.
+| `xsLocker_` | address | The [**xsLocker**](./xsLocker) contract. |
 
 ### balanceOf
 ```solidity
@@ -40,12 +40,13 @@ Returns the user's **xSOLACE** balance.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`account` | address | The account to query.
+| `account` | address | The account to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`balance`| uint256 | The user's balance.
+| `balance` | uint256 | The user's balance. |
+
 ### balanceOfLock
 ```solidity
   function balanceOfLock(
@@ -58,12 +59,13 @@ Returns the **xSOLACE** balance of a lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The lock to query.
+| `xsLockID` | uint256 | The lock to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`balance`| uint256 | The locks's balance.
+| `balance` | uint256 | The locks's balance. |
+
 ### totalSupply
 ```solidity
   function totalSupply(
@@ -76,7 +78,8 @@ Returns the total supply of **xSOLACE**.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`supply`| uint256 | The total supply.
+| `supply` | uint256 | The total supply. |
+
 ### name
 ```solidity
   function name(
@@ -127,13 +130,14 @@ This version reverts because **xSOLACE** is non-transferrable.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`recipient` | address | The user to send tokens to.
-|`amount` | uint256 | The amount of tokens to send.
+| `recipient` | address | The user to send tokens to. |
+| `amount` | uint256 | The amount of tokens to send. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`success`| bool | False.
+| `success` | bool | False. |
+
 ### transferFrom
 ```solidity
   function transferFrom(
@@ -148,13 +152,14 @@ This version reverts because **xSOLACE** is non-transferrable.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`recipient` | address | The user to send tokens to.
-|`amount` | address | The amount of tokens to send.
+| `recipient` | address | The user to send tokens to. |
+| `amount` | address | The amount of tokens to send. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`success`| bool | False.
+| `success` | bool | False. |
+
 ### approve
 ```solidity
   function approve(
@@ -169,10 +174,11 @@ This version reverts because **xSOLACE** is non-transferrable.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`spender` | address | The user to assign allowance.
-|`amount` | uint256 | The amount of tokens to send.
+| `spender` | address | The user to assign allowance. |
+| `amount` | uint256 | The amount of tokens to send. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`success`| bool | False.
+| `success` | bool | False. |
+

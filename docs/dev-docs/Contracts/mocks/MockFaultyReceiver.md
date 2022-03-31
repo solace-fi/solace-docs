@@ -36,6 +36,7 @@ Do not use in production.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address payable | Contract to call.
-|`data` | bytes | Data to send.
+| `to` | address payable | Contract to call. |
+| `data` | bytes | Data to send. |
+
 

@@ -18,13 +18,14 @@ Produces the URI describing a particular policy `product` for a given `policy id
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyManager` | contract IPolicyManager | The policy manager to retrieve policy info to produce URI descriptor.
-|`policyID` | uint256 | The ID of the policy for which to produce a description.
+| `policyManager` | contract IPolicyManager | The policy manager to retrieve policy info to produce URI descriptor. |
+| `policyID` | uint256 | The ID of the policy for which to produce a description. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`description`| string | The URI of the ERC721-compliant metadata.
+| `description` | string | The URI of the ERC721-compliant metadata. |
+
 ### baseURI
 ```solidity
   function baseURI(
@@ -37,7 +38,8 @@ Returns the base of the URI descriptor.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`base`| string | The base URI of the ERC721-compliant metadata.
+| `base` | string | The base URI of the ERC721-compliant metadata. |
+
 ### setBaseURI
 ```solidity
   function setBaseURI(
@@ -51,7 +53,8 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`base` | string | The new base URI.
+| `base` | string | The new base URI. |
+
 
 ## Events
 ### BaseUriSet

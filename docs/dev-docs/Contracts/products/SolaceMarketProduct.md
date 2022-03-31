@@ -24,12 +24,12 @@ Initializes the product.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The governor.
-|`minPeriod_` | contract IRegistry | The minimum policy period in blocks to purchase a **policy**.
-|`maxPeriod_` | uint40 | The maximum policy period in blocks to purchase a **policy**.
-|`typehash_` | uint40 | The typehash for submitting claims.
-|`domain_` | bytes32 | The user readable name of the EIP712 signing domain.
-|`version_` | string | The current major version of the signing domain.
+| `governance_` | address | The governor. |
+| `minPeriod_` | contract IRegistry | The minimum policy period in blocks to purchase a **policy**. |
+| `maxPeriod_` | uint40 | The maximum policy period in blocks to purchase a **policy**. |
+| `typehash_` | uint40 | The typehash for submitting claims. |
+| `domain_` | bytes32 | The user readable name of the EIP712 signing domain. |
+| `version_` | string | The current major version of the signing domain. |
 
 ### buyPolicy
 ```solidity
@@ -48,16 +48,17 @@ User will need to pay **USD**.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyholder` | address | Holder of the position(s) to cover.
-|`coverLimit` | uint256 | The value to cover in **USD**.
-|`blocks` | uint40 | The length (in blocks) for policy.
-|`positionDescription` | bytes | A byte encoded description of the position(s) to cover.
-|`riskStrategy` | address | The risk strategy of the product to cover.
+| `policyholder` | address | Holder of the position(s) to cover. |
+| `coverLimit` | uint256 | The value to cover in **USD**. |
+| `blocks` | uint40 | The length (in blocks) for policy. |
+| `positionDescription` | bytes | A byte encoded description of the position(s) to cover. |
+| `riskStrategy` | address | The risk strategy of the product to cover. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policyID`| uint256 | The ID of newly created policy.
+| `policyID` | uint256 | The ID of newly created policy. |
+
 ### updateCoverLimit
 ```solidity
   function updateCoverLimit(
@@ -73,8 +74,8 @@ Can only be called by the policyholder.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyID` | uint256 | The ID of the policy.
-|`coverLimit` | uint256 | The new value to cover in **USD**.
+| `policyID` | uint256 | The ID of the policy. |
+| `coverLimit` | uint256 | The new value to cover in **USD**. |
 
 ### extendPolicy
 ```solidity
@@ -91,8 +92,8 @@ Can only be called by the policyholder.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyID` | uint256 | The ID of the policy.
-|`extension` | uint40 | The length of extension in blocks.
+| `policyID` | uint256 | The ID of the policy. |
+| `extension` | uint40 | The length of extension in blocks. |
 
 ### updatePolicy
 ```solidity
@@ -110,9 +111,9 @@ Can only be called by the policyholder.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyID` | uint256 | The ID of the policy.
-|`coverLimit` | uint256 | The new value to cover in **USD**.
-|`extension` | uint40 | The length of extension in blocks.
+| `policyID` | uint256 | The ID of the policy. |
+| `coverLimit` | uint256 | The new value to cover in **USD**. |
+| `extension` | uint40 | The length of extension in blocks. |
 
 ### cancelPolicy
 ```solidity
@@ -128,7 +129,7 @@ Can only be called by the policyholder.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyID` | uint256 | The ID of the policy.
+| `policyID` | uint256 | The ID of the policy. |
 
 ### submitClaim
 ```solidity
@@ -149,10 +150,10 @@ Can only be called by the policyholder.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyID` | uint256 | The policy that suffered a loss.
-|`amountOut` | uint256 | The amount the user will receive.
-|`deadline` | uint256 | Transaction must execute before this timestamp.
-|`signature` | bytes | Signature from the signer.
+| `policyID` | uint256 | The policy that suffered a loss. |
+| `amountOut` | uint256 | The amount the user will receive. |
+| `deadline` | uint256 | Transaction must execute before this timestamp. |
+| `signature` | bytes | Signature from the signer. |
 
 ### getQuote
 ```solidity
@@ -168,14 +169,15 @@ Calculate a premium quote for a policy.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`coverLimit` | uint256 | The value to cover in **USD**.
-|`blocks` | uint40 | The duration of the policy in blocks.
-|`riskStrategy` | address | The risk strategy address.
+| `coverLimit` | uint256 | The value to cover in **USD**. |
+| `blocks` | uint40 | The duration of the policy in blocks. |
+| `riskStrategy` | address | The risk strategy address. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`premium`| uint256 | The quote for their policy in **USD**.
+| `premium` | uint256 | The quote for their policy in **USD**. |
+
 ### minPeriod
 ```solidity
   function minPeriod(
@@ -188,7 +190,8 @@ Returns the minimum policy period in blocks.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`period`| uint40 | The minimum period value.
+| `period` | uint40 | The minimum period value. |
+
 ### maxPeriod
 ```solidity
   function maxPeriod(
@@ -201,7 +204,8 @@ Returns the maximum policy period in blocks.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`period`| uint40 | The maxiumum period value.
+| `period` | uint40 | The maxiumum period value. |
+
 ### activeCoverLimit
 ```solidity
   function activeCoverLimit(
@@ -214,7 +218,8 @@ Returns the current amount covered (in wei).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| uint256 | The current amount.
+| `amount` | uint256 | The current amount. |
+
 ### activeCoverLimitPerStrategy
 ```solidity
   function activeCoverLimitPerStrategy(
@@ -227,12 +232,13 @@ Returns the current amount covered (in wei) per risk strategy.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`riskStrategy` | address | The risk strategy address.
+| `riskStrategy` | address | The risk strategy address. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| uint256 | The current amount.
+| `amount` | uint256 | The current amount. |
+
 ### paused
 ```solidity
   function paused(
@@ -245,7 +251,8 @@ Returns whether or not product is currently in paused state.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| bool | True if product is paused.
+| `status` | bool | True if product is paused. |
+
 ### policyManager
 ```solidity
   function policyManager(
@@ -258,7 +265,8 @@ Returns the address of the [`PolicyManager`](../PolicyManager).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`policymanager`| address | The policy manager address.
+| `policymanager` | address | The policy manager address. |
+
 ### registry
 ```solidity
   function registry(
@@ -271,7 +279,8 @@ Returns the address of the [`Registry`](../Registry).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`registry_`| address | The registry address.
+| `registry_` | address | The registry address. |
+
 ### isAuthorizedSigner
 ```solidity
   function isAuthorizedSigner(
@@ -284,12 +293,13 @@ Returns true if the given account is authorized to sign claims.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`account` | address | Potential signer to query.
+| `account` | address | Potential signer to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| bool | True if is authorized signer.
+| `status` | bool | True if is authorized signer. |
+
 ### updateActiveCoverLimit
 ```solidity
   function updateActiveCoverLimit(
@@ -303,7 +313,7 @@ Can only be called by the [`PolicyManager`](../PolicyManager).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`coverDiff` | int256 | The change in active cover limit.
+| `coverDiff` | int256 | The change in active cover limit. |
 
 ### setMinPeriod
 ```solidity
@@ -317,7 +327,7 @@ Sets the minimum number of blocks a policy can be purchased for.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`minPeriod_` | uint40 | The minimum number of blocks.
+| `minPeriod_` | uint40 | The minimum number of blocks. |
 
 ### setMaxPeriod
 ```solidity
@@ -331,7 +341,7 @@ Sets the maximum number of blocks a policy can be purchased for.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`maxPeriod_` | uint40 | The maximum number of blocks
+| `maxPeriod_` | uint40 | The maximum number of blocks |
 
 ### addSigner
 ```solidity
@@ -346,7 +356,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`signer` | address | The signer to add.
+| `signer` | address | The signer to add. |
 
 ### removeSigner
 ```solidity
@@ -361,7 +371,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`signer` | address | The signer to remove.
+| `signer` | address | The signer to remove. |
 
 ### setPaused
 ```solidity
@@ -378,7 +388,7 @@ Used for security and to gracefully phase out old products.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`paused_` | bool | True to pause, false to unpause.
+| `paused_` | bool | True to pause, false to unpause. |
 
 ### _updatePolicy
 ```solidity
@@ -398,13 +408,13 @@ Internal function that updates the policy.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyID` | uint256 | The ID of the policy.
-|`newCoverLimit` | uint256 | The new value to cover in **USD**.
-|`prevCoverLimit` | uint256 | The new value to cover in **USD**.
-|`extension` | uint40 | The length of extension in blocks.
-|`prevExpirationBlock` | uint40 | The previous expiration block of the policy.
-|`newPrice` | uint24 | The new cover quote price.
-|`prevPrice` | uint24 | The previous cover quote price of the policy.
+| `policyID` | uint256 | The ID of the policy. |
+| `newCoverLimit` | uint256 | The new value to cover in **USD**. |
+| `prevCoverLimit` | uint256 | The new value to cover in **USD**. |
+| `extension` | uint40 | The length of extension in blocks. |
+| `prevExpirationBlock` | uint40 | The previous expiration block of the policy. |
+| `newPrice` | uint24 | The new cover quote price. |
+| `prevPrice` | uint24 | The previous cover quote price of the policy. |
 
 ### getAsset
 ```solidity
@@ -418,7 +428,8 @@ Returns the underlying principal asset for `Solace Cover Product`.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`asset`| contract IERC20 | The underlying asset.
+| `asset` | contract IERC20 | The underlying asset. |
+
 ### _deposit
 ```solidity
   function _deposit(
@@ -431,7 +442,7 @@ Sends the amount to the premium pool
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | amount to send to premium pool
+| `amount` | uint256 | amount to send to premium pool |
 
 ### _withdraw
 ```solidity
@@ -445,7 +456,7 @@ Withdraw dai from premium pool, and send it to the user
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | amount to send to premium pool
+| `amount` | uint256 | amount to send to premium pool |
 
 ### _add
 ```solidity
@@ -460,13 +471,14 @@ Adds two numbers.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`a` | uint256 | The first number as a uint256.
-|`b` | int256 | The second number as an int256.
+| `a` | uint256 | The first number as a uint256. |
+| `b` | int256 | The second number as an int256. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`c`| uint256 | The sum as a uint256.
+| `c` | uint256 | The sum as a uint256. |
+
 ## Events
 ### SignerAdded
 ```solidity

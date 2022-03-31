@@ -16,12 +16,13 @@ calculate the deployment address for a given target and salt
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`salt` | bytes32 | input for deterministic address calculation
+| `salt` | bytes32 | input for deterministic address calculation |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| address | address
+| `deployment` | address | address |
+
 ## Events
 ### ContractDeployed
 ```solidity

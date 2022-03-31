@@ -62,9 +62,10 @@ Returns the **xSOLACE** balance of a lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The lock to query.
+| `xsLockID` | uint256 | The lock to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`balance`| uint256 | The locks's balance.
+| `balance` | uint256 | The locks's balance. |
+

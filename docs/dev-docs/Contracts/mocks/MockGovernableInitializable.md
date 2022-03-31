@@ -21,13 +21,14 @@ Constructs the governable contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
 
 ### doThing
 ```solidity
   function doThing(
   ) external
 ```
+
 
 
 

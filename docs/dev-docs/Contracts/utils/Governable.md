@@ -21,7 +21,7 @@ Constructs the governable contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
 
 ### governance
 ```solidity
@@ -64,7 +64,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`pendingGovernance_` | address | The new governor.
+| `pendingGovernance_` | address | The new governor. |
 
 ### acceptGovernance
 ```solidity
@@ -87,6 +87,7 @@ Before you call it, ask yourself:
   - Is the contract self-sustaining?
   - Is there a chance you will need governance privileges in the future?
 Can only be called by the current [**governor**](/docs/protocol/governance).
+
 
 
 

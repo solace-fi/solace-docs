@@ -20,16 +20,17 @@ Creates a new `Risk Strategy`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`base_` | address |  The strategy's source code.
-|`products_` | address[] | The strategy products.
-|`weights_` | uint32[] |  The weights of the strategy products.
-|`prices_` | uint24[] |   The prices of the strategy products.
-|`divisors_` | uint16[] | The divisors(max cover per policy divisor) of the strategy products. 
+| `base_` | address |  The strategy's source code. |
+| `products_` | address[] | The strategy products. |
+| `weights_` | uint32[] |  The weights of the strategy products. |
+| `prices_` | uint24[] |   The prices of the strategy products. |
+| `divisors_` | uint16[] | The divisors(max cover per policy divisor) of the strategy products.  |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`strategy`| address | The address of newly created strategy.
+| `strategy` | address | The address of newly created strategy. |
+
 ### create2RiskStrategy
 ```solidity
   function create2RiskStrategy(
@@ -47,17 +48,18 @@ Creates a new `Risk Strategy`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`base_` | address |  The strategy's source code.
-|`salt_` | bytes32 | The salt for CREATE2.
-|`products_` | address[] | The strategy products.
-|`weights_` | uint32[] |  The weights of the strategy products.
-|`prices_` | uint24[] |   The prices of the strategy products.
-|`divisors_` | uint16[] | The divisors(max cover per policy divisor) of the strategy products. 
+| `base_` | address |  The strategy's source code. |
+| `salt_` | bytes32 | The salt for CREATE2. |
+| `products_` | address[] | The strategy products. |
+| `weights_` | uint32[] |  The weights of the strategy products. |
+| `prices_` | uint24[] |   The prices of the strategy products. |
+| `divisors_` | uint16[] | The divisors(max cover per policy divisor) of the strategy products.  |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`strategy`| address | The address of newly created strategy.
+| `strategy` | address | The address of newly created strategy. |
+
 ## Events
 ### StrategyCreated
 ```solidity

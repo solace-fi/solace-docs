@@ -35,7 +35,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`teller` | address | The teller to add.
+| `teller` | address | The teller to add. |
 
 ### removeTeller
 ```solidity
@@ -50,7 +50,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`teller` | address | The teller to remove.
+| `teller` | address | The teller to remove. |
 
 ### pullSolace
 ```solidity
@@ -65,7 +65,8 @@ Can only be called by tellers.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | The amount of [**SOLACE**](./../../SOLACE) to send.
+| `amount` | uint256 | The amount of [**SOLACE**](./../../SOLACE) to send. |
+
 
 ## Events
 ### TellerAdded

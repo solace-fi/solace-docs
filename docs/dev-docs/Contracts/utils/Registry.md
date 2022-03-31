@@ -20,13 +20,12 @@ Constructs the registry contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
 
 ### get
 ```solidity
   function get(
-    string key,
-     value
+    string key
   ) external returns (address value)
 ```
 Gets the `value` of a given `key`.
@@ -36,15 +35,17 @@ Reverts if the key is not in the mapping.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`key` | string | The key to query.
-|`value` |  | The value of the key.
+| `key` | string | The key to query. |
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `value` | address | The value of the key. |
 
 ### tryGet
 ```solidity
   function tryGet(
-    string key,
-     success,
-     value
+    string key
   ) external returns (bool success, address value)
 ```
 Gets the `value` of a given `key`.
@@ -54,9 +55,13 @@ Fails gracefully if the key is not in the mapping.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`key` | string | The key to query.
-|`success` |  | True if the key was found, false otherwise.
-|`value` |  | The value of the key or zero if it was not found.
+| `key` | string | The key to query. |
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `success` | bool | True if the key was found, false otherwise. |
+| `value` | address | The value of the key or zero if it was not found. |
 
 ### getKey
 ```solidity
@@ -71,12 +76,13 @@ Iterable [1,length].
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`index` | uint256 | The index to query.
+| `index` | uint256 | The index to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`key`| string | The key at that index.
+| `key` | string | The key at that index. |
+
 ### set
 ```solidity
   function set(
@@ -91,6 +97,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`keys` | string[] | The keys to set.
-|`values` | address[] | The values to set.
+| `keys` | string[] | The keys to set. |
+| `values` | address[] | The values to set. |
+
 

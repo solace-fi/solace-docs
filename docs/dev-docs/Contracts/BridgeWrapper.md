@@ -23,8 +23,8 @@ Constructs the Bridge Wrapper contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`solace_` | address | [**SOLACE**](./SOLACE) token.
-|`bsolace_` | address | **bSOLACE** token.
+| `solace_` | address | [**SOLACE**](./SOLACE) token. |
+| `bsolace_` | address | **bSOLACE** token. |
 
 ### bsolaceToSolace
 ```solidity
@@ -40,8 +40,8 @@ Uses ERC20 approve-transfer.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount of **bSOLACE** to convert.
-|`receiver` | address | User that will receive [**SOLACE**](./SOLACE).
+| `amount` | uint256 | Amount of **bSOLACE** to convert. |
+| `receiver` | address | User that will receive [**SOLACE**](./SOLACE). |
 
 ### solaceToBSolace
 ```solidity
@@ -58,8 +58,8 @@ Uses ERC20 approve-transfer.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount of [**SOLACE**](./SOLACE) to convert.
-|`receiver` | address | User that will receive **bSOLACE**.
+| `amount` | uint256 | Amount of [**SOLACE**](./SOLACE) to convert. |
+| `receiver` | address | User that will receive **bSOLACE**. |
 
 ### solaceToBSolaceSigned
 ```solidity
@@ -80,12 +80,12 @@ Uses ERC20 permit-transfer.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount of [**SOLACE**](./SOLACE) to convert.
-|`receiver` | address | User that will receive **bSOLACE**.
-|`deadline` | uint256 | Time the transaction must go through before.
-|`v` | uint8 | secp256k1 signature
-|`r` | bytes32 | secp256k1 signature
-|`s` | bytes32 | secp256k1 signature
+| `amount` | uint256 | Amount of [**SOLACE**](./SOLACE) to convert. |
+| `receiver` | address | User that will receive **bSOLACE**. |
+| `deadline` | uint256 | Time the transaction must go through before. |
+| `v` | uint8 | secp256k1 signature |
+| `r` | bytes32 | secp256k1 signature |
+| `s` | bytes32 | secp256k1 signature |
 
 ### _solaceToBSolace
 ```solidity
@@ -101,6 +101,7 @@ This conversion will fail if there is insufficient bridge liquidity.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount of [**SOLACE**](./SOLACE) to convert.
-|`receiver` | address | User that will receive **bSOLACE**.
+| `amount` | uint256 | Amount of [**SOLACE**](./SOLACE) to convert. |
+| `receiver` | address | User that will receive **bSOLACE**. |
+
 

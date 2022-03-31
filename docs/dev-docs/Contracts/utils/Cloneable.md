@@ -16,12 +16,13 @@ calculate the deployment address for a given target and salt
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`salt` | bytes32 | input for deterministic address calculation
+| `salt` | bytes32 | input for deterministic address calculation |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| address | address
+| `deployment` | address | address |
+
 ### _calculateDeploymentAddress
 ```solidity
   function _calculateDeploymentAddress(
@@ -35,13 +36,14 @@ calculate the _deployMetamorphicContract deployment address for a given salt
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`initCodeHash` | bytes32 | hash of contract initialization code
-|`salt` | bytes32 | input for deterministic address calculation
+| `initCodeHash` | bytes32 | hash of contract initialization code |
+| `salt` | bytes32 | input for deterministic address calculation |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| address | address
+| `deployment` | address | address |
+
 ### _deployMinimalProxy
 ```solidity
   function _deployMinimalProxy(
@@ -55,7 +57,8 @@ reverts if deployment is not successful
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`minimalProxy`| address | address of deployed proxy
+| `minimalProxy` | address | address of deployed proxy |
+
 ### _deployMinimalProxy
 ```solidity
   function _deployMinimalProxy(
@@ -69,12 +72,13 @@ reverts if deployment is not successful (likely because salt has already been us
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`salt` | bytes32 | input for deterministic address calculation
+| `salt` | bytes32 | input for deterministic address calculation |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`minimalProxy`| address | address of deployed proxy
+| `minimalProxy` | address | address of deployed proxy |
+
 ### _generateMinimalProxyInitCode
 ```solidity
   function _generateMinimalProxyInitCode(
@@ -87,7 +91,8 @@ concatenate elements to form EIP1167 minimal proxy initialization code
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`bytes`| bytes | memory initialization code
+| `bytes` | bytes | memory initialization code |
+
 ### _deploy
 ```solidity
   function _deploy(
@@ -100,12 +105,13 @@ deploy contract code using "CREATE" opcode
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`initCode` | bytes | contract initialization code
+| `initCode` | bytes | contract initialization code |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| address | address of deployed contract
+| `deployment` | address | address of deployed contract |
+
 ### _deploy
 ```solidity
   function _deploy(
@@ -120,10 +126,11 @@ reverts if deployment is not successful (likely because salt has already been us
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`initCode` | bytes | contract initialization code
-|`salt` | bytes32 | input for deterministic address calculation
+| `initCode` | bytes | contract initialization code |
+| `salt` | bytes32 | input for deterministic address calculation |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`deployment`| address | address of deployed contract
+| `deployment` | address | address of deployed contract |
+

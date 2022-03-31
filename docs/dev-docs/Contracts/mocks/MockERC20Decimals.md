@@ -19,10 +19,10 @@ Constructs the Mock Token contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`name` | string | The name of the token.
-|`symbol` | string | The symbol of the token.
-|`supply` | uint256 | The amount of supply for the token.
-|`decimals_` | uint8 | The amount of decimals in the token.
+| `name` | string | The name of the token. |
+| `symbol` | string | The symbol of the token. |
+| `supply` | uint256 | The amount of supply for the token. |
+| `decimals_` | uint8 | The amount of decimals in the token. |
 
 ### decimals
 ```solidity
@@ -57,6 +57,7 @@ Mints 1000 new tokens to msg.sender
   function mintToken(
   ) external
 ```
+
 
 
 

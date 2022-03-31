@@ -22,9 +22,10 @@ Either the owner will change or the lock will change, not both.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock that was altered.
-|`oldOwner` | address | The old owner of the lock.
-|`newOwner` | address | The new owner of the lock.
-|`oldLock` | struct Lock | The old lock data.
-|`newLock` | struct Lock | The new lock data.
+| `xsLockID` | uint256 | The ID of the lock that was altered. |
+| `oldOwner` | address | The old owner of the lock. |
+| `newOwner` | address | The new owner of the lock. |
+| `oldLock` | struct Lock | The old lock data. |
+| `newLock` | struct Lock | The new lock data. |
+
 
