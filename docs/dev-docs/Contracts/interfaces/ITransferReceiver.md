@@ -5,7 +5,7 @@
 ### onTokenTransfer
 ```solidity
   function onTokenTransfer(
-  ) external returns (bool)
+  ) external returns (bool success)
 ```
 
 

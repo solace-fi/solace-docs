@@ -5,7 +5,7 @@
 ### onTokenApproval
 ```solidity
   function onTokenApproval(
-  ) external returns (bool)
+  ) external returns (bool success)
 ```
 
 
