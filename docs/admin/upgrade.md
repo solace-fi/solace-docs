@@ -15,25 +15,20 @@ There are several smart contracts that can have items modified. Below are the de
     - Governance can add/remove minters
 - **Solace Wallet Coverage contract**:
     - Pause Control: specifically, pauses entire contract, so coverage stops, and weekly DAI/FRAX pulls stop, people cannot withdraw
-    - Registries (Address lookup contract): governance can control that look up, we can point to any contract
+    - SetCooldownPeriod: when you deactivate policy, you enter cooldown, then you can withdraw your funds. Can change length of cool
+    - MaxRate Contract: max rate charged per second per coverage, can change max rate itself
+    - ChargeCycle Contract: how often we could bill, can change the cycle time
+    - ReferralProgram Contract: referral reward can be set, referralThreshold - can set it to any number (currently 100)
+    - ReferralOn Contract: can turn on or off the referral program
+    - CoverPromotionAdminRole Contract: give or take reward points outside of referral program, governance has the right to change the address role
+- **Registries**:
+    - (Address lookup contract): governance can control that look up, we can point to any contract
 - **Staking Contract**: 
     - Can set rewards distribution in quantity per seconds, and start/end time of staking program, for example we have 10m/year
 - **Locker Contract**:
     - Can set listeners 
-- **SetCooldownPeriod Contract**:
-    - when you deactivate policy, you enter cooldown, then you can withdraw your funds. Can change length of cool
-- **MaxRate Contract**:
-    - max rate charged per second per coverage, can change max rate itself
-- **ChargeCycle Contract**:
-    - how often we could bill, can change the cycle time
-- **ReferralProgram Contract**: 
-    - referral reward can be set, referralThreshold - can set it to any number (currently 100)
-- **ReferralOn Contract** 
-    - can turn on or off the referral program
-- **CoverPromotionAdminRole Contract** 
-    - give or take reward points outside of referral program, governance has the right to change the address role
 - **PremiumCollectorRole Contract**:
-    - can charge premiums, governance has the right to change the address role
+    - Can charge premiums, governance has the right to change the address role
 ---
 # Immutable Contracts:
 ---
