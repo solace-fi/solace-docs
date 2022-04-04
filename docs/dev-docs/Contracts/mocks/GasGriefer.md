@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/mocks/GasGriefer.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Used to test safety of ETH transfers to arbitrary contracts. Will use as much gas is given and more.
 
 
@@ -25,6 +27,7 @@ Used to test safety of ETH transfers to arbitrary contracts. Will use as much ga
   function _grief(
   ) internal
 ```
+
 
 
 

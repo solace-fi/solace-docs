@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/mocks/MockERC20Permit.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Mock ERC-20 is a mock ERC-20 with the permit() function.
 
 
@@ -17,10 +19,10 @@ Constructs the Mock Token contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`name` | string | The name of the token.
-|`symbol` | string | The symbol of the token.
-|`supply` | uint256 | The amount of supply for the token.
-|`decimals_` | uint8 | The amount of decimals in the token.
+| `name` | string | The name of the token. |
+| `symbol` | string | The symbol of the token. |
+| `supply` | uint256 | The amount of supply for the token. |
+| `decimals_` | uint8 | The amount of decimals in the token. |
 
 ### decimals
 ```solidity
@@ -47,6 +49,7 @@ no way affects any of the arithmetic of the contract, including
   ) external
 ```
 Mints 1000 new tokens to msg.sender
+
 
 
 

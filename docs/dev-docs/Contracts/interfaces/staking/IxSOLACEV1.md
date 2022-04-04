@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/staking/IxSOLACEV1.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 V1 of the [**SOLACE**](./../../SOLACE) staking contract.
 
 Users can stake their [**SOLACE**](./../../SOLACE) and receive **xSOLACE**. **xSOLACE** is designed to be a safe up-only contract that allows users to enter or leave at any time. The value of **xSOLACE** relative to [**SOLACE**](./../../SOLACE) will increase when [**SOLACE**](./../../SOLACE) is sent to this contract, namely from premiums from coverage polices.
@@ -27,12 +29,13 @@ Determines the current value in **xSOLACE** for an amount of [**SOLACE**](./../.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amountSolace` | uint256 | The amount of [**SOLACE**](./../../SOLACE).
+| `amountSolace` | uint256 | The amount of [**SOLACE**](./../../SOLACE). |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountXSolace`| uint256 | The amount of **xSOLACE**.
+| `amountXSolace` | uint256 | The amount of **xSOLACE**. |
+
 ### xSolaceToSolace
 ```solidity
   function xSolaceToSolace(
@@ -45,12 +48,13 @@ Determines the current value in [**SOLACE**](./../../SOLACE) for an amount of **
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amountXSolace` | uint256 | The amount of **xSOLACE**.
+| `amountXSolace` | uint256 | The amount of **xSOLACE**. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountSolace`| uint256 | The amount of [**SOLACE**](./../../SOLACE).
+| `amountSolace` | uint256 | The amount of [**SOLACE**](./../../SOLACE). |
+
 ### stake
 ```solidity
   function stake(
@@ -64,12 +68,13 @@ Shares of the pool (xSOLACE) are minted to msg.sender.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amountSolace` | uint256 | Amount of [**SOLACE**](./../../SOLACE) to deposit.
+| `amountSolace` | uint256 | Amount of [**SOLACE**](./../../SOLACE) to deposit. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountXSolace`| uint256 | The amount of **xSOLACE** minted.
+| `amountXSolace` | uint256 | The amount of **xSOLACE** minted. |
+
 ### stakeSigned
 ```solidity
   function stakeSigned(
@@ -88,17 +93,18 @@ Shares of the pool (xSOLACE) are minted to msg.sender.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`depositor` | address | The depositing user.
-|`amountSolace` | uint256 | The deposit amount.
-|`deadline` | uint256 | Time the transaction must go through before.
-|`v` | uint8 | secp256k1 signature
-|`r` | bytes32 | secp256k1 signature
-|`s` | bytes32 | secp256k1 signature
+| `depositor` | address | The depositing user. |
+| `amountSolace` | uint256 | The deposit amount. |
+| `deadline` | uint256 | Time the transaction must go through before. |
+| `v` | uint8 | secp256k1 signature |
+| `r` | bytes32 | secp256k1 signature |
+| `s` | bytes32 | secp256k1 signature |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountXSolace`| address | The amount of **xSOLACE** minted.
+| `amountXSolace` | uint256 | The amount of **xSOLACE** minted. |
+
 ### unstake
 ```solidity
   function unstake(
@@ -112,12 +118,13 @@ Burns **xSOLACE** tokens and transfers [**SOLACE**](./../../SOLACE) to msg.sende
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amountXSolace` | uint256 | Amount of **xSOLACE**.
+| `amountXSolace` | uint256 | Amount of **xSOLACE**. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountSolace`| uint256 | Amount of [**SOLACE**](./../../SOLACE) returned.
+| `amountSolace` | uint256 | Amount of [**SOLACE**](./../../SOLACE) returned. |
+
 ### burn
 ```solidity
   function burn(
@@ -130,7 +137,8 @@ Burns **xSOLACE** from msg.sender.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount to burn.
+| `amount` | uint256 | Amount to burn. |
+
 
 ## Events
 ### Staked

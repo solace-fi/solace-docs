@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/utils/IPolicyDescriptorV2.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Produces a string containing the data URI for a JSON metadata string of a policy.
 It is inspired from Uniswap V3 [`NonfungibleTokenPositionDescriptor`](https://docs.uniswap.org/protocol/reference/periphery/NonfungibleTokenPositionDescriptor).
 
@@ -16,13 +18,14 @@ Produces the URI describing a particular policy `product` for a given `policy id
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`policyManager` | contract IPolicyManager | The policy manager to retrieve policy info to produce URI descriptor.
-|`policyID` | uint256 | The ID of the policy for which to produce a description.
+| `policyManager` | contract IPolicyManager | The policy manager to retrieve policy info to produce URI descriptor. |
+| `policyID` | uint256 | The ID of the policy for which to produce a description. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`description`| contract IPolicyManager | The URI of the ERC721-compliant metadata.
+| `description` | string | The URI of the ERC721-compliant metadata. |
+
 ### baseURI
 ```solidity
   function baseURI(
@@ -35,7 +38,8 @@ Returns the base of the URI descriptor.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`base`|  | The base URI of the ERC721-compliant metadata.
+| `base` | string | The base URI of the ERC721-compliant metadata. |
+
 ### setBaseURI
 ```solidity
   function setBaseURI(
@@ -49,7 +53,8 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`base` | string | The new base URI.
+| `base` | string | The new base URI. |
+
 
 ## Events
 ### BaseUriSet

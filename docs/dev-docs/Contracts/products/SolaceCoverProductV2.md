@@ -1,4 +1,4 @@
-<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/products/SolaceCoverProduct.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/products/SolaceCoverProductV2.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
 
 A Solace insurance product that allows users to insure all of their DeFi positions against smart contract risk through a single policy.
 
@@ -6,7 +6,7 @@ Policies can be **purchased** via [`activatePolicy()`](#activatepolicy). Policie
 
 The policy will remain active until i.) the user cancels their policy or ii.) the user's account runs out of funds. The policy will be billed like a subscription, every epoch a fee will be charged from the user's account.
 
-Users can **deposit funds** into their account via [`deposit()`](#deposit). Currently the contract only accepts deposits in **DAI**. Note that both [`activatePolicy()`](#activatepolicy) and [`deposit()`](#deposit) enables a user to perform these actions (activate a policy, make a deposit) on behalf of another user.
+Users can **deposit funds** into their account via [`deposit()`](#deposit). Currently the contract only accepts deposits in **FRAX**. Note that both [`activatePolicy()`](#activatepolicy) and [`deposit()`](#deposit) enables a user to perform these actions (activate a policy, make a deposit) on behalf of another user.
 
 Users can **cancel** their policy via [`deactivatePolicy()`](#deactivatepolicy). This will start a cooldown timer. Users can **withdraw funds** from their account via [`withdraw()`](#withdraw).
 
@@ -22,6 +22,7 @@ Each account can only enter a valid referral code once, however there are no res
   function constructor(
     address governance_,
     address registry_,
+    string asset_,
     string domain_,
     string version_
   ) public
@@ -34,6 +35,7 @@ Constructs `Solace Cover Product`.
 | :--- | :--- | :------------------------------------------------------------------- |
 | `governance_` | address | The address of the governor. |
 | `registry_` | address | The [`Registry`](./Registry) contract address. |
+| `asset_` | string | The asset name to pay coverage. |
 | `domain_` | string | The user readable name of the EIP712 signing domain. |
 | `version_` | string | The current major version of the signing domain. |
 
@@ -43,7 +45,8 @@ Constructs `Solace Cover Product`.
     address policyholder_,
     uint256 coverLimit_,
     uint256 amount_,
-    bytes referralCode_
+    bytes referralCode_,
+    uint256[] chains_
   ) external returns (uint256 policyID)
 ```
 Activates policy for `policyholder_`
@@ -56,6 +59,7 @@ Activates policy for `policyholder_`
 | `coverLimit_` | uint256 | The maximum value to cover in **USD**. |
 | `amount_` | uint256 | The deposit amount in **USD** to fund the policyholder's account. |
 | `referralCode_` | bytes | The referral code. |
+| `chains_` | uint256[] | The chain ids. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
@@ -78,6 +82,20 @@ This will reset the cooldown.
 | :--- | :--- | :------------------------------------------------------------------- |
 | `newCoverLimit_` | uint256 | The new maximum value to cover in **USD**. |
 | `referralCode_` | bytes | The referral code. |
+
+### updatePolicyChainInfo
+```solidity
+  function updatePolicyChainInfo(
+    uint256[] policyChains
+  ) external
+```
+Updates policy chain info.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `policyChains` | uint256[] | The requested policy chains to update. |
 
 ### deposit
 ```solidity
@@ -312,12 +330,12 @@ Gets the policy count (amount of policies that have been purchased, includes ina
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 | `count` | uint256 | The policy count. |
 
-### maxRateNum
+### maxRate
 ```solidity
-  function maxRateNum(
-  ) public returns (uint256 maxRateNum_)
+  function maxRate(
+  ) public returns (uint256 maxRateNum_, uint256 maxRateDenom_)
 ```
-Gets the max rate numerator.
+Gets the max rate.
 
 
 
@@ -325,19 +343,6 @@ Gets the max rate numerator.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 | `maxRateNum_` | uint256 | the max rate numerator. |
-
-### maxRateDenom
-```solidity
-  function maxRateDenom(
-  ) public returns (uint256 maxRateDenom_)
-```
-Gets the max rate denominator.
-
-
-
-#### Return Values:
-| Name                           | Type          | Description                                                                  |
-| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 | `maxRateDenom_` | uint256 | the max rate denominator. |
 
 ### chargeCycle
@@ -529,6 +534,72 @@ Returns the Uniform Resource Identifier (URI) for `policyID`.
 | :--- | :--- | :------------------------------------------------------------------- |
 | `policyID` | uint256 | The policy ID. |
 
+### isSupportedChain
+```solidity
+  function isSupportedChain(
+  ) public returns (bool status)
+```
+Returns true if given chain id supported.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `status` | bool | True if chain is supported otherwise false. |
+
+### numSupportedChains
+```solidity
+  function numSupportedChains(
+  ) public returns (uint256 count)
+```
+Returns the number of chains.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `count` | uint256 | The number of chains. |
+
+### getChain
+```solidity
+  function getChain(
+    uint256 chainIndex
+  ) external returns (uint256 chainId)
+```
+Returns the chain at the given index.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `chainIndex` | uint256 | The index to query. |
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `chainId` | uint256 | The address of the chain. |
+
+### getPolicyChainInfo
+```solidity
+  function getPolicyChainInfo(
+    uint256 policyID
+  ) external returns (uint256[] policyChains)
+```
+Returns the policy chain info.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `policyID` | uint256 | The policy id to get chain info. |
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `policyChains` | uint256[] | The list of policy chain values. |
+
 ### setRegistry
 ```solidity
   function setRegistry(
@@ -575,13 +646,14 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | :--- | :--- | :------------------------------------------------------------------- |
 | `cooldownPeriod_` | uint256 | Cooldown period in seconds. |
 
-### setMaxRateNum
+### setMaxRate
 ```solidity
-  function setMaxRateNum(
-    uint256 maxRateNum_
+  function setMaxRate(
+    uint256 maxRateNum_,
+    uint256 maxRateDenom_
   ) external
 ```
-set _maxRateNum.
+set _maxRate.
 Can only be called by the current [**governor**](/docs/protocol/governance).
 
 
@@ -589,20 +661,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `maxRateNum_` | uint256 | Desired maxRateNum. |
-
-### setMaxRateDenom
-```solidity
-  function setMaxRateDenom(
-    uint256 maxRateDenom_
-  ) external
-```
-set _maxRateDenom.
-Can only be called by the current [**governor**](/docs/protocol/governance).
-
-
-#### Parameters:
-| Name | Type | Description                                                          |
-| :--- | :--- | :------------------------------------------------------------------- |
 | `maxRateDenom_` | uint256 | Desired maxRateDenom. |
 
 ### setChargeCycle
@@ -678,6 +736,48 @@ Sets the base URI for computing `tokenURI`.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 | `baseURI_` | string | The new base URI. |
+
+### addSupportedChains
+```solidity
+  function addSupportedChains(
+    uint256[] supportedChains
+  ) external
+```
+Adds supported chains to cover positions.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `supportedChains` | uint256[] | The supported array of chains. |
+
+### removeSupportedChain
+```solidity
+  function removeSupportedChain(
+    uint256 chainId
+  ) external
+```
+Removes chain from the supported chain list.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `chainId` | uint256 | The chain id to remove. |
+
+### setAsset
+```solidity
+  function setAsset(
+    string assetName
+  ) external
+```
+Sets the asset name.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `assetName` | string | The asset name to set. |
 
 ### setRewardPoints
 ```solidity
@@ -925,7 +1025,7 @@ Internal helper function to get EIP712-compliant hash for referral code verifica
 ### _getAsset
 ```solidity
   function _getAsset(
-  ) internal returns (contract IERC20 asset)
+  ) internal returns (contract IERC20)
 ```
 Returns the underlying principal asset for `Solace Cover Product`.
 
@@ -935,4 +1035,40 @@ Returns the underlying principal asset for `Solace Cover Product`.
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 | `asset` | contract IERC20 | The underlying asset. |
+
+### _validateChains
+```solidity
+  function _validateChains(
+    uint256[] requestedChains
+  ) internal returns (bool)
+```
+Checks if the given chain info is valid or not.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `requestedChains` | uint256[] | The chain id array to check. |
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `status` | bool | True if the given chain array is valid. |
+
+### _setPolicyChainInfo
+```solidity
+  function _setPolicyChainInfo(
+    uint256 policyID,
+    uint256[] policyChains
+  ) internal
+```
+Sets chain info for the policy.
+
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+| `policyID` | uint256 | The policy id to add chain info. |
+| `policyChains` | uint256[] | The array of chain id to add. |
+
 

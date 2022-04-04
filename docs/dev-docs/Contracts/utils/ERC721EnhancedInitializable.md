@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/utils/ERC721EnhancedInitializable.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 An extension of `ERC721`.
 
 The base is OpenZeppelin's `ERC721Enumerable` which also includes the `Metadata` extension. This extension includes simpler transfers, gasless approvals, and better enumeration.
@@ -17,8 +19,8 @@ Initializes the `ERC721Enhanced` contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`name` | string | The name of the token.
-|`symbol` | string | The symbol of the token.
+| `name` | string | The name of the token. |
+| `symbol` | string | The symbol of the token. |
 
 ### __ERC721Enhanced_init_unchained
 ```solidity
@@ -43,8 +45,8 @@ This was excluded from the official `ERC721` standard in favor of `transferFrom(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | The receipient of the token.
-|`tokenID` | uint256 | The token to transfer.
+| `to` | address | The receipient of the token. |
+| `tokenID` | uint256 | The token to transfer. |
 
 ### safeTransfer
 ```solidity
@@ -60,8 +62,8 @@ This was excluded from the official `ERC721` standard in favor of `safeTransferF
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | The receipient of the token.
-|`tokenID` | uint256 | The token to transfer.
+| `to` | address | The receipient of the token. |
+| `tokenID` | uint256 | The token to transfer. |
 
 ### permit
 ```solidity
@@ -80,12 +82,12 @@ Approve of a specific `tokenID` for spending by `spender` via signature.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`spender` | address | The account that is being approved.
-|`tokenID` | uint256 | The ID of the token that is being approved for spending.
-|`deadline` | uint256 | The deadline timestamp by which the call must be mined for the approve to work.
-|`v` | uint8 | Must produce valid secp256k1 signature from the holder along with `r` and `s`.
-|`r` | bytes32 | Must produce valid secp256k1 signature from the holder along with `v` and `s`.
-|`s` | bytes32 | Must produce valid secp256k1 signature from the holder along with `r` and `v`.
+| `spender` | address | The account that is being approved. |
+| `tokenID` | uint256 | The ID of the token that is being approved for spending. |
+| `deadline` | uint256 | The deadline timestamp by which the call must be mined for the approve to work. |
+| `v` | uint8 | Must produce valid secp256k1 signature from the holder along with `r` and `s`. |
+| `r` | bytes32 | Must produce valid secp256k1 signature from the holder along with `v` and `s`. |
+| `s` | bytes32 | Must produce valid secp256k1 signature from the holder along with `r` and `v`. |
 
 ### nonces
 ```solidity
@@ -102,12 +104,13 @@ prevents a signature from being used multiple times.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`tokenID` | uint256 | ID of the token to request nonce.
+| `tokenID` | uint256 | ID of the token to request nonce. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`nonce`| uint256 | Nonce of the token.
+| `nonce` | uint256 | Nonce of the token. |
+
 ### PERMIT_TYPEHASH
 ```solidity
   function PERMIT_TYPEHASH(
@@ -120,7 +123,8 @@ The permit typehash used in the `permit` signature.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`typehash`|  | The typehash for the `permit`.
+| `typehash` | bytes32 | The typehash for the `permit`. |
+
 ### DOMAIN_SEPARATOR
 ```solidity
   function DOMAIN_SEPARATOR(
@@ -133,7 +137,8 @@ The domain separator used in the encoding of the signature for `permit`, as defi
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`seperator`|  | The domain seperator for `permit`.
+| `seperator` | bytes32 | The domain seperator for `permit`. |
+
 ### tokenURI
 ```solidity
   function tokenURI(
@@ -167,7 +172,7 @@ Remember to add access control to inheriting contracts.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`baseURI_` | string | The new base URI.
+| `baseURI_` | string | The new base URI. |
 
 ### _mint
 ```solidity
@@ -182,8 +187,8 @@ Mints `tokenID` and transfers it to `to`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`to` | address | The receiver of the token.
-|`tokenID` | uint256 | The ID of the token to mint.
+| `to` | address | The receiver of the token. |
+| `tokenID` | uint256 | The ID of the token to mint. |
 
 ### _burn
 ```solidity
@@ -197,7 +202,7 @@ Destroys `tokenID`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`tokenID` | uint256 | The ID of the token to burn.
+| `tokenID` | uint256 | The ID of the token to burn. |
 
 ### _transfer
 ```solidity
@@ -213,9 +218,9 @@ Transfers `tokenID` from `from` to `to`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`from` | address | The account to transfer the token from.
-|`to` | address | The account to transfer the token to.
-|`tokenID` | uint256 | The ID of the token to transfer.
+| `from` | address | The account to transfer the token from. |
+| `to` | address | The account to transfer the token to. |
+| `tokenID` | uint256 | The ID of the token to transfer. |
 
 ### _afterTokenTransfer
 ```solidity
@@ -231,9 +236,9 @@ Hook that is called after any token transfer. This includes minting and burning.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`from` | address | The user that sends the token, or zero if minting.
-|`to` | address | The zero that receives the token, or zero if burning.
-|`tokenID` | uint256 | The ID of the token being transferred.
+| `from` | address | The user that sends the token, or zero if minting. |
+| `to` | address | The zero that receives the token, or zero if burning. |
+| `tokenID` | uint256 | The ID of the token being transferred. |
 
 ### exists
 ```solidity
@@ -247,9 +252,10 @@ Determines if a token exists or not.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`tokenID` | uint256 | The ID of the token to query.
+| `tokenID` | uint256 | The ID of the token to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| uint256 | True if the token exists, false if it doesn't.
+| `status` | bool | True if the token exists, false if it doesn't. |
+

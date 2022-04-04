@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/bonds/BondTellerMatic.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 A bond teller that accepts **MATIC** and **WMATIC** as payment.
 
 Bond tellers allow users to buy bonds. Payments are made in **MATIC** or **WMATIC** which is sent to the underwriting pool and used to back risk. Users will receive [**SOLACE**](./../SOLACE) but it must be bonded or staked. If bonded, the [**SOLACE**](./../SOLACE) will be vested linearly and redeemed over time. If staked, the [**SOLACE**](./../SOLACE) only be withdrawable after the lock expires but will give the user extra [**SOLACE**](./../SOLACE) rewards and voting rights.
@@ -26,15 +28,15 @@ Initializes the teller.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`name_` | string | The name of the bond token.
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
-|`solace_` | address | The [**SOLACE**](./../SOLACE) token.
-|`xsLocker_` | address | The [**xsLocker**](./../staking/xsLocker) contract.
-|`pool_` | address | The underwriting pool.
-|`dao_` | address | The DAO.
-|`principal_` | address | The ERC20 token that users deposit.
-|`isPermittable_` | bool | True if `principal` supports `EIP2612`.
-|`bondDepo_` | address | The bond depository.
+| `name_` | string | The name of the bond token. |
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
+| `solace_` | address | The [**SOLACE**](./../SOLACE) token. |
+| `xsLocker_` | address | The [**xsLocker**](./../staking/xsLocker) contract. |
+| `pool_` | address | The underwriting pool. |
+| `dao_` | address | The DAO. |
+| `principal_` | address | The ERC20 token that users deposit. |
+| `isPermittable_` | bool | True if `principal` supports `EIP2612`. |
+| `bondDepo_` | address | The bond depository. |
 
 ### bondPrice
 ```solidity
@@ -49,7 +51,8 @@ Assumes 1 [**SOLACE**](./../SOLACE) payout.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`price_`|  | The price of the bond measured in `principal`.
+| `price_` | uint256 | The price of the bond measured in `principal`. |
+
 ### calculateAmountOut
 ```solidity
   function calculateAmountOut(
@@ -63,13 +66,14 @@ Calculate the amount of [**SOLACE**](./../SOLACE) out for an amount of `principa
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amountIn` | uint256 | Amount of principal to deposit.
-|`stake` | bool | True to stake, false to not stake.
+| `amountIn` | uint256 | Amount of principal to deposit. |
+| `stake` | bool | True to stake, false to not stake. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountOut`| uint256 | Amount of [**SOLACE**](./../SOLACE) out.
+| `amountOut` | uint256 | Amount of [**SOLACE**](./../SOLACE) out. |
+
 ### calculateAmountIn
 ```solidity
   function calculateAmountIn(
@@ -83,13 +87,14 @@ Calculate the amount of `principal` in for an amount of [**SOLACE**](./../SOLACE
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amountOut` | uint256 | Amount of [**SOLACE**](./../SOLACE) out.
-|`stake` | bool | True to stake, false to not stake.
+| `amountOut` | uint256 | Amount of [**SOLACE**](./../SOLACE) out. |
+| `stake` | bool | True to stake, false to not stake. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountIn`| uint256 | Amount of principal to deposit.
+| `amountIn` | uint256 | Amount of principal to deposit. |
+
 ### depositMatic
 ```solidity
   function depositMatic(
@@ -105,15 +110,16 @@ Principal will be transferred from `msg.sender` using `allowance`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`minAmountOut` | uint256 | The minimum [**SOLACE**](./../SOLACE) out.
-|`depositor` | address | The bond recipient, default msg.sender.
-|`stake` | bool | True to stake, false to not stake.
+| `minAmountOut` | uint256 | The minimum [**SOLACE**](./../SOLACE) out. |
+| `depositor` | address | The bond recipient, default msg.sender. |
+| `stake` | bool | True to stake, false to not stake. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`payout`| uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond.
-|`tokenID`| address | The ID of the newly created bond or lock.
+| `payout` | uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond. |
+| `tokenID` | uint256 | The ID of the newly created bond or lock. |
+
 ### depositWmatic
 ```solidity
   function depositWmatic(
@@ -130,16 +136,17 @@ Create a bond by depositing `amount` **WMATIC**.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount of **WMATIC** to deposit.
-|`minAmountOut` | uint256 | The minimum [**SOLACE**](./../SOLACE) out.
-|`depositor` | address | The bond recipient, default msg.sender.
-|`stake` | bool | True to stake, false to not stake.
+| `amount` | uint256 | Amount of **WMATIC** to deposit. |
+| `minAmountOut` | uint256 | The minimum [**SOLACE**](./../SOLACE) out. |
+| `depositor` | address | The bond recipient, default msg.sender. |
+| `stake` | bool | True to stake, false to not stake. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`payout`| uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond.
-|`tokenID`| uint256 | The ID of the newly created bond or lock.
+| `payout` | uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond. |
+| `tokenID` | uint256 | The ID of the newly created bond or lock. |
+
 ### depositWmaticSigned
 ```solidity
   function depositWmaticSigned(
@@ -161,20 +168,21 @@ Note that not all **WMATIC**s have a permit function, in which case this functio
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount of **WMATIC** to deposit.
-|`minAmountOut` | uint256 | The minimum [**SOLACE**](./../SOLACE) out.
-|`depositor` | address | The bond recipient, default msg.sender.
-|`stake` | bool | True to stake, false to not stake.
-|`deadline` | uint256 | Time the transaction must go through before.
-|`v` | uint8 | secp256k1 signature
-|`r` | bytes32 | secp256k1 signature
-|`s` | bytes32 | secp256k1 signature
+| `amount` | uint256 | Amount of **WMATIC** to deposit. |
+| `minAmountOut` | uint256 | The minimum [**SOLACE**](./../SOLACE) out. |
+| `depositor` | address | The bond recipient, default msg.sender. |
+| `stake` | bool | True to stake, false to not stake. |
+| `deadline` | uint256 | Time the transaction must go through before. |
+| `v` | uint8 | secp256k1 signature |
+| `r` | bytes32 | secp256k1 signature |
+| `s` | bytes32 | secp256k1 signature |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`payout`| uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond.
-|`tokenID`| uint256 | The ID of the newly created bond or lock.
+| `payout` | uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond. |
+| `tokenID` | uint256 | The ID of the newly created bond or lock. |
+
 ### claimPayout
 ```solidity
   function claimPayout(
@@ -188,7 +196,7 @@ User calling `claimPayout()`` must be either the owner or approved for the enter
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`bondID` | uint256 | The ID of the bond to redeem.
+| `bondID` | uint256 | The ID of the bond to redeem. |
 
 ### _deposit
 ```solidity
@@ -205,17 +213,18 @@ Create a bond by depositing `amount` of `principal`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount of principal to deposit.
-|`minAmountOut` | uint256 | The minimum [**SOLACE**](./../SOLACE) out.
-|`depositor` | address | The bond recipient, default msg.sender.
-|`stake` | bool | True to stake, false to not stake.
+| `amount` | uint256 | Amount of principal to deposit. |
+| `minAmountOut` | uint256 | The minimum [**SOLACE**](./../SOLACE) out. |
+| `depositor` | address | The bond recipient, default msg.sender. |
+| `stake` | bool | True to stake, false to not stake. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`payout`| uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond.
-|`tokenID`| uint256 | The ID of the newly created bond or lock.
-|`protocolFee`| address | Amount of principal paid to dao
+| `payout` | uint256 | The amount of [**SOLACE**](./../SOLACE) in the bond. |
+| `tokenID` | uint256 | The ID of the newly created bond or lock. |
+| `protocolFee` | uint256 | Amount of principal paid to dao |
+
 ### _calculateTotalPayout
 ```solidity
   function _calculateTotalPayout(
@@ -228,12 +237,13 @@ Calculate the payout in [**SOLACE**](./../SOLACE) and update the current price o
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`depositAmount` | uint256 | The amount of `principal` to deposit.
+| `depositAmount` | uint256 | The amount of `principal` to deposit. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amountOut`| uint256 | The amount of [**SOLACE**](./../SOLACE) out.
+| `amountOut` | uint256 | The amount of [**SOLACE**](./../SOLACE) out. |
+
 ### _calculateEligiblePayout
 ```solidity
   function _calculateEligiblePayout(
@@ -246,12 +256,13 @@ Calculates current eligible payout on a bond, based on `bond.localVestingTerm` a
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`bondID` | uint256 | The ID of the bond to calculate eligible payout on.
+| `bondID` | uint256 | The ID of the bond to calculate eligible payout on. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`eligiblePayout`| uint256 | Amount of [**SOLACE**](./../SOLACE) that can be currently claimed for the bond.
+| `eligiblePayout` | uint256 | Amount of [**SOLACE**](./../SOLACE) that can be currently claimed for the bond. |
+
 ### exponentialDecay
 ```solidity
   function exponentialDecay(
@@ -266,13 +277,14 @@ Linear approximation, trades precision for speed.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`initValue` | uint256 | The initial value.
-|`time` | uint256 | The time elapsed.
+| `initValue` | uint256 | The initial value. |
+| `time` | uint256 | The time elapsed. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`endValue`| uint256 | The value at the end.
+| `endValue` | uint256 | The value at the end. |
+
 ### toUint40
 ```solidity
   function toUint40(
@@ -322,7 +334,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`terms` | struct BondTellerMatic.Terms | The terms of the bond.
+| `terms` | struct BondTellerMatic.Terms | The terms of the bond. |
 
 ### setFees
 ```solidity
@@ -336,7 +348,7 @@ Sets the bond fees.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`protocolFee` | uint256 | The fraction of `principal` that will be sent to the dao measured in BPS.
+| `protocolFee` | uint256 | The fraction of `principal` that will be sent to the dao measured in BPS. |
 
 ### setAddresses
 ```solidity
@@ -357,13 +369,13 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`solace_` | address | The [**SOLACE**](./../SOLACE) token.
-|`xsLocker_` | address | The [**xsLocker**](./../staking/xsLocker) contract.
-|`pool_` | address | The underwriting pool.
-|`dao_` | address | The DAO.
-|`principal_` | address | The ERC20 token that users deposit.
-|`isPermittable_` | bool | True if `principal` supports `EIP2612`.
-|`bondDepo_` | address | The bond depository.
+| `solace_` | address | The [**SOLACE**](./../SOLACE) token. |
+| `xsLocker_` | address | The [**xsLocker**](./../staking/xsLocker) contract. |
+| `pool_` | address | The underwriting pool. |
+| `dao_` | address | The DAO. |
+| `principal_` | address | The ERC20 token that users deposit. |
+| `isPermittable_` | bool | True if `principal` supports `EIP2612`. |
+| `bondDepo_` | address | The bond depository. |
 
 ### _setAddresses
 ```solidity
@@ -384,13 +396,13 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`solace_` | address | The [**SOLACE**](./../SOLACE) token.
-|`xsLocker_` | address | The [**xsLocker**](./../staking/xsLocker) contract.
-|`pool_` | address | The underwriting pool.
-|`dao_` | address | The DAO.
-|`principal_` | address | The ERC20 token that users deposit.
-|`isPermittable_` | bool | True if `principal` supports `EIP2612`.
-|`bondDepo_` | address | The bond depository.
+| `solace_` | address | The [**SOLACE**](./../SOLACE) token. |
+| `xsLocker_` | address | The [**xsLocker**](./../staking/xsLocker) contract. |
+| `pool_` | address | The underwriting pool. |
+| `dao_` | address | The DAO. |
+| `principal_` | address | The ERC20 token that users deposit. |
+| `isPermittable_` | bool | True if `principal` supports `EIP2612`. |
+| `bondDepo_` | address | The bond depository. |
 
 ### receive
 ```solidity
@@ -409,6 +421,7 @@ Deposits **MATIC** and creates bond.
 ```
 Fallback function to allow contract to receive **MATIC**.
 Deposits **MATIC** and creates bond.
+
 
 
 
