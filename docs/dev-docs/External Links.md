@@ -27,7 +27,7 @@ https://app.uniswap.org/#/add/0x501ace9c35e60f03a2af4d484f49f9b1efde9f40/0x45c32
 https://www.sorbet.finance/#/pools/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A
 
 ## GYSR
-https://app.gysr.io/manage/0xf54f26ec9657664c098d4a6879d52cc8bdeccc50
+https://app.gysr.io/pool/0xf54f26ec9657664c098d4a6879d52cc8bdeccc50
 
 ## TriSolaris
 #### Swap

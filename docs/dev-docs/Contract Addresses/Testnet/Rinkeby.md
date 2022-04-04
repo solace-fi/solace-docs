@@ -3,6 +3,7 @@
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
 | SOLACE                       | [`0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40`](https://rinkeby.etherscan.io/address/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) |
+| SOLACE-USDC SLP              | [`0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084`](https://rinkeby.etherscan.io/address/0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084) |
 | DAI                          | [`0xE28bEf39f41c63B66cFD97BFfDB6Defc915B3C88`](https://rinkeby.etherscan.io/address/0xE28bEf39f41c63B66cFD97BFfDB6Defc915B3C88) |
 | WETH                         | [`0xc778417E063141139Fce010982780140Aa0cD5Ab`](https://rinkeby.etherscan.io/address/0xc778417E063141139Fce010982780140Aa0cD5Ab) |
 | USDC                         | [`0x6D6DC3A8f02a1fEc0B9575e8dDE4135929Bd6e21`](https://rinkeby.etherscan.io/address/0x6D6DC3A8f02a1fEc0B9575e8dDE4135929Bd6e21) |
@@ -10,7 +11,6 @@
 | USDT                         | [`0x638b7BaA3D0C7d235fb904B01523883F980f24Ce`](https://rinkeby.etherscan.io/address/0x638b7BaA3D0C7d235fb904B01523883F980f24Ce) |
 | SCP                          | [`0x501AcEe83a6f269B77c167c6701843D454E2EFA0`](https://rinkeby.etherscan.io/address/0x501AcEe83a6f269B77c167c6701843D454E2EFA0) |
 | FRAX                         | [`0x86E5B6485e28E52a0dEEd28Cc10772FeB9c4C400`](https://rinkeby.etherscan.io/address/0x86E5B6485e28E52a0dEEd28Cc10772FeB9c4C400) |
-| SOLACE-USDC SLP              | [`0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084`](https://rinkeby.etherscan.io/address/0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084) |
 
 
 ### V1.2.1
