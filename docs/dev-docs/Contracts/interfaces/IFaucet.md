@@ -2,6 +2,8 @@
 
 Drips [**SOLACE**](../SOLACE).
 
+Useful for testing but should NOT be used in production.
+
 
 ## Functions
 ### drip

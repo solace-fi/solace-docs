@@ -1,6 +1,6 @@
 <a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/IERC3156FlashLender.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
 
-
+An interface that lends flash loans per the [`EIP-3156` standard](https://eips.ethereum.org/EIPS/eip-3156).
 
 
 ## Functions
