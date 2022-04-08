@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/WMATIC.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Wrapped Matic smart contract. Extends **ERC20**.
 
 
@@ -50,5 +52,6 @@ Unwraps Matic. **MATIC** will be returned to the sender at 1 **MATIC** : 1 **WMA
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`wad` | uint256 | Amount to unwrap.
+| `wad` | uint256 | Amount to unwrap. |
+
 

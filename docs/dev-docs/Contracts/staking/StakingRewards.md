@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/staking/StakingRewards.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Rewards users for staking in [`xsLocker`](./xsLocker).
 
 Deposits and withdrawls are made to [`xsLocker`](./xsLocker) and rewards come from `StakingRewards`. All three are paid in [**SOLACE**](./../SOLACE). `StakingRewards` will be registered as an [`xsListener`](./../interfaces/staking/IxsListener). Any time a lock is updated [`registerLockEvent()`](#registerlockevent) will be called and the staking information of that lock will be updated.
@@ -25,10 +27,10 @@ Constructs the StakingRewards contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
-|`solace_` | address | Address of [**SOLACE**](./../SOLACE).
-|`xsLocker_` | address | Address of the [**xsLocker**](./xsLocker) contract.
-|`rewardPerSecond_` | uint256 | The amount of [**SOLACE**](./../SOLACE) to distribute per second.
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
+| `solace_` | address | Address of [**SOLACE**](./../SOLACE). |
+| `xsLocker_` | address | Address of the [**xsLocker**](./xsLocker) contract. |
+| `rewardPerSecond_` | uint256 | The amount of [**SOLACE**](./../SOLACE) to distribute per second. |
 
 ### stakedLockInfo
 ```solidity
@@ -52,12 +54,13 @@ Calculates the accumulated balance of [**SOLACE**](./../SOLACE) for specified lo
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to query rewards for.
+| `xsLockID` | uint256 | The ID of the lock to query rewards for. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`reward`| uint256 | Total amount of withdrawable reward tokens.
+| `reward` | uint256 | Total amount of withdrawable reward tokens. |
+
 ### getRewardAmountDistributed
 ```solidity
   function getRewardAmountDistributed(
@@ -71,13 +74,14 @@ Calculates the reward amount distributed between two timestamps.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`from` | uint256 | The start of the period to measure rewards for.
-|`to` | uint256 | The end of the period to measure rewards for.
+| `from` | uint256 | The start of the period to measure rewards for. |
+| `to` | uint256 | The end of the period to measure rewards for. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| uint256 | The reward amount distributed in the given period.
+| `amount` | uint256 | The reward amount distributed in the given period. |
+
 ### registerLockEvent
 ```solidity
   function registerLockEvent(
@@ -96,11 +100,11 @@ Either the owner will change or the lock will change, not both.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock that was altered.
-|`oldOwner` | address | The old owner of the lock.
-|`newOwner` | address | The new owner of the lock.
-|`oldLock` | struct Lock | The old lock data.
-|`newLock` | struct Lock | The new lock data.
+| `xsLockID` | uint256 | The ID of the lock that was altered. |
+| `oldOwner` | address | The old owner of the lock. |
+| `newOwner` | address | The new owner of the lock. |
+| `oldLock` | struct Lock | The old lock data. |
+| `newLock` | struct Lock | The new lock data. |
 
 ### update
 ```solidity
@@ -123,7 +127,7 @@ Updates and sends a lock's rewards.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to process rewards for.
+| `xsLockID` | uint256 | The ID of the lock to process rewards for. |
 
 ### harvestLocks
 ```solidity
@@ -137,7 +141,7 @@ Updates and sends multiple lock's rewards.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockIDs` | uint256[] | The IDs of the locks to process rewards for.
+| `xsLockIDs` | uint256[] | The IDs of the locks to process rewards for. |
 
 ### compoundLock
 ```solidity
@@ -152,7 +156,7 @@ Can only be called by the owner of the lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to compound.
+| `xsLockID` | uint256 | The ID of the lock to compound. |
 
 ### compoundLocks
 ```solidity
@@ -168,8 +172,8 @@ Can only be called by the owner of the locks.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockIDs` | uint256[] | The ID of the locks to compound.
-|`increasedLockID` | uint256 | The ID of the lock to deposit into.
+| `xsLockIDs` | uint256[] | The ID of the locks to compound. |
+| `increasedLockID` | uint256 | The ID of the lock to deposit into. |
 
 ### _harvest
 ```solidity
@@ -183,7 +187,7 @@ Updates and sends a lock's rewards.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to process rewards for.
+| `xsLockID` | uint256 | The ID of the lock to process rewards for. |
 
 ### _updateLock
 ```solidity
@@ -197,13 +201,14 @@ Updates and returns a lock's rewards.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to process rewards for.
+| `xsLockID` | uint256 | The ID of the lock to process rewards for. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`transferAmount`| uint256 | The amount of [**SOLACE**](./../SOLACE) to transfer to the receiver.
-|`receiver`|  | The user to receive the [**SOLACE**](./../SOLACE).
+| `transferAmount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to transfer to the receiver. |
+| `receiver` | address | The user to receive the [**SOLACE**](./../SOLACE). |
+
 ### _fetchLockInfo
 ```solidity
   function _fetchLockInfo(
@@ -216,14 +221,15 @@ Fetches up to date information about a lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to query.
+| `xsLockID` | uint256 | The ID of the lock to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`exists`| uint256 | True if the lock exists.
-|`owner`|  | The owner of the lock or the zero address if it doesn't exist.
-|`lock`|  | The lock itself.
+| `exists` | bool | True if the lock exists. |
+| `owner` | address | The owner of the lock or the zero address if it doesn't exist. |
+| `lock` | struct Lock | The lock itself. |
+
 ### _calculateLockValue
 ```solidity
   function _calculateLockValue(
@@ -238,13 +244,14 @@ The base value of a lock is its `amount` of [**SOLACE**](./../SOLACE). Its multi
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) in the lock.
-|`end` | uint256 | The unlock timestamp of the lock.
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) in the lock. |
+| `end` | uint256 | The unlock timestamp of the lock. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`value`| uint256 | The boosted value of the lock.
+| `value` | uint256 | The boosted value of the lock. |
+
 ### setRewards
 ```solidity
   function setRewards(
@@ -259,7 +266,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`rewardPerSecond_` | uint256 | Amount to distribute per second.
+| `rewardPerSecond_` | uint256 | Amount to distribute per second. |
 
 ### setTimes
 ```solidity
@@ -275,8 +282,8 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`startTime_` | uint256 | The new start time.
-|`endTime_` | uint256 | The new end time.
+| `startTime_` | uint256 | The new start time. |
+| `endTime_` | uint256 | The new end time. |
 
 ### rescueTokens
 ```solidity
@@ -293,7 +300,8 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`token` | address | The token to rescue.
-|`amount` | uint256 | Amount of the token to rescue.
-|`receiver` | address | Account that will receive the tokens.
+| `token` | address | The token to rescue. |
+| `amount` | uint256 | Amount of the token to rescue. |
+| `receiver` | address | Account that will receive the tokens. |
+
 

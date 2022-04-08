@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/SOLACE.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 The native governance token of the Solace Coverage Protocol.
 
 
@@ -14,7 +16,7 @@ Constructs the Solace Token contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
 
 ### isMinter
 ```solidity
@@ -28,12 +30,13 @@ Returns true if `account` is authorized to mint [**SOLACE**](./SOLACE).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`account` | address | Account to query.
+| `account` | address | Account to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | True if `account` can mint, false otherwise.
+| `status` | bool | True if `account` can mint, false otherwise. |
+
 ### mint
 ```solidity
   function mint(
@@ -48,8 +51,8 @@ Can only be called by authorized minters.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`account` | address | The receiver of new tokens.
-|`amount` | uint256 | The number of new tokens.
+| `account` | address | The receiver of new tokens. |
+| `amount` | uint256 | The number of new tokens. |
 
 ### burn
 ```solidity
@@ -63,7 +66,7 @@ Burns [**SOLACE**](./SOLACE) from msg.sender.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | Amount to burn.
+| `amount` | uint256 | Amount to burn. |
 
 ### addMinter
 ```solidity
@@ -78,7 +81,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`minter` | address | The new minter.
+| `minter` | address | The new minter. |
 
 ### removeMinter
 ```solidity
@@ -93,5 +96,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`minter` | address | The minter to remove.
+| `minter` | address | The minter to remove. |
+
 

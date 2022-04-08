@@ -39,6 +39,7 @@ rm -rf ../solace-docs/docs/dev-docs/Contracts/
 cp -r ./docs/. ../solace-docs/docs/dev-docs/Contracts/
 cd ../solace-docs
 yarn install
+python3 scripts/contract_fixes.py
 yarn build
 yarn start
 ```

@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/utils/Deployer.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Exposes `CREATE2` (EIP-1014) to deploy bytecode on deterministic addresses based on initialization code and salt.
 
 
@@ -16,13 +18,14 @@ Deploys `initcode` using `salt` for defining the deterministic address.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`initcode` | bytes | Initialization code.
-|`salt` | bytes32 | Arbitrary value to modify resulting address.
+| `initcode` | bytes | Initialization code. |
+| `salt` | bytes32 | Arbitrary value to modify resulting address. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`createdContract`| bytes | Created contract address.
+| `createdContract` | address payable | Created contract address. |
+
 ### deployMultiple
 ```solidity
   function deployMultiple(
@@ -36,13 +39,14 @@ Deploys `initcodes` using `salts` for defining the deterministic address.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`initcodes` | bytes[] | Initialization codes.
-|`salts` | bytes32[] | Arbitrary values to modify resulting addresses.
+| `initcodes` | bytes[] | Initialization codes. |
+| `salts` | bytes32[] | Arbitrary values to modify resulting addresses. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`createdContracts`| bytes[] | Created contract addresses.
+| `createdContracts` | address payable[] | Created contract addresses. |
+
 ### _deploy
 ```solidity
   function _deploy(
@@ -56,10 +60,11 @@ Deploys `initcode` using `salt` for defining the deterministic address.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`initcode` | bytes | Initialization code.
-|`salt` | bytes32 | Arbitrary value to modify resulting address.
+| `initcode` | bytes | Initialization code. |
+| `salt` | bytes32 | Arbitrary value to modify resulting address. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`createdContract`| bytes | Created contract address.
+| `createdContract` | address payable | Created contract address. |
+

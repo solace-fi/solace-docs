@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/staking/xsLocker.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Stake your [**SOLACE**](./../SOLACE) to receive voting rights, [**SOLACE**](./../SOLACE) rewards, and more.
 
 Locks are ERC721s and can be viewed with [`locks()`](#locks). Each lock has an `amount` of [**SOLACE**](./../SOLACE) and an `end` timestamp and cannot be transferred or withdrawn from before it unlocks. Locks have a maximum duration of four years.
@@ -25,8 +27,8 @@ Construct the xsLocker contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
-|`solace_` | address | Address of [**SOLACE**](./../SOLACE).
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
+| `solace_` | address | Address of [**SOLACE**](./../SOLACE). |
 
 ### locks
 ```solidity
@@ -40,12 +42,13 @@ Information about a lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to query.
+| `xsLockID` | uint256 | The ID of the lock to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`lock_`| uint256 | Information about the lock.
+| `lock_` | struct Lock | Information about the lock. |
+
 ### isLocked
 ```solidity
   function isLocked(
@@ -58,12 +61,13 @@ Determines if the lock is locked.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to query.
+| `xsLockID` | uint256 | The ID of the lock to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`locked`| uint256 | True if the lock is locked, false if unlocked.
+| `locked` | bool | True if the lock is locked, false if unlocked. |
+
 ### timeLeft
 ```solidity
   function timeLeft(
@@ -76,12 +80,13 @@ Determines the time left until the lock unlocks.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to query.
+| `xsLockID` | uint256 | The ID of the lock to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`time`| uint256 | The time left in seconds, 0 if unlocked.
+| `time` | uint256 | The time left in seconds, 0 if unlocked. |
+
 ### stakedBalance
 ```solidity
   function stakedBalance(
@@ -94,12 +99,13 @@ Returns the amount of [**SOLACE**](./../SOLACE) the user has staked.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`account` | address | The account to query.
+| `account` | address | The account to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`balance`| address | The user's balance.
+| `balance` | uint256 | The user's balance. |
+
 ### getXsLockListeners
 ```solidity
   function getXsLockListeners(
@@ -112,7 +118,8 @@ The list of contracts that are listening to lock updates.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`listeners_`|  | The list as an array.
+| `listeners_` | address[] | The list as an array. |
+
 ### createLock
 ```solidity
   function createLock(
@@ -129,14 +136,15 @@ use end=0 to initialize as unlocked.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`recipient` | address | The account that will receive the lock.
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to deposit.
-|`end` | uint256 | The timestamp the lock will unlock.
+| `recipient` | address | The account that will receive the lock. |
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to deposit. |
+| `end` | uint256 | The timestamp the lock will unlock. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`xsLockID`| address | The ID of the newly created lock.
+| `xsLockID` | uint256 | The ID of the newly created lock. |
+
 ### createLockSigned
 ```solidity
   function createLockSigned(
@@ -157,17 +165,18 @@ recipient = msg.sender
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to deposit.
-|`end` | uint256 | The timestamp the lock will unlock.
-|`deadline` | uint256 | Time the transaction must go through before.
-|`v` | uint8 | secp256k1 signature
-|`r` | bytes32 | secp256k1 signature
-|`s` | bytes32 | secp256k1 signature
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to deposit. |
+| `end` | uint256 | The timestamp the lock will unlock. |
+| `deadline` | uint256 | Time the transaction must go through before. |
+| `v` | uint8 | secp256k1 signature |
+| `r` | bytes32 | secp256k1 signature |
+| `s` | bytes32 | secp256k1 signature |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`xsLockID`| uint256 | The ID of the newly created lock.
+| `xsLockID` | uint256 | The ID of the newly created lock. |
+
 ### increaseAmount
 ```solidity
   function increaseAmount(
@@ -182,8 +191,8 @@ Deposit [**SOLACE**](./../SOLACE) to increase the value of an existing lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to update.
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to deposit.
+| `xsLockID` | uint256 | The ID of the lock to update. |
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to deposit. |
 
 ### increaseAmountSigned
 ```solidity
@@ -203,12 +212,12 @@ Deposit [**SOLACE**](./../SOLACE) to increase the value of an existing lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to update.
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to deposit.
-|`deadline` | uint256 | Time the transaction must go through before.
-|`v` | uint8 | secp256k1 signature
-|`r` | bytes32 | secp256k1 signature
-|`s` | bytes32 | secp256k1 signature
+| `xsLockID` | uint256 | The ID of the lock to update. |
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to deposit. |
+| `deadline` | uint256 | Time the transaction must go through before. |
+| `v` | uint8 | secp256k1 signature |
+| `r` | bytes32 | secp256k1 signature |
+| `s` | bytes32 | secp256k1 signature |
 
 ### extendLock
 ```solidity
@@ -224,8 +233,8 @@ Can only be called by the lock owner or approved.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to update.
-|`end` | uint256 | The new time for the lock to unlock.
+| `xsLockID` | uint256 | The ID of the lock to update. |
+| `end` | uint256 | The new time for the lock to unlock. |
 
 ### withdraw
 ```solidity
@@ -242,8 +251,8 @@ Can only be called if unlocked.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to withdraw from.
-|`recipient` | address | The user to receive the lock's [**SOLACE**](./../SOLACE).
+| `xsLockID` | uint256 | The ID of the lock to withdraw from. |
+| `recipient` | address | The user to receive the lock's [**SOLACE**](./../SOLACE). |
 
 ### withdrawInPart
 ```solidity
@@ -261,9 +270,9 @@ Can only be called if unlocked.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to withdraw from.
-|`recipient` | address | The user to receive the lock's [**SOLACE**](./../SOLACE).
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to withdraw.
+| `xsLockID` | uint256 | The ID of the lock to withdraw from. |
+| `recipient` | address | The user to receive the lock's [**SOLACE**](./../SOLACE). |
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to withdraw. |
 
 ### withdrawMany
 ```solidity
@@ -280,8 +289,8 @@ Can only be called if unlocked.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockIDs` | uint256[] | The ID of the locks to withdraw from.
-|`recipient` | address | The user to receive the lock's [**SOLACE**](./../SOLACE).
+| `xsLockIDs` | uint256[] | The ID of the locks to withdraw from. |
+| `recipient` | address | The user to receive the lock's [**SOLACE**](./../SOLACE). |
 
 ### _createLock
 ```solidity
@@ -298,10 +307,10 @@ Creates a new lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`recipient` | address | The user that the lock will be minted to.
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) in the lock.
-|`end` | uint256 | The end of the lock.
-|`xsLockID` |  | The ID of the new lock.
+| `recipient` | address | The user that the lock will be minted to. |
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) in the lock. |
+| `end` | uint256 | The end of the lock. |
+| `xsLockID` |  | The ID of the new lock. |
 
 ### _updateLock
 ```solidity
@@ -317,9 +326,9 @@ Updates an existing lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to update.
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) now in the lock.
-|`end` | uint256 | The end of the lock.
+| `xsLockID` | uint256 | The ID of the lock to update. |
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) now in the lock. |
+| `end` | uint256 | The end of the lock. |
 
 ### _withdraw
 ```solidity
@@ -334,8 +343,8 @@ Withdraws from a lock.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock to withdraw from.
-|`amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to withdraw.
+| `xsLockID` | uint256 | The ID of the lock to withdraw from. |
+| `amount` | uint256 | The amount of [**SOLACE**](./../SOLACE) to withdraw. |
 
 ### _afterTokenTransfer
 ```solidity
@@ -351,9 +360,9 @@ Hook that is called after any token transfer. This includes minting and burning.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`from` | address | The user that sends the token, or zero if minting.
-|`to` | address | The zero that receives the token, or zero if burning.
-|`xsLockID` | uint256 | The ID of the token being transferred.
+| `from` | address | The user that sends the token, or zero if minting. |
+| `to` | address | The zero that receives the token, or zero if burning. |
+| `xsLockID` | uint256 | The ID of the token being transferred. |
 
 ### _notify
 ```solidity
@@ -373,11 +382,11 @@ Either the owner will change or the lock will change, not both.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | uint256 | The ID of the lock that was altered.
-|`oldOwner` | address | The old owner of the lock.
-|`newOwner` | address | The new owner of the lock.
-|`oldLock` | struct Lock | The old lock data.
-|`newLock` | struct Lock | The new lock data.
+| `xsLockID` | uint256 | The ID of the lock that was altered. |
+| `oldOwner` | address | The old owner of the lock. |
+| `newOwner` | address | The new owner of the lock. |
+| `oldLock` | struct Lock | The old lock data. |
+| `newLock` | struct Lock | The new lock data. |
 
 ### addXsLockListener
 ```solidity
@@ -392,7 +401,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`listener` | address | The listener to add.
+| `listener` | address | The listener to add. |
 
 ### removeXsLockListener
 ```solidity
@@ -407,7 +416,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`listener` | address | The listener to remove.
+| `listener` | address | The listener to remove. |
 
 ### setBaseURI
 ```solidity
@@ -422,5 +431,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`baseURI_` | string | The new base URI.
+| `baseURI_` | string | The new base URI. |
+
 

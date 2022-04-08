@@ -1,3 +1,16 @@
+### Tokens
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| DAI                          | [`0x31a1D59460a9619ec6965a5684C6d3Ae470D0fE5`](https://kovan.etherscan.io/address/0x31a1D59460a9619ec6965a5684C6d3Ae470D0fE5) |
+| WETH                         | [`0xd0A1E359811322d97991E03f863a0C30C2cF029C`](https://kovan.etherscan.io/address/0xd0A1E359811322d97991E03f863a0C30C2cF029C) |
+| USDC                         | [`0x512d93ADc3DF4E24cb4b26c44A91682Ec073F559`](https://kovan.etherscan.io/address/0x512d93ADc3DF4E24cb4b26c44A91682Ec073F559) |
+| WBTC                         | [`0x1063bf969F8D3D7296a2A94274D3df9202da2A3A`](https://kovan.etherscan.io/address/0x1063bf969F8D3D7296a2A94274D3df9202da2A3A) |
+| USDT                         | [`0xAEA2B0F4763c8Ffc33A4c454CD08F803B02B6B53`](https://kovan.etherscan.io/address/0xAEA2B0F4763c8Ffc33A4c454CD08F803B02B6B53) |
+| SCP                          | [`0x501AcEe83a6f269B77c167c6701843D454E2EFA0`](https://kovan.etherscan.io/address/0x501AcEe83a6f269B77c167c6701843D454E2EFA0) |
+| FRAX                         | [`0x58B23b32a9774153E1E344762751aDfdca2764DD`](https://kovan.etherscan.io/address/0x58B23b32a9774153E1E344762751aDfdca2764DD) |
+| SOLACE-USDC SLP              | [`0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084`](https://kovan.etherscan.io/address/0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |
@@ -37,16 +50,3 @@
 | WBTC Bond Teller             | [`0x501aCE2f3b5B8f645E67556Df77ac4c3081D84C7`](https://kovan.etherscan.io/address/0x501aCE2f3b5B8f645E67556Df77ac4c3081D84C7) |
 | USDT Bond Teller             | [`0x501acE6061D6176Da12FCBa36Bc85B2fc3FFd5e3`](https://kovan.etherscan.io/address/0x501acE6061D6176Da12FCBa36Bc85B2fc3FFd5e3) |
 | SCP Bond Teller              | [`0x501aCE163FfaCDa6584D75b274eD23155BFf4812`](https://kovan.etherscan.io/address/0x501aCE163FfaCDa6584D75b274eD23155BFf4812) |
-
-### Tokens
-
-| Contract Name                | Address                                      |
-|------------------------------|----------------------------------------------|
-| DAI                          | [`0x31a1D59460a9619ec6965a5684C6d3Ae470D0fE5`](https://kovan.etherscan.io/address/0x31a1D59460a9619ec6965a5684C6d3Ae470D0fE5) |
-| WETH                         | [`0xd0A1E359811322d97991E03f863a0C30C2cF029C`](https://kovan.etherscan.io/address/0xd0A1E359811322d97991E03f863a0C30C2cF029C) |
-| USDC                         | [`0x512d93ADc3DF4E24cb4b26c44A91682Ec073F559`](https://kovan.etherscan.io/address/0x512d93ADc3DF4E24cb4b26c44A91682Ec073F559) |
-| WBTC                         | [`0x1063bf969F8D3D7296a2A94274D3df9202da2A3A`](https://kovan.etherscan.io/address/0x1063bf969F8D3D7296a2A94274D3df9202da2A3A) |
-| USDT                         | [`0xAEA2B0F4763c8Ffc33A4c454CD08F803B02B6B53`](https://kovan.etherscan.io/address/0xAEA2B0F4763c8Ffc33A4c454CD08F803B02B6B53) |
-| SCP                          | [`0x501AcEe83a6f269B77c167c6701843D454E2EFA0`](https://kovan.etherscan.io/address/0x501AcEe83a6f269B77c167c6701843D454E2EFA0) |
-| FRAX                         | [`0x58B23b32a9774153E1E344762751aDfdca2764DD`](https://kovan.etherscan.io/address/0x58B23b32a9774153E1E344762751aDfdca2764DD) |
-| SOLACE-USDC SLP              | [`0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084`](https://kovan.etherscan.io/address/0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084) |

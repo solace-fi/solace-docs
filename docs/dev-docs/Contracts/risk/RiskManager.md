@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/risk/RiskManager.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Calculates the acceptable risk, sellable cover, and capital requirements of Solace products and capital pool.
 
 The total amount of sellable coverage is proportional to the assets in the [**risk backing capital pool**](./Vault). The max cover is split amongst products in a weighting system. [**Governance**](/docs/protocol/governance) can change these weights and with it each product's sellable cover.
@@ -21,8 +23,8 @@ Constructs the RiskManager contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`governance_` | address | The address of the [governor](/docs/protocol/governance).
-|`registry_` | address | Address of registry.
+| `governance_` | address | The address of the [governor](/docs/protocol/governance). |
+| `registry_` | address | Address of registry. |
 
 ### addRiskStrategy
 ```solidity
@@ -37,12 +39,13 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`strategy_` | address | The address of the risk strategy.
+| `strategy_` | address | The address of the risk strategy. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`index`| address | The index of the risk strategy.
+| `index` | uint256 | The index of the risk strategy. |
+
 ### setWeightAllocation
 ```solidity
   function setWeightAllocation(
@@ -57,8 +60,8 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`strategy_` | address | The address of the risk strategy.
-|`weight_` | uint32 | The value to set.
+| `strategy_` | address | The address of the risk strategy. |
+| `weight_` | uint32 | The value to set. |
 
 ### setStrategyStatus
 ```solidity
@@ -74,8 +77,8 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`strategy_` | address | The address of the risk strategy.
-|`status_` | uint8 | The status to set.
+| `strategy_` | address | The address of the risk strategy. |
+| `status_` | uint8 | The status to set. |
 
 ### updateActiveCoverLimitForStrategy
 ```solidity
@@ -93,9 +96,9 @@ The policy manager and soteria will call this function for now.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`strategy` | address | The strategy address to add cover limit.
-|`currentCoverLimit` | uint256 | The current cover limit amount of the strategy's product.
-|`newCoverLimit` | uint256 | The new cover limit amount of the strategy's product.
+| `strategy` | address | The strategy address to add cover limit. |
+| `currentCoverLimit` | uint256 | The current cover limit amount of the strategy's product. |
+| `newCoverLimit` | uint256 | The new cover limit amount of the strategy's product. |
 
 ### addCoverLimitUpdater
 ```solidity
@@ -110,7 +113,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`updater` | address | The address that can update cover limit.
+| `updater` | address | The address that can update cover limit. |
 
 ### removeCoverLimitUpdater
 ```solidity
@@ -124,7 +127,7 @@ Removes the cover limit updater.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`updater` | address | The address of updater to remove.
+| `updater` | address | The address of updater to remove. |
 
 ### strategyIsActive
 ```solidity
@@ -138,12 +141,13 @@ Checks if the given risk strategy is active.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`strategy_` | address | The risk strategy.
+| `strategy_` | address | The risk strategy. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`status`| address | True if the strategy is active.
+| `status` | bool | True if the strategy is active. |
+
 ### strategyAt
 ```solidity
   function strategyAt(
@@ -157,12 +161,13 @@ Enumerable `[1, numStrategies]`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`index_` | uint256 | Index to query.
+| `index_` | uint256 | Index to query. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`strategy`| uint256 | The product address.
+| `strategy` | address | The product address. |
+
 ### numStrategies
 ```solidity
   function numStrategies(
@@ -175,7 +180,8 @@ Returns the number of registered strategies..
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`count`|  | The number of strategies.
+| `count` | uint256 | The number of strategies. |
+
 ### strategyInfo
 ```solidity
   function strategyInfo(
@@ -188,15 +194,15 @@ Returns the risk strategy information.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`strategy_` | address | The risk strategy.
+| `strategy_` | address | The risk strategy. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`id`| address | The id of the risk strategy.
-|`weight`|  | The risk strategy weight allocation.
-|`status`|  | The status of risk strategy.
-|`timestamp`|  | The added time of the risk strategy.
+| `id` | uint256 | The id of the risk strategy. |
+| `weight` | uint32 | The risk strategy weight allocation. |
+| `status` | enum IRiskManager.StrategyStatus | The status of risk strategy. |
+| `timestamp` | uint256 | The added time of the risk strategy. |
 
 ### weightPerStrategy
 ```solidity
@@ -210,12 +216,13 @@ Returns the allocated weight for the risk strategy.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`strategy_` | address | The risk strategy.
+| `strategy_` | address | The risk strategy. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`weight`| address | The risk strategy weight allocation.
+| `weight` | uint32 | The risk strategy weight allocation. |
+
 ### maxCover
 ```solidity
   function maxCover(
@@ -228,7 +235,8 @@ The maximum amount of cover that Solace as a whole can sell.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`|  | The max amount of cover in wei.
+| `cover` | uint256 | The max amount of cover in wei. |
+
 ### maxCoverPerStrategy
 ```solidity
   function maxCoverPerStrategy(
@@ -241,7 +249,8 @@ The maximum amount of cover for given strategy can sell.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`| address | The max amount of cover in wei.
+| `cover` | uint256 | The max amount of cover in wei. |
+
 ### weightSum
 ```solidity
   function weightSum(
@@ -254,7 +263,8 @@ Returns the sum of allocation weights for all strategies.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`sum`|  | WeightSum.
+| `sum` | uint32 | WeightSum. |
+
 ### activeCoverLimit
 ```solidity
   function activeCoverLimit(
@@ -267,7 +277,8 @@ Returns the current amount covered (in wei).
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`|  | The covered amount (in wei).
+| `amount` | uint256 | The covered amount (in wei). |
+
 ### activeCoverLimitPerStrategy
 ```solidity
   function activeCoverLimitPerStrategy(
@@ -280,12 +291,13 @@ Returns the current amount covered (in wei).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`riskStrategy` | address | The risk strategy address.
+| `riskStrategy` | address | The risk strategy address. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| address | The covered amount (in wei).
+| `amount` | uint256 | The covered amount (in wei). |
+
 ### minCapitalRequirement
 ```solidity
   function minCapitalRequirement(
@@ -298,7 +310,8 @@ The minimum amount of capital required to safely cover all policies.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`mcr`|  | The minimum capital requirement.
+| `mcr` | uint256 | The minimum capital requirement. |
+
 ### minCapitalRequirementPerStrategy
 ```solidity
   function minCapitalRequirementPerStrategy(
@@ -313,12 +326,13 @@ we are not adding "strategyIsActive()" require statement.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`strategy` | address | The risk strategy.
+| `strategy` | address | The risk strategy. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`smcr`| address | The strategy minimum capital requirement.
+| `smcr` | uint256 | The strategy minimum capital requirement. |
+
 ### partialReservesFactor
 ```solidity
   function partialReservesFactor(
@@ -331,7 +345,8 @@ Multiplier for minimum capital requirement.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`factor`|  | Partial reserves factor in BPS.
+| `factor` | uint16 | Partial reserves factor in BPS. |
+
 ### setPartialReservesFactor
 ```solidity
   function setPartialReservesFactor(
@@ -345,5 +360,6 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`partialReservesFactor_` | uint16 | New partial reserves factor in BPS.
+| `partialReservesFactor_` | uint16 | New partial reserves factor in BPS. |
+
 

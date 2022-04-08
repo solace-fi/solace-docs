@@ -20,18 +20,19 @@
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 {{#natspec.params}}
-|`{{param}}` | {{#lookup ../args.types @index}}{{/lookup}} | {{ description }}{{/natspec.params}}{{/if}}
+| `{{param}}` | {{#lookup ../args.types @index}}{{/lookup}} | {{description}} |{{/natspec.params}}{{/if}}
 {{#if natspec.returns}}
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 {{#natspec.returns}}
-|`{{param}}`| {{#lookup ../args.types @index}}{{/lookup}} | {{{description}}}{{/natspec.returns}}{{/if}}
+| `{{param}}` | {{#lookup ../outputs.types @index}}{{/lookup}} | {{description}} |{{/natspec.returns}}{{/if}}
 {{/ownFunctions}}
+
 {{#if ownEvents}}
 ## Events
 {{/if}}
-{{#ownEvents}}
+{{#each ownEvents}}
 ### {{name}}
 ```solidity
   event {{name}}(
@@ -47,5 +48,5 @@
 | Name                           | Type          | Description                                    |
 | :----------------------------- | :------------ | :--------------------------------------------- |
 {{#natspec.params}}
-|`{{param}}`| {{#lookup ../args.types @index}}{{/lookup}} | {{{description}}}{{/natspec.params}}{{/if}}
-{{/ownEvents}}
+| `{{param}}` | {{#lookup ../args.types @index}}{{/lookup}} | {{description}} |{{/natspec.params}}{{/if}}
+{{/each}}

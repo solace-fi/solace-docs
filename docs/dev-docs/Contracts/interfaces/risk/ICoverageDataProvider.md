@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/interfaces/risk/ICoverageDataProvider.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Holds underwriting pool amounts in `USD`. Provides information to the [**Risk Manager**](./RiskManager.sol) that is the maximum amount of cover that `Solace` protocol can sell as a coverage.
 
 
@@ -15,8 +17,8 @@ Resets the underwriting pool balances.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`uwpNames` | string[] | The underwriting pool values to set.
-|`amounts` | uint256[] | The underwriting pool balances.
+| `uwpNames` | string[] | The underwriting pool values to set. |
+| `amounts` | uint256[] | The underwriting pool balances. |
 
 ### set
 ```solidity
@@ -31,8 +33,8 @@ Sets the balance of the given underwriting pool.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`uwpName` | string | The underwriting pool name to set balance.
-|`amount` | uint256 | The balance of the underwriting pool in `USD`.
+| `uwpName` | string | The underwriting pool name to set balance. |
+| `amount` | uint256 | The balance of the underwriting pool in `USD`. |
 
 ### remove
 ```solidity
@@ -46,7 +48,7 @@ Removes the given underwriting pool.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`uwpName` | string | The underwriting pool name to remove.
+| `uwpName` | string | The underwriting pool name to remove. |
 
 ### maxCover
 ```solidity
@@ -60,7 +62,8 @@ The maximum amount of cover in `USD` that Solace as a whole can sell.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`cover`|  | The max amount of cover in `USD`.
+| `cover` | uint256 | The max amount of cover in `USD`. |
+
 ### balanceOf
 ```solidity
   function balanceOf(
@@ -73,12 +76,13 @@ Returns the balance of the underwriting pool in `USD`.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`uwpName` | string | The underwriting pool name to get balance.
+| `uwpName` | string | The underwriting pool name to get balance. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`amount`| string | The balance of the underwriting pool in `USD`.
+| `amount` | uint256 | The balance of the underwriting pool in `USD`. |
+
 ### poolOf
 ```solidity
   function poolOf(
@@ -91,12 +95,13 @@ Returns underwriting pool name for given index.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`index` | uint256 | The underwriting pool index to get.
+| `index` | uint256 | The underwriting pool index to get. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`uwpName`| uint256 | The underwriting pool name.
+| `uwpName` | string | The underwriting pool name. |
+
 ### getUwpUpdater
 ```solidity
   function getUwpUpdater(
@@ -109,7 +114,8 @@ Returns the underwriting pool bot updater address.
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`uwpUpdater`|  | The bot address.
+| `uwpUpdater` | address | The bot address. |
+
 ### setUwpUpdater
 ```solidity
   function setUwpUpdater(
@@ -122,7 +128,8 @@ Sets the underwriting pool bot updater.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`uwpUpdater` | address | The bot address to set.
+| `uwpUpdater` | address | The bot address to set. |
+
 
 ## Events
 ### UnderwritingPoolSet

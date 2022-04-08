@@ -1,4 +1,8 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/Faucet.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Drips [**SOLACE**](./SOLACE).
+
+Useful for testing but should NOT be used in production.
 
 
 ## Functions
@@ -14,7 +18,7 @@ Constructs the faucet.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`solace_` | address | Address of the [**SOLACE**](./SOLACE) contract.
+| `solace_` | address | Address of the [**SOLACE**](./SOLACE) contract. |
 
 ### drip
 ```solidity
@@ -22,6 +26,7 @@ Constructs the faucet.
   ) external
 ```
 Drips [**SOLACE**](./SOLACE) to msg.sender.
+
 
 
 

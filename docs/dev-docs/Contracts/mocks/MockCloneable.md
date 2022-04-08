@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/mocks/MockCloneable.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Mock Cloneable is only used to test Cloneable.
 
 
@@ -15,13 +17,14 @@ Creates a new `MockCloneable`. The new instance will be a minimal proxy to this 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`message_` | string | The new instance's message.
-|`governance_` | address | The new instance's [governor](/docs/protocol/governance).
+| `message_` | string | The new instance's message. |
+| `governance_` | address | The new instance's [governor](/docs/protocol/governance). |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`newInstance`| string | The address of the new instance.
+| `newInstance` | address | The address of the new instance. |
+
 ### clone2
 ```solidity
   function clone2(
@@ -36,14 +39,15 @@ Creates a new `MockCloneable`. The new instance will be a minimal proxy to this 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`message_` | string | The new instance's message.
-|`governance_` | address | The new instance's [governor](/docs/protocol/governance).
-|`salt_` | bytes32 | Input for deterministic address calculation.
+| `message_` | string | The new instance's message. |
+| `governance_` | address | The new instance's [governor](/docs/protocol/governance). |
+| `salt_` | bytes32 | Input for deterministic address calculation. |
 
 #### Return Values:
 | Name                           | Type          | Description                                                                  |
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
-|`newInstance`| string | The address of the new instance.
+| `newInstance` | address | The address of the new instance. |
+
 ### initialize
 ```solidity
   function initialize(
@@ -57,14 +61,15 @@ Initializes the MockCloneable.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`message_` | string | The instance's message.
-|`governance_` | address | The instance's [governor](/docs/protocol/governance).
+| `message_` | string | The instance's message. |
+| `governance_` | address | The instance's [governor](/docs/protocol/governance). |
 
 ### setMessage
 ```solidity
   function setMessage(
   ) external
 ```
+
 
 
 

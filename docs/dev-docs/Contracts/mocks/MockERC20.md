@@ -1,3 +1,5 @@
+<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/mocks/MockERC20.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>
+
 Mock ERC-20 is only used to test the master contract.
 
 
@@ -16,15 +18,16 @@ Constructs the Mock Token contract.
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`name` | string | The name of the token.
-|`symbol` | string | The symbol of the token.
-|`supply` | uint256 | The amount of supply for the token.
+| `name` | string | The name of the token. |
+| `symbol` | string | The symbol of the token. |
+| `supply` | uint256 | The amount of supply for the token. |
 
 ### mintToken
 ```solidity
   function mintToken(
   ) external
 ```
+
 
 
 
