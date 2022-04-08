@@ -16,8 +16,8 @@ Below is a sample lookup table used to map protocols into risk tiers based on th
 Tier |	Min Relativity | Max Relativity |
 |----|-----------------|----------------|
 Unrated risk tier | null | null |
-Low risk tier | 0.67 | 1.67 |
+Low risk tier | 1 | 1.67 |
 Mid risk tier | 1.67 | 2.33 |
 High risk tier | 2.33 | 3 |
  
-Minimum relativity and maximum relativity columns describe the range from the lowest relativity to highest relativity that can map into each tier. These risk tiers will be expanded to allow for a more granular classification in the future. 
+The minimum and maximum relativity columns describe the range of relativity that map to each tier. In the future, we will break down these risk tiers to allow for more granular classification.
