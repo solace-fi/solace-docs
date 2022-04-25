@@ -8,7 +8,7 @@ title: Getting Started
 <br/>
 <br/>
 
-SDK Nightly is an unstable version of the SDK, with more advanced features that are not yet reliable & fast enough to make it into the standard SDK.
+SDK Nightly is an experimental version of the SDK, with more advanced features that are not yet reliable & fast enough to make it into the standard SDK.
 
 ---
 

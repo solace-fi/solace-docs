@@ -152,7 +152,7 @@ console.log(await coverage.coverLimitOf(1)) // BigNumber { _hex: '0x01b4fde083e5
 
 | Name | Type |
 | :------ | :------ |
-| `policyID` | `number` |
+| `policyID` | `BigNumberish` |
 
 #### Returns
 
@@ -233,7 +233,7 @@ Returns the chain at the given index.
 
 ```js
 // ...setup coverage object for Ethereum mainnet
-console.log(await coverage.getChain(1))
+console.log(await coverage.getChain(1)) // BigNumber { _hex: '0x01', _isBigNumber: true }
 ```
 
 #### Parameters
@@ -254,7 +254,7 @@ Returns the number of supported chains
 
 ```js
 // ...setup coverage object for Ethereum mainnet
-console.log(await coverage.numSupportedChains())
+console.log(await coverage.numSupportedChains()) // BigNumber { _hex: '0x02', _isBigNumber: true }
 ```
 
 #### Parameters

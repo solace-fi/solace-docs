@@ -36,6 +36,23 @@ const price = new Price()
 const bond = new Bond(1)
 const apiPriceMapping = await price.getCoinGeckoTokenPrices()
 console.log ( await bond.getBondTellerData(apiPriceMapping) )
+/*
+   [
+      {
+        tellerData: {
+          teller: [Object],
+          bondPrice: [BigNumber],
+          usdBondPrice: 0.04354409314629305,
+          vestingTermInSeconds: 604800,
+          capacity: [BigNumber],
+          maxPayout: [BigNumber],
+          bondRoi: -8.572142663615487
+        },
+        principalData: { principal: [Contract], principalProps: [Object] }
+      },
+      ...
+    ]
+*/
 ```
 
 #### Parameters
@@ -58,12 +75,24 @@ This function will occasionally time-out (take >30s to return), especially with 
 
 ### **getUserBondData**
 
-Gets data on a specified user's bonds for a specified bond teller
+For a specified bond teller address, fetches a specified address' bonds
 
 ```js
 import { Bond } from "@solace-fi/sdk-nightly"
 const bond = new Bond(1)
 console.log ( await bond.getUserBondData("0x501ACe677634Fd09A876E88126076933b686967a", "0xe7aba95073a85abd4ce82487c7fdfa860024b6cc") )
+/*
+    [
+      {
+        id: BigNumber { _hex: '0x02', _isBigNumber: true },
+        payoutAmount: BigNumber { _hex: '0x226aa36727f56d1a', _isBigNumber: true },
+        payoutAlreadyClaimed: BigNumber { _hex: '0x00', _isBigNumber: true },
+        principalPaid: BigNumber { _hex: '0x0186a0', _isBigNumber: true },
+        vestingStart: 1649659327,
+        localVestingTerm: 604800
+      }
+    ]
+*/
 ```
 
 #### Parameters

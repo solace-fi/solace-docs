@@ -4,7 +4,7 @@ id: helper-methods
 title: Helper Methods
 ---
 
-Using the Fetcher object to make read-only calls to fetch data from the blockchain is relatively straightforward (hopefully!). More tricky is using the Policyholder object to send transactions to the blockchain. There are a number of additional considerations, such as:
+Using the Coverage object to make read-only calls to fetch data from the blockchain is relatively straightforward (hopefully!). More tricky is using the Coverage object to send transactions to the blockchain. There are a number of additional considerations, such as:
 
 
 1. How do we use a custom RPC endpoint? (e.g. if we want to use our [Alchemy](https://www.alchemy.com/) API key)?
@@ -25,7 +25,7 @@ We have designed the SDK to abstract away these concerns, especially for the com
 Gets a [Provider](https://docs.ethers.io/v5/api/providers/) object
 
 ```js
-import { solaceUtils } from "@solace-fi/sdk"
+import { solaceUtils } from "@solace-fi/sdk-nightly"
 const { getProvider } = solaceUtils
 const url = "https://eth-mainnet.alchemyapi.io/jsonrpc/<API_KEY>"
 let provider = await getProvider(url)
@@ -48,7 +48,7 @@ let provider = await getProvider(url)
 Gets a [Signer](https://docs.ethers.io/v5/api/signer/) object
 
 ```js
-import { solaceUtils } from "@solace-fi/sdk"
+import { solaceUtils } from "@solace-fi/sdk-nightly"
 const { getSigner } = solaceUtils
 const url = "https://eth-mainnet.alchemyapi.io/jsonrpc/<API_KEY>"
 
@@ -109,7 +109,7 @@ type OptionalSignerArgs = {
 Gets current gas price
 
 ```js
-import { solaceUtils } from "@solace-fi/sdk"
+import { solaceUtils } from "@solace-fi/sdk-nightly"
 const { getProvider, getGasPrice } = solaceUtils
 
 const url = "https://eth-mainnet.alchemyapi.io/jsonrpc/<API_KEY>"
@@ -134,7 +134,7 @@ const gasPrice = await getGasPrice(provider)
 Gets gas configuration object to use as optional last parameter in sending blockchain transactions
 
 ```js
-import { solaceUtils } from "@solace-fi/sdk"
+import { solaceUtils } from "@solace-fi/sdk-nightly"
 const { getProvider, getGasPrice, getGasSettings } = solaceUtils
 
 const url = "https://eth-mainnet.alchemyapi.io/jsonrpc/<API_KEY>"

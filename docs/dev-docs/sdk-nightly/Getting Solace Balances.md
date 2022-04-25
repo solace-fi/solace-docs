@@ -4,7 +4,7 @@ id: getting-solace-balances
 title: Getting Solace Balances
 ---
 
-To assist with getting SOLACE and xSOLACE balances, we have provided **SolaceBalance** and **xSolaceBalance** classes
+To assist with getting SOLACE and xSOLACE balances of a single address, we have provided **SolaceBalance** and **xSolaceBalance** classes
 
 ---
 
@@ -13,18 +13,20 @@ To assist with getting SOLACE and xSOLACE balances, we have provided **SolaceBal
 ### **Setup**
 ```js
 import { SolaceBalance } from "@solace-fi/sdk-nightly"
-const solaceBalance = new SolaceBalance()
+const solaceBalance = new SolaceBalance("0x499dd900f800fd0a2ed300006000a57f00fa009b")
+// Requires single parameter - address
 ```
 
 <br/>
 
 ### **getSolaceBalanceOf**
 
-Gets the SOLACE balance of an address on a specified chain
+Gets the SOLACE balance on a specified chain
 
 ```js
 // ...setup SolaceBalance object
-console.log( await solaceBalance.getSolaceBalanceOf(1, '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE') )
+console.log( await solaceBalance.getSolaceBalanceOf(1) )
+// 0.000000000000000001
 ```
 
 #### Parameters
@@ -32,7 +34,6 @@ console.log( await solaceBalance.getSolaceBalanceOf(1, '0xEeeeeEeeeEeEeeEeEeEeeE
 | Name | Type |
 | :------ | :------ |
 | `chainId` | `number` |
-| `account` | `string` |
 
 #### Returns
 
@@ -42,18 +43,17 @@ console.log( await solaceBalance.getSolaceBalanceOf(1, '0xEeeeeEeeeEeEeeEeEeEeeE
 
 ### **getSolaceBalanceSum**
 
-Gets the total SOLACE balance of an address across all supported chains
+Gets the total SOLACE balance across all supported chains
 
 ```js
 // ...setup SolaceBalance object
-console.log( await solaceBalance.getSolaceBalanceSum('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE') )
+console.log( await solaceBalance.getSolaceBalanceSum() )
+//  1e-18
 ```
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `account` | `string` |
+N/A
 
 #### Returns
 
@@ -67,14 +67,13 @@ Gets SOLACE balances of an address, for each individual supported chain
 
 ```js
 // ...setup SolaceBalance object
-console.log( await solaceBalance.getAllSolaceBalances('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE') )
+console.log( await solaceBalance.getAllSolaceBalances() )
+// {"1":"0.000000000000000001","137":"0.0","1313161554":"0.0"}
 ```
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `account` | `string` |
+N/A
 
 #### Returns
 
@@ -91,18 +90,20 @@ console.log( await solaceBalance.getAllSolaceBalances('0xEeeeeEeeeEeEeeEeEeEeeEE
 ### **Setup**
 ```js
 import { xSolaceBalance } from "@solace-fi/sdk-nightly"
-const XSolaceBalance = new xSolaceBalance()
+const XSolaceBalance = new xSolaceBalance("0x499dd900f800fd0a2ed300006000a57f00fa009b")
+// Requires single parameter - address
 ```
 
 <br/>
 
 ### **getXSolaceBalanceOf**
 
-Gets the xSOLACE balance of an address on a specified chain
+Gets the xSOLACE balance on a specified chain
 
 ```js
 // ...setup xSolaceBalance object
-console.log( await XSolaceBalance.getXSolaceBalanceOf(1, '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE') )
+console.log( await XSolaceBalance.getXSolaceBalanceOf(1) )
+// 0.0
 ```
 
 #### Parameters
@@ -110,7 +111,6 @@ console.log( await XSolaceBalance.getXSolaceBalanceOf(1, '0xEeeeeEeeeEeEeeEeEeEe
 | Name | Type |
 | :------ | :------ |
 | `chainId` | `number` |
-| `account` | `string` |
 
 #### Returns
 
@@ -120,18 +120,17 @@ console.log( await XSolaceBalance.getXSolaceBalanceOf(1, '0xEeeeeEeeeEeEeeEeEeEe
 
 ### **getXSolaceBalanceSum**
 
-Gets the total xSOLACE balance of an address across all supported chains
+Gets the total xSOLACE balance across all supported chains
 
 ```js
 // ...setup SolaceBalance object
-console.log( await XSolaceBalance.getXSolaceBalanceSum('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE') )
+console.log( await XSolaceBalance.getXSolaceBalanceSum() )
+// 0.0
 ```
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `account` | `string` |
+N/A
 
 #### Returns
 
@@ -141,18 +140,17 @@ console.log( await XSolaceBalance.getXSolaceBalanceSum('0xEeeeeEeeeEeEeeEeEeEeeE
 
 ### **getAllXSolaceBalances**
 
-Gets xSOLACE balances of an address, for each individual supported chain
+Gets xSOLACE balances for each individual supported chain
 
 ```js
 // ...setup xSolaceBalance object
-console.log( await XSolaceBalance.getAllXSolaceBalances('0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE') )
+console.log( await XSolaceBalance.getAllXSolaceBalances() )
+// {"1":"0.0","137":"0.0","1313161554":"0.0"}
 ```
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `account` | `string` |
+N/A
 
 #### Returns
 

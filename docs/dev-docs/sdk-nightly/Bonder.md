@@ -23,6 +23,16 @@ The Bonder constructor requires two parameters:
 
 2. The **bondTellerContractAddress** string. See bond teller addresses for <u>[Eth Mainnet](../Contract%20Addresses/Ethereum.md#v121)</u>, <u>[Polygon](../Contract%20Addresses/Polygon.md#v121)</u> and <u>[Aurora](../Contract%20Addresses/Aurora.md#v121)</u>
 
+Alternatively, we have exposed a `BOND_TELLER_ADDRESSES` object that contains the hardcoded bondteller addresses. 
+
+For example, to obtain the address for the DAI bond teller on ETH mainnet:
+
+```js
+import { BOND_TELLER_ADDRESSES } from "@solace-fi/sdk-nightly"
+const ethMainnetDAIBondTeller = BOND_TELLER_ADDRESSES["dai"][1] 
+// BOND_TELLER_ADDRESSES[Token shortened name in lower case][chainID]
+```
+
 <br/>
 
 ---
@@ -33,7 +43,7 @@ The Bonder constructor requires two parameters:
 ```js
 // Can you expect an SDK user to create the Contract object for themself?
 
-import { solaceUtils, Bonder, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk"
+import { solaceUtils, Bonder, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk-nightly"
 const { getSigner } = solaceUtils
 const signer = await getSigner()
 const bonder = new Bonder(137, BOND_TELLER_ADDRESSES["wbtc"][137].addr, signer)
@@ -45,7 +55,7 @@ console.log(bondPrice)
 
 ### Purchasing bond with wNEAR on Aurora mainnet, using a custom private key in a Node.js script
 ```js
-import { solaceUtils, Bonder, Wallet, providers, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk"
+import { solaceUtils, Bonder, Wallet, providers, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk-nightly"
 
 const provider = new providers.getDefaultProvider('mainnet')
 const signer = new Wallet(<PRIVATE_KEY>, provider)
@@ -73,9 +83,6 @@ Calculate the current price (measured in units of the principal token) of a bond
 ```js
 // ...setup bonder object for desired bondteller and chain
 console.log(await bonder.bondPrice())
-/*
-    ...
-*/
 ```
 
 #### Parameters
@@ -114,7 +121,7 @@ console.log(await bonder.calculateAmountOut(AMOUNT_IN, STAKE))
 
 ### **calculateAmountIn**
 
-Calculate the amount of SOLACE out for an amount of principal.
+Calculate the amount of SOLACE out for a specified amount of principal.
 
 ```js
 // ...setup bonder object for desired bondteller and chain
@@ -158,7 +165,7 @@ let tx = await bonder.claimPayout(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`bondID` | `number` | The ID of the bond to redeem.
+|`bondID` | `BigNumberish` | The ID of the bond to redeem.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
@@ -498,3 +505,13 @@ let tx = await bonder.depositWmaticSigned(
 `Promise`<`TransactionResponse`\>
 
 <br/>
+
+## ** More information**
+
+- [<u>BondDepository.sol</u>](../Contracts/bonds/BondDepository.md)
+
+- [<u>BondTellerErc20.sol</u>](../Contracts/bonds/BondTellerErc20.md)
+
+- [<u>BondTellerEth.sol</u>](../Contracts/bonds/BondTellerEth.md)
+
+- [<u>BondTellerMatic.sol</u>](../Contracts/bonds/BondTellerMatic.md)

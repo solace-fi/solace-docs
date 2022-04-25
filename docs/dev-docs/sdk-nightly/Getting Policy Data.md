@@ -25,6 +25,12 @@ Gets total active policies for a specified chain
 ```js
 // Create policy object
 console.log( await policy.getTotalActivePolicies(1) )
+/*
+    {
+      totalPolicies: BigNumber { _hex: '0x07', _isBigNumber: true },
+      totalActiveCoverLimit: BigNumber { _hex: '0x13419b9a2817b2b8ca1e', _isBigNumber: true }
+    }
+*/
 ```
 
 #### Parameters
@@ -46,6 +52,12 @@ Gets total active policies across all supported chains
 ```js
 // Create policy object
 console.log( await policy.getTotalActivePolicies_All() )
+/*
+{
+      totalPolicies: BigNumber { _hex: '0x9b', _isBigNumber: true },
+      totalActiveCoverLimit: BigNumber { _hex: '0x3d94272075fb56da67aa', _isBigNumber: true }
+}
+*/
 ```
 
 #### Parameters
@@ -65,6 +77,18 @@ Gets all existing policies for a given address
 ```js
 // Create policy object
 console.log( await policy.getExistingPolicy('0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef') )
+/*
+[
+      {
+        policyId: BigNumber { _hex: '0x01', _isBigNumber: true },
+        chainId: 1
+      },
+      {
+        policyId: BigNumber { _hex: '0x11', _isBigNumber: true },
+        chainId: 137
+      }
+]
+*/
 ```
 
 #### Parameters
