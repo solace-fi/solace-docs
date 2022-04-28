@@ -10,6 +10,13 @@
 | USDT                         | [`0x92f2F8d238183f678a5652a04EDa83eD7BCfa99e`](https://goerli.etherscan.io/address/0x92f2F8d238183f678a5652a04EDa83eD7BCfa99e) |
 | FRAX                         | [`0xA542486E4Dc48580fFf76B75b5c406C211218AE2`](https://goerli.etherscan.io/address/0xA542486E4Dc48580fFf76B75b5c406C211218AE2) |
 
+### V1.3.2
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| CoverageDataProvider         | [`0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770`](https://goerli.etherscan.io/address/0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770) |
+| CoverageDataProviderWrapper  | [`0x501Acef201B7Ad6FFe86A37d83df757454924aD5`](https://goerli.etherscan.io/address/0x501Acef201B7Ad6FFe86A37d83df757454924aD5) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |

@@ -11,6 +11,28 @@ Not all contracts are deployed on all networks. Where possible contract addresse
 [**Aurora Testnet**](Testnet/Aurora%20Testnet)  
 [**Mumbai**](Testnet/Mumbai)  
 
+### V1.3.2
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| CoverageDataProvider         | [`0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770`](https://etherscan.io/address/0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770) |
+| CoverageDataProviderWrapper  | [`0x501Acef201B7Ad6FFe86A37d83df757454924aD5`](https://etherscan.io/address/0x501Acef201B7Ad6FFe86A37d83df757454924aD5) |
+
+### V1.3.1
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SolaceCoverProductV2         | [`0x501AcEC83d440c00644cA5C48d059e1840852a64`](https://polygonscan.com/address/0x501AcEC83d440c00644cA5C48d059e1840852a64) |
+
+### V1.3.0
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| Registry                     | [`0x501ACe0f576fc4ef9C0380AA46A578eA96b85776`](https://etherscan.io/address/0x501ACe0f576fc4ef9C0380AA46A578eA96b85776) |
+| RiskManager                  | [`0x501AcEf9020632a71CB25CFa9F554252eB51732b`](https://etherscan.io/address/0x501AcEf9020632a71CB25CFa9F554252eB51732b) |
+| CoverageDataProvider         | [`0x501ACE6C5fFf4d42EaC02357B6DD9b756E337355`](https://etherscan.io/address/0x501ACE6C5fFf4d42EaC02357B6DD9b756E337355) |
+| SolaceCoverProduct           | [`0x501ACEbe29eabc346779BcB5Fd62Eaf6Bfb5320E`](https://etherscan.io/address/0x501ACEbe29eabc346779BcB5Fd62Eaf6Bfb5320E) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |

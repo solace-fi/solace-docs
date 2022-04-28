@@ -21,6 +21,13 @@
 | Underwriting Pool            | [`0x5efC0d9ee3223229Ce3b53e441016efC5BA83435`](https://etherscan.io/address/0x5efC0d9ee3223229Ce3b53e441016efC5BA83435) | https://gnosis-safe.io/app/eth:0x5efC0d9ee3223229Ce3b53e441016efC5BA83435 |
 | Premium Pool                 | [`0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d`](https://etherscan.io/address/0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d) | https://gnosis-safe.io/app/eth:0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d |
 
+### V1.3.2
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| CoverageDataProvider         | [`0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770`](https://etherscan.io/address/0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770) |
+| CoverageDataProviderWrapper  | [`0x501Acef201B7Ad6FFe86A37d83df757454924aD5`](https://etherscan.io/address/0x501Acef201B7Ad6FFe86A37d83df757454924aD5) |
+
 ### V1.3.0
 
 | Contract Name                | Address                                      |

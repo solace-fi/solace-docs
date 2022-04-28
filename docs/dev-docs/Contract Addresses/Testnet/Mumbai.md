@@ -18,6 +18,13 @@
 | bSOLACE                      | [`0xB18033769f62EEe27e63f85224d86f1b4F2478C9`](https://mumbai.polygonscan.com/address/0xB18033769f62EEe27e63f85224d86f1b4F2478C9)
 | Bridge Wrapper               | [`0x501AcE1a18aB550E4E8c7775a23d96fD290b0BbF`](https://mumbai.polygonscan.com/address/0x501AcE1a18aB550E4E8c7775a23d96fD290b0BbF)
 
+### V1.3.2
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| CoverageDataProvider         | [`0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770`](https://mumbai.polygonscan.com/address/0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770) |
+| CoverageDataProviderWrapper  | [`0x501Acef201B7Ad6FFe86A37d83df757454924aD5`](https://mumbai.polygonscan.com/address/0x501Acef201B7Ad6FFe86A37d83df757454924aD5) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |

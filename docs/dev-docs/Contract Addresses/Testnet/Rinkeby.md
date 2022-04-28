@@ -12,6 +12,11 @@
 | SCP                          | [`0x501AcEe83a6f269B77c167c6701843D454E2EFA0`](https://rinkeby.etherscan.io/address/0x501AcEe83a6f269B77c167c6701843D454E2EFA0) |
 | FRAX                         | [`0x86E5B6485e28E52a0dEEd28Cc10772FeB9c4C400`](https://rinkeby.etherscan.io/address/0x86E5B6485e28E52a0dEEd28Cc10772FeB9c4C400) |
 
+### V1.3.2
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| CoverageDataProvider         | [`0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770`](https://rinkeby.etherscan.io/address/0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770) |
 
 ### V1.2.1
 
