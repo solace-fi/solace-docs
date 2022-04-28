@@ -11,6 +11,12 @@
 | FRAX                         | [`0x58B23b32a9774153E1E344762751aDfdca2764DD`](https://kovan.etherscan.io/address/0x58B23b32a9774153E1E344762751aDfdca2764DD) |
 | SOLACE-USDC SLP              | [`0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084`](https://kovan.etherscan.io/address/0x7BEc68fB902f90Ba84634E764C91fDfFCA04D084) |
 
+### V1.3.2
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| CoverageDataProvider         | [`0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770`](https://kovan.etherscan.io/address/0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |
