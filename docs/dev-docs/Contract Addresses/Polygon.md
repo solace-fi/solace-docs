@@ -28,6 +28,12 @@
 | Underwriting Pool            | [`0xd1108a800363C262774B990e9DF75a4287d5c075`](https://polygonscan.com/address/0xd1108a800363C262774B990e9DF75a4287d5c075) | https://gnosis-safe.io/app/matic:0xd1108a800363C262774B990e9DF75a4287d5c075 |
 | Premium Pool                 | [`0x37cd57c6C7243455aC66631cE37Bb7F977C71442`](https://polygonscan.com/address/0x37cd57c6C7243455aC66631cE37Bb7F977C71442) | https://gnosis-safe.io/app/matic:0x37cd57c6C7243455aC66631cE37Bb7F977C71442 |
 
+### V1.3.2
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| CoverageDataProvider         | [`0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770`](https://polygonscan.com/address/0x501ACe6D80111c9B54FA36EEC5f1B213d7F24770) |
+| CoverageDataProviderWrapper  | [`0x501Acef201B7Ad6FFe86A37d83df757454924aD5`](https://polygonscan.com/address/0x501Acef201B7Ad6FFe86A37d83df757454924aD5) |
 
 ### V1.3.1
 
