@@ -3,7 +3,7 @@
 A provider is needed to connect to (and make read-only calls) to the blockchain.
 
 
-By default, the Fetcher object will use the [Default Provider](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider) provided by ethers.js. Frequent use of the default provider will result in the following warning message:
+Wherever applicable, our methods and objects will by default use the [Default Provider](https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider) provided by ethers.js to interact with the blockchain. Frequent use of the default provider will result in the following warning message:
 
 
 ```
@@ -19,21 +19,21 @@ request rate/limit and enable other perks, such as metrics and advanced APIs.
 For more details: https://docs.ethers.io/api-keys/
 ```
 
-To avoid this, the Fetcher constructor has an optional parameter to provide a custom provider. We have also provided a [`getProvider`](./helper-methods#getprovider) helper method to make it easier to create a custom provider.
+To avoid this, some constructors of our classes has an optional parameter to provide a custom provider. We have also provided a [`getProvider`](./helper-methods#getprovider) helper method to make it easier to create a custom provider.
 
 <br/>
 
 ### Use custom RPC URL
 
 ```js
-import { Fetcher, solaceUtils } from "@solace-fi/sdk"
+import { Lock, solaceUtils } from "@solace-fi/sdk"
 const { getProvider } = solaceUtils
 
 const url = <RPC_URL>
 const provider = getProvider(url)
 
-// Create new Fetcher-class object connected to Ethereum mainnet and custom RPC endpoint
-const coverage = new Fetcher(1, provider)
+// Create new Lock-class object connected to Ethereum mainnet and custom RPC endpoint
+const lock = new Lock(1, provider)
 ```
 
 <br/>

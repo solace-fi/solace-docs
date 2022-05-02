@@ -14,9 +14,12 @@ The same syntax for creating the [`PolicyHolder`](./sending-transactions) object
 
 ### Obtaining information on a staked position on Matic
 ```js
-import { solaceUtils, Staker } from "@solace-fi/sdk"
-const { getSigner } = solaceUtils
-const signer = await getSigner()
+import { ethers, WALLETS, Staker } from "@solace-fi/sdk"
+
+const provider = await WALLETS[0].connector.getProvider()
+const web3Provider = new ethers.Web3Provider(provider)
+const signer = web3Provider.getSigner(account)
+
 const staker = new Staker(137, signer)
 const stakingInfo = await staker.locks(1)
 console.log(stakingInfo)
@@ -26,7 +29,7 @@ console.log(stakingInfo)
 
 ### Staking on Matic, using a custom private key in a Node.js script
 ```js
-import { solaceUtils, Staker, Wallet, providers } from "@solace-fi/sdk"
+import { Staker, Wallet, providers } from "@solace-fi/sdk"
 
 const provider = new providers.getDefaultProvider('mainnet')
 const signer = new Wallet(<PRIVATE_KEY>, provider)

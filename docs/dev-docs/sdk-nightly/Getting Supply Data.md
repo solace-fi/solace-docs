@@ -4,7 +4,7 @@ id: getting-supply-data
 title: Getting Supply Data
 ---
 
-To assist with getting total and circulating SOLACE supply data, we have provided **CirculatingSupply** and **TotalSupply** classes
+To assist with getting total and circulating SOLACE supply data, we have provided **CirculatingSupply** and **TotalSupply** classes.
 
 ---
 
@@ -34,10 +34,11 @@ console.log( await totalSupply.getTotalSupply(1, 'SOLACE') )
 | :------ | :------ |
 | `chainId` | `number` |
 | `token` | `'SOLACE' | 'XSOLACE'` |
+| `providerOrSigner` | `Provider` \| `JsonRpcSigner` \| `undefined` |
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`<`string`\>
 
 <br/>
 
@@ -113,6 +114,7 @@ console.log( await circulatingSupply.getCirculatingSupply(1, 'SOLACE') )
 | :------ | :------ |
 | `chainId` | `number` |
 | `token` | `'SOLACE' | 'XSOLACE'` |
+| `provider` | `Provider` \| `undefined` |
 
 #### Returns
 

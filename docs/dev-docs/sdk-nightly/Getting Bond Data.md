@@ -4,7 +4,22 @@ id: getting-bond-data
 title: Getting Bond Data
 ---
 
-To assist with getting bond data, we have provided a **Bond** class
+To assist with getting bond data, we have provided a **Bond** class.
+
+The constructor takes in two parameters, where **chainId** is required while **providerOrSigner** is optional:
+
+1. The **chainId** to connect to
+
+> Current supported chains are:
+> - Ethereum mainnet (ChainID = 1)
+> - Rinkeby Testnet (ChainID = 4)
+> - Kovan Testnet (ChainID = 42)
+> - MATIC (ChainID = 137)
+> - Mumbai testnet (ChainID = 80001)
+> - Aurora Mainnet (ChainID = 1313161554)
+> - Aurora Testnet (ChainID = 1313161555)
+
+2. **providerOrSigner** is an object of three types from ethers ([**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 
 ---
 
@@ -15,16 +30,6 @@ To assist with getting bond data, we have provided a **Bond** class
 import { Bond } from "@solace-fi/sdk-nightly"
 const bond = new Bond(1) // Provide chainId parameter
 ```
-
-Current supported chains are:
-- Ethereum mainnet (ChainID = 1)
-- Rinkeby Testnet (ChainID = 4)
-- MATIC (ChainID = 137)
-- Mumbai testnet (ChainID = 80001)
-- Aurora (ChainID = 1313161554)
-- Aurora testnet (ChainID = 1313161555)
-
-<br/>
 
 ### **getBondTellerData**
 
@@ -40,7 +45,10 @@ console.log ( await bond.getBondTellerData(apiPriceMapping) )
    [
       {
         tellerData: {
-          teller: [Object],
+          teller: {
+            contract: [Contract],
+            type: "erc20" | "matic" | "eth"
+          },
           bondPrice: [BigNumber],
           usdBondPrice: 0.04354409314629305,
           vestingTermInSeconds: 604800,
@@ -48,7 +56,12 @@ console.log ( await bond.getBondTellerData(apiPriceMapping) )
           maxPayout: [BigNumber],
           bondRoi: -8.572142663615487
         },
-        principalData: { principal: [Contract], principalProps: [Object] }
+        principalData: { principal: [Contract], principalProps: {
+          symbol: string,
+          decimals: number,
+          name: string,
+          address: string,
+        } }
       },
       ...
     ]

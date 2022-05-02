@@ -20,7 +20,7 @@ const policy = new Policy()
 
 ### **getTotalActivePolicies**
 
-Gets total active policies for a specified chain
+Gets total active policies for a specified chain. Takes in a mandatory parameter for the chain id, and providing a custom rpc url is optional.
 
 ```js
 // Create policy object
@@ -38,6 +38,7 @@ console.log( await policy.getTotalActivePolicies(1) )
 | Name | Type |
 | :------ | :------ |
 | `chainId` | `number` |
+| `rpcUrl` | `string` \| `undefined` |
 
 #### Returns
 
@@ -47,7 +48,7 @@ console.log( await policy.getTotalActivePolicies(1) )
 
 ### **getTotalActivePolicies_All**
 
-Gets total active policies across all supported chains
+Gets total active policies across all supported chains. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // Create policy object
@@ -62,7 +63,9 @@ console.log( await policy.getTotalActivePolicies_All() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -72,7 +75,7 @@ N/A
 
 ### **getExistingPolicy**
 
-Gets all existing policies for a given address
+Gets all existing policies for a given address. The first parameter for the address is mandatory , the second parameter for an object mapping chain ids to rpc urls is optional, and the third parameter for including results from testnets is optional.
 
 ```js
 // Create policy object
@@ -96,6 +99,8 @@ console.log( await policy.getExistingPolicy('0xfb5cAAe76af8D3CE730f3D62c64427448
 | Name | Type |
 | :------ | :------ |
 | `account` | `string` |
+| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `includeTestnets` | `boolean` \| `undefined` |
 
 #### Returns
 

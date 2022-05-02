@@ -43,67 +43,6 @@ let provider = await getProvider(url)
 
 <br/>
 
-### **getSigner**
-
-Gets a [Signer](https://docs.ethers.io/v5/api/signer/) object
-
-```js
-import { solaceUtils } from "@solace-fi/sdk-nightly"
-const { getSigner } = solaceUtils
-const url = "https://eth-mainnet.alchemyapi.io/jsonrpc/<API_KEY>"
-
-// Initialize NetworkConfig-type object
-const network = {
-    chainId: 1,
-    rpc: {
-        httpsUrl: url,
-        pollingInterval: 15000 // 15 ms
-    }
-}
-
-// Initialize OptionalSignerArgs-type object
-const signerArgs = {
-    network: network,
-    account: "0xC32e0d89e25222ABb4d2d68755baBF5aA6648F15",
-    connector: "walletconnect",
-}
-
-const signer = await getSigner(signerArgs)
-```
-
-#### Types
-
-```js
-type NetworkConfig = {
-    chainId: number
-    rpc: {
-      httpsUrl: string
-      pollingInterval?: number
-    }
-  }
-```
-
-```js
-type OptionalSignerArgs = {
-    network?: NetworkConfig
-    account?: string
-    connector?: string
-    connectorArgs?: any
-}
-```
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `signerArgs?` | `OptionalSignerArgs` |
-
-#### Returns
-
-`JsonRpcSigner`
-
-<br/>
-
 ### **getGasPrice**
 
 Gets current gas price
@@ -121,7 +60,7 @@ const gasPrice = await getGasPrice(provider)
 
 | Name | Type |
 | :------ | :------ |
-| `abstract` | `JsonRpcProvider` or `JsonRpcSigner` |
+| `providerOrSigner` | `JsonRpcProvider` or `JsonRpcSigner` |
 
 #### Returns
 
@@ -147,7 +86,7 @@ const gasArgs = {
     gasForTestnet: true // true for testnet, false otherwise
 }
 
-const gasSettings = getGasSettings(4, gasPrice, gasArgs)
+const gasSettings = getGasSettings(4, undefined, gasArgs)
 
 ```
 
@@ -162,25 +101,13 @@ type GasArgs = {
 ```
 
 ```js
-type GasConfiguration =
-  | {
-      maxFeePerGas?: undefined
-      type?: undefined
-      gasPrice?: undefined
-      gasLimit?: undefined
-    }
-  | {
-      maxFeePerGas: number
-      type: number
-      gasPrice?: undefined
-      gasLimit?: number | undefined
-    }
-| {
-    gasPrice: number
-    maxFeePerGas?: undefined
-    type?: undefined
-    gasLimit?: number | undefined
-  }
+type GasConfiguration ={
+  gasPrice?: number
+  maxFeePerGas?: number
+  maxPriorityFeePerGas?: number
+  type?: number
+  gasLimit?: number
+}
 ```
 
 #### Parameters
@@ -188,7 +115,7 @@ type GasConfiguration =
 | Name | Type |
 | :------ | :------ |
 | `chainId` | `number` |
-| `gasPrice`| `number` |
+| `rpcUrl`| `string` \| `undefined` |
 | `gasArgs?` | `GasArgs` |
 
 #### Returns

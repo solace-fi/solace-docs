@@ -25,8 +25,6 @@ To facilitate this, the SDK provides a Policyholder class. The Policyholder cons
 
 > A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because transactions need to be signed by a private key to be included in the blockchain. The [Signer](https://docs.ethers.io/v5/api/signer/) object also a convenient way to connect to the blockchain.
 
-> We have also provided a [`getSigner`](./helper-methods/#getsigner) helper method to make it easier to create a valid [Signer](https://docs.ethers.io/v5/api/signer/) object
-
 <br/>
 
 ---
@@ -35,12 +33,11 @@ To facilitate this, the SDK provides a Policyholder class. The Policyholder cons
 
 ### Purchasing a policy on Rinkeby testnet, using Metamask in frontend client code
 ```js
-import { solaceUtils, Policyholder } from "@solace-fi/sdk"
-const { getSigner } = solaceUtils
+import { ethers, WALLETS, Policyholder } from "@solace-fi/sdk"
 
-// If no parameters are provided, getSigner() will default to connecting to a selected Metamask account
-// Read section on Helper Methods on how to customise RPC endpoint and other network settings
-const signer = await getSigner()
+const provider = await WALLETS[0].connector.getProvider()
+const web3Provider = new ethers.Web3Provider(provider)
+const signer = web3Provider.getSigner(account)
 
 // Create new Policyholder instance that is connected to Rinkeby testnet and Metamask
 const policyholder = new Policyholder(4, signer)
@@ -60,7 +57,7 @@ let tx = await policyholder.activatePolicy(
 ```js
 // ethers.js 'providers' object and 'Wallet' class is exported from @solace-fi/sdk
 // https://docs.ethers.io/v5/api/signer/#Wallet-constructor for more info
-import { solaceUtils, Policyholder, Wallet, providers } from "@solace-fi/sdk"
+import { Policyholder, Wallet, providers } from "@solace-fi/sdk"
 
 const provider = new providers.getDefaultProvider('mainnet')
 const signer = new Wallet(<PRIVATE_KEY>, provider)
@@ -88,10 +85,13 @@ let tx = await policyholder.activatePolicy(
 Activates (or purchases) a policy for a given address
 
 ```js
-import { solaceUtils, Policyholder, BigNumber } from "@solace-fi/sdk"
-const { getSigner, getGasPrice, getGasSettings } = solaceUtils
+import { solaceUtils, Policyholder, BigNumber, ethers, WALLETS } from "@solace-fi/sdk"
+const { getGasPrice, getGasSettings } = solaceUtils
 
-const signer = await getSigner()
+const provider = await WALLETS[0].connector.getProvider()
+const web3Provider = new ethers.Web3Provider(provider)
+const signer = web3Provider.getSigner(account)
+
 const policyholder = new Policyholder(4, signer)
 const gasPrice = await getGasPrice(signer) // SDK helper method to get gas price
 const gasSettings = await getGasSettings(4, gasPrice, {gasForTestnet: true}) // SDK helper method to get gas configuration for transaction

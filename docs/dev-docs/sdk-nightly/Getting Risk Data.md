@@ -62,7 +62,7 @@ console.log(await coverage.getSolaceRiskBalances(policyholder, 1))
 | Name | Type |
 | :------ | :------ |
 | `policyholder` | `string` |
-| `chainIdOrChains` | `number | number[]` |
+| `chainIdOrChains` | `number` \| `number[]` |
 
 #### Returns
 
@@ -363,7 +363,7 @@ console.log(await risk.getSolaceRiskBillings(policyholder, 1))
 | :------------- | :-------------------- |
 | `address` | `string`              |
 | `chainId`    | `number` |
-| `category?`    | `'paid' | 'unpaid'` |
+| `category`    | `'paid'` \| `'unpaid'` \| `undefined` |
 
 #### Returns
 

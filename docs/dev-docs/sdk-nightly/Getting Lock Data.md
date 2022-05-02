@@ -6,6 +6,21 @@ title: Getting Lock Data
 
 To assist with getting lock (i.e. single stake SOLACE) data, we have provided a **Lock** class
 
+The Lock constructor takes in two parameters, where **chainId** is required while **provider** is optional:
+
+1. The **chainId** to connect to
+
+Current supported chains are:
+- Ethereum mainnet (ChainID = 1)
+- Rinkeby Testnet (ChainID = 4)
+- Kovan Testnet (ChainID = 42)
+- MATIC (ChainID = 137)
+- Mumbai testnet (ChainID = 80001)
+- Aurora (ChainID = 1313161554)
+- Aurora testnet (ChainID = 1313161555)
+
+2. **provider** is an object of three types from ethers ([**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
+
 ---
 
 ## **Lock methods**
@@ -15,14 +30,6 @@ To assist with getting lock (i.e. single stake SOLACE) data, we have provided a 
 import { Lock } from "@solace-fi/sdk-nightly"
 const lock = new Lock(1) // Provide chainId parameter
 ```
-
-Current supported chains are:
-- Ethereum mainnet (ChainID = 1)
-- Rinkeby Testnet (ChainID = 4)
-- MATIC (ChainID = 137)
-- Mumbai testnet (ChainID = 80001)
-- Aurora (ChainID = 1313161554)
-- Aurora testnet (ChainID = 1313161555)
 
 <br/>
 

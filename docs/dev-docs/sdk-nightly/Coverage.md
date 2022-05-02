@@ -8,7 +8,9 @@ linkcolor: blue
 
 To interact with the SolaceCoverProduct smart contract, we will need to create a Coverage instance.
 
-The Coverage constructor requires a single parameter - the **chainID** to connect to. 
+The Coverage constructor takes in two parameters, where **chainID** is required while **walletOrProviderOrSigner** is optional:
+
+1. The **chainID** to connect to
 
 > Current supported chains are:
 > - Ethereum mainnet (ChainID = 1)
@@ -16,6 +18,7 @@ The Coverage constructor requires a single parameter - the **chainID** to connec
 > - MATIC (ChainID = 137)
 > - Mumbai testnet (ChainID = 80001)
 
+2. **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 
 ## **Basic Example**
 
@@ -432,8 +435,6 @@ For the following methods, you will need to provide a **[Signer](https://docs.et
 
 A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because transactions need to be signed by a private key to be included in the blockchain. The [Signer](https://docs.ethers.io/v5/api/signer/) object also a convenient way to connect to the blockchain.
 
-We have also provided a [`getSigner`](./helper-methods/#getsigner) helper method to make it easier to create a valid [Signer](https://docs.ethers.io/v5/api/signer/) object
-
 <br/>
 
 ### **activatePolicy**
@@ -442,9 +443,12 @@ Activates (or purchases) a policy for a given address
 
 ```js
 import { solaceUtils, Coverage, BigNumber } from "@solace-fi/sdk-nightly"
-const { getSigner, getGasPrice, getGasSettings } = solaceUtils
+const { ethers, WALLETS, getGasPrice, getGasSettings } = solaceUtils
 
-const signer = await getSigner()
+const provider = await WALLETS[0].connector.getProvider()
+const web3Provider = new ethers.Web3Provider(provider)
+const signer = web3Provider.getSigner(account)
+
 const coverage = new Coverage(4, signer)
 const gasPrice = await getGasPrice(signer) // SDK helper method to get gas price
 const gasSettings = await getGasSettings(4, gasPrice, {gasForTestnet: true}) // SDK helper method to get gas configuration for transaction
@@ -607,10 +611,12 @@ The referral code is a 65-byte EIP-712 compliant Ethereum signature. This means 
 Generates a referral code
 
 ```js
-import { Coverage } from "@solace-fi/sdk-nightly"
-const { getSigner } = solaceUtils
+import { Coverage, ethers, WALLETS } from "@solace-fi/sdk-nightly"
 
-const signer = await getSigner()
+const provider = await WALLETS[0].connector.getProvider()
+const web3Provider = new ethers.Web3Provider(provider)
+const signer = web3Provider.getSigner(account)
+
 const coverage = new Coverage(1, signer)
 let referralCode = await coverage.getReferralCode()
 ```

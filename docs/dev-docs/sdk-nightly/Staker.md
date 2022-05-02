@@ -6,15 +6,33 @@ title: Staker
 
 The SDK provides a **Staker** class to interact with SOLACE staking. **Staker** methods are wrappers around [`xsLocker.sol`](../Contracts/staking/xsLocker) and [`StakingRewards.sol`](../Contracts/staking/StakingRewards) functions, which are the smart contracts providing SOLACE staking functionality.
 
+The Staker constructor takes in two parameters, where **chainID** is required while **walletOrProviderOrSigner** is optional:
+
+1. The **chainID** to connect to
+
+> Current supported chains are:
+> - Ethereum mainnet (ChainID = 1)
+> - Rinkeby Testnet (ChainID = 4)
+> - Kovan Testnet (ChainID = 42)
+> - MATIC (ChainID = 137)
+> - Mumbai testnet (ChainID = 80001)
+> - Aurora Mainnet (ChainID = 1313161554)
+> - Aurora Testnet (ChainID = 1313161555)
+
+2. **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
+
 ---
 
 ## **Basic Examples**
 
 ### Obtaining information on a staked position on Matic
 ```js
-import { solaceUtils, Staker } from "@solace-fi/sdk-nightly"
-const { getSigner } = solaceUtils
-const signer = await getSigner()
+import { ethers, WALLETS, Staker } from "@solace-fi/sdk-nightly"
+
+const provider = await WALLETS[0].connector.getProvider()
+const web3Provider = new ethers.Web3Provider(provider)
+const signer = web3Provider.getSigner(account)
+
 const staker = new Staker(137, signer)
 const stakingInfo = await staker.locks(1)
 console.log(stakingInfo)
