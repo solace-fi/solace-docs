@@ -46,7 +46,7 @@ N/A
 
 ### **getMainnetPrices**
 
-Gets price of ETH, WBTC, SOLACE, SCP and SOLACE-USDC SLP (excluding SOLACE component) on Ethereum mainnet.
+Gets price of ETH, WBTC, SOLACE, SCP and SOLACE-USDC SLP (excluding SOLACE component) on Ethereum mainnet. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // ...setup Price object
@@ -64,7 +64,9 @@ console.log( await price.getMainnetPrices() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -74,7 +76,7 @@ N/A
 
 ### **getPolygonPrices**
 
-Gets price of ETH, WBTC, MATIC, SOLACE, and SOLACE-FRAX G-UNI (excluding SOLACE component) on Polygon network.
+Gets price of ETH, WBTC, MATIC, SOLACE, and SOLACE-FRAX G-UNI (excluding SOLACE component) on Polygon network. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // ...setup Price object
@@ -92,7 +94,9 @@ console.log( await price.getPolygonPrices() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -102,7 +106,7 @@ N/A
 
 ### **getAuroraPrices**
 
-Gets price of ETH, WBTC, WNEAR, AURORA, SOLACE, and SOLACE-WNEAR TLP (excluding SOLACE component) on Aurora network.
+Gets price of ETH, WBTC, WNEAR, AURORA, SOLACE, and SOLACE-WNEAR TLP (excluding SOLACE component) on Aurora network. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // ...setup Price object
@@ -121,7 +125,9 @@ console.log( await price.getAuroraPrices() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 

@@ -4,7 +4,7 @@ id: getting-supply-data
 title: Getting Supply Data
 ---
 
-To assist with getting total and circulating SOLACE supply data, we have provided **CirculatingSupply** and **TotalSupply** classes
+To assist with getting total and circulating SOLACE supply data, we have provided **CirculatingSupply** and **TotalSupply** classes.
 
 ---
 
@@ -33,11 +33,12 @@ console.log( await totalSupply.getTotalSupply(1, 'SOLACE') )
 | Name | Type |
 | :------ | :------ |
 | `chainId` | `number` |
-| `token` | `'SOLACE' | 'XSOLACE'` |
+| `token` | `'SOLACE'` or `'XSOLACE'` |
+| `providerOrSigner` | `Provider` \| `JsonRpcSigner` \| `undefined` |
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`<`string`\>
 
 <br/>
 
@@ -55,7 +56,7 @@ console.log( await totalSupply.getTotalSupplySum('SOLACE') )
 
 | Name | Type |
 | :------ | :------ |
-| `token` | `'SOLACE' | 'XSOLACE'` |
+| `token` | `'SOLACE'` or `'XSOLACE'` |
 
 #### Returns
 
@@ -77,7 +78,7 @@ console.log( await totalSupply.getTotalSupplyAll('SOLACE') )
 
 | Name | Type |
 | :------ | :------ |
-| `token` | `'SOLACE' | 'XSOLACE'` |
+| `token` | `'SOLACE'` or `'XSOLACE'` |
 
 #### Returns
 
@@ -112,7 +113,8 @@ console.log( await circulatingSupply.getCirculatingSupply(1, 'SOLACE') )
 | Name | Type |
 | :------ | :------ |
 | `chainId` | `number` |
-| `token` | `'SOLACE' | 'XSOLACE'` |
+| `token` | `'SOLACE'` or `'XSOLACE'` |
+| `provider` | `Provider` \| `undefined` |
 
 #### Returns
 
@@ -134,7 +136,7 @@ console.log( await circulatingSupply.getCirculatingSupplySum('SOLACE') )
 
 | Name | Type |
 | :------ | :------ |
-| `token` | `'SOLACE' | 'XSOLACE'` |
+| `token` | `'SOLACE'` or `'XSOLACE'` |
 
 #### Returns
 
@@ -156,7 +158,7 @@ console.log( await circulatingSupply.getCirculatingSupplyAll('SOLACE') )
 
 | Name | Type |
 | :------ | :------ |
-| `token` | `'SOLACE' | 'XSOLACE'` |
+| `token` | `'SOLACE'` or `'XSOLACE'` |
 
 #### Returns
 

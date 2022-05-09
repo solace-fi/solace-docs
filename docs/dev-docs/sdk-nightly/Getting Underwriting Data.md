@@ -20,7 +20,7 @@ const uwpBalances = new UnderwritingPoolBalances()
 
 ### **getBalances_Mainnet**
 
-Gets token balances of the Eth mainnet underwriting pool
+Gets token balances of the Eth mainnet underwriting pool. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // Create uwpBalances object
@@ -43,7 +43,9 @@ console.log( await uwpBalances.getBalances_Mainnet() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -59,7 +61,7 @@ This function will occasionally time-out (take >30s to return), especially with 
 
 ### **getBalances_Polygon**
 
-Gets token balances of the Polygon underwriting pool
+Gets token balances of the Polygon underwriting pool. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // Create uwpBalances object
@@ -83,7 +85,9 @@ console.log( await uwpBalances.getBalances_Polygon() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -93,7 +97,7 @@ N/A
 
 ### **getBalances_Aurora**
 
-Gets token balances of the Aurora underwriting pool
+Gets token balances of the Aurora underwriting pool. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // Create uwpBalances object
@@ -117,7 +121,9 @@ console.log( await uwpBalances.getBalances_Aurora() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -139,7 +145,7 @@ const uwpUSDBalances = new UnderwritingPoolUSDBalances()
 
 ### **getUSDBalances_Mainnet**
 
-Gets USD nominal of the token balances of the Eth mainnet underwriting pool
+Gets USD nominal of the token balances of the Eth mainnet underwriting pool. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // Create uwpUSDBalances object
@@ -162,7 +168,9 @@ console.log( await uwpUSDBalances.getUSDBalances_Mainnet() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -178,7 +186,7 @@ This function will occasionally time-out (take >30s to return), especially with 
 
 ### **getUSDBalances_Polygon**
 
-Gets USD nominal of the token balances of the Polygon underwriting pool
+Gets USD nominal of the token balances of the Polygon underwriting pool. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // Create uwpUSDBalances object
@@ -201,7 +209,9 @@ console.log( await uwpUSDBalances.getUSDBalances_Polygon() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -209,9 +219,9 @@ N/A
 
 <br/>
 
-### **getUSDBalances_Polygon**
+### **getUSDBalances_Aurora**
 
-Gets USD nominal of the token balances of the Aurora underwriting pool
+Gets USD nominal of the token balances of the Aurora underwriting pool. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // Create uwpUSDBalances object
@@ -235,7 +245,9 @@ console.log( await uwpUSDBalances.getUSDBalances_Aurora() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -245,7 +257,7 @@ N/A
 
 ### **getUSDBalances_All**
 
-Gets USD nominal of the token balances of the underwriting pools on Eth mainnet, Polygon and Aurora
+Gets USD nominal of the token balances of the underwriting pools on Eth mainnet, Polygon and Aurora. Takes in an optional parameter for an object mapping chain ids to rpc urls.
 
 ```js
 // Create uwpUSDBalances object
@@ -296,7 +308,9 @@ console.log( await uwpUSDBalances.getUSDBalances_All() )
 
 #### Parameters
 
-N/A
+| Name | Type |
+| :------ | :------ |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 

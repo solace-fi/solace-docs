@@ -4,7 +4,9 @@ id: getting-solace-balances
 title: Getting Solace Balances
 ---
 
-To assist with getting SOLACE and xSOLACE balances of a single address, we have provided **SolaceBalance** and **xSolaceBalance** classes
+To assist with getting SOLACE and xSOLACE balances of a single address, we have provided **SolaceBalance** and **xSolaceBalance** classes.
+
+The constructor takes in a mandatory parameter for the address, and an optional parameter for an object mapping chain ids to rpc urls.
 
 ---
 
@@ -21,7 +23,7 @@ const solaceBalance = new SolaceBalance("0x499dd900f800fd0a2ed300006000a57f00fa0
 
 ### **getSolaceBalanceOf**
 
-Gets the SOLACE balance on a specified chain
+Gets the SOLACE balance on a specified chain.
 
 ```js
 // ...setup SolaceBalance object
@@ -84,6 +86,8 @@ N/A
 ---
 
 ## **xSolaceBalance methods**
+
+The constructor shares the same parameters as the SolaceBalance constructor.
 
 <br/>
 

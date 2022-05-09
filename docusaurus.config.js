@@ -8,6 +8,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'Solace', // Usually your GitHub org/user name.
   projectName: 'Solace-docs', // Usually your repo name.
+  plugins: [require.resolve('docusaurus-lunr-search')],
   themeConfig: {
     colorMode: {
       defaultMode: 'dark'

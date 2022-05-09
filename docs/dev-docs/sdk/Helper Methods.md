@@ -43,34 +43,6 @@ let provider = await getProvider(url)
 
 <br/>
 
-### **getSigner**
-
-Gets a [Signer](https://docs.ethers.io/v5/api/signer/) object
-
-```js
-import { solaceUtils } from "@solace-fi/sdk"
-const { getSigner } = solaceUtils
-const url = "https://eth-mainnet.alchemyapi.io/jsonrpc/<API_KEY>"
-
-// Initialize NetworkConfig-type object
-const network = {
-    chainId: 1,
-    rpc: {
-        httpsUrl: url,
-        pollingInterval: 15000 // 15 ms
-    }
-}
-
-// Initialize OptionalSignerArgs-type object
-const signerArgs = {
-    network: network,
-    account: "0xC32e0d89e25222ABb4d2d68755baBF5aA6648F15",
-    connector: "walletconnect",
-}
-
-const signer = await getSigner(signerArgs)
-```
-
 #### Types
 
 ```js

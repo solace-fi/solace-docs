@@ -6,22 +6,22 @@ title: Bonder
 
 The SDK provides a **Bonder** class to interact with SOLACE bonding. **Bonder** methods are wrappers around [`BondTellerErc20.sol`](../Contracts/bonds/BondTellerErc20), [`BondTellerEth.sol`](../Contracts/bonds/BondTellerEth) and [`BondTellerMatic.sol`](../Contracts/bonds/BondTellerMatic) functions, which are the smart contracts providing SOLACE staking functionality.
 
-The Bonder constructor requires two parameters:
+The Bonder constructor takes in three parameters:
 
-1. The **chainID** to connect to
+1. (Required) The **chainID** to connect to
 
 > Current supported chains are:
 > - Ethereum mainnet (ChainID = 1)
 > - Rinkeby Testnet (ChainID = 4)
-> - Kovan Testnet (ChainID = 2)
+> - Kovan Testnet (ChainID = 42)
 > - MATIC (ChainID = 137)
 > - Mumbai testnet (ChainID = 80001)
 > - Aurora Mainnet (ChainID = 1313161554)
-> - Aurora Testnet (ChainID = 1313161556)
+> - Aurora Testnet (ChainID = 1313161555)
 
 <br/>
 
-2. The **bondTellerContractAddress** string. See bond teller addresses for <u>[Eth Mainnet](../Contract%20Addresses/Ethereum.md#v121)</u>, <u>[Polygon](../Contract%20Addresses/Polygon.md#v121)</u> and <u>[Aurora](../Contract%20Addresses/Aurora.md#v121)</u>
+2. (Required) The **bondTellerContractAddress** string. See bond teller addresses for <u>[Eth Mainnet](../Contract%20Addresses/Ethereum.md#v121)</u>, <u>[Polygon](../Contract%20Addresses/Polygon.md#v121)</u> and <u>[Aurora](../Contract%20Addresses/Aurora.md#v121)</u>
 
 Alternatively, we have exposed a `BOND_TELLER_ADDRESSES` object that contains the hardcoded bondteller addresses. 
 
@@ -35,17 +35,21 @@ const ethMainnetDAIBondTeller = BOND_TELLER_ADDRESSES["dai"][1]
 
 <br/>
 
+3. (Optional) **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
+
 ---
 
 ## **Basic Examples**
 
 ### Obtaining bond price for WBTC BondTeller on Polygon
 ```js
-// Can you expect an SDK user to create the Contract object for themself?
 
-import { solaceUtils, Bonder, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk-nightly"
-const { getSigner } = solaceUtils
-const signer = await getSigner()
+import { ethers, WALLETS, Bonder, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk-nightly"
+
+const provider = await WALLETS[0].connector.getProvider()
+const web3Provider = new ethers.Web3Provider(provider)
+const signer = web3Provider.getSigner(account)
+
 const bonder = new Bonder(137, BOND_TELLER_ADDRESSES["wbtc"][137].addr, signer)
 const bondPrice = await bonder.bondPrice()
 console.log(bondPrice)

@@ -17,7 +17,7 @@ The Bonder constructor requires three parameters:
 > - MATIC (ChainID = 137)
 > - Mumbai testnet (ChainID = 80001)
 > - Aurora Mainnet (ChainID = 1313161554)
-> - Aurora Testnet (ChainID = 1313161556)
+> - Aurora Testnet (ChainID = 1313161555)
 
 <br/>
 
@@ -25,7 +25,6 @@ The Bonder constructor requires three parameters:
 
 > A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because transactions need to be signed by a private key to be included in the blockchain. The [Signer](https://docs.ethers.io/v5/api/signer/) object also a convenient way to connect to the blockchain.
 
-> We have also provided a [`getSigner`](./helper-methods/#getsigner) helper method to make it easier to create a valid [Signer](https://docs.ethers.io/v5/api/signer/) object
 
 <br/>
 
@@ -53,9 +52,10 @@ Note that not all tokens are supported for all chainIDs. To see a full list of s
 
 ### Obtaining bond price for BondTellerMatic on Matic Mainnet
 ```js
-import { solaceUtils, Bonder } from "@solace-fi/sdk"
-const { getSigner } = solaceUtils
-const signer = await getSigner()
+import { ethers, WALLETS, Bonder } from "@solace-fi/sdk"
+const provider = await WALLETS[0].connector.getProvider()
+const web3Provider = new ethers.Web3Provider(provider)
+const signer = web3Provider.getSigner(account)
 const bonder = new Bonder(137, signer, "matic")
 const bondPrice = await bonder.bondPrice()
 console.log(bondPrice)
