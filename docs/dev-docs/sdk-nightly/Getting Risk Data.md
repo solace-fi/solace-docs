@@ -25,7 +25,7 @@ Gets DeFi protocol balances (in USD) for a given address, for specified chain/s
 ```js
 // ...setup risk object
 const policyholder = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
-console.log(await coverage.getSolaceRiskBalances(policyholder, 1))
+console.log(await risk.getSolaceRiskBalances(policyholder, 1))
 /*
     [
       {

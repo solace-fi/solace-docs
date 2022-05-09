@@ -38,7 +38,7 @@ console.log( await policy.getTotalActivePolicies(1) )
 | Name | Type |
 | :------ | :------ |
 | `chainId` | `number` |
-| `rpcUrl` | `string` \| `undefined` |
+| `rpcUrl?` | `string` \| `undefined` |
 
 #### Returns
 
@@ -65,7 +65,7 @@ console.log( await policy.getTotalActivePolicies_All() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -99,8 +99,8 @@ console.log( await policy.getExistingPolicy('0xfb5cAAe76af8D3CE730f3D62c64427448
 | Name | Type |
 | :------ | :------ |
 | `account` | `string` |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
-| `includeTestnets` | `boolean` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
+| `includeTestnets?` | `boolean` \| `undefined` |
 
 #### Returns
 

@@ -6,9 +6,9 @@ title: Bonder
 
 The SDK provides a **Bonder** class to interact with SOLACE bonding. **Bonder** methods are wrappers around [`BondTellerErc20.sol`](../Contracts/bonds/BondTellerErc20), [`BondTellerEth.sol`](../Contracts/bonds/BondTellerEth) and [`BondTellerMatic.sol`](../Contracts/bonds/BondTellerMatic) functions, which are the smart contracts providing SOLACE staking functionality.
 
-The Bonder constructor takes in three parameters, where **chainID** and **bondTellerContractAddress** required while **walletOrProviderOrSigner** is optional:
+The Bonder constructor takes in three parameters:
 
-1. The **chainID** to connect to
+1. (Required) The **chainID** to connect to
 
 > Current supported chains are:
 > - Ethereum mainnet (ChainID = 1)
@@ -21,7 +21,7 @@ The Bonder constructor takes in three parameters, where **chainID** and **bondTe
 
 <br/>
 
-2. The **bondTellerContractAddress** string. See bond teller addresses for <u>[Eth Mainnet](../Contract%20Addresses/Ethereum.md#v121)</u>, <u>[Polygon](../Contract%20Addresses/Polygon.md#v121)</u> and <u>[Aurora](../Contract%20Addresses/Aurora.md#v121)</u>
+2. (Required) The **bondTellerContractAddress** string. See bond teller addresses for <u>[Eth Mainnet](../Contract%20Addresses/Ethereum.md#v121)</u>, <u>[Polygon](../Contract%20Addresses/Polygon.md#v121)</u> and <u>[Aurora](../Contract%20Addresses/Aurora.md#v121)</u>
 
 Alternatively, we have exposed a `BOND_TELLER_ADDRESSES` object that contains the hardcoded bondteller addresses. 
 
@@ -35,7 +35,7 @@ const ethMainnetDAIBondTeller = BOND_TELLER_ADDRESSES["dai"][1]
 
 <br/>
 
-3. **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
+3. (Optional) **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 
 ---
 
@@ -43,7 +43,6 @@ const ethMainnetDAIBondTeller = BOND_TELLER_ADDRESSES["dai"][1]
 
 ### Obtaining bond price for WBTC BondTeller on Polygon
 ```js
-// Can you expect an SDK user to create the Contract object for themself?
 
 import { ethers, WALLETS, Bonder, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk-nightly"
 

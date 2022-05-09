@@ -6,9 +6,9 @@ title: Getting Lock Data
 
 To assist with getting lock (i.e. single stake SOLACE) data, we have provided a **Lock** class
 
-The Lock constructor takes in two parameters, where **chainId** is required while **provider** is optional:
+The Lock constructor takes in two parameters:
 
-1. The **chainId** to connect to
+1. (Required) The **chainId** to connect to
 
 Current supported chains are:
 - Ethereum mainnet (ChainID = 1)
@@ -19,7 +19,7 @@ Current supported chains are:
 - Aurora (ChainID = 1313161554)
 - Aurora testnet (ChainID = 1313161555)
 
-2. **provider** is an object of three types from ethers ([**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
+2. (Optional) **provider** is an object of three types from ethers ([**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 
 ---
 

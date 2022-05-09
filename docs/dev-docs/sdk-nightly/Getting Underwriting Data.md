@@ -45,7 +45,7 @@ console.log( await uwpBalances.getBalances_Mainnet() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -87,7 +87,7 @@ console.log( await uwpBalances.getBalances_Polygon() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -123,7 +123,7 @@ console.log( await uwpBalances.getBalances_Aurora() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -170,7 +170,7 @@ console.log( await uwpUSDBalances.getUSDBalances_Mainnet() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -211,7 +211,7 @@ console.log( await uwpUSDBalances.getUSDBalances_Polygon() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -247,7 +247,7 @@ console.log( await uwpUSDBalances.getUSDBalances_Aurora() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -310,7 +310,7 @@ console.log( await uwpUSDBalances.getUSDBalances_All() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 

@@ -26,7 +26,7 @@ To avoid this, some constructors of our classes has an optional parameter to pro
 ### Use custom RPC URL
 
 ```js
-import { Lock, solaceUtils } from "@solace-fi/sdk"
+import { Lock, solaceUtils } from "@solace-fi/sdk-nightly"
 const { getProvider } = solaceUtils
 
 const url = <RPC_URL>

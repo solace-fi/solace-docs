@@ -66,7 +66,7 @@ console.log( await price.getMainnetPrices() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -96,7 +96,7 @@ console.log( await price.getPolygonPrices() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 
@@ -127,7 +127,7 @@ console.log( await price.getAuroraPrices() )
 
 | Name | Type |
 | :------ | :------ |
-| `rpcUrlMapping` | `{ [chain: number]: string }` \| `undefined` |
+| `rpcUrlMapping?` | `{ [chain: number]: string }` \| `undefined` |
 
 #### Returns
 

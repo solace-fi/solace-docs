@@ -8,9 +8,9 @@ linkcolor: blue
 
 To interact with the SolaceCoverProduct smart contract, we will need to create a Coverage instance.
 
-The Coverage constructor takes in two parameters, where **chainID** is required while **walletOrProviderOrSigner** is optional:
+The Coverage constructor takes in two parameters:
 
-1. The **chainID** to connect to
+1. (Required) The **chainID** to connect to
 
 > Current supported chains are:
 > - Ethereum mainnet (ChainID = 1)
@@ -18,7 +18,7 @@ The Coverage constructor takes in two parameters, where **chainID** is required 
 > - MATIC (ChainID = 137)
 > - Mumbai testnet (ChainID = 80001)
 
-2. **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
+2. (Optional) **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 
 ## **Basic Example**
 

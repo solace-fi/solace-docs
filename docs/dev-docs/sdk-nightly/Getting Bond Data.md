@@ -6,9 +6,9 @@ title: Getting Bond Data
 
 To assist with getting bond data, we have provided a **Bond** class.
 
-The constructor takes in two parameters, where **chainId** is required while **providerOrSigner** is optional:
+The constructor takes in two parameters:
 
-1. The **chainId** to connect to
+1. (Required) The **chainId** to connect to
 
 > Current supported chains are:
 > - Ethereum mainnet (ChainID = 1)
@@ -19,7 +19,7 @@ The constructor takes in two parameters, where **chainId** is required while **p
 > - Aurora Mainnet (ChainID = 1313161554)
 > - Aurora Testnet (ChainID = 1313161555)
 
-2. **providerOrSigner** is an object of three types from ethers ([**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
+2. (Optional) **providerOrSigner** is an object of three types from ethers ([**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 
 ---
 
