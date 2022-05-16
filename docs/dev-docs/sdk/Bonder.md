@@ -1,19 +1,19 @@
 ---
-sidebar_position: 7
-id: bonding
-title: Bonding
+sidebar_position: 3
+id: bonder
+title: Bonder
 ---
 
 The SDK provides a **Bonder** class to interact with SOLACE bonding. **Bonder** methods are wrappers around [`BondTellerErc20.sol`](../Contracts/bonds/BondTellerErc20), [`BondTellerEth.sol`](../Contracts/bonds/BondTellerEth) and [`BondTellerMatic.sol`](../Contracts/bonds/BondTellerMatic) functions, which are the smart contracts providing SOLACE staking functionality.
 
-The Bonder constructor requires three parameters:
+The Bonder constructor takes in three parameters:
 
-1. The **chainID** to connect to
+1. (Required) The **chainID** to connect to
 
 > Current supported chains are:
 > - Ethereum mainnet (ChainID = 1)
 > - Rinkeby Testnet (ChainID = 4)
-> - Kovan Testnet (ChainID = 2)
+> - Kovan Testnet (ChainID = 42)
 > - MATIC (ChainID = 137)
 > - Mumbai testnet (ChainID = 80001)
 > - Aurora Mainnet (ChainID = 1313161554)
@@ -21,42 +21,36 @@ The Bonder constructor requires three parameters:
 
 <br/>
 
-2. A **[Signer](https://docs.ethers.io/v5/api/signer/)** object
+2. (Required) The **bondTellerContractAddress** string. See bond teller addresses for <u>[Eth Mainnet](../Contract%20Addresses/Ethereum.md#v121)</u>, <u>[Polygon](../Contract%20Addresses/Polygon.md#v121)</u> and <u>[Aurora](../Contract%20Addresses/Aurora.md#v121)</u>
 
-> A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because transactions need to be signed by a private key to be included in the blockchain. The [Signer](https://docs.ethers.io/v5/api/signer/) object also a convenient way to connect to the blockchain.
+Alternatively, we have exposed a `BOND_TELLER_ADDRESSES` object that contains the hardcoded bondteller addresses. 
 
+For example, to obtain the address for the DAI bond teller on ETH mainnet:
 
-<br/>
-
-3. A string describing the **token** used for bond purchases
-
-> Current supported tokens are
-> - "dai"
-> - "usdc"
-> - "usdt"
-> - "frax"
-> - "wbtc"
-> - "eth"
-> - "weth"
-> - "matic"
-> - "wnear"
-> - "aurora"
-
-Note that not all tokens are supported for all chainIDs. To see a full list of supported tokens for each chain, view the Bond Teller contracts in the Contract Addresses section (e.g. [**Aurora mainnet Bond Tellers**](../Contract%20Addresses/Aurora#v121))
+```js
+import { BOND_TELLER_ADDRESSES } from "@solace-fi/sdk"
+const ethMainnetDAIBondTeller = BOND_TELLER_ADDRESSES["dai"][1] 
+// BOND_TELLER_ADDRESSES[Token shortened name in lower case][chainID]
+```
 
 <br/>
+
+3. (Optional) **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 
 ---
 
 ## **Basic Examples**
 
-### Obtaining bond price for BondTellerMatic on Matic Mainnet
+### Obtaining bond price for WBTC BondTeller on Polygon
 ```js
-import { ethers, WALLETS, Bonder } from "@solace-fi/sdk"
+
+import { ethers, WALLETS, Bonder, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk"
+
 const provider = await WALLETS[0].connector.getProvider()
 const web3Provider = new ethers.Web3Provider(provider)
 const signer = web3Provider.getSigner(account)
-const bonder = new Bonder(137, signer, "matic")
+
+const bonder = new Bonder(137, BOND_TELLER_ADDRESSES["wbtc"][137].addr, signer)
 const bondPrice = await bonder.bondPrice()
 console.log(bondPrice)
 ```
@@ -65,11 +59,11 @@ console.log(bondPrice)
 
 ### Purchasing bond with wNEAR on Aurora mainnet, using a custom private key in a Node.js script
 ```js
-import { solaceUtils, Bonder, Wallet, providers } from "@solace-fi/sdk"
+import { solaceUtils, Bonder, Wallet, providers, BOND_TELLER_ADDRESSES } from "@solace-fi/sdk"
 
 const provider = new providers.getDefaultProvider('mainnet')
 const signer = new Wallet(<PRIVATE_KEY>, provider)
-const bonder = new Bonder(1313161554, signer, "wnear")
+const bonder = new Bonder(1313161554, BOND_TELLER_ADDRESSES["wnear"][1313161554].addr, signer)
 await bonder.deposit(
     <DESIRED_DEPOSIT>, 
     <MINIMUM_DESIRED_SOLACE_PURCHASED>, 
@@ -91,11 +85,8 @@ await bonder.deposit(
 Calculate the current price (measured in units of the principal token) of a bond. Assumes 1 SOLACE payout.
 
 ```js
-// ...setup bonder object for Ethereum mainnet
+// ...setup bonder object for desired bondteller and chain
 console.log(await bonder.bondPrice())
-/*
-    ...
-*/
 ```
 
 #### Parameters
@@ -113,20 +104,17 @@ N/A
 Calculate the current price (measured in units of the principal token) of a bond. Assumes 1 SOLACE payout.
 
 ```js
-// ...setup bonder object for Ethereum mainnet
+// ...setup bonder object for desired bondteller and chain
 const AMOUNT_IN = 1000;
 const STAKE = false;
 console.log(await bonder.calculateAmountOut(AMOUNT_IN, STAKE))
-/*
-    ...
-*/
 ```
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `amountIn` | `BigNumber` |
+| `amountIn` | `BigNumberish` |
 | `stake` | `boolean` |
 
 #### Returns
@@ -137,23 +125,20 @@ console.log(await bonder.calculateAmountOut(AMOUNT_IN, STAKE))
 
 ### **calculateAmountIn**
 
-Calculate the amount of SOLACE out for an amount of principal.
+Calculate the amount of SOLACE out for a specified amount of principal.
 
 ```js
-// ...setup bonder object for Ethereum mainnet
+// ...setup bonder object for desired bondteller and chain
 const AMOUNT_OUT = 1000;
 const STAKE = false;
 console.log(await bonder.calculateAmountOut(AMOUNT_IN, STAKE))
-/*
-    ...
-*/
 ```
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `amountOut` | `BigNumber` |
+| `amountOut` | `BigNumberish` |
 | `stake` | `boolean` |
 
 #### Returns
@@ -164,7 +149,7 @@ console.log(await bonder.calculateAmountOut(AMOUNT_IN, STAKE))
 
 ---
 
-## **Bonder Mutator Methods**
+## **Common Bonder Mutator Methods**
 
 <br/>
 
@@ -173,7 +158,7 @@ console.log(await bonder.calculateAmountOut(AMOUNT_IN, STAKE))
 Claim payout for a bond that the user holds. User calling `claimPayout()` must be either the owner or approved for the entered bondID.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const BOND_ID = 1
 
 let tx = await bonder.claimPayout(
@@ -184,7 +169,7 @@ let tx = await bonder.claimPayout(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`bondID` | `number` | The ID of the bond to redeem.
+|`bondID` | `BigNumberish` | The ID of the bond to redeem.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
@@ -206,7 +191,7 @@ let tx = await bonder.claimPayout(
 Create a bond by depositing amount of principal. Principal will be transferred from msg.sender using allowance.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 USD
 const MIN_AMOUNT_OUT = BigNumber.from("100000000000000000000") // 100 SOLACE
 const DEPOSITOR_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
@@ -223,8 +208,8 @@ let tx = await bonder.deposit(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`deposit` | `BigNumber` | Amount of principal to deposit.
-|`minAmountOut` | `BigNumber` | The minimum SOLACE out.
+|`deposit` | `BigNumberish` | Amount of principal to deposit.
+|`minAmountOut` | `BigNumberish` | The minimum SOLACE out.
 |`depositor` | `string` | The bond recipient, default msg.sender.
 |`stake` | `boolean` | True to stake, false to not stake.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
@@ -240,7 +225,7 @@ let tx = await bonder.deposit(
 Create a bond by depositing amount of principal. Principal will be transferred from depositor using permit. Note that not all ERC20s have a permit function, in which case this function will revert.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 USD
 const MIN_AMOUNT_OUT = BigNumber.from("100000000000000000000") // 100 SOLACE
 const DEPOSITOR_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
@@ -265,11 +250,11 @@ let tx = await bonder.depositSigned(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`deposit` | `BigNumber` | Amount of principal to deposit.
-|`minAmountOut` | `BigNumber` | The minimum SOLACE out.
+|`deposit` | `BigNumberish` | Amount of principal to deposit.
+|`minAmountOut` | `BigNumberish` | The minimum SOLACE out.
 |`depositor` | `string` | The bond recipient, default msg.sender.
 |`stake` | `boolean` | True to stake, false to not stake.
-|`deadline` | `BigNumber` | Time the transaction must go through before.
+|`deadline` | `BigNumberish` | Time the transaction must go through before.
 |`v` | `utils.BytesLike` | secp256k1 signature.
 |`r` | `utils.BytesLike` | secp256k1 signature.
 |`s` | `utils.BytesLike` | secp256k1 signature.
@@ -294,7 +279,7 @@ let tx = await bonder.depositSigned(
 Create a bond by depositing ETH.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 ETH
 const MIN_AMOUNT_OUT = BigNumber.from("100000000000000000000") // 100 SOLACE
 const DEPOSITOR_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
@@ -311,8 +296,8 @@ let tx = await bonder.depositEth(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`deposit` | `BigNumber` | Amount of ETH to deposit.
-|`minAmountOut` | `BigNumber` | The minimum SOLACE out.
+|`deposit` | `BigNumberish` | Amount of ETH to deposit.
+|`minAmountOut` | `BigNumberish` | The minimum SOLACE out.
 |`depositor` | `string` | The bond recipient, default msg.sender.
 |`stake` | `boolean` | True to stake, false to not stake.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
@@ -328,7 +313,7 @@ let tx = await bonder.depositEth(
 Create a bond by depositing amount of WETH. WETH will be transferred from msg.sender using allowance.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 WETH
 const MIN_AMOUNT_OUT = BigNumber.from("100000000000000000000") // 100 SOLACE
 const DEPOSITOR_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
@@ -345,8 +330,8 @@ let tx = await bonder.depositWeth(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`deposit` | `BigNumber` | Amount of WETH to deposit.
-|`minAmountOut` | `BigNumber` | The minimum SOLACE out.
+|`deposit` | `BigNumberish` | Amount of WETH to deposit.
+|`minAmountOut` | `BigNumberish` | The minimum SOLACE out.
 |`depositor` | `string` | The bond recipient, default msg.sender.
 |`stake` | `boolean` | True to stake, false to not stake.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
@@ -362,7 +347,7 @@ let tx = await bonder.depositWeth(
 Create a bond by depositing amount of WETH. WETH will be transferred from depositor using permit. Note that not all WETHs have a permit function, in which case this function will revert.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 WETH
 const MIN_AMOUNT_OUT = BigNumber.from("100000000000000000000") // 100 SOLACE
 const DEPOSITOR_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
@@ -387,11 +372,11 @@ let tx = await bonder.depositWethSigned(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`deposit` | `BigNumber` | Amount of WETH to deposit.
-|`minAmountOut` | `BigNumber` | The minimum SOLACE out.
+|`deposit` | `BigNumberish` | Amount of WETH to deposit.
+|`minAmountOut` | `BigNumberish` | The minimum SOLACE out.
 |`depositor` | `string` | The bond recipient, default msg.sender.
 |`stake` | `boolean` | True to stake, false to not stake.
-|`deadline` | `BigNumber` | Time the transaction must go through before.
+|`deadline` | `BigNumberish` | Time the transaction must go through before.
 |`v` | `utils.BytesLike` | secp256k1 signature.
 |`r` | `utils.BytesLike` | secp256k1 signature.
 |`s` | `utils.BytesLike` | secp256k1 signature.
@@ -416,7 +401,7 @@ let tx = await bonder.depositWethSigned(
 Create a bond by depositing MATIC.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 MATIC
 const MIN_AMOUNT_OUT = BigNumber.from("100000000000000000000") // 100 SOLACE
 const DEPOSITOR_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
@@ -433,8 +418,8 @@ let tx = await bonder.depositMatic(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`deposit` | `BigNumber` | Amount of MATIC to deposit.
-|`minAmountOut` | `BigNumber` | The minimum SOLACE out.
+|`deposit` | `BigNumberish` | Amount of MATIC to deposit.
+|`minAmountOut` | `BigNumberish` | The minimum SOLACE out.
 |`depositor` | `string` | The bond recipient, default msg.sender.
 |`stake` | `boolean` | True to stake, false to not stake.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
@@ -450,7 +435,7 @@ let tx = await bonder.depositMatic(
 Create a bond by depositing amount of wMATIC. wMATIC will be transferred from msg.sender using allowance.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 wMATIC
 const MIN_AMOUNT_OUT = BigNumber.from("100000000000000000000") // 100 SOLACE
 const DEPOSITOR_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
@@ -467,8 +452,8 @@ let tx = await bonder.depositWmatic(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`deposit` | `BigNumber` | Amount of wMATIC to deposit.
-|`minAmountOut` | `BigNumber` | The minimum SOLACE out.
+|`deposit` | `BigNumberish` | Amount of wMATIC to deposit.
+|`minAmountOut` | `BigNumberish` | The minimum SOLACE out.
 |`depositor` | `string` | The bond recipient, default msg.sender.
 |`stake` | `boolean` | True to stake, false to not stake.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
@@ -484,7 +469,7 @@ let tx = await bonder.depositWmatic(
 Create a bond by depositing amount of wMATIC. wMATIC will be transferred from depositor using permit. Note that not all wMATICs have a permit function, in which case this function will revert.
 
 ```js
-// ...setup bonder object
+// ...setup bonder object for desired bondteller and chain
 const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200 wMATIC
 const MIN_AMOUNT_OUT = BigNumber.from("100000000000000000000") // 100 SOLACE
 const DEPOSITOR_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
@@ -509,11 +494,11 @@ let tx = await bonder.depositWmaticSigned(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`deposit` | `BigNumber` | Amount of wMATIC to deposit.
-|`minAmountOut` | `BigNumber` | The minimum SOLACE out.
+|`deposit` | `BigNumberish` | Amount of wMATIC to deposit.
+|`minAmountOut` | `BigNumberish` | The minimum SOLACE out.
 |`depositor` | `string` | The bond recipient, default msg.sender.
 |`stake` | `boolean` | True to stake, false to not stake.
-|`deadline` | `BigNumber` | Time the transaction must go through before.
+|`deadline` | `BigNumberish` | Time the transaction must go through before.
 |`v` | `utils.BytesLike` | secp256k1 signature.
 |`r` | `utils.BytesLike` | secp256k1 signature.
 |`s` | `utils.BytesLike` | secp256k1 signature.
@@ -524,3 +509,13 @@ let tx = await bonder.depositWmaticSigned(
 `Promise`<`TransactionResponse`\>
 
 <br/>
+
+## ** More information**
+
+- [<u>BondDepository.sol</u>](../Contracts/bonds/BondDepository.md)
+
+- [<u>BondTellerErc20.sol</u>](../Contracts/bonds/BondTellerErc20.md)
+
+- [<u>BondTellerEth.sol</u>](../Contracts/bonds/BondTellerEth.md)
+
+- [<u>BondTellerMatic.sol</u>](../Contracts/bonds/BondTellerMatic.md)

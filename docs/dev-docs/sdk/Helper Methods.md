@@ -1,10 +1,10 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 id: helper-methods
 title: Helper Methods
 ---
 
-Using the Fetcher object to make read-only calls to fetch data from the blockchain is relatively straightforward (hopefully!). More tricky is using the Policyholder object to send transactions to the blockchain. There are a number of additional considerations, such as:
+Using the Coverage object to make read-only calls to fetch data from the blockchain is relatively straightforward (hopefully!). More tricky is using the Coverage object to send transactions to the blockchain. There are a number of additional considerations, such as:
 
 
 1. How do we use a custom RPC endpoint? (e.g. if we want to use our [Alchemy](https://www.alchemy.com/) API key)?
@@ -43,39 +43,6 @@ let provider = await getProvider(url)
 
 <br/>
 
-#### Types
-
-```js
-type NetworkConfig = {
-    chainId: number
-    rpc: {
-      httpsUrl: string
-      pollingInterval?: number
-    }
-  }
-```
-
-```js
-type OptionalSignerArgs = {
-    network?: NetworkConfig
-    account?: string
-    connector?: string
-    connectorArgs?: any
-}
-```
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `signerArgs?` | `OptionalSignerArgs` |
-
-#### Returns
-
-`JsonRpcSigner`
-
-<br/>
-
 ### **getGasPrice**
 
 Gets current gas price
@@ -93,7 +60,7 @@ const gasPrice = await getGasPrice(provider)
 
 | Name | Type |
 | :------ | :------ |
-| `abstract` | `JsonRpcProvider` or `JsonRpcSigner` |
+| `providerOrSigner` | `JsonRpcProvider` or `JsonRpcSigner` |
 
 #### Returns
 
@@ -119,7 +86,7 @@ const gasArgs = {
     gasForTestnet: true // true for testnet, false otherwise
 }
 
-const gasSettings = getGasSettings(4, gasPrice, gasArgs)
+const gasSettings = getGasSettings(4, undefined, gasArgs)
 
 ```
 
@@ -134,25 +101,13 @@ type GasArgs = {
 ```
 
 ```js
-type GasConfiguration =
-  | {
-      maxFeePerGas?: undefined
-      type?: undefined
-      gasPrice?: undefined
-      gasLimit?: undefined
-    }
-  | {
-      maxFeePerGas: number
-      type: number
-      gasPrice?: undefined
-      gasLimit?: number | undefined
-    }
-| {
-    gasPrice: number
-    maxFeePerGas?: undefined
-    type?: undefined
-    gasLimit?: number | undefined
-  }
+type GasConfiguration ={
+  gasPrice?: number
+  maxFeePerGas?: number
+  maxPriorityFeePerGas?: number
+  type?: number
+  gasLimit?: number
+}
 ```
 
 #### Parameters
@@ -160,7 +115,7 @@ type GasConfiguration =
 | Name | Type |
 | :------ | :------ |
 | `chainId` | `number` |
-| `gasPrice`| `number` |
+| `rpcUrl`| `string` \| `undefined` |
 | `gasArgs?` | `GasArgs` |
 
 #### Returns

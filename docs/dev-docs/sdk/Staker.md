@@ -1,12 +1,25 @@
 ---
-sidebar_position: 6
-id: staking
-title: Staking
+sidebar_position: 4
+id: staker
+title: Staker
 ---
 
 The SDK provides a **Staker** class to interact with SOLACE staking. **Staker** methods are wrappers around [`xsLocker.sol`](../Contracts/staking/xsLocker) and [`StakingRewards.sol`](../Contracts/staking/StakingRewards) functions, which are the smart contracts providing SOLACE staking functionality.
 
-The same syntax for creating the [`PolicyHolder`](./sending-transactions) object will apply for the Staker object.
+The Staker constructor takes in two parameters, where **chainID** is required while **walletOrProviderOrSigner** is optional:
+
+1. (Required) The **chainID** to connect to
+
+> Current supported chains are:
+> - Ethereum mainnet (ChainID = 1)
+> - Rinkeby Testnet (ChainID = 4)
+> - Kovan Testnet (ChainID = 42)
+> - MATIC (ChainID = 137)
+> - Mumbai testnet (ChainID = 80001)
+> - Aurora Mainnet (ChainID = 1313161554)
+> - Aurora Testnet (ChainID = 1313161555)
+
+2. (Optional) **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 
 ---
 
@@ -29,7 +42,7 @@ console.log(stakingInfo)
 
 ### Staking on Matic, using a custom private key in a Node.js script
 ```js
-import { Staker, Wallet, providers } from "@solace-fi/sdk"
+import { solaceUtils, Staker, Wallet, providers } from "@solace-fi/sdk"
 
 const provider = new providers.getDefaultProvider('mainnet')
 const signer = new Wallet(<PRIVATE_KEY>, provider)
@@ -70,7 +83,7 @@ console.log(await staker.locks(1))
 
 | Name | Type |
 | :------ | :------ |
-| `xsLockID` | `number` |
+| `xsLockID` | `BigNumberish` |
 
 #### Returns
 
@@ -91,7 +104,7 @@ console.log(await staker.isLocked(1)) // true
 
 | Name | Type |
 | :------ | :------ |
-| `xsLockID` | `number` |
+| `xsLockID` | `BigNumberish` |
 
 #### Returns
 
@@ -112,7 +125,7 @@ console.log(await staker.timeLeft(1)) // BigNumber { _hex: '0x0747d584', _isBigN
 
 | Name | Type |
 | :------ | :------ |
-| `xsLockID` | `number` |
+| `xsLockID` | `BigNumberish` |
 
 #### Returns
 
@@ -167,7 +180,7 @@ console.log(await staker.stakedLockInfo(1))
 
 | Name | Type |
 | :------ | :------ |
-| `xsLockID` | `number` |
+| `xsLockID` | `BigNumberish` |
 
 #### Returns
 
@@ -188,7 +201,7 @@ console.log(await staker.pendingRewardsOfLock(1)) // BigNumber { _hex: '0x3abf3a
 
 | Name | Type |
 | :------ | :------ |
-| `xsLockID` | `number` |
+| `xsLockID` | `BigNumberish` |
 
 #### Returns
 
@@ -223,8 +236,8 @@ let tx = await staker.createLock(
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`recipient` | `string` | Account that will receive the lock.
-|`amount` | `BigNumber` | The amount of SOLACE to deposit.
-|`end` | `BigNumber` | The timestamp the lock will unlock, use end = 0 to initialize as unlocked.
+|`amount` | `BigNumberish` | The amount of SOLACE to deposit.
+|`end` | `BigNumberish` | The timestamp the lock will unlock, use end = 0 to initialize as unlocked.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
@@ -262,9 +275,9 @@ let tx = await staker.createLockSigned(
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`recipient` | `string` | Account that will receive the lock.
-|`amount` | `BigNumber` | The amount of SOLACE to deposit.
-|`end` | `BigNumber` | The timestamp the lock will unlock, use end = 0 to initialize as unlocked.
-|`deadline` | `BigNumber` | Time the transaction must go through before.
+|`amount` | `BigNumberish` | The amount of SOLACE to deposit.
+|`end` | `BigNumberish` | The timestamp the lock will unlock, use end = 0 to initialize as unlocked.
+|`deadline` | `BigNumberish` | Time the transaction must go through before.
 |`v` | `utils.BytesLike` | secp256k1 signature.
 |`r` | `utils.BytesLike` | secp256k1 signature.
 |`s` | `utils.BytesLike` | secp256k1 signature.
@@ -294,8 +307,8 @@ let tx = await staker.increaseAmount(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | `string` | The ID of the lock to update.
-|`amount` | `BigNumber` | The amount of SOLACE to deposit.
+|`xsLockID` | `BigNumberish` | The ID of the lock to update.
+|`amount` | `BigNumberish` | The amount of SOLACE to deposit.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
@@ -330,9 +343,9 @@ let tx = await staker.increaseAmountSigned(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | `string` | The ID of the lock to update.
-|`amount` | `BigNumber` | The amount of SOLACE to deposit.
-|`deadline` | `BigNumber` | Time the transaction must go through before.
+|`xsLockID` | `BigNumberish` | The ID of the lock to update.
+|`amount` | `BigNumberish` | The amount of SOLACE to deposit.
+|`deadline` | `BigNumberish` | Time the transaction must go through before.
 |`v` | `utils.BytesLike` | secp256k1 signature.
 |`r` | `utils.BytesLike` | secp256k1 signature.
 |`s` | `utils.BytesLike` | secp256k1 signature.
@@ -362,8 +375,8 @@ let tx = await staker.extendLock(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | `string` | The ID of the lock to update.
-|`end` | `BigNumber` | The new time for the lock to unlock.
+|`xsLockID` | `BigNumberish` | The ID of the lock to update.
+|`end` | `BigNumberish` | The new time for the lock to unlock.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
@@ -392,7 +405,7 @@ let tx = await staker.withdraw(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | `number` | The ID of the lock to withdraw from.
+|`xsLockID` | `BigNumberish` | The ID of the lock to withdraw from.
 |`recipient` | `string` | The user to receive the lock's SOLACE.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
@@ -424,7 +437,7 @@ let tx = await staker.withdraw(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | `number` | The ID of the lock to withdraw from.
+|`xsLockID` | `BigNumberish` | The ID of the lock to withdraw from.
 |`recipient` | `string` | The user to receive the lock's SOLACE.
 |`amount` | `string` | The amount of SOLACE to withdraw.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
@@ -455,7 +468,7 @@ let tx = await staker.withdraw(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockIDs` | `number[]` | The ID of the locks to withdraw from.
+|`xsLockIDs` | `BigNumberish[]` | The ID of the locks to withdraw from.
 |`recipient` | `string` | The user to receive the lock's SOLACE.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
@@ -481,7 +494,7 @@ let tx = await staker.harvestLock(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | `number` | The ID of the lock to process rewards for.
+|`xsLockID` | `BigNumberish` | The ID of the lock to process rewards for.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
@@ -506,7 +519,7 @@ let tx = await staker.harvestLock(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockIDs` | `number[]` | The IDs of the locks to process rewards for.
+|`xsLockIDs` | `BigNumberish[]` | The IDs of the locks to process rewards for.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
@@ -533,7 +546,7 @@ let tx = await staker.compoundLock(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockID` | `number` | The ID of the lock to compound rewards for.
+|`xsLockID` | `BigNumberish` | The ID of the lock to compound rewards for.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
@@ -560,7 +573,7 @@ let tx = await staker.compoundLock(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`xsLockIDs` | `number[]` | The IDs of the locks to compound rewards for.
+|`xsLockIDs` | `BigNumberish[]` | The IDs of the locks to compound rewards for.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns
