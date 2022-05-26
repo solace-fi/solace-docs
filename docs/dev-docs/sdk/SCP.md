@@ -14,7 +14,7 @@ SCP (Solace Credit Point) is the unit of accounting used for Solace Wallet Cover
 
 <br/>
 
-To assist with getting SCP (Solace Credit Point) data, we have provided a **SCP** class.
+To assist with interaction with SCP (Solace Credit Point), we have provided a **SCP** class.
 
 The constructor takes in two parameters:
 
@@ -92,6 +92,27 @@ console.log(await scp.minScpRequired(policyholder))
 | Name | Type |
 | :------ | :------ |
 | `account` | `string` |
+
+#### Returns
+
+`Promise`<`BigNumber`\>
+
+<br/>
+
+### **getRefundableSOLACEAmount**
+
+Calculates the refundable `SOLACE` amount for the SCP balance for a given address.
+
+`signature` is the 65-byte ECDSA signature produced by a `Price Signer` for a specified price quote `PriceData(address token,uint256 price,uint256 deadline)`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `depositor` | `string` |
+| `price` | `BigNumberish` |
+| `priceDeadline` | `BigNumberish` |
+| `signature` | `utils.BytesLike` |
 
 #### Returns
 

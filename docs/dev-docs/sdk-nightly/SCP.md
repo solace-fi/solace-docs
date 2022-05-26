@@ -98,3 +98,24 @@ console.log(await scp.minScpRequired(policyholder))
 `Promise`<`BigNumber`\>
 
 <br/>
+
+### **getRefundableSOLACEAmount**
+
+Calculates the refundable `SOLACE` amount for the SCP balance for a given address.
+
+`signature` is the 65-byte ECDSA signature produced by a `Price Signer` for a specified price quote `PriceData(address token,uint256 price,uint256 deadline)`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `depositor` | `string` |
+| `price` | `BigNumberish` |
+| `priceDeadline` | `BigNumberish` |
+| `signature` | `utils.BytesLike` |
+
+#### Returns
+
+`Promise`<`BigNumber`\>
+
+<br/>
