@@ -46,7 +46,7 @@
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
 | SOLACE                       | [`0x501ACE0C6DeA16206bb2D120484a257B9F393891`](https://testnet.aurorascan.dev/address/0x501ACE0C6DeA16206bb2D120484a257B9F393891) |
-| Faucet                       | [`0x501acEC6005979Be31C0c1d962A922c3a609C71D`](https://testnet.aurorascan.dev/address/0x501acEC6005979Be31C0c1d962A922c3a609C71D) |
+| Faucet                       | [`0x501aCE125D0BE22FDA4e035d06EE1D5150869b53`](https://testnet.aurorascan.dev/address/0x501aCE125D0BE22FDA4e035d06EE1D5150869b53) |
 
 ### V1.0.0
 
