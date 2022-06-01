@@ -23,11 +23,11 @@ https://app.uniswap.org/#/swap?chain=polygon&inputCurrency=0x45c32fA6DF82ead1e2E
 #### Add
 https://app.uniswap.org/#/add/0x501ace9c35e60f03a2af4d484f49f9b1efde9f40/0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89?chain=polygon
 
-## G-UNI
-https://www.sorbet.finance/#/pools/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A
+## Arrakis
+https://beta.arrakis.finance/#/vaults/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A
 
 ## GYSR
-https://app.gysr.io/pool/0xf54f26ec9657664c098d4a6879d52cc8bdeccc50
+https://app.gysr.io/pool/0xF54f26Ec9657664c098D4A6879D52Cc8BDEcCC50
 
 ## TriSolaris
 #### Swap

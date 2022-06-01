@@ -12,6 +12,14 @@
 | FRAX                         | [`0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89`](https://polygonscan.com/address/0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89) |
 | SOLACE-FRAX G-UNI            | [`0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A`](https://polygonscan.com/address/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A) |
 
+### Liquidity Pools
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SOLACE-FRAX Uni V3 Pool      | [`0x85efec4ee18a06ce1685abf93e434751c3cb9ba9`](https://polygonscan.com/address/0x85Efec4ee18a06CE1685abF93e434751C3cb9bA9) |
+| Arrakis Pool                 | [`0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A`](https://polygonscan.com/address/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A) |
+| GYSR Pool                    | [`0xF54f26Ec9657664c098D4A6879D52Cc8BDEcCC50`](https://polygonscan.com/address/0xF54f26Ec9657664c098D4A6879D52Cc8BDEcCC50) |
+
 ### Bridge
 
 | Contract Name                | Address                                      |
