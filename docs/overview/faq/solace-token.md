@@ -35,4 +35,4 @@ Below is the break down of the allocations and target use.
 ---
 
 ## How can I obtain $SOLACE?
-Check out the Buy $SOLACE page [<u>here</u>](../../user-guides/buy-token.md).
+Check out the Buy $SOLACE page [<u>here</u>](../../user-guides/buy-token).
