@@ -13,6 +13,12 @@
 | WNEAR                        | [`0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d`](https://aurorascan.dev/address/0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d) |
 | AURORA                       | [`0x8BEc47865aDe3B172A928df8f990Bc7f2A3b9f79`](https://aurorascan.dev/address/0x8BEc47865aDe3B172A928df8f990Bc7f2A3b9f79) |
 
+### Liquidity Pools
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SOLACE-WNEAR TLP             | [`0xdDAdf88b007B95fEb42DDbd110034C9a8e9746F2`](https://aurorascan.dev/address/0xdDAdf88b007B95fEb42DDbd110034C9a8e9746F2) |
+
 ### Bridge
 
 | Contract Name                | Address                                      |

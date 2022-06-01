@@ -12,6 +12,12 @@
 | SCP                          | [`0x501AcEe83a6f269B77c167c6701843D454E2EFA0`](https://etherscan.io/address/0x501AcEe83a6f269B77c167c6701843D454E2EFA0) |
 | FRAX                         | [`0x853d955aCEf822Db058eb8505911ED77F175b99e`](https://etherscan.io/address/0x853d955aCEf822Db058eb8505911ED77F175b99e) |
 
+### Liquidity Pools
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SOLACE-USDC SLP              | [`0x9C051F8A6648a51eF324D30C235da74D060153aC`](https://etherscan.io/address/0x9C051F8A6648a51eF324D30C235da74D060153aC)
+
 ### Multisigs
 
 | Contract Name                | Address                                      | Links |
