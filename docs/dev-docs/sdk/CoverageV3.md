@@ -262,27 +262,6 @@ console.log(await coverage.tokenURI(1))
 
 <br/>
 
-### **calculateCancelFee**
-
-Calculates the policy cancellation fee.
-
-```js
-// ...setup coverage object
-console.log(await coverage.calculateCancelFee(1))
-```
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `policyID` | `BigNumberish` |
-
-#### Returns
-
-`Promise`<`BigNumber`\>
-
-<br/>
-
 ### **policyOf**
 
 Gets the policy ID for a policyholder
@@ -358,9 +337,9 @@ A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because tra
 
 <br/>
 
-### **purchaseFor**
+### **purchaseWithStable**
 
-Activates (or purchases) a policy for a given address
+Activates (or purchases) a policy for a given address with accepted stablecoin.
 
 ```js
 import { solaceUtils, CoverageV3, BigNumber } from "@solace-fi/sdk"
@@ -376,11 +355,14 @@ const gasSettings = await getGasSettings(4, gasPrice, {gasForTestnet: true}) // 
 
 const POLICYHOLDER = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
 const COVER_LIMIT = BigNumber.from("100000000000000000000") // 100 USD
+const TOKEN = "0x853d955aCEf822Db058eb8505911ED77F175b99e" // FRAX on Eth Mainnet
 const DEPOSIT_AMOUNT = BigNumber.from("100000000000000000000") // 100 USD
 
-let tx = await coverage.purchaseFor(
+let tx = await coverage.purchaseWithStable(
     POLICYHOLDER,
     COVER_LIMIT,
+    TOKEN,
+    DEPOSIT_AMOUNT,
     gasSettings
 )
 ```
@@ -390,28 +372,72 @@ let tx = await coverage.purchaseFor(
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_user` | string | The address of the intended policyholder.
 |`_coverLimit` | BigNumberish | The maximum value to cover in **USD**.
+|`_token` | string | The token to deposit.
+|`_amount` | BigNumberish | Amount of token to deposit.
 |`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
 
 #### Returns
 
 `Promise`<`TransactionResponse`\>
+
 <br/>
 
-#### Troubleshooting
+### **purchaseWithNonStable**
 
-SolaceCoverProductV3 transacts in SCP (Solace Credit Points), so this transaction will fail if the user does not have sufficient SCP in their wallet
+Activates (or purchases) a policy for a given address with accepted non-stablecoin
+
+```js
+// ...setup coverage object
+
+const POLICYHOLDER = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
+const COVER_LIMIT = BigNumber.from("100000000000000000000") // 100 USD
+const TOKEN = "0x853d955aCEf822Db058eb8505911ED77F175b99e" // FRAX on Eth Mainnet
+const DEPOSIT_AMOUNT = BigNumber.from("100000000000000000000") // 100 USD
+const PRICE = BigNumber.from("1000000000000000") // 0.1 USD
+const DEADLINE = BigNumber.from("1654235522")
+const SIGNATURE = "0x0eada4ac4019a0026fdac9a99c4ac39e281ab3d4eed9b23bf9d9b1261447f5af03af41b7f7b28a0d1a788b1881e3e186949f6297084cc43793c397d0bb4507891c"
+
+let tx = await coverage.purchaseWithNonStable(
+    POLICYHOLDER,
+    COVER_LIMIT,
+    TOKEN,
+    DEPOSIT_AMOUNT,
+    PRICE,
+    DEADLINE,
+    SIGNATURE,
+    gasSettings
+)
+```
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`_user` | string | The address of the intended policyholder.
+|`_coverLimit` | BigNumberish | The maximum value to cover in **USD**.
+|`_token` | string | The token to deposit.
+|`_amount` | BigNumberish | Amount of token to deposit.
+|`_price` | BigNumberish | The `SOLACE` price in wei (usd).
+|`_priceDeadline` | BigNumberish | Expiry timestamp for price quote
+|`_signature` | utils.BytesLike | The `SOLACE` price signature.
+|`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
 
 <br/>
 
 ### **purchase**
 
-Activates policy for `msg.sender`.
+Activates policy for provided _user. Requires minimum SCP balance in _user wallet.
 
 ```js
 // ...setup coverage object
+const USER = "0xe4fEB387cB1dAff4bf9108581B116e5FA737Bea2"
 const COVER_LIMIT = BigNumber.from("100000000000000000000") // 100 USD
 
 let tx = await coverage.purchase(
+    USER,
     COVER_LIMIT,
 )
 ```
@@ -419,6 +445,7 @@ let tx = await coverage.purchase(
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
+|`_user` | `string` | The intended policy owner.
 |`_coverLimit` | `BigNumberish` | Desired cover limit
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
