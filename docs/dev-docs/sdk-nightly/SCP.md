@@ -14,7 +14,7 @@ SCP (Solace Credit Point) is the unit of accounting used for Solace Wallet Cover
 
 <br/>
 
-To assist with getting SCP (Solace Credit Point) data, we have provided a **SCP** class.
+To assist with interaction with SCP (Solace Credit Point), we have provided a **SCP** class.
 
 The constructor takes in two parameters:
 
@@ -158,6 +158,40 @@ let tx = await scp.depositStable(
 
 <br/>
 
+### **depositStableFrom**
+
+Deposits tokens from provided address and credits them to recipient as SCP.
+
+```js
+// ...setup scp object
+const USDC_TOKEN = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+const FROM = "0x44C1767ED909E808cee9a92d016CE3956d60871F"
+const RECIPIENT_ADDRESS = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
+const DEPOSIT_AMOUNT = BigNumber.from("200000000000000000000") // 200
+
+let tx = await scp.depositStableFrom(
+    USDC_TOKEN,
+    FROM,
+    RECIPIENT_ADDRESS,
+    DEPOSIT_AMOUNT,
+)
+```
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`token` | `string` | The token to deposit.
+|`from` | `string` | The depositor of the token.
+|`recipient` | `string` | The recipient of Solace Cover Points.
+|`amount` | `BigNumberish` | Amount of token to deposit.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
+
+<br/>
+
 ### **depositSignedStable**
 
 Deposits tokens from msg.sender and credits them to recipient as SCP, uses ERC20 Permit.
@@ -188,6 +222,28 @@ Deposits tokens from msg.sender and credits them to recipient as SCP. Primarily 
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`token` | `string` | The token to deposit.
+|`recipient` | `string` | The recipient of Solace Cover Points.
+|`amount` | `BigNumberish` | Amount of token to deposit.
+|`price` | `BigNumberish` | The `SOLACE` price in wei(usd).
+|`priceDeadline` | `BigNumberish` | Timestamp the transaction must go through before.
+|`signature` | `utils.BytesLike` | The `SOLACE` price signature.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
+
+<br/>
+
+### **depositNonStableFrom**
+
+Deposits tokens from provided address and credits them to recipient as SCP. Primarily intended for SOLACE deposit.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`token` | `string` | The token to deposit.
+|`from` | `string` | The depositor of the token.
 |`recipient` | `string` | The recipient of Solace Cover Points.
 |`amount` | `BigNumberish` | Amount of token to deposit.
 |`price` | `BigNumberish` | The `SOLACE` price in wei(usd).
