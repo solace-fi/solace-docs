@@ -641,3 +641,26 @@ let tx = await staker.harvestLocksForScp(
 #### Returns
 
 `Promise`<`TransactionResponse`\>
+
+<br/>
+
+### **postRewards**
+
+*(Only available for StakingRewardV2 contract - on Fantom as of current)*
+
+Adds a one time boost to rewards. Paid in SOLACE by msg.sender.
+
+```js
+// ...setup staker object
+let tx = await staker.postRewards(amount)
+```
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`amount` | `BigNumberish` | Amount of rewards (in SOLACE) to distribute.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
