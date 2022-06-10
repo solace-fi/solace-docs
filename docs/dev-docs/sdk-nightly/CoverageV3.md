@@ -284,28 +284,6 @@ console.log(await coverage.policyOf(policyholder)) // BigNumber { _hex: '0x01', 
 
 <br/>
 
-### **debtOf**
-
-Gets the policy debt for a policyholder
-
-```js
-// ...setup coverage object
-const policyholder = "0xfb5cAAe76af8D3CE730f3D62c6442744853d43Ef"
-console.log(await coverage.debtOf(policyholder)) // BigNumber { _hex: '0x01', _isBigNumber: true }
-```
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `policyholder` | `string` |
-
-#### Returns
-
-`Promise`<`BigNumber`\>
-
-<br/>
-
 ### **coverLimitOf**
 
 Gets the cover limit for a given policy ID
@@ -457,16 +435,15 @@ let tx = await coverage.purchase(
 
 ### **cancel**
 
-Cancels the policy for `msg.sender`.
-
-```js
-// ...setup coverage object
-let tx = await coverage.cancel()
-```
+Cancels the policy for `_policyholder`.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
+|`_premium` | `BigNumberish` | The premium amount to verify.
+|`_policyholder` | `string` | The policyholder address.
+|`_deadline` | `BigNumberish` | The deadline for the signature.
+|`_signature` | `utils.BytesLike` | The premium quote signature.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
 #### Returns

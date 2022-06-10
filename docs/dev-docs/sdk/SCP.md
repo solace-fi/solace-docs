@@ -259,13 +259,36 @@ Deposits tokens from provided address and credits them to recipient as SCP. Prim
 
 ### **withdraw**
 
-Withdraws some of the user's deposit and sends it to `recipient`.
+Withdraws some of the msg.sender's deposit and sends it to `recipient`.
 
 User must have deposited `SOLACE` in at least that amount in the past. User must have sufficient Solace Cover Points to withdraw. Token must be refundable. Premium pool must have the tokens to return.
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
+|`amount` | `BigNumberish` | The amount of SCP to withdraw.
+|`recipient` | `string` | The recipient of funds.
+|`price` | `BigNumberish` | The `SOLACE` price in wei(usd).
+|`priceDeadline` | `BigNumberish` | Timestamp the transaction must go through before.
+|`signature` | `utils.BytesLike` | The `SOLACE` price signature.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
+
+<br/>
+
+### **withdrawFrom**
+
+Withdraws some of a specified user's deposit and sends it to `recipient`.
+
+User must have deposited `SOLACE` in at least that amount in the past. User must have sufficient Solace Cover Points to withdraw. Token must be refundable. Premium pool must have the tokens to return.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`from` | `string` | The SCP balance holder address.
 |`amount` | `BigNumberish` | The amount of SCP to withdraw.
 |`recipient` | `string` | The recipient of funds.
 |`price` | `BigNumberish` | The `SOLACE` price in wei(usd).
