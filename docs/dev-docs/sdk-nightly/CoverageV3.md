@@ -98,13 +98,13 @@ N/A
 
 <br/>
 
-### **policyCount**
+### **totalSupply**
 
-Gets the total number of policies that have been purchased (includes inactive policies)
+Gets the total supply of policies that have been purchased (includes inactive policies)
 
 ```js
 // ...setup coverage object
-console.log(await coverage.policyCount()) // BigNumber { _hex: '0x04', _isBigNumber: true }
+console.log(await coverage.totalSupply()) // BigNumber { _hex: '0x04', _isBigNumber: true }
 ```
 
 #### Parameters
@@ -415,17 +415,18 @@ const USER = "0xe4fEB387cB1dAff4bf9108581B116e5FA737Bea2"
 const COVER_LIMIT = BigNumber.from("100000000000000000000") // 100 USD
 
 let tx = await coverage.purchase(
-    USER,
-    COVER_LIMIT,
+    [USER],
+    [COVER_LIMIT],
 )
 ```
 
 #### Parameters:
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
-|`_user` | `string` | The intended policy owner.
-|`_coverLimit` | `BigNumberish` | Desired cover limit
+|`_users` | `string[]` | Array of intended policy owners.
+|`_coverLimits[]` | `BigNumberish[]` | Array of desired cover limits
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
 
 #### Returns
 

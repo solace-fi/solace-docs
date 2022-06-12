@@ -214,6 +214,29 @@ Deposits tokens from msg.sender and credits them to recipient as SCP, uses ERC20
 
 <br/>
 
+### **depositSignedStableFrom**
+
+Deposits tokens from 'from' and credits them to recipient as SCP, uses ERC20 Permit.
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`token` | `string` | The token to deposit.
+|`from` | `string` | The intended depositor
+|`depositor` | `string` | The depositor and recipient of Solace Cover Points.
+|`amount` | `BigNumberish` | Amount of token to deposit.
+|`deadline` | `BigNumberish` | Timestamp the transaction must go through before.
+|`v` | `BigNumberish` | v component of ECDSA signature
+|`r` | `utils.BytesLike` | r component of ECDSA signature
+|`s` | `utils.BytesLike` | s component of ECDSA signature
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
+
+<br/>
+
 ### **depositNonStable**
 
 Deposits tokens from msg.sender and credits them to recipient as SCP. Primarily intended for SOLACE deposit.
