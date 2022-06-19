@@ -441,7 +441,6 @@ Cancels the policy for `_policyholder`.
 | Name | Type | Description                                                          |
 | :--- | :--- | :------------------------------------------------------------------- |
 |`_premium` | `BigNumberish` | The premium amount to verify.
-|`_policyholder` | `string` | The policyholder address.
 |`_deadline` | `BigNumberish` | The deadline for the signature.
 |`_signature` | `utils.BytesLike` | The premium quote signature.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
