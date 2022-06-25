@@ -24,7 +24,7 @@ The Coverage constructor takes in two parameters:
 
 ### Obtain total active cover sold on Ethereum mainnet
 ```js
-import { Coverage } from "@solace-fi/sdk-nightly"
+import { Coverage } from "@solace-fi/sdk"
 
 // create Coverage-class object connected to Ethereum mainnet
 const coverage = new Coverage(1)
@@ -168,7 +168,7 @@ console.log(await coverage.coverLimitOf(1)) // BigNumber { _hex: '0x01b4fde083e5
 Gets minimum required account balance for a given cover limit. Is equivalent to the maximum chargeable fee for one epoch.
 
 ```js
-import { Coverage, BigNumber } from "@solace-fi/sdk-nightly"
+import { Coverage, BigNumber } from "@solace-fi/sdk"
 const coverage = new Coverage(1)
 const coverLimit = BigNumber.from("1000000000000000000") //1 USD
 console.log(await coverage.minRequiredAccountBalance(coverLimit)) // BigNumber { _hex: '0x06d03c85a6c462', _isBigNumber: true }
@@ -442,7 +442,7 @@ A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because tra
 Activates (or purchases) a policy for a given address
 
 ```js
-import { solaceUtils, Coverage, BigNumber } from "@solace-fi/sdk-nightly"
+import { solaceUtils, Coverage, BigNumber } from "@solace-fi/sdk"
 const { ethers, WALLETS, getGasPrice, getGasSettings } = solaceUtils
 
 const provider = await WALLETS[0].connector.getProvider()
@@ -611,7 +611,7 @@ The referral code is a 65-byte EIP-712 compliant Ethereum signature. This means 
 Generates a referral code
 
 ```js
-import { Coverage, ethers, WALLETS } from "@solace-fi/sdk-nightly"
+import { Coverage, ethers, WALLETS } from "@solace-fi/sdk"
 
 const provider = await WALLETS[0].connector.getProvider()
 const web3Provider = new ethers.Web3Provider(provider)

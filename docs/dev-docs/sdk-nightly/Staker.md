@@ -579,3 +579,88 @@ let tx = await staker.compoundLock(
 #### Returns
 
 `Promise`<`TransactionResponse`\>
+
+<br/>
+
+### **harvestLockForScp**
+
+*(Only available for StakingRewardV2 contract - on Fantom as of current)*
+
+Updates a specified lock, and sends pending rewards (in SCP) to the lock's owner.
+
+```js
+// ...setup staker object
+let tx = await staker.harvestLockForScp(
+    xsLockID,
+    price,
+    priceDeadline,
+    signature
+)
+```
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`xsLockID` | `BigNumberish` | The ID of the lock to process rewards for.
+|`price` | `BigNumberish` | The `SOLACE` price in wei(usd).
+|`priceDeadline` | `BigNumberish` | Expiry timestamp for price quote.
+|`signature` | `ethers.utils.BytesLike` | The `SOLACE` price signature.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
+
+<br/>
+
+### **harvestLocksForScp**
+
+*(Only available for StakingRewardV2 contract - on Fantom as of current)*
+
+Updates specified locks, and sends pending rewards (in SCP) to the locks' owners
+
+```js
+// ...setup staker object
+let tx = await staker.harvestLocksForScp(
+    xsLockIDs,
+    price,
+    priceDeadline,
+    signature
+)
+```
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`xsLockIDs` | `BigNumberish[]` | The ID of the lock to process rewards for.
+|`price` | `BigNumberish` | The `SOLACE` price in wei(usd).
+|`priceDeadline` | `BigNumberish` | Expiry timestamp for price quote.
+|`signature` | `ethers.utils.BytesLike` | The `SOLACE` price signature.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
+
+<br/>
+
+### **postRewards**
+
+*(Only available for StakingRewardV2 contract - on Fantom as of current)*
+
+Adds a one time boost to rewards. Paid in SOLACE by msg.sender.
+
+```js
+// ...setup staker object
+let tx = await staker.postRewards(amount)
+```
+
+#### Parameters:
+| Name | Type | Description                                                          |
+| :--- | :--- | :------------------------------------------------------------------- |
+|`amount` | `BigNumberish` | Amount of rewards (in SOLACE) to distribute.
+|`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+#### Returns
+
+`Promise`<`TransactionResponse`\>
