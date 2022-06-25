@@ -9,7 +9,7 @@ sidebar_position: 1
 ### What does Solace Wallet Coverage cover for?
 Solace Wallet Coverage insures against smart contract exploits and hacks. Please read the <u>Terms & Conditions</u> for the full disclosure of what constitutes a covered event.
 
-Below is the list of covered loss events. 
+Below is the list of covered loss events.
 
 Solace will provide coverage policies across following exploits types:
 - Minting vulnerability
@@ -41,6 +41,6 @@ Currently, no. There is a safety mechanism designed to check how much ETH is ava
 This can change as Solace scales.  As the  increases in size, there is a greater availability to oversell policies and leverage the reserve given that the probability of all positions getting exploited is very low.
 
 ### How does Solace accumulate funds to cover all policies?
-Solace has the Underwriting Pool (UWP), which is a pool of funds that holds several assets (ETH, WBTC, Stables, SOLACE) used sell policies against, utilize in yield generation strategies, and borrow against to pay out claims. 
+Solace has the Underwriting Pool (UWP), which is a pool of funds that holds several assets (ETH, WBTC, Stables, SOLACE) used sell policies against, utilize in yield generation strategies, and borrow against to pay out claims.
 
-Learn more about the UWP [<u>here</u>](/docs/protocol/underwriting-pool.md).
+Learn more about the UWP [<u>here</u>](/docs/architecture/underwriting-pool).

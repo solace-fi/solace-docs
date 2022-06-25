@@ -5,11 +5,14 @@ Not all contracts are deployed on all networks. Where possible contract addresse
 [**Ethereum**](Ethereum)  
 [**Aurora**](Aurora)  
 [**Polygon**](Polygon)  
+[**Fantom**](Fantom)  
+
 [**Rinkeby**](Testnet/Rinkeby)  
 [**Kovan**](Testnet/Kovan)  
 [**Goerli**](Testnet/Goerli)  
 [**Aurora Testnet**](Testnet/Aurora%20Testnet)  
 [**Mumbai**](Testnet/Mumbai)  
+[**Fantom Testnet**](Testnet/Fantom%20Testnet)  
 
 ### V1.3.2
 

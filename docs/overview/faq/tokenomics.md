@@ -24,7 +24,7 @@ Similarly, locking $SOLACE will award a staking rewards multiplier up to 2.5x at
 - 1 $SOLACE staked and locked for four years = 2.5x multiplier on rewards (get 2.5x more $SOLACE than unlocked)
 
 ## How do you stake on Solace?
-Check out the How to Stake page [<u>here</u>](/docs/user-guides/stake.md).
+Check out the How to Stake page [<u>here</u>](/docs/user-guides/stake).
 
 ---
 
