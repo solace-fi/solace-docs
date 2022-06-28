@@ -18,6 +18,15 @@
 | bSOLACE                      | [`0xB18033769f62EEe27e63f85224d86f1b4F2478C9`](https://mumbai.polygonscan.com/address/0xB18033769f62EEe27e63f85224d86f1b4F2478C9)
 | Bridge Wrapper               | [`0x501AcE1a18aB550E4E8c7775a23d96fD290b0BbF`](https://mumbai.polygonscan.com/address/0x501AcE1a18aB550E4E8c7775a23d96fD290b0BbF)
 
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | [`0x501ACE72166956F57b44dbBcc531A8E741449997`](https://mumbai.polygonscan.com/address/0x501ACE72166956F57b44dbBcc531A8E741449997) |
+| CoverPaymentManager          | [`0x501acE7a18b0F59E51eb198cD73480F8467DE100`](https://mumbai.polygonscan.com/address/0x501acE7a18b0F59E51eb198cD73480F8467DE100) |
+| SolaceCoverProductV3         | [`0x501ACeB72d62C9875825b71d9f78a27780B5624d`](https://mumbai.polygonscan.com/address/0x501ACeB72d62C9875825b71d9f78a27780B5624d) |
+| StakingRewardsV2             | [`0x501ACee6350BB566EBE4A0dABDC9901100B8c445`](https://mumbai.polygonscan.com/address/0x501ACee6350BB566EBE4A0dABDC9901100B8c445) |
+
 ### V1.3.2
 
 | Contract Name                | Address                                      |

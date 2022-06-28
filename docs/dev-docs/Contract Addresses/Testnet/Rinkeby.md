@@ -12,6 +12,15 @@
 | SCP                          | [`0x501AcEe83a6f269B77c167c6701843D454E2EFA0`](https://rinkeby.etherscan.io/address/0x501AcEe83a6f269B77c167c6701843D454E2EFA0) |
 | FRAX                         | [`0x86E5B6485e28E52a0dEEd28Cc10772FeB9c4C400`](https://rinkeby.etherscan.io/address/0x86E5B6485e28E52a0dEEd28Cc10772FeB9c4C400) |
 
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | `0x501ACE72166956F57b44dbBcc531A8E741449997` |
+| CoverPaymentManager          | `0x501acE7a18b0F59E51eb198cD73480F8467DE100` |
+| SolaceCoverProductV3         | `0x501ACeB72d62C9875825b71d9f78a27780B5624d` |
+| StakingRewardsV2             | `0x501ACee6350BB566EBE4A0dABDC9901100B8c445` |
+
 ### V1.3.2
 
 | Contract Name                | Address                                      |

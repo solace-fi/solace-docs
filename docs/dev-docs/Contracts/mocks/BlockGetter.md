@@ -18,3 +18,17 @@ Returns the elevation of the latest block in the chain.
 | :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
 | `num` | uint256 | The block number. |
 
+### getBlockTimestamp
+```solidity
+  function getBlockTimestamp(
+  ) external returns (uint256 timestamp)
+```
+Returns the timestamp of the latest block in the chain.
+
+
+
+#### Return Values:
+| Name                           | Type          | Description                                                                  |
+| :----------------------------- | :------------ | :--------------------------------------------------------------------------- |
+| `timestamp` | uint256 | The block timestamp. |
+

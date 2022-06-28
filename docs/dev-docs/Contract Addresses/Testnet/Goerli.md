@@ -10,6 +10,15 @@
 | USDT                         | [`0x92f2F8d238183f678a5652a04EDa83eD7BCfa99e`](https://goerli.etherscan.io/address/0x92f2F8d238183f678a5652a04EDa83eD7BCfa99e) |
 | FRAX                         | [`0xA542486E4Dc48580fFf76B75b5c406C211218AE2`](https://goerli.etherscan.io/address/0xA542486E4Dc48580fFf76B75b5c406C211218AE2) |
 
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | [`0x501ACE72166956F57b44dbBcc531A8E741449997`](https://goerli.etherscan.io/address/0x501ACE72166956F57b44dbBcc531A8E741449997) |
+| CoverPaymentManager          | [`0x501acE7a18b0F59E51eb198cD73480F8467DE100`](https://goerli.etherscan.io/address/0x501acE7a18b0F59E51eb198cD73480F8467DE100) |
+| SolaceCoverProductV3         | [`0x501ACeB72d62C9875825b71d9f78a27780B5624d`](https://goerli.etherscan.io/address/0x501ACeB72d62C9875825b71d9f78a27780B5624d) |
+| StakingRewardsV2             | [`0x501ACee6350BB566EBE4A0dABDC9901100B8c445`](https://goerli.etherscan.io/address/0x501ACee6350BB566EBE4A0dABDC9901100B8c445) |
+
 ### V1.3.2
 
 | Contract Name                | Address                                      |

@@ -52,4 +52,13 @@ Mints 1000 new tokens to msg.sender
 
 
 
+### mintToken
+```solidity
+  function mintToken(
+  ) external
+```
+
+
+
+
 
