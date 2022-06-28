@@ -23,9 +23,19 @@
 | Contract Name                | Address                                      | Links |
 |------------------------------|----------------------------------------------|-------|
 | Core                         | [`0xc47911f768c6fE3a9fe076B95e93a33Ed45B7B34`](https://etherscan.io/address/0xc47911f768c6fE3a9fe076B95e93a33Ed45B7B34) | https://gnosis-safe.io/app/eth:0xc47911f768c6fE3a9fe076B95e93a33Ed45B7B34 https://app.coinshift.xyz/#/verify-user/0xc47911f768c6fE3a9fe076B95e93a33Ed45B7B34 |
+| Contract Governance          | [`0xAc582Fa78EA8e3be61F4A7B7AD52Dfaa910212a6`](https://etherscan.io/address/0xAc582Fa78EA8e3be61F4A7B7AD52Dfaa910212a6) | https://gnosis-safe.io/app/eth:0xAc582Fa78EA8e3be61F4A7B7AD52Dfaa910212a6 |
 | Launch DAO                   | [`0xf075334Df87f0a5d9fe6381b5035b60f384D6c2c`](https://etherscan.io/address/0xf075334Df87f0a5d9fe6381b5035b60f384D6c2c) [`0x44B1c0a3335583a7f38668f6Ab3034c3141B5Aa1`](https://etherscan.io/address/0x44B1c0a3335583a7f38668f6Ab3034c3141B5Aa1)  [`0x90e188Ae5028dEA253d4Bf0Cc6e7e4BF1e81d1A4`](https://etherscan.io/address/0x90e188Ae5028dEA253d4Bf0Cc6e7e4BF1e81d1A4) | https://client.aragon.org/#/solacelaunch/ |
 | Underwriting Pool            | [`0x5efC0d9ee3223229Ce3b53e441016efC5BA83435`](https://etherscan.io/address/0x5efC0d9ee3223229Ce3b53e441016efC5BA83435) | https://gnosis-safe.io/app/eth:0x5efC0d9ee3223229Ce3b53e441016efC5BA83435 |
 | Premium Pool                 | [`0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d`](https://etherscan.io/address/0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d) | https://gnosis-safe.io/app/eth:0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d |
+
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | [`0x501ACE72166956F57b44dbBcc531A8E741449997`](https://etherscan.io/address/0x501ACE72166956F57b44dbBcc531A8E741449997) |
+| CoverPaymentManager          | [`0x501acE7a18b0F59E51eb198cD73480F8467DE100`](https://etherscan.io/address/0x501acE7a18b0F59E51eb198cD73480F8467DE100) |
+| SolaceCoverProductV3         | [`0x501ACeB72d62C9875825b71d9f78a27780B5624d`](https://etherscan.io/address/0x501ACeB72d62C9875825b71d9f78a27780B5624d) |
+| StakingRewardsV2             | [`0x501ACee6350BB566EBE4A0dABDC9901100B8c445`](https://etherscan.io/address/0x501ACee6350BB566EBE4A0dABDC9901100B8c445) |
 
 ### V1.3.2
 

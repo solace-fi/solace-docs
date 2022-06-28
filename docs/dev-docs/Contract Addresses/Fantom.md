@@ -28,6 +28,15 @@ WIP
 | Underwriting Pool            | [`0x2971f45c0952437934B3F055C401241e5C339F93`](https://ftmscan.com/address/0x2971f45c0952437934B3F055C401241e5C339F93) | https://safe.fantom.network/#/safes/0x2971f45c0952437934B3F055C401241e5C339F93 |
 | Premium Pool                 | [`0xBfF26e5D913738d073C515Bee32035F2aff8C40C`](https://ftmscan.com/address/0xBfF26e5D913738d073C515Bee32035F2aff8C40C) | https://safe.fantom.network/#/safes/0xBfF26e5D913738d073C515Bee32035F2aff8C40C |
 
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | [`0x501ACE72166956F57b44dbBcc531A8E741449997`](https://ftmscan.com/address/0x501ACE72166956F57b44dbBcc531A8E741449997) |
+| CoverPaymentManager          | [`0x501acE7a18b0F59E51eb198cD73480F8467DE100`](https://ftmscan.com/address/0x501acE7a18b0F59E51eb198cD73480F8467DE100) |
+| SolaceCoverProductV3         | [`0x501ACeB72d62C9875825b71d9f78a27780B5624d`](https://ftmscan.com/address/0x501ACeB72d62C9875825b71d9f78a27780B5624d) |
+| StakingRewardsV2             | [`0x501ACee6350BB566EBE4A0dABDC9901100B8c445`](https://ftmscan.com/address/0x501ACee6350BB566EBE4A0dABDC9901100B8c445) |
+
 ### V1.3.2
 
 | Contract Name                | Address                                      |

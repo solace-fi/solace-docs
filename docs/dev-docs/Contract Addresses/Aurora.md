@@ -35,6 +35,15 @@
 | Underwriting Pool            | [`0x4A6B0f90597e7429Ce8400fC0E2745Add343df78`](https://aurorascan.dev/address/0x4A6B0f90597e7429Ce8400fC0E2745Add343df78) | https://gnosis-safe.io/app/aurora:0x4A6B0f90597e7429Ce8400fC0E2745Add343df78 |
 | Premium Pool                 | [`0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb`](https://aurorascan.dev/address/0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb) | https://gnosis-safe.io/app/aurora:0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb |
 
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | [`0x501ACE72166956F57b44dbBcc531A8E741449997`](https://aurorascan.dev/address/0x501ACE72166956F57b44dbBcc531A8E741449997) |
+| CoverPaymentManager          | [`0x501acE7a18b0F59E51eb198cD73480F8467DE100`](https://aurorascan.dev/address/0x501acE7a18b0F59E51eb198cD73480F8467DE100) |
+| SolaceCoverProductV3         | [`0x501ACeB72d62C9875825b71d9f78a27780B5624d`](https://aurorascan.dev/address/0x501ACeB72d62C9875825b71d9f78a27780B5624d) |
+| StakingRewardsV2             | [`0x501ACee6350BB566EBE4A0dABDC9901100B8c445`](https://aurorascan.dev/address/0x501ACee6350BB566EBE4A0dABDC9901100B8c445) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |
