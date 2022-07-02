@@ -17,9 +17,17 @@
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
-| SOLACE-WNEAR TLP             | [`0xdDAdf88b007B95fEb42DDbd110034C9a8e9746F2`](https://aurorascan.dev/address/0xdDAdf88b007B95fEb42DDbd110034C9a8e9746F2) |
+| SOLACE-WNEAR Trisolaris Pool | [`0xdDAdf88b007B95fEb42DDbd110034C9a8e9746F2`](https://aurorascan.dev/address/0xdDAdf88b007B95fEb42DDbd110034C9a8e9746F2) |
 
 ### Bridge
+
+Celer cBridge
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| Celer-Pegged SOLACE          | [`0xD34597729E2322b90FB9856dC94E48B41D40646c`](https://aurorascan.dev/address/0xD34597729E2322b90FB9856dC94E48B41D40646c) |
+
+Rainbow Bridge
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|

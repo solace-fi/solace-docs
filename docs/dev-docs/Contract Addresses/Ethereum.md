@@ -16,7 +16,7 @@
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
-| SOLACE-USDC SLP              | [`0x9C051F8A6648a51eF324D30C235da74D060153aC`](https://etherscan.io/address/0x9C051F8A6648a51eF324D30C235da74D060153aC)
+| SOLACE-USDC Sushiswap Pool   | [`0x9C051F8A6648a51eF324D30C235da74D060153aC`](https://etherscan.io/address/0x9C051F8A6648a51eF324D30C235da74D060153aC)
 
 ### Multisigs
 
