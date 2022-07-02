@@ -3,6 +3,7 @@
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
 | SOLACE                       | [`0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40`](https://ftmscan.com/address/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) |
+| SOLACE-WETH BPT              | [`0x8D827C4f1c88141BC8f75aC1Ffe1C201E09b07BB`](https://ftmscan.com/address/0x8D827C4f1c88141BC8f75aC1Ffe1C201E09b07BB) |
 | WFTM                         | [`0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83`](https://ftmscan.com/address/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83) |
 | WETH                         | [`0x74b23882a30290451A17c44f4F05243b6b58C76d`](https://ftmscan.com/address/0x74b23882a30290451A17c44f4F05243b6b58C76d) |
 | DAI                          | [`0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E`](https://ftmscan.com/address/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E) |
@@ -13,11 +14,17 @@
 
 ### Liquidity Pools
 
-None
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SOLACE-WETH BeethovenX Pool  | [`0x8D827C4f1c88141BC8f75aC1Ffe1C201E09b07BB`](https://ftmscan.com/address/0x8D827C4f1c88141BC8f75aC1Ffe1C201E09b07BB) |
 
 ### Bridge
 
-WIP
+Celer cBridge
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| Celer-Pegged SOLACE          | [`0x25FBfcfAC72c75B77CBeB915706Ce098f0B3a849`](https://ftmscan.com/address/0x25FBfcfAC72c75B77CBeB915706Ce098f0B3a849) |
 
 ### Multisigs
 
