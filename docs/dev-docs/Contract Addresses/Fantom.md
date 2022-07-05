@@ -30,10 +30,10 @@ Celer cBridge
 
 | Contract Name                | Address                                      | Links |
 |------------------------------|----------------------------------------------|-------|
-| Core                         | [`0x93F467AD42056fe34b27e658923bfae7AD26c5d7`](https://ftmscan.com/address/0x93F467AD42056fe34b27e658923bfae7AD26c5d7) | https://safe.fantom.network/#/safes/0x93F467AD42056fe34b27e658923bfae7AD26c5d7 |
-| Contract Governance          | [`0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94`](https://ftmscan.com/address/0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94) | https://safe.fantom.network/#/safes/0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94 |
-| Underwriting Pool            | [`0x2971f45c0952437934B3F055C401241e5C339F93`](https://ftmscan.com/address/0x2971f45c0952437934B3F055C401241e5C339F93) | https://safe.fantom.network/#/safes/0x2971f45c0952437934B3F055C401241e5C339F93 |
-| Premium Pool                 | [`0xBfF26e5D913738d073C515Bee32035F2aff8C40C`](https://ftmscan.com/address/0xBfF26e5D913738d073C515Bee32035F2aff8C40C) | https://safe.fantom.network/#/safes/0xBfF26e5D913738d073C515Bee32035F2aff8C40C |
+| Core                         | [`0x93F467AD42056fe34b27e658923bfae7AD26c5d7`](https://ftmscan.com/address/0x93F467AD42056fe34b27e658923bfae7AD26c5d7) | https://safe.fantom.network/ftm:0x93F467AD42056fe34b27e658923bfae7AD26c5d7 |
+| Contract Governance          | [`0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94`](https://ftmscan.com/address/0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94) | https://safe.fantom.network/ftm:0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94 |
+| Underwriting Pool            | [`0x2971f45c0952437934B3F055C401241e5C339F93`](https://ftmscan.com/address/0x2971f45c0952437934B3F055C401241e5C339F93) | https://safe.fantom.network/ftm:0x2971f45c0952437934B3F055C401241e5C339F93 |
+| Premium Pool                 | [`0xBfF26e5D913738d073C515Bee32035F2aff8C40C`](https://ftmscan.com/address/0xBfF26e5D913738d073C515Bee32035F2aff8C40C) | https://safe.fantom.network/ftm:0xBfF26e5D913738d073C515Bee32035F2aff8C40C |
 
 ### V1.3.3
 
