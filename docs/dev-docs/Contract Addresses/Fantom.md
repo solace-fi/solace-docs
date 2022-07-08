@@ -3,6 +3,7 @@
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
 | SOLACE                       | [`0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40`](https://ftmscan.com/address/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) |
+| SOLACE-WETH BPT              | [`0x8D827C4f1c88141BC8f75aC1Ffe1C201E09b07BB`](https://ftmscan.com/address/0x8D827C4f1c88141BC8f75aC1Ffe1C201E09b07BB) |
 | WFTM                         | [`0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83`](https://ftmscan.com/address/0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83) |
 | WETH                         | [`0x74b23882a30290451A17c44f4F05243b6b58C76d`](https://ftmscan.com/address/0x74b23882a30290451A17c44f4F05243b6b58C76d) |
 | DAI                          | [`0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E`](https://ftmscan.com/address/0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E) |
@@ -13,20 +14,35 @@
 
 ### Liquidity Pools
 
-None
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SOLACE-WETH BeethovenX Pool  | [`0x8D827C4f1c88141BC8f75aC1Ffe1C201E09b07BB`](https://ftmscan.com/address/0x8D827C4f1c88141BC8f75aC1Ffe1C201E09b07BB) |
 
 ### Bridge
 
-WIP
+Celer cBridge
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| Celer-Pegged SOLACE          | [`0x25FBfcfAC72c75B77CBeB915706Ce098f0B3a849`](https://ftmscan.com/address/0x25FBfcfAC72c75B77CBeB915706Ce098f0B3a849) |
 
 ### Multisigs
 
 | Contract Name                | Address                                      | Links |
 |------------------------------|----------------------------------------------|-------|
-| Core                         | [`0x93F467AD42056fe34b27e658923bfae7AD26c5d7`](https://ftmscan.com/address/0x93F467AD42056fe34b27e658923bfae7AD26c5d7) | https://safe.fantom.network/#/safes/0x93F467AD42056fe34b27e658923bfae7AD26c5d7 |
-| Contract Governance          | [`0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94`](https://ftmscan.com/address/0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94) | https://safe.fantom.network/#/safes/0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94 |
-| Underwriting Pool            | [`0x2971f45c0952437934B3F055C401241e5C339F93`](https://ftmscan.com/address/0x2971f45c0952437934B3F055C401241e5C339F93) | https://safe.fantom.network/#/safes/0x2971f45c0952437934B3F055C401241e5C339F93 |
-| Premium Pool                 | [`0xBfF26e5D913738d073C515Bee32035F2aff8C40C`](https://ftmscan.com/address/0xBfF26e5D913738d073C515Bee32035F2aff8C40C) | https://safe.fantom.network/#/safes/0xBfF26e5D913738d073C515Bee32035F2aff8C40C |
+| Core                         | [`0x93F467AD42056fe34b27e658923bfae7AD26c5d7`](https://ftmscan.com/address/0x93F467AD42056fe34b27e658923bfae7AD26c5d7) | https://safe.fantom.network/ftm:0x93F467AD42056fe34b27e658923bfae7AD26c5d7 |
+| Contract Governance          | [`0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94`](https://ftmscan.com/address/0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94) | https://safe.fantom.network/ftm:0x9e1Ae693ea404Fd88c91bbB7A569203bD1F98d94 |
+| Underwriting Pool            | [`0x2971f45c0952437934B3F055C401241e5C339F93`](https://ftmscan.com/address/0x2971f45c0952437934B3F055C401241e5C339F93) | https://safe.fantom.network/ftm:0x2971f45c0952437934B3F055C401241e5C339F93 |
+| Premium Pool                 | [`0xBfF26e5D913738d073C515Bee32035F2aff8C40C`](https://ftmscan.com/address/0xBfF26e5D913738d073C515Bee32035F2aff8C40C) | https://safe.fantom.network/ftm:0xBfF26e5D913738d073C515Bee32035F2aff8C40C |
+
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | [`0x501ACE72166956F57b44dbBcc531A8E741449997`](https://ftmscan.com/address/0x501ACE72166956F57b44dbBcc531A8E741449997) |
+| CoverPaymentManager          | [`0x501acE7a18b0F59E51eb198cD73480F8467DE100`](https://ftmscan.com/address/0x501acE7a18b0F59E51eb198cD73480F8467DE100) |
+| SolaceCoverProductV3         | [`0x501ACeB72d62C9875825b71d9f78a27780B5624d`](https://ftmscan.com/address/0x501ACeB72d62C9875825b71d9f78a27780B5624d) |
+| StakingRewardsV2             | [`0x501ACee6350BB566EBE4A0dABDC9901100B8c445`](https://ftmscan.com/address/0x501ACee6350BB566EBE4A0dABDC9901100B8c445) |
 
 ### V1.3.2
 

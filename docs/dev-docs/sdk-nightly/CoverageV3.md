@@ -13,7 +13,15 @@ The Coverage constructor takes in two parameters:
 1. (Required) The **chainID** to connect to
 
 > Current supported chains are:
+> - Ethereum mainnet (ChainID = 1)
+> - Rinkeby testnet (ChainID = 4)
+> - Kovan testnet (ChainID = 42)
+> - Polygon (ChainID = 137)
+> - Fantom (ChainID = 250)
 > - Fantom testnet (ChainID = 4002)
+> - Polygon Mumbai testnet (ChainID = 80001)
+> - Aurora (ChainID = 1313161554)
+> - Aurora testnet (ChainID = 1313161555)
 
 2. (Optional) **walletOrProviderOrSigner** is an object of three types from ethers ([**Wallet**](https://docs.ethers.io/v5/api/signer/#Wallet), [**JsonRpcSigner**](https://docs.ethers.io/v5/api/providers/jsonrpc-provider/#JsonRpcSigner), [**Provider**](https://docs.ethers.io/v5/api/providers/provider/)).
 

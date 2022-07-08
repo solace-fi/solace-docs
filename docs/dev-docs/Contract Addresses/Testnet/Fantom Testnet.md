@@ -23,6 +23,15 @@ WIP
 
 None
 
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | [`0x501acE73cF81312D02d40A02a9a6e656038aa9A3`](https://testnet.ftmscan.com/address/0x501acE73cF81312D02d40A02a9a6e656038aa9A3) |
+| CoverPaymentManager          | [`0x501Ace82f6C1e584656a3B3ba528bc8b86EB2160`](https://testnet.ftmscan.com/address/0x501Ace82f6C1e584656a3B3ba528bc8b86EB2160) |
+| SolaceCoverProduct           | [`0x501aCeAe7Cc16A145C88EE581d03D37068254e90`](https://testnet.ftmscan.com/address/0x501aCeAe7Cc16A145C88EE581d03D37068254e90) |
+| StakingRewardsV2             | [`0x501aCE9157A96f31b97A3FDeb012F4D563e2dF1E`](https://testnet.ftmscan.com/address/0x501aCE9157A96f31b97A3FDeb012F4D563e2dF1E) |
+
 ### V1.2.1
 
 | Contract Name                | Address                                      |

@@ -6,6 +6,14 @@ urlcolor: blue
 linkcolor: blue
 ---
 
+**⚠️WARNING⚠️**
+
+**SolaceCoverProduct.sol and SolaceCoverProductV2.sol contracts have been paused.** 
+
+**To purchase Solace insurance policies, please use the CoverageV3 class instead.**
+
+---
+
 To interact with the SolaceCoverProduct smart contract, we will need to create a Coverage instance.
 
 The Coverage constructor takes in two parameters:

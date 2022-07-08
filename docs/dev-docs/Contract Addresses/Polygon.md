@@ -3,6 +3,8 @@
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
 | SOLACE                       | [`0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40`](https://polygonscan.com/address/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) |
+| SOLACE-WETH BPT              | [`0x72bE617C114CC5960666BD2FB3e1d5529b99CC18`](https://polygonscan.com/address/0x72bE617C114CC5960666BD2FB3e1d5529b99CC18) |
+| SOLACE-FRAX G-UNI            | [`0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A`](https://polygonscan.com/address/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A) |
 | WMATIC                       | [`0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270`](https://polygonscan.com/address/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270) |
 | WETH                         | [`0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619`](https://polygonscan.com/address/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619) |
 | DAI                          | [`0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063`](https://polygonscan.com/address/0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063) |
@@ -10,17 +12,25 @@
 | WBTC                         | [`0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6`](https://polygonscan.com/address/0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6) |
 | USDT                         | [`0xc2132D05D31c914a87C6611C10748AEb04B58e8F`](https://polygonscan.com/address/0xc2132D05D31c914a87C6611C10748AEb04B58e8F) |
 | FRAX                         | [`0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89`](https://polygonscan.com/address/0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89) |
-| SOLACE-FRAX G-UNI            | [`0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A`](https://polygonscan.com/address/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A) |
 
 ### Liquidity Pools
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
-| SOLACE-FRAX Uni V3 Pool      | [`0x85efec4ee18a06ce1685abf93e434751c3cb9ba9`](https://polygonscan.com/address/0x85Efec4ee18a06CE1685abF93e434751C3cb9bA9) |
+| SOLACE-WETH Balancer Pool    | [`0x72bE617C114CC5960666BD2FB3e1d5529b99CC18`](https://polygonscan.com/address/0x72bE617C114CC5960666BD2FB3e1d5529b99CC18) |
+| SOLACE-FRAX Uniswap V3 Pool  | [`0x85efec4ee18a06ce1685abf93e434751c3cb9ba9`](https://polygonscan.com/address/0x85Efec4ee18a06CE1685abF93e434751C3cb9bA9) |
 | Arrakis Pool                 | [`0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A`](https://polygonscan.com/address/0x38e7e05Dfd9fa3dE80dB0e7AC03AC57Fa832C78A) |
 | GYSR Pool                    | [`0xF54f26Ec9657664c098D4A6879D52Cc8BDEcCC50`](https://polygonscan.com/address/0xF54f26Ec9657664c098D4A6879D52Cc8BDEcCC50) |
 
 ### Bridge
+
+Celer cBridge
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| Celer-Pegged SOLACE          | [`0x8dd56c42B0e5B38CeAA17179E11318eC6841b136`](https://polygonscan.com/address/0x8dd56c42B0e5B38CeAA17179E11318eC6841b136) |
+
+Polygon POS Bridge
 
 | Contract Name                | Address                                      |
 |------------------------------|----------------------------------------------|
@@ -35,6 +45,15 @@
 | Contract Governance          | [`0x6D57Fb61847F0026AfA6b57e55518EaB000F4a38`](https://polygonscan.com/address/0x6D57Fb61847F0026AfA6b57e55518EaB000F4a38) | https://gnosis-safe.io/app/matic:0x6D57Fb61847F0026AfA6b57e55518EaB000F4a38 |
 | Underwriting Pool            | [`0xd1108a800363C262774B990e9DF75a4287d5c075`](https://polygonscan.com/address/0xd1108a800363C262774B990e9DF75a4287d5c075) | https://gnosis-safe.io/app/matic:0xd1108a800363C262774B990e9DF75a4287d5c075 |
 | Premium Pool                 | [`0x37cd57c6C7243455aC66631cE37Bb7F977C71442`](https://polygonscan.com/address/0x37cd57c6C7243455aC66631cE37Bb7F977C71442) | https://gnosis-safe.io/app/matic:0x37cd57c6C7243455aC66631cE37Bb7F977C71442 |
+
+### V1.3.3
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| SCP                          | [`0x501ACE72166956F57b44dbBcc531A8E741449997`](https://polygonscan.com/address/0x501ACE72166956F57b44dbBcc531A8E741449997) |
+| CoverPaymentManager          | [`0x501acE7a18b0F59E51eb198cD73480F8467DE100`](https://polygonscan.com/address/0x501acE7a18b0F59E51eb198cD73480F8467DE100) |
+| SolaceCoverProductV3         | [`0x501ACeB72d62C9875825b71d9f78a27780B5624d`](https://polygonscan.com/address/0x501ACeB72d62C9875825b71d9f78a27780B5624d) |
+| StakingRewardsV2             | [`0x501ACee6350BB566EBE4A0dABDC9901100B8c445`](https://polygonscan.com/address/0x501ACee6350BB566EBE4A0dABDC9901100B8c445) |
 
 ### V1.3.2
 
