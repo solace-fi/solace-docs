@@ -7,24 +7,24 @@ sidebar_position: 2
 ---
 ## April 2022
 ---
-1. Implement Portfolio Builder
-2. Decentralize the Risk Data Pipeline
-3. Add stablecoin payment option to Solace Wallet Coverage
-4. Add $SOLACE payment option to Solace Wallet Coverage
-5. Develop Solace Native's risk assessment
-6. Implement Celer Network for Underwriting Pool capacity data
+1. Implement Portfolio Builder [Done]
+2. Decentralize the Risk Data Pipeline 
+3. Add stablecoin payment option to Solace Wallet Coverage [Done]
+4. Add $SOLACE payment option to Solace Wallet Coverage [Done]
+5. Develop Solace Native's risk assessment 
+6. Implement Celer Network for Underwriting Pool capacity data [Done]
 7. Launch Uniswap V3 LP Pool on Ethereum
-8. Update Website UI/UX
+8. Update Website UI/UX [Done]
 ---
 ## May 2022
 ---
-1. Deploy Solace Wallet Coverage to Aurora
-2. Expand to Fantom Chain
+1. Deploy Solace Wallet Coverage to Aurora 
+2. Expand to Fantom Chain [Done]
 3. Add stablecoin de-peg coverage
 4. Onboard 5-10 protocols for Solace Native's first cohort
-5. Develop decentralized claims process
-6. Build user risk analytics
-7. Automate $SOLACE bridge wrappers
+5. Develop decentralized claims process 
+6. Build user risk analytics 
+7. Automate $SOLACE bridge wrappers [Done]
 ---
 ## Q3 2022
 ---

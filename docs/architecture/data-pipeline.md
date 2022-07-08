@@ -26,6 +26,6 @@ The damage ratio is analyzed for each attribute by dividing the loss amount by t
 
 ## Temporal data pipeline
 
-The purpose of the temporal data pipeline is to collect and update current data from the supported protocols. For v1 of Solace Wallet Coverage, we capture protocols that are supported by Zapper. Therefore, the first step is to retrieve those protocols via a request to their public API.
+The purpose of the temporal data pipeline is to collect and update current data from the supported protocols. For Solace Portfolio Insurance, we capture protocols that are supported by Zapper. Therefore, the first step is to retrieve those protocols via a request to their public API.
 
 After retrieving the list of supported protocols endpoint, we have to find the relevant attributes needed for scoring. We rely on other data aggregators such as [<u>Defi llama</u>](https://defillama.com/) and [<u>Dune</u>](https://dune.xyz/home) for this information. We merge the responses together into a single data frame containing the protocols and data attributes needed to rank the protocols into risk tiers, along with a unique Solace ID. Each time the temporal data pipeline is run, a new dataframe is created and appended to Solace's risk management database, overwriting the previous version. This database is the basis for the publish series.

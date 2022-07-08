@@ -6,7 +6,7 @@ sidebar_position: 2
 ---
 
 ### Why is there a $SOLACE token?
-In order to decentralize Solace and reward contributors and supporters of the protocol, Solace developed the $SOLACE token with two primary functions. The first is that it acts as a governance token, allotting voting power to holders for future votes once the Solace DAO is released at the end of 2021. The second is that users can stake $SOLACE and earn revenue from policy sales and token emissions.
+In order to decentralize Solace and reward contributors and supporters of the protocol, Solace developed the $SOLACE token with two primary functions. The first is that it acts as a governance token, allotting voting power to holders for future votes once the Solace DAO is released at the end of 2022. The second is that users can stake $SOLACE and earn revenue from policy sales and token emissions.
 
 ### How is the token price determined?
 The price is determined by dividing the $SOLACE reserves by the stabletoken reserve within each live chain's liquidity pool.

@@ -13,7 +13,7 @@ There are several smart contracts that can have items modified. Below are the de
     - Addresses: can change address for SOLACE, locker, UWP, DAO/core multisig, bondTeller
 - **$SOLACE token contract**:
     - Governance can add/remove minters
-- **Solace Wallet Coverage contract**:
+- **Solace Portfolio Insurance contract**:
     - Pause Control: specifically, pauses entire contract, so coverage stops, and weekly DAI/FRAX pulls stop, people cannot withdraw
     - SetCooldownPeriod: when you deactivate policy, you enter cooldown, then you can withdraw your funds. Can change length of cool
     - MaxRate Contract: max rate charged per second per coverage, can change max rate itself

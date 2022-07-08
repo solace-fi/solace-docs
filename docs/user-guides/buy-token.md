@@ -13,6 +13,7 @@ The first way and best way to invest into Solace's future is to purchase $SOLACE
 
 The second way is to purchase $SOLACE in liquidity pools. These are the current live pools:
 
-1. Ethereum: [<u>$SOLACE on Sushiswap</u>](https://app.sushi.com/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40 ) in a $SOLACE/USDC pool
+1. Ethereum: [<u>$SOLACE on Sushiswap</u>](https://app.sushi.com/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) in a $SOLACE/USDC pool
 2. Aurora: [<u>$SOLACE on Trisolaris</u>](https://www.trisolaris.io/#/swap?inputCurrency=0xC42C30aC6Cc15faC9bD938618BcaA1a1FaE8501d&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) in a $SOLACE/wNEAR pool
-3. Polygon: [<u>$SOLACE on Uniswap</u>](https://app.uniswap.org/#/swap?chain=polygon&inputCurrency=0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89&outputCurrency=0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40) in a $SOLACE/FRAX pool
+3. Polygon: [<u>$SOLACE on Balancer</u>](https://polygon.balancer.fi/#/pool/0x72be617c114cc5960666bd2fb3e1d5529b99cc180002000000000000000005df) in a $SOLACE/WETH pool
+4. Fantom [<u>$SOLACE on Beethoven X</u>](https://beets.fi/#/pool/0x8d827c4f1c88141bc8f75ac1ffe1c201e09b07bb0002000000000000000004cc) in a $SOLACE/WETH pool
