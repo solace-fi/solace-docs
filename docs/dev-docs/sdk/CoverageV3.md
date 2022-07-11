@@ -407,6 +407,8 @@ let tx = await coverage.purchaseWithNonStable(
 |`_signature` | utils.BytesLike | The `SOLACE` price signature.
 |`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
 
+`_price`, `_priceDeadline` and `_signature` parameters can be obtained from the **[Solace Price Feed](https://price-feed.solace.fi/solacePrice.json)**
+
 #### Returns
 
 `Promise`<`TransactionResponse`\>
@@ -452,6 +454,8 @@ Cancels the policy for `_policyholder`.
 |`_deadline` | `BigNumberish` | The deadline for the signature.
 |`_signature` | `utils.BytesLike` | The premium quote signature.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+`_deadline` and `_signature` parameters can be obtained from the **[Solace Price Feed](https://price-feed.solace.fi/solacePrice.json)**
 
 #### Returns
 

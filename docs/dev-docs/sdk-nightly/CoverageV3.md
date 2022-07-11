@@ -29,7 +29,7 @@ The Coverage constructor takes in two parameters:
 
 ### Obtain total active cover sold on Fantom testnet
 ```js
-import { CoverageV3 } from "@solace-fi/sdk-nightly"
+import { CoverageV3 } from "@solace-fi/sdk"
 
 // create Coverage-class object connected to Fantom testnet
 const coverage = new CoverageV3(4002)
@@ -328,7 +328,7 @@ A [Signer](https://docs.ethers.io/v5/api/signer/) object is required because tra
 Activates (or purchases) a policy for a given address with accepted stablecoin.
 
 ```js
-import { solaceUtils, CoverageV3, BigNumber } from "@solace-fi/sdk-nightly"
+import { solaceUtils, CoverageV3, BigNumber } from "@solace-fi/sdk"
 const { ethers, WALLETS, getGasPrice, getGasSettings } = solaceUtils
 
 const provider = await WALLETS[0].connector.getProvider()
@@ -407,6 +407,8 @@ let tx = await coverage.purchaseWithNonStable(
 |`_signature` | utils.BytesLike | The `SOLACE` price signature.
 |`gasConfig?` | GasConfiguration | (Optional) Gas configuration settings.
 
+`_price`, `_priceDeadline` and `_signature` parameters can be obtained from the **[Solace Price Feed](https://price-feed.solace.fi/solacePrice.json)**
+
 #### Returns
 
 `Promise`<`TransactionResponse`\>
@@ -435,7 +437,6 @@ let tx = await coverage.purchase(
 |`_coverLimits[]` | `BigNumberish[]` | Array of desired cover limits
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
 
-
 #### Returns
 
 `Promise`<`TransactionResponse`\>
@@ -453,6 +454,8 @@ Cancels the policy for `_policyholder`.
 |`_deadline` | `BigNumberish` | The deadline for the signature.
 |`_signature` | `utils.BytesLike` | The premium quote signature.
 |`gasConfig?` | [`GasConfiguration`](./helper-methods#getgassettings) | (Optional) Gas configuration settings.
+
+`_deadline` and `_signature` parameters can be obtained from the **[Solace Price Feed](https://price-feed.solace.fi/solacePrice.json)**
 
 #### Returns
 
