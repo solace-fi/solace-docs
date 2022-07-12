@@ -14,6 +14,14 @@ Not all contracts are deployed on all networks. Where possible contract addresse
 [**Mumbai**](Testnet/Mumbai)  
 [**Fantom Testnet**](Testnet/Fantom%20Testnet)  
 
+### V1.3.4
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| MerkleDistributor            | [`0x501ace879459d49903ccaf7db5968e83b3c31213`](https://polygonscan.com/address/0x501ace879459d49903ccaf7db5968e83b3c31213) |
+| xsLockerExtension            | [`0x501acEe72CA9E72F1b71C846f6A520680EFA3919`](https://etherscan.io/address/0x501acEe72CA9E72F1b71C846f6A520680EFA3919) |
+| TokenVesting                 | [`0x501AcE9BDba2c218B827B410eDd6D56fd1b2564F`](https://etherscan.io/address/0x501AcE9BDba2c218B827B410eDd6D56fd1b2564F) |
+
 ### V1.3.3
 
 | Contract Name                | Address                                      |

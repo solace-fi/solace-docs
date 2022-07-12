@@ -35,6 +35,12 @@ Celer cBridge
 | Underwriting Pool            | [`0x2971f45c0952437934B3F055C401241e5C339F93`](https://ftmscan.com/address/0x2971f45c0952437934B3F055C401241e5C339F93) | https://safe.fantom.network/ftm:0x2971f45c0952437934B3F055C401241e5C339F93 |
 | Premium Pool                 | [`0xBfF26e5D913738d073C515Bee32035F2aff8C40C`](https://ftmscan.com/address/0xBfF26e5D913738d073C515Bee32035F2aff8C40C) | https://safe.fantom.network/ftm:0xBfF26e5D913738d073C515Bee32035F2aff8C40C |
 
+### V1.3.4
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| xsLockerExtension            | [`0x501acEe72CA9E72F1b71C846f6A520680EFA3919`](https://ftmscan.com/address/0x501acEe72CA9E72F1b71C846f6A520680EFA3919) |
+
 ### V1.3.3
 
 | Contract Name                | Address                                      |
