@@ -10,7 +10,7 @@ In order to submit data or expert judgment to the pipeline, users can fill out a
 The form is currently a WIP. We will update the community and documentation once the process is complete.
 
 ## Submitting projects to the pipeline
-Project owners can include their projects in the wallet coverage by applying for support from Zapper [<u>here</u>](https://zapper.canny.io/protocol-requests).
+Project owners can include their projects in Solace Portfolio Insurance by applying for support from Zapper [<u>here</u>](https://zapper.canny.io/protocol-requests).
 
 Governance will review the submission, and if accepted, the project will be included in the next rating series publication. 
 

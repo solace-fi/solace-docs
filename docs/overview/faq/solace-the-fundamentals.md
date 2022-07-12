@@ -10,35 +10,33 @@ import ReactPlayer from 'react-player'
 ## Why was Solace Built?
 Decentralized Finance (DeFi) is one of the fastest growing industries in the world, and will continue to grow over the next 15 years. However, like any rapidly growing industry, growing pains ensue. For DeFi, one major pain is the hacks and exploits that take advantage of non-battle tested smart contracts.
 
-In the last year alone, 76% of major hacks occurred in DeFi protocols, totalling at ~$361 million of theft. As DeFi continues to grow in the next decade, it is likely that hacks and exploits will increase, especially as new, crypto-specific financial products and services emerge.
+In 2022 alone, 76% of major hacks occurred in DeFi protocols, totalling at ~$361 million of theft. As DeFi continues to grow in the next decade, it is likely that hacks and exploits will increase, especially as new, crypto-specific financial products and services emerge.
 
-There is major demand for DeFi insurance among crypto users. The problem why DeFi insurance hasn't grown alongside DeFi is because competitors have not designed their offerings for scalability, simplicity, and transparency. And because current DeFi insurance hasn't grown properly, DeFi remains a risky space. If this high risk continues to exist, it will hinder expected growth of DeFi.
+There is major demand for DeFi Insurance among investors. However, DeFi insurance hasn't grown alongside DeFi because insurance DApps have not designed their offerings for scalability, simplicity, and transparency. Because current DeFi insurance hasn't grown properly, DeFi remains a risky space. If this high risk continues to exist, it will hinder the growth of DeFi.
 
-Solace focuses on building innovative tools that match the ever-changing needs of crypto users. That's why with Solace Wallet Coverage, users get personalized coverage and only pay for what coverage they use. We understand that the DeFi space moves quickly, and we want policyholders to feel confident about their security as they explore DeFi positions.
-
-Born as a DAO, Solace’s mission is to create innovative and intuitive DeFi insurance products for crypto users.
+Born as a DAO, Solace's mission is to build innovative and intuitive insurance products that match the ever-changing needs of crypto investors. We understand that the DeFi space moves quickly, and we want policyholders to feel confident about their security as they explore DeFi.
 
 ---
 
 ## What is Solace?
-Solace is a decentralized insurance protocol ran by the Solace DAO. The Solace DAO focuses on building innovative and intuitive coverage products to protect users as they explore DeFi protocols and ecosystems. Solace's flagship product is Solace Wallet Coverage, where users can fund a single policy and only pay based on what’s in your wallet.
+Solace is a decentralized insurance protocol ran by the Solace DAO. The Solace DAO focuses on building innovative and intuitive coverage products to protect users as they explore DeFi protocols and ecosystems. Solace's flagship product is Solace Portfolio Insurance, where users get a personalized policy based on their DeFi portfolio and only pay based on their coverage limit needs.
 
-Solace focuses on three key differentiators:
+Solace Portfolio Insurance focuses on three key differentiators:
 
-#### **Designing for Simplicity**
-Other protocols put the risk assessment process on the user, forcing them to either buy coverage for every position they have, or carefully select the positions that need coverage. It’s not a model that thinks about the user first.
+#### **Simplicity**
+Solace Portfolio Insurance works like buying a pre-paid phone card. Load in a balance, and it gets charged as you hold a policy. Buying a policy takes a few clicks: connect your wallet to Solace, confirm your recommended coverage limit, and load a balance.
 
-Solace Wallet Coverage works like buying a pre-paid phone card. Load in a balance, and it gets charged as you hold a wallet policy. To get a policy, users take three easy steps: connect their wallet to Solace, set a coverage limit, and load a balance.
+Other DeFi Insurance DApps put the risk assessment process on the user, forcing them to either buy coverage for every position they have, or carefully select the positions they deem need coverage. It’s not a model that thinks about the user first.
 
-Users don’t ever have to file a claim to get their funds back, and they receive a payout during qualifiable loss events within one week.
+When a user experiences a qualifiable loss event, they don’t have to file a claim to get their funds back and will receive a payout within one week of the event. This is possible thanks to [<u>Solace controlling all the underwriting capital</u>](/docs/architecture/underwriting-pool), and the optimistic payouts process.
 
 #### **Built to Scale**
 Solace utilizes a bonds program to where users can exchange token assets for the $SOLACE token, which can be used in staking to earn rewards from policy sales and token emissions. Unlike the competitors that have staker's liquidity leveraged against for policy sales, Solace takes the assets from the bond program and set them in the [<u>Underwriting Pool</u>](/docs/architecture/underwriting-pool) to sell policies against.
 
 #### **Transparency Now and for the Future**
-Solace is the only crypto protection protocol to publish it’s pricing, risk data and risk models to GitHub and decentralized storage using IPFS.
+Solace is the only DeFi Insurance DApp to publish it’s pricing, risk data and risk models to GitHub. Moreover, data is stored in a decentralized manner using IPFS.
 
-Learn more about Solace Wallet Coverage [<u>here</u>](https://www.youtube.com/watch?v=meb8JXP8iYA).
+Learn more about Solace Portfolio Insurance [<u>here</u>](https://www.youtube.com/watch?v=meb8JXP8iYA).
 
 <ReactPlayer playing controls url='https://www.youtube.com/watch?v=meb8JXP8iYA' />
 

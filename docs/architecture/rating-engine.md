@@ -7,7 +7,7 @@ sidebar_position: 7
 # Rating Engine
 ---
 
-Version 1 of the Rating Engine was designed specifically for the Solace Wallet Coverage. The two main pillars of the engine are:
+Version 1 of the Rating Engine was designed specifically for the Solace Portfolio Insurance. The two main pillars of the engine are:
 
 ### [<u>Get Balances:</u>](https://github.com/solace-fi/solace-risk-api/tree/main/api/balances) Aggregates Position from an Address
 
@@ -41,7 +41,7 @@ Together, these lookup tables form the main components of the rating series.
 Instead of aggregating risk loads by each protocol, Solace aggregates by category. That allows us to diversify the risk load so that the total premium for the whole account ends up being less expensive than buying cover for each position in the portfolio. The discount varies depending on the structure of the portfolio, but a discount anywhere between 10-20% can be expected for an account with multiple positions.
 
 
-Below is an example of an account with positions in six protocols: Alchemix, AAVE-V2, Compound, Curve, Liquity, and Notional Finance. For a balance of 2000 USD in each position, we can see that the annual premium is cheaper than buying a cover for each position separately. This does not take into account the associated cost with buying separate covers, which is another benefit of buying the wallet coverage.
+Below is an example of an account with positions in six protocols: Alchemix, AAVE-V2, Compound, Curve, Liquity, and Notional Finance. For a balance of 2000 USD in each position, we can see that the annual premium is cheaper than buying a cover for each position separately. This does not take into account the associated cost with buying separate covers, which is another benefit of buying Solace Portfolio Insurance.
 
 | - | Risk Premium | Rate on line |
 |---|--------------|--------------|
