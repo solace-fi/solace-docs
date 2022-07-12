@@ -28,6 +28,13 @@
 | Underwriting Pool            | [`0x5efC0d9ee3223229Ce3b53e441016efC5BA83435`](https://etherscan.io/address/0x5efC0d9ee3223229Ce3b53e441016efC5BA83435) | https://gnosis-safe.io/app/eth:0x5efC0d9ee3223229Ce3b53e441016efC5BA83435 |
 | Premium Pool                 | [`0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d`](https://etherscan.io/address/0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d) | https://gnosis-safe.io/app/eth:0x88fdDCe9aD3C5A12c06B597F0948F8EafFC3862d |
 
+### V1.3.4
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| xsLockerExtension            | [`0x501acEe72CA9E72F1b71C846f6A520680EFA3919`](https://etherscan.io/address/0x501acEe72CA9E72F1b71C846f6A520680EFA3919) |
+| TokenVesting                 | [`0x501AcE9BDba2c218B827B410eDd6D56fd1b2564F`](https://etherscan.io/address/0x501AcE9BDba2c218B827B410eDd6D56fd1b2564F) |
+
 ### V1.3.3
 
 | Contract Name                | Address                                      |

@@ -46,6 +46,13 @@ Polygon POS Bridge
 | Underwriting Pool            | [`0xd1108a800363C262774B990e9DF75a4287d5c075`](https://polygonscan.com/address/0xd1108a800363C262774B990e9DF75a4287d5c075) | https://gnosis-safe.io/app/matic:0xd1108a800363C262774B990e9DF75a4287d5c075 |
 | Premium Pool                 | [`0x37cd57c6C7243455aC66631cE37Bb7F977C71442`](https://polygonscan.com/address/0x37cd57c6C7243455aC66631cE37Bb7F977C71442) | https://gnosis-safe.io/app/matic:0x37cd57c6C7243455aC66631cE37Bb7F977C71442 |
 
+### V1.3.4
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| MerkleDistributor            | [`0x501ace879459d49903ccaf7db5968e83b3c31213`](https://polygonscan.com/address/0x501ace879459d49903ccaf7db5968e83b3c31213) |
+| xsLockerExtension            | [`0x501acEe72CA9E72F1b71C846f6A520680EFA3919`](https://polygonscan.com/address/0x501acEe72CA9E72F1b71C846f6A520680EFA3919) |
+
 ### V1.3.3
 
 | Contract Name                | Address                                      |

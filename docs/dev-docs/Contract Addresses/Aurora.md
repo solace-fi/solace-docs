@@ -43,6 +43,12 @@ Rainbow Bridge
 | Underwriting Pool            | [`0x4A6B0f90597e7429Ce8400fC0E2745Add343df78`](https://aurorascan.dev/address/0x4A6B0f90597e7429Ce8400fC0E2745Add343df78) | https://gnosis-safe.io/app/aurora:0x4A6B0f90597e7429Ce8400fC0E2745Add343df78 |
 | Premium Pool                 | [`0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb`](https://aurorascan.dev/address/0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb) | https://gnosis-safe.io/app/aurora:0x0436C20030d0C2e278E7e8e4b42D304a6420D3bb |
 
+### V1.3.4
+
+| Contract Name                | Address                                      |
+|------------------------------|----------------------------------------------|
+| xsLockerExtension            | [`0x501acEe72CA9E72F1b71C846f6A520680EFA3919`](https://aurorascan.dev/address/0x501acEe72CA9E72F1b71C846f6A520680EFA3919) |
+
 ### V1.3.3
 
 | Contract Name                | Address                                      |
