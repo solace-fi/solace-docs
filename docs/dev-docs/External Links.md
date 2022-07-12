@@ -27,7 +27,11 @@ https://www.trisolaris.io/#/tri/0x501acE9c35E60f03A2af4d484f49F9B1EFde9f40/0xC42
 
 ## Beefy
 #### SOLACE Vault (Aurora)
-https://app.beefy.finance/#/aurora/vault/solace-solace
+https://app.beefy.finance/vault/solace-solace
+#### SOLACE Vault (Polygon)
+https://app.beefy.finance/vault/solace-polygon-solace
+#### SOLACE Vault (Fantom)
+https://app.beefy.finance/vault/solace-ftm-solace
 
 ## Vaporwave
 #### SOLACE-wNEAR Vault (Aurora)
