@@ -32,3 +32,9 @@ Solace has three primary ways users can interact with Solace:
 [<u>Twitter</u>](https://twitter.com/SolaceFi)
 
 [<u>Snapshot</u>](https://snapshot.org/#/solacefi.eth)
+
+## Legacy Links
+
+[<u>Early Capital Provider Farm</u>](https://legacy.solace.fi/farms)
+
+[<u>V1 Pools and Bonds</u>](https://legacy.solace.fi/archive)

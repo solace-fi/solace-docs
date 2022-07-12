@@ -13,6 +13,8 @@ During the beginning of the protocol, users provided their assets to the Solace'
 
 Therefore, the Solace core team moved to the bonding mechanics to give users $SOLACE at a discount.
 
+(Solace has a previous iteration of this pool that is now deprecated but can still be accessed through [<u>here</u>](https://legacy.solace.fi/archive))
+
 ## Understanding Bond Mechanics
 ---
 ### What is the main motivation for a person to send his assets into the Underwriting pool? 
@@ -34,3 +36,4 @@ The user sends one of the allowed assets to the protocol through the Solace inte
 <img src="/img/UWP.png" alt="Underwriting Pool" width="600px" />
 
 </div>
+

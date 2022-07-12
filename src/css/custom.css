@@ -31,7 +31,6 @@
   --ifm-h6-font-size: 0.85rem;
 
   --ifm-table-border-color: var(--ifm-color-emphasis-100);
-  /* --ifm-toc-border-color: none; */
   --ifm-toc-border-width: 1px;
 
   --ifm-global-shadow-lw: 0 1px 10px 0 rgba(0, 0, 0, 0);
@@ -46,9 +45,9 @@ html[data-theme='dark'] {
   --ifm-color-primary: white;
   --ifm-color-primary-dark: #5a91ea;
 
-  --ifm-navbar-background-color: rgb(40, 40, 40);
-  --ifm-navbar-color: rgb(40, 40, 40);
-  --ifm-background-color: rgb(46, 46, 46);
+  --ifm-navbar-background-color: #242933;
+  --ifm-navbar-color: #242933;
+  --ifm-background-color: #2a2f3b;
   --ifm-global-shadow-md: 0 5px 40px rgba(255, 255, 255, 0.448);
 
   background-position: 0px -30vh;

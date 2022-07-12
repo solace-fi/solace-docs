@@ -8,6 +8,8 @@ Solace acquires its own underwriting capital using the Protocol-Owned Liquidity 
 
 Users can purchase $SOLACE bonds in exchange for a variety of assets, and Solace sends received assets to the underwriting pool that backs risks across all products. $SOLACE will also be used as an underwriting asset and for paying out claims. Solace Protocol owns this pool, and in a loss event, payouts will be made from this pool.
 
+(Solace has a previous iteration of this pool that is now deprecated but can still be accessed through [<u>here</u>](https://legacy.solace.fi/archive))
+
 ### How it works:
 - All funds accumulate in a multi-collateral Underwriting Pool owned by Solace. This pool fulfills any potential claims and covers financial losses. Users will receive payouts in either ETH or stablecoins, depending on what is more liquid in the pool at that time.
 - The revenue from the underwriting activity flows mostly to staked $SOLACE (a small fee will go to risk strategists, risk managers, and the DAO treasury in the future as we scale up the architecture).
