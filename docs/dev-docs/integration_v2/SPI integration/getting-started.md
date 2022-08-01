@@ -1,12 +1,11 @@
 ---
-sidebar_position: 1
+sidebar_position: 6
 id: getting-started
 title: Quote and Sell Coverage
 ---
 
 ## Introduction
 
- [React Context](https://reactjs.org/docs/context.html)
 In this documentation we will go through some of options available while integrating Solace Wallet Protection (SWP) into your dApp. 
 
 ## Overview on how SWP works
@@ -65,13 +64,13 @@ In your interface you may end up implementing some or all of the following compo
 The image below shows all user positions in DeFi protocols.
 The basic implementation of the table may look like this:
 
-![Example banner](../../../static/img/quoteandsell-0.png)
+![Example banner](../../../../static/img/quoteandsell-0.png)
 
 In order to provide rate quotes to the users we need to know what positions they are currently in. We have an API to provide this information. It’s called the /balances method. You can use the SOLACE API endpoint, which will be described below.
 
 The application may retrieve balances for DeFi positions of certain user by making a GET request to the Solace server. Wallet address and chain_id must be provided as query string parameters on a GET call. You should form your GET request in the following way:
 
-![Example banner](../../../static/img/quoteandsell-1.png)
+![Example banner](../../../../static/img/quoteandsell-1.png)
 
 NOTE: 
 You can get familiar with our API via the [swagger found here]('https://risk-data-docs.solace.fi/')
