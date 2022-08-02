@@ -10,7 +10,7 @@ In Solace’s interface, we used a dropdown menu with a search bar:
 
 <div style={{"display":"flex", "margin-bottom":"20px" ,"justify-content":"center", "align-items":"center", "justify-content":"center" }} >
 
-<img src="/img/portfolio_simulator_1.png" alt="portfolio_simulator" width="300px" />
+<img src="img/portfolio_simulator_1.png" alt="portfolio_simulator" width="300px" />
 
 </div>
 
