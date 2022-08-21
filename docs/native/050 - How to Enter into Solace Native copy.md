@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 id: enter
 title: How to Enter into Solace Native
 ---
