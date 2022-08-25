@@ -1,22 +1,22 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 id: architecture
 title: Architecture
 ---
 
 ## Introduction
 
-In order to increase the trust of their users and protect deposited funds, dApps can create an insurance pool so in the event of an exploit or hack, the damage is mitigated and funds can be returned via a payout. Such a pool cannot be made up solely of project tokens, because in the event of a hack and a sharp drop in token price, the dollar equivalent of the insurance capital would also significantly decrease, and the project would not be able to meet its obligations to users to compensate for losses. Another option implies creating a pool of less volatile assets such as BTC, ETH, or stablecoins. However, this use of digital assets has low economic efficiency: in order to insure a $1,000,000 position, $1,000,000 would be required to be maintained in the insurance pool at all times. Moreover, bootstrapping the capital is much harder to incentivize as these tokens are of some of the most valuable in protocol treasuries. Neither option is scalable or economically efficient.
-
-**Solace Native** offers a mechanic in which the insurance pool consists of a large number of tokens from a cohort of  **Native** member DApps, which have been whitelisted by the risk assessment team. In future iterations, Apps will be whitelisted by the Solace DAO.
+**Solace Native** offers a mechanic in which the insurance pool consists of a large number of tokens from a cohort of  **Native** member DApps, which have been whitelisted by the risk management team. In future iterations, Apps will be whitelisted by the Solace DAO.
 
 Due to the diversification of assets within the pool, the chance of simultaneous hacking of several protocols participating in the pool is statistically negligible. This construction provides the opportunity to increase the economic efficiency of underwriting capital and allows participants of the pool to receive coverage limits greater than the deposited amounts, in the pool. The total Solace Insurance Capacity of the pool is calculated using the following formula:
 
 <div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
-Solace Insurance Capacity = (Real Underwriting Equity - Debt) * Leverage Ratio
+<em>Solace Insurance Capacity = (Underwriting Pool - Debt) * Leverage Ratio</em>
 </div>
 
-, where **Real Underwriting Equity** is the value of assets within the underwriting pool, **Debt** is the value of any outstanding debt used to pay claims, **Leverage Ratio** is the efficiency of insurance capital.
+<em>, where <b>Underwriting Pool</b> is the value of assets within the underwriting pool, <b>Debt</b> is the value of any outstanding debt used to pay claims, <b>Leverage Ratio</b> is the efficiency of insurance capital.</em>
+<br/>
+<br/>
 
 The **Solace Insurance Capacity** each epoch is allocated among the **Native** member DApps by voting. DApp members vote for projects at the beginning of each epoch, and the voting results allocate the coverage limits for each Native DApp. The more votes DApp members register for a project, the higher the project's share of **Solace Insurance Capacity**, and therefore, the higher the project's **Individual Coverage Limit** within an epoch. This mechanism allows the system to self-regulate and dynamically distribute the insurance pool funds among **Native** participants.
 
@@ -27,25 +27,30 @@ In the case of an insured event, tokens contained within the insurance pool will
 
 ## General diagram of the Native protocol
 
-**Solace Native** is an infrastructure of interconnected smart contracts that enables innovative mechanics for decentralized management of insurance pool funds. **Solace Native** will be available on the **Aurora** network and will expand to other networks over time. An upper-level flowchart showing the key elements of the system is shown below:
+[**Solace Native**](https://www.solace.fi/solace-native) is an infrastructure of interconnected smart contracts that enables innovative mechanics for decentralized management of insurance pool funds. **Solace Native** will be available on the **Aurora** network and will expand to other networks over time. An upper-level flowchart showing the key elements of the system is shown below:
 
 <div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
 <img src="/img/native_architecture_1.png" alt="native_architecture_simplified" width="800px" />
 </div>
 
-**Note:** the above diagram is a simplified representation of the **Solace Native** architecture. One element on the slide can represent several smart contracts in the production implementation. You can read our full implementation on our **Github**.
+**Note:** the above diagram is a simplified representation of the **Solace Native** architecture. One element on the slide can represent several smart contracts in the production implementation. You can read our full implementation on our [**Github**](https://github.com/solace-fi/).
 
 ## Native’s Fundamental Building Blocks
 
 **#1 Solace Insurance Capacity (SIC)**: The total value of coverage available for Solace to distribute.
 
-**#2 Underwriting pool**: an insurance pool filled with tokens from Native members, as well as tokens with relatively low volatility and high trust from the cryptocommunity: USDC, USDT, FRAX, ETH, and BTC. Any wallet can enter underwriting locks using approved protocol’s tokens, which are pooled in a united underwriting pool and the underwriter receives equity (UWE tokens) of that pool of funds. Each lock gets proportional voting power to allocate insurance capacity.
+**#2 Insurance Gauges**: on **Solace Native**, the  Insurance Capacity is going to protocols which were selected in the voting process by the participants of the system. The gauge measures how many votes were allocated to the protocol by the Native participants in the voting. Each Native participant has its own gauge. Once a protocol confirms that they want **Native** insurance, Solace will create an Insurance Gauge for that DApp. Underwriters get to vote on each gauge. 
 
-**#3 Underwriter locks**: a smart contract that contains locked positions of **Native** members in UWE tokens. Each epoch, underwriting locks will be charged an implicit premium through their underwriting equity based on their votes. The risk management team utilizes Solace’s quantitative Risk Pipeline to determine the premium rate for each of the insurance gauges.
+**#3 Underwriting pool**: an insurance pool filled with tokens from Native members, as well as tokens with relatively low volatility and high trust from the crypto community: USDC, USDT, FRAX, ETH, and BTC. Any wallet can enter underwriting locks using approved protocol’s tokens, which are pooled in a united underwriting pool and the underwriter receives equity (UWE tokens) of that pool of funds. Each lock gets proportional voting power to allocate insurance capacity.
 
-**#4 Insurance Gauges**: on **Solace Native**, the Insurance Capacity is going to protocols that were selected in the voting process by the participants of the system. The gauge measures how many votes were allocated to the protocol by the Native participants in the voting. Each **Native** participant has its own gauge. Once a protocol confirms that they want Native insurance, Solace will create an Insurance Gauge for that DApp. Underwriters get to vote on each gauge.
+**#4 Underwriter locks**: Any EOA (externally-owned address) can enter underwriting locks using whitelisted tokens, which are pooled in the united underwriting pool. The underwriter receives equity representing their portion of the pool of funds. Each lock gets proportional voting power to allocate insurance capacity. 
 
-**#5 Premium/Revenue Pool:** Smart contract, to which all the income of the protocol is sent. The premiums form the revenue pool that can cover claims (reducing the resulting underwriter’s risk), provides yield to $SOLACE stakers, and supports further Solace’s development.
+
+**#5 Premium/Revenue Pool**: At each epoch, underwriting locks will be charged an implicit premium through their underwriting equity based on their votes.  The risk management team utilizes Solace’s quantitative Risk Pipeline to determine the premium rate for each of the insurance gauges. The premiums form the revenue pool that can cover claims (reducing the resulting underwriter’s risk), provides yield to $SOLACE stakers, and supports further Solace’s development.
+
+**#6 Risk Management**: The risk management team utilizes Solace’s quantitative [Risk Pipeline](https://docs.google.com/presentation/d/1-VlWb1r5D7xs-EnSJdSQMIxhRZiJUFIqxqdFMZb_56c/edit?usp=sharing) to determine the annual premium rate for each of the insurance gauges.
+
+**#7 Claims Process**: When a qualified on-chain exploit occurs, the affected DApp submits post-mortem for a review and Solace pays out the protocol (or directly affected users) based on the insurance capacity voted to that DApp’s insurance gauge in that epoch. Claims can be disputed in case of a disagreement through an independent 3rd party not affiliated with Solace (current implementation will utilize UMA as arbitration to handle claim disputes).
 
 ## Getting your Token Whitelisted
 
@@ -62,9 +67,9 @@ Once a token has been approved, any holder of tokens can deposit that whiteliste
 
 ## Adding tokens to the Underwriting pool.
 
-When sending tokens to the pool, the EOA must set the number of tokens and the lock period for which the tokens will be locked in the pool. The longer the lock time, the greater the multiplier and therefore the greater the voting power of the user (see Voting power and voting process for more details). Lock times can be set from 6 months to 48 months.
+When sending tokens to the pool, the EOA must set the number of tokens and the lock period for which the tokens will be locked in the pool. The longer the lock time, the greater the multiplier and therefore the greater the voting power of the user (see [**Voting power and voting process**](#voting-power-and-voting-process) for more details). Lock times can be set from 6 months to 48 months.
 
-After setting the desired parameters, the user signs the transaction and sends tokens to the **Underwriting pool**.  A few processes take place within a single transaction:
+After setting the desired parameters, the user signs the transaction and sends tokens to the **Underwriting pool**. A few processes take place within a single transaction:
 
 1. After tokens are deposited in the **Underwriting pool**, UWE tokens are minted for the user and locked in a special lock contract - the **Underwriting locks** smart-contract. The user cannot retrieve **UWE** tokens from the lock contract until the end of the lock period. At the beginning of each epoch, a certain amount of **UWE** tokens are transferred to the **Revenue pool** as premiums.
 2. After adding liquidity to the underwriting pool, the EOA has proportional voting power based on their deposit value and their lock length. The EOA can vote to allocate Solace’s insurance capacity to any of the Native members’ Insurance gauges.
@@ -77,19 +82,19 @@ After setting the desired parameters, the user signs the transaction and sends t
 
 After the tokens have been sent to the Underwriting pool, a corresponding number of UWE tokens are minted for the sender. However, these tokens are not credited to the user's account. Instead, Solace opens an underwriter lock for that EOA and deposits the UWE tokens for a period of time specified by the token provider.
 
-If the user wants to withdraw tokens before the end of the lock period, he will have to pay a penalty for earlier withdrawal. The penalty amount is dynamic and decreases linearly with time. This means that the penalty for withdrawing tokens at the beginning of a loc period will be much more expensive than withdrawing them closer to the end of the period.
+If the user wants to withdraw tokens before the end of the lock period, they will have to pay a penalty for anearly withdrawal. The penalty amount is dynamic and decreases linearly with time. This means that the penalty for withdrawing tokens at the beginning of a lock period will be more expensive than withdrawing them closer to the end of the period. 
 
 After the end of the lock period, the user can submit an NFT stating that he has the right to withdraw UWEs from the lock contract. Upon submission, the NFT will be burned and the UWE tokens will be sent to the owner's address.
 
-**Important note**: basically, each exit leaves 10% of their $UWE in the underwriting pool that gets proportionally redistributed among the remaining underwriters. This incentivizes underwriters to commit for longer terms that result in greater stability of underwriting capital and the ability to meet any claims obligations, reducing the financial risk of the system.
+**Important note**:  Each exit leaves 10% of their $UWE in the underwriting pool that gets proportionally redistributed among the remaining underwriters. This incentivizes underwriters to commit for longer terms that result in greater stability of underwriting capital and the ability to meet any claims obligations, reducing the financial risk of the system.
 
-At the beginning of each epoch, a portion of the UWE tokens from the Underwriting locks lock contract is sent to the Premium Float pool as premiums.
+At the beginning of each epoch, a portion of the UWE tokens from the Underwriting Locks contract is sent to the Premium/Revenue pool as premiums. 
 
 ## Premium Float pool
 
 Each epoch, underwriting locks will be charged an implicit premium through their underwriting equity (UWE tokens in lock-contract) based on their votes. The premiums form the float pool that can cover claims (reducing the resulting underwriter’s risk), provides yield to $SOLACE stakers, and supports further Solace’s development.
 
-Currently, premium is charged on a 'voter' basis. The total premium that a voter needs to pay is calculated, then is split equally amongst all the voter's underwriting locks**.** The formula to calculate the premiums for a voter:
+Currently, the annual premium is charged on a 'voter' basis. First, the total premium of an insurance  gauge is calculated. Then, the premium is split equally amongst all the voters’ underwriting locks. The formula to calculate the premiums for a single voter:
 
 <div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
 <img src="/img/native_glossary_1.png" alt="voting_graph" width="400px" />
@@ -101,7 +106,7 @@ Currently, premium is charged on a 'voter' basis. The total premium that a voter
 
 DApps differentiate in size, market cap, and categories, among several other attributes. In order to design a fair playing field for DApps across DeFi,  voting power per underwriting lock is calculated using a quadratic function. Inside the quadratic function exists two parameters:
 
-- Number of UWE tokens locked in Underwriting Locks smart contract
+- **Number of UWE tokens** locked in Underwriting Locks smart contract
 
 >**Note**: Due to the fact that each epoch UWE tokens are withdrawn as premiums from the Underwriting Locks smart contract, the voting power of participants decreases over time. Voting power decreases faster for protocols whose ROL is larger (riskier projects).
 
@@ -109,10 +114,8 @@ DApps differentiate in size, market cap, and categories, among several other att
 
 The formula for calculating the Multiplier is as follows:
 
-
 <div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
 M = sqrt(months) / 2.44948974278
-
 </div>
 
 
@@ -132,7 +135,19 @@ The formula used to calculate the Individual coverage limit:
 
 ## Claims Process
 
-When a qualified on-chain exploit occurs, the affected DApp submits post-mortem for a review and Solace pays out the protocol (or directly affected users) based on the insurance capacity voted to that DApp’s insurance gauge in that epoch. Claims can be disputed in case of a disagreement through an independent 3rd party, not affiliated with Solace (current implementation will utilize UMA to disputes arbitrage).
+
+When an exploit occurs on any of the DApps with insurance gauges, that respective DApp submits a postmortem report. The DApp, alongside Solace, will determine the value of the exploited funds.
+
+If the postmortem report is confirmed and approved by the risk management team, Solace begins the payout process.
+
+**Lend, not Liquidate:**
+
+Solace doesn’t sell or liquidate the tokens in the Native pool. First, Solace utilizes the premium float pool capital. If the float pool cannot pay out the claim alone, Solace leverages against the underwriting pool token set and borrows stablecoins to pay out the claim.
+
+Those stablecoins are sent to the DApp within one week of the claim approval. After the payout event, Solace uses the collected premiums to pay back the loan over time.
+
+Claims can be disputed in case of a disagreement through an independent 3rd party, not affiliated with Solace (current implementation will utilize UMA to arbitrate claim disputes).
+
 
 
 
