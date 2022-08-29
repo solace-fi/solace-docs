@@ -6,23 +6,19 @@ title: Architecture
 
 ## Introduction
 
-**Solace Native** offers a mechanic in which the insurance pool consists of a large number of tokens from a cohort of  **Native** member DApps, which have been whitelisted by the risk management team. In future iterations, Apps will be whitelisted by the Solace DAO.
-
-Due to the diversification of assets within the pool, the chance of simultaneous hacking of several protocols participating in the pool is statistically negligible. This construction provides the opportunity to increase the economic efficiency of underwriting capital and allows participants of the pool to receive coverage limits greater than the deposited amounts, in the pool. The total Solace Insurance Capacity of the pool is calculated using the following formula:
+**Solace Native** offers a mechanic to facilitate insurance with the underwriting capital primarily bootstrapped by participating DApps and protocols leveraging their own native tokens., which have been whitelisted by Solace DAO risk management (currently driven by the core team). Major structural advantage of the system is the fact that, while the underwriting funds are composed of various native tokens, claims are settled with stablecoins, without the need to liquidate the underlying token, hence avoiding any negative market pressures in perilous situations. This is achieved by borrowing stablecoins through posting UWP tokens, representing a united index of underwriting assets, as lending collateral, and then paying back the loan(s) through the float and incoming premiums paid over time. Given the chance of simultaneous hacking of a large number of  insured DApps/protocols is probabilistically negligible, the risk of default becomes very low and decreases as the system scales. Ultimately, this approach provides an opportunity to increase the capital efficiency of the underwriting assets and allows underwriters to distribute insurance capacity values greater than the deposited capital. The total Solace Insurance Capacity is calculated using the following formula:
 
 <div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
-<em>Solace Insurance Capacity = (Underwriting Pool - Debt) * Leverage Ratio</em>
+<em>Solace Insurance Capacity = (Underwriting Assets - Debt) * Leverage Ratio</em>
 </div>
 
-<em>, where <b>Underwriting Pool</b> is the value of assets within the underwriting pool, <b>Debt</b> is the value of any outstanding debt used to pay claims, <b>Leverage Ratio</b> is the efficiency of insurance capital.</em>
+<em>, where <b>Underwriting Assets </b> is the value of assets within the underwriting pool, Debt is the value of any outstanding debt used to pay claims, Leverage Ratio is the efficiency of insurance capital.</em>
 <br/>
 <br/>
 
-The **Solace Insurance Capacity** each epoch is allocated among the **Native** member DApps by voting. DApp members vote for projects at the beginning of each epoch, and the voting results allocate the coverage limits for each Native DApp. The more votes DApp members register for a project, the higher the project's share of **Solace Insurance Capacity**, and therefore, the higher the project's **Individual Coverage Limit** within an epoch. This mechanism allows the system to self-regulate and dynamically distribute the insurance pool funds among **Native** participants.
+The **Solace Insurance Capacity** is distributed each epoch among the **Native** insured DApps  through voting. Underwriters vote for DApps’ gauges during  each epoch, and the results set the coverage limits for each Native-insured DApp for the following epoch. The more votes a DApp’s gauge receive, the higher that DApp’s share of **Solace Insurance Capacity**, and therefore, the higher the DApp’s **Individual Coverage Limit**. This mechanism allows the system to self-regulate and dynamically distribute the insurance capacity among **Native-insured** participants.
 
-In the case of an insured event, tokens contained within the insurance pool will not be sold. This prevents negative pressure on the token price. Instead, Solace takes a loan against the **UWE** token and provides a payout in stablecoins. Once the borrowed stable coins are received, the insurance payout is made immediately.
-
-**Solace Native** provides DApps an opportunity to use their native tokens as collateral, while significantly increasing capital efficiency compared to other approaches. For example, by providing tokens to the pool for a longer duration, a project can get a coverage limit several times higher than the dollar equivalent deposited into the pool.
+**Solace Native** provides DApps an opportunity to access insurance while introducing additional utility for their native token: underwriting. The overall structure significantly increases the capital efficiency compared to other approaches in DeFi insurance and introduces a novel way to bootstrap underwriting capital. Moreover, longer lockup periods grant an underwriter greater control over the insurance capacity, so DApps can access higher coverage limits with longer commitments.
 
 
 ## General diagram of the Native protocol
@@ -120,7 +116,7 @@ M = sqrt(months) / 2.44948974278
 
 
 <div style={{"display":"flex", "justify-content":"center", "align-items":"center", "justify-content":"center" }} >
-<img src="/img/native_architecture_2.png" alt="native_architecture_simplified" width="800px" />
+<img src="/img/architecture_graph.png" alt="native_architecture_simplified" width="800px" />
 </div>
 
 At the beginning of each epoch, a vote occurs to determine the allocation of **Solace Insurance Capacity** among the participating Native protocols. In the voting process, every EOA distributes its votes to one gauge or among several gauges. Based on the number of votes cast for each gauge, each project's share of **Solace Insurance Capacity** is calculated and the **Individual coverage limit** is determined for each participating protocol, which remains unchanged until the next epoch. Voting is 'saved' - any vote you make is saved for all future epochs.
