@@ -12,7 +12,7 @@ It is simply not enough. We need a solution that pools the risk of all DeFi user
 
 So Solace decided to **build DeFi’s base layer of insurance** that everyone can count on, regardless of their level of participation of DeFi.
 
-## Why Solace Native Was Created
+## What is Solace Native?
 
 Solace Native insures DApps against smart contract risk. Native uses a governance mechanism where DApps, DAOs, and protocols vote to distribute Solace’s insurance capacity. Like the FDIC, Solace Native provides the recommended coverage value to protect the DApp and its individual users against various on-chain economic and technical exploits. 
 

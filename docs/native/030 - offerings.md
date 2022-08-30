@@ -5,9 +5,9 @@ title: Prevention and Protection Offerings
 ---
 
 Solace Native is more than just insurance. Native offers a suite of preventative measures to improve a DApps’ security. DApps that take advantage of our suite of protection methods can directly lower their premium rate. These include: 
-1. Audits
-2. Bug bounty sponsorships 
-3. Smart contract monitoring, thanks to the  network
+1. Bug bounty sponsorship
+2. Audits
+3. Smart contract monitoring, thanks to the Forta network
 4. Best practices
 
 Moreover, Solace will subsidize financial and technical support to promote secure practices and quality code.
