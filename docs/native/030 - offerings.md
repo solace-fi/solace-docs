@@ -4,13 +4,14 @@ id: offernigs
 title: Prevention and Protection Offerings
 ---
 
-Solace Native is more than just insurance. Native offers a suite of preventative measures to improve DApps' security. DApps that take advantage of Native’s suite of protection methods can directly lower their premium rate. These include:
+Solace Native is more than just insurance. Native offers a suite of preventative measures to improve a DApp's security. DApps that take advantage of Native’s suite of protection methods can directly lower their premium rate. These include:
 1. Bug bounties
 2. Audits
 3. Smart contract monitoring
 4. Best practices
 
 Moreover, Solace will subsidize financial and technical support to promote secure practices and quality code.
+
 ## Audits
 Solace’s risk assessment process looks directly at whether a DApp has undergone audits. Those that do improve their risk score, and in turn, lower their premium. Two audits prove more valuable than one audit.
 
