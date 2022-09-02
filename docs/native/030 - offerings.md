@@ -21,7 +21,7 @@ Starting in Fall 2022, Solace will launch its own audit pipeline for Native DApp
 ## Bug Bounty Programs
 Solace includes bug bounty programs in their risk assessment process based on whether a DApp has a bug bounty program and how large the bounty pool is. By deploying a bug bounty program, DApps can improve their risk score, and in turn, lower their premium.
 
-Solace partnered with **[Hats Finance](https://hats.finance/)** to help DApps deploy a decentralized bug bounty and will sponsor the bounties. Specifically, Solace will match critical vulnerability bounties up to $100,000 and communicate the bug bounty across our network of white hats, so as many eyes can review a DApp’s code base for bugs.
+Solace partnered with **[Hats Finance](https://medium.com/solace-fi/solace-partners-with-hats-finance-to-sponsor-bug-bounties-7532c20622ae)** to help DApps deploy a decentralized bug bounty and will sponsor the bounties. Specifically, Solace will match critical vulnerability bounties up to $100,000 and communicate the bug bounty across our network of white hats, so as many eyes can review a DApp’s code base for bugs.
 
 ## Smart contract monitoring  
 
@@ -35,7 +35,9 @@ We highly encourage teams to implement smart contract monitoring. Solace has don
 
 There are several valuable best practices that exist with smart contract architecture. Practices  like timelocks, flashloan resistance standards, oracle front running resistance standards, and many other prevention methods ensure DApps can protect all parts of their protocols.
 
-We highly encourage teams to implement best practices into their smart contracts, testing methods, and documentation. Solace partnered with DeFiSafety to assist DApps to achieve a strong security score according to their smart contract standards.
+We highly encourage teams to implement best practices into their smart contracts, testing methods, and documentation. 
+
+Solace partnered with **[DeFiSafety](https://medium.com/solace-fi/solace-partners-with-defi-safety-d1d7c0543ffc)** to assist DApps to achieve a strong security score according to their smart contract standards.
 
 
 
