@@ -6,23 +6,20 @@ title: Introduction
 
 ## Why Solace Native Was Created
 
-DeFi continues to experience its growing pains via catastrophic hacks and exploits, a clear indicator of the need for scalable insurance. Current solutions are slim and require wallets to buy insurance for individual positions with rigid terms and conditions. 
+DeFi continues to experience its growing pains via catastrophic smart contract exploits, a clear indicator that a security approach solely focused on audits is not enough to secure DeFi DApps. More than ever before, there is a serious need for scalable insurance that can insure DApps at scale.
 
-It is simply not enough. We need a solution that pools the risk of all DeFi users from the unjustifiable risks within our ecosystem - we need the fail-safe mechanism to back DeFi. 
+Solace built DeFi’s first and only base layer of insurance to protect the ecosystem at scale, garner high user trust, and ultimately, improve the security measures across DApps in DeFi.
 
-So Solace decided to **build DeFi’s base layer of insurance** that everyone can count on, regardless of their level of participation of DeFi.
+## What is Solace Native?
 
-## Why Solace Native Was Created
-
-Solace Native insures DApps against smart contract risk. Native uses a governance mechanism where DApps, DAOs, and protocols vote to distribute Solace’s insurance capacity. Like the FDIC, Solace Native provides the recommended coverage value to protect the DApp and its individual users against various on-chain economic and technical exploits. 
+Solace Native insures DApps against smart contract risk. Native uses a governance mechanism where DApps, DAOs, and protocols vote to distribute Solace’s insurance capacity. Like the FDIC, Solace Native provides the recommended coverage value to protect the DApp and its individual users against various on-chain economic and technical exploits. Just like the FDIC.
 
 ## The Advantages of Native
 
 1. DApp-level insurance that protects against smart contract risk
 2. Access insurance and pay premiums utilizing your protocol’s native token
 3. Longer commitments yield more coverage for less
-4. A crypto-native FDIC
+4. A crypto-native FDIC with prevention and protection offerings to improve DApp security
 
-Solace recommends at least a $1,000 coverage value per user, and can build a custom quote for your DApp if **[requested](linl). However, the coverage limit is ultimately chosen by the DApp team. 
-
+Solace recommends at least a $1,000 coverage value per user, and can build a custom quote for your DApp if requested. However, the coverage limit is ultimately chosen by the DApp team.
 
