@@ -16,8 +16,7 @@ Note that transferring [**SOLACE**](./../../SOLACE) to this contract will not gi
 ## Functions
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address)
+  function solace() external returns (address)
 ```
 [**SOLACE**](./../../SOLACE) token.
 
@@ -25,8 +24,7 @@ Note that transferring [**SOLACE**](./../../SOLACE) to this contract will not gi
 
 ### MAX_LOCK_DURATION
 ```solidity
-  function MAX_LOCK_DURATION(
-  ) external returns (uint256)
+  function MAX_LOCK_DURATION() external returns (uint256)
 ```
 The maximum time into the future that a lock can expire.
 
@@ -34,8 +32,7 @@ The maximum time into the future that a lock can expire.
 
 ### totalNumLocks
 ```solidity
-  function totalNumLocks(
-  ) external returns (uint256)
+  function totalNumLocks() external returns (uint256)
 ```
 The total number of locks that have been created.
 
@@ -119,8 +116,7 @@ Returns the amount of [**SOLACE**](./../../SOLACE) the user has staked.
 
 ### getXsLockListeners
 ```solidity
-  function getXsLockListeners(
-  ) external returns (address[] listeners_)
+  function getXsLockListeners() external returns (address[] listeners_)
 ```
 The list of contracts that are listening to lock updates.
 
@@ -352,40 +348,35 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### LockCreated
 ```solidity
-  event LockCreated(
-  )
+  event LockCreated()
 ```
 Emitted when a lock is created.
 
 
 ### LockUpdated
 ```solidity
-  event LockUpdated(
-  )
+  event LockUpdated()
 ```
 Emitted when a lock is updated.
 
 
 ### Withdrawl
 ```solidity
-  event Withdrawl(
-  )
+  event Withdrawl()
 ```
 Emitted when a lock is withdrawn from.
 
 
 ### xsLockListenerAdded
 ```solidity
-  event xsLockListenerAdded(
-  )
+  event xsLockListenerAdded()
 ```
 Emitted when a listener is added.
 
 
 ### xsLockListenerRemoved
 ```solidity
-  event xsLockListenerRemoved(
-  )
+  event xsLockListenerRemoved()
 ```
 Emitted when a listener is removed.
 

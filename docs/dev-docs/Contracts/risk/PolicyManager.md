@@ -240,8 +240,7 @@ Checks whether a given policy is expired.
 
 ### totalPolicyCount
 ```solidity
-  function totalPolicyCount(
-  ) external returns (uint256 count)
+  function totalPolicyCount() external returns (uint256 count)
 ```
 The total number of policies ever created.
 
@@ -249,8 +248,7 @@ The total number of policies ever created.
 
 ### policyDescriptor
 ```solidity
-  function policyDescriptor(
-  ) external returns (address descriptor)
+  function policyDescriptor() external returns (address descriptor)
 ```
 The address of the [`PolicyDescriptor`](./PolicyDescriptor) contract.
 
@@ -277,8 +275,7 @@ Describes the policy.
 
 ### registry
 ```solidity
-  function registry(
-  ) external returns (address registry_)
+  function registry() external returns (address registry_)
 ```
 Returns [`Registry`](./Registry) contract address.
 
@@ -429,8 +426,7 @@ Checks is an address is an active product.
 
 ### numProducts
 ```solidity
-  function numProducts(
-  ) external returns (uint256 count)
+  function numProducts() external returns (uint256 count)
 ```
 Returns the number of products.
 

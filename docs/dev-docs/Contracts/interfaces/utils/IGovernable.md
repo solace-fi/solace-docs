@@ -11,8 +11,7 @@ Many contracts contain functionality that should only be accessible to a privile
 ## Functions
 ### governance
 ```solidity
-  function governance(
-  ) external returns (address)
+  function governance() external returns (address)
 ```
 Address of the current governor.
 
@@ -20,8 +19,7 @@ Address of the current governor.
 
 ### pendingGovernance
 ```solidity
-  function pendingGovernance(
-  ) external returns (address)
+  function pendingGovernance() external returns (address)
 ```
 Address of the governor to take over.
 
@@ -29,8 +27,7 @@ Address of the governor to take over.
 
 ### governanceIsLocked
 ```solidity
-  function governanceIsLocked(
-  ) external returns (bool)
+  function governanceIsLocked() external returns (bool)
 ```
 Returns true if governance is locked.
 
@@ -54,8 +51,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 
 ### acceptGovernance
 ```solidity
-  function acceptGovernance(
-  ) external
+  function acceptGovernance() external
 ```
 Accepts the governance role.
 Can only be called by the new governor.
@@ -64,8 +60,7 @@ Can only be called by the new governor.
 
 ### lockGovernance
 ```solidity
-  function lockGovernance(
-  ) external
+  function lockGovernance() external
 ```
 Permanently locks this contract's governance role and any of its functions that require the role.
 This action cannot be reversed.
@@ -80,24 +75,21 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### GovernancePending
 ```solidity
-  event GovernancePending(
-  )
+  event GovernancePending()
 ```
 Emitted when pending Governance is set.
 
 
 ### GovernanceTransferred
 ```solidity
-  event GovernanceTransferred(
-  )
+  event GovernanceTransferred()
 ```
 Emitted when Governance is set.
 
 
 ### GovernanceLocked
 ```solidity
-  event GovernanceLocked(
-  )
+  event GovernanceLocked()
 ```
 Emitted when Governance is locked.
 

@@ -188,8 +188,7 @@ Returns the risk strategy of the product in policy.
 
 ### policyIsActive
 ```solidity
-  function policyIsActive(
-  ) external returns (bool)
+  function policyIsActive() external returns (bool)
 ```
 
 
@@ -216,8 +215,7 @@ Checks whether a given policy is expired.
 
 ### totalPolicyCount
 ```solidity
-  function totalPolicyCount(
-  ) external returns (uint256 count)
+  function totalPolicyCount() external returns (uint256 count)
 ```
 The total number of policies ever created.
 
@@ -225,8 +223,7 @@ The total number of policies ever created.
 
 ### policyDescriptor
 ```solidity
-  function policyDescriptor(
-  ) external returns (address)
+  function policyDescriptor() external returns (address)
 ```
 The address of the [`PolicyDescriptor`](./PolicyDescriptor) contract.
 
@@ -234,8 +231,7 @@ The address of the [`PolicyDescriptor`](./PolicyDescriptor) contract.
 
 ### registry
 ```solidity
-  function registry(
-  ) external returns (address registry_)
+  function registry() external returns (address registry_)
 ```
 Returns [`Registry`](./Registry) contract address.
 
@@ -372,8 +368,7 @@ Checks is an address is an active product.
 
 ### numProducts
 ```solidity
-  function numProducts(
-  ) external returns (uint256 count)
+  function numProducts() external returns (uint256 count)
 ```
 Returns the number of products.
 
@@ -467,56 +462,49 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### PolicyCreated
 ```solidity
-  event PolicyCreated(
-  )
+  event PolicyCreated()
 ```
 Emitted when a policy is created.
 
 
 ### PolicyUpdated
 ```solidity
-  event PolicyUpdated(
-  )
+  event PolicyUpdated()
 ```
 Emitted when a policy is updated.
 
 
 ### PolicyBurned
 ```solidity
-  event PolicyBurned(
-  )
+  event PolicyBurned()
 ```
 Emitted when a policy is burned.
 
 
 ### PolicyDescriptorSet
 ```solidity
-  event PolicyDescriptorSet(
-  )
+  event PolicyDescriptorSet()
 ```
 Emitted when the policy descriptor is set.
 
 
 ### ProductAdded
 ```solidity
-  event ProductAdded(
-  )
+  event ProductAdded()
 ```
 Emitted when a new product is added.
 
 
 ### ProductRemoved
 ```solidity
-  event ProductRemoved(
-  )
+  event ProductRemoved()
 ```
 Emitted when a new product is removed.
 
 
 ### RegistrySet
 ```solidity
-  event RegistrySet(
-  )
+  event RegistrySet()
 ```
 Emitted when registry is set.
 

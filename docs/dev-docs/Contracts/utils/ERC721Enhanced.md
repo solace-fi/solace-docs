@@ -104,8 +104,7 @@ prevents a signature from being used multiple times.
 
 ### PERMIT_TYPEHASH
 ```solidity
-  function PERMIT_TYPEHASH(
-  ) external returns (bytes32 typehash)
+  function PERMIT_TYPEHASH() external returns (bytes32 typehash)
 ```
 The permit typehash used in the `permit` signature.
 
@@ -118,8 +117,7 @@ The permit typehash used in the `permit` signature.
 
 ### DOMAIN_SEPARATOR
 ```solidity
-  function DOMAIN_SEPARATOR(
-  ) public returns (bytes32 seperator)
+  function DOMAIN_SEPARATOR() public returns (bytes32 seperator)
 ```
 The domain separator used in the encoding of the signature for `permit`, as defined by `EIP712`.
 
@@ -132,8 +130,7 @@ The domain separator used in the encoding of the signature for `permit`, as defi
 
 ### tokenURI
 ```solidity
-  function tokenURI(
-  ) public returns (string)
+  function tokenURI() public returns (string)
 ```
 Returns the Uniform Resource Identifier (URI) for `tokenID` token.
 
@@ -141,8 +138,7 @@ Returns the Uniform Resource Identifier (URI) for `tokenID` token.
 
 ### _baseURI
 ```solidity
-  function _baseURI(
-  ) internal returns (string baseURI_)
+  function _baseURI() internal returns (string baseURI_)
 ```
 Base URI for computing `tokenURI`. If set, the resulting URI for each
 token will be the concatenation of the `baseURI` and the `tokenID`. Empty

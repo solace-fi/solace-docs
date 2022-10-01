@@ -27,8 +27,7 @@ Constructs the `InvestorVesting` contract.
 
 ### duration
 ```solidity
-  function duration(
-  ) public returns (uint256)
+  function duration() public returns (uint256)
 ```
 Get vesting duration in seconds
 
@@ -36,8 +35,7 @@ Get vesting duration in seconds
 
 ### claimTokens
 ```solidity
-  function claimTokens(
-  ) external
+  function claimTokens() external
 ```
 Function for investor to claim SOLACE tokens - transfers all claimable tokens from contract to msg.sender.
 

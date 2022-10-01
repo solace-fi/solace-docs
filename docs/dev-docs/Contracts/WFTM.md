@@ -6,8 +6,7 @@
 ## Functions
 ### constructor
 ```solidity
-  function constructor(
-  ) public
+  function constructor() public
 ```
 Constructs the **WFTM** contract.
 
@@ -15,8 +14,7 @@ Constructs the **WFTM** contract.
 
 ### receive
 ```solidity
-  function receive(
-  ) external
+  function receive() external
 ```
 Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
@@ -24,8 +22,7 @@ Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
 ### fallback
 ```solidity
-  function fallback(
-  ) external
+  function fallback() external
 ```
 Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
@@ -33,8 +30,7 @@ Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
 ### deposit
 ```solidity
-  function deposit(
-  ) public
+  function deposit() public
 ```
 Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 

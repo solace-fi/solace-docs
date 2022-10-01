@@ -8,8 +8,7 @@ balance of ETH deposited minus the ETH withdrawn with that specific wallet.
 ## Functions
 ### DOMAIN_SEPARATOR
 ```solidity
-  function DOMAIN_SEPARATOR(
-  ) external returns (bytes32)
+  function DOMAIN_SEPARATOR() external returns (bytes32)
 ```
 
 Return the DOMAIN_SEPARATOR.
@@ -17,8 +16,7 @@ Return the DOMAIN_SEPARATOR.
 
 ### totalSupply
 ```solidity
-  function totalSupply(
-  ) external returns (uint256)
+  function totalSupply() external returns (uint256)
 ```
 
 Returns the total supply of WETH10 token as the ETH held in this contract.
@@ -26,8 +24,7 @@ Returns the total supply of WETH10 token as the ETH held in this contract.
 
 ### receive
 ```solidity
-  function receive(
-  ) external
+  function receive() external
 ```
 
 Fallback, `msg.value` of ETH sent to this contract grants caller account a matching increase in WETH10 token balance.
@@ -36,8 +33,7 @@ Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address
 
 ### deposit
 ```solidity
-  function deposit(
-  ) external
+  function deposit() external
 ```
 
 `msg.value` of ETH sent to this contract grants caller account a matching increase in WETH10 token balance.
@@ -46,8 +42,7 @@ Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address
 
 ### depositTo
 ```solidity
-  function depositTo(
-  ) external
+  function depositTo() external
 ```
 
 `msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance.
@@ -56,8 +51,7 @@ Emits {Transfer} event to reflect WETH10 token mint of `msg.value` from `address
 
 ### depositToAndCall
 ```solidity
-  function depositToAndCall(
-  ) external returns (bool success)
+  function depositToAndCall() external returns (bool success)
 ```
 
 `msg.value` of ETH sent to this contract grants `to` account a matching increase in WETH10 token balance,
@@ -69,8 +63,7 @@ For more information on {transferAndCall} format, see https://github.com/ethereu
 
 ### maxFlashLoan
 ```solidity
-  function maxFlashLoan(
-  ) external returns (uint256)
+  function maxFlashLoan() external returns (uint256)
 ```
 
 Return the amount of WETH10 token that can be flash-lent.
@@ -78,8 +71,7 @@ Return the amount of WETH10 token that can be flash-lent.
 
 ### flashFee
 ```solidity
-  function flashFee(
-  ) external returns (uint256)
+  function flashFee() external returns (uint256)
 ```
 
 Return the fee (zero) for flash lending an amount of WETH10 token.
@@ -87,8 +79,7 @@ Return the fee (zero) for flash lending an amount of WETH10 token.
 
 ### flashLoan
 ```solidity
-  function flashLoan(
-  ) external returns (bool)
+  function flashLoan() external returns (bool)
 ```
 
 Flash lends `value` WETH10 token to the receiver address.
@@ -106,8 +97,7 @@ Requirements:
 
 ### withdraw
 ```solidity
-  function withdraw(
-  ) external
+  function withdraw() external
 ```
 
 Burn `value` WETH10 token from caller account and withdraw matching ETH to the same.
@@ -118,8 +108,7 @@ Requirements:
 
 ### withdrawTo
 ```solidity
-  function withdrawTo(
-  ) external
+  function withdrawTo() external
 ```
 
 Burn `value` WETH10 token from caller account and withdraw matching ETH to account (`to`).
@@ -130,8 +119,7 @@ Requirements:
 
 ### withdrawFrom
 ```solidity
-  function withdrawFrom(
-  ) external
+  function withdrawFrom() external
 ```
 
 Burn `value` WETH10 token from account (`from`) and withdraw matching ETH to account (`to`).
@@ -145,8 +133,7 @@ Requirements:
 
 ### approve
 ```solidity
-  function approve(
-  ) external returns (bool)
+  function approve() external returns (bool)
 ```
 
 Sets `value` as allowance of `spender` account over caller account's WETH10 token.
@@ -156,8 +143,7 @@ Returns boolean value indicating whether operation succeeded.
 
 ### approveAndCall
 ```solidity
-  function approveAndCall(
-  ) external returns (bool)
+  function approveAndCall() external returns (bool)
 ```
 
 Sets `value` as allowance of `spender` account over caller account's WETH10 token,
@@ -169,8 +155,7 @@ For more information on {approveAndCall} format, see https://github.com/ethereum
 
 ### permit
 ```solidity
-  function permit(
-  ) external
+  function permit() external
 ```
 
 Sets `value` as allowance of `spender` account over `owner` account's WETH10 token, given `owner` account's signed approval.
@@ -186,8 +171,7 @@ WETH10 token implementation adapted from https://github.com/albertocuestacanada/
 
 ### transfer
 ```solidity
-  function transfer(
-  ) external returns (bool)
+  function transfer() external returns (bool)
 ```
 
 Moves `value` WETH10 token from caller's account to account (`to`).
@@ -200,8 +184,7 @@ Requirements:
 
 ### transferFrom
 ```solidity
-  function transferFrom(
-  ) external returns (bool)
+  function transferFrom() external returns (bool)
 ```
 
 Moves `value` WETH10 token from account (`from`) to account (`to`) using allowance mechanism.
@@ -218,8 +201,7 @@ Requirements:
 
 ### transferAndCall
 ```solidity
-  function transferAndCall(
-  ) external returns (bool)
+  function transferAndCall() external returns (bool)
 ```
 
 Moves `value` WETH10 token from caller's account to account (`to`),

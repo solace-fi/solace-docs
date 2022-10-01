@@ -287,8 +287,7 @@ Checks is an address is an active product.
 
 ### numProducts
 ```solidity
-  function numProducts(
-  ) external returns (uint256 count)
+  function numProducts() external returns (uint256 count)
 ```
 Returns the number of products.
 
@@ -397,56 +396,49 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### TokenDeposited
 ```solidity
-  event TokenDeposited(
-  )
+  event TokenDeposited()
 ```
 Emitted when a token is deposited.
 
 
 ### TokenWithdrawn
 ```solidity
-  event TokenWithdrawn(
-  )
+  event TokenWithdrawn()
 ```
 Emitted when a token is withdrawn.
 
 
 ### RegistrySet
 ```solidity
-  event RegistrySet(
-  )
+  event RegistrySet()
 ```
 Emitted when registry is set.
 
 
 ### TokenInfoSet
 ```solidity
-  event TokenInfoSet(
-  )
+  event TokenInfoSet()
 ```
 Emitted when a token is set.
 
 
 ### PauseSet
 ```solidity
-  event PauseSet(
-  )
+  event PauseSet()
 ```
 Emitted when paused is set.
 
 
 ### ProductAdded
 ```solidity
-  event ProductAdded(
-  )
+  event ProductAdded()
 ```
 Emitted when product is added.
 
 
 ### ProductRemoved
 ```solidity
-  event ProductRemoved(
-  )
+  event ProductRemoved()
 ```
 Emitted when product is removed.
 

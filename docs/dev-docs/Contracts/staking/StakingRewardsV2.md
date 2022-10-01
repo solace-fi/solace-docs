@@ -30,8 +30,7 @@ Constructs the StakingRewardsV2 contract.
 
 ### stakedLockInfo
 ```solidity
-  function stakedLockInfo(
-  ) external returns (struct IStakingRewardsV2.StakedLockInfo)
+  function stakedLockInfo() external returns (struct IStakingRewardsV2.StakedLockInfo)
 ```
 Information about each lock.
 
@@ -104,8 +103,7 @@ Either the owner will change or the lock will change, not both.
 
 ### update
 ```solidity
-  function update(
-  ) public
+  function update() public
 ```
 Updates staking information.
 

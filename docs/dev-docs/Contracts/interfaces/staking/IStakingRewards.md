@@ -14,8 +14,7 @@ Lock information is stored in [`xsLocker`](./../../staking/xsLocker) and mirrore
 ## Functions
 ### MAX_LOCK_DURATION
 ```solidity
-  function MAX_LOCK_DURATION(
-  ) external returns (uint256)
+  function MAX_LOCK_DURATION() external returns (uint256)
 ```
 The maximum duration of a lock in seconds.
 
@@ -23,8 +22,7 @@ The maximum duration of a lock in seconds.
 
 ### MAX_LOCK_MULTIPLIER_BPS
 ```solidity
-  function MAX_LOCK_MULTIPLIER_BPS(
-  ) external returns (uint256)
+  function MAX_LOCK_MULTIPLIER_BPS() external returns (uint256)
 ```
 The vote power multiplier at max lock in bps.
 
@@ -32,8 +30,7 @@ The vote power multiplier at max lock in bps.
 
 ### UNLOCKED_MULTIPLIER_BPS
 ```solidity
-  function UNLOCKED_MULTIPLIER_BPS(
-  ) external returns (uint256)
+  function UNLOCKED_MULTIPLIER_BPS() external returns (uint256)
 ```
 The vote power multiplier when unlocked in bps.
 
@@ -41,8 +38,7 @@ The vote power multiplier when unlocked in bps.
 
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address)
+  function solace() external returns (address)
 ```
 [**SOLACE**](./../../SOLACE) token.
 
@@ -50,8 +46,7 @@ The vote power multiplier when unlocked in bps.
 
 ### xsLocker
 ```solidity
-  function xsLocker(
-  ) external returns (address)
+  function xsLocker() external returns (address)
 ```
 The [`xsLocker`](./../../staking/xsLocker) contract.
 
@@ -59,8 +54,7 @@ The [`xsLocker`](./../../staking/xsLocker) contract.
 
 ### rewardPerSecond
 ```solidity
-  function rewardPerSecond(
-  ) external returns (uint256)
+  function rewardPerSecond() external returns (uint256)
 ```
 Amount of [**SOLACE**](./../../SOLACE) distributed per second.
 
@@ -68,8 +62,7 @@ Amount of [**SOLACE**](./../../SOLACE) distributed per second.
 
 ### startTime
 ```solidity
-  function startTime(
-  ) external returns (uint256)
+  function startTime() external returns (uint256)
 ```
 When the farm will start.
 
@@ -77,8 +70,7 @@ When the farm will start.
 
 ### endTime
 ```solidity
-  function endTime(
-  ) external returns (uint256)
+  function endTime() external returns (uint256)
 ```
 When the farm will end.
 
@@ -86,8 +78,7 @@ When the farm will end.
 
 ### lastRewardTime
 ```solidity
-  function lastRewardTime(
-  ) external returns (uint256)
+  function lastRewardTime() external returns (uint256)
 ```
 Last time rewards were distributed or farm was updated.
 
@@ -95,8 +86,7 @@ Last time rewards were distributed or farm was updated.
 
 ### accRewardPerShare
 ```solidity
-  function accRewardPerShare(
-  ) external returns (uint256)
+  function accRewardPerShare() external returns (uint256)
 ```
 Accumulated rewards per share, times 1e12.
 
@@ -104,8 +94,7 @@ Accumulated rewards per share, times 1e12.
 
 ### valueStaked
 ```solidity
-  function valueStaked(
-  ) external returns (uint256)
+  function valueStaked() external returns (uint256)
 ```
 Value of tokens staked by all farmers.
 
@@ -113,8 +102,7 @@ Value of tokens staked by all farmers.
 
 ### stakedLockInfo
 ```solidity
-  function stakedLockInfo(
-  ) external returns (struct IStakingRewards.StakedLockInfo)
+  function stakedLockInfo() external returns (struct IStakingRewards.StakedLockInfo)
 ```
 Information about each lock.
 
@@ -163,8 +151,7 @@ Calculates the reward amount distributed between two timestamps.
 
 ### update
 ```solidity
-  function update(
-  ) external
+  function update() external
 ```
 Updates staking information.
 
@@ -286,32 +273,28 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### Updated
 ```solidity
-  event Updated(
-  )
+  event Updated()
 ```
 Emitted when the global information is updated.
 
 
 ### LockUpdated
 ```solidity
-  event LockUpdated(
-  )
+  event LockUpdated()
 ```
 Emitted when a locks information is updated.
 
 
 ### RewardsSet
 ```solidity
-  event RewardsSet(
-  )
+  event RewardsSet()
 ```
 Emitted when the reward rate is set.
 
 
 ### FarmTimesSet
 ```solidity
-  event FarmTimesSet(
-  )
+  event FarmTimesSet()
 ```
 Emitted when the farm times are set.
 

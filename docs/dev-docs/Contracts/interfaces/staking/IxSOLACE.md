@@ -16,8 +16,7 @@ Note that transferring [**SOLACE**](./../../SOLACE) to this contract will not gi
 ## Functions
 ### MAX_LOCK_DURATION
 ```solidity
-  function MAX_LOCK_DURATION(
-  ) external returns (uint256)
+  function MAX_LOCK_DURATION() external returns (uint256)
 ```
 The maximum duration of a lock in seconds.
 
@@ -25,8 +24,7 @@ The maximum duration of a lock in seconds.
 
 ### MAX_LOCK_MULTIPLIER_BPS
 ```solidity
-  function MAX_LOCK_MULTIPLIER_BPS(
-  ) external returns (uint256)
+  function MAX_LOCK_MULTIPLIER_BPS() external returns (uint256)
 ```
 The vote power multiplier at max lock in bps.
 
@@ -34,8 +32,7 @@ The vote power multiplier at max lock in bps.
 
 ### UNLOCKED_MULTIPLIER_BPS
 ```solidity
-  function UNLOCKED_MULTIPLIER_BPS(
-  ) external returns (uint256)
+  function UNLOCKED_MULTIPLIER_BPS() external returns (uint256)
 ```
 The vote power multiplier when unlocked in bps.
 
@@ -43,8 +40,7 @@ The vote power multiplier when unlocked in bps.
 
 ### xsLocker
 ```solidity
-  function xsLocker(
-  ) external returns (address)
+  function xsLocker() external returns (address)
 ```
 The [`xsLocker`](./../../staking/xsLocker) contract.
 

@@ -25,24 +25,21 @@ Deposit [**SOLACE**](./../../SOLACE) to increase the value of multiple existing 
 ## Events
 ### SolaceDistributed
 ```solidity
-  event SolaceDistributed(
-  )
+  event SolaceDistributed()
 ```
 Emitted when xsLockID does exist, and hence [**SOLACE**](./../../SOLACE) is distributed to an [**xslocks**](./../../staking/xsLocker)
 
 
 ### SolaceNotDistributed
 ```solidity
-  event SolaceNotDistributed(
-  )
+  event SolaceNotDistributed()
 ```
 Emitted when xsLockID does not exist, and hence [**SOLACE**](./../../SOLACE) is not distributed
 
 
 ### SolaceRefunded
 ```solidity
-  event SolaceRefunded(
-  )
+  event SolaceRefunded()
 ```
 Emitted when [**SOLACE**](./../../SOLACE) is refunded to msg.sender
 

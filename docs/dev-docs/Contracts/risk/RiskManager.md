@@ -170,8 +170,7 @@ Enumerable `[1, numStrategies]`.
 
 ### numStrategies
 ```solidity
-  function numStrategies(
-  ) external returns (uint256 count)
+  function numStrategies() external returns (uint256 count)
 ```
 Returns the number of registered strategies..
 
@@ -225,8 +224,7 @@ Returns the allocated weight for the risk strategy.
 
 ### maxCover
 ```solidity
-  function maxCover(
-  ) public returns (uint256 cover)
+  function maxCover() public returns (uint256 cover)
 ```
 The maximum amount of cover that Solace as a whole can sell.
 
@@ -239,8 +237,7 @@ The maximum amount of cover that Solace as a whole can sell.
 
 ### maxCoverPerStrategy
 ```solidity
-  function maxCoverPerStrategy(
-  ) public returns (uint256 cover)
+  function maxCoverPerStrategy() public returns (uint256 cover)
 ```
 The maximum amount of cover for given strategy can sell.
 
@@ -253,8 +250,7 @@ The maximum amount of cover for given strategy can sell.
 
 ### weightSum
 ```solidity
-  function weightSum(
-  ) public returns (uint32 sum)
+  function weightSum() public returns (uint32 sum)
 ```
 Returns the sum of allocation weights for all strategies.
 
@@ -267,8 +263,7 @@ Returns the sum of allocation weights for all strategies.
 
 ### activeCoverLimit
 ```solidity
-  function activeCoverLimit(
-  ) public returns (uint256 amount)
+  function activeCoverLimit() public returns (uint256 amount)
 ```
 Returns the current amount covered (in wei).
 
@@ -300,8 +295,7 @@ Returns the current amount covered (in wei).
 
 ### minCapitalRequirement
 ```solidity
-  function minCapitalRequirement(
-  ) external returns (uint256 mcr)
+  function minCapitalRequirement() external returns (uint256 mcr)
 ```
 The minimum amount of capital required to safely cover all policies.
 
@@ -335,8 +329,7 @@ we are not adding "strategyIsActive()" require statement.
 
 ### partialReservesFactor
 ```solidity
-  function partialReservesFactor(
-  ) external returns (uint16 factor)
+  function partialReservesFactor() external returns (uint16 factor)
 ```
 Multiplier for minimum capital requirement.
 

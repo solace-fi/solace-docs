@@ -60,8 +60,7 @@ Verifies cover premium data.
 
 ### numSigners
 ```solidity
-  function numSigners(
-  ) external returns (uint256 count)
+  function numSigners() external returns (uint256 count)
 ```
 Returns the number of signers.
 

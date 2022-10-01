@@ -28,8 +28,7 @@ Produces the URI describing a particular policy `product` for a given `policy id
 
 ### baseURI
 ```solidity
-  function baseURI(
-  ) external returns (string base)
+  function baseURI() external returns (string base)
 ```
 Returns the base of the URI descriptor.
 
@@ -59,8 +58,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### BaseUriSet
 ```solidity
-  event BaseUriSet(
-  )
+  event BaseUriSet()
 ```
 Emitted when the base URI is set.
 

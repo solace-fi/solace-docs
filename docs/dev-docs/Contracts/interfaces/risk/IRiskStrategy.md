@@ -32,8 +32,7 @@ Given a request for coverage, determines if that risk is acceptable and if so at
 
 ### maxCover
 ```solidity
-  function maxCover(
-  ) external returns (uint256 cover)
+  function maxCover() external returns (uint256 cover)
 ```
 The maximum amount of cover that `Risk Strategy` as a whole can sell.
 
@@ -122,8 +121,7 @@ Checks if product is an active product in `Risk Strategy`.
 
 ### numProducts
 ```solidity
-  function numProducts(
-  ) external returns (uint256 count)
+  function numProducts() external returns (uint256 count)
 ```
 Returns the number of registered products in `Risk Strategy`.
 
@@ -177,8 +175,7 @@ Returns given product's risk paramaters. The product must be active.
 
 ### weightSum
 ```solidity
-  function weightSum(
-  ) external returns (uint32 sum)
+  function weightSum() external returns (uint32 sum)
 ```
 Returns the sum of weights in `Risk Strategy`.
 
@@ -191,8 +188,7 @@ Returns the sum of weights in `Risk Strategy`.
 
 ### weightAllocation
 ```solidity
-  function weightAllocation(
-  ) external returns (uint32 weightAllocation_)
+  function weightAllocation() external returns (uint32 weightAllocation_)
 ```
 Returns risk allocation weight in `Risk Strategy`.
 
@@ -205,8 +201,7 @@ Returns risk allocation weight in `Risk Strategy`.
 
 ### strategist
 ```solidity
-  function strategist(
-  ) external returns (address strategist_)
+  function strategist() external returns (address strategist_)
 ```
 Returns the strategist address.
 
@@ -219,8 +214,7 @@ Returns the strategist address.
 
 ### riskManager
 ```solidity
-  function riskManager(
-  ) external returns (address riskManager_)
+  function riskManager() external returns (address riskManager_)
 ```
 Returns the risk manager address.
 
@@ -233,8 +227,7 @@ Returns the risk manager address.
 
 ### status
 ```solidity
-  function status(
-  ) external returns (bool status)
+  function status() external returns (bool status)
 ```
 Returns the status of the risk strategy.
 
@@ -322,48 +315,42 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### ProductRiskParamsSet
 ```solidity
-  event ProductRiskParamsSet(
-  )
+  event ProductRiskParamsSet()
 ```
 Emitted when a product's risk parameters are set at initialization.
 
 
 ### ProductAddedByGovernance
 ```solidity
-  event ProductAddedByGovernance(
-  )
+  event ProductAddedByGovernance()
 ```
 Emitted when governance adds a product.
 
 
 ### ProductUpdatedByGovernance
 ```solidity
-  event ProductUpdatedByGovernance(
-  )
+  event ProductUpdatedByGovernance()
 ```
 Emitted when governance updates a product.
 
 
 ### ProductRemovedByGovernance
 ```solidity
-  event ProductRemovedByGovernance(
-  )
+  event ProductRemovedByGovernance()
 ```
 Emitted when governance removes a product.
 
 
 ### ProductRiskParamsSetByGovernance
 ```solidity
-  event ProductRiskParamsSetByGovernance(
-  )
+  event ProductRiskParamsSetByGovernance()
 ```
 Emitted when governance sets product risk params.
 
 
 ### RiskManagerSet
 ```solidity
-  event RiskManagerSet(
-  )
+  event RiskManagerSet()
 ```
 Emitted when RiskManager is set.
 

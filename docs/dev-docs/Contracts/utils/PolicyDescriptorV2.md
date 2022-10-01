@@ -42,8 +42,7 @@ Describes a policy.
 
 ### baseURI
 ```solidity
-  function baseURI(
-  ) external returns (string base)
+  function baseURI() external returns (string base)
 ```
 Returns the base of the URI descriptor.
 

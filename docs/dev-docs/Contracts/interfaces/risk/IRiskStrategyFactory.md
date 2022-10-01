@@ -63,8 +63,7 @@ Creates a new `Risk Strategy`.
 ## Events
 ### StrategyCreated
 ```solidity
-  event StrategyCreated(
-  )
+  event StrategyCreated()
 ```
 Emitted when new strategy is created.
 

@@ -57,8 +57,7 @@ Expect frontend to use offchain script to compute merkleProof and amount paramet
 
 ### governorRecoverAirdropTokens
 ```solidity
-  function governorRecoverAirdropTokens(
-  ) external
+  function governorRecoverAirdropTokens() external
 ```
 Governance-only function to recover airdrop tokens from this smart contract,
 In the case that a significant amount of airdrop tokens are not claimed

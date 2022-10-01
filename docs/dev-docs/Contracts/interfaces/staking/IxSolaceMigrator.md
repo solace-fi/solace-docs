@@ -6,8 +6,7 @@ Helps migrate from [**xSOLACEV1**](./../../staking/xSOLACEV1) to [**xsLocker**](
 ## Functions
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address)
+  function solace() external returns (address)
 ```
 Address of the [**SOLACE**](./../../SOLACE) contract.
 
@@ -15,8 +14,7 @@ Address of the [**SOLACE**](./../../SOLACE) contract.
 
 ### xsolacev1
 ```solidity
-  function xsolacev1(
-  ) external returns (address)
+  function xsolacev1() external returns (address)
 ```
 Address of the V1 [**xSOLACE**](./../../staking/xSOLACEV1) contract.
 
@@ -24,8 +22,7 @@ Address of the V1 [**xSOLACE**](./../../staking/xSOLACEV1) contract.
 
 ### xsLocker
 ```solidity
-  function xsLocker(
-  ) external returns (address)
+  function xsLocker() external returns (address)
 ```
 Address of the [**xsLocker**](./../../staking/xsLocker) contract.
 

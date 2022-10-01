@@ -129,8 +129,7 @@ Calculate a premium quote for a policy.
 
 ### minPeriod
 ```solidity
-  function minPeriod(
-  ) external returns (uint40)
+  function minPeriod() external returns (uint40)
 ```
 Returns the minimum policy period in blocks.
 
@@ -143,8 +142,7 @@ Returns the minimum policy period in blocks.
 
 ### maxPeriod
 ```solidity
-  function maxPeriod(
-  ) external returns (uint40)
+  function maxPeriod() external returns (uint40)
 ```
 Returns the maximum policy period in blocks.
 
@@ -157,8 +155,7 @@ Returns the maximum policy period in blocks.
 
 ### activeCoverLimit
 ```solidity
-  function activeCoverLimit(
-  ) external returns (uint256 amount)
+  function activeCoverLimit() external returns (uint256 amount)
 ```
 Returns the current amount covered (in wei).
 
@@ -190,8 +187,7 @@ Returns the current amount covered (in wei) per risk strategy.
 
 ### paused
 ```solidity
-  function paused(
-  ) external returns (bool status)
+  function paused() external returns (bool status)
 ```
 Returns whether or not product is currently in paused state.
 
@@ -204,8 +200,7 @@ Returns whether or not product is currently in paused state.
 
 ### policyManager
 ```solidity
-  function policyManager(
-  ) external returns (address policymanager)
+  function policyManager() external returns (address policymanager)
 ```
 Returns the address of the [`PolicyManager`](../PolicyManager).
 
@@ -218,8 +213,7 @@ Returns the address of the [`PolicyManager`](../PolicyManager).
 
 ### registry
 ```solidity
-  function registry(
-  ) external returns (address registry)
+  function registry() external returns (address registry)
 ```
 Returns the address of the [`Registry`](../Registry).
 
@@ -296,88 +290,77 @@ Sets the maximum number of blocks a policy can be purchased for.
 ## Events
 ### PolicyCreated
 ```solidity
-  event PolicyCreated(
-  )
+  event PolicyCreated()
 ```
 Emitted when a policy is created.
 
 
 ### PolicyExtended
 ```solidity
-  event PolicyExtended(
-  )
+  event PolicyExtended()
 ```
 Emitted when a policy is extended.
 
 
 ### PolicyCanceled
 ```solidity
-  event PolicyCanceled(
-  )
+  event PolicyCanceled()
 ```
 Emitted when a policy is canceled.
 
 
 ### PolicyUpdated
 ```solidity
-  event PolicyUpdated(
-  )
+  event PolicyUpdated()
 ```
 Emitted when a policy is updated.
 
 
 ### ClaimSubmitted
 ```solidity
-  event ClaimSubmitted(
-  )
+  event ClaimSubmitted()
 ```
 Emitted when a claim is submitted.
 
 
 ### MinPeriodSet
 ```solidity
-  event MinPeriodSet(
-  )
+  event MinPeriodSet()
 ```
 Emitted when min period is set.
 
 
 ### MaxPeriodSet
 ```solidity
-  event MaxPeriodSet(
-  )
+  event MaxPeriodSet()
 ```
 Emitted when max period is set.
 
 
 ### PauseSet
 ```solidity
-  event PauseSet(
-  )
+  event PauseSet()
 ```
 Emitted when buying is paused or unpaused.
 
 
 ### PolicyManagerSet
 ```solidity
-  event PolicyManagerSet(
-  )
+  event PolicyManagerSet()
 ```
 Emitted when PolicyManager is set.
 
 
 ### DepositMade
 ```solidity
-  event DepositMade(
-  )
+  event DepositMade()
 ```
 Emitted when Deposit into premium pool is made
 
 
 ### WithdrawMade
 ```solidity
-  event WithdrawMade(
-  )
+  event WithdrawMade()
 ```
 Emitted when withdraw from premium pool is made
 

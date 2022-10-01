@@ -40,8 +40,7 @@ Initializes the teller.
 
 ### bondPrice
 ```solidity
-  function bondPrice(
-  ) external returns (uint256 price_)
+  function bondPrice() external returns (uint256 price_)
 ```
 Calculate the current price of a bond.
 Assumes 1 [**SOLACE**](./../../SOLACE) payout.
@@ -200,8 +199,7 @@ User calling `claimPayout()` must be either the owner or approved for the entere
 
 ### pause
 ```solidity
-  function pause(
-  ) external
+  function pause() external
 ```
 Pauses deposits.
 Can only be called by the current [**governor**](/docs/protocol/governance).
@@ -210,8 +208,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 
 ### unpause
 ```solidity
-  function unpause(
-  ) external
+  function unpause() external
 ```
 Unpauses deposits.
 Can only be called by the current [**governor**](/docs/protocol/governance).
@@ -247,8 +244,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 
 ### receive
 ```solidity
-  function receive(
-  ) external
+  function receive() external
 ```
 Fallback function to allow contract to receive *FTM*.
 Deposits **FTM** and creates bond.
@@ -257,8 +253,7 @@ Deposits **FTM** and creates bond.
 
 ### fallback
 ```solidity
-  function fallback(
-  ) external
+  function fallback() external
 ```
 Fallback function to allow contract to receive **FTM**.
 Deposits **FTM** and creates bond.
@@ -269,56 +264,49 @@ Deposits **FTM** and creates bond.
 ## Events
 ### CreateBond
 ```solidity
-  event CreateBond(
-  )
+  event CreateBond()
 ```
 Emitted when a bond is created.
 
 
 ### RedeemBond
 ```solidity
-  event RedeemBond(
-  )
+  event RedeemBond()
 ```
 Emitted when a bond is redeemed.
 
 
 ### Paused
 ```solidity
-  event Paused(
-  )
+  event Paused()
 ```
 Emitted when deposits are paused.
 
 
 ### Unpaused
 ```solidity
-  event Unpaused(
-  )
+  event Unpaused()
 ```
 Emitted when deposits are unpaused.
 
 
 ### TermsSet
 ```solidity
-  event TermsSet(
-  )
+  event TermsSet()
 ```
 Emitted when terms are set.
 
 
 ### FeesSet
 ```solidity
-  event FeesSet(
-  )
+  event FeesSet()
 ```
 Emitted when fees are set.
 
 
 ### AddressesSet
 ```solidity
-  event AddressesSet(
-  )
+  event AddressesSet()
 ```
 Emitted when fees are set.
 

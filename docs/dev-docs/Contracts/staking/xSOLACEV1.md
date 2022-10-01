@@ -26,8 +26,7 @@ Constructs the **xSOLACE** Token contract.
 
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address solace_)
+  function solace() external returns (address solace_)
 ```
 Address of the [**SOLACE**](./../SOLACE) contract.
 

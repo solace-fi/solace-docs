@@ -22,8 +22,7 @@ Constructs the faucet.
 
 ### drip
 ```solidity
-  function drip(
-  ) external
+  function drip() external
 ```
 Drips [**SOLACE**](./SOLACE) to msg.sender.
 

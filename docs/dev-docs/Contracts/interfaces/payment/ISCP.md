@@ -10,8 +10,7 @@
 ## Functions
 ### mint
 ```solidity
-  function mint(
-  ) external
+  function mint() external
 ```
 Creates `amount` tokens and assigns them to `account`, increasing the total supply.
 Requirements:
@@ -21,8 +20,7 @@ Requirements:
 
 ### burnMultiple
 ```solidity
-  function burnMultiple(
-  ) external
+  function burnMultiple() external
 ```
 Destroys `amounts` tokens from `accounts`, reducing the total supply.
 Requirements:
@@ -33,8 +31,7 @@ Requirements:
 
 ### burn
 ```solidity
-  function burn(
-  ) external
+  function burn() external
 ```
 Destroys `amount` tokens from `account`, reducing the total supply.
 Requirements:
@@ -63,8 +60,7 @@ The user must have sufficient refundable balance.
 
 ### isScpMover
 ```solidity
-  function isScpMover(
-  ) external returns (bool status)
+  function isScpMover() external returns (bool status)
 ```
 Returns true if `account` has permissions to move balances.
 
@@ -72,8 +68,7 @@ Returns true if `account` has permissions to move balances.
 
 ### scpMoverLength
 ```solidity
-  function scpMoverLength(
-  ) external returns (uint256 length)
+  function scpMoverLength() external returns (uint256 length)
 ```
 Returns the number of scp movers.
 
@@ -81,8 +76,7 @@ Returns the number of scp movers.
 
 ### scpMoverList
 ```solidity
-  function scpMoverList(
-  ) external returns (address scpMover)
+  function scpMoverList() external returns (address scpMover)
 ```
 Returns the scp mover at `index`.
 
@@ -90,8 +84,7 @@ Returns the scp mover at `index`.
 
 ### isScpRetainer
 ```solidity
-  function isScpRetainer(
-  ) external returns (bool status)
+  function isScpRetainer() external returns (bool status)
 ```
 Returns true if `account` may need to retain scp on behalf of a user.
 
@@ -99,8 +92,7 @@ Returns true if `account` may need to retain scp on behalf of a user.
 
 ### scpRetainerLength
 ```solidity
-  function scpRetainerLength(
-  ) external returns (uint256 length)
+  function scpRetainerLength() external returns (uint256 length)
 ```
 Returns the number of scp retainers.
 
@@ -108,8 +100,7 @@ Returns the number of scp retainers.
 
 ### scpRetainerList
 ```solidity
-  function scpRetainerList(
-  ) external returns (address scpRetainer)
+  function scpRetainerList() external returns (address scpRetainer)
 ```
 Returns the scp retainer at `index`.
 
@@ -117,8 +108,7 @@ Returns the scp retainer at `index`.
 
 ### balanceOfNonRefundable
 ```solidity
-  function balanceOfNonRefundable(
-  ) external returns (uint256)
+  function balanceOfNonRefundable() external returns (uint256)
 ```
 The amount of tokens owned by account that cannot be withdrawn.
 
@@ -162,16 +152,14 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### ScpMoverStatusSet
 ```solidity
-  event ScpMoverStatusSet(
-  )
+  event ScpMoverStatusSet()
 ```
 Emitted when the status of an SCP mover is set.
 
 
 ### ScpRetainerStatusSet
 ```solidity
-  event ScpRetainerStatusSet(
-  )
+  event ScpRetainerStatusSet()
 ```
 Emitted when the status of an SCP retainer is set.
 

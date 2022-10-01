@@ -8,8 +8,7 @@ Useful for testing but should NOT be used in production.
 ## Functions
 ### drip
 ```solidity
-  function drip(
-  ) external
+  function drip() external
 ```
 Drips [**SOLACE**](../SOLACE) to msg.sender.
 

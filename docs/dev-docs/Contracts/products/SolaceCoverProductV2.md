@@ -115,8 +115,7 @@ Deposits funds into the `policyholder` account.
 
 ### withdraw
 ```solidity
-  function withdraw(
-  ) external
+  function withdraw() external
 ```
 Withdraw funds from user's account.
 
@@ -128,8 +127,7 @@ If cooldown has not started, or has not passed, the user will not be able to wit
 
 ### deactivatePolicy
 ```solidity
-  function deactivatePolicy(
-  ) external
+  function deactivatePolicy() external
 ```
 Deactivate a user's policy.
 
@@ -158,8 +156,7 @@ Returns the policyholder's account account balance in **USD**.
 
 ### maxCover
 ```solidity
-  function maxCover(
-  ) public returns (uint256 cover)
+  function maxCover() public returns (uint256 cover)
 ```
 The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 
@@ -172,8 +169,7 @@ The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 
 ### activeCoverLimit
 ```solidity
-  function activeCoverLimit(
-  ) public returns (uint256 amount)
+  function activeCoverLimit() public returns (uint256 amount)
 ```
 Returns the active cover limit in **USD** to 18 decimal places. In other words, the total cover that has been sold at the current time.
 
@@ -186,8 +182,7 @@ Returns the active cover limit in **USD** to 18 decimal places. In other words, 
 
 ### availableCoverCapacity
 ```solidity
-  function availableCoverCapacity(
-  ) public returns (uint256 availableCoverCapacity_)
+  function availableCoverCapacity() public returns (uint256 availableCoverCapacity_)
 ```
 Determine the available remaining capacity for new cover.
 
@@ -276,8 +271,7 @@ Returns true if the policy is active, false if inactive
 
 ### registry
 ```solidity
-  function registry(
-  ) external returns (address registry_)
+  function registry() external returns (address registry_)
 ```
 Returns [`Registry`](./Registry) contract address.
 
@@ -290,8 +284,7 @@ Returns [`Registry`](./Registry) contract address.
 
 ### riskManager
 ```solidity
-  function riskManager(
-  ) external returns (address riskManager_)
+  function riskManager() external returns (address riskManager_)
 ```
 Returns [`RiskManager`](./RiskManager) contract address.
 
@@ -304,8 +297,7 @@ Returns [`RiskManager`](./RiskManager) contract address.
 
 ### paused
 ```solidity
-  function paused(
-  ) external returns (bool status)
+  function paused() external returns (bool status)
 ```
 Returns true if the product is paused, false if not.
 
@@ -318,8 +310,7 @@ Returns true if the product is paused, false if not.
 
 ### policyCount
 ```solidity
-  function policyCount(
-  ) public returns (uint256 count)
+  function policyCount() public returns (uint256 count)
 ```
 Gets the policy count (amount of policies that have been purchased, includes inactive policies).
 
@@ -332,8 +323,7 @@ Gets the policy count (amount of policies that have been purchased, includes ina
 
 ### maxRate
 ```solidity
-  function maxRate(
-  ) public returns (uint256 maxRateNum_, uint256 maxRateDenom_)
+  function maxRate() public returns (uint256 maxRateNum_, uint256 maxRateDenom_)
 ```
 Gets the max rate.
 
@@ -347,8 +337,7 @@ Gets the max rate.
 
 ### chargeCycle
 ```solidity
-  function chargeCycle(
-  ) public returns (uint256 chargeCycle_)
+  function chargeCycle() public returns (uint256 chargeCycle_)
 ```
 Gets the charge cycle duration.
 
@@ -380,8 +369,7 @@ Gets cover limit for a given policy ID.
 
 ### cooldownPeriod
 ```solidity
-  function cooldownPeriod(
-  ) external returns (uint256 cooldownPeriod_)
+  function cooldownPeriod() external returns (uint256 cooldownPeriod_)
 ```
 Gets the cooldown period.
 
@@ -417,8 +405,7 @@ The Unix timestamp that a policyholder's cooldown started. If cooldown has not s
 
 ### referralReward
 ```solidity
-  function referralReward(
-  ) external returns (uint256 referralReward_)
+  function referralReward() external returns (uint256 referralReward_)
 ```
 Gets the current reward amount in USD for a valid referral code.
 
@@ -431,8 +418,7 @@ Gets the current reward amount in USD for a valid referral code.
 
 ### referralThreshold
 ```solidity
-  function referralThreshold(
-  ) external returns (uint256 referralThreshold_)
+  function referralThreshold() external returns (uint256 referralThreshold_)
 ```
 Gets the threshold premium amount in USD that an account needs to have paid, for the account to be able to apply a referral code
 
@@ -445,8 +431,7 @@ Gets the threshold premium amount in USD that an account needs to have paid, for
 
 ### isReferralOn
 ```solidity
-  function isReferralOn(
-  ) external returns (bool isReferralOn_)
+  function isReferralOn() external returns (bool isReferralOn_)
 ```
 Returns true if referral rewards are active, false if not.
 
@@ -459,8 +444,7 @@ Returns true if referral rewards are active, false if not.
 
 ### isReferralCodeUsed
 ```solidity
-  function isReferralCodeUsed(
-  ) external returns (bool isReferralCodeUsed_)
+  function isReferralCodeUsed() external returns (bool isReferralCodeUsed_)
 ```
 True if a policyholder has previously used a valid referral code, false if not
 
@@ -536,8 +520,7 @@ Returns the Uniform Resource Identifier (URI) for `policyID`.
 
 ### isSupportedChain
 ```solidity
-  function isSupportedChain(
-  ) public returns (bool status)
+  function isSupportedChain() public returns (bool status)
 ```
 Returns true if given chain id supported.
 
@@ -550,8 +533,7 @@ Returns true if given chain id supported.
 
 ### numSupportedChains
 ```solidity
-  function numSupportedChains(
-  ) public returns (uint256 count)
+  function numSupportedChains() public returns (uint256 count)
 ```
 Returns the number of chains.
 
@@ -1015,8 +997,7 @@ Internal helper function to determine if referralCode_ is an empty bytes value
 
 ### _getEIP712Hash
 ```solidity
-  function _getEIP712Hash(
-  ) internal returns (bytes32)
+  function _getEIP712Hash() internal returns (bytes32)
 ```
 Internal helper function to get EIP712-compliant hash for referral code verification.
 
@@ -1024,8 +1005,7 @@ Internal helper function to get EIP712-compliant hash for referral code verifica
 
 ### _getAsset
 ```solidity
-  function _getAsset(
-  ) internal returns (contract IERC20)
+  function _getAsset() internal returns (contract IERC20)
 ```
 Returns the underlying principal asset for `Solace Cover Product`.
 

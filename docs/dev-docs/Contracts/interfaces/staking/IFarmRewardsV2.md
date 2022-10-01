@@ -10,8 +10,7 @@ FarmRewards V2 is an optional alternative to [FarmRewards V1](./../../staking/Fa
 ## Functions
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address)
+  function solace() external returns (address)
 ```
 Address of the [**SOLACE**](./../../SOLACE) contract.
 
@@ -19,8 +18,7 @@ Address of the [**SOLACE**](./../../SOLACE) contract.
 
 ### xsolacev1
 ```solidity
-  function xsolacev1(
-  ) external returns (address)
+  function xsolacev1() external returns (address)
 ```
 Address of the [**xSOLACEV1**](./../../staking/xSOLACEV1) contract.
 
@@ -28,8 +26,7 @@ Address of the [**xSOLACEV1**](./../../staking/xSOLACEV1) contract.
 
 ### xsLocker
 ```solidity
-  function xsLocker(
-  ) external returns (address)
+  function xsLocker() external returns (address)
 ```
 Address of the [**xsLocker**](./../../staking/xsLocker) contract.
 
@@ -37,8 +34,7 @@ Address of the [**xsLocker**](./../../staking/xsLocker) contract.
 
 ### farmRewardsv1
 ```solidity
-  function farmRewardsv1(
-  ) external returns (address)
+  function farmRewardsv1() external returns (address)
 ```
 Address of the [**FarmRewardsV1**](./../../staking/FarmRewards) contrcat.
 
@@ -46,8 +42,7 @@ Address of the [**FarmRewardsV1**](./../../staking/FarmRewards) contrcat.
 
 ### receiver
 ```solidity
-  function receiver(
-  ) external returns (address)
+  function receiver() external returns (address)
 ```
 Receiver for payments.
 
@@ -55,8 +50,7 @@ Receiver for payments.
 
 ### VESTING_END
 ```solidity
-  function VESTING_END(
-  ) external returns (uint256)
+  function VESTING_END() external returns (uint256)
 ```
 timestamp that rewards finish vesting
 
@@ -64,8 +58,7 @@ timestamp that rewards finish vesting
 
 ### userLock
 ```solidity
-  function userLock(
-  ) external returns (uint256 xsLockID)
+  function userLock() external returns (uint256 xsLockID)
 ```
 The ID of the user's lock.
 
@@ -212,8 +205,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 
 ### acceptFarmRewardsV1Governance
 ```solidity
-  function acceptFarmRewardsV1Governance(
-  ) external
+  function acceptFarmRewardsV1Governance() external
 ```
 Accepts the governance role for the FarmRewards V1 contract.
 Can only be called by the current [**governor**](/docs/protocol/governance).
@@ -258,8 +250,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### ReceiverSet
 ```solidity
-  event ReceiverSet(
-  )
+  event ReceiverSet()
 ```
 
 

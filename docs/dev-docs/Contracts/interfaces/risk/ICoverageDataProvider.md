@@ -52,8 +52,7 @@ Removes the given underwriting pool.
 
 ### maxCover
 ```solidity
-  function maxCover(
-  ) external returns (uint256 cover)
+  function maxCover() external returns (uint256 cover)
 ```
 The maximum amount of cover in `USD` that Solace as a whole can sell.
 
@@ -104,8 +103,7 @@ Returns underwriting pool name for given index.
 
 ### getUwpUpdater
 ```solidity
-  function getUwpUpdater(
-  ) external returns (address uwpUpdater)
+  function getUwpUpdater() external returns (address uwpUpdater)
 ```
 Returns the underwriting pool bot updater address.
 
@@ -134,24 +132,21 @@ Sets the underwriting pool bot updater.
 ## Events
 ### UnderwritingPoolSet
 ```solidity
-  event UnderwritingPoolSet(
-  )
+  event UnderwritingPoolSet()
 ```
 Emitted when the underwriting pool is set.
 
 
 ### UnderwritingPoolRemoved
 ```solidity
-  event UnderwritingPoolRemoved(
-  )
+  event UnderwritingPoolRemoved()
 ```
 Emitted when underwriting pool is removed.
 
 
 ### UwpUpdaterSet
 ```solidity
-  event UwpUpdaterSet(
-  )
+  event UwpUpdaterSet()
 ```
 Emitted when underwriting pool updater is set.
 

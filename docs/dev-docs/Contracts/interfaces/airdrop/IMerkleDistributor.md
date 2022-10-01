@@ -6,8 +6,7 @@
 ## Functions
 ### token
 ```solidity
-  function token(
-  ) external returns (address)
+  function token() external returns (address)
 ```
 
 
@@ -15,8 +14,7 @@
 
 ### merkleRoot
 ```solidity
-  function merkleRoot(
-  ) external returns (bytes32)
+  function merkleRoot() external returns (bytes32)
 ```
 
 
@@ -57,8 +55,7 @@ Recommended to use offchain script to compute merkleProof from merkle tree, whic
 
 ### governorRecoverAirdropTokens
 ```solidity
-  function governorRecoverAirdropTokens(
-  ) external
+  function governorRecoverAirdropTokens() external
 ```
 Governance-only function to recover airdrop tokens from this smart contract,
 In the case that a significant amount of airdrop tokens are not claimed
@@ -69,16 +66,14 @@ In the case that a significant amount of airdrop tokens are not claimed
 ## Events
 ### Claimed
 ```solidity
-  event Claimed(
-  )
+  event Claimed()
 ```
 
 
 
 ### GovernorRecoverAirdropTokens
 ```solidity
-  event GovernorRecoverAirdropTokens(
-  )
+  event GovernorRecoverAirdropTokens()
 ```
 
 

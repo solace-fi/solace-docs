@@ -68,8 +68,7 @@ Returns the **xSOLACE** balance of a lock.
 
 ### totalSupply
 ```solidity
-  function totalSupply(
-  ) external returns (uint256 supply)
+  function totalSupply() external returns (uint256 supply)
 ```
 Returns the total supply of **xSOLACE**.
 
@@ -82,8 +81,7 @@ Returns the total supply of **xSOLACE**.
 
 ### name
 ```solidity
-  function name(
-  ) external returns (string)
+  function name() external returns (string)
 ```
 Returns the name of the token.
 
@@ -91,8 +89,7 @@ Returns the name of the token.
 
 ### symbol
 ```solidity
-  function symbol(
-  ) external returns (string)
+  function symbol() external returns (string)
 ```
 Returns the symbol of the token.
 
@@ -100,8 +97,7 @@ Returns the symbol of the token.
 
 ### decimals
 ```solidity
-  function decimals(
-  ) external returns (uint8)
+  function decimals() external returns (uint8)
 ```
 Returns the number of decimals used to get its user representation.
 
@@ -109,8 +105,7 @@ Returns the number of decimals used to get its user representation.
 
 ### allowance
 ```solidity
-  function allowance(
-  ) external returns (uint256)
+  function allowance() external returns (uint256)
 ```
 Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through `transferFrom`.
 

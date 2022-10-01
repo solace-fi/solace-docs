@@ -8,8 +8,7 @@ Rewards were accumulated by farmers for participating in farms. Rewards will be 
 ## Functions
 ### xsolace
 ```solidity
-  function xsolace(
-  ) external returns (address)
+  function xsolace() external returns (address)
 ```
 [**xSOLACE**](./../../staking/xSOLACEV1) Token.
 
@@ -17,8 +16,7 @@ Rewards were accumulated by farmers for participating in farms. Rewards will be 
 
 ### receiver
 ```solidity
-  function receiver(
-  ) external returns (address)
+  function receiver() external returns (address)
 ```
 receiver for payments
 
@@ -26,8 +24,7 @@ receiver for payments
 
 ### VESTING_START
 ```solidity
-  function VESTING_START(
-  ) external returns (uint256)
+  function VESTING_START() external returns (uint256)
 ```
 timestamp that rewards start vesting
 
@@ -35,8 +32,7 @@ timestamp that rewards start vesting
 
 ### VESTING_END
 ```solidity
-  function VESTING_END(
-  ) external returns (uint256)
+  function VESTING_END() external returns (uint256)
 ```
 timestamp that rewards finish vesting
 
@@ -44,8 +40,7 @@ timestamp that rewards finish vesting
 
 ### solacePerXSolace
 ```solidity
-  function solacePerXSolace(
-  ) external returns (uint256)
+  function solacePerXSolace() external returns (uint256)
 ```
 
 
@@ -53,8 +48,7 @@ timestamp that rewards finish vesting
 
 ### tokenInSupported
 ```solidity
-  function tokenInSupported(
-  ) external returns (bool)
+  function tokenInSupported() external returns (bool)
 ```
 The stablecoins that can be used for payment.
 
@@ -62,8 +56,7 @@ The stablecoins that can be used for payment.
 
 ### farmedRewards
 ```solidity
-  function farmedRewards(
-  ) external returns (uint256)
+  function farmedRewards() external returns (uint256)
 ```
 Total farmed rewards of a farmer.
 
@@ -71,8 +64,7 @@ Total farmed rewards of a farmer.
 
 ### redeemedRewards
 ```solidity
-  function redeemedRewards(
-  ) external returns (uint256)
+  function redeemedRewards() external returns (uint256)
 ```
 Redeemed rewards of a farmer.
 
@@ -248,8 +240,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### ReceiverSet
 ```solidity
-  event ReceiverSet(
-  )
+  event ReceiverSet()
 ```
 
 

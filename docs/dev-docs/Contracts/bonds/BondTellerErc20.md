@@ -67,8 +67,7 @@ Initializes the teller.
 
 ### bondPrice
 ```solidity
-  function bondPrice(
-  ) public returns (uint256 price_)
+  function bondPrice() public returns (uint256 price_)
 ```
 Calculate the current price of a bond.
 Assumes 1 [**SOLACE**](./../SOLACE) payout.
@@ -289,8 +288,7 @@ Linear approximation, trades precision for speed.
 
 ### toUint40
 ```solidity
-  function toUint40(
-  ) internal returns (uint40)
+  function toUint40() internal returns (uint40)
 ```
 
 Returns the downcasted uint40 from uint256, reverting on
@@ -305,8 +303,7 @@ Requirements:
 
 ### pause
 ```solidity
-  function pause(
-  ) external
+  function pause() external
 ```
 Pauses deposits.
 Can only be called by the current [**governor**](/docs/protocol/governance).
@@ -315,8 +312,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 
 ### unpause
 ```solidity
-  function unpause(
-  ) external
+  function unpause() external
 ```
 Unpauses deposits.
 Can only be called by the current [**governor**](/docs/protocol/governance).

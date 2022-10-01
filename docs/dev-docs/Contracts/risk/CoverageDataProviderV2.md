@@ -126,8 +126,7 @@ Returns updater for given index.
 
 ### numsOfUpdater
 ```solidity
-  function numsOfUpdater(
-  ) external returns (uint256 count)
+  function numsOfUpdater() external returns (uint256 count)
 ```
 Returns the length of the updaters.
 

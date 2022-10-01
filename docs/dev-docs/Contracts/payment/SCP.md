@@ -24,8 +24,7 @@ Constructs the Solace Cover Points contract.
 
 ### name
 ```solidity
-  function name(
-  ) public returns (string)
+  function name() public returns (string)
 ```
 The name of the token.
 
@@ -33,8 +32,7 @@ The name of the token.
 
 ### symbol
 ```solidity
-  function symbol(
-  ) public returns (string)
+  function symbol() public returns (string)
 ```
 The symbol of the token.
 
@@ -42,8 +40,7 @@ The symbol of the token.
 
 ### decimals
 ```solidity
-  function decimals(
-  ) public returns (uint8)
+  function decimals() public returns (uint8)
 ```
 The number of decimals in the numeric representation.
 
@@ -51,8 +48,7 @@ The number of decimals in the numeric representation.
 
 ### totalSupply
 ```solidity
-  function totalSupply(
-  ) public returns (uint256)
+  function totalSupply() public returns (uint256)
 ```
 The amount of tokens in existence.
 
@@ -60,8 +56,7 @@ The amount of tokens in existence.
 
 ### balanceOf
 ```solidity
-  function balanceOf(
-  ) public returns (uint256)
+  function balanceOf() public returns (uint256)
 ```
 The amount of tokens owned by `account`.
 
@@ -69,8 +64,7 @@ The amount of tokens owned by `account`.
 
 ### allowance
 ```solidity
-  function allowance(
-  ) public returns (uint256)
+  function allowance() public returns (uint256)
 ```
 Overwritten. Returns zero.
 
@@ -78,8 +72,7 @@ Overwritten. Returns zero.
 
 ### approve
 ```solidity
-  function approve(
-  ) public returns (bool)
+  function approve() public returns (bool)
 ```
 Overwritten. Reverts when called.
 
@@ -87,8 +80,7 @@ Overwritten. Reverts when called.
 
 ### transfer
 ```solidity
-  function transfer(
-  ) public returns (bool)
+  function transfer() public returns (bool)
 ```
 Moves `amount` tokens from the caller's account to `recipient`.
 Can only be called by a scp mover.
@@ -100,8 +92,7 @@ Requirements:
 
 ### transferFrom
 ```solidity
-  function transferFrom(
-  ) public returns (bool)
+  function transferFrom() public returns (bool)
 ```
 Moves `amount` tokens from `sender` to `recipient`.
 Can only be called by a scp mover.
@@ -113,8 +104,7 @@ Requirements:
 
 ### _transfer
 ```solidity
-  function _transfer(
-  ) internal
+  function _transfer() internal
 ```
 Moves `amount` of tokens from `sender` to `recipient`.
 Requirements:
@@ -126,8 +116,7 @@ Requirements:
 
 ### mint
 ```solidity
-  function mint(
-  ) external
+  function mint() external
 ```
 Creates `amount` tokens and assigns them to `account`, increasing the total supply.
 Requirements:
@@ -137,8 +126,7 @@ Requirements:
 
 ### burnMultiple
 ```solidity
-  function burnMultiple(
-  ) external
+  function burnMultiple() external
 ```
 Destroys `amounts` tokens from `accounts`, reducing the total supply.
 Requirements:
@@ -149,8 +137,7 @@ Requirements:
 
 ### burn
 ```solidity
-  function burn(
-  ) external
+  function burn() external
 ```
 Destroys `amount` tokens from `account`, reducing the total supply.
 Requirements:
@@ -179,8 +166,7 @@ The user must have sufficient refundable balance.
 
 ### isScpMover
 ```solidity
-  function isScpMover(
-  ) public returns (bool status)
+  function isScpMover() public returns (bool status)
 ```
 Returns true if `account` has permissions to move balances.
 
@@ -188,8 +174,7 @@ Returns true if `account` has permissions to move balances.
 
 ### scpMoverLength
 ```solidity
-  function scpMoverLength(
-  ) external returns (uint256 length)
+  function scpMoverLength() external returns (uint256 length)
 ```
 Returns the number of scp movers.
 
@@ -197,8 +182,7 @@ Returns the number of scp movers.
 
 ### scpMoverList
 ```solidity
-  function scpMoverList(
-  ) external returns (address scpMover)
+  function scpMoverList() external returns (address scpMover)
 ```
 Returns the scp mover at `index`.
 
@@ -206,8 +190,7 @@ Returns the scp mover at `index`.
 
 ### isScpRetainer
 ```solidity
-  function isScpRetainer(
-  ) public returns (bool status)
+  function isScpRetainer() public returns (bool status)
 ```
 Returns true if `account` may need to retain scp on behalf of a user.
 
@@ -215,8 +198,7 @@ Returns true if `account` may need to retain scp on behalf of a user.
 
 ### scpRetainerLength
 ```solidity
-  function scpRetainerLength(
-  ) external returns (uint256 length)
+  function scpRetainerLength() external returns (uint256 length)
 ```
 Returns the number of scp retainers.
 
@@ -224,8 +206,7 @@ Returns the number of scp retainers.
 
 ### scpRetainerList
 ```solidity
-  function scpRetainerList(
-  ) external returns (address scpRetainer)
+  function scpRetainerList() external returns (address scpRetainer)
 ```
 Returns the scp retainer at `index`.
 
@@ -233,8 +214,7 @@ Returns the scp retainer at `index`.
 
 ### balanceOfNonRefundable
 ```solidity
-  function balanceOfNonRefundable(
-  ) public returns (uint256)
+  function balanceOfNonRefundable() public returns (uint256)
 ```
 The amount of tokens owned by account that cannot be withdrawn.
 

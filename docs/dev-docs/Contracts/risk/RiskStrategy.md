@@ -59,8 +59,7 @@ and also product is not in the strategy.
 
 ### maxCover
 ```solidity
-  function maxCover(
-  ) public returns (uint256 cover)
+  function maxCover() public returns (uint256 cover)
 ```
 The maximum amount of cover that `Risk Strategy` as a whole can sell.
 
@@ -149,8 +148,7 @@ Checks if product is an active product in `Risk Strategy`.
 
 ### numProducts
 ```solidity
-  function numProducts(
-  ) external returns (uint256 count)
+  function numProducts() external returns (uint256 count)
 ```
 Returns the number of registered products in `Risk Strategy`.
 
@@ -204,8 +202,7 @@ Returns given product's risk paramaters. The product must be active.
 
 ### weightSum
 ```solidity
-  function weightSum(
-  ) external returns (uint32 sum)
+  function weightSum() external returns (uint32 sum)
 ```
 Returns the sum of weights in `Risk Strategy`.
 
@@ -218,8 +215,7 @@ Returns the sum of weights in `Risk Strategy`.
 
 ### weightAllocation
 ```solidity
-  function weightAllocation(
-  ) external returns (uint32 weightAllocation_)
+  function weightAllocation() external returns (uint32 weightAllocation_)
 ```
 Returns risk allocation weight in `Risk Strategy`.
 
@@ -232,8 +228,7 @@ Returns risk allocation weight in `Risk Strategy`.
 
 ### strategist
 ```solidity
-  function strategist(
-  ) external returns (address strategist_)
+  function strategist() external returns (address strategist_)
 ```
 Returns the strategist address.
 
@@ -246,8 +241,7 @@ Returns the strategist address.
 
 ### status
 ```solidity
-  function status(
-  ) public returns (bool status_)
+  function status() public returns (bool status_)
 ```
 Returns the status of the risk strategy.
 
@@ -260,8 +254,7 @@ Returns the status of the risk strategy.
 
 ### riskManager
 ```solidity
-  function riskManager(
-  ) external returns (address riskManager_)
+  function riskManager() external returns (address riskManager_)
 ```
 Returns the risk manager address.
 

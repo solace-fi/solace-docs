@@ -110,8 +110,7 @@ Terminates the policies if users don't have enough balance to pay coverage.
 
 ### maxCover
 ```solidity
-  function maxCover(
-  ) external returns (uint256 cover)
+  function maxCover() external returns (uint256 cover)
 ```
 The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 
@@ -124,8 +123,7 @@ The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 
 ### activeCoverLimit
 ```solidity
-  function activeCoverLimit(
-  ) external returns (uint256 amount)
+  function activeCoverLimit() external returns (uint256 amount)
 ```
 Returns the active cover limit in **USD** to 18 decimal places. In other words, the total cover that has been sold at the current time.
 
@@ -138,8 +136,7 @@ Returns the active cover limit in **USD** to 18 decimal places. In other words, 
 
 ### availableCoverCapacity
 ```solidity
-  function availableCoverCapacity(
-  ) external returns (uint256 availableCoverCapacity_)
+  function availableCoverCapacity() external returns (uint256 availableCoverCapacity_)
 ```
 Determine the available remaining capacity for new cover.
 
@@ -278,80 +275,70 @@ Sets the latest premium charged time.
 ## Events
 ### PolicyCreated
 ```solidity
-  event PolicyCreated(
-  )
+  event PolicyCreated()
 ```
 Emitted when a new Policy is created.
 
 
 ### PolicyUpdated
 ```solidity
-  event PolicyUpdated(
-  )
+  event PolicyUpdated()
 ```
 Emitted when a Policy is updated.
 
 
 ### PolicyCanceled
 ```solidity
-  event PolicyCanceled(
-  )
+  event PolicyCanceled()
 ```
 Emitted when a Policy is deactivated.
 
 
 ### RegistrySet
 ```solidity
-  event RegistrySet(
-  )
+  event RegistrySet()
 ```
 Emitted when Registry address is updated.
 
 
 ### PauseSet
 ```solidity
-  event PauseSet(
-  )
+  event PauseSet()
 ```
 Emitted when pause is set.
 
 
 ### LatestChargedTimeSet
 ```solidity
-  event LatestChargedTimeSet(
-  )
+  event LatestChargedTimeSet()
 ```
 Emitted when latest charged time is set.
 
 
 ### MaxRateSet
 ```solidity
-  event MaxRateSet(
-  )
+  event MaxRateSet()
 ```
 Emitted when maxRate is set.
 
 
 ### ChargeCycleSet
 ```solidity
-  event ChargeCycleSet(
-  )
+  event ChargeCycleSet()
 ```
 Emitted when chargeCycle is set.
 
 
 ### BaseURISet
 ```solidity
-  event BaseURISet(
-  )
+  event BaseURISet()
 ```
 Emitted when baseURI is set
 
 
 ### DebtSet
 ```solidity
-  event DebtSet(
-  )
+  event DebtSet()
 ```
 Emitted when debt is added for policyholder.
 
