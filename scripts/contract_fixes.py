@@ -14,19 +14,27 @@ def write_file(filename, body):
     file_w.close()
 
 # modifies the handlebars output to something better
+# parameter tables
 pattern1 = """
  |"""
 replacement1 = """ |
 """
+# parameter tables
 pattern2 = """|
 #"""
 replacement2 = """|
 
 #"""
+# functions with no args
+pattern3 = """(
+  )"""
+replacement3 = "()"
+
 def modify_body(filename, body):
     # correct tables
     body = body.replace(pattern1, replacement1)
     body = body.replace(pattern2, replacement2)
+    body = body.replace(pattern3, replacement3)
     # add github link
     body = f"""<a href="https://github.com/solace-fi/solace-core/blob/main/contracts/{filename[24:-3]}.sol"><img src="/img/github.svg" alt="Github" width="50px"/> Source</a><br/><br/>\n\n{body}"""
     return body
