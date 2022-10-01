@@ -112,8 +112,7 @@ Returns updater for given index.
 
 ### numsOfUpdater
 ```solidity
-  function numsOfUpdater(
-  ) external returns (uint256 count)
+  function numsOfUpdater() external returns (uint256 count)
 ```
 Returns the length of the updaters.
 
@@ -156,32 +155,28 @@ Sets the underwriting pool bot updater.
 ## Events
 ### UnderwritingPoolSet
 ```solidity
-  event UnderwritingPoolSet(
-  )
+  event UnderwritingPoolSet()
 ```
 Emitted when the underwriting pool is set.
 
 
 ### UnderwritingPoolRemoved
 ```solidity
-  event UnderwritingPoolRemoved(
-  )
+  event UnderwritingPoolRemoved()
 ```
 Emitted when underwriting pool is removed.
 
 
 ### UwpUpdaterSet
 ```solidity
-  event UwpUpdaterSet(
-  )
+  event UwpUpdaterSet()
 ```
 Emitted when underwriting pool updater is set.
 
 
 ### UwpUpdaterRemoved
 ```solidity
-  event UwpUpdaterRemoved(
-  )
+  event UwpUpdaterRemoved()
 ```
 Emitted when underwriting pool updater is removed.
 

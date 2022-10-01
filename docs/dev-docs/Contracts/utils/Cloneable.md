@@ -46,8 +46,7 @@ calculate the _deployMetamorphicContract deployment address for a given salt
 
 ### _deployMinimalProxy
 ```solidity
-  function _deployMinimalProxy(
-  ) internal returns (address minimalProxy)
+  function _deployMinimalProxy() internal returns (address minimalProxy)
 ```
 deploy an EIP1167 minimal proxy using "CREATE" opcode
 
@@ -81,8 +80,7 @@ reverts if deployment is not successful (likely because salt has already been us
 
 ### _generateMinimalProxyInitCode
 ```solidity
-  function _generateMinimalProxyInitCode(
-  ) internal returns (bytes)
+  function _generateMinimalProxyInitCode() internal returns (bytes)
 ```
 concatenate elements to form EIP1167 minimal proxy initialization code
 

@@ -6,8 +6,7 @@ Wrapped Matic smart contract. Extends **ERC20**.
 ## Functions
 ### constructor
 ```solidity
-  function constructor(
-  ) public
+  function constructor() public
 ```
 Constructs the **WMATIC** contract.
 
@@ -15,8 +14,7 @@ Constructs the **WMATIC** contract.
 
 ### receive
 ```solidity
-  function receive(
-  ) external
+  function receive() external
 ```
 Wraps Matic. **WMATIC** will be minted to the sender at 1 **MATIC** : 1 **WMATIC**.
 
@@ -24,8 +22,7 @@ Wraps Matic. **WMATIC** will be minted to the sender at 1 **MATIC** : 1 **WMATIC
 
 ### fallback
 ```solidity
-  function fallback(
-  ) external
+  function fallback() external
 ```
 Wraps Matic. **WMATIC** will be minted to the sender at 1 **MATIC** : 1 **WMATIC**.
 
@@ -33,8 +30,7 @@ Wraps Matic. **WMATIC** will be minted to the sender at 1 **MATIC** : 1 **WMATIC
 
 ### deposit
 ```solidity
-  function deposit(
-  ) public
+  function deposit() public
 ```
 Wraps Matic. **WMATIC** will be minted to the sender at 1 **MATIC** : 1 **WMATIC**.
 

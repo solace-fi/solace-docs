@@ -88,16 +88,14 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### MinterAdded
 ```solidity
-  event MinterAdded(
-  )
+  event MinterAdded()
 ```
 Emitted when a minter is added.
 
 
 ### MinterRemoved
 ```solidity
-  event MinterRemoved(
-  )
+  event MinterRemoved()
 ```
 Emitted when a minter is removed.
 

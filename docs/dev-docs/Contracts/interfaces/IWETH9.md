@@ -6,8 +6,7 @@
 ## Functions
 ### receive
 ```solidity
-  function receive(
-  ) external
+  function receive() external
 ```
 Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
@@ -15,8 +14,7 @@ Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
 ### fallback
 ```solidity
-  function fallback(
-  ) external
+  function fallback() external
 ```
 Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
@@ -24,8 +22,7 @@ Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
 ### deposit
 ```solidity
-  function deposit(
-  ) external
+  function deposit() external
 ```
 Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
@@ -49,16 +46,14 @@ Unwraps Ether. **ETH** will be returned to the sender at 1 **ETH** : 1 **WETH**.
 ## Events
 ### Deposit
 ```solidity
-  event Deposit(
-  )
+  event Deposit()
 ```
 Emitted when **ETH** is wrapped.
 
 
 ### Withdrawal
 ```solidity
-  event Withdrawal(
-  )
+  event Withdrawal()
 ```
 Emitted when **ETH** is unwrapped.
 

@@ -126,8 +126,7 @@ Terminates the policies if users don't have enough balance to pay coverage.
 
 ### maxCover
 ```solidity
-  function maxCover(
-  ) public returns (uint256 cover)
+  function maxCover() public returns (uint256 cover)
 ```
 The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 
@@ -140,8 +139,7 @@ The maximum amount of cover that can be sold in **USD** to 18 decimals places.
 
 ### activeCoverLimit
 ```solidity
-  function activeCoverLimit(
-  ) public returns (uint256 amount)
+  function activeCoverLimit() public returns (uint256 amount)
 ```
 Returns the active cover limit in **USD** to 18 decimal places. In other words, the total cover that has been sold at the current time.
 
@@ -154,8 +152,7 @@ Returns the active cover limit in **USD** to 18 decimal places. In other words, 
 
 ### availableCoverCapacity
 ```solidity
-  function availableCoverCapacity(
-  ) public returns (uint256 capacity)
+  function availableCoverCapacity() public returns (uint256 capacity)
 ```
 Determine the available remaining capacity for new cover.
 

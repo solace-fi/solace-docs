@@ -50,8 +50,7 @@ Deploys multiple contracts.
 ## Events
 ### ContractDeployed
 ```solidity
-  event ContractDeployed(
-  )
+  event ContractDeployed()
 ```
 Emitted when a contract is deployed.
 

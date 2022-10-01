@@ -10,8 +10,7 @@ Note that xSOLACEV1 was deprecated for the [new staking system](./../../staking/
 ## Functions
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address solace_)
+  function solace() external returns (address solace_)
 ```
 Address of the [**SOLACE**](./../../SOLACE) contract.
 
@@ -143,16 +142,14 @@ Burns **xSOLACE** from msg.sender.
 ## Events
 ### Staked
 ```solidity
-  event Staked(
-  )
+  event Staked()
 ```
 Emitted when [**SOLACE**](./../../SOLACE) is staked.
 
 
 ### Unstaked
 ```solidity
-  event Unstaked(
-  )
+  event Unstaked()
 ```
 Emitted when [**SOLACE**](./../../SOLACE) is unstaked.
 

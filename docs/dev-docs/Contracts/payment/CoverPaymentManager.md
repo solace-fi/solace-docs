@@ -300,8 +300,7 @@ Checks is an address is an active product.
 
 ### numProducts
 ```solidity
-  function numProducts(
-  ) external returns (uint256 count)
+  function numProducts() external returns (uint256 count)
 ```
 Returns the number of products.
 

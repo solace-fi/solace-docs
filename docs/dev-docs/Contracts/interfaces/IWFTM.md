@@ -6,8 +6,7 @@
 ## Functions
 ### receive
 ```solidity
-  function receive(
-  ) external
+  function receive() external
 ```
 Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
@@ -15,8 +14,7 @@ Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
 ### fallback
 ```solidity
-  function fallback(
-  ) external
+  function fallback() external
 ```
 Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
@@ -24,8 +22,7 @@ Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
 ### deposit
 ```solidity
-  function deposit(
-  ) external
+  function deposit() external
 ```
 Wraps Fantom. **WFTM** will be minted to the sender at 1 **FTM** : 1 **WFTM**.
 
@@ -49,16 +46,14 @@ Unwraps Fantom. **FTM** will be returned to the sender at 1 **FTM** : 1 **WFTM**
 ## Events
 ### Deposit
 ```solidity
-  event Deposit(
-  )
+  event Deposit()
 ```
 Emitted when **FTM** is wrapped.
 
 
 ### Withdrawal
 ```solidity
-  event Withdrawal(
-  )
+  event Withdrawal()
 ```
 Emitted when **FTM** is unwrapped.
 

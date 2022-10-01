@@ -25,8 +25,7 @@ Constructs the governable contract.
 
 ### governance
 ```solidity
-  function governance(
-  ) public returns (address)
+  function governance() public returns (address)
 ```
 Address of the current governor.
 
@@ -34,8 +33,7 @@ Address of the current governor.
 
 ### pendingGovernance
 ```solidity
-  function pendingGovernance(
-  ) external returns (address)
+  function pendingGovernance() external returns (address)
 ```
 Address of the governor to take over.
 
@@ -43,8 +41,7 @@ Address of the governor to take over.
 
 ### governanceIsLocked
 ```solidity
-  function governanceIsLocked(
-  ) external returns (bool)
+  function governanceIsLocked() external returns (bool)
 ```
 Returns true if governance is locked.
 
@@ -68,8 +65,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 
 ### acceptGovernance
 ```solidity
-  function acceptGovernance(
-  ) external
+  function acceptGovernance() external
 ```
 Accepts the governance role.
 Can only be called by the pending governor.
@@ -78,8 +74,7 @@ Can only be called by the pending governor.
 
 ### lockGovernance
 ```solidity
-  function lockGovernance(
-  ) external
+  function lockGovernance() external
 ```
 Permanently locks this contract's governance role and any of its functions that require the role.
 This action cannot be reversed.

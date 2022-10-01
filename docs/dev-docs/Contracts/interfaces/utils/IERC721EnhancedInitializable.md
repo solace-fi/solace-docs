@@ -88,8 +88,7 @@ prevents a signature from being used multiple times.
 
 ### PERMIT_TYPEHASH
 ```solidity
-  function PERMIT_TYPEHASH(
-  ) external returns (bytes32 typehash)
+  function PERMIT_TYPEHASH() external returns (bytes32 typehash)
 ```
 The permit typehash used in the `permit` signature.
 
@@ -102,8 +101,7 @@ The permit typehash used in the `permit` signature.
 
 ### DOMAIN_SEPARATOR
 ```solidity
-  function DOMAIN_SEPARATOR(
-  ) external returns (bytes32 seperator)
+  function DOMAIN_SEPARATOR() external returns (bytes32 seperator)
 ```
 The domain separator used in the encoding of the signature for `permit`, as defined by `EIP712`.
 
@@ -136,8 +134,7 @@ Determines if a token exists or not.
 ## Events
 ### BaseURISet
 ```solidity
-  event BaseURISet(
-  )
+  event BaseURISet()
 ```
 Emitted when the base URI is set.
 

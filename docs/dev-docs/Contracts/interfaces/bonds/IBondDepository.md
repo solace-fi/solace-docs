@@ -6,8 +6,7 @@ Factory and manager of [`Bond Tellers`](./IBondTeller).
 ## Functions
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address solace_)
+  function solace() external returns (address solace_)
 ```
 Native [**SOLACE**](./../../SOLACE) Token.
 
@@ -15,8 +14,7 @@ Native [**SOLACE**](./../../SOLACE) Token.
 
 ### isTeller
 ```solidity
-  function isTeller(
-  ) external returns (bool isTeller_)
+  function isTeller() external returns (bool isTeller_)
 ```
 Returns true if the address is a teller.
 
@@ -71,16 +69,14 @@ Can only be called by tellers.
 ## Events
 ### TellerAdded
 ```solidity
-  event TellerAdded(
-  )
+  event TellerAdded()
 ```
 Emitted when a teller is added.
 
 
 ### TellerRemoved
 ```solidity
-  event TellerRemoved(
-  )
+  event TellerRemoved()
 ```
 Emitted when a teller is removed.
 

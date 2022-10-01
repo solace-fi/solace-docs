@@ -34,7 +34,9 @@ cp ./solace-docs/contract.hbs ./solace-core/templates/
 cd ./solace-core
 npm i
 rm -rf docs
+mv ./contracts/mocks ./mocks
 npx solidity-docgen --solc-module solc-0.8 -t ./templates
+mv ./mocks ./contracts/mocks
 rm -rf ../solace-docs/docs/dev-docs/Contracts/
 cp -r ./docs/. ../solace-docs/docs/dev-docs/Contracts/
 cd ../solace-docs

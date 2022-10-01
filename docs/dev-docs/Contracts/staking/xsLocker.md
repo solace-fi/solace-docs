@@ -108,8 +108,7 @@ Returns the amount of [**SOLACE**](./../SOLACE) the user has staked.
 
 ### getXsLockListeners
 ```solidity
-  function getXsLockListeners(
-  ) external returns (address[] listeners_)
+  function getXsLockListeners() external returns (address[] listeners_)
 ```
 The list of contracts that are listening to lock updates.
 

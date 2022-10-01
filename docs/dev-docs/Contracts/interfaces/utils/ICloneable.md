@@ -26,8 +26,7 @@ calculate the deployment address for a given target and salt
 ## Events
 ### ContractDeployed
 ```solidity
-  event ContractDeployed(
-  )
+  event ContractDeployed()
 ```
 Emitted when a contract is deployed.
 

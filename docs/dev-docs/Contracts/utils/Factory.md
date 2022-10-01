@@ -150,8 +150,7 @@ calculate the _deployMetamorphicContract deployment address for a given salt
 ## Events
 ### ContractDeployed
 ```solidity
-  event ContractDeployed(
-  )
+  event ContractDeployed()
 ```
 
 

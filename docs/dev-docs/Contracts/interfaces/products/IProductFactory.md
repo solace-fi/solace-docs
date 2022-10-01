@@ -66,8 +66,7 @@ Creates and initializes a new product.
 ## Events
 ### ProductCreated
 ```solidity
-  event ProductCreated(
-  )
+  event ProductCreated()
 ```
 Emitted when a new product is created
 

@@ -180,8 +180,7 @@ Calculate a premium quote for a policy.
 
 ### minPeriod
 ```solidity
-  function minPeriod(
-  ) external returns (uint40 period)
+  function minPeriod() external returns (uint40 period)
 ```
 Returns the minimum policy period in blocks.
 
@@ -194,8 +193,7 @@ Returns the minimum policy period in blocks.
 
 ### maxPeriod
 ```solidity
-  function maxPeriod(
-  ) external returns (uint40 period)
+  function maxPeriod() external returns (uint40 period)
 ```
 Returns the maximum policy period in blocks.
 
@@ -208,8 +206,7 @@ Returns the maximum policy period in blocks.
 
 ### activeCoverLimit
 ```solidity
-  function activeCoverLimit(
-  ) external returns (uint256 amount)
+  function activeCoverLimit() external returns (uint256 amount)
 ```
 Returns the current amount covered (in wei).
 
@@ -241,8 +238,7 @@ Returns the current amount covered (in wei) per risk strategy.
 
 ### paused
 ```solidity
-  function paused(
-  ) external returns (bool status)
+  function paused() external returns (bool status)
 ```
 Returns whether or not product is currently in paused state.
 
@@ -255,8 +251,7 @@ Returns whether or not product is currently in paused state.
 
 ### policyManager
 ```solidity
-  function policyManager(
-  ) external returns (address policymanager)
+  function policyManager() external returns (address policymanager)
 ```
 Returns the address of the [`PolicyManager`](../PolicyManager).
 
@@ -269,8 +264,7 @@ Returns the address of the [`PolicyManager`](../PolicyManager).
 
 ### registry
 ```solidity
-  function registry(
-  ) external returns (address registry_)
+  function registry() external returns (address registry_)
 ```
 Returns the address of the [`Registry`](../Registry).
 
@@ -418,8 +412,7 @@ Internal function that updates the policy.
 
 ### getAsset
 ```solidity
-  function getAsset(
-  ) internal returns (contract IERC20 asset)
+  function getAsset() internal returns (contract IERC20 asset)
 ```
 Returns the underlying principal asset for `Solace Cover Product`.
 
@@ -482,16 +475,14 @@ Adds two numbers.
 ## Events
 ### SignerAdded
 ```solidity
-  event SignerAdded(
-  )
+  event SignerAdded()
 ```
 Emitted when a claim signer is added.
 
 
 ### SignerRemoved
 ```solidity
-  event SignerRemoved(
-  )
+  event SignerRemoved()
 ```
 Emitted when a claim signer is removed.
 

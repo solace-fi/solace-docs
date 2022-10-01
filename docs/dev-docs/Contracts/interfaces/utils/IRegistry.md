@@ -10,8 +10,7 @@ A key is a unique identifier for each contract. Use [`get(key)`](#get) or [`tryG
 ## Functions
 ### length
 ```solidity
-  function length(
-  ) external returns (uint256)
+  function length() external returns (uint256)
 ```
 The number of unique keys.
 
@@ -94,8 +93,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### RecordSet
 ```solidity
-  event RecordSet(
-  )
+  event RecordSet()
 ```
 Emitted when a record is set.
 

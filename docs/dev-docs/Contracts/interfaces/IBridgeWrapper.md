@@ -16,8 +16,7 @@ The [**SOLACE**](./../SOLACE) and **bSOLACE** addresses are set on construction 
 ## Functions
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address)
+  function solace() external returns (address)
 ```
 [**SOLACE**](./../../SOLACE) token.
 
@@ -25,8 +24,7 @@ The [**SOLACE**](./../SOLACE) and **bSOLACE** addresses are set on construction 
 
 ### bsolace
 ```solidity
-  function bsolace(
-  ) external returns (address)
+  function bsolace() external returns (address)
 ```
 **bSOLACE** token.
 
@@ -97,16 +95,14 @@ Uses ERC20 permit-transfer.
 ## Events
 ### Unwrapped
 ```solidity
-  event Unwrapped(
-  )
+  event Unwrapped()
 ```
 Emitted when **bSOLACE** is converted to [**SOLACE**](./../SOLACE).
 
 
 ### Wrapped
 ```solidity
-  event Wrapped(
-  )
+  event Wrapped()
 ```
 Emitted when [**SOLACE**](./../SOLACE) is converted to **bSOLACE**.
 

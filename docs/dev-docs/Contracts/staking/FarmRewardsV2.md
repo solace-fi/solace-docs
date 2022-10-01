@@ -190,8 +190,7 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 
 ### acceptFarmRewardsV1Governance
 ```solidity
-  function acceptFarmRewardsV1Governance(
-  ) external
+  function acceptFarmRewardsV1Governance() external
 ```
 Accepts the governance role for the FarmRewards V1 contract.
 Can only be called by the current [**governor**](/docs/protocol/governance).

@@ -6,8 +6,7 @@
 ## Functions
 ### constructor
 ```solidity
-  function constructor(
-  ) public
+  function constructor() public
 ```
 Constructs the **WETH** contract.
 
@@ -15,8 +14,7 @@ Constructs the **WETH** contract.
 
 ### receive
 ```solidity
-  function receive(
-  ) external
+  function receive() external
 ```
 Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
@@ -24,8 +22,7 @@ Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
 ### fallback
 ```solidity
-  function fallback(
-  ) external
+  function fallback() external
 ```
 Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
@@ -33,8 +30,7 @@ Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 
 ### deposit
 ```solidity
-  function deposit(
-  ) public
+  function deposit() public
 ```
 Wraps Ether. **WETH** will be minted to the sender at 1 **ETH** : 1 **WETH**.
 

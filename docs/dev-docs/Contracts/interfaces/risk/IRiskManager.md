@@ -154,8 +154,7 @@ Enumerable `[1, numStrategies]`.
 
 ### numStrategies
 ```solidity
-  function numStrategies(
-  ) external returns (uint256 count)
+  function numStrategies() external returns (uint256 count)
 ```
 Returns the number of registered strategies..
 
@@ -209,8 +208,7 @@ Returns the allocated weight for the risk strategy.
 
 ### maxCoverPerStrategy
 ```solidity
-  function maxCoverPerStrategy(
-  ) external returns (uint256 cover)
+  function maxCoverPerStrategy() external returns (uint256 cover)
 ```
 The maximum amount of cover for given strategy can sell.
 
@@ -223,8 +221,7 @@ The maximum amount of cover for given strategy can sell.
 
 ### activeCoverLimit
 ```solidity
-  function activeCoverLimit(
-  ) external returns (uint256 amount)
+  function activeCoverLimit() external returns (uint256 amount)
 ```
 Returns the current amount covered (in wei).
 
@@ -256,8 +253,7 @@ Returns the current amount covered (in wei).
 
 ### maxCover
 ```solidity
-  function maxCover(
-  ) external returns (uint256 cover)
+  function maxCover() external returns (uint256 cover)
 ```
 The maximum amount of cover that Solace as a whole can sell.
 
@@ -270,8 +266,7 @@ The maximum amount of cover that Solace as a whole can sell.
 
 ### weightSum
 ```solidity
-  function weightSum(
-  ) external returns (uint32 sum)
+  function weightSum() external returns (uint32 sum)
 ```
 Returns the sum of allocation weights for all strategies.
 
@@ -284,8 +279,7 @@ Returns the sum of allocation weights for all strategies.
 
 ### minCapitalRequirement
 ```solidity
-  function minCapitalRequirement(
-  ) external returns (uint256 mcr)
+  function minCapitalRequirement() external returns (uint256 mcr)
 ```
 The minimum amount of capital required to safely cover all policies.
 
@@ -317,8 +311,7 @@ The minimum amount of capital required to safely cover all policies.
 
 ### partialReservesFactor
 ```solidity
-  function partialReservesFactor(
-  ) external returns (uint16 factor)
+  function partialReservesFactor() external returns (uint16 factor)
 ```
 Multiplier for minimum capital requirement.
 
@@ -348,72 +341,63 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### StrategyAdded
 ```solidity
-  event StrategyAdded(
-  )
+  event StrategyAdded()
 ```
 Emitted when new strategy is created.
 
 
 ### StrategyStatusUpdated
 ```solidity
-  event StrategyStatusUpdated(
-  )
+  event StrategyStatusUpdated()
 ```
 Emitted when strategy status is updated.
 
 
 ### RiskStrategyWeightAllocationIncreased
 ```solidity
-  event RiskStrategyWeightAllocationIncreased(
-  )
+  event RiskStrategyWeightAllocationIncreased()
 ```
 Emitted when strategy's allocation weight is increased.
 
 
 ### RiskStrategyWeightAllocationDecreased
 ```solidity
-  event RiskStrategyWeightAllocationDecreased(
-  )
+  event RiskStrategyWeightAllocationDecreased()
 ```
 Emitted when strategy's allocation weight is decreased.
 
 
 ### RiskStrategyWeightAllocationSet
 ```solidity
-  event RiskStrategyWeightAllocationSet(
-  )
+  event RiskStrategyWeightAllocationSet()
 ```
 Emitted when strategy's allocation weight is set.
 
 
 ### PartialReservesFactorSet
 ```solidity
-  event PartialReservesFactorSet(
-  )
+  event PartialReservesFactorSet()
 ```
 Emitted when the partial reserves factor is set.
 
 
 ### ActiveCoverLimitUpdated
 ```solidity
-  event ActiveCoverLimitUpdated(
-  )
+  event ActiveCoverLimitUpdated()
 ```
 Emitted when the cover limit amount of the strategy is updated.
 
 
 ### CoverLimitUpdaterAdded
 ```solidity
-  event CoverLimitUpdaterAdded(
-  )
+  event CoverLimitUpdaterAdded()
 ```
 Emitted when the cover limit updater is set.
 
 
 ### CoverLimitUpdaterDeleted
 ```solidity
-  event CoverLimitUpdaterDeleted(
-  )
+  event CoverLimitUpdaterDeleted()
 ```
 Emitted when the cover limit updater is removed.
 

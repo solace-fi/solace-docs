@@ -8,8 +8,7 @@ Predetermined agreement with investors for a linear unlock over three years star
 ## Functions
 ### solace
 ```solidity
-  function solace(
-  ) external returns (address)
+  function solace() external returns (address)
 ```
 SOLACE Token.
 
@@ -17,8 +16,7 @@ SOLACE Token.
 
 ### vestingStart
 ```solidity
-  function vestingStart(
-  ) external returns (uint256)
+  function vestingStart() external returns (uint256)
 ```
 timestamp that investor tokens start vesting.
 
@@ -26,8 +24,7 @@ timestamp that investor tokens start vesting.
 
 ### vestingEnd
 ```solidity
-  function vestingEnd(
-  ) external returns (uint256)
+  function vestingEnd() external returns (uint256)
 ```
 timestamp that investor tokens finish vesting.
 
@@ -35,8 +32,7 @@ timestamp that investor tokens finish vesting.
 
 ### totalInvestorTokens
 ```solidity
-  function totalInvestorTokens(
-  ) external returns (uint256)
+  function totalInvestorTokens() external returns (uint256)
 ```
 Total tokens allocated to an investor.
 
@@ -44,8 +40,7 @@ Total tokens allocated to an investor.
 
 ### claimedInvestorTokens
 ```solidity
-  function claimedInvestorTokens(
-  ) external returns (uint256)
+  function claimedInvestorTokens() external returns (uint256)
 ```
 Claimed token amount for an investor.
 
@@ -53,8 +48,7 @@ Claimed token amount for an investor.
 
 ### duration
 ```solidity
-  function duration(
-  ) external returns (uint256)
+  function duration() external returns (uint256)
 ```
 Get vesting duration in seconds
 
@@ -62,8 +56,7 @@ Get vesting duration in seconds
 
 ### claimTokens
 ```solidity
-  function claimTokens(
-  ) external
+  function claimTokens() external
 ```
 Function for investor to claim SOLACE tokens - transfers all claimable tokens from contract to msg.sender.
 
@@ -145,32 +138,28 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### TokensClaimed
 ```solidity
-  event TokensClaimed(
-  )
+  event TokensClaimed()
 ```
 Emitted with successful claimTokens() call
 
 
 ### TokensRescued
 ```solidity
-  event TokensRescued(
-  )
+  event TokensRescued()
 ```
 Emitted with successful rescueSOLACEtokens() call
 
 
 ### TotalInvestorTokensSet
 ```solidity
-  event TotalInvestorTokensSet(
-  )
+  event TotalInvestorTokensSet()
 ```
 Emitted when investor address is changed
 
 
 ### InvestorAddressChanged
 ```solidity
-  event InvestorAddressChanged(
-  )
+  event InvestorAddressChanged()
 ```
 Emitted when investor address is changed
 

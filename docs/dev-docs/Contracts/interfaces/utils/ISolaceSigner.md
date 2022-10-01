@@ -46,8 +46,7 @@ Verifies cover premium data.
 
 ### numSigners
 ```solidity
-  function numSigners(
-  ) external returns (uint256 count)
+  function numSigners() external returns (uint256 count)
 ```
 Returns the number of signers.
 
@@ -130,16 +129,14 @@ Can only be called by the current [**governor**](/docs/protocol/governance).
 ## Events
 ### SignerAdded
 ```solidity
-  event SignerAdded(
-  )
+  event SignerAdded()
 ```
 Emitted when a signer is added.
 
 
 ### SignerRemoved
 ```solidity
-  event SignerRemoved(
-  )
+  event SignerRemoved()
 ```
 Emitted when a signer is removed.
 
