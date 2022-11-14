@@ -22,6 +22,6 @@ If you do not auto-stake into a lock and want to redeem your $SOLACE bond, follo
 
 Remember, that bonds will be linearly unlocked and vested over seven days.
 
-Follow the step-by-step instructions here:
+<!-- Follow the step-by-step instructions here:
 
-<ReactPlayer playing controls url='https://youtu.be/RUn4QFZilTU' />
+<ReactPlayer playing controls url='https://youtu.be/RUn4QFZilTU' /> -->

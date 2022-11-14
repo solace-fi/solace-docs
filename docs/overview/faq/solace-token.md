@@ -33,6 +33,6 @@ Below is the break down of the allocations and target use.
 - Incentives: 8%. This allocation encompasses all short to mid-term incentives we have put in place and are introducing along with the token launch, like bonding and staking. More information and exact details are coming in the next post.
 
 ---
-
+<!-- 
 ## How can I obtain $SOLACE?
-Check out the Buy $SOLACE page [<u>here</u>](../../user-guides/buy-token).
+Check out the Buy $SOLACE page [<u>here</u>](../../user-guides/buy-token). -->

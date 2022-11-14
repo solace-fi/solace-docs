@@ -4,6 +4,8 @@ sidebar_position: 0
 
 # Welcome to the Solace Docs
 
+NOTICE: Solace has put on pause all the current products, including Solace Portfolio Insurance, Solace Native and $SOLACE token. More details on Solace V2 will be announced in December 2022. [<u>**Read more here**</u>](https://medium.com/solace-fi/solace-is-making-moves-1b0ae90aa383)
+
 This documentation provides everything you need to know about Solace.
 ***
 ## [FAQ](overview/faq/solace-the-fundamentals.md)
